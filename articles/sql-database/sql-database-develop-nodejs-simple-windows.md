@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="02/29/2016"
+	ms.date="03/14/2016"
 	ms.author="meetb"/>
 
 
@@ -169,4 +169,4 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 		connection.execSql(request);
 	}
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

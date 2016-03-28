@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/09/2015"
+   ms.date="03/09/2016"
    ms.author="sethm"/>
 
 # Verwenden von PowerShell zum Verwalten von Service Bus- und Event Hub-Ressourcen
@@ -66,7 +66,7 @@ catch [System.Exception]
 
 ## Bereitstellen eines Service Bus-Namespace
 
-Bei der Arbeit mit Service Bus-Namespaces können Sie zwei Cmdlets anstelle des .NET SDK verwenden: [Get-AzureSBNamespace] und [New-AzureSBNamespace].
+Bei der Arbeit mit Service Bus-Namespaces können Sie zwei Cmdlets anstelle des .NET SDK verwenden: [Get-AzureSBNamespace][] und [New-AzureSBNamespace][].
 
 In diesem Beispiel werden einige lokale Variablen im Skript erstellt: `$Namespace` und `$Location`.
 
@@ -104,7 +104,7 @@ Dieser Teil des Skripts führt Folgendes aus:
 	    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
 	}
 	```
-Um weitere Service Bus-Entitäten bereitstellen zu können, erstellen Sie eine Instanz des `NamespaceManager`-Objekts aus dem SDK. Sie können mithilfe des Cmdlets [Get-AzureSBAuthorizationRule] eine Autorisierungsregel abrufen, die zur Bereitstellung einer Verbindungszeichenfolge verwendet wird. In diesem Beispiel wird ein Verweis auf die `NamespaceManager`-Instanz in der `$NamespaceManager`-Variable gespeichert. Das Skript verwendet später `$NamespaceManager` zur Bereitstellung weiterer Entitäten.
+Um weitere Service Bus-Entitäten bereitstellen zu können, erstellen Sie eine Instanz des `NamespaceManager`-Objekts aus dem SDK. Sie können mithilfe des Cmdlets [Get-AzureSBAuthorizationRule][] eine Autorisierungsregel abrufen, die zur Bereitstellung einer Verbindungszeichenfolge verwendet wird. In diesem Beispiel wird ein Verweis auf die `NamespaceManager`-Instanz in der `$NamespaceManager`-Variable gespeichert. Das Skript verwendet später `$NamespaceManager` zur Bereitstellung weiterer Entitäten.
 
 	``` powershell
 	$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
@@ -116,7 +116,7 @@ Um weitere Service Bus-Entitäten bereitstellen zu können, erstellen Sie eine I
 
 ## Bereitstellen weiterer Service Bus-Entitäten
 
-Um weitere Entitäten wie z. B. Warteschlangen, Themen und Event Hubs bereitzustellen, können Sie die [.NET-API für Service Bus] verwenden. Am Ende dieses Artikels finden Sie einige ausführlichere Beispiele, einschließlich anderer Entitäten.
+Um weitere Entitäten wie z. B. Warteschlangen, Themen und Event Hubs bereitzustellen, können Sie die [.NET-API für Service Bus][] verwenden. Am Ende dieses Artikels finden Sie einige ausführlichere Beispiele, einschließlich anderer Entitäten.
 
 ### Erstellen eines Ereignis-Hubs
 
@@ -274,6 +274,6 @@ Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung:
 [New-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/library/azure/dn495113.aspx
 [.NET-API für Service Bus]: https://msdn.microsoft.com/de-DE/library/azure/mt419900.aspx
-[Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell.md
+[Installieren und Konfigurieren von Azure PowerShell]: ../powershell-install-configure.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0316_2016-->

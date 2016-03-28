@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/09/2015"
+   ms.date="03/09/2016"
    ms.author="sethm" />
 
 # SAS-Authentifizierung bei Service Bus
@@ -29,7 +29,7 @@ Sie können SAS-Autorisierungsregeln für Service Bus [Relays](service-bus-funda
 
 Die SAS-Authentifizierung verwendet die folgenden Elemente:
 
-- [SharedAccessAuthorizationRule](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx): ein primärer 256-Bit-Kryptografieschlüssel in Base64-Darstellung, ein optionaler sekundärer Schlüssel und ein Schlüsselname sowie zugehörige Rechte (eine Auflistung von Lausch-, Sende- oder Verwaltungsrechten, d. h. *Listen*, *Send* und *Manage*).
+- [SharedAccessAuthorizationRule](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx): ein primärer 256-Bit-Kryptografieschlüssel in Base64-Darstellung, ein optionaler sekundärer Schlüssel und ein Schlüsselname sowie zugehörige Rechte (eine Auflistung von Lausch-, Sende- oder Verwaltungsrechten, d. h. *Listen*, *Send* und *Manage*).
 
 - [SharedAccessSignature](https://msdn.microsoft.com/library/azure/microsoft.servicebus.sharedaccesssignaturetokenprovider.sharedaccesssignature.aspx)-Token: Wird mithilfe des HMAC-SHA256-Codes einer Ressourcenzeichenfolge generiert und besteht aus dem URI der Ressource, auf die zugegriffen wird, sowie einer Ablaufangabe mit dem kryptografischen Schlüssel. Die Signatur und andere in den folgenden Abschnitten beschriebene Elemente werden als Zeichenfolge formatiert, um das [SharedAccessSignature](https://msdn.microsoft.com/library/azure/microsoft.servicebus.sharedaccesssignaturetokenprovider.sharedaccesssignature.aspx)-Token zu bilden.
 
@@ -76,7 +76,7 @@ StringToSign = <resourceURI> + "\n" + expiry;
 
 Beachten Sie, dass Sie den codierten Ressourcen-URI für diesen Vorgang verwenden sollten. Der Ressourcen-URI ist der vollständige URI der Service Bus-Ressource, auf die der Zugriff beansprucht wird. Beispiel: `http://<namespace>.servicebus.windows.net/<entityPath>` oder `sb://<namespace>.servicebus.windows.net/<entityPath>`, also `http://contoso.servicebus.windows.net/contosoTopics/T1/Subscriptions/S3`.
 
-Der Ablaufwert wird als die Anzahl der Sekunden seit dem 1. Januar 1970 um 00:00:00 UTC dargestellt.
+Der Ablaufwert wird als die Anzahl der Sekunden seit dem 1. Januar 1970 um 00:00:00 UTC dargestellt.
 
 Die zum Signieren verwendete SAS-Autorisierungsregel muss für die durch diesen URI angegebene Entität oder eines seiner hierarchisch übergeordneten Elemente konfiguriert werden. Beispiel: `http://contoso.servicebus.windows.net/contosoTopics/T1` oder `http://contoso.servicebus.windows.net` im vorherigen Beispiel.
 
@@ -94,7 +94,7 @@ Ein vollständiges praktisches Beispiel für eine Service Bus-Anwendung, die die
 
 ## Zugreifen auf SAS-Autorisierungsregeln für einen Namespace
 
-Vorgänge für den Service Bus-Namespacestamm erfordern eine Zertifikatauthentifizierung. Sie müssen ein Verwaltungszertifikat für Ihr Azure-Abonnement hochladen. Klicken Sie zum Hochladen eines Verwaltungszertifikats im linken Bereich des [klassischen Azure-Portals][] auf **Einstellungen**. Weitere Informationen zu Azure-Verwaltungszertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx).
+Vorgänge für den Service Bus-Namespacestamm erfordern eine Zertifikatauthentifizierung. Sie müssen ein Verwaltungszertifikat für Ihr Azure-Abonnement hochladen. Klicken Sie zum Hochladen eines Verwaltungszertifikats im linken Bereich des [klassischen Azure-Portals][] auf **Einstellungen**. Weitere Informationen zu Azure-Verwaltungszertifikaten finden Sie in der [Übersicht über Azure-Zertifikate](../cloud-services/cloud-services-certs-create.md#what-are-management-certificates).
 
 Der Endpunkt für den Zugriff auf SAS-Autorisierungsregeln für einen Service Bus-Namespace lautet wie folgt:
 
@@ -258,4 +258,4 @@ Weitere Hintergrundinformationen zur Service Bus-Authentifizierung finden Sie un
 
 [klassischen Azure-Portals]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0316_2016-->

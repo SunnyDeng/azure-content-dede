@@ -5,7 +5,7 @@
 	services="app-service\mobile"
 	documentationCenter=""
 	authors="ggailey777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="02/04/2016"
+	ms.date="03/06/2016"
 	ms.author="glenga"/>
 
 # Arbeiten Sie mit der Back-End-Server-SDK für Azure Mobile Apps
@@ -160,7 +160,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihr .NET-Back-End-Projekt über Visual
 
 	![](./media/app-service-mobile-dotnet-backend-how-to-use-server-sdk/publish-success.png)
 
-## Vorgehensweise: Definieren eines Tabellencontrollers
+##<a name="define-table-controller"></a>Vorgehensweise: Definieren eines Tabellencontrollers
 
 Ein Tabellecontroller ermöglicht den Zugriff auf Entitätsdaten in einem tabellenbasierten Datenspeicher, z. B. SQL-Datenbank oder Azure Tabellenspeicher. Tabellencontroller erben von der generischen **TableController**-Klasse, in der der generische Typ eine Entität im Modell ist, die das Tabellenschema wie folgt darstellt:
 
@@ -217,6 +217,7 @@ Mobile Apps greift zur Vereinfachung der Authentifizierungsimplementierung in Ih
 + [Vorgehensweise: Authentifizierung zu einem Serverprojekt hinzufügen](#add-auth)
 + [Vorgehensweise: Verwenden einer benutzerdefinierten Authentifizierung für Ihre Anwendung](#custom-auth)
 + [Vorgehensweise: Abrufen von Informationen zu authentifizierten Benutzern](#user-info)
++ [Vorgehensweise: Einschränken des Datenzugriffs für autorisierte Benutzer](#authorize)
 
 ### <a name="add-auth"></a>Vorgehensweise: Hinzufügen einer Authentifizierung zu einem Serverprojekt
 
@@ -278,7 +279,7 @@ Die `MobileAppLoginHAppServiceLoginHandlerandler.CreateToken()`-Methode enthält
 
 Sie müssen darüber hinaus eine Lebensdauer für das ausgestellte Token sowie alle Ansprüche angeben, die aufgenommen werden sollen. Wie im Beispielcode gezeigt, müssen Sie den Anspruch „Betreff“ angeben.
 
-Sie können den Clientcode auch vereinfachen, um die `loginAsync()`-Methode (die Benennung kann über Plattformen hinweg variieren) anstelle einer manuellen HTTP POST-Methode zu verwenden. Sie verwenden die Überlagerung, die einen zusätzlichen Parameter verwendet, der mit dem Assertionsprojekt zusammenhängt, das Sie bereitstellen möchten. Der Anbieter sollte in diesem Fall einen benutzerdefinierten Namen Ihrer Wahl tragen. Auf dem Server erfolgt Ihre Anmeldeaktion dann unter dem Pfad _/.auth/login/{benutzerdefinierterAnbietername}_, der diesen benutzerdefinierten Namen enthält. Um den Controller unter diesem Pfad zu speichern, fügen Sie Ihrer HttpConfiguration eine Route hinzu, bevor Sie Ihre MobileAppConfiguration anwenden.
+Sie können den Clientcode auch vereinfachen, um die `loginAsync()`-Methode (die Benennung kann zwischen Plattformen variieren) anstelle einer manuellen HTTP POST-Methode zu verwenden. Sie verwenden die Überlagerung, die einen zusätzlichen Parameter verwendet, der mit dem Assertionsprojekt zusammenhängt, das Sie bereitstellen möchten. Der Anbieter sollte in diesem Fall einen benutzerdefinierten Namen Ihrer Wahl tragen. Auf dem Server erfolgt Ihre Anmeldeaktion dann unter dem Pfad _/.auth/login/{benutzerdefinierterProvidername}_, der diesen benutzerdefinierten Namen enthält. Um den Controller unter diesem Pfad zu speichern, fügen Sie Ihrer HttpConfiguration eine Route hinzu, bevor Sie Ihre MobileAppConfiguration anwenden.
 
 		config.Routes.MapHttpRoute("CustomAuth", ".auth/login/CustomAuth", new { controller = "CustomAuth" });
 
@@ -324,6 +325,9 @@ Der folgende Code ruft die Erweiterungsmethode **GetAppServiceIdentityAsync** au
 
 Beachten Sie, dass für `System.Security.Principal` eine using-Anweisung hinzugefügt werden muss, damit die Erweiterungsmethode **GetAppServiceIdentityAsync** funktioniert.
 
+###<a name="authorize"></a>Vorgehensweise: Einschränken des Datenzugriffs für autorisierte Benutzer
+
+Es ist häufig erwünscht, die Daten einzuschränken, die an einen bestimmten authentifizierten Benutzer zurückgegeben werden. Diese Art von Datenpartitionierung erfolgt durch das Einbinden einer userId-Spalte in die Tabelle, und das Speichern der SID des Benutzers, wenn die Daten eingefügt werden
 
 ## Vorgehensweise: Hinzufügen von Pushbenachrichtigungen zu einem Serverprojekt
 
@@ -365,7 +369,7 @@ Sie können dem Serverprojekt Pushbenachrichtigungen hinzufügen, indem Sie das 
 
 An diesem Punkt können Sie den Notification Hubs-Client zum Senden von Pushbenachrichtigungen an registrierte Geräte verwenden. Weitere Informationen finden Sie unter [Hinzufügen von Pushbenachrichtigungen zur App](app-service-mobile-ios-get-started-push.md) Weitere Informationen zu allem, was mit Notification Hubs machbar ist, finden Sie unter [Übersicht über Notification Hubs](../notification-hubs/notification-hubs-overview.md).
 
-##<a name="tags"></a>Gewusst wie: Hinzufügen von Tags zu einer Geräteinstallation zum Ermöglichen von zielgerichteten Pushvorgängen
+##<a name="tags"></a>Vorgehensweise: Hinzufügen von Tags zu einer Geräteinstallation zum Ermöglichen von zielgerichteten Pushvorgängen
 
 Mit Notification Hubs können Sie zielgerichtete Benachrichtigungen an spezielle Registrierungen senden, indem Sie Tags verwenden. Ein Tag, das automatisch erstellt wird, ist die Installations-ID, die speziell für eine Instanz der App auf einem bestimmten Gerät gilt. Eine Registrierung mit einer Installations-ID wird auch als *Installation* bezeichnet. Sie können die Installations-ID zum Verwalten einer Installation verwenden, z. B. zum Hinzufügen von Tags. Der Zugriff auf die Installations-ID ist über die **installationId**-Eigenschaft von **MobileServiceClient** möglich.
 
@@ -383,7 +387,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie eine Installations-ID verwen
 
 Beachten Sie, dass alle Tags, die vom Client während der Registrierung von Pushbenachrichtigungen bereitgestellt werden, vom Back-End beim Erstellen der Installation ignoriert werden. Damit ein Client der Installation Tags hinzufügen kann, müssen Sie eine neue benutzerdefinierte API erstellen, die Tags nach dem obigen Muster hinzufügt. Ein Beispiel für einen benutzerdefinierten API-Controller, mit dem Clients einer Installation Tags hinzufügen können, finden Sie unter [Client-added push notification tags](https://github.com/Azure-Samples/app-service-mobile-dotnet-backend-quickstart/blob/master/README.md#client-added-push-notification-tags) (Vom Client hinzugefügte Tags für Pushbenachrichtigungen) als Teil des Beispiels „App Service Mobile Apps completed quickstart for .NET backend“.
 
-##<a name="push-user"></a>Gewusst wie: Senden von Pushbenachrichtigungen an einen authentifizierten Benutzer
+##<a name="push-user"></a>Vorgehensweise: Senden von Pushbenachrichtigungen an einen authentifizierten Benutzer
 
 Wenn ein authentifizierter Benutzer für Pushbenachrichtigungen registriert wird, wird der Registrierung automatisch ein Tag mit der Benutzer-ID hinzugefügt. Mithilfe dieses Tags können Sie Pushbenachrichtigungen an alle Geräte senden, die von einem bestimmten Benutzer registriert wurden. Mit dem folgenden Code wird die SID des Benutzers abgerufen, der die Anforderung stellt, und an jede Geräteregistrierung für diesen Benutzer wird eine Pushbenachrichtigungsvorlage gesendet:
 
@@ -397,7 +401,7 @@ Wenn ein authentifizierter Benutzer für Pushbenachrichtigungen registriert wird
 
     // Send a template notification to the user ID.
     await hub.SendTemplateNotificationAsync(notification, userTag);
-    
+
 Stellen Sie vor der Registrierung für Pushbenachrichtigungen von einem authentifizierten Client sicher, dass die Authentifizierung abgeschlossen ist. Weitere Informationen finden Sie unter [Push to users](https://github.com/Azure-Samples/app-service-mobile-dotnet-backend-quickstart/blob/master/README.md#push-to-users) (Push an Benutzer) im Beispiel „App Service Mobile Apps completed quickstart for .NET backend“.
 
 ## Vorgehensweise: Debuggen und Problembehandlung des .NET-Server-SDKs
@@ -458,4 +462,4 @@ Ihr lokal ausgeführter Server kann nun Token überprüfen, die der Client vom c
 [Microsoft.Azure.Mobile.Server.Login]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Login/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

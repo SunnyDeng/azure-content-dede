@@ -154,4 +154,4 @@ Die folgenden Angaben zur Tokengültigkeitsdauer dienen ausschließlich zu Infor
 | Autorisierungscodes (Geschäfts- oder Schulkonten) | 10 Minuten | Autorisierungscodes haben absichtlich eine kurze Gültigkeitsdauer. Sie müssen umgehend für Zugriffs- und Aktualisierungstoken eingelöst werden, wenn sie empfangen werden. |
 | Autorisierungscodes (Persönliche Konten) | 5 Minuten | Autorisierungscodes haben absichtlich eine kurze Gültigkeitsdauer. Sie müssen umgehend für Zugriffs- und Aktualisierungstoken eingelöst werden, wenn sie empfangen werden. Für persönliche Konten ausgestellte Autorisierungscodes können auch nur einmal verwendet werden. |
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/01/2016"
+   ms.date="03/14/2016"
    ms.author="alkohli"/>
 
 # Notfallwiederherstellung und Gerätefailover für das StorSimple Virtual Array
@@ -25,7 +25,7 @@ In diesem Artikel wird die Notfallwiederherstellung für das Microsoft Azure Sto
 
 Ein Gerätefailover wird über das Feature der Notfallwiederherstellung koordiniert und auf der Seite **Geräte** initiiert. Auf dieser Seite werden alle StorSimple-Geräte aufgeführt, die mit dem StorSimple-Manager-Dienst verbunden sind. Für jedes Gerät werden Anzeigename, Status, bereitgestellte und maximale Kapazität, Typ und Modell angezeigt.
 
-![](./media/storsimple-ova-failover-dr/image16.png)
+![](./media/storsimple-ova-failover-dr/image15.png)
 
 Dieser Artikel gilt nur für StorSimple Virtual Arrays. Informationen zum Failover für ein Gerät der 8000er Serie finden Sie unter [Failover und Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
 
@@ -48,9 +48,7 @@ Bei jedem Gerätefailover sollten die folgenden Voraussetzungen erfüllt sein:
 
 - Das Zielgerät muss im klassischen Azure-Portal als **Aktiv** angezeigt werden. Sie müssen ein virtuelles Zielgerät mit der gleichen oder einer höheren Kapazität bereitstellen. Anschließend sollten Sie die lokale Webbenutzeroberfläche verwenden, um das virtuelle Gerät zu konfigurieren und zu registrieren.
 
-	> [AZURE.IMPORTANT]
-	> 
-	> Versuchen Sie nicht, das registrierte virtuelle Gerät über den Dienst zu konfigurieren, indem Sie auf **Geräteinstallation abschließen** klicken. Über den Dienst sollte keine Gerätekonfiguration durchgeführt werden.
+	> [AZURE.IMPORTANT] Versuchen Sie nicht, das registrierte virtuelle Gerät über den Dienst zu konfigurieren, indem Sie auf **Geräteinstallation abschließen** klicken. Über den Dienst sollte keine Gerätekonfiguration durchgeführt werden.
 
 - Quell- und Zielgerät müssen vom gleichen Typ sein. Sie können nur für ein virtuelles Gerät, das als Dateiserver konfiguriert ist, ein Failover auf einen anderen Dateiserver durchführen. Dies gilt auch für einen iSCSI-Server.
 
@@ -91,13 +89,16 @@ Es wird empfohlen, ein virtuelles StorSimple-Gerät bereitzustellen, über die l
 
 > [AZURE.IMPORTANT]
 > 
-> Das Failover von einem StorSimple-Gerät der 8000er Serie auf ein virtuelles Gerät ist unzulässig.
+> - Das Failover eines StorSimple-Geräts der 8000er Serie auf ein virtuelles Gerät der 1200er Serie ist unzulässig.
+> - Sie können für ein virtuelles Gerät, für das Federal Information Processing Standard (FIPS) aktiviert, und das im Government-Portal bereitgestellt ist, ein Failover an ein virtuelles Gerät im klassischen Azure-Portal durchführen. Umgekehrt trifft dies auch zu.
 
 Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorSimple-Zielgerät wiederherzustellen.
 
 1. Versetzen Sie die Volumes/Freigaben auf dem Host in den Offlinezustand. Befolgen Sie die betriebssystemspezifischen Anweisungen auf dem Host, um Volumes bzw. Freigaben in den Offlinezustand zu versetzen. Falls sie nicht bereits offline sind, müssen Sie alle Volumes/Freigaben auf dem Gerät offline schalten, indem Sie auf **Geräte > Freigaben** (bzw. **Geräte > Volumes**) zugreifen. Wählen Sie eine Freigabe bzw. ein Volume aus, und klicken Sie unten auf der Seite auf **Offline schalten**. Wenn Sie zur Bestätigung aufgefordert werden, klicken Sie auf **Ja**. Wiederholen Sie diesen Vorgang für alle Freigaben/Volumes auf dem Gerät.
 
-2. Wählen Sie auf der Seite **Geräte** das Quellgerät für das Failover aus, und klicken Sie auf **Deaktivieren**. Sie werden aufgefordert, diesen Schritt zu bestätigen. Die Gerätedeaktivierung ist ein dauerhafter Prozess, der nicht rückgängig gemacht werden kann. Sie erhalten auch eine Erinnerung, dass Sie die Freigaben/Volumes auf dem Host offline schalten sollen.
+2. Wählen Sie auf der Seite **Geräte** das Quellgerät für das Failover aus, und klicken Sie auf **Deaktivieren**. ![](./media/storsimple-ova-failover-dr/image16.png)
+
+3. Sie werden aufgefordert, diesen Schritt zu bestätigen. Die Gerätedeaktivierung ist ein dauerhafter Prozess, der nicht rückgängig gemacht werden kann. Sie erhalten auch eine Erinnerung, dass Sie die Freigaben/Volumes auf dem Host offline schalten sollen.
 
 	![](./media/storsimple-ova-failover-dr/image18.png)
 
@@ -119,7 +120,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 
 		![](./media/storsimple-ova-failover-dr/image21.png)
 
-7. Versehen Sie **Ich nehme zur Kenntnis, dass ein Failover dauerhaft erfolgt und dass das Quellgerät nach dem erfolgreichen Abschluss des Failovers gelöscht wird** mit einem Häkchen.
+7. Versehen Sie **Ich nehme zur Kenntnis, dass ein Failover dauerhaft erfolgt, und dass das Quellgerät nach dem erfolgreichen Abschluss des Failovers gelöscht wird** mit einem Häkchen.
 
 8. Klicken Sie auf das Häkchensymbol ![](./media/storsimple-ova-failover-dr/image1.png).
 
@@ -174,4 +175,4 @@ Falls eine der Vorüberprüfungen nicht erfolgreich ist, werden Vorüberprüfung
 
 Erfahren Sie mehr darüber, wie Sie das [StorSimple Virtual Array mit der lokalen Webbenutzeroberfläche verwalten](storsimple-ova-web-ui-admin.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

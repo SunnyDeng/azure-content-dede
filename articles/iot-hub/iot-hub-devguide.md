@@ -288,29 +288,7 @@ Sicherheitsanmeldeinformationen, beispielsweise symmetrische Schlüssel, werden 
 
 > [AZURE.NOTE] Der Azure IoT Hub-Ressourcenanbieter wird über Ihr Azure-Abonnement geschützt, ebenso wie alle Anbieter im [Azure-Ressourcen-Manager][lnk-azure-resource-manager].
 
-#### Format des Sicherheitstokens <a id="tokenformat"></a>
-
-Das Sicherheitstoken weist das folgende Format auf:
-
-	SharedAccessSignature sig={signature-string}&se={expiry}&skn={policyName}&sr={URL-encoded-resourceURI}
-
-Es werden die folgenden Werte erwartet:
-
-| Wert | Beschreibung |
-| ----- | ----------- |
-| {signature} | Eine HMAC-SHA256-Signaturzeichenfolge in folgendem Format: `{URL-encoded-resourceURI} + "\n" + expiry`. **Wichtig:** Der Schlüssel wird aus Base64 decodiert und als Schlüssel für die HMAC-SHA256-Berechnung verwendet. |
-| {resourceURI} | Das URI-Präfix (nach Segment) der Endpunkte, auf die mit diesem Token zugegriffen werden kann. Beispiel: `/events` |
-| {expiry} | UTF8-Zeichenfolge, dargestellt als die Anzahl von Sekunden seit dem 1. Januar 1970 um 00:00:00 UTC. |
-| {URL-encoded-resourceURI} | URL-Codierung des Ressourcen-URI (beides in Kleinbuchstaben) |
-| {policyName} | Der Name der gemeinsam genutzten Zugriffsrichtlinie, auf die dieses Token verweist. Nicht vorhanden, wenn Token auf Anmeldeinformationen der Geräteregistrierung verweisen. |
-
-**Hinweis zum Präfix**: Das URI-Präfix wird nach Segment, nicht nach Zeichen berechnet. Beispielsweise ist `/a/b` ein Präfix für `/a/b/c`, aber nicht für `/a/bc`.
-
-Sie finden Implementierungen des Signaturalgorithmus in den IoT-Geräte- und Dienst-SDKs:
-
-* [IoT-Dienst-SDK für Java](https://github.com/Azure/azure-iot-sdks/tree/master/java/service/iothub-service-sdk/src/main/java/com/microsoft/azure/iot/service/auth)
-* [IoT-Geräte-SDK für Java](https://github.com/Azure/azure-iot-sdks/tree/master/java/device/iothub-java-client/src/main/java/com/microsoft/azure/iothub/auth)
-* [IoT-Geräte- und Dienst-SDKs für Node.js](https://github.com/Azure/azure-iot-sdks/blob/master/node/common/core/lib/shared_access_signature.js)
+Weitere Informationen zur Erstellung und Verwendung von Sicherheitstoken finden Sie im Artikel [zu den IoT Hub-Sicherheitstoken][lnk-sas-tokens].
 
 #### Protokolldetails
 
@@ -327,7 +305,7 @@ Für SASL PLAIN kann der **Benutzername** Folgendes sein:
 * `{policyName}@sas.root.{iothubName}` im Fall von Token auf Hubebene.
 * `{deviceId}` im Fall von Token für Geräte.
 
-In beiden Fällen enthält das Kennwortfeld ein Token gemäß Beschreibung im Abschnitt [Tokenformat](#tokenformat).
+In beiden Fällen enthält das Kennwortfeld das Token gemäß der Beschreibung im Abschnitt [IoT Hub security tokens][lnk-sas-tokens] (IoT Hub Sicherheitstoken).
 
 Bei Verwenden von MQTT enthält das CONNECT-Paket die Geräte-ID als „Client-ID, {Iot Hub-Hostname}/{Geräte-ID} im Feld „Benutzername“ und ein SAS-Token im Feld „Kennwort“. {Iot Hub-Hostname} muss der vollständigen CNAME des IoT Hubs (z. B. contoso.azure-devices.net) sein.
 
@@ -348,14 +326,14 @@ Bei Verwendung von SASL PLAIN kann ein Client, der eine Verbindung mit einem IoT
 
 ### Gültigkeitsbereich für Anmeldeinformationen auf Hubebene
 
-Sie können den Bereich für Sicherheitsrichtlinien auf Hubebene festlegen, indem Sie Token mit eingeschränktem Ressourcen-URI erstellen. Beispielsweise lautet der Endpunkt zum Senden von D2C-Nachrichten von einem Gerät **/devices/{Geräte-ID}/events**. Sie können eine SAS-Richtlinie auf Hubebene mit **DeviceConnect**-Berechtigungen auch zum Signieren eines Tokens verwenden, dessen resourceURI-Element **/devices/{Geräte-ID}** lautet. So wird ein Token erstellt, das nur zum Senden von Gerätenachrichten im Namen des Geräts mit dieser **Geräte-ID** verwendet werden kann.
+Sie können den Bereich für Sicherheitsrichtlinien auf Hubebene festlegen, indem Sie Token mit eingeschränktem Ressourcen-URI erstellen. Beispielsweise lautet der Endpunkt zum Senden von D2C-Nachrichten von einem Gerät **/devices/{Geräte-ID}/messages/events**. Sie können eine SAS-Richtlinie (shared access policy) auf Hubebene mit **DeviceConnect**-Berechtigungen auch zum Signieren eines Tokens verwenden, dessen resourceURI-Element **/devices/{Geräte-ID}** lautet. So wird ein Token erstellt, das nur zum Senden von Gerätenachrichten im Namen des Geräts mit dieser **deviceId** verwendet werden kann.
 
 Dieser Mechanismus ist mit einer [Event Hubs-Herausgeberrichtlinie][lnk-event-hubs-publisher-policy] vergleichbar und ermöglicht die Implementierung von benutzerdefinierten Authentifizierungsmethoden. Siehe hierzu den Abschnitt zur Sicherheit unter [Entwerfen der Lösung][lnk-guidance-security].
 
 ## Nachrichten
 
 IoT Hub bietet ein einfaches Messaging für die Kommunikation:
-- [Cloud-zu-Gerät (C2D):](#c2d) Von einem Anwendungs-Back-End (*Service* oder *Cloud*).
+- [Cloud-zu-Gerät (C2D):](#c2d) Von einem Anwendungs-Back-End (*Dienst* oder *Cloud*).
 - [Gerät-zu-Cloud (D2C):](#d2c) Von einem Gerät zu einem Anwendungs-Back-End.
 
 Die wichtigsten Eigenschaften beim IoT Hub-Messaging sind eine zuverlässige und stabile Übermittlung von Nachrichten. Dies bietet Ausfallsicherheit bei zeitweiligen Verbindungsproblemen auf Geräteseite und Lastspitzen bei der Ereignisverarbeitung auf Cloudseite. IoT Hub implementiert *mindestens einmalig* Übermittlungsgarantien für das D2C- und C2D-Messaging.
@@ -378,7 +356,8 @@ Die folgende Tabelle zeigt den Satz an Systemeigenschaften in IoT Hub-Nachrichte
 | -------- | ----------- |
 | MessageId | Eine vom Benutzer festgelegte Kennung für die Nachricht, wird üblicherweise für Anforderung-Antwort-Muster verwendet. Format: Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':',’.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` besteht. |
 | Sequenznummer | Eine Nummer (für jede Gerätewarteschlange eindeutig), die jeder C2D-Nachricht von IoT Hub zugewiesen wird |
-| To  | Gibt in [C2D](#c2d)-Nachrichten das Ziel an. |
+| To  
+ | Gibt in [C2D](#c2d)-Nachrichten das Ziel an. |
 | ExpiryTimeUtc | Datum und Uhrzeit des Nachrichtenablaufs. |
 | EnqueuedTime | Datum und Uhrzeit des Empfangs der Nachricht durch IoT Hub. |
 | CorrelationId | Zeichenfolgeneigenschaft in einer Antwortnachricht, die normalerweise die Nachrichten-ID der Anforderung im Anforderung-Antwort-Muster enthält. |
@@ -497,7 +476,7 @@ Ein Gerät kann auch Folgendes durchführen:
 - *Ablehnen* der Nachricht: IoT Hub versetzt sie in den Status **Unzustellbar**.
 - *Verwerfen* der Nachricht: IoT Hub platziert die Nachricht wieder in der Warteschlange mit dem Status **Zur Warteschlange hinzugefügt**.
 
-Bei der Nachrichtenverarbeitung durch den Thread könnte ein Fehler auftreten, ohne dass IoT Hub hierüber benachrichtigt wird. In diesem Fall werden Nachrichten automatisch vom Status **Nicht sichtbar** zurück in den Status **Zur Warteschlange hinzugefügt** versetzt, wenn ein *Timeout für die Sichtbarkeit (oder Sperrung)* abgelaufen ist (Standardeinstellung: 1 Minute). Eine Nachricht kann zwischen den Statuswerten **Zur Warteschlange hinzugefügt** und **Nicht sichtbar** maximal so oft wechseln, wie in der Eigenschaft *Anzahl maximaler Zustellungen* in IoT Hub festgelegt wurde. Nachdem diese Anzahl überschritten wurde, legt IoT Hub den Status der Nachricht als **Unzustellbar** fest. Ebenso kennzeichnet IoT Hub eine Nachricht als **Unzustellbar**, wenn ihre Gültigkeitsdauer abgelaufen ist (siehe [Gültigkeitsdauer](#ttl)).
+Bei der Nachrichtenverarbeitung durch den Thread könnte ein Fehler auftreten, ohne dass IoT Hub hierüber benachrichtigt wird. In diesem Fall werden Nachrichten automatisch vom Status **Nicht sichtbar** zurück in den Status **Zur Warteschlange hinzugefügt** versetzt, wenn ein *Timeout für die Sichtbarkeit (oder Sperrung)* abgelaufen ist (Standardeinstellung: 1 Minute). Eine Nachricht kann zwischen den Statuswerten **Zur Warteschlange hinzugefügt** und **Nicht sichtbar** maximal so oft wechseln, wie in der Eigenschaft *Anzahl maximaler Zustellungen* in IoT Hub festgelegt wurde. Nachdem diese Anzahl überschritten wurde, legt IoT Hub den Status der Nachricht auf **Unzustellbar** fest. Ebenso kennzeichnet IoT Hub eine Nachricht als **Unzustellbar**, wenn ihre Gültigkeitsdauer abgelaufen ist (siehe [Gültigkeitsdauer](#ttl)).
 
 Ein Tutorial zu C2D-Nachrichten finden Sie unter [Erste Schritte mit Azure IoT Hub-Nachrichten zwischen Cloud und Gerät][lnk-getstarted-c2d-tutorial]. Informationen dazu, wie verschiedene APIs und SDKs die C2D-Funktionalität verfügbar machen, finden Sie unter [IoT Hub-APIs und -SDKs][lnk-apis-sdks].
 
@@ -506,6 +485,8 @@ Ein Tutorial zu C2D-Nachrichten finden Sie unter [Erste Schritte mit Azure IoT H
 #### Gültigkeitsdauer <a id="ttl"></a>
 
 Jede C2D-Nachricht verfügt über eine Gültigkeitsdauer. Diese kann (in der Eigenschaft **ExpiryTimeUtc**) explizit durch den Dienst oder durch IoT Hub mithilfe der standardmäßigen als IoT Hub-Eigenschaft gesetzten *Gültigkeitsdauer* festgelegt werden. Siehe [Optionen für die C2D-Konfiguration](#c2dconfiguration).
+
+> [AZURE.NOTE] Eine gängige Methode, den Vorteil des Nachrichtenablaufs zu nutzen, ist die Festlegung einer kurzen Gültigkeitsdauer für Werte. So vermeiden Sie, dass Nachrichten an getrennte Geräte gesendet werden. Dasselbe, Ergebnis wird erzielt, wenn der Geräteverbindungsstatus aufrechterhalten wird; diese Variante ist aber deutlich ineffizienter. Durch die Anforderung von Nachrichtenbestätigungen ist es möglich, von IoT Hub darüber informiert zu werden, welche der Geräte in der Lage sind, Nachrichten zu empfangen und welche nicht online sind bzw. bei welchen bei der Zustellung ein Fehler auftrat.
 
 #### Nachrichtenfeedback <a id="feedback"></a>
 
@@ -590,8 +571,8 @@ Die nachfolgende Liste zeigt alle erzwungenen Werte für die Drosselung. Die Wer
 | Drosselung | Wert pro Hub |
 | -------- | ------------- |
 | Identitätsregistrierungsvorgänge (Erstellen, Abrufen, Aktualisieren, Löschen) | 100/Minute/Einheit, bis zu 5.000/Minute |
-| Geräteverbindungen | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); <br/>Mindestens 100/Sekunde. <br/>Zwei S1-Einheiten entsprechen beispielsweise 2*12 = 24/s, es sind jedoch mindestens 100/s auf die Einheiten verteilt vorhanden. Mit neun S1-Einheiten erhalten Sie 108/s (9*12) über alle Einheiten. |
-| Senden von Nachrichten von Geräten an die Cloud | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); <br/>Mindestens 100/Sekunde. <br/>Zwei S1-Einheiten entsprechen beispielsweise 2*12 = 24/s, es sind jedoch mindestens 100/s auf die Einheiten verteilt vorhanden. Mit neun S1-Einheiten erhalten Sie 108/s (9*12) über alle Einheiten. |
+| Geräteverbindungen | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); <br/>Mindestens 100/Sekunde. <br/>Zwei S1-Einheiten entsprechen beispielsweise 2*12 = 24/Sekunde. Es sind jedoch mindestens 100/Sekunde auf die Einheiten verteilt vorhanden. Mit neun S1-Einheiten erhalten Sie 108/s (9*12) über alle Einheiten. |
+| Senden von Nachrichten von Geräten an die Cloud | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); <br/>Mindestens 100/Sekunde. <br/>Zwei S1-Einheiten entsprechen beispielsweise 2*12 = 24/Sekunde. Es sind jedoch mindestens 100/Sekunde auf die Einheiten verteilt vorhanden. Mit neun S1-Einheiten erhalten Sie 108/s (9*12) über alle Einheiten. |
 | C2D-Sendevorgänge | 100/Minute/Einheit |
 | C2D-Empfangsvorgänge | 1000/Minuten/Einheit |
 
@@ -621,6 +602,7 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-pricing]: https://azure.microsoft.com/pricing/details/iot-hub
 [lnk-resource-provider-apis]: https://msdn.microsoft.com/library/mt548492.aspx
 
+[lnk-sas-tokens]: iot-hub-sas-tokens
 [lnk-azure-gateway-guidance]: iot-hub-guidance.md#field-gateways
 [lnk-guidance-provisioning]: iot-hub-guidance.md#provisioning
 [lnk-guidance-scale]: iot-hub-scaling.md
@@ -653,4 +635,4 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-eventhub-partitions]: ../event-hubs/event-hubs-overview.md#partitions
 [lnk-manage]: iot-hub-manage-through-portal.md
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

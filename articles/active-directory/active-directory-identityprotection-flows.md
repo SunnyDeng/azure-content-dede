@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/07/2016"
+	ms.date="03/10/2016"
 	ms.author="markvi"/>
 
 #Azure Active Directory Identity Protection- Abläufe
@@ -89,7 +89,7 @@ Wenn ein Administrator eine Richtlinie für Anmelderisiken konfiguriert hat, wer
 
  
 ## Risikobehaftete Anmeldung blockiert
-Administratoren können auch eine Richtlinie für Anmelderisiken festlegen, um Benutzer bei der Anmeldung je nach Risikostufe zu blockieren. Um die Blockierung aufzuheben, müssen Endbenutzer sich an einen Administrator oder den Helpdesk wenden, oder sie können versuchen, sich von einem vertrauten Standort oder mit einem vertrauten Gerät anzumelden. Die selbst durchgeführte Wiederherstellung per mehrstufiger Authentifizierung ist in diesem Fall nicht möglich. <br><br> ![Korrektur](./media/active-directory-identityprotection-flows/130.png "Korrektur") <br>
+Administratoren können auch eine Richtlinie für Anmelderisiken festlegen, um Benutzer bei der Anmeldung je nach Risikostufe zu blockieren. Um die Blockierung aufzuheben, müssen Endbenutzer sich an einen Administrator oder den Helpdesk wenden, oder sie können versuchen, sich von einem vertrauten Standort oder mit einem vertrauten Gerät anzumelden. Die selbst durchgeführte Wiederherstellung per Multi-Factor Authentication ist in diesem Fall nicht möglich. <br><br> ![Korrektur](./media/active-directory-identityprotection-flows/200.png "Korrektur") <br>
 
 
 
@@ -158,4 +158,4 @@ Wenn die Anmeldung für einen kompromittierten Benutzer gesperrt ist, kann ein A
 
 - [Azure Active Directory Identity Protection](active-directory-identityprotection.md) 
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

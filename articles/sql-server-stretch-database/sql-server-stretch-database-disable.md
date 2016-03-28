@@ -52,11 +52,11 @@ Wenn Sie die Datenmigration anhalten möchten, finden Sie weitere Informationen 
 
 ### Verwenden von Transact-SQL zum Deaktivieren von Stretch-Datenbank für eine Tabelle
 
--   Führen Sie zum Deaktivieren von Stretch für eine Tabelle und zum Kopieren der Remotedaten für die Tabelle aus Azure SQL-Datenbank zurück in SQL Server den folgenden Befehl aus. Dieser Befehl kann nicht abgebrochen werden.
+-   Wenn Sie Stretch für eine Tabelle deaktivieren möchten, und die Remotedaten für die Tabelle aus Azure zurück in SQL Server kopieren möchten, führen Sie folgenden Befehl aus. Dieser Befehl kann nicht abgebrochen werden.
 
     ```tsql
     ALTER TABLE <table name>
-       SET ( REMOTE_DATA_ARCHIVE ( MIGRATION_STATE = OUTBOUND ) ) ;
+       SET ( REMOTE_DATA_ARCHIVE ( MIGRATION_STATE = INBOUND ) ) ;
     ```
     Bei diesem Vorgang fallen Datenübertragungskosten an. Weitere Informationen finden Sie unter [Datenübertragungen – Preisdetails](https://azure.microsoft.com/pricing/details/data-transfers/).
 
@@ -90,6 +90,9 @@ ALTER DATABASE <database name>
 ```
 
 ## Weitere Informationen
-[ALTER DATABASE SET-Optionen (Transact-SQL)](https://msdn.microsoft.com/library/bb522682.aspx) [Anhalten und Fortsetzen der Stretch-Datenbank](sql-server-stretch-database-pause.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+[ALTER DATABASE SET-Optionen (Transact-SQL)](https://msdn.microsoft.com/library/bb522682.aspx)
+
+[Anhalten und Fortsetzen von Stretch-Datenbank](sql-server-stretch-database-pause.md)
+
+<!---HONumber=AcomDC_0316_2016-->

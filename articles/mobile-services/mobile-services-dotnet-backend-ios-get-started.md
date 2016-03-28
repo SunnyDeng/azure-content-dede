@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="02/07/2016"
+	ms.date="03/09/2016"
 	ms.author="krisragh"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
@@ -63,17 +63,13 @@ Hier wird das Ausführen der neuen Client-App für den mobilen Dienst unter Azur
 
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten]
-  <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zu einer vorhandenen App]
-  <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]
-  <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
+* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
-* [Beheben von Problemen bei einem Mobile Services .NET-Back-End]
-  <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
+* [Beheben von Problemen bei einem Mobile Services .NET-Back-End] <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
@@ -105,4 +101,4 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [JavaScript-Back-End-Version]: mobile-services-ios-get-started.md
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

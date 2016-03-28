@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="03/14/2016" 
 	ms.author="tdykstra"/>
 
 # Was ist das Azure WebJobs-SDK?
@@ -22,11 +22,11 @@
 
 Dieser Artikel erläutert, was das WebJobs-SDK ist. In ihm werden einige allgemeine Szenarien beleuchtet, für die es nützlich ist, und er enthält eine Übersicht, wie sie das SDK in Ihrem Code verwenden können.
 
-[WebJobs](websites-webjobs-resources.md) ist ein Feature von Azure App Service, mit dem Sie ein Programm oder Skript im selben Kontext wie eine Web-App, API-App oder mobile App ausführen können. Der Zweck des [WebJobs SDK](websites-webjobs-resources.md) besteht darin, den Code zu vereinfachen, den Sie für allgemeine Aufgaben schreiben, die ein WebJob ausführen kann, z. B. Bildverarbeitung, Warteschlangenverarbeitung, RSS-Aggregation, Dateiwartung und Senden von E-Mails. Das WebJobs SDK verfügt über integrierte Funktionen für die Arbeit mit Azure Storage und Service Bus, zum Planen von Aufgaben und Behandeln von Fehlern sowie für viele weitere allgemeine Szenarien. Darüber hinaus ist es erweiterbar, und es gibt ein [Open Source-Repository für Erweiterungen](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
+[WebJobs](websites-webjobs-resources.md) ist ein Feature von Azure App Service, mit dem Sie ein Programm oder Skript im selben Kontext wie eine Web-App, API-App oder mobile App ausführen können. Der Zweck des [WebJobs SDK](websites-webjobs-resources.md) besteht darin, den Code zu vereinfachen, den Sie für allgemeine Aufgaben schreiben, die ein WebJob ausführen kann, z. B. Bildverarbeitung, Warteschlangenverarbeitung, RSS-Aggregation, Dateiwartung und Senden von E-Mails. Das WebJobs SDK verfügt über integrierte Funktionen für die Arbeit mit Azure Storage und Service Bus, zum Planen von Aufgaben und Behandeln von Fehlern sowie für viele weitere allgemeine Szenarien. Darüber hinaus ist es erweiterbar, und es gibt ein [Open Source-Repository für Erweiterungen](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
 
 Das WebJobs-SDK enthält die folgenden Komponenten:
 
-* **NuGet-Pakete**. NuGet-Pakete, die Sie einem Visual Studio-Konsolenanwendungsprojekt hinzufügen, bieten ein Framework, das von Ihrem Code verwendet wird, indem Ihre Methoden mit Attributen des WebJobs SDK versehen werden.
+* **NuGet-Pakete**. NuGet-Pakete, die Sie einem Visual Studio-Konsolenanwendungsprojekt hinzufügen, bieten ein Framework, das von Ihrem Code verwendet wird, indem Ihre Methoden mit Attributen des WebJobs SDK versehen werden.
   
 * **Dashboard**. Ein Teil des WebJobs-SDKs ist in Azure App Service enthalten und bietet eine umfangreiche Überwachung und Diagnose für Programme, die NuGet-Pakete verwenden. Sie müssen keinen Code schreiben, um diese Überwachungs- und Diagnosefeatures zu verwenden.
 
@@ -54,7 +54,7 @@ Das WebJobs SDK erleichtert auch gängige Szenarien für die Fehlerbehandlung. S
 
 ## <a id="code"></a> Codebeispiele
 
-Der Code für das Verarbeiten typischer Aufgaben, die mit Azure Storage interagieren, ist einfach. In der `Main`-Methode Ihrer Konsolenanwendung erstellen Sie ein `JobHost`-Objekt, das die Aufrufe der von Ihnen geschriebenen Methoden koordiniert. Das WebJobs SDK-Framework erkennt, wann Ihre Methoden mit welchen Parameterwerten aufgerufen werden müssen, anhand der darin verwendeten WebJobs SDK-Attribute. Das SDK enthält *Trigger*, die angeben, unter welchen Umstände die Funktion aufgerufen wird, und *Binder*, die angeben, wie Informationen in Methodenparameter eingegeben und daraus ausgegeben werden.
+Der Code für das Verarbeiten typischer Aufgaben, die mit Azure Storage interagieren, ist einfach. In der `Main`-Methode Ihrer Konsolenanwendung erstellen Sie ein `JobHost`-Objekt, das die Aufrufe der von Ihnen geschriebenen Methoden koordiniert. Das WebJobs SDK-Framework erkennt, wann Ihre Methoden mit welchen Parameterwerten aufgerufen werden müssen, anhand der darin verwendeten WebJobs SDK-Attribute. Das SDK enthält *Trigger*, die angeben, unter welchen Umstände die Funktion aufgerufen wird, und *Binder*, die angeben, wie Informationen in Methodenparameter eingegeben und daraus ausgegeben werden.
 
 Beispielsweise wird durch das Attribut [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md) eine Funktion aufgerufen, wenn eine Nachricht in einer Warteschlange empfangen wird. Wenn das Nachrichtenformat für ein Bytearray oder einen benutzerdefinierten Typ JSON lautet, wird die Nachricht automatisch deserialisiert. Das Attribut [BlobTrigger](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md) löst einen Vorgang aus, sobald ein neues Blob in einem Azure Storage-Konto erstellt wird.
 
@@ -85,7 +85,7 @@ Die Funktion verwendet dann diese Parameter, um den Wert der Warteschlangennachr
 
 		writer.WriteLine(inputText);
 
-Durch die Trigger- und Binderfeatures des WebJobs SDK wird der Code, den Sie schreiben müssen, erheblich vereinfacht. Der detaillierte Code, der zum Verarbeiten von Warteschlangen, Blobs oder Dateien bzw. zum Initiieren geplanter Tasks erforderlich ist, wird durch das WebJobs SDK-Framework für Sie erstellt. Das Framework erstellt beispielsweise Warteschlangen, die bisher noch nicht vorhanden sind, öffnet die Warteschlange, lies Warteschlangennachrichten, löscht Warteschlangennachrichten nach fertig gestellter Verarbeitung, erstellt Blobcontainer, die noch nicht vorhanden sind, schreibt in Blobs usw.
+Durch die Trigger- und Binderfeatures des WebJobs SDK wird der Code, den Sie schreiben müssen, erheblich vereinfacht. Der detaillierte Code, der zum Verarbeiten von Warteschlangen, Blobs oder Dateien bzw. zum Initiieren geplanter Tasks erforderlich ist, wird durch das WebJobs SDK-Framework für Sie erstellt. Das Framework erstellt beispielsweise Warteschlangen, die bisher noch nicht vorhanden sind, öffnet die Warteschlange, lies Warteschlangennachrichten, löscht Warteschlangennachrichten nach fertig gestellter Verarbeitung, erstellt Blobcontainer, die noch nicht vorhanden sind, schreibt in Blobs usw.
 
 Das folgende Codebeispiel zeigt eine Vielzahl von Triggern in einem WebJob: `QueueTrigger`, `FileTrigger`, `WebHookTrigger` und `ErrorTrigger`.
 
@@ -155,7 +155,7 @@ Weitere Codebeispiele finden Sie unter [TimerSamples.cs](https://github.com/Azur
 
 ## Erweiterbarkeit
 
-Sie sind nicht auf die vorinstallierten Funktionen beschränkt: Das WebJobs SDK ermöglicht Ihnen das Schreiben eigener Trigger und Binder. Beispielsweise können Sie Trigger für Cacheereignisse und regelmäßige Zeitpläne schreiben. Ein [Open Source-Repository](https://github.com/Azure/azure-webjobs-sdk-extensions) enthält einen [ausführlichen Leitfaden zur Erweiterbarkeit des WebJobs SDK](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview) und Beispielcode, um Ihnen den Einstieg in das Schreiben eigener Trigger und Binder zu erleichtern.
+Sie sind nicht auf die vorinstallierten Funktionen beschränkt: Das WebJobs SDK ermöglicht Ihnen das Schreiben eigener Trigger und Binder. Beispielsweise können Sie Trigger für Cacheereignisse und regelmäßige Zeitpläne schreiben. Ein [Open Source-Repository](https://github.com/Azure/azure-webjobs-sdk-extensions) enthält einen [ausführlichen Leitfaden zur Erweiterbarkeit des WebJobs SDK](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview) und Beispielcode, um Ihnen den Einstieg in das Schreiben eigener Trigger und Binder zu erleichtern.
 
 ## <a id="workerrole"></a>Verwenden des WebJobs-SDK außerhalb von WebJobs
 
@@ -165,7 +165,7 @@ Das Dashboard steht jedoch nur als eine Erweiterung für eine Azure App Services
 
 ## <a id="nostorage"></a>Dashboardfeatures
 
-Das WebJobs SDK bietet auch dann mehrere Vorteile, wenn Sie keine WebJobs SDK-Trigger oder -Binder verwenden:
+Das WebJobs SDK bietet auch dann mehrere Vorteile, wenn Sie keine WebJobs SDK-Trigger oder -Binder verwenden:
 
 * Sie können Funktionen im Dashboard aufrufen.
 * Sie können Funktionen im Dashboard wiedergeben.
@@ -177,7 +177,7 @@ Weitere Informationen finden Sie im Thema über das [Gewusst wie: Manuelle Aufru
 
 Weitere Informationen über das WebJobs-SDK finden Sie im Thema über die [empfohlenen Azure WebJobs-Ressourcen](http://go.microsoft.com/fwlink/?linkid=390226).
 
-Informationen zu den neuesten Verbesserungen für das WebJobs SDK finden Sie in den [Versionshinweisen](https://github.com/Azure/azure-webjobs-sdk/wiki/Release-Notes).
+Informationen zu den neuesten Verbesserungen für das WebJobs SDK finden Sie in den [Versionshinweisen](https://github.com/Azure/azure-webjobs-sdk/wiki/Release-Notes).
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/09/2015"
+   ms.date="03/09/2016"
    ms.author="sethm" />
 
 # Service Bus-Warteschlangen, -Themen und -Abonnements
@@ -75,7 +75,7 @@ Im [ReceiveAndDelete](https://msdn.microsoft.com/library/azure/microsoft.service
 
 Im [PeekLock](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx)-Modus ist der Empfangsvorgang zweistufig. Dadurch können Anwendungen unterstützt werden, die das Fehlen von Nachrichten nicht tolerieren können. Wenn Service Bus die Anforderung erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann an die Anwendung zurück. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) für die empfangene Nachricht durch. Wenn Service Bus den Aufruf [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) erkennt, wird die Nachricht als konsumiert markiert.
 
-Wenn die Anwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann, kann sie die [Abandon](https://msdn.microsoft.com/library/azure/hh181837.aspx)-Methode für die empfangene Nachricht aufrufen (anstelle von [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)). Dadurch kann Service Bus die Nachricht entsperren und verfügbar machen, damit sie erneut empfangen werden kann, und zwar entweder von demselben Consumer oder von einem anderen konkurrierenden Consumer. Der Sperre ist außerdem ein Timeout zugeordnet. Wenn die Anwendung die Nachricht nicht vor Ablauf des Timeouts verarbeiten kann (z. B. wenn die Anwendung abstürzt), entsperrt Service Bus die Nachricht und macht sie verfügbar, sodass sie wieder empfangen werden kann.
+Wenn die Anwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann, kann sie die [Abandon](https://msdn.microsoft.com/library/azure/hh181837.aspx)-Methode für die empfangene Nachricht aufrufen (anstelle von [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)). Dadurch kann Service Bus die Nachricht entsperren und verfügbar machen, damit sie erneut empfangen werden kann, und zwar entweder von demselben Consumer oder von einem anderen konkurrierenden Consumer. Der Sperre ist außerdem ein Timeout zugeordnet. Wenn die Anwendung die Nachricht nicht vor Ablauf des Timeouts verarbeiten kann (z. B. wenn die Anwendung abstürzt), entsperrt Service Bus die Nachricht und macht sie verfügbar, sodass sie wieder empfangen werden kann.
 
 Falls die Anwendung nach der Verarbeitung der Nachricht, jedoch vor Ausgabe der [Complete](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)-Anforderung abstürzt, wird die Nachricht der Anwendung bei ihrem Neustart erneut zugestellt. Dies wird häufig als *At Least Once*-Verarbeitung (mindestens einmal) bezeichnet, d. h., jede Nachricht wird mindestens einmal verarbeitet. In bestimmten Situationen wird dieselbe Nachricht jedoch möglicherweise erneut zugestellt. Wenn das Szenario keine doppelte Verarbeitung toleriert, muss in der Anwendung zusätzliche Logik zum Erkennen von Duplikaten vorhanden sein; hierzu kann die **MessageId**-Eigenschaft der Nachricht verwendet werden, die über alle Zustellversuche hinweg konstant bleibt. Dies wird auch als *Exactly Once*-Verarbeitung (genau einmal) bezeichnet.
 
@@ -158,7 +158,7 @@ Weitere Informationen über mögliche Filterwerte finden Sie in der Dokumentatio
 
 ## Event Hubs
 
-[Event Hubs](https://azure.microsoft.com/services/event-hubs/) ist ein Dienst zur Ereignisverarbeitung, der riesige Mengen an Ereignis- und Telemetriedaten in Azure erfassen kann und gleichzeitig eine niedrige Latenz und hohe Zuverlässigkeit bietet. Dieser Dienst ist in Verbindung mit anderen nachgeschalteten Diensten besonders für Anwendungsinstrumentierung, Benutzeroberflächen oder Workflowverarbeitung sowie für IoT-Szenarien (Internet der Dinge) geeignet.
+[Event Hubs](https://azure.microsoft.com/services/event-hubs/) ist ein Dienst zur Ereignisverarbeitung, der riesige Mengen an Ereignis- und Telemetriedaten in Azure erfassen kann und gleichzeitig eine niedrige Latenz und hohe Zuverlässigkeit bietet. Dieser Dienst ist in Verbindung mit anderen nachgeschalteten Diensten besonders für Anwendungsinstrumentierung, Benutzeroberflächen oder Workflowverarbeitung sowie für IoT-Szenarien (Internet der Dinge) geeignet.
 
 Event Hubs sind ein Konstrukt für das Streamen von Nachrichten, und obwohl sie scheinbar Ähnlichkeiten mit Warteschlangen und Themen aufweisen, gibt es deutliche Unterschiede. So stellen Event Hubs beispielsweise keine Gültigkeitsdauer für Nachrichten, keine Verarbeitung unzustellbarer Nachrichten, Transaktionen oder Bestätigungen bereit, da es sich hierbei nicht um Streamingfeatures, sondern um herkömmliche Brokermessagingfeatures handelt. Event Hubs bieten auch weitere streambezogene Features wie Partitionierung, Beibehaltung der Reihenfolge und erneute Datenstromwiedergabe.
 
@@ -166,10 +166,11 @@ Event Hubs sind ein Konstrukt für das Streamen von Nachrichten, und obwohl sie 
 
 Weitere Informationen und Beispiele für die Verwendung von Service Bus-Brokermessagingentitäten finden Sie in den folgenden erweiterten Themen.
 
-- [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
+- [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
 - [.NET-Tutorial zu Service Bus-Brokermessaging](service-bus-brokered-tutorial-dotnet.md)
 - [REST-Lernprogramm zu Service Bus-Brokermessaging ](service-bus-brokered-tutorial-rest.md)
+- [Event Hubs-Dokumentation](https://azure.microsoft.com/documentation/services/event-hubs/)
 - [Ereignis-Hubs-Entwicklerhandbuch](../event-hubs/event-hubs-programming-guide.md)
 - [Brokermessaging: Erweiterte Filter](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

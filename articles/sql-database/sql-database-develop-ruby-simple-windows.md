@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="03/14/2016"
 	ms.author="meetb"/>
 
 
@@ -29,7 +29,7 @@ Older Selector technique, with dynamic drop-down lists.
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-Dieses Thema enthält ein Ruby-Codebeispiel, das auf einem Windows-Computer mit Windows 8.1 für die Verbindung mit einer Datenbank in Azure SQL-Datenbank ausgeführt wird.
+Dieses Thema enthält ein Ruby-Codebeispiel, das auf einem Windows-Computer mit Windows 8.1 für die Verbindung mit einer Datenbank in Azure SQL-Datenbank ausgeführt wird.
 
 ## Voraussetzungen
 
@@ -77,11 +77,11 @@ Sie verfügen jetzt über ein voll funktionsfähiges Ruby und RubyGems!
 Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
 
-## Schritt 1: Abrufen der Verbindungsdetails
+## Schritt 1: Abrufen der Verbindungsdetails
 
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
-## Schritt 2: Verbinden
+## Schritt 2: Verbinden
 
 Die [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds)-Funktion dient zum Verbinden mit einer SQL-Datenbank.
 
@@ -90,7 +90,7 @@ Die [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds)-Funktion dien
     host: 'yourserver.database.windows.net', port: 1433,
     database: 'AdventureWorks', azure:true
 
-## Schritt 3: Ausführen einer Abfrage
+## Schritt 3: Ausführen einer Abfrage
 
 Kopieren Sie den folgenden Code, und fügen Sie ihn in eine leere Datei ein. Nennen Sie sie "test.rb". Führen Sie sie anschließend durch Eingeben des folgenden Befehls über die Befehlszeile aus:
 
@@ -108,7 +108,7 @@ Im Codebeispiel wird die Funktion [TinyTds::Result](https://github.com/rails-sql
     puts row
     end
 
-## Schritt 4: Einfügen einer Zeile
+## Schritt 4: Einfügen einer Zeile
 
 In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
 
@@ -137,4 +137,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0316_2016-->

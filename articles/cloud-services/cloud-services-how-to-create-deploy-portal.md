@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen und Bereitstellen eines Clouddiensts| Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie einen Clouddienst mithilfe der Schnellerfassung in Azure erstellen und bereitstellen. In diesen Beispielen wird das Azure-Portal verwendet."
+	description="Erfahren Sie, wie Sie einen Clouddienst über das Azure-Portal erstellen und bereitstellen."
 	services="cloud-services"
 	documentationCenter=""
 	authors="Thraka"
@@ -22,8 +22,8 @@
 # Erstellen und Bereitstellen eines Clouddiensts
 
 > [AZURE.SELECTOR]
-- [Azure portal](cloud-services-how-to-create-deploy-portal.md)
-- [Azure classic portal](cloud-services-how-to-create-deploy.md)
+- [Azure-Portal](cloud-services-how-to-create-deploy-portal.md)
+- [Klassisches Azure-Portal](cloud-services-how-to-create-deploy.md)
 
 Das Azure-Portal bietet zwei Methoden zum Erstellen und Bereitstellen eines Clouddiensts: *Schnellerfassung* und *Benutzerdefiniert erstellen*.
 
@@ -64,9 +64,9 @@ Sie müssen das [Dienstpaket erstellen](cloud-services-model-and-package.md#serv
 - Wenn Sie den Clouddienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Clouddienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des klassischen Azure-Portals auf der Seite **Affinitätsgruppen** erstellen.
 
 
-## Schritt 3: Erstellen eines Clouddiensts und Hochladen des Bereitstellungspakets
+## Erstellen und Bereitstellen
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken Sie auf **Neu > Compute**, führen Sie einen Bildlauf nach unten zu **Clouddienst** aus, und klicken Sie darauf.
 
     ![Clouddienst veröffentlichen](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
@@ -115,4 +115,4 @@ Wenn Ihr Bereitstellungspaket [für die Verwendung von Zertifikaten konfiguriert
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate-portal.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

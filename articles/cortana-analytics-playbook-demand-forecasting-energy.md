@@ -3,7 +3,7 @@
 	description="Lösungsvorlage mit Microsoft Cortana Analytics, mit deren Hilfe Versorgungsunternehmen im Energiesektor den Bedarf vorhersagen können."
 	services="cortana-analytics"
 	documentationCenter=""
-	authors="yijichen"
+	authors="ireiter"
 	manager="ireiter"
 	editor="cgronlun"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/24/2016"
-	ms.author="yijichen;garye"/>
+	ms.author="ireiter;yijichen;garye"/>
 
 # Cortana Analytics-Lösungsvorlage – Playbook für die Vorhersage des Energiebedarfs  
 
@@ -384,4 +384,4 @@ Im folgenden Diagramm ist eine typische Architektur auf Basis von Cortana Analyt
 
 Weitere Informationen zu den einzelnen Komponenten und zur gesamten Architektur finden Sie unter der „Vorlage für Energielösungen“.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

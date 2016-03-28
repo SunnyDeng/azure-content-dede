@@ -20,13 +20,10 @@
 
 Diese Artikel enthalten Referenzinformationen für SQL Data Warehouse.
 
-[Transact-SQL-Sprachelemente][]
-
-[Transact-SQL-Anweisungen][]
-
-[Transact-SQL-Systemsichten][]
-
-[PowerShell-Cmdlets][]
+- [Transact-SQL-Sprachelemente][]
+- [Transact-SQL-Anweisungen][]
+- [Transact-SQL-Systemsichten][]
+- [PowerShell-Cmdlets][]
 
 
 
@@ -45,4 +42,4 @@ Weitere Informationen zur Entwicklung finden Sie unter [Entwicklungsübersicht][
 
 <!--MSDN references-->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

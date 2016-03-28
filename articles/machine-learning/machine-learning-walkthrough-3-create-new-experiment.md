@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Schritt 3: Erstellen eines neuen Machine Learning-Experiments | Microsoft Azure"
-	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 3: Erstellen eines neuen Trainingsexperiments in Azure Machine Learning Studio."
+	pageTitle="Schritt 3: Erstellen eines neuen Machine Learning-Experiments | Microsoft Azure"
+	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 3: Erstellen eines neuen Trainingsexperiments in Azure Machine Learning Studio."
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016" 
+	ms.date="03/09/2016" 
 	ms.author="garye"/>
 
 
-# Exemplarische Vorgehensweise, Schritt 3: Erstellen eines neuen Azure Machine Learning-Experiments
+# Exemplarische Vorgehensweise, Schritt 3: Erstellen eines neuen Azure Machine Learning-Experiments
 
 Dies ist der dritte Schritt der exemplarischen Vorgehensweise zum [Entwickeln einer Predictive Analytics-Lösung in Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
@@ -42,7 +42,7 @@ Der nächste Schritt in dieser exemplarischen Vorgehensweise ist die Erstellung 
 4.	Suchen Sie das Dataset, das Sie unter **Meine Datasets** erstellt haben, und ziehen Sie es in den Bereich. Sie können auch nach dem Dataset suchen, indem Sie den Namen in das Feld **Suchen** oberhalb der Palette eingeben.  
 
 ##Vorbereiten der Daten
-Sie können die ersten 100 Datenzeilen sowie einige statistische Informationen für das ganze Dataset anzeigen, indem Sie auf den Ausgabeport des Datasets (den kleinen Kreis unten) klicken und die Option **Visualize** auswählen.
+Sie können die ersten 100 Datenzeilen sowie einige statistische Informationen für das ganze Dataset anzeigen, indem Sie auf den Ausgabeport des Datasets (den kleinen Kreis unten) klicken und die Option **Visualize** auswählen.
 
 Da die Datendatei keine Spaltenüberschriften aufweist, hat Studio allgemeine Überschriften (Col1, Col2 *usw.*) bereitgestellt. Aussagekräftige Überschriften haben keine Bedeutung für die Erstellung eines Modells, erleichtern aber die Arbeit mit den Daten im Experiment. Wenn später das Modell in einem Webdienst veröffentlicht wird, kann der Benutzer des Diensts die Spalten anhand der Überschriften auch leichter identifizieren.
 
@@ -66,7 +66,7 @@ Zum Verwenden von [Metadata Editor][metadata-editor] geben Sie zuerst an, welche
 5.	Legen Sie im Dialogfeld **Select columns** das Feld **Begin With** auf „All columns“ fest.
 6.	In der Zeile unterhalb von **Begin With** können Sie bestimmte Spalten für die Bearbeitung durch [Metadata Editor][metadata-editor] ein- oder ausschließen. Da in diesem Beispiel *alle* Spalten bearbeitet werden sollen, löschen Sie diese Zeile, indem Sie auf das Minuszeichen (-) rechts neben der Zeile klicken. Das Dialogfeld sollte wie folgt aussehen: ![Spaltenauswahl, alle Spalten ausgewählt][4]
 7.	Klicken Sie auf das Häkchen **OK**.
-8.	Suchen Sie im Bereich **Properties** nach dem Parameter **New column name**. Geben Sie in diesem Feld eine Liste der Namen für die 21 Spalten im Dataset ein, durch Kommas getrennt und in der Reihenfolge der Spalten. Die Spaltennamen können Sie der Datasetdokumentation auf der UCI-Website entnehmen, oder Sie können einfach die folgende Liste kopieren und einfügen:  
+8.	Suchen Sie im Bereich **Properties** nach dem Parameter **New column name**. Geben Sie in diesem Feld eine Liste der Namen für die 21 Spalten im Dataset ein, durch Kommas getrennt und in der Reihenfolge der Spalten. Die Spaltennamen können Sie der Datasetdokumentation auf der UCI-Website entnehmen, oder Sie können einfach die folgende Liste kopieren und einfügen:  
 
 		  Status of checking account, Duration in months, Credit history, Purpose, Credit amount, Savings account/bond, Present employment since, Installment rate in percentage of disposable income, Personal status and sex, Other debtors, Present residence since, Property, Age in years, Other installment plans, Housing, Number of existing credits, Job, Number of people providing maintenance for, Telephone, Foreign worker, Credit risk  
 
@@ -83,8 +83,8 @@ Dafür wird das Modul [Split Data][split] verwendet.
 
 1.	Suchen Sie das Modul [Split Data][split], ziehen Sie es in den Experimentbereich, und verbinden Sie es mit dem letzten Modul [Metadata Editor][metadata-editor].
 2.	Standardmäßig beträgt das Aufteilungsverhältnis 0,5, und der Parameter **Randomized split** ist festgelegt. Das bedeutet, dass eine zufällig ausgewählte Hälfte der Daten über einen Port des Moduls [Split Data][split] ausgegeben wird, die andere Hälfte über den anderen Port. Sie können diese Werte und den Parameter **Random seed** anpassen, um die Aufteilung zwischen Trainings- und Bewertungsdaten zu ändern. Für dieses Beispiel bleiben die Werte unverändert.
-	> [AZURE.TIP] Die Eigenschaft **Fraction of rows in the first output dataset** bestimmt, welcher Anteil der Daten über den linken Ausgabeport ausgegeben werden. Wenn Sie z. B. ein Aufteilungsverhältnis von 0,7 festlegen, werden 70 % der Daten über den linken Port und 30 % der Daten über den rechten Port ausgegeben.  
-3. Doppelklicken Sie auf das Modul [Split Data][split], und geben Sie den Kommentar „Aufteilung zwischen Trainings- und Testdaten 50 %“ ein. 
+	> [AZURE.TIP] Die Eigenschaft **Fraction of rows in the first output dataset** bestimmt, welcher Anteil der Daten über den linken Ausgabeport ausgegeben werden. Wenn Sie z. B. ein Aufteilungsverhältnis von 0,7 festlegen, werden 70 % der Daten über den linken Port und 30 % der Daten über den rechten Port ausgegeben.  
+3. Doppelklicken Sie auf das Modul [Split Data][split], und geben Sie den Kommentar „Aufteilung zwischen Trainings- und Testdaten 50 %“ ein. 
 
 Die Ausgaben des Moduls [Split Data][split] können beliebig verwendet werden. In diesem Fall wählen wir die linke Ausgabe als Trainingsdaten und die rechte Ausgabe als Testdaten.
 
@@ -131,4 +131,4 @@ Weitere Informationen zum Verwenden von R-Skripts in Ihren Experimenten finden S
 [metadata-editor]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -4,7 +4,7 @@
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	editor="" 
 	tags=""/>
 
@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/30/2015" 
+	ms.date="03/15/2016" 
 	ms.author="genemi"/>
 
 
@@ -58,7 +58,7 @@ In diesem Thema finden Sie ein Transact-SQL-Codebeispiel, mit dem folgende Aufga
  - Optional können Sie in wenigen Minuten [eine **AdventureWorksLT**-Demodatenbank erstellen](sql-database-get-started.md).
 
 
-- SQL Server Management Studio ("ssms.exe"), Vorschauversion August 2015 oder eine spätere Version. Sie können "ssms.exe" in der neuesten Version über eine der folgenden Methoden herunterladen:
+- SQL Server Management Studio ("ssms.exe"), Vorschauversion August 2015 oder eine spätere Version. Sie können "ssms.exe" in der neuesten Version über eine der folgenden Methoden herunterladen:
  - [Über einen Link im Thema.](http://msdn.microsoft.com/library/mt238290.aspx)
  - [Über diesen direkten Link zum Herunterladen.](http://go.microsoft.com/fwlink/?linkid=616025)
  - Microsoft empfiehlt, dass Sie die Datei „ssms.exe“ in regelmäßigen Abständen aktualisieren, zum Beispiel monatlich.
@@ -67,7 +67,7 @@ In diesem Thema finden Sie ein Transact-SQL-Codebeispiel, mit dem folgende Aufga
 ## Codebeispiel
 
 
-Das folgende Codebeispiel für einen Ringpuffer kann mit kleineren Änderungen sowohl für Azure SQL-Datenbank als auch für Microsoft SQL Server ausgeführt werden. Der Unterschied besteht im Vorhandensein des Knotens "\_database" im Namen einiger dynamischer Verwaltungssichten (DMVs) in der FROM-Klausel in Schritt 5. Beispiel:
+Das folgende Codebeispiel für einen Ringpuffer kann mit kleineren Änderungen sowohl für Azure SQL-Datenbank als auch für Microsoft SQL Server ausgeführt werden. Der Unterschied besteht im Vorhandensein des Knotens "\_database" im Namen einiger dynamischer Verwaltungssichten (DMVs) in der FROM-Klausel in Schritt 5. Beispiel:
 
 - sys.dm\_xe**\_database**\_session\_targets
 - sys.dm\_xe\_session\_targets
@@ -385,4 +385,4 @@ Weitere Themen mit Codebeispielen für erweiterte Ereignisse finden Sie unter de
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
 -->
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

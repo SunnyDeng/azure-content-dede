@@ -22,9 +22,7 @@
 
 Dieser Artikel beschreibt die Implementierung von API-App-Triggern und deren Nutzung über eine Logik-App.
 
-Wenn Sie zum ersten Mal mit [API-Apps](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) arbeiten, sollten Sie zunächst die mehrteilige Serie zum [Erstellen von API-Apps](app-service-dotnet-create-api-app.md) durcharbeiten.
-
-Darüber hinaus wurden alle Codeausschnitte in diesem Thema aus dem [FileWatcher API-App-Codebeispiel](http://go.microsoft.com/fwlink/?LinkId=534802) kopiert.
+Alle Codeausschnitte in diesem Thema wurden aus dem [FileWatcher API-App-Codebeispiel](http://go.microsoft.com/fwlink/?LinkId=534802) kopiert.
 
 Beachten Sie, dass Sie folgendes Nuget-Paket herunterladen müssen, damit Sie den Code in diesem Artikel erstellen und ausführen können: [http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/](http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/).
 
@@ -43,7 +41,7 @@ Zurzeit werden zwei Arten von Triggern unterstützt:
 
 ### Abfragetrigger
 
-Ein Abfragetrigger wird als reguläre REST-API implementiert und erwartet, dass die Clients (z. B. eine App-Logik) ihn abfragen, um eine Benachrichtigung zu erhalten. Während der Client sein Zustand beibehalten kann, ist der Abfragetrigger selbst zustandslos.
+Ein Abfragetrigger wird als reguläre REST-API implementiert und erwartet, dass die Clients (z. B. eine App-Logik) ihn abfragen, um eine Benachrichtigung zu erhalten. Während der Client sein Zustand beibehalten kann, ist der Abfragetrigger selbst zustandslos.
 
 Die folgenden Informationen in Bezug auf die Anforderungs- und Antwortpakete veranschaulichen einige wichtige Aspekte des Abfragetriggervertrags:
 
@@ -93,7 +91,7 @@ Um diesen Abfragetrigger zu testen, gehen Sie folgendermaßen vor:
 
 1. Stellen Sie die API-App mit der Authentifizierungseinstellung **Öffentlich (anonym)** bereit.
 2. Rufen Sie den **touch**-Vorgang auf, um eine Datei zu bearbeiten. Die folgende Abbildung zeigt eine Beispielanforderung über Postman. ![Aufrufen des Touchvorgangs über Postman](./media/app-service-api-dotnet-triggers/calltouchfilefrompostman.PNG)
-3. Rufen Sie den Abfragetrigger mit dem **triggerState**-Parameter auf, der auf einen Zeitstempel vor Schritt 2 festgelegt wurde. Die folgende Abbildung zeigt die Beispielanforderung über Postman. ![Aufrufen des Abfragetriggers über Postman](./media/app-service-api-dotnet-triggers/callpolltriggerfrompostman.PNG)
+3. Rufen Sie den Abfragetrigger mit dem **triggerState**-Parameter auf, der auf einen Zeitstempel vor Schritt 2 festgelegt wurde. Die folgende Abbildung zeigt die Beispielanforderung über Postman. ![Aufrufen des Abfragetriggers über Postman](./media/app-service-api-dotnet-triggers/callpolltriggerfrompostman.PNG)
 
 ### Pushtrigger
 
@@ -104,7 +102,7 @@ Die folgenden Informationen in Bezug auf die Anforderungs- und Antwortpakete ver
 - Request
     - HTTP-Methode: PUT
     - Parameter
-        - triggerId: erforderlich – nicht transparente Zeichenfolge (z. B. eine GUID), welche die Registrierung eines Pushtriggers darstellt.
+        - triggerId: erforderlich – nicht transparente Zeichenfolge (z. B. eine GUID), welche die Registrierung eines Pushtriggers darstellt.
         - callbackUrl: erforderlich – URL des Rückrufs, der bei Auslösung des Ereignisses aufgerufen werden soll. Der Aufruf ist ein einfacher POST-HTTP-Aufruf.
         - API-spezifische Parameter
 - Antwort
@@ -202,7 +200,7 @@ Um diesen Abfragetrigger zu testen, gehen Sie folgendermaßen vor:
 
 ### Beschreiben der Trigger in der API-Definition
 
-Navigieren Sie nach der Implementierung der Trigger und der Bereitstellung der API-App in Azure zum Blatt **API-Definition** im Azure-Vorschauportal. Dort sehen Sie, dass die Trigger auf der Benutzeroberfläche, die durch die Swagger 2.0-Definition der API-App gesteuert wird, automatisch erkannt werden.
+Navigieren Sie nach der Implementierung der Trigger und der Bereitstellung der API-App in Azure zum Blatt **API-Definition** im Azure-Vorschauportal. Dort sehen Sie, dass die Trigger auf der Benutzeroberfläche, die durch die Swagger 2.0-Definition der API-App gesteuert wird, automatisch erkannt werden.
 
 ![Blatt "API-Definition"](./media/app-service-api-dotnet-triggers/apidefinitionblade.PNG)
 
@@ -295,7 +293,7 @@ Mithilfe der Erweiterungseigenschaften **x-ms-scheduler-recommendation** und **x
 
 ### Hinzufügen von Erweiterungseigenschaften in der API-Definition
 
-In der API-Definition können zusätzliche Metadateninformationen – wie z. B. die Erweiterungseigenschaften **x-ms-scheduler-recommendation** und **x-ms-visibility** – auf zwei Arten hinzugefügt werden: statisch oder dynamisch.
+In der API-Definition können zusätzliche Metadateninformationen – wie z. B. die Erweiterungseigenschaften **x-ms-scheduler-recommendation** und **x-ms-visibility** – auf zwei Arten hinzugefügt werden: statisch oder dynamisch.
 
 Bei statischen Metadaten können Sie die Datei */metadata/apiDefinition.swagger.json* in Ihrem Projekt direkt bearbeiten und die Eigenschaften manuell hinzufügen.
 
@@ -341,4 +339,4 @@ Im Folgenden finden Sie ein Beispiel dafür, wie diese Klasse implementiert werd
     }
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0316_2016-->

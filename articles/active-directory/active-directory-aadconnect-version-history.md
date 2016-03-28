@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="02/29/2016"
+   ms.date="03/15/2016"
    ms.author="andkjell"/>
 
 # Azure AD Connect: Versionsveröffentlichungsverlauf
@@ -28,13 +28,22 @@ Verwandte Links:
 - Die zum Anwenden eines Updates erforderlichen Berechtigungen sind unter [Konten und Berechtigungen](active-directory-aadconnect-accounts-permissions.md#upgrade) aufgeführt.
 - [Azure AD Connect herunterladen](http://go.microsoft.com/fwlink/?LinkId=615771)
 
+## 1\.1.119.0
+Veröffentlicht März 2016
+
+**Behobene Probleme:**
+
+- Es wurde sichergestellt, dass die Express-Installation unter Windows Server 2008 (vor R2) nicht verwendet werden kann, da die Kennwortsynchronisierung unter diesem Betriebssystem nicht unterstützt wird.
+- Upgrade von DirSync mit einer benutzerdefinierten Filterkonfiguration funktionierte nicht wie erwartet.
+- Beim Upgrade auf eine neuere Version ohne Änderungen an der Konfiguration sollte kein vollständiger Import-/Synchronisierungsvorgang geplant werden.
+
 ## 1\.1.110.0
 Veröffentlicht im Februar 2016
 
 **Behobene Probleme:**
 
 - Das Upgrade von früheren Versionen kann nicht ausgeführt werden, wenn die Installation nicht im Standardordner **C:\\Programme** durchgeführt wird.
-- Wenn Sie bei der Installation am Ende des Installations-Assistenten die Option **Starten Sie den Synchronisierungsvorgang ...** deaktivieren, wird der Planer durch erneutes Ausführen des Installations-Assistenten nicht aktiviert.
+- Wenn Sie bei der Installation am Ende des Installations-Assistenten die Option **Starten Sie den Synchronisierungsvorgang ...** deaktivieren, wird der Scheduler durch erneutes Ausführen des Installations-Assistenten nicht aktiviert.
 - Auf Servern, auf denen das Datums-/Uhrzeitformat nicht dem US-englischen Format entspricht, wird der Planer nicht wie erwartet ausgeführt. Außerdem wird verhindert, dass `Get-ADSyncScheduler` korrekte Zeitangaben zurückgibt.
 - Wenn Sie eine frühere Version von Azure AD Connect mit AD FS als Anmeldeoption und Upgrade installiert haben, können Sie den Installations-Assistenten nicht erneut ausführen.
 
@@ -43,13 +52,13 @@ Veröffentlicht im Februar 2016
 
 **Neue Features:**
 
-- [Automatisches Upgradefeature](active-directory-aadconnect-feature-automatic-upgrade.md) für Kunden mit Expresseinstellungen.
+- Feature für das [automatische Upgrade](active-directory-aadconnect-feature-automatic-upgrade.md) für Kunden mit Expresseinstellungen
 - Unterstützung für den globalen Administrator mit MFA und PIM im Installations-Assistenten.
     - Sie müssen für Ihren Proxy festlegen, dass auch Datenverkehr für https://secure.aadcdn.microsoftonline-p.com zulässig ist, wenn Sie MFA verwenden.
     - Sie müssen der Liste vertrauenswürdiger Websites https://secure.aadcdn.microsoftonline-p.com hinzufügen, damit MFA ordnungsgemäß funktioniert.
 - Das Ändern der Anmeldemethode des Benutzers nach der Erstinstallation ist zulässig.
 - Die [Filterung von Domänen und Organisationseinheiten](active-directory-aadconnect-get-started-custom.md#domain-and-ou-filtering) im Installations-Assistenten ist möglich. Dadurch wird außerdem das Herstellen einer Verbindung mit Gesamtstrukturen ermöglicht, in denen nicht alle Domänen verfügbar sind.
-- Der [Planer](active-directory-aadconnectsync-feature-scheduler.md) ist in das Synchronisierungsmodul integriert.
+- Der [Scheduler](active-directory-aadconnectsync-feature-scheduler.md) ist in das Synchronisierungsmodul integriert.
 
 **Features, die von der Vorschau auf die allgemeine Verfügbarkeit hochgestuft wurden:**
 
@@ -58,7 +67,7 @@ Veröffentlicht im Februar 2016
 
 **Neue Vorschaufeatures:**
 
-- Das neue Standardintervall für den Synchronisierungszyklus beträgt 30 Minuten. In allen früheren Versionen wurde ein Intervall von 3 Stunden verwendet. Unterstützung zum Ändern des [Planer](active-directory-aadconnectsync-feature-scheduler.md)-Verhaltens wurde hinzugefügt.
+- Das neue Standardintervall für den Synchronisierungszyklus beträgt 30 Minuten. In allen früheren Versionen wurde ein Intervall von 3 Stunden verwendet. Unterstützung zum Ändern des [Scheduler](active-directory-aadconnectsync-feature-scheduler.md)-Verhaltens wurde hinzugefügt.
 
 **Behobene Probleme:**
 
@@ -248,4 +257,4 @@ Veröffentlicht im September 2014
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

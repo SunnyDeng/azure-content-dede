@@ -22,10 +22,12 @@
 # Hadoop-Tutorial: Erste Schritte bei der Verwendung von Hadoop in HDInsight unter Windows
 
 > [AZURE.SELECTOR]
-- [Windows](../hdinsight-hadoop-tutorial-get-started-windows.md)
-- [Linux](../hdinsight-hadoop-linux-tutorial-get-started.md)
+- [Windows-basiert](../hdinsight-hadoop-tutorial-get-started-windows.md)
+- [Linux-basiert](../hdinsight-hadoop-linux-tutorial-get-started.md)
 
 In diesem Lernprogramm lernen Sie Hadoop unter Windows kennen und unternehmen erste Schritte mit HDInsight. Das Lernprogramm beschreibt, wie Sie eine Hive-Abfrage für unstrukturierte Daten in einem Hadoop-Cluster ausführen und die Ergebnisse anschließend in Microsoft Excel analysieren.
+
+>[AZURE.NOTE] Die Informationen in diesem Artikel gelten für Windows-basierte HDInsight-Cluster. Informationen zu Linux-basierten Clustern finden Sie unter [Hadoop-Tutorial: Erste Schritte bei der Verwendung von Linux-basiertem Hadoop in HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md).
 
 Angenommen, Sie verfügen über einen großen unstrukturierten Datensatz und möchten eine Hive-Abfrage für diesen ausführen, um aussagekräftige Informationen zu extrahieren. Genau darum geht es in diesem Tutorial. Und so geht's:
 
@@ -255,4 +257,4 @@ In diesem Hadoop-Tutorial haben Sie erfahren, wie ein Hadoop-Cluster unter Windo
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

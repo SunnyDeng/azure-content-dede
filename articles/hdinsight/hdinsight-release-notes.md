@@ -14,11 +14,30 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/27/2016"
+	ms.date="03/10/2016"
 	ms.author="nitinme"/>
 
 
 # Versionshinweise zu Hadoop-Komponenten in Azure HDInsight
+
+## Hinweise für die HDInsight-Version vom 10.03.2016
+
+Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
+
+* HDInsight (Windows) 2.1.10.859.2123216 (HDP 1.3.12.0-01795 – unverändert)
+* HDInsight (Windows) 3.0.6.859.2123216 (HDP 2.0.13.0-2117 – unverändert)
+* HDInsight (Windows) 3.1.4.859.2123216 (HDP 2.1.15.0-2374 – unverändert)
+* HDInsight (Windows) 3.2.7.859.2123216 (HDP 2.2.9.1-7)
+* HDInsight (Windows) 3.3.0.859.2123216 (HDP 2.3.3.1-5 – unverändert)
+* HDInsight (Linux) 3.2.1000.7076817 (HDP 2.2.9.1-8)
+* HDInsight (Linux) 3.3.1000.7076817 (HDP 2.3.3.1-7)
+* SDK 1.5.8
+
+Diese Version enthält die folgenden Updates.
+
+| Titel | Beschreibung | Betroffener Bereich (z. B. Dienst, Komponente oder SDK) | Clustertyp (z. B. Hadoop, HBase oder Storm) | JIRA (falls zutreffend) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Aktualisierte Versionen von HDInsight aller HDInsight-Cluster | Dieses Version bietet aktualisierte Versionen von HDInsight für alle HDInsight-Cluster.| Dienst | Alle| N/V
 
 ## Hinweise für die HDInsight-Version vom 27.01.2016
 
@@ -110,9 +129,9 @@ Diese Version enthält die folgenden Updates.
 
 | Titel | Beschreibung | Betroffener Bereich (z. B. Dienst, Komponente oder SDK) | Clustertyp (z. B. Hadoop, HBase oder Storm) | JIRA (falls zutreffend) |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
-| HDP-Standardversion in HDP 2.2 geändert | Die Standardversion für HDInsight-Windows-Cluster wird in HDP 2.2 geändert. HDInsight-Version 3.2 (HDP 2.2) ist seit Februar 2015 allgemein verfügbar. Bei dieser Änderung wird die Standardversion des Clusters nur umgekehrt, sofern keine explizite Auswahl getroffen wurde, als der Cluster mit dem Azure-Portal, über PowerShell-Cmdlets oder das SDK bereitgestellt wurde. | Service | Alle| N/V |
+| HDP-Standardversion in HDP 2.2 geändert | Die Standardversion für HDInsight-Windows-Cluster wird in HDP 2.2 geändert. HDInsight-Version 3.2 (HDP 2.2) ist seit Februar 2015 allgemein verfügbar. Bei dieser Änderung wird die Standardversion des Clusters nur umgekehrt, sofern keine explizite Auswahl getroffen wurde, als der Cluster mit dem Azure-Portal, über PowerShell-Cmdlets oder das SDK bereitgestellt wurde. | Service | Alle| N/V |
 |Änderungen am Namensformat des virtuellen Computers zur Bereitstellung mehrerer HDInsight-Komponenten auf Linux-Clustern in einem einzelnen Virtual Network | Die Unterstützung für die Bereitstellung mehrerer HDInsight-Linux-Cluster in einem einzelnen virtuellen Netzwerk wird in dieser Version hinzugefügt. Hierbei hat sich das Format der Namen von virtuellen Computern im Cluster von headnode*, workernode* und zookeepernode* in hn*, wn* bzw. zk* geändert. Es ist keine empfohlene Vorgehensweise, eine direkte Abhängigkeit vom Format der Namen virtueller Computer zu verwenden, da sie Änderungen unterliegt. Verwenden Sie „hostname -f“ auf dem lokalen Computer oder Ambari-APIs, um die Liste mit den Hosts zu bestimmen, sowie die Zuordnung von Komponenten zu Hosts. Weitere Informationen finden Sie unter [https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/hosts.md](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/hosts.md) und [https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/host-components.md](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/host-components.md). | Service | HDInsight-Cluster unter Linux | N/V |
-| Konfigurationsänderungen | Für HDInsight 3.1-Cluster sind jetzt die folgenden Konfigurationen aktiviert: <ul><li>tez.yarn.ats.enabled und yarn.log.server.url. So können der Anwendungszeitachsenserver und der Protokollserver als Server für Protokolle dienen.</li></ul>Für HDInsight 3.2-Cluster wurden die folgenden Konfigurationen geändert: <ul><li>mapreduce.fileoutputcommitter.algorithm.version wurde auf 2 festgelegt. Dies ermöglicht die Verwendung der Version V2 von FileOutputCommitter.</li></ul> | Service | Alle | N/V |
+| Konfigurationsänderungen | Für HDInsight 3.1-Cluster sind jetzt die folgenden Konfigurationen aktiviert: <ul><li>tez.yarn.ats.enabled und yarn.log.server.url. So können der Anwendungszeitachsenserver und der Protokollserver als Server für Protokolle dienen.</li></ul>Für HDInsight 3.2-Cluster wurden die folgenden Konfigurationen geändert: <ul><li>mapreduce.fileoutputcommitter.algorithm.version wurde auf 2 festgelegt. Dies ermöglicht die Verwendung der Version V2 von FileOutputCommitter.</li></ul> | Service | Alle | N/V |
 
 
 ## Hinweise für die HDInsight-Version vom 09.09.2015
@@ -1120,7 +1139,7 @@ Erfahren Sie, wie Sie mit HDInsight arbeiten, indem Sie verschiedene einfache Sz
 
 **Hinweis**: Zum Veranschaulichen der neuen durch die Clusteranpassung verfügbaren Möglichkeiten wurden die Verfahren mit Skriptaktionen zum Installieren von Spark- und R-Modulen für einen Cluster dokumentiert. Weitere Informationen finden Sie unter:
 
-* [Installieren und Verwenden von Spark 1.0 in HDInsight-Clustern](hdinsight-hadoop-spark-install.md)
+* [Installieren und Verwenden von Spark 1.0 in HDInsight-Clustern](hdinsight-hadoop-spark-install.md)
 * [Installieren und Verwenden von R in HDInsight Hadoop-Clustern](hdinsight-hadoop-r-scripts.md)
 
 
@@ -1184,7 +1203,19 @@ Dieser Hotfix korrigiert einen Speicherverlust in Templeton, der insbesondere Te
 
 * Wir haben neue Speichereinstellungen für die Standardbereitstellung des HDInsight-Clusters bereitgestellt. Bei den vorherigen Speichereinstellungen wurden die Empfehlungen für die Anzahl der bereitgestellten CPU-Kerne nicht ausreichend berücksichtigt. Diese neuen Arbeitsspeichereinstellungen sollten (gemäß den Empfehlungen von Hortonworks) bessere Standardeinstellungen bieten. Um diese Einstellungen zu ändern, konsultieren Sie die SDK-Referenzdokumentation bezüglich des Änderns der Clusterkonfiguration. Die folgende Tabelle enthält die neuen Arbeitsspeichereinstellungen für ein Standard-HDInsight-Cluster mit 4 CPU-Kernen (8 Containern). (Die Werte, die in vorherigen Versionen verwendet wurden, sind in Klammern angegeben).
 
-<table border="1"> <tr><th>Komponente</th><th>Speicherzuweisung</th></tr> <tr><td> yarn.scheduler.minimum-allocation</td><td>768 MB (zuvor 512 MB)</td></tr> <tr><td> yarn.scheduler.maximum-allocation</td><td>6144 MB (unverändert)</td></tr> <tr><td>yarn.nodemanager.resource.memory</td><td>6144 MB (unverändert)</td></tr> <tr><td>mapreduce.map.memory</td><td>768 MB (zuvor 512 MB)</td></tr> <tr><td>mapreduce.map.java.opts</td><td>opts=-Xmx512m (zuvor -Xmx410m)</td></tr> <tr><td>mapreduce.reduce.memory</td><td>1536 MB (zuvor 1024 MB)</td></tr> <tr><td>mapreduce.reduce.java.opts</td><td>opts=-Xmx1024m (zuvor -Xmx819m)</td></tr> <tr><td>yarn.app.mapreduce.am.resource</td><td>768 MB (zuvor 1024 MB)</td></tr> <tr><td>yarn.app.mapreduce.am.command</td><td>opts=-Xmx512m (zuvor -Xmx819m)</td></tr> <tr><td>mapreduce.task.io.sort</td><td>256 MB (zuvor 200 MB)</td></tr> <tr><td>tez.am.resource.memory</td><td>1536 MB (unverändert)</td></tr>
+<table border="1">
+<tr><th>Komponente</th><th>Speicherzuweisung</th></tr>
+<tr><td> yarn.scheduler.minimum-allocation</td><td>768 MB (bislang 512 MB)</td></tr>
+<tr><td> yarn.scheduler.maximum-allocation</td><td>6144 MB (unverändert)</td></tr>
+<tr><td>yarn.nodemanager.resource.memory</td><td>6144 MB (unverändert)</td></tr>
+<tr><td>mapreduce.map.memory</td><td>768 MB (bislang 512 MB)</td></tr>
+<tr><td>mapreduce.map.java.opts</td><td>opts=-Xmx512m (bislang -Xmx410m)</td></tr>
+<tr><td>mapreduce.reduce.memory</td><td>1536 MB (bislang 1024 MB)</td></tr>
+<tr><td>mapreduce.reduce.java.opts</td><td>opts=-Xmx1024m (bislang -Xmx819m)</td></tr>
+<tr><td>yarn.app.mapreduce.am.resource</td><td>768 MB (bislang 1024 MB)</td></tr>
+<tr><td>yarn.app.mapreduce.am.command</td><td>opts=-Xmx512m (bislang -Xmx819m)</td></tr>
+<tr><td>mapreduce.task.io.sort</td><td>256 MB (bislang 200 MB)</td></tr>
+<tr><td>tez.am.resource.memory</td><td>1536 MB (unverändert)</td></tr>
 
 </table><br>
 
@@ -1192,7 +1223,7 @@ Weitere Informationen zu den Konfigurationseinstellungen des Arbeitsspeichers, d
 
 Anmerkung zur Azure PowerShell- und HDInsight SDK-Fehlermeldung: „*Cluster ist nicht für den Zugriff auf HTTP-Dienste konfiguriert*“:
 
-* Dieser Fehler ist ein bekanntes [Kompatibilitätsproblem](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight), das auftritt, wenn sich die Version von HDInsight SDK oder Azure PowerShell von der Clusterversion unterscheidet. Alle ab dem 15.8.2014 erstellten Cluster unterstützen die neue Bereitstellungsfunktion für virtuelle Netzwerke. Diese Funktion wird jedoch von älteren Versionen von HDInsight SDK oder Azure PowerShell nicht korrekt interpretiert. Das Resultat ist ein Fehler bei der Übermittlung mancher Aufträge. Wenn Sie Aufträge mit HDInsight-SDK-APIs oder Azure PowerShell-Cmdlets übermitteln (**Use-AzureRmHDInsightCluster** oder **Invoke-AzureRmHDInsightHiveJob**), können diese Vorgänge mit der Fehlermeldung „*Cluster <clustername> wurde nicht für Zugriff auf HTTP-Dienste konfiguriert*“ misslingen. Oder Sie erhalten (abhängig vom Vorgang) andere Fehlermeldungen, z. B. „*Es kann keine Verbindung mit dem Cluster hergestellt werden*“.
+* Dieser Fehler ist ein bekanntes [Kompatibilitätsproblem](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight), das auftritt, wenn sich die Version von HDInsight SDK oder Azure PowerShell von der Clusterversion unterscheidet. Alle ab dem 15.8.2014 erstellten Cluster unterstützen die neue Bereitstellungsfunktion für virtuelle Netzwerke. Diese Funktion wird jedoch von älteren Versionen von HDInsight SDK oder Azure PowerShell nicht korrekt interpretiert. Das Resultat ist ein Fehler bei der Übermittlung mancher Aufträge. Wenn Sie Aufträge mit HDInsight-SDK-APIs oder Azure PowerShell-Cmdlets übermitteln (**Use-AzureRmHDInsightCluster** oder **Invoke-AzureRmHDInsightHiveJob**), können diese Vorgänge mit der Fehlermeldung „*Cluster <clustername> wurde nicht für Zugriff auf HTTP-Dienste konfiguriert*“ misslingen. Oder Sie erhalten (abhängig vom Vorgang) andere Fehlermeldungen, z. B. „*Es kann keine Verbindung mit dem Cluster hergestellt werden*“.
 
 * Diese Kompatibilitätsprobleme sind in den neuesten Versionen von HDInsight SDK und Azure PowerShell behoben. Sie sollten daher das HDInsight SDK auf Version 1.3.1.6 oder eine neuere Version und die Azure PowerShell-Tools auf Version 0.8.8 oder eine neuere Version aktualisieren. Sie erhalten das neueste HDInsight SDK über [](http://nuget.codeplex.com/wikipage?title=Getting%20Started) und die Azure PowerShell-Tools unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure/).
 
@@ -1206,7 +1237,7 @@ Anmerkung zur Azure PowerShell- und HDInsight SDK-Fehlermeldung: „*Cluster ist
 
 ## Hinweise für die Version vom 21.08.2014
 
-* Es wird die folgende WebHCat-Konfiguration (HIVE-7155) hinzugefügt, mit der die Standardspeicherbegrenzung für einen Templeton-Controllerauftrag auf 1 GB festgelegt wird. (Der vorherige Standardwert lautete 512 MB.)
+* Es wird die folgende WebHCat-Konfiguration (HIVE-7155) hinzugefügt, mit der die Standardspeicherbegrenzung für einen Templeton-Controllerauftrag auf 1 GB festgelegt wird. (Der vorherige Standardwert lautete 512 MB.)
 
 	 templeton.mapper.memory.mb (=1024)
 
@@ -1238,7 +1269,11 @@ Diese Kompatibilitätsprobleme sind in den neuesten Versionen von HDInsight SDK 
 * HDInsight Version 1.6 (HDP 1.1 und Hadoop 1.0.3) und HDInsight Version 2.1 (HDP1.3 und Hadoop 1.2) werden aus dem Azure-Portal entfernt. Sie können weiterhin Hadoop-Cluster für diese Versionen mithilfe der Azure PowerShell-Cmdlets ([New-AzureRmHDInsightCluster](http://msdn.microsoft.com/library/dn593744.aspx)) oder des [HDInsight SDK](http://msdn.microsoft.com/library/azure/dn469975.aspx) erstellen. Weitere Informationen finden Sie auf der Seite [HDInsight-Komponentenversionen](../hdinsight-component-versioning/).
 * Änderungen an Hortonworks Data Platform (HDP) in dieser Version:
 
-<table border="1"> <tr><th>HDP</th><th>Änderungen</th></tr> <tr><td>HDP 1.3 / HDI 2.1</td><td>Keine Änderungen</td></tr> <tr><td>HDP 2.0 / HDI 3.0</td><td>Keine Änderungen</td></tr> <tr><td>HDP 2.1 / HDI 3.1</td><td>Zookeeper: ['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
+<table border="1">
+<tr><th>HDP</th><th>Änderungen</th></tr>
+<tr><td>HDP 1.3 / HDI 2.1</td><td>Keine Änderungen</td></tr>
+<tr><td>HDP 2.0 / HDI 3.0</td><td>Keine Änderungen</td></tr>
+<tr><td>HDP 2.1 / HDI 3.1</td><td>zookeeper: ['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
 
 
 </table><br>
@@ -1263,7 +1298,7 @@ Mit HBase können Sie verschiedene Arbeitslasten in Echtzeit in HDInsight erstel
 Eine umfassendere Erklärung dieses Verfahrens finden Sie in der Dokumentation zum [Breiman-Beispiel](https://mahout.apache.org/users/classification/breiman-example.html) auf der Apache Mahout-Website.
 
 
-### Hive-Abfragen können Tez in HDInsight 3.1 verwenden
+### Hive-Abfragen können Tez in HDInsight 3.1 verwenden
 
 Hive 0.13 ist in HDInsight 3.1 verfügbar und kann Abfragen mit Tez ausführen. Dies kann für erhebliche Leistungsverbesserungen genutzt werden. Tez ist nicht standardmäßig für Hive-Abfragen aktiviert. Um es zu verwenden, müssen Sie die entsprechende Option aktivieren. Sie können Tez aktivieren, indem Sie das folgende Code-Snippet ausführen:
 
@@ -1280,7 +1315,7 @@ Mit der Freigabe von HDInsight auf Hadoop 2.2 hat Microsoft HDInsight in allen g
 
 ###Empfehlungen und Warnungen für unterschiedliche Clusterversionen
 
-**Oozie-Metastores mit einem HDInsight 3.1-Cluster sind nicht abwärtskompatibel mit HDInsight 2.1-Clustern und können nicht mit dieser älteren Version verwendet werden**.
+**Oozie-Metastores mit einem HDInsight 3.1-Cluster sind nicht abwärtskompatibel mit HDInsight 2.1-Clustern und können nicht mit dieser älteren Version verwendet werden**.
 
 Benutzerdefinierte Oozie-Metastore-Datenbanken mit einem HDInsight 3.1-Cluster können nicht mit einem HDInsight 2.1-Cluster wiederverwendet werden. Dies gilt auch dann, wenn der Metastore ursprünglich mit einem HDInsight 2.1-Cluster erstellt wurde. Dieses Szenario wird nicht unterstützt, weil das Metastore-Schema bei der Verwendung mit einem HDInsight 3.1-Cluster aktualisiert wird und daher nicht mehr mit dem Metastore kompatibel ist, den ein HDInsight 2.1-Cluster benötigt. Durch jeden Versuch der Wiederverwendung eines Oozie-Metastore, der bereits mit einem HDInsight 3.1-Cluster verwendet wurde, wird das HDInsight 2.1-Cluster unbrauchbar.
 
@@ -1295,9 +1330,30 @@ Oozie-Metastores sind an ein bestimmtes Cluster gebunden und können nicht zwisc
 
 **Ports**: Die vom HDInsight-Dienst verwendeten Ports wurden geändert. Die Portnummern, die verwendet wurden, befanden sich im kurzlebigen Portbereich des Windows-Betriebssystems. Ports werden automatisch von einem vordefinierten kurzlebigen Bereich für kurzlebige Internetprotokollbasierte Kommunikationen zugewiesen. Die neue Reihe der zulässigen Portnummern des HDP-Dienstes (Hortonworks Data Platform) befinden sich außerhalb dieses Bereichs, um Konflikte zu vermeiden, die mit den Ports auftreten könnten, welche von auf dem Hauptknoten ausgeführten Diensten verwendet werden. Die neuen Portnummern dürften keine fehlerhaften Änderungen verursachen. Es werden folgende Nummern verwendet:
 
- **HDInsight 1.6 (HDP 1.1)** <table border="1"> <tr><th>Name</th><th>Wert</th></tr> <tr><td>dfs.http.address</td><td>namenodehost:30070</td></tr> <tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr> <tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr> <tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr> <tr><td>dfs.secondary.http.address</td><td>0.0.0.0:30090</td></tr> <tr><td>mapred.job.tracker.http.address</td><td>jobtrackerhost:30030</td></tr> <tr><td>mapred.task.tracker.http.address</td><td>0.0.0.0:30060</td></tr> <tr><td>mapreduce.history.server.http.address</td><td>0.0.0.0:31111</td></tr> <tr><td>templeton.port</td><td>30111</td></tr> </table><br>
+ **HDInsight 1.6 (HDP 1.1)** <table border="1">
+<tr><th>Name</th><th>Wert</th></tr>
+<tr><td>dfs.http.address</td><td>namenodehost:30070</td></tr>
+<tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr>
+<tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr>
+<tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr>
+<tr><td>dfs.secondary.http.address</td><td>0.0.0.0:30090</td></tr>
+<tr><td>mapred.job.tracker.http.address</td><td>jobtrackerhost:30030</td></tr>
+<tr><td>mapred.task.tracker.http.address</td><td>0.0.0.0:30060</td></tr>
+<tr><td>mapreduce.history.server.http.address</td><td>0.0.0.0:31111</td></tr>
+<tr><td>templeton.port</td><td>30111</td></tr>
+</table><br>
 
- **HDInsight 3.1 und 3.0 (HDP 2.1 und 2.0)** <table border="1"> <tr><th>Name</th><th>Wert</th></tr> <tr><td>dfs.namenode.http-Adresse</td><td>Namenodehost:30070</td></tr> <tr><td>dfs.namenode.https-Adresse</td><td>Headnodehost:30470</td></tr> <tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr> <tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr> <tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr> <tr><td>dfs.namenode.secondary.http-Adresse</td><td>0.0.0.0:30090</td></tr> <tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr> <tr><td>templeton.port</td><td>30111</td></tr> </table><br>
+ **HDInsight 3.1 und 3.0 (HDP 2.1 und 2.0)** <table border="1">
+<tr><th>Name</th><th>Wert</th></tr>
+<tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr>
+<tr><td>dfs.namenode.https-address</td><td>headnodehost:30470</td></tr>
+<tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr>
+<tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr>
+<tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr>
+<tr><td>dfs.namenode.secondary.http-address</td><td>0.0.0.0:30090</td></tr>
+<tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr>
+<tr><td>templeton.port</td><td>30111</td></tr>
+</table><br>
 
 ###Abhängigkeiten
 
@@ -1399,7 +1455,7 @@ Die folgenden Versionsänderungen wurden zwischen HDInsight 2.x (HDP1.x) und HDI
 
 
 ### Treiber
-Der JDBC-Treiber (Java Database Connnectivity) für SQL Server wird intern von HDInsight und nicht für externe Vorgänge verwendet. Wenn Sie über ODBC (Open Database Connectivity) eine Verbindung mit HDInsight herstellen möchten, verwenden Sie den Microsoft Hive ODBC-Treiber. Weitere Informationen finden Sie unter [Verbinden von Excel mit HDInsight mithilfe des Microsoft Hive ODBC-Treibers](../hdinsight-connect-excel-hive-odbc-driver.md).
+Der JDBC-Treiber (Java Database Connnectivity) für SQL Server wird intern von HDInsight und nicht für externe Vorgänge verwendet. Wenn Sie über ODBC (Open Database Connectivity) eine Verbindung mit HDInsight herstellen möchten, verwenden Sie den Microsoft Hive ODBC-Treiber. Weitere Informationen finden Sie unter [Verbinden von Excel mit HDInsight mithilfe des Microsoft Hive ODBC-Treibers](hdinsight-connect-excel-hive-odbc-driver.md).
 
 
 ### Fehlerbehebungen
@@ -1415,13 +1471,13 @@ In dieser Version wurden die folgenden HDInsight-Versionen mit mehreren Fehlerbe
 
 Versionshinweise zu den HDPs (Hortonworks Data Platforms), die von den Versionen von HDInsight-Cluster verwendet werden, sind an folgenden Speicherorten verfügbar.
 
-* HDInsight Version 3.1 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 2.1.7][hdp-2-1-7] basiert. Dies ist der Hadoop-Standardcluster, der bei Verwendung des Azure-Portals nach dem 7.11.2014 erstellt wird. Vor dem 7.11.2014 erstellte HDInsight 3.1-Cluster basierten auf [Hortonworks Data Platform 2.1.1][hdp-2-1-1].
+* HDInsight Version 3.1 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 2.1.7][hdp-2-1-7] basiert. Dies ist der Hadoop-Standardcluster, der bei Verwendung des Azure-Portals nach dem 7.11.2014 erstellt wird. Vor dem 7.11.2014 erstellte HDInsight 3.1-Cluster basierten auf [Hortonworks Data Platform 2.1.1][hdp-2-1-1].
 
-* HDInsight-Version 3.0 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 2.0][hdp-2-0-8] basiert.
+* HDInsight-Version 3.0 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 2.0][hdp-2-0-8] basiert.
 
-* HDInsight-Version 2.1 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 1.3][hdp-1-3-0] basiert.
+* HDInsight-Version 2.1 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 1.3][hdp-1-3-0] basiert.
 
-* HDInsight-Version 1.6 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 1.1][hdp-1-1-0] basiert.
+* HDInsight-Version 1.6 verwendet eine Hadoop-Distribution, die auf [Hortonworks Data Platform 1.1][hdp-1-1-0] basiert.
 
 [hdp-2-1-7]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.7-Win/bk_releasenotes_HDP-Win/content/ch_relnotes-HDP-2.1.7.html
 
@@ -1441,4 +1497,4 @@ Versionshinweise zu den HDPs (Hortonworks Data Platforms), die von den Versionen
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

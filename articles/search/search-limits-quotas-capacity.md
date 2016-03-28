@@ -22,14 +22,14 @@
 Die Höchstwerte für Speicher, Workloads und Mengen von Indizes, Dokumenten und anderen Objekten hängen davon ab, ob Sie Azure Search zum **Free**-, **Basic**- oder **Standard**-Tarif hinzufügen.
 
 - **Free** ist ein gemeinsamer mehrinstanzfähiger Dienst, der Teil Ihres Azure-Abonnements ist. Es handelt sich um eine Option für vorhandene Abonnenten ohne zusätzliche Kosten, die es Ihnen ermöglicht, den Dienst zu testen, bevor Sie sich für spezifische Ressourcen anmelden. 
-- **Basic (Vorschau)** bietet spezifische Computerressourcen für Produktions-Workloads mit geringerem Umfang. Dieser Tarif wird derzeit in der Vorschau und zu einem [reduzierten Preis](https://azure.microsoft.com/pricing/details/search/) angeboten.
-- **Standard** wird auf dedizierten Rechnern ausgeführt, die nur von Ihrem Dienst verwendet werden. Sie bieten höhere Speicher- und Verarbeitungskapazität auf jeder Stufe, einschließlich der Mindestkonfiguration. Standard steht in zwei Stufen (S1 und S2) zur Verfügung. 
+- **Basic (Vorschau)** bietet spezifische Computerressourcen für Produktions-Workloads mit geringerem Umfang. Dieser Tarif befindet sich derzeit in der Vorschau und wird [in der Vorschauphase zu einem um 50 % reduzierten Preis](https://azure.microsoft.com/pricing/details/search/) angeboten.
+- **Standard** wird auf dedizierten Computern ausgeführt. Sie bieten höhere Speicher- und Verarbeitungskapazität auf jeder Stufe, einschließlich der Mindestkonfiguration. Standard steht in zwei Stufen (S1 und S2) zur Verfügung. 
+
+Mit Ausnahme des S2-Tarifs, der ein Supportticket erfordert, können alle Tarife [im Portal bereitgestellt werden](search-create-service-portal.md). Senden Sie eine E-Mail an azuresearch_contact@microsoft.com, um mit S2 zu starten.
 
 ## Tarifgrenzwerte
 
 [AZURE.INCLUDE [azure-search-limits](../../includes/azure-search-limits-all.md)]
-
-> [AZURE.NOTE] Abfragen pro Sekunde (QPS) sind vor allem im gemeinsamen Dienst variabel, da der Durchsatz auf der verfügbaren Bandbreite und dem Wettkampf um Systemressourcen basiert. Die Azure-Computing- und Speicherressourcen zur Unterstützung des gemeinsam genutzten Diensts werden von mehreren Abonnenten gemeinsam verwendet, sodass der QPS-Wert für Ihre Lösung stets in Abhängigkeit davon variiert, wie viele andere Workloads gleichzeitig ausgeführt werden. Auf der Standard-Stufe können Sie den QPS-Wert genauer schätzen, da Sie die Kontrolle über mehr Parameter haben. Im Abschnitt mit bewährten Methoden unter [Verwalten der Suchlösung](search-manage.md) finden Sie Anleitungen zur Berechnung des QPS-Werts für Ihre Workloads.
 
 ## Grenzwerte für API-Schlüssel
 
@@ -53,4 +53,10 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 
 <sup>1</sup> In Azure Search darf der Inhalt einer Anforderung nicht größer als 16 MB sein. Dies beschränkt möglicherweise den Inhalt einzelner Felder oder Sammlungen, für die ansonsten keine theoretischen Beschränkungen gelten. (Weitere Informationen zur Feldzusammensetzung und den Beschränkungen finden Sie unter [Unterstützte Datentypen (Azure Search)](https://msdn.microsoft.com/library/azure/dn798938.aspx)).
 
-<!------HONumber=AcomDC_0302_2016-->
+## Abfragen pro Sekunde
+
+Auch wenn in der Preisübersicht und im obigen Diagramm mit den [Tarifgrenzwerten](#TierLimits) grobe Schätzungen bereitgestellt werden, sind die tatsächlichen Abfragen pro Sekunde (QPS) schwierig zu bestimmen. Dies gilt vor allem für den gemeinsamen Dienst im Free-Tarif, bei dem der Durchsatz auf der verfügbaren Bandbreite und der Konkurrenz um Systemressourcen basiert. Die Compute- und Speicherressourcen zur Unterstützung des gemeinsamen Diensts werden von mehreren Abonnenten gemeinsam verwendet, sodass der QPS-Wert für Ihre Lösung stets in Abhängigkeit davon variiert, wie viele andere Workloads gleichzeitig ausgeführt werden.
+
+Auf der Standard-Stufe können Sie den QPS-Wert genauer schätzen, da Sie die Kontrolle über mehr Parameter haben. Im Abschnitt mit bewährten Methoden unter [Verwalten der Suchlösung](search-manage.md) finden Sie Anleitungen zur Berechnung des QPS-Werts für Ihre Workloads.
+
+<!---HONumber=AcomDC_0316_2016-->

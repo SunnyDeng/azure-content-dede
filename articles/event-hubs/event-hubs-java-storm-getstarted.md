@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/05/2015"
+	ms.date="03/08/2016"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -42,7 +42,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][1]
 
-3. Geben Sie einen Namen für den Event Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Neuen Event Hub erstellen**.
+3. Geben Sie einen Namen für den Event Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Neuen Event Hub erstellen**.
 
    	![][2]
 
@@ -79,7 +79,7 @@ Sie können jetzt die Anwendung ausführen.
 
    	![][22]
 
-> [AZURE.NOTE]Verwenden Sie nur in diesem Lernprogramm Storm im lokalen Modus zu Entwicklungszwecken. Weitere Informationen zu Storm-Bereitstellungen und -Mustern finden Sie in der [Übersicht zu HDInsight Storm][] und in der offiziellen Dokumentation zu [Apache Storm][].
+> [AZURE.NOTE] Verwenden Sie nur in diesem Lernprogramm Storm im lokalen Modus zu Entwicklungszwecken. Weitere Informationen zu Storm-Bereitstellungen und -Mustern finden Sie in der [Übersicht zu HDInsight Storm][] und in der offiziellen Dokumentation zu [Apache Storm][].
 
 ## Nächste Schritte
 
@@ -110,4 +110,4 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0316_2016-->

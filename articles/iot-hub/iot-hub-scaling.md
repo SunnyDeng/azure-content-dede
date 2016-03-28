@@ -13,14 +13,12 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="01/20/2016"
+ ms.date="03/14/2016"
  ms.author="elioda"/>
 
 # Skalieren von IoT Hub
 
-Azure IoT Hub kann bis zu einer Million gleichzeitig verbundene Geräte unterstützen, indem die Anzahl von IoT Hub S1- oder S2-Tarifeinheiten auf 2.000 erhöht wird. Weitere Informationen finden Sie unter [IoT Hub – Preise][lnk-pricing].
-
-Jede IoT Hub-Einheit lässt eine bestimmte Anzahl von Geräteidentitäten in der Registrierung zu, und diese Geräte können alle gleichzeitig verbunden sein. Jede Einheit lässt auch eine Anzahl von täglichen Nachrichten zu.
+Azure IoT Hub kann bis zu einer Million gleichzeitig verbundener Geräte unterstützen. Weitere Informationen finden Sie unter [IoT Hub – Preise][lnk-pricing]. Jede IoT Hub-Einheit lässt eine Anzahl von täglichen Nachrichten zu.
 
 Um Ihre Lösung richtig skalieren zu können, sollten Sie sich nach dem jeweiligen IoT Hub-Anwendungsfall richten. Achten Sie besonders auf den erforderlichen Spitzendurchsatz für die folgenden Kategorien von Vorgängen:
 
@@ -38,10 +36,10 @@ D2C-Nachrichten basieren auf diesen Richtlinien für den anhaltenden Durchsatz:
 
 | Tarif | Anhaltender Durchsatz | Anhaltende Senderate |
 | ---- | -------------------- | ------------------- |
-| S1 | Bis zu 1111 KB/Minute pro Einheit<br/>(1,5 GB/Tag/Einheit) | Durchschnittlich 278 Nachrichten/Minute pro Einheit<br/>(400.000 Nachrichten/Tag pro Einheit) |
-| S2 | Bis zu 16 MB/Minute pro Einheit<br/>(22,8 GB/Tag/Einheit) | Durchschnittlich 4167 Nachrichten/Minute pro Einheit<br/>(6 Millionen Nachrichten/Tag pro Einheit) |
+| S1 | Bis zu 1111 KB/Minute pro Einheit<br/>(1,5 GB/Tag/Einheit) | Durchschnittlich 278 Nachrichten/Minute pro Einheit<br/>(400.000 Nachrichten/Tag pro Einheit) |
+| S2 | Bis zu 16 MB/Minute pro Einheit<br/>(22,8 GB/Tag/Einheit) | Durchschnittlich 4167 Nachrichten/Minute pro Einheit<br/>(6 Millionen Nachrichten/Tag pro Einheit) |
 
-Die Leistung wird bei C2D-Nachrichten pro Gerät skaliert und jedes Gerät empfängt bis zu 5 Nachrichten pro Minute.
+Die Leistung wird bei C2D-Nachrichten pro Gerät skaliert und jedes Gerät empfängt bis zu 5 Nachrichten pro Minute.
 
 ## Durchsatz von Identitätsregistrierungsvorgängen
 
@@ -57,7 +55,7 @@ Eine einzelne IoT Hub-Einheit kann zwar auf Millionen von Geräten skaliert werd
 
 Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 
-- [Erste Schritte mit IoT Hub (Lernprogramm)][lnk-get-started]
+- [Erste Schritte mit IoT Hub (Lernprogramm)][lnk-get-started]
 - [Was ist Azure IoT Hub?][]
 
 [lnk-pricing]: https://azure.microsoft.com/pricing/details/iot-hub
@@ -66,4 +64,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

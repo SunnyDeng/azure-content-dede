@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="article"
- ms.date="12/04/2015"
+ ms.date="03/09/2016"
  ms.author="krisragh"/>
 
 # Einschränkungen, Standardwerte und Fehlercodes für Scheduler
@@ -29,7 +29,7 @@ Wenn bei einer Anforderung kontinuierlich ein Fehler auftritt, obwohl die Anford
 
 ## Status- und Fehlercodes für Scheduler
 
-Neben den standardmäßigen HTTP-Statuscodes gibt die Azure Scheduler-REST-API erweiterte Fehlercodes und Fehlermeldungen zurück. Die erweiterten Codes sind nicht als Ersatz für die standardmäßigen HTTP-Statuscodes gedacht, sondern liefern hilfreiche Zusatzinformationen, die zusammen mit den standardmäßigen HTTP-Statuscodes verwendet werden können.
+Neben den standardmäßigen HTTP-Statuscodes gibt die Azure Scheduler-REST-API erweiterte Fehlercodes und Fehlermeldungen zurück. Die erweiterten Codes sind nicht als Ersatz für die standardmäßigen HTTP-Statuscodes gedacht, sondern liefern hilfreiche Zusatzinformationen, die zusammen mit den standardmäßigen HTTP-Statuscodes verwendet werden können.
 
 Ein HTTP-404-Fehler kann beispielsweise zahlreiche Ursachen haben. Hier können die Zusatzinformationen aus der erweiterten Meldung hilfreich sein. Weitere Informationen zu den standardmäßigen HTTP-Codes, die von der REST-API zurückgegeben werden, finden Sie unter [Dienstverwaltungsstatus und Fehlercodes](https://msdn.microsoft.com/library/windowsazure/ee460801.aspx). REST-API-Vorgänge für die Dienstverwaltungs-API geben standardmäßige HTTP-Statuscodes gemäß [Statuscodedefinitionen für HTTP/1.1](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) zurück. Die folgende Tabelle enthält allgemeine Fehler, die unter Umständen vom Dienst zurückgegeben werden.
 
@@ -55,7 +55,7 @@ API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, d
 
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
- 
+
  [Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler](scheduler-concepts-terms.md)
 
  [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
@@ -69,7 +69,5 @@ API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, d
  [Hochverfügbarkeit und Zuverlässigkeit von Azure Scheduler](scheduler-high-availability-reliability.md)
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
- 
-  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

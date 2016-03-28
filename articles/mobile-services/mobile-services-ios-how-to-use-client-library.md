@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="01/12/2016"
+	ms.date="03/09/2016"
 	ms.author="krisragh"/>
 
 # Verwenden der iOS-Clientbibliothek für Azure Mobile Services
@@ -27,7 +27,7 @@
 
 Dieser Artikel beschreibt gängige Szenarien für die Verwendung des Azure Mobile Services [iOS SDK]. Wenn Sie noch nicht mit Mobile Services vertraut sind, führen Sie zuerst das Lernprogramm [Mobile Services-Schnellstart] durch, um Ihr Konto zu konfigurieren, eine Tabelle zu erstellen und einen mobilen Dienst zu erstellen.
 
-> [AZURE.NOTE]Dieses Handbuch verwendet das neueste [iOS-SDK für Mobile Services](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409). Wenn das Projekt eine ältere Version des SDK verwendet, aktualisieren Sie zuerst das Framework in Xcode.
+> [AZURE.NOTE] Dieses Handbuch verwendet das neueste [iOS-SDK für Mobile Services](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409). Wenn das Projekt eine ältere Version des SDK verwendet, aktualisieren Sie zuerst das Framework in Xcode.
 
 [AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
 
@@ -97,7 +97,13 @@ Um eine komplexe Abfrage (einschließlich Sortierung und Paging) auszuführen, e
     MSQuery *query = [table queryWithPredicate: [NSPredicate predicateWithFormat:@"complete == NO"]];
 ```
 
-Mit `MSQuery` können Sie verschiedene Abfrageeigenschaften steuern, darunter die Folgenden. Führen Sie eine `MSQuery`-Abfrage durch, indem Sie `readWithCompletion` für MSQuery aufrufen, wie im nächsten Beispiel gezeigt. * Reihenfolge der Ergebnisse angeben * Zurückzugebenden Felder einschränken * Zurückzugebenden Datensätze einschränken * Gesamtzahl in der Antwort angeben * Benutzerdefinierte Abfragezeichenfolgen-Parameter in der Anforderung angeben * Zusätzliche Funktionen anwenden
+Mit `MSQuery` können Sie verschiedene Abfrageeigenschaften steuern, darunter die Folgenden. Führen Sie eine `MSQuery`-Abfrage durch, indem Sie `readWithCompletion` aufrufen, wie im folgenden Beispiel gezeigt.
+* Festlegen der Reihenfolge der Ergebnisse
+* Einschränkung der zurückzugebenden Felder
+* Einschränkung der Anzahl der zurückzugebenden Datensätze
+* Festlegen der Gesamtanzahl in der Antwort
+* Festlegen benutzerdefinierter Abfrageparameter in der Anforderung
+* Anwenden zusätzlicher Funktionen
 
 
 ## <a name="sorting"></a>Gewusst wie: Sortieren von Daten mit MSQuery
@@ -167,7 +173,7 @@ Um die in einer Abfrage zurückzugebenden Felder einzuschränken, geben Sie die 
 	query.selectFields = @[@"text", @"completed"];
 ```
 
-Um zusätzliche Abfragezeichenfolgen-Parameter in die Anforderung einzubinden (z. B. weil diese Parameter von einem benutzerdefinierten serverseitigen Skript verwendet werden), füllen Sie `query.parameters` wie folgt aus:
+Um zusätzliche Abfragezeichenfolgen-Parameter in die Anforderung einzubinden (z. B. weil diese Parameter von einem benutzerdefinierten serverseitigen Skript verwendet werden), füllen Sie `query.parameters` wie folgt aus:
 
 ```
 	query.parameters = @{
@@ -333,4 +339,4 @@ Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/az
 [CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
 [Konflikthandler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0316_2016-->

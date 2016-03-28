@@ -3,11 +3,18 @@
 	description="Erfahren Sie, wie Sie Azure Backup mit PowerShell bereitstellen und verwalten."
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
-	manager="shreeshd"
+	authors="markgalioto"
+	manager="jwhit"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/28/2016" ms.author="aashishr";"trinadhk" />
+<tags
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/28/2016"
+	ms.author="markgal;trinadhk;jimpark" />
 
 
 # Bereitstellen und Verwalten von Sicherungen für Azure-VMs mit PowerShell
@@ -25,7 +32,7 @@ Damit Sie PowerShell effektiv nutzen können, ist es notwendig, dass Sie die Obj
 
 ![Objekthierarchie](./media/backup-azure-vms-automation/object-hierarchy.png)
 
-Die beiden wichtigsten Abläufe sind das Aktivieren des Schutzes für einen virtuellen Computer und das Wiederherstellen von Daten von einem Wiederherstellungspunkt. Der Schwerpunkt dieses Artikels liegt darauf, Ihnen die erforderlichen Kenntnisse für die Arbeit mit den PowerShell-Cmdlets zu vermitteln, um diese beiden Szenarios zu ermöglichen.
+Die beiden wichtigsten Abläufe sind das Aktivieren des Schutzes für einen virtuellen Computer und das Wiederherstellen von Daten von einem Wiederherstellungspunkt. Der Schwerpunkt dieses Artikels liegt darauf, Ihnen die erforderlichen Kenntnisse für die Arbeit mit den PowerShell-Cmdlets zu vermitteln, um diese beiden Szenarien zu ermöglichen.
 
 
 ## Einrichtung und Registrierung
@@ -33,7 +40,7 @@ Vorbereitung:
 
 1. [Laden Sie die neueste PowerShell herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
 
-2. Ermitteln Sie die Azure PowerShell-Cmdlets zur Datensicherung mithilfe des folgenden Befehls:
+2. Ermitteln Sie die Azure-PowerShell-Cmdlets zur Datensicherung mithilfe des folgenden Befehls:
 
 ```
 PS C:\> Get-Command *azurermbackup*
@@ -73,36 +80,36 @@ Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell a
 
 ### Erstellen eines Sicherungstresors
 
-> [AZURE.WARNING] Kunden, die Azure Backup zum ersten Mal verwenden, müssen den Azure Backup-Anbieter registrieren, der mit ihrem Abonnement verwendet werden soll. Führen Sie hierzu den folgenden Befehl aus: Register-AzureRMResourceProvider -ProviderNamespace "Microsoft.Backup"
+> [AZURE.WARNING] Kunden, die Azure Backup zum ersten Mal verwenden, müssen den Azure Backup-Anbieter registrieren, der mit ihrem Abonnement verwendet werden soll. Führen Sie hierzu den folgenden Befehl aus: Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.Backup"
 
-Sie können mit dem Cmdlet **New-AzureRMBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
+Sie können mit dem Cmdlet **New-AzureRmBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
-PS C:\> New-AzureRMResourceGroup –Name “test-rg” –Location “West US”
-PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GeoRedundant
+PS C:\> New-AzureRmResourceGroup –Name “test-rg” –Location “West US”
+PS C:\> $backupvault = New-AzureRmBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GeoRedundant
 ```
 
-Mit dem Cmdlet **Get-AzureRMBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
+Mit dem Cmdlet **Get-AzureRmBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
 
 > [AZURE.NOTE] Es ist sinnvoll, das Sicherungstresor-Objekt in einer Variablen zu speichern. Das Tresor-Objekt ist als Eingabe für viele Azure Backup-Cmdlets erforderlich.
 
 
 ### Registrieren der virtuellen Computer
-Der erste Schritt zum Konfigurieren der Sicherung mit Azure Backup besteht darin, Ihren Computer oder virtuellen Computer bei einem Azure-Sicherungstresor zu registrieren. Das Cmdlet **Register-AzureRMBackupContainer** verwendet die Eingabeinformationen eines virtuellen Azure-IaaS-Computers, um diesen beim angegebenen Tresor zu registrieren. Der Registrierungsvorgang ordnet den virtuellen Azure-Computer dem Sicherungstresor zu und verfolgt den virtuellen Computer über den gesamten Sicherungslebenszyklus hinweg.
+Der erste Schritt zum Konfigurieren der Sicherung mit Azure Backup besteht darin, Ihren Computer oder virtuellen Computer bei einem Azure-Sicherungstresor zu registrieren. Das Cmdlet **Register-AzureRmBackupContainer** verwendet die Eingabeinformationen eines virtuellen Azure-IaaS-Computers, um diesen beim angegebenen Tresor zu registrieren. Der Registrierungsvorgang ordnet den virtuellen Azure-Computer dem Sicherungstresor zu und verfolgt den virtuellen Computer über den gesamten Sicherungslebenszyklus hinweg.
 
-Durch die Registrierung des virtuellen Computers beim Azure Backup-Dienst wird ein Containerobjekt der obersten Ebene erstellt. Ein Container enthält i. d. R. mehrere Elemente, die gesichert werden können. Bei virtuellen Computern enthält der Container jedoch nur ein Sicherungselement.
+Durch die Registrierung des virtuellen Computers beim Azure Backup-Dienst wird ein Containerobjekt der obersten Ebene erstellt. Ein Container enthält i. d. R. mehrere Elemente, die gesichert werden können. Bei virtuellen Computern enthält der Container jedoch nur ein Sicherungselement.
 
 ```
-PS C:\> $registerjob = Register-AzureRMBackupContainer -Vault $backupvault -Name "testvm" -ServiceName "testvm"
+PS C:\> $registerjob = Register-AzureRmBackupContainer -Vault $backupvault -Name "testvm" -ServiceName "testvm"
 ```
 
 ## Sichern von virtuellen Azure-Computern
 
 ### Erstellen einer Schutzrichtlinie
-Es ist nicht obligatorisch, eine neue Schutzrichtlinie zu erstellen, um die Sicherung von virtuellen Computern zu starten. Der Tresor enthält eine Standardrichtlinie, die für eine schnelle Aktivierung des Schutzes verwendet und dann später bearbeitet werden kann, wenn die richtigen Details zur Verfügung stehen. Mit dem Cmdlet **Get-AzureRMBackupProtectionPolicy** können Sie eine Liste der im Tresor verfügbaren Richtlinien abrufen:
+Es ist nicht obligatorisch, eine neue Schutzrichtlinie zu erstellen, um die Sicherung von virtuellen Computern zu starten. Der Tresor enthält eine Standardrichtlinie, die für eine schnelle Aktivierung des Schutzes verwendet und dann später bearbeitet werden kann, wenn die richtigen Details zur Verfügung stehen. Mit dem Cmdlet **Get-AzureRmBackupProtectionPolicy** können Sie eine Liste der im Tresor verfügbaren Richtlinien abrufen:
 
 ```
-PS C:\> Get-AzureRMBackupProtectionPolicy -Vault $backupvault
+PS C:\> Get-AzureRmBackupProtectionPolicy -Vault $backupvault
 
 Name                      Type               ScheduleType       BackupTime
 ----                      ----               ------------       ----------
@@ -111,13 +118,13 @@ DefaultPolicy             AzureVM            Daily              26-Aug-15 12:30:
 
 > [AZURE.NOTE] Die Zeitzone des Feldes „BackupTime“ in PowerShell ist UTC. Wenn jedoch der Zeitpunkt der Sicherung im Azure-Portal angezeigt wird, wird die Zeitzone auf Ihr lokales System zusammen mit der UTC-Abweichung ausgerichtet.
 
-Eine Sicherungsrichtlinie ist mindestens einer Aufbewahrungsrichtlinie zugeordnet. Die Aufbewahrungsrichtlinie definiert, wie lange ein Wiederherstellungspunkt in Azure Backup gespeichert wird. Das Cmdlet **New-AzureRMBackupRetentionPolicy** erstellt PowerShell-Objekte, die Informationen zu Aufbewahrungsrichtlinien enthalten. Diese Aufbewahrungsrichtlinienobjekte werden als Eingaben für das Cmdlet *New-AzureRMBackupProtectionPolicy* oder direkt mit dem Cmdlet *Enable-AzureRMBackupProtection* verwendet.
+Eine Sicherungsrichtlinie ist mindestens einer Aufbewahrungsrichtlinie zugeordnet. Die Aufbewahrungsrichtlinie definiert, wie lange ein Wiederherstellungspunkt in Azure Backup gespeichert wird. Das Cmdlet **New-AzureRmBackupRetentionPolicy** erstellt PowerShell-Objekte, die Informationen zu Aufbewahrungsrichtlinien enthalten. Diese Aufbewahrungsrichtlinienobjekte werden als Eingaben für das Cmdlet *New-AzureRmBackupProtectionPolicy* oder direkt mit dem Cmdlet *Enable-AzureRmBackupProtection* verwendet.
 
-Eine Sicherungsrichtlinie definiert, wann und wie oft die Sicherung eines Elements erfolgt. Das Cmdlet **New-AzureRMBackupProtectionPolicy** erstellt ein PowerShell-Objekt, das Informationen zu Sicherungsrichtlinien enthält. Die Sicherungsrichtlinie wird als Eingabe für das Cmdlet *Enable-AzureRMBackupProtection* verwendet.
+Eine Sicherungsrichtlinie definiert, wann und wie oft die Sicherung eines Elements erfolgt. Das Cmdlet **New-AzureRmBackupProtectionPolicy** erstellt ein PowerShell-Objekt, das Informationen zu Sicherungsrichtlinien enthält. Die Sicherungsrichtlinie wird als Eingabe für das Cmdlet *Enable-AzureRmBackupProtection* verwendet.
 
 ```
-PS C:\> $Daily = New-AzureRMBackupRetentionPolicyObject -DailyRetention -Retention 30
-PS C:\> $newpolicy = New-AzureRMBackupProtectionPolicy -Name DailyBackup01 -Type AzureVM -Daily -BackupTime ([datetime]"3:30 PM") -RetentionPolicy ($Daily) -Vault $backupvault
+PS C:\> $Daily = New-AzureRmBackupRetentionPolicyObject -DailyRetention -Retention 30
+PS C:\> $newpolicy = New-AzureRmBackupProtectionPolicy -Name DailyBackup01 -Type AzureVM -Daily -BackupTime ([datetime]"3:30 PM") -RetentionPolicy $Daily -Vault $backupvault
 
 Name                      Type               ScheduleType       BackupTime
 ----                      ----               ------------       ----------
@@ -128,15 +135,15 @@ DailyBackup01             AzureVM            Daily              01-Sep-15 3:30:0
 Zum Aktivieren des Schutzes sind zwei Objekte erforderlich: das Element und die Richtlinie, die beide zum selben Tresor gehören müssen. Sobald die Richtlinie mit dem Element verknüpft wurde, wird der Sicherungsworkflow nach dem definierten Zeitplan gestartet.
 
 ```
-PS C:\> Get-AzureRMBackupContainer -Type AzureVM -Status Registered -Vault $backupvault | Get-AzureRMBackupItem | Enable-AzureRMBackupProtection -Policy $newpolicy
+PS C:\> Get-AzureRmBackupContainer -Type AzureVM -Status Registered -Vault $backupvault | Get-AzureRmBackupItem | Enable-AzureRmBackupProtection -Policy $newpolicy
 ```
 
 ### Erste Sicherung
-Der Sicherungszeitplan sorgt dafür, dass die erste vollständige Kopie des Elements sowie die inkrementelle Kopie für die nachfolgenden Sicherungen erstellt werden. Wenn Sie die erste Sicherung jedoch zu einem bestimmten Zeitpunkt oder sogar sofort erzwingen möchten, verwenden Sie das Cmdlet **Backup-AzureRMBackupItem**:
+Der Sicherungszeitplan sorgt dafür, dass die erste vollständige Kopie des Elements sowie die inkrementelle Kopie für die nachfolgenden Sicherungen erstellt werden. Wenn Sie die erste Sicherung jedoch zu einem bestimmten Zeitpunkt oder sogar sofort erzwingen möchten, verwenden Sie das Cmdlet **Backup-AzureRmBackupItem**:
 
 ```
-PS C:\> $container = Get-AzureRMBackupContainer -Vault $backupvault -type AzureVM -name "testvm"
-PS C:\> $backupjob = Get-AzureRMBackupItem -Container $container | Backup-AzureRMBackupItem
+PS C:\> $container = Get-AzureRmBackupContainer -Vault $backupvault -Type AzureVM -Name "testvm"
+PS C:\> $backupjob = Get-AzureRmBackupItem -Container $container | Backup-AzureRmBackupItem
 PS C:\> $backupjob
 
 WorkloadName    Operation       Status          StartTime              EndTime
@@ -149,10 +156,10 @@ testvm          Backup          InProgress      01-Sep-15 12:24:01 PM  01-Jan-01
 ### Überwachen eines Sicherungsauftrags
 Die meisten Vorgänge mit langer Ausführungszeit werden in Azure Backup als Auftrag modelliert. So kann der Fortschritt auf einfache Weise nachverfolgt werden, ohne dass das Azure-Portal immer geöffnet bleiben muss.
 
-Mit dem Cmdlet **Get-AzureRMBackupJob** können Sie den aktuellen Status eines Auftrags abrufen, der sich in Bearbeitung befindet.
+Mit dem Cmdlet **Get-AzureRmBackupJob** können Sie den aktuellen Status eines Auftrags abrufen, der sich in Bearbeitung befindet.
 
 ```
-PS C:\> $joblist = Get-AzureRMBackupJob -Vault $backupvault -Status InProgress
+PS C:\> $joblist = Get-AzureRmBackupJob -Vault $backupvault -Status InProgress
 PS C:\> $joblist[0]
 
 WorkloadName    Operation       Status          StartTime              EndTime
@@ -160,31 +167,31 @@ WorkloadName    Operation       Status          StartTime              EndTime
 testvm          Backup          InProgress      01-Sep-15 12:24:01 PM  01-Jan-01 12:00:00 AM
 ```
 
-Anstatt die Fertigstellung dieser Aufträge abzufragen, was unnötigen, zusätzlichen Code bedeutet, ist es einfacher, das Cmdlet **Wait-AzureRMBackupJob** zu verwenden. Bei Verwendung in einem Skript hält das Cmdlet die Ausführung an, bis entweder der Auftrag abgeschlossen oder der angegebene Timeoutwert erreicht ist.
+Anstatt die Fertigstellung dieser Aufträge abzufragen, was unnötigen, zusätzlichen Code bedeutet, ist es einfacher, das Cmdlet **Wait-AzureRmBackupJob** zu verwenden. Bei Verwendung in einem Skript hält das Cmdlet die Ausführung an, bis entweder der Auftrag abgeschlossen oder der angegebene Timeoutwert erreicht ist.
 
 ```
-PS C:\> Wait-AzureRMBackupJob -Job $joblist[0] -Timeout 43200
+PS C:\> Wait-AzureRmBackupJob -Job $joblist[0] -Timeout 43200
 ```
 
 
 ## Wiederherstellen eines virtuellen Azure-Computers
 
-Um die gesicherten Daten wiederherstellen zu können, müssen Sie das gesicherte Element und den Wiederherstellungspunkt angeben, der die Zeitpunktdaten enthält. Diese Informationen werden für das Cmdlet "Restore-AzureRMBackupItem" bereitgestellt, um eine Wiederherstellung von Daten aus dem Tresor im Konto des Kunden zu initiieren.
+Um die gesicherten Daten wiederherstellen zu können, müssen Sie das gesicherte Element und den Wiederherstellungspunkt angeben, der die Zeitpunktdaten enthält. Diese Informationen werden für das Cmdlet „Restore-AzureRmBackupItem“ bereitgestellt, um eine Wiederherstellung von Daten aus dem Tresor im Konto des Kunden zu initiieren.
 
 ### Auswählen des virtuellen Computers
 
-Zum Abrufen des PowerShell-Objekts, das das richtige Sicherungselement identifiziert, müssen Sie vom Container im Tresor aus starten und dann die Objekthierarchie nach unten durchlaufen. Um den Container auszuwählen, der den virtuellen Computer darstellt, verwenden Sie das Cmdlet **Get-AzureRMBackupContainer** und reichen dieses an das Cmdlet **Get-AzureRMBackupItem** weiter.
+Zum Abrufen des PowerShell-Objekts, das das richtige Sicherungselement identifiziert, müssen Sie vom Container im Tresor aus starten und dann die Objekthierarchie nach unten durchlaufen. Um den Container auszuwählen, der den virtuellen Computer darstellt, verwenden Sie das Cmdlet **Get-AzureRmBackupContainer** und reichen dieses an das Cmdlet **Get-AzureRmBackupItem** weiter.
 
 ```
-PS C:\> $backupitem = Get-AzureRMBackupContainer -Vault $backupvault -Type AzureVM -name "testvm" | Get-AzureRMBackupItem
+PS C:\> $backupitem = Get-AzureRmBackupContainer -Vault $backupvault -Type AzureVM -name "testvm" | Get-AzureRmBackupItem
 ```
 
 ### Auswählen eines Wiederherstellungspunkts
 
-Sie können jetzt alle Wiederherstellungspunkte für das Sicherungselement mithilfe des Cmdlets **Get-AzureRMBackupRecoveryPoint** auflisten und anschließend den Wiederherstellungspunkt auswählen. Üblicherweise wählen Benutzer den neuesten *AppConsistent*-Punkt in der Liste aus.
+Sie können jetzt alle Wiederherstellungspunkte für das Sicherungselement mithilfe des Cmdlets **Get-AzureRmBackupRecoveryPoint** auflisten und anschließend den Wiederherstellungspunkt auswählen. Üblicherweise wählen Benutzer den neuesten *AppConsistent*-Punkt in der Liste aus.
 
 ```
-PS C:\> $rp =  Get-AzureRMBackupRecoveryPoint -Item $backupitem
+PS C:\> $rp =  Get-AzureRmBackupRecoveryPoint -Item $backupitem
 PS C:\> $rp
 
 RecoveryPointId    RecoveryPointType  RecoveryPointTime      ContainerName
@@ -198,10 +205,10 @@ Die Variable ```$rp``` ist ein Array mit Wiederherstellungspunkten für das ausg
 
 Es besteht ein entscheidender Unterschied zwischen Wiederherstellungsvorgängen, die über das Azure-Portal ausgeführt werden, und Wiederherstellungsvorgängen, die mit Azure PowerShell ausgeführt werden. Mit PowerShell endet der Wiederherstellungsvorgang mit der Wiederherstellung der Datenträger und der Konfigurationsinformationen aus dem Wiederherstellungspunkt. Es wird kein virtueller Computer erstellt.
 
-> [AZURE.WARNING] Mit "Restore-AzureRMBackupItem" wird kein virtueller Computer erstellt. Es werden nur die Datenträger im angegebenen Speicherkonto wiederhergestellt. Dies ist ein anderes Verhalten als beim Azure-Portal.
+> [AZURE.WARNING] Mit „Restore-AzureRmBackupItem“ wird kein virtueller Computer erstellt. Es werden nur die Datenträger im angegebenen Speicherkonto wiederhergestellt. Dies ist ein anderes Verhalten als beim Azure-Portal.
 
 ```
-PS C:\> $restorejob = Restore-AzureRMBackupItem -StorageAccountName "DestAccount" -RecoveryPoint $rp[0]
+PS C:\> $restorejob = Restore-AzureRmBackupItem -StorageAccountName "DestAccount" -RecoveryPoint $rp[0]
 PS C:\> $restorejob
 
 WorkloadName    Operation       Status          StartTime              EndTime
@@ -209,16 +216,16 @@ WorkloadName    Operation       Status          StartTime              EndTime
 testvm          Restore         InProgress      01-Sep-15 1:14:01 PM   01-Jan-01 12:00:00 AM
 ```
 
-Nachdem der Wiederherstellungsauftrag abgeschlossen ist, können Sie die Details des Wiederherstellungsvorgangs mit dem Cmdlet **Get-AzureRMBackupJobDetails** abrufen. Die *ErrorDetails*-Eigenschaft enthält die Informationen, die zum erneuten Erstellen des virtuellen Computers benötigt werden.
+Nachdem der Wiederherstellungsauftrag abgeschlossen ist, können Sie die Details des Wiederherstellungsvorgangs mit dem Cmdlet **Get-AzureRmBackupJobDetails** abrufen. Die *ErrorDetails*-Eigenschaft enthält die Informationen, die zum erneuten Erstellen des virtuellen Computers benötigt werden.
 
 ```
-PS C:\> $restorejob = Get-AzureRMBackupJob -Job $restorejob
-PS C:\> $details = Get-AzureRMBackupJobDetails -Job $restorejob
+PS C:\> $restorejob = Get-AzureRmBackupJob -Job $restorejob
+PS C:\> $details = Get-AzureRmBackupJobDetails -Job $restorejob
 ```
 
 ### Erstellen des virtuellen Computers
 
-Das Erstellen des virtuellen Computers aus den wiederhergestellten Datenträgern kann mithilfe der älteren Azure-Service-Manager-PowerShell-Cmdlets, der neuen Azure-Ressourcen-Manager-Vorlagen oder sogar über das Azure-Portal erfolgen. Das folgende kurze Beispiel zeigt die Vorgehensweise mithilfe der Azure Service Manager-Cmdlets.
+Das Erstellen des virtuellen Computers aus den wiederhergestellten Datenträgern kann mithilfe der älteren Azure Service Management-PowerShell-Cmdlets, der neuen Azure Resource Manager-Vorlagen oder sogar über das Azure-Portal erfolgen. Das folgende kurze Beispiel zeigt die Vorgehensweise mithilfe der Azure Service Management-Cmdlets.
 
 ```
  $properties  = $details.Properties
@@ -247,7 +254,7 @@ $obj = [xml](((Get-Content -Path $destination_path -Encoding UniCode)).TrimEnd([
  {
 	 foreach($d in $dds.DataVirtualHardDisk)
  	 {
-		 $lun = 0;
+		 $lun = 0
 		 if(!($d.Lun -eq $null))
 		 {
 	 		 $lun = $d.Lun
@@ -271,10 +278,10 @@ Weitere Informationen zum Erstellen eines virtuellen Computers aus den wiederher
 
 ### 1\. Abrufen des Abschlussstatus von untergeordneten Aufgaben
 
-Um den Abschlussstatus der einzelnen untergeordneten Aufgaben nachzuverfolgen, können Sie das Cmdlet **Get-AzureRMBackupJobDetails** verwenden:
+Um den Abschlussstatus der einzelnen untergeordneten Aufgaben nachzuverfolgen, können Sie das Cmdlet **Get-AzureRmBackupJobDetails** verwenden:
 
 ```
-PS C:\> $details = Get-AzureRMBackupJobDetails -JobId $backupjob.InstanceId -Vault $backupvault
+PS C:\> $details = Get-AzureRmBackupJobDetails -JobId $backupjob.InstanceId -Vault $backupvault
 PS C:\> $details.SubTasks
 
 Name                                                        Status
@@ -297,27 +304,27 @@ param(  [Parameter(Mandatory=$True,Position=1)]
 
 #Initialize variables
 $DAILYBACKUPSTATS = @()
-$backupvault = Get-AzureRMBackupVault -Name $backupvaultname
+$backupvault = Get-AzureRmBackupVault -Name $backupvaultname
 $enddate = ([datetime]::Today).AddDays(1)
 $startdate = ([datetime]::Today)
 
 for( $i = 1; $i -le $numberofdays; $i++ )
 {
     # We query one day at a time because pulling 7 days of data might be too much
-    $dailyjoblist = Get-AzureRMBackupJob -Vault $backupvault -From $startdate -To $enddate -Type AzureVM -Operation Backup
+    $dailyjoblist = Get-AzureRmBackupJob -Vault $backupvault -From $startdate -To $enddate -Type AzureVM -Operation Backup
     Write-Progress -Activity "Getting job information for the last $numberofdays days" -Status "Day -$i" -PercentComplete ([int]([decimal]$i*100/$numberofdays))
 
     foreach( $job in $dailyjoblist )
     {
         #Extract the information for the reports
         $newstatsobj = New-Object System.Object
-        $newstatsobj | Add-Member -type NoteProperty -name Date -value $startdate
-        $newstatsobj | Add-Member -type NoteProperty -name VMName -value $job.WorkloadName
-        $newstatsobj | Add-Member -type NoteProperty -name Duration -value $job.Duration
-        $newstatsobj | Add-Member -type NoteProperty -name Status -value $job.Status
+        $newstatsobj | Add-Member -Type NoteProperty -Name Date -Value $startdate
+        $newstatsobj | Add-Member -Type NoteProperty -Name VMName -Value $job.WorkloadName
+        $newstatsobj | Add-Member -Type NoteProperty -Name Duration -Value $job.Duration
+        $newstatsobj | Add-Member -Type NoteProperty -Name Status -Value $job.Status
 
-        $details = Get-AzureRMBackupJobDetails -Job $job
-        $newstatsobj | Add-Member -type NoteProperty -name BackupSize -value $details.Properties["Backup Size"]
+        $details = Get-AzureRmBackupJobDetails -Job $job
+        $newstatsobj | Add-Member -Type NoteProperty -Name BackupSize -Value $details.Properties["Backup Size"]
         $DAILYBACKUPSTATS += $newstatsobj
     }
 
@@ -328,6 +335,6 @@ for( $i = 1; $i -le $numberofdays; $i++ )
 $DAILYBACKUPSTATS | Out-GridView
 ```
 
-Wenn Sie der Berichtsausgabe Diagrammfunktionen hinzufügen möchten, erfahren Sie Näheres im TechNet-Blog unter [Charting with PowerShell](http://blogs.technet.com/b/richard_macdonald/archive/2009/04/28/3231887.aspx) (auf Englisch).
+Wenn Sie der Berichtsausgabe Diagrammfunktionen hinzufügen möchten, erfahren Sie Näheres im TechNet-Blog unter [Charting with PowerShell](http://blogs.technet.com/b/richard_macdonald/archive/2009/04/28/3231887.aspx) (Diagrammerstellung mit PowerShell).
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

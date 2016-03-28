@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/03/2016"
+   ms.date="03/10/2016"
    ms.author="alkohli"/>
 
 
@@ -22,7 +22,7 @@
 ![](./media/storsimple-ova-deploy2-provision-vmware/vmware4.png)
 
 ## Übersicht 
-Dieses Tutorial zur Bereitstellung bezieht sich auf StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). In diesem Tutorial wird beschrieben, wie Sie ein StorSimple Virtual Array auf einem Hostsystem mit VMware ESXi 5.5 und höher bereitstellen und die Verbindung dafür herstellen.
+Dieses Tutorial zur Bereitstellung bezieht sich auf StorSimple Virtual Arrays (auch als „lokale virtuelle StorSimple-Geräte“ oder „virtuelle StorSimple-Geräte“ bezeichnet) mit der Version vom März 2016 (allgemeine Verfügbarkeit). In diesem Tutorial wird beschrieben, wie Sie ein StorSimple Virtual Array auf einem Hostsystem mit VMware ESXi 5.5 und höher bereitstellen und die Verbindung dafür herstellen. Dieser Artikel bezieht sich auf die Bereitstellung von StorSimple Virtual Arrays im klassischem Azure-Portal sowie in der Microsoft Azure Government-Cloud.
 
 Sie benötigen Administratorrechte, um ein virtuelles Gerät bereitzustellen und zu verbinden. Die Bereitstellung und die anfängliche Einrichtung dauern ca. 10 Minuten.
 
@@ -265,7 +265,7 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 	![](./media/storsimple-ova-deploy2-provision-vmware/image43m.png)
 
-1.  Verwenden Sie das Set-HcsIpAddress-Cmdlet, um das Netzwerk zu konfigurieren. Unten ist ein Beispiel angegeben:
+1.  Verwenden Sie das `Set-HcsIpAddress`-Cmdlet, um das Netzwerk zu konfigurieren. Unten ist ein Beispiel angegeben:
 
 
     `Set-HcsIpAddress –Name Ethernet –IpAddress 10.161.22.90 –Netmask 255.255.255.0 –Gateway 10.161.22.1`
@@ -274,15 +274,26 @@ Führen Sie die folgenden Schritte aus, um Ihr virtuelles Gerät zu starten und 
 
 1.  Nachdem die anfängliche Einrichtung abgeschlossen und das Gerät gestartet wurde, wird der Bannertext für das Gerät angezeigt. Notieren Sie sich die IP-Adresse und die URL, die im Bannertext für die Verwaltung des Geräts angezeigt wird. Sie verwenden diese IP-Adresse zum Herstellen der Verbindung mit der Web-UI Ihres virtuellen Geräts und zum Durchführen des lokalen Setups und der Registrierung.
 
-	![](./media/storsimple-ova-deploy2-provision-vmware/image45m.png)
+	![](./media/storsimple-ova-deploy2-provision-vmware/image45.png)
+
+
+1. (Optional) Führen Sie diesen Schritt nur aus, wenn Sie Ihr Gerät in der Government-Cloud bereitstellen. Aktivieren Sie jetzt den FIPS-Modus (Federal Information Processing Standard) auf Ihrem Gerät. Der FIPS 140-Standard definiert kryptographische Algorithmen, die zum Schutz vertraulicher Daten in Computersystemen der US-Regierung zugelassen sind.
+	1. Führen Sie das folgende Cmdlet aus, um den FIPS-Modus zu aktivieren:
+		
+		`Enter-HcsFIPSMode`
+
+	2. Starten Sie das Gerät neu, nachdem Sie den FIPS-Modus aktiviert haben, damit die kryptografischen Überprüfungen greifen.
+
+		> [AZURE.NOTE] Sie können auf Ihrem Gerät den FIPS-Modus entweder aktivieren oder deaktivieren. Ein ständiger Wechsel des Geräts vom FIPS-Modus in den Nicht-FIPS-Modus und umgekehrt wird nicht unterstützt.
+
 
 Wenn Ihr Gerät die Mindestanforderungen für die Konfiguration nicht erfüllt, wird im Bannertext ein Fehler angezeigt (siehe unten). Sie müssen die Gerätekonfiguration ändern, damit sie über ausreichende Ressourcen zum Erfüllen der Mindestanforderungen verfügt. Sie können das Gerät dann neu starten und die Verbindung dafür herstellen. Die Mindestanforderungen für die Konfiguration finden Sie unter [Schritt 1: Sicherstellen, dass das Hostsystem die Mindestanforderungen für virtuelle Geräte erfüllt](#step-1-ensure-host-system-meets-minimum-virtual-device-requirements).
 
 ![](./media/storsimple-ova-deploy2-provision-vmware/image46.png)
 
-Falls bei der anfänglichen Konfiguration über die lokale Web-UI andere Fehler auftreten, helfen Ihnen die folgenden Workflows unter [Verwalten des StorSimple Virtual Array über die lokale Web-UI](storsimple-ova-web-ui-admin.md) weiter.
+Falls bei der anfänglichen Konfiguration über die lokale Webbenutzeroberfläche andere Fehler auftreten, helfen Ihnen die folgenden Workflows unter [Verwalten des StorSimple Virtual Array über die lokale Webbenutzeroberfläche](storsimple-ova-web-ui-admin.md) weiter.
 
--   Ausführen von Diagnosetests zur [Problembehandlung für das Web-UI-Setup](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors)
+-   Ausführen von Diagnosetests zum [Beheben von Setup-Fehlern für die Webbenutzeroberfläche](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors)
 
 -   [Generieren des Protokollpakets und Anzeigen von Protokolldateien](storsimple-ova-web-ui-admin.md#generate-a-log-package)
 
@@ -292,4 +303,4 @@ Falls bei der anfänglichen Konfiguration über die lokale Web-UI andere Fehler 
 
 -   [Einrichten des StorSimple Virtual Array als iSCSI-Server](storsimple-ova-deploy3-iscsi-setup.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

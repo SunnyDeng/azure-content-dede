@@ -1,20 +1,20 @@
-<properties 
- pageTitle="Ausgehende Authentifizierung von Scheduler" 
- description="" 
- services="scheduler" 
- documentationCenter=".NET" 
- authors="krisragh" 
- manager="dwrede" 
+<properties
+ pageTitle="Ausgehende Authentifizierung von Scheduler"
+ description=""
+ services="scheduler"
+ documentationCenter=".NET"
+ authors="krisragh"
+ manager="dwrede"
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="12/04/2015" 
+<tags
+ ms.service="scheduler"
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.date="03/09/2016"
  ms.author="krisragh"/>
- 
+
 # Ausgehende Authentifizierung von Scheduler
 
 Scheduler-Aufträge müssen unter Umständen Dienste kontaktieren, die eine Authentifizierung erfordern. Dadurch kann ein aufgerufener Dienst ermitteln, ob dem Scheduler-Auftrag Zugriff auf die Ressourcen gewährt werden soll. Zu diesen Diensten zählen etwa andere Azure-Dienste, Salesforce.com, Facebook und sichere benutzerdefinierten Websites.
@@ -25,7 +25,7 @@ Ein Scheduler-Auftrag lässt sich ganz einfach mit einer Authentifizierung verse
 
 Wenn Sie die Authentifizierung entfernen möchten, führen Sie eine explizite PUT- oder PATCH-Anforderung für den Auftrag aus, und legen Sie dabei das Objekt `authentication` auf NULL fest. In der Antwort sind keinerlei Authentifizierungseigenschaften enthalten.
 
-Derzeit werden als Authentifizierungstypen nur das Modell `ClientCertificate` (für die Verwendung von SSL-/TLS-Clientzertifikaten), das Modell `Basic` (für die Standardauthentifizierung) und das Modell `ActiveDirectoryOAuth` (für die Active Directory-OAuth-Authentifizierung) unterstützt.
+Derzeit werden als Authentifizierungstypen nur das Modell `ClientCertificate` (für die Verwendung von SSL-/TLS-Clientzertifikaten), das Modell `Basic` (für die Standardauthentifizierung) und das Modell `ActiveDirectoryOAuth` (für die Active Directory-OAuth-Authentifizierung) unterstützt.
 
 ## Anforderungstext für die ClientCertificate-Authentifizierung
 
@@ -56,7 +56,7 @@ Wenn eine Anforderung mit Authentifizierungsinformationen gesendet wird, enthäl
 Das folgende Beispiel führt eine PUT-Anforderung aus, die die Authentifizierung vom Typ `ClientCertificate` integriert. Die Anforderung sieht wie folgt aus:
 
 
-	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
+	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler
 	x-ms-version: 2013-03-01
 	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
 	Content-Type: application/json; charset=utf-8
@@ -98,7 +98,7 @@ Die Antwort auf diese Anforderung lautet wie folgt:
 	x-ms-servedbyregion: ussouth2
 	X-AspNet-Version: 4.0.30319
 	X-Powered-By: ASP.NET
-	 
+
 
 	{
 	  "id": "testScheduler",
@@ -155,7 +155,7 @@ Wenn eine Anforderung mit Authentifizierungsinformationen gesendet wird, enthäl
 
 Das folgende Beispiel führt eine PUT-Anforderung aus, die die Authentifizierung vom Typ `Basic` integriert. Die Anforderung sieht wie folgt aus:
 
-	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
+	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler
 	x-ms-version: 2013-03-01
 	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
 	Content-Type: application/json; charset=utf-8
@@ -236,7 +236,7 @@ Wenn Sie die Authentifizierung mithilfe des Modells `ActiveDirectoryOAuth` hinzu
 |_type_ |Erforderlich. Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung muss der Wert `ActiveDirectoryOAuth` lauten.|
 |_tenant_ |Erforderlich. Die Mandanten-ID für den Azure AD-Mandanten.|
 |_audience_ |Erforderlich. Dieser Wert wird auf https://management.core.windows.net/.| festgelegt.
-|_clientId_ |Erforderlich. Geben Sie die Client-ID für die Azure AD-Anwendung an.|
+|_clientId_ |Erforderlich. Geben Sie die Client-ID für die Azure AD-Anwendung an.|
 |_secret_ |Erforderlich. Der geheime Schlüssel des Clients, der das Token anfordert.|
 
 ### Ermitteln der Mandanten-ID
@@ -253,13 +253,13 @@ Wenn eine Anforderung mit Authentifizierungsinformationen gesendet wird, enthäl
 |_type_ |Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung lautet der Wert `ActiveDirectoryOAuth`.|
 |_tenant_ |Die Mandanten-ID für den Azure AD-Mandanten. |
 |_audience_ |Dieser Wert wird auf https://management.core.windows.net/.| festgelegt.
-|_clientId_ |Die Client-ID für die Azure AD-Anwendung.|
+|_clientId_ |Die Client-ID für die Azure AD-Anwendung.|
 
 ## Beispielanforderung und -antwort für die ActiveDirectoryOAuth-Authentifizierung
 
 Das folgende Beispiel führt eine PUT-Anforderung aus, die die Authentifizierung vom Typ `ActiveDirectoryOAuth` integriert. Die Anforderung sieht wie folgt aus:
 
-	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
+	PUT https://management.core.windows.net/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler
 	x-ms-version: 2013-03-01
 	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
 	Content-Type: application/json; charset=utf-8
@@ -336,10 +336,10 @@ Die Antwort auf diese Anforderung lautet wie folgt:
 	}
 
 ## Siehe auch
- 
+
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
- 
+
  [Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler](scheduler-concepts-terms.md)
 
  [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
@@ -354,10 +354,4 @@ Die Antwort auf diese Anforderung lautet wie folgt:
 
  [Einschränkungen, Standardwerte und Fehlercodes für Azure Scheduler](scheduler-limits-defaults-errors.md)
 
-
-  
-
- 
-  
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

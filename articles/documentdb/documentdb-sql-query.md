@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="03/11/2016" 
 	ms.author="arramac"/>
 
 # SQL-Abfrage und SQL-Syntax in DocumentDB
@@ -90,7 +90,7 @@ Nun folgt ein zweites Dokument mit einem kleinen Unterschied: `givenName` und `f
 
 
 
-Wir werden nun einige Abfragen an die Daten ausführen, um einige der Schlüsselaspekte von DocumentDB-SQL besser zu verstehen. Die folgende Abfrage gibt z. B. die Dokumente zurück, in denen das ID-Feld den Text `AndersenFamily` enthält. Da es sich um `SELECT *` handelt, ist die Rückgabe der Abfrage das komplette JSON-Dokument:
+Wir werden nun einige Abfragen an die Daten ausführen, um einige der Schlüsselaspekte von DocumentDB-SQL besser zu verstehen. Die folgende Abfrage gibt z. B. die Dokumente zurück, in denen das ID-Feld den Text `AndersenFamily` enthält. Da es sich um `SELECT *` handelt, ist die Rückgabe der Abfrage das komplette JSON-Dokument:
 
 **Abfragen**
 
@@ -157,7 +157,7 @@ Die nächste Abfrage gibt alle Vornamen von Kindern der Familie zurück, deren I
 
 Beachten Sie einige der bemerkenswerten Aspekte der DocumentDB-Abfragesprache, die wir in den bisherigen Beispielen gesehen haben:
  
--	Da DocumentDB-SQL mit JSON-Werten arbeitet, werden baumförmige Entitäten anstelle von Spalten und Zeilen verarbeitet. Daher können Sie auf Knoten in der Baumstruktur in beliebiger Tiefe verweisen, z. B. `Node1.Node2.Node3…..Nodem`, ähnlich wie relationale SQL mit einem zweiteiligen Verweis auf `<table>.<column>`.   
+-	Da DocumentDB-SQL mit JSON-Werten arbeitet, werden baumförmige Entitäten anstelle von Spalten und Zeilen verarbeitet. Daher können Sie auf Knoten in der Baumstruktur in beliebiger Tiefe verweisen, z. B. `Node1.Node2.Node3…..Nodem`, ähnlich wie relationale SQL mit einem zweiteiligen Verweis auf `<table>.<column>`.   
 -	Die strukturierte Abfragesprache arbeitet mit schemalosen Daten. Daher muss das Typsystem dynamisch gebunden werden. Derselbe Ausdruck kann unterschiedliche Typen in unterschiedlichen Dokumenten ergeben. Das Ergebnis einer Abfrage ist ein gültiger JSON-Wert, aber nicht garantiert innerhalb eines festen Schemas.  
 -	DocumentDB unterstützt nur strikte JSON-Dokumente. Typsystem und Ausdrücke sind also auf JSON-Typen beschränkt. Weitere Informationen finden Sie unter [JSON-Spezifikation](http://www.json.org/).  
 -	Eine DocumentDB-Sammlung ist ein schemaloser Container mit JSON-Dokumenten. Die Beziehungen in Datenentitäten innerhalb und zwischen Dokumenten in einer Sammlung werden implizit durch Einschluss erfasst, und nicht durch Beziehungen von primären Schlüsseln und Fremdschlüsseln. Dieser Aspekt ist wichtig angesichts der später in diesem Artikel besprochenen dokumentinternen Verknüpfungen.
@@ -197,7 +197,7 @@ Die `FROM <from_specification>`-Klausel ist optional, es sei denn, die Quelle wi
 
 Abfragen wie `SELECT * FROM Families` geben an, dass die gesamte Families-Sammlung als Quelle dient, die durchlaufen werden soll. Der Sonderbezeichner "ROOT" kann anstelle des Sammlungsnamens verwendet werden, um die Sammlung darzustellen. Die folgende Liste enthält die Regeln, die pro Abfrage erzwungen werden:
 
-- Die Sammlung kann Aliase enthalten, z. B. `SELECT f.id FROM Families AS f` oder einfach `SELECT f.id FROM Families f`. Hier ist `f` das Äquivalent zu `Families`. `AS` ist ein optionales Schlüsselwort als Alias für den Bezeichner.
+- Die Sammlung kann Aliase enthalten, z. B. `SELECT f.id FROM Families AS f` oder einfach `SELECT f.id FROM Families f`. Hier ist `f` das Äquivalent zu `Families`. `AS` ist ein optionales Schlüsselwort als Alias für den Bezeichner.
 
 -	Nach der Aliasverwendung kann die Originalquelle nicht mehr gebunden werden. `SELECT Families.id FROM Families f` ist beispielsweise syntaktisch ungültig, da der Bezeichner „Families“ nicht mehr aufgelöst werden kann.
 
@@ -281,7 +281,29 @@ Die folgende Abfrage fordert Dokumente an, die eine „name“-Eigenschaft entha
 
 Das vorstehende Beispiel zeigt eine einfache Gleichheitsabfrage. DocumentDB-SQL unterstützt außerdem eine Vielzahl skalarer Ausdrücke. Die am häufigsten verwendeten Ausdrücke sind binäre und unäre Ausdrücke. Eigenschaftsverweise aus dem JSON-Quellobjekt sind ebenfalls gültige Ausdrücke.
 
-Die folgenden binären Operatoren werden momentan unterstützt und können in Abfragen verwendet werden. Dies wird in den folgenden Beispielen veranschaulicht: <table> <tr> <td>Arithmetisch</td> <td>+,-,*,/,%</td> </tr> <tr> <td>Bitweise</td> <td>|, &, ^, <<, >>, >>> (Nullauffüllung, Verschiebung nach rechts) </td> </tr> <tr> <td>Logisch</td> <td>AND, OR</td> </tr> <tr> <td>Vergleich</td> <td>=, !=, >, >=, <, <=, <></td> </tr> <tr> <td>Zeichenfolge</td> <td>|| (Verkettung)</td> </tr> </table>
+Die folgenden binären Operatoren werden momentan unterstützt und können in Abfragen verwendet werden, wie in den folgenden Beispielen gezeigt:
+<table>
+<tr>
+<td>Arithmetik</td>	
+<td>+,-,*,/,%</td>
+</tr>
+<tr>
+<td>Bitweise</td>	
+<td>|, &amp;, ^, &lt;&lt;, >>, >>> (Nullverschiebung nach rechts) </td>
+</tr>
+<tr>
+<td>Logisch</td>
+<td>AND, OR, NOT</td>
+</tr>
+<tr>
+<td>Vergleich</td>	
+<td>=, !=, &lt;, >, &lt;=, >=, &lt;></td>
+</tr>
+<tr>
+<td>String</td>	
+<td>|| (Verkettung)</td>
+</tr>
+</table>  
 
 Betrachten wir nun einige Abfragen mit binären Operatoren.
 
@@ -313,7 +335,219 @@ Die unären Operatoren "+,-, ~ und NOT" werden ebenfalls unterstützt und könne
 Neben binären und unären Operatoren sind auch Eigenschaftsverweise zulässig. Beispielsweise gibt `SELECT * FROM Families f WHERE f.isRegistered` das JSON-Dokument zurück, das die `isRegistered`-Eigenschaft enthält und dessen Eigenschaftswert gleich dem JSON-Wert `true` ist. Alle anderen Werte (false, null, Undefined, `<number>`, `<string>`, `<object>`, `<array>` usw.) führen dazu, dass das Quelldokument aus dem Ergebnis ausgeschlossen wird.
 
 ### Gleichheits- und Vergleichsoperatoren
-Die folgende Tabelle zeigt die Ergebnisse für Gleichheitsvergleiche in DocumentDB-SQL zwischen den einzelnen JSON-Typen. <table style = "width:300px"> <tbody> <tr> <td valign="top"> <strong>Operator</strong> </td> <td valign="top"> <strong>Undefined</strong> </td> <td valign="top"> <strong>Null</strong> </td> <td valign="top"> <strong>Boolean</strong> </td> <td valign="top"> <strong>Number</strong> </td> <td valign="top"> <strong>String</strong> </td> <td valign="top"> <strong>Object</strong> </td> <td valign="top"> <strong>Array</strong> </td> </tr> <tr> <td valign="top"> <strong>Undefined<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Null<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Boolean<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Number<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>String<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Object<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Array<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> </tr> </tbody> </table>
+Die folgende Tabelle zeigt die Ergebnisse für Gleichheitsvergleiche in DocumentDB-SQL zwischen den einzelnen JSON-Typen.
+<table style = "width:300px">
+   <tbody>
+      <tr>
+         <td valign="top">
+            <strong>Op</strong>
+         </td>
+         <td valign="top">
+            <strong>Undefined</strong>
+         </td>
+         <td valign="top">
+            <strong>Null</strong>
+         </td>
+         <td valign="top">
+            <strong>Boolean</strong>
+         </td>
+         <td valign="top">
+            <strong>Number</strong>
+         </td>
+         <td valign="top">
+            <strong>String</strong>
+         </td>
+         <td valign="top">
+            <strong>Objekt</strong>
+         </td>
+         <td valign="top">
+            <strong>Array</strong>
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            <strong>Undefined<strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            <strong>Null<strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            <strong>OK</strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            <strong>Boolean<strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            <strong>OK</strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            <strong>Number<strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            <strong>OK</strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            <strong>String<strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            <strong>OK</strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            <strong>Object<strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            <strong>OK</strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            <strong>Array<strong>
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            Undefined
+         </td>
+         <td valign="top">
+            <strong>OK</strong>
+         </td>
+      </tr>
+   </tbody>
+</table>
 
 Für andere Vergleichsoperatoren wie >, >=, !=, < und <= gelten die folgenden Regeln:
 
@@ -379,7 +613,7 @@ IN entspricht dem Verketten mehrerer OR-Klauseln. Da es aber mit nur einem Index
 ### Ternäre (?) und koaleszierte (??) Operatoren
 Ternäre und koaleszierte Operatoren können ähnlich wie in den gängigen Programmiersprachen wie C# und JavaScript zum Erstellen von bedingten Ausdrücken verwendet werden.
 
-Der ternäre (?) Operator kann beim schnellen Erstellen von neuen JSON-Eigenschaften sehr nützlich sein. Sie können nun z. B. Abfragen zum Klassifizieren von Klassenstufen in einem für Menschen lesbaren Format wie Anfänger/Fortgeschrittene/Profis wie unten dargestellt erstellen.
+Der ternäre (?) Operator kann beim schnellen Erstellen von neuen JSON-Eigenschaften sehr nützlich sein. Sie können nun z. B. Abfragen zum Klassifizieren von Klassenstufen in einem für Menschen lesbaren Format wie Anfänger/Fortgeschrittene/Profis wie unten dargestellt erstellen.
  
      SELECT (c.grade < 5)? "elementary": "other" AS gradeLevel 
      FROM Families.children[0] c
@@ -462,7 +696,7 @@ Die Projektion unterstützt auch JSON-Ausdrücke, wie im folgenden Beispiel geze
 	}]
 
 
-Beachten Sie die Rolle von `$1`. Die `SELECT`-Klausel muss ein JSON-Objekt erstellen. Da kein Schlüssel angegeben ist, verwenden wir implizite Argumentvariablennamen beginnend mit `$1`. Diese Abfrage gibt z. B. zwei implizite Argumentvariablen mit den Bezeichnungen `$1` und `$2` zurück.
+Beachten Sie die Rolle von `$1`. Die `SELECT`-Klausel muss ein JSON-Objekt erstellen. Da kein Schlüssel angegeben ist, verwenden wir implizite Argumentvariablennamen beginnend mit `$1`. Diese Abfrage gibt z. B. zwei implizite Argumentvariablen mit den Bezeichnungen `$1` und `$2` zurück.
 
 **Abfrage**
 
@@ -511,7 +745,7 @@ Wenn eine Abfrage zwei Eigenschaften mit demselben Namen hat, müssen Aliase ver
 
 
 ### Skalare Ausdrücke
-Neben Eigenschaftsverweisen unterstützt die SELECT-Klausel auch skalare Ausdrücke wie Konstanten, arithmetische Ausdrücke, logische Ausdrücke usw. Hier sehen Sie z. B. eine einfache „Hello World“-Abfrage.
+Neben Eigenschaftsverweisen unterstützt die SELECT-Klausel auch skalare Ausdrücke wie Konstanten, arithmetische Ausdrücke, logische Ausdrücke usw. Hier sehen Sie z. B. eine einfache „Hello World“-Abfrage.
 
 **Abfrage**
 
@@ -582,7 +816,7 @@ Eine weitere Schlüsselfunktion von DocumentDB-SQL ist die Objekt- und Arrayerst
 	]
 
 ### VALUE-Schlüsselwort
-Mit dem **VALUE**-Schlüsselwort können Sie JSON-Werte zurückgeben. Die folgende Abfrage gibt z. B. den skalaren Wert `"Hello World"` anstelle von `{$1: "Hello World"}` zurück.
+Mit dem **VALUE**-Schlüsselwort können Sie JSON-Werte zurückgeben. Die folgende Abfrage gibt z. B. den skalaren Wert `"Hello World"` anstelle von `{$1: "Hello World"}` zurück.
 
 **Abfrage**
 
@@ -633,7 +867,7 @@ Das folgende Beispiel zeigt, wie Sie primitive JSON-Werte zurückgeben können (
 
 
 ###* Operator
-Der Sonderoperator (*) wird unterstützt, um das Dokument unverändert zu projizieren. Wenn dieser Operator verwendet wird, dürfen keine weiteren projizierten Felder existieren. Abfragen wie `SELECT * FROM Families f` sind z. B. gültig, während `SELECT VALUE * FROM Families f ` und `SELECT *, f.id FROM Families f ` nicht gültig sind.
+Der Sonderoperator (*) wird unterstützt, um das Dokument unverändert zu projizieren. Wenn dieser Operator verwendet wird, dürfen keine weiteren projizierten Felder existieren. Abfragen wie `SELECT * FROM Families f` sind z. B. gültig, während `SELECT VALUE * FROM Families f ` und `SELECT *, f.id FROM Families f ` nicht gültig sind.
 
 **Abfrage**
 
@@ -716,7 +950,7 @@ Dies ist beispielsweise eine Abfrage, mit der Familien sortiert nach dem Namen d
 	  }
 	]
 
-Und mit dieser Abfrage werden Familien sortiert nach dem Erstellungsdatum abgerufen. Dieser Wert wird als Zahl gespeichert, der die „Epoche“ repräsentiert, also die seit dem 1. Januar 1970 verstrichene Zeit in Sekunden.
+Und mit dieser Abfrage werden Familien sortiert nach dem Erstellungsdatum abgerufen. Dieser Wert wird als Zahl gespeichert, der die „Epoche“ repräsentiert, also die seit dem 1. Januar 1970 verstrichene Zeit in Sekunden.
 
 **Abfrage**
 
@@ -997,7 +1231,7 @@ Im vorherigen Beispiel wird eine UDF mit dem Namen `REGEX_MATCH` erstellt. Es we
 
 Wir können diese UDF nun in einer Abfrage in einer Projektion verwenden. UDFs müssen mit dem Präfix "udf." qualifiziert werden (unter Berücksichtigung der Groß-/Kleinschreibung), wenn sie aus Abfragen aufgerufen werden.
 
->[AZURE.NOTE] Vor dem 17.3.2015 hat DocumentDB UDF-Aufrufe ohne das Präfix „udf.“, z. B. SELECT REGEX\_MATCH(), unterstützt. Dieses Aufrufmuster ist veraltet.
+>[AZURE.NOTE] Vor dem 17.3.2015 hat DocumentDB UDF-Aufrufe ohne das Präfix „udf.“, z. B. SELECT REGEX\_MATCH(), unterstützt. Dieses Aufrufmuster ist veraltet.
 
 **Abfrage**
 
@@ -1086,12 +1320,12 @@ DocumentDB ist eine JSON-Datenbank und enthält daher Parallelen zu JavaScript-O
 
 In der DocumentDB-SQL ist der Typ eines Werts im Gegensatz zu herkömmlichem SQL oft nicht bekannt, bevor der Wert tatsächlich aus der Datenbank abgerufen wird. Um effiziente Abfragen zu ermöglichen, haben die meisten Operatoren strikte Typanforderungen.
 
-DocumentDB-SQL führt im Gegensatz zu JavaScript keine impliziten Konvertierungen durch. Eine Abfrage wie `SELECT * FROM Person p WHERE p.Age = 21` stimmt beispielsweise mit Dokumenten überein, die eine Age-Eigenschaft mit dem Wert 21 enthalten. Alle weiteren Dokumente, deren Age-Eigenschaft mit der Zeichenfolge "21" übereinstimmt, oder sonstige Variationen wie "021", "21,0", "0021", "00021" usw. werden nicht zurückgegeben. Bei JavaScript würden diese Zeichenfolgenwerte dagegen implizit in Zahlen umgewandelt (je nach Operator, z. B.: ==). Dieser Unterschied ist wichtig für die effiziente Indexierung in DocumentDB-SQL.
+DocumentDB-SQL führt im Gegensatz zu JavaScript keine impliziten Konvertierungen durch. Eine Abfrage wie `SELECT * FROM Person p WHERE p.Age = 21` stimmt beispielsweise mit Dokumenten überein, die eine Age-Eigenschaft mit dem Wert 21 enthalten. Alle weiteren Dokumente, deren Age-Eigenschaft mit der Zeichenfolge "21" übereinstimmt, oder sonstige Variationen wie "021", "21,0", "0021", "00021" usw. werden nicht zurückgegeben. Bei JavaScript würden diese Zeichenfolgenwerte dagegen implizit in Zahlen umgewandelt (je nach Operator, z. B.: ==). Dieser Unterschied ist wichtig für die effiziente Indexierung in DocumentDB-SQL.
 
 ## Parametrisierte SQL-Abfragen
 DocumentDB unterstützt Abfragen mit Parametern, die mit der bekannten @-Notation ausgedrückt werden. Parametrisiertes SQL bietet stabile Fehlerbehandlung und Schutz von Benutzereingaben, wodurch eine versehentliche Offenlegung von Daten durch SQL-Injektion verhindert wird.
 
-Sie können z. B. eine Abfrage erstellen, die "last name" und "adress state" als Parameter verwendet, und sie dann für unterschiedliche "last name"- und "address state"-Werte auf Grundlage von Benutzereingaben ausführen.
+Sie können z. B. eine Abfrage erstellen, die "last name" und "adress state" als Parameter verwendet, und sie dann für unterschiedliche "last name"- und "address state"-Werte auf Grundlage von Benutzereingaben ausführen.
 
     SELECT * 
     FROM Families f
@@ -1142,7 +1376,7 @@ DocumentDB unterstützt auch eine Reihe von integrierten Funktionen für häufig
 <td>Räumliche Funktionen</td>	
 <td>ST_DISTANCE, ST_WITHIN, ST_ISVALID und ST_ISVALIDDETAILED</td>
 </tr>
-</table>
+</table>  
 
 Wenn Sie derzeit eine UDF verwenden, für die jetzt eine entsprechende integrierte Funktion verfügbar ist, sollten Sie diese integrierte Funktion verwenden, da sie schneller und effizienter ausgeführt werden kann.
 
@@ -1248,7 +1482,7 @@ Jede mathematische Funktion führt eine Berechnung durch, üblicherweise basiere
 <td>Gibt den Tangens des Eingabeausdrucks im angegebenen Ausdruck zurück.</td>
 </tr>
 
-</table>
+</table> 
 
 Sie können nun beispielsweise Abfragen wie die folgende ausführen:
 
@@ -1326,7 +1560,7 @@ Verwendung|Beschreibung
 [STARTSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_startswith)|Gibt einen booleschen Wert zurück, um anzugeben, ob der erste Zeichenfolgenausdruck mit dem zweiten beginnt.
 [ENDSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_endswith)|Gibt einen booleschen Wert zurück, um anzugeben, ob der erste Zeichenfolgenausdruck mit dem zweiten endet.
 [CONTAINS (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_contains)|Gibt einen booleschen Wert zurück, um anzugeben, ob der erste Zeichenfolgenausdruck den zweiten enthält.
-[INDEX\_OF (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_index_of)|Gibt die Anfangsposition des ersten Vorkommens des zweiten Zeichenfolgenausdrucks innerhalb des ersten angegebenen Zeichenfolgenausdrucks zurück, oder -1, wenn die Zeichenfolge nicht gefunden wird.
+[INDEX\_OF (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_index_of)|Gibt die Anfangsposition des ersten Vorkommens des zweiten Zeichenfolgenausdrucks innerhalb des ersten angegebenen Zeichenfolgenausdrucks zurück, oder -1, wenn die Zeichenfolge nicht gefunden wird.
 [LEFT (str\_expr, num\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_left)|Gibt den linken Teil einer Zeichenfolge mit der angegebenen Anzahl von Zeichen zurück.
 [RIGHT (str\_expr, num\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_right)|Gibt den rechten Teil einer Zeichenfolge mit der angegebenen Anzahl von Zeichen zurück.
 [LTRIM (str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_ltrim)|Gibt einen Zeichenfolgenausdruck zurück, nachdem vorangestellte Leerzeichen entfernt wurden.
@@ -1454,7 +1688,7 @@ DocumentDB unterstützt die folgenden integrierten OGC-Funktionen (Open Geospati
 </tr>
 </table>
 
-Räumliche Funktionen können verwendet werden, um Entfernungsabfragen auf räumliche Daten anzuwenden. Hier ist z. B. eine Abfrage, die alle Familiendokumente zurückgibt, die sich innerhalb von 30 km von der angegebenen Position befinden. Dazu wird die integrierte ST\_DISTANCE-Funktion verwendet.
+Räumliche Funktionen können verwendet werden, um Entfernungsabfragen auf räumliche Daten anzuwenden. Hier ist z. B. eine Abfrage, die alle Familiendokumente zurückgibt, die sich innerhalb von 30 km von der angegebenen Position befinden. Dazu wird die integrierte ST\_DISTANCE-Funktion verwendet.
 
 **Abfrage**
 
@@ -1472,7 +1706,7 @@ Wenn Sie die räumliche Indizierung in Ihre Indizierungsrichtlinie einschließen
 
 ST\_WITHIN kann verwendet werden, um zu prüfen, ob ein Punkt innerhalb eines Polygons liegt. Polygone werden häufig verwendet, um Umgrenzungen wie Postleitzahlen, Staatsgrenzen oder natürliche Gebilde darzustellen. Wenn Sie wiederum die räumliche Indizierung in Ihre Indizierungsrichtlinie einschließen, werden Abfragen nach enthaltenen Elementen effizient über den Index beantwortet.
 
-Polygonargumente in ST\_WITHIN dürfen nur einen einzigen Ring enthalten, d. h. die Polygone dürfen keine Löcher aufweisen. Überprüfen Sie die [DocumentDB-Grenzen](documentdb-limits.md) auf die maximale Anzahl von Punkten in einem Polygon, die für eine ST\_WITHIN-Abfrage zulässig ist.
+Polygonargumente in ST\_WITHIN dürfen nur einen einzigen Ring enthalten, d. h. die Polygone dürfen keine Löcher aufweisen. Überprüfen Sie die [DocumentDB-Grenzen](documentdb-limits.md) auf die maximale Anzahl von Punkten in einem Polygon, die für eine ST\_WITHIN-Abfrage zulässig ist.
 
 **Abfrage**
 
@@ -2128,14 +2362,14 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 2.	[DocumentDB-SQL-Spezifikation](http://go.microsoft.com/fwlink/p/?LinkID=510612)
 3.	[DocumentDB .NET-Beispiele](https://github.com/Azure/azure-documentdb-net)
 4.	[DocumentDB-Konsistenzebenen][consistency-levels]
-5.	ANSI SQL 2011 [http://www.iso.org/iso/iso\_catalogue/catalogue\_tc/catalogue\_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
+5.	ANSI SQL 2011 [http://www.iso.org/iso/iso\_catalogue/catalogue\_tc/catalogue\_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 6.	JSON [http://json.org/](http://json.org/)
 7.	JavaScript-Spezifikation [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 
 8.	LINQ [http://msdn.microsoft.com/library/bb308959.aspx](http://msdn.microsoft.com/library/bb308959.aspx) 
 9.	Abfrageauswertungstechniken für große Datenbanken [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
-10.	Abfrageverarbeitung in parallelen relationalen Datenbanksystemen, IEEE Computer Society Press, 1994
-11.	Lu, Ooi, Tan, Abfrageverarbeitung in parallelen relationalen Datenbanksystemen, IEEE Computer Society Press, 1994.
-12.	Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
+10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
+11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
+12.	Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
 13.     G. Graefe. The Cascades framework for query optimization. IEEE Data Eng. Bull., 18(3): 1995.
 
 
@@ -2144,4 +2378,4 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 [consistency-levels]: documentdb-consistency-levels.md
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

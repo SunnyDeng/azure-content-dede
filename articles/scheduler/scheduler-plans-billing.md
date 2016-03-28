@@ -1,20 +1,20 @@
-<properties 
- pageTitle="Pläne und Abrechnung in Azure Scheduler" 
- description="" 
- services="scheduler" 
- documentationCenter=".NET" 
- authors="krisragh" 
- manager="dwrede" 
+<properties
+ pageTitle="Pläne und Abrechnung in Azure Scheduler"
+ description=""
+ services="scheduler"
+ documentationCenter=".NET"
+ authors="krisragh"
+ manager="dwrede"
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="12/04/2015" 
+<tags
+ ms.service="scheduler"
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.date="03/09/2016"
  ms.author="krisragh"/>
- 
+
 # Pläne und Abrechnung in Azure Scheduler
 
 ## Pläne für Auftragssammlungen
@@ -24,8 +24,8 @@ In Azure Scheduler wird nach Auftragssammlungen abgerechnet. Auftragssammlungen 
 |**Auftragssammlungsplan**|**Max. Anzahl von Aufträgen pro Auftragssammlung**|**Max. Wiederholungen**|**Max. Auftragssammlungen pro Abonnement**|**Einschränkungen**|
 |:---|:---|:---|:---|:---|
 |**Free**|Fünf Aufträge pro Auftragssammlung|Einmal pro Stunde. Aufträge können maximal einmal pro Stunde ausgeführt werden.|Ein Abonnement kann maximal eine Auftragssammlung vom Typ „Free“ enthalten.|Das [HTTP-Objekt für die ausgehende Autorisierung](scheduler-outbound-authentication.md) kann nicht verwendet werden.
-|**Standard**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann maximal 100 Auftragssammlungen vom Typ „Standard“ enthalten.|Zugriff auf sämtliche Scheduler-Features|
-|**Premium**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann maximal 10.000 Auftragssammlungen vom Typ "Premium" enthalten. <a href="mailto:wapteams@microsoft.com">Setzen Sie sich mit uns in Verbindung</a>, um weitere Informationen zu erhalten.|Zugriff auf sämtliche Scheduler-Features|
+|**Standard**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann maximal 100 Auftragssammlungen vom Typ „Standard“ enthalten.|Zugriff auf sämtliche Scheduler-Features|
+|**Premium**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann maximal 10.000 Auftragssammlungen vom Typ "Premium" enthalten. <a href="mailto:wapteams@microsoft.com">Setzen Sie sich mit uns in Verbindung</a>, um weitere Informationen zu erhalten.|Zugriff auf sämtliche Scheduler-Features|
 
 ## Upgrades und Downgrades für Auftragssammlungspläne
 
@@ -38,21 +38,21 @@ Sie können bei Ihren Auftragssammlungsplänen jederzeit zwischen „Free“, �
 
 ## Abrechnung und Azure-Pläne
 
-Für Auftragssammlungen vom Typ „Free“ fallen in Abonnements keine Kosten an. Bei mehr als 100 Standard-Auftragssammlungen (entspricht zehn Standard-Abrechnungseinheiten) lohnt sich die Verlagerung der Auftragssammlungen in der Premium-Plan.
+Für Auftragssammlungen vom Typ „Free“ fallen in Abonnements keine Kosten an. Bei mehr als 100 Standard-Auftragssammlungen (entspricht zehn Standard-Abrechnungseinheiten) lohnt sich die Verlagerung der Auftragssammlungen in der Premium-Plan.
 
 Wenn Sie eine Auftragssammlung vom Typ "Standard" und eine vom Typ "Premium" besitzen, werden Ihnen eine Standard-Abrechnungseinheit _und_ eine Premium-Abrechnungseinheit in Rechnung gestellt. Die Abrechnung des Scheduler-Diensts basiert auf der Anzahl aktiver Auftragssammlungen vom Typ „Standard“ oder „Premium“. Dies wird in den beiden folgenden Abschnitten ausführlicher erläutert.
 
 ## Standard-Abrechnungseinheiten
 
-Eine Standard-Abrechnungseinheit kann bis zu zehn Standard-Auftragssammlungen enthalten. Da eine Standard-Auftragssammlung bis zu 50 Aufträge enthalten kann, kann ein Abonnement mit einer Standard-Abrechnungseinheit bis zu 500 Aufträge (und nahezu 22 Millionen Auftragsausführungen pro Monat) umfassen.
+Eine Standard-Abrechnungseinheit kann bis zu zehn Standard-Auftragssammlungen enthalten. Da eine Standard-Auftragssammlung bis zu 50 Aufträge enthalten kann, kann ein Abonnement mit einer Standard-Abrechnungseinheit bis zu 500 Aufträge (und nahezu 22 Millionen Auftragsausführungen pro Monat) umfassen.
 
-Bis zu einer Anzahl von zehn Standard-Auftragssammlungen wird eine einzelne Standard-Abrechnungseinheit berechnet. Wenn Sie zwischen elf und 20 Standard-Auftragssammlungen besitzen, werden zwei Standard-Abrechnungseinheiten berechnet. Wenn Sie zwischen 21 und 30 Standard-Auftragssammlungen besitzen, werden drei Standard-Abrechnungseinheiten berechnet, usw.
+Bis zu einer Anzahl von zehn Standard-Auftragssammlungen wird eine einzelne Standard-Abrechnungseinheit berechnet. Wenn Sie zwischen elf und 20 Standard-Auftragssammlungen besitzen, werden zwei Standard-Abrechnungseinheiten berechnet. Wenn Sie zwischen 21 und 30 Standard-Auftragssammlungen besitzen, werden drei Standard-Abrechnungseinheiten berechnet, usw.
 
 ## Premium-Abrechnungseinheiten
 
-Eine Premium-Abrechnungseinheit kann bis zu 10.000 Premium-Auftragssammlungen enthalten. Da eine Premium-Auftragssammlung bis zu 50 Aufträge enthalten kann, kann ein Abonnement mit einer Premium-Abrechnungseinheit bis zu 500,000 Aufträge (und nahezu 22 Milliarden Auftragsausführungen pro Monat) umfassen.
+Eine Premium-Abrechnungseinheit kann bis zu 10.000 Premium-Auftragssammlungen enthalten. Da eine Premium-Auftragssammlung bis zu 50 Aufträge enthalten kann, kann ein Abonnement mit einer Premium-Abrechnungseinheit bis zu 500,000 Aufträge (und nahezu 22 Milliarden Auftragsausführungen pro Monat) umfassen.
 
-Bis zu einer Anzahl von 10.000 Premium-Auftragssammlungen wird eine einzelne Premium-Abrechnungseinheit berechnet. Wenn Sie zwischen 10.001 und 20.000 Premium-Auftragssammlungen besitzen, werden zwei Premium-Abrechnungseinheiten berechnet, usw.
+Bis zu einer Anzahl von 10.000 Premium-Auftragssammlungen wird eine einzelne Premium-Abrechnungseinheit berechnet. Wenn Sie zwischen 10.001 und 20.000 Premium-Auftragssammlungen besitzen, werden zwei Premium-Abrechnungseinheiten berechnet, usw.
 
 Premium-Auftragssammlungen haben den gleichen Funktionsumfang wie Standard-Auftragssammlungen, sind preislich aber interessanter, wenn Ihre Anwendung besonders viele Auftragssammlungen benötigt.
 
@@ -67,10 +67,10 @@ Sie können zwar mit einem einzelnen Vorgang alle Aufträge innerhalb einer Auft
 Ausführliche Informationen finden Sie unter [Scheduler Preise](https://azure.microsoft.com/pricing/details/scheduler/).
 
 ## Siehe auch
- 
+
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
- 
+
  [Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler](scheduler-concepts-terms.md)
 
  [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
@@ -84,9 +84,5 @@ Ausführliche Informationen finden Sie unter [Scheduler Preise](https://azure.mi
  [Einschränkungen, Standardwerte und Fehlercodes für Azure Scheduler](scheduler-limits-defaults-errors.md)
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
- 
-  
 
-  
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

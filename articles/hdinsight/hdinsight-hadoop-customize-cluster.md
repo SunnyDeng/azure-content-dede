@@ -19,11 +19,9 @@
 
 # Anpassen Windows-basierter HDInsight-Cluster mithilfe von Skriptaktionen
 
-[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-create-windows-cluster-selector.md)]
-
 **Script Action** kann während der Clustererstellung zum Aufrufen [benutzerdefinierter Skripts](hdinsight-hadoop-script-actions.md) verwendet werden, um zusätzliche Software auf einem Cluster zu installieren.
 
-Die Informationen in diesem Artikel gelten für Windows-basierte HDInsight-Cluster. Verwenden Sie die oben ausgewählte Registerkarte, um auf eine Version dieses Artikels zu wechseln, die spezifisch für Linux-basierte Cluster ist.
+Die Informationen in diesem Artikel gelten für Windows-basierte HDInsight-Cluster. Informationen zu Linux-basierten Clustern finden Sie unter [Anpassen Linux-basierter HDInsight-Cluster mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
 HDInsight-Cluster können auch auf verschiedene andere Weisen angepasst werden, z. B. durch Hinzufügen von Azure-Speicherkonten, Ändern der Hadoop-Konfigurationsdateien (core-site.xml, hive-site.xml usw.) oder Hinzufügen gemeinsam genutzter Bibliotheken (z. B. Hive, Oozie) zu allgemeinen Speicherorten im Cluster. Diese Anpassungen können über Azure PowerShell, das Azure HDInsight .NET SDK oder das Azure-Portal erfolgen. Weitere Informationen finden Sie unter [Erstellen von Hadoop-Clustern in HDInsight][hdinsight-provision-cluster].
 
@@ -323,4 +321,4 @@ Siehe [Entwickeln von Skriptaktionsskripts für HDInsight][hdinsight-write-scrip
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Phasen während der Clustererstellung"
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

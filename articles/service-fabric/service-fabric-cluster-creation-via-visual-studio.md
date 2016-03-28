@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/12/2016"
+   ms.date="03/11/2016"
    ms.author="karolz@microsoft.com"/>
 
 # Einrichten eines Service Fabric-Clusters mit Visual Studio
@@ -35,64 +35,72 @@ Nachdem Sie auf die Schaltfläche „OK“ geklickt haben, fordert Visual Studio
 Wählen Sie die Vorlage „Service-Fabric-Cluster“ aus, und klicken Sie erneut auf „OK“. Das Projekt und die Ressourcen-Manager-Vorlage sind jetzt erstellt.
 
 ## Vorbereiten der Vorlage für die Bereitstellung
-Bevor die Vorlage bereitgestellt wird, um den Cluster zu erstellen, müssen Sie Werte für die erforderlichen Vorlagenparameter angeben. Diese Parameterwerte werden aus der Datei `ServiceFabricCluster.param.dev.json` gelesen, die sich im Ordner `Templates` des Ressourcengruppenprojekts befindet. Öffnen Sie die Datei, und geben Sie die folgenden Werte an:
+Bevor die Vorlage bereitgestellt wird, um den Cluster zu erstellen, müssen Sie Werte für die erforderlichen Vorlagenparameter angeben. Diese Parameterwerte werden aus der Datei `ServiceFabricCluster.parameters.json` gelesen, die sich im Ordner `Templates` des Ressourcengruppenprojekts befindet. Öffnen Sie die Datei, und geben Sie die folgenden Werte an:
 
 |Parametername |Beschreibung|
 |-----------------------  |--------------------------|
 |clusterLocation |Der Name der **Azure-Region**, in der sich der Service Fabric-Cluster befinden soll. Beispiel: „USA, Osten“.|
-|clusterName |Der Domänennamensystem-Name (DNS) des Service Fabric-Clusters, der von der Vorlage erstellt wird. <br /><br /> Wenn Sie beispielsweise diesen Parameter auf `myBigCluster` festlegen, und der `clusterLocation`-Parameter ist auf „USA, Osten“ festgelegt, lautet der Name des Clusters `myBigCluster.eastus.cloudapp.azure.com`.|
 |certificateThumbprint |Der Fingerabdruck des Zertifikats zum Schutz des Clusters.|
-|sourceVaultValue |Die *Ressourcen-ID* des Schlüsseltresors, in dem das Zertifikat zum Schutz des Clusters gespeichert ist.|
+|sourceVaultResourceId |Die *Ressourcen-ID* des Schlüsseltresors, in dem das Zertifikat zum Schutz des Clusters gespeichert ist.|
 |certificateUrlValue |Die URL des Sicherheitszertifikats des Clusters.|
 
 Die Visual Studio Service Fabric-Ressourcen-Manager-Vorlage erstellt einen sicheren Cluster, der durch ein Zertifikat geschützt ist. Dieses Zertifikat wird durch die letzten drei Vorlagenparameter (`certificateThumbprint`, `sourceVaultValue` und `certificateUrlValue`) identifiziert und muss in einem **Azure Key Vault** vorhanden sein. Weitere Informationen zum Erstellen des Sicherheitszertifikats des Clusters finden Sie im Artikel [Schützen eines Service Fabric-Clusters mit Zertifikaten](service-fabric-cluster-security.md#secure-a-service-fabric-cluster-by-using-certificates).
 
+## Optional: Ändern des Clusternamens
+Jeder Service Fabric-Cluster verfügt über einen Namen. Wenn ein Fabric-Cluster in Azure erstellt wird, bestimmt der Clustername (zusammen mit der Azure-Region) den DNS-Namen (Domain Name System) für den Cluster. Wenn Sie Ihren Cluster beispielsweise `myBigCluster` nennen und der `clusterLocation`-Parameter auf „USA, Osten“ festgelegt ist, lautet der DNS-Name des Clusters `myBigCluster.eastus.cloudapp.azure.com`.
+
+Standardmäßig wird der Name des Clusters automatisch generiert und durch Anfügen eines zufälligen Suffixes an das Präfix „cluster“ eindeutig festgelegt. So kann die Vorlage sehr einfach als Teil eines **Continuous Integration**-Systems (CI) verwendet werden. Wenn Sie einen bestimmten (für Sie aussagekräftigen) Namen für den Cluster verwenden möchten, legen Sie den Wert der `clusterName`-Variablen in der Resource Manager-Vorlagendatei (`ServiceFabricCluster.json`) auf Ihren ausgewählten Namen fest. Diese Variable ist die erste Variable, die in der Datei definiert ist.
+
 ## Optional: Hinzufügen öffentlicher Anwendungsports
 Vielleicht möchten Sie auch die öffentlichen Anwendungsports für den Cluster vor seiner Bereitstellung ändern. Standardmäßig öffnet die Vorlage nur zwei öffentliche TCP-Ports (80 und 8081). Wenn Sie für Ihre Anwendungen mehr benötigen, ändern Sie die Azure-Load Balancer-Definition in der Vorlage. Die Definition ist in der Hauptvorlagendatei (`SecureFabricCluster.json`) gespeichert. Öffnen Sie die Datei, und suchen Sie nach `loadBalancedAppPort`. Sie werden feststellen, dass jeder Port mit drei Artefakten verknüpft ist:
 
-1. Einem Vorlagenparameter, der den Wert für den TCP-Port definiert: ```json
-	"loadBalancedAppPort1": {
-	    "type": "int",
-	    "defaultValue": 80
-	}
+1. Einer Vorlagenvariablen, die den Wert für den TCP-Port definiert:
+
+	```json
+	"loadBalancedAppPort1": "80"
 	```
 
-2. Einem *Test*, der bestimmt, wie oft und wie lange der Azure Load Balancer versucht, einen bestimmten Service Fabric-Knoten zu verwenden, bevor ein Failover auf einen anderen erfolgt. Die Tests sind Teil der Load Balancer-Ressource. Hier sehen Sie die Testdefinition für den ersten Standardport der Anwendung: ```json
+2. Einem *Test*, der bestimmt, wie oft und wie lange der Azure Load Balancer versucht, einen bestimmten Service Fabric-Knoten zu verwenden, bevor ein Failover auf einen anderen erfolgt. Die Tests sind Teil der Load Balancer-Ressource. Hier sehen Sie die Testdefinition für den ersten Standardport der Anwendung:
+
+	```json
 	{
         "name": "AppPortProbe1",
         "properties": {
             "intervalInSeconds": 5,
             "numberOfProbes": 2,
-            "port": "[parameters('loadBalancedAppPort1')]",
-            "protocol": "tcp"
+            "port": "[variables('loadBalancedAppPort1')]",
+            "protocol": "Tcp"
         }
     }
 	```
 
-3. Eine *Lastenausgleichsregel*, die den Port und den Test verbindet, wodurch Lastenausgleich über eine Reihe von Service Fabric-Clusterknoten hinweg möglich ist: ```json
+3. Eine *Lastenausgleichsregel*, die den Port und den Test miteinander verbindet und so einen Lastenausgleich über eine Gruppe von Service Fabric-Clusterknoten hinweg ermöglicht:
+
+    ```json
 	{
 	    "name": "AppPortLBRule1",
 	    "properties": {
 	        "backendAddressPool": {
 	            "id": "[variables('lbPoolID0')]"
 	        },
-	        "backendPort": "[parameters('loadBalancedAppPort1')]",
+	        "backendPort": "[variables('loadBalancedAppPort1')]",
 	        "enableFloatingIP": false,
 	        "frontendIPConfiguration": {
 	            "id": "[variables('lbIPConfig0')]"
 	        },
-	        "frontendPort": "[parameters('loadBalancedAppPort1')]",
+	        "frontendPort": "[variables('loadBalancedAppPort1')]",
 	        "idleTimeoutInMinutes": 5,
 	        "probe": {
 	            "id": "[concat(variables('lbID0'),'/probes/AppPortProbe1')]"
 	        },
-	        "protocol": "tcp"
+	        "protocol": "Tcp"
 	    }
 	}
-    ``` Wenn die Anwendungen, die Sie für den Cluster bereitstellen möchten, mehr Ports benötigt, können Sie diese durch Erstellen zusätzlicher Tests und Lastenausgleichsregel-Definitionen hinzufügen. Weitere Informationen zum Arbeiten mit dem Azure-Load Balancer über Ressourcen-Manager-Vorlagen finden Sie unter [Erste Schritte zum Konfigurieren des internen Lastenausgleichs mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-internal-arm-powershell.md).
+    ```
+Wenn die Anwendungen, die Sie im Cluster bereitstellen möchten, mehr Ports benötigen, können Sie diese hinzufügen, indem Sie zusätzliche Regeldefinitionen für Test und Lastenausgleich erstellen. Weitere Informationen zum Arbeiten mit dem Azure Load Balancer über Resource Manager-Vorlagen finden Sie unter [Erste Schritte zum Erstellen eines internen Lastenausgleichs mithilfe einer Vorlage](../load-balancer/load-balancer-get-started-ilb-arm-template.md).
 
 ## Bereitstellen der Vorlage mit Visual Studio
-Nachdem Sie alle erforderlichen Parameterwerte in der Datei `ServiceFabricCluster.param.dev.json` gespeichert haben, können Sie die Vorlage bereitstellen und Ihren Service Fabric-Cluster erstellen. Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Ressourcengruppenprojekt, und wählen Sie **Bereitstellen** aus. Visual Studio zeigt das Dialogfeld **In Ressourcengruppe bereitstellen** an, und fordert Sie bei Bedarf auf, sich bei Azure zu authentifizieren:
+Nachdem Sie alle erforderlichen Parameterwerte in der Datei `ServiceFabricCluster.param.dev.json` gespeichert haben, können Sie die Vorlage bereitstellen und Ihren Service Fabric-Cluster erstellen. Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Ressourcengruppenprojekt, und wählen Sie **Bereitstellen** aus. In Visual Studio wird das Dialogfeld **In Ressourcengruppe bereitstellen** angezeigt, und Sie werden ggf. aufgefordert, sich bei Azure zu authentifizieren:
 
 ![Dialogfeld "In Ressourcengruppe bereitstellen"][3]
 
@@ -100,11 +108,13 @@ Im Dialogfeld können Sie eine vorhandene Ressourcen-Manager-Ressourcengruppe f�
 
 Nach Klicken auf die Schaltfläche „Bereitstellen“ werden Sie von Visual Studio aufgefordert, die Parameterwerte der Vorlage zu bestätigen. Klicken Sie auf die Schaltfläche **Speichern**. Ein Parameter hat keinen persistenten Wert: das Administratorkonto-Kennwort für den Cluster. Sie müssen einen Kennwortwert bereitstellen, wenn Visual Studio Sie dazu auffordert.
 
->[AZURE.NOTE] Wenn PowerShell noch nicht zum Verwalten von Azure auf dem aktuell genutzten Computer verwendet wurde, sind kleinere Wartungsaufgaben nötig: 1. Aktivieren Sie die Verwendung von PowerShell-Skripts durch Ausführen des Befehls [`Set-ExecutionPolicy`](https://technet.microsoft.com/library/hh849812.aspx). Für Entwicklungscomputer ist die Richtlinie „Unrestricted“ in der Regel akzeptabel. 2. Entscheiden Sie, ob die Erfassung von Diagnosedaten von Azure PowerShell-Befehlen zugelassen werden soll, und führen Sie nach Bedarf [`Enable-AzureRmDataCollection`](https://msdn.microsoft.com/library/mt619303.aspx) oder [`Disable-AzureRmDataCollection`](https://msdn.microsoft.com/library/mt619236.aspx) aus. Bei Verwendung von Azure PowerShell, Version 0.9.8 oder älter, heißen diese Befehle `Enable-AzureDataCollection` bzw. `Discable-AzureDataCollection`. Dadurch lassen sich unnötige Eingabeaufforderungen während der Bereitstellung der Vorlage vermeiden.
+>[AZURE.NOTE] Wenn PowerShell noch nicht zum Verwalten von Azure auf dem aktuell genutzten Computer verwendet wurde, sind kleinere Wartungsaufgaben nötig:
+>1. Aktivieren Sie die Verwendung von PowerShell-Skripts durch Ausführen des Befehls [`Set-ExecutionPolicy`](https://technet.microsoft.com/library/hh849812.aspx). Für Entwicklungscomputer ist die Richtlinie „Unrestricted“ in der Regel akzeptabel.
+>2. Entscheiden Sie, ob die Erfassung von Diagnosedaten mit Azure PowerShell-Befehlen zugelassen werden soll, und führen Sie nach Bedarf [`Enable-AzureRmDataCollection`](https://msdn.microsoft.com/library/mt619303.aspx) oder [`Disable-AzureRmDataCollection`](https://msdn.microsoft.com/library/mt619236.aspx) aus. Dadurch lassen sich unnötige Eingabeaufforderungen während der Bereitstellung der Vorlage vermeiden.
 
 Sie können den Status des Bereitstellungsprozesses im Ausgabefenster von Visual Studio überwachen. Nach Abschluss der Bereitstellung der Vorlage ist Ihr neuer Cluster einsatzbereit!
 
-Wenn Fehler auftreten, wechseln Sie zum [Azure-Portal](https://portal.azure.com/), und überprüfen Sie **Benachrichtigungen**. Falls die Bereitstellung einer Ressourcengruppe keinen Erfolg hatte, finden Sie dort detaillierte Diagnoseinformationen.
+Wenn Fehler auftreten, wechseln Sie zum [Azure-Portal](https://portal.azure.com/), und öffnen Sie die Ressourcengruppe, in der Sie die Bereitstellung durchgeführt haben. Klicken Sie auf **Alle Einstellungen**, und klicken Sie dann auf dem Blatt „Einstellungen“ auf **Bereitstellungen**. Falls die Bereitstellung einer Ressourcengruppe keinen Erfolg hatte, finden Sie dort detaillierte Diagnoseinformationen.
 
 >[AZURE.NOTE] Um Verfügbarkeit sicherzustellen und den Zustand beizubehalten, muss eine bestimmte Anzahl von Knoten in einem Service Fabric-Cluster stets in Betrieb sein. Dies wird auch als „Aufrechterhalten eines Quorums“ bezeichnet. Daher ist es üblicherweise nicht sicher, alle Computer innerhalb des Clusters herunterzufahren, sofern Sie nicht zunächst eine [vollständige Sicherung des Zustands](service-fabric-reliable-services-backup-restore.md) durchgeführt haben.
 
@@ -117,4 +127,4 @@ Wenn Fehler auftreten, wechseln Sie zum [Azure-Portal](https://portal.azure.com/
 [2]: ./media/service-fabric-cluster-creation-via-visual-studio/selecting-azure-template.png
 [3]: ./media/service-fabric-cluster-creation-via-visual-studio/deploy-to-azure.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

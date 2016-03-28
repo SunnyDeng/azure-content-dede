@@ -3,7 +3,7 @@
    description="Einführung in Timer und Erinnerungen für Service Fabric Reliable Actors."
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="myamanbh"
    manager="timlt"
    editor=""/>
 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/20/2016"
+   ms.date="03/15/2016"
    ms.author="amanbha"/>
 
 
@@ -82,7 +82,7 @@ Task<IActorReminder> reminderRegistration = RegisterReminder(
                                                 ActorReminderAttributes.None);
 ```
 
-Im obigen Beispiel ist `"Pay cell phone bill"` der Name der Erinnerung. Dies ist eine Zeichenfolge, die der Actor zur eindeutigen Identifizierung einer Erinnerung verwendet. `BitConverter.GetBytes(amountInDollars)` ist der mit der Erinnerung verknüpfte Kontext. Sie wird an den Actor als Argument für den Erinnerungsrückruf zurückgegeben, d. h. `IRemindable.ReceiveReminderAsync`.
+Im obigen Beispiel ist `"Pay cell phone bill"` der Name der Erinnerung. Dies ist eine Zeichenfolge, die der Actor zur eindeutigen Identifizierung einer Erinnerung verwendet. `BitConverter.GetBytes(amountInDollars)` ist der mit der Erinnerung verknüpfte Kontext. Sie wird an den Actor als Argument für den Erinnerungsrückruf zurückgegeben, d. h. `IRemindable.ReceiveReminderAsync`.
 
 Actors, die Erinnerungen verwenden, müssen die `IRemindable`-Schnittstelle implementieren, wie im folgenden Beispiel gezeigt.
 
@@ -114,4 +114,4 @@ Task reminderUnregistration = UnregisterReminder(reminder);
 
 Wie oben gezeigt, akzeptiert die Methode `UnregisterReminder` die Schnittstelle `IActorReminder`. Die Basisklasse des Actors unterstützt die Methode `GetReminder`, die zum Abrufen der Schnittstelle `IActorReminder` durch Übergabe des Erinnerungsnamens verwendet werden kann. Dies ist praktisch, da der Actor die Schnittstelle `IActorReminder` nicht beibehalten muss, die bei Aufruf der Methode `RegisterReminder` zurückgegeben wurde.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0316_2016-->

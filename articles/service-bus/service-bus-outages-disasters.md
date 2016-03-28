@@ -91,7 +91,7 @@ Wenn die Anwendung die Nichtverfügbarkeit einer Service Bus-Entität tolerieren
 
 Bei einer dauerhaften clientseitigen Warteschlange wird die Nachrichtenreihenfolge beibehalten, und die Clientanwendung wird vor Ausnahmen geschützt, falls die Service Bus-Entität nicht verfügbar ist. Hierbei können einfache und verteilte Transaktionen verwendet werden.
 
-> [AZURE.NOTE] Dieses Beispiel funktioniert in IaaS-Szenarien gut, in denen lokale Datenträger oder Datenträger für MSMQ einem Speicherkonto zugeordnet werden und Nachrichten mit MSMQ zuverlässig gespeichert werden. Für PaaS-Szenarien, z. B. Cloud-Dienste und Webanwendungen, ist dies nicht geeignet.
+> [AZURE.NOTE] Dieses Beispiel funktioniert gut in „Infrastructure as a Service (IaaS)“-Szenarios, in denen ein lokaler Datenträger oder ein Datenträger für MSMQ einem Speicherkonto zugeordnet wird, und Nachrichten mit MSMQ zuverlässig gespeichert werden. Für „Platform as a Service (PaaS)“-Szenarios, z. B. Cloud Services und Webanwendungen, ist dies nicht geeignet.
 
 ## Nächste Schritte
 
@@ -111,4 +111,4 @@ Weitere Informationen zur Notfallwiederherstellung finden Sie in diesen Artikeln
   [Geschäftskontinuität in Azure SQL-Datenbank]: ../sql-database/sql-database-business-continuity.md
   [Azure-Geschäftskontinuität – Technische Anleitung]: https://msdn.microsoft.com/library/azure/hh873027.aspx
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

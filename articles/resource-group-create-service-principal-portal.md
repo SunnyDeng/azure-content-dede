@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/27/2016"
+   ms.date="03/10/2016"
    ms.author="tomfitz"/>
 
 # Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals
@@ -77,9 +77,17 @@ Beim programmgesteuerten Zugriff auf Ihre Anwendung benötigen Sie die ID für I
   
    ![Client-ID][5]
 
-In einigen Fällen müssen Sie bei Ihrer Authentifizierungsanforderung die Mandanten-ID übergeben. Sie können die Mandanten-ID abrufen, indem Sie unten auf der Seite **Endpunkte anzeigen** auswählen und die ID wie unten dargestellt abrufen.
+In einigen Fällen müssen Sie bei Ihrer Authentifizierungsanforderung die Mandanten-ID übergeben. Bei Web-Apps und Web-API-Apps können Sie die Mandanten-ID abrufen, indem Sie unten auf der Seite **Endpunkte anzeigen** auswählen und die ID wie unten dargestellt abrufen.
 
    ![Mandanten-ID](./media/resource-group-create-service-principal-portal/save-tenant.png)
+
+Endpunkte sind nicht für native Clientanwendungen verfügbar. Stattdessen können Sie die Mandanten-ID über PowerShell abrufen:
+
+    PS C:\> Get-AzureRmSubscription
+
+Oder mit der Azure-Befehlszeilenschnittstelle:
+
+    azure account show --json
 
 ## Erstellen eines Authentifizierungsschlüssels
 
@@ -112,7 +120,7 @@ Wenn Ihre Anwendung im Auftrag eines angemeldeten Benutzers auf Ressourcen zugre
 
 1. Wählen Sie **Anwendung hinzufügen**.
 
-2. Wählen Sie in der Liste die **Azure-Service-Verwaltungs-API** aus.
+2. Wählen Sie in der Liste die **Azure-Dienstverwaltungs-API** aus.
 
       ![App auswählen](./media/resource-group-create-service-principal-portal/select-app.png)
 
@@ -229,4 +237,4 @@ Sie können das Token im Anforderungsheader mit dem folgenden Code übergeben:
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

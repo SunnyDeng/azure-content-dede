@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/08/2016"
+	ms.date="03/11/2016"
 	ms.author="daleche"/>
 
 
@@ -67,4 +67,4 @@ Es kann Situationen geben, in denen Sie versehentlich einige Daten in einer SQL-
 ## Überprüfungsschritt
 1. Testen Sie die neu kopierte Tabelle, und führen Sie Abfragen aus, um sicherzustellen, dass die Daten intakt sind. Wenn Sie sich von der Richtigkeit der Daten überzeugt haben, können Sie die umbenannte Tabelle aus dem Abschnitt **Vorbereitungsschritte** löschen. (Beispielsweise &lt;Tabellenname&gt;\_alt.)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

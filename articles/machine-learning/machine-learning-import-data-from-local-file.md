@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="03/09/2016"
 	ms.author="garye;bradsev" />
 
 
@@ -40,4 +40,4 @@ Während des Uploads sehen Sie eine Meldung, dass die Datei hochgeladen wird. Di
 
 Sobald Ihre Daten hochgeladen wurden, werden sie in einem Datasetmodul gespeichert und stehen für alle Experimente im Arbeitsbereich zur Verfügung. Sie finden das Dataset und alle vorab geladenen Beispieldatasets in der Liste **Saved Datasets** in der Modulpalette, wenn Sie ein Experiment bearbeiten. Sie können das Dataset in den Experimentbereich ziehen und dort ablegen, wenn Sie es für weitere Analysen und Machine Learning verwenden möchten.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

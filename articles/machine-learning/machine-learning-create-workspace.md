@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/03/2016" 
+	ms.date="03/09/2016" 
 	ms.author="garye;bradsev"/>
 
 
@@ -39,7 +39,7 @@ Um Azure Machine Learning Studio verwenden zu können, benötigen Sie einen Mach
 
 	![Schnellerfassung eines neuen Arbeitsbereichs][3]
 
-5. Geben Sie im Feld **ARBEITSBEREICHSNAME** für den Arbeitsbereich einen Namen ein, und legen Sie den **WORKSPACE OWNER** fest. Der Besitzer des Arbeitsbereichs muss einem gültigen Microsoft-Konto entsprechen (z. B. name@outlook.com).
+5. Geben Sie im Feld **ARBEITSBEREICHSNAME** für den Arbeitsbereich einen Namen ein, und legen Sie den **WORKSPACE OWNER** fest. Der Besitzer des Arbeitsbereichs muss einem gültigen Microsoft-Konto entsprechen (z. B. name@outlook.com).
 
     > [AZURE.NOTE] Später können Sie die Experimente, an denen Sie arbeiten, mit anderen teilen, indem Sie andere Personen zum Arbeitsbereich einladen. Dies können Sie in Machine Learning Studio auf der Seite **EINSTELLUNGEN** vornehmen. Sie benötigen nur das Microsoft-Konto oder Organisationskonto des betreffenden Benutzers.
 
@@ -66,5 +66,6 @@ Informationen zum Verwalten des Arbeitsbereichs finden Sie unter [Verwalten eine
 
 
 <!--Link references-->
+ 
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

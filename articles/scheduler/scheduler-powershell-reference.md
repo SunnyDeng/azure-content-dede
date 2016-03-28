@@ -1,20 +1,20 @@
-<properties 
- pageTitle="Scheduler – PowerShell-Cmdlets-Referenz" 
- description="" 
- services="scheduler" 
- documentationCenter=".NET" 
- authors="krisragh" 
- manager="dwrede" 
+<properties
+ pageTitle="Scheduler – PowerShell-Cmdlets-Referenz"
+ description=""
+ services="scheduler"
+ documentationCenter=".NET"
+ authors="krisragh"
+ manager="dwrede"
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="12/04/2015" 
+<tags
+ ms.service="scheduler"
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.date="03/09/2016"
  ms.author="krisragh"/>
- 
+
 # Scheduler – PowerShell-Cmdlets-Referenz
 
 In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschrieben. Sie enthält zudem Links zu den jeweiligen Referenzseiten dieser Cmdlets.
@@ -36,10 +36,10 @@ In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschri
 
 
 ## Siehe auch
- 
+
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
- 
+
  [Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler](scheduler-concepts-terms.md)
 
  [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
@@ -53,10 +53,5 @@ In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschri
  [Einschränkungen, Standardwerte und Fehlercodes für Azure Scheduler](scheduler-limits-defaults-errors.md)
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
- 
-  
 
-
-  
-
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

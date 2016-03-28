@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="12/17/2015"
+   ms.date="03/14/2016"
    ms.author="carlrab"/>
 
 # Importieren aus einer BACPAC-Datei in SQL-Datenbank per SqlPackage
@@ -21,18 +21,18 @@
 > [AZURE.SELECTOR]
 - [SSMS](sql-database-cloud-migrate-compatible-import-bacpac-ssms.md)
 - [SqlPackage](sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage.md)
-- [Azure Portal](sql-database-import.md)
+- [Azure-Portal](sql-database-import.md)
 - [PowerShell](sql-database-import-powershell.md)
 
 Dieser Artikel zeigt, wie Sie aus einer [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4)-Datei mithilfe des [SqlPackage](https://msdn.microsoft.com/library/hh550080.aspx)-Hilfsprogramms für die Eingabeaufforderung in SQL-Datenbank importieren. Dieses Hilfsprogramm wird mit Visual Studio und SQL Server bereitgestellt. Sie können auch die aktuelle Version der SQL Server Data Tools [herunterladen](https://msdn.microsoft.com/library/mt204009.aspx), um dieses Hilfsprogramm zu erhalten.
 
-> [AZURE.NOTE]Bei den Schritten unten wird vorausgesetzt, dass Sie bereits einen SQL-Datenbankserver bereitgestellt haben, dass Ihnen die Verbindungsinformationen vorliegen und dass Sie die Kompatibilität der Quelldatenbank überprüft haben.
+> [AZURE.NOTE] Bei den Schritten unten wird vorausgesetzt, dass Sie bereits einen SQL-Datenbankserver bereitgestellt haben, dass Ihnen die Verbindungsinformationen vorliegen und dass Sie die Kompatibilität der Quelldatenbank überprüft haben.
 
 ## Importieren aus einer BACPAC-Datei in Azure SQL-Datenbank per SqlPackage
 
 Führen Sie die unten angegebenen Schritte aus, um das Befehlszeilen-Hilfsprogramm [SqlPackage.exe](https://msdn.microsoft.com/library/hh550080.aspx) zum Importieren einer kompatiblen SQL Server-Datenbank (oder Azure SQL-Datenbank) aus einer BACPAC-Datei zu verwenden.
 
-> [AZURE.NOTE]Bei den folgenden Schritten wird davon ausgegangen, dass Sie bereits einen Azure SQL-Datenbank-Server bereitgestellt haben und dass Ihnen die Verbindungsinformationen vorliegen.
+> [AZURE.NOTE] Bei den folgenden Schritten wird davon ausgegangen, dass Sie bereits einen Azure SQL-Datenbank-Server bereitgestellt haben und dass Ihnen die Verbindungsinformationen vorliegen.
 
 1. Öffnen Sie ein Eingabeaufforderungsfenster, und wechseln Sie in ein Verzeichnis mit dem Befehlszeilen-Hilfsprogramm „sqlpackage.exe“. Dieses Hilfsprogramm ist im Lieferumfang von Visual Studio und SQL Server enthalten.
 2. Führen Sie den folgenden sqlpackage.exe-Befehl mit den unten angegebenen Argumenten für Ihre Umgebung aus:
@@ -49,4 +49,4 @@ Führen Sie die unten angegebenen Schritte aus, um das Befehlszeilen-Hilfsprogra
 
 	![Exportieren von Datenebenenanwendungen im Menü "Aufgaben"](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSQLPackage01c.png)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0316_2016-->

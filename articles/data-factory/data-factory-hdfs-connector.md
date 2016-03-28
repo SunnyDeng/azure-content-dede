@@ -212,7 +212,7 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 | authenticationType | Windows oder Anonymous. | Ja |
 | gatewayName | Der Name des Gateways, das der Data Factory-Dienst zum Verbinden mit dem HDFS verwenden soll. | Ja |   
 
-Ausführliche Informationen zum Festlegen von Anmeldeinformationen für ein lokales HDFS finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für ein lokales HDFS finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#set-credentials-and-security).
 
 ### Verwenden der anonymen Authentifizierung
 
@@ -265,7 +265,7 @@ fileName | Geben Sie den Namen der Datei in **folderPath** an, wenn die Tabelle 
 partitionedBy | "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "filename" für Zeitreihendaten anzugeben. Beispiel: "folderPath" als Parameter für jedes Stunde mit Daten. | Nein
 fileFilter | Geben Sie einen Filter zur Auswahl einer Teilmenge der Dateien in "folderPath" statt alle Dateien an. <br/><br/>Zulässige Werte sind: * (mehrere Zeichen) und ? (einzelnes Zeichen).<br/><br/>Beispiel 1: "fileFilter": "*.log"<br/>Beispiel 2: "fileFilter": 2014-1-?.txt"<br/><br/>** Hinweis**: "fileFilter" eignet sich für ein Eingabedataset des Typs "FileShare". | Nein
 | Komprimierung | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: **GZip**, **Deflate** und **BZip2**. Folgende Komprimierungsgrade werden unterstützt: **Optimal** und **Schnellste**. Beachten Sie, dass für Daten im **AvroFormat** zurzeit keine Komprimierungseinstellungen unterstützt werden. Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
-| Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von "TextFormat"](#specifying-textformat) unten finden Sie weitere Details. | Nein
+| Format | Drei Formattypen werden unterstützt: **TextFormat**, **AvroFormat** und **JsonFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von "TextFormat"](#specifying-textformat) unten finden Sie weitere Details. Gehen Sie zum Abschnitt [JsonFormat angeben](#specifying-jsonformat), wenn Sie JsonFormat verwenden. | Nein 
 
 
 > [AZURE.NOTE] "filename" und "fileFilter" können nicht gleichzeitig verwendet werden.
@@ -309,12 +309,12 @@ Wenn das Format auf **TextFormat** festgelegt ist, können Sie die folgenden **o
 | -------- | ----------- | -------- |
 | columnDelimiter | Das Zeichen, das als Spaltentrennzeichen in einer Datei verwendet wird. Derzeit ist nur ein Zeichen zulässig. Dieses Tag ist optional. Der Standardwert ist das Komma (,). | Nein |
 | rowDelimiter | Das Zeichen, das als Zeilentrennzeichen in einer Datei verwendet wird. Derzeit ist nur ein Zeichen zulässig. Dieses Tag ist optional. Der Standardwert ist einer der Folgenden: ["\\r\\n", "\\r", "\\n"]. | Nein |
-| escapeChar | Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Dieses Tag ist optional. Kein Standardwert. Sie dürfen maximal ein Zeichen für diese Eigenschaft angeben.<br/><br/>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: "Hello, world") verwenden möchten, können Sie "$" als Escapezeichen definieren und die Zeichenfolge "Hello$, world" in der Quelle verwenden.<br/><br/>Beachten Sie, dass Sie "escapeChar" und "quoteChar" nicht gleichzeitig für eine Tabelle angeben können. | Nein | 
-| quoteChar | Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.<br/><br/>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie '"' als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.<br/><br/>Beachten Sie, dass Sie "escapeChar" und "quoteChar" nicht gleichzeitig für eine Tabelle angeben können. | Nein |
-| nullValue | Die Zeichen, die zur Darstellung von NULL-Werten im Blobdateiinhalt dienen. Dieses Tag ist optional. Der Standardwert ist "\\N".<br/><br/>Beispielsweise wird gemäß dem oben genanntem Beispiel "NaN" im Blob beim Kopieren (z. B. in SQL Server) als Nullwert übersetzt. | Nein |
+| escapeChar | Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Dieses Tag ist optional. Kein Standardwert. Sie dürfen maximal ein Zeichen für diese Eigenschaft angeben.<br/><br/>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, es jedoch im Text (Beispiel: „Hello, world“) verwenden möchten, können Sie „$“ als Escapezeichen definieren und die Zeichenfolge „Hello$, world“ in der Quelle verwenden.<br/><br/>Beachten Sie, dass Sie escapeChar und quoteChar nicht gleichzeitig für eine Tabelle angeben können. | Nein | 
+| quoteChar | Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.<br/><br/>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie '"' als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.<br/><br/>Beachten Sie, dass Sie escapeChar und quoteChar nicht gleichzeitig für eine Tabelle angeben können. | Nein |
+| nullValue | Die Zeichen, die zur Darstellung von NULL-Werten im Blobdateiinhalt dienen. Dieses Tag ist optional. Der Standardwert ist „\\N“.<br/><br/>Beispielsweise wird gemäß dem oben genannten Beispiel „NaN“ im Blob beim Kopieren (z. B. in SQL Server) als NULL-Wert übersetzt. | Nein |
 | encodingName | Geben Sie den Codierungsnamen an. Eine Liste der gültigen Codierungsnamen finden Sie unter [Encoding.EncodingName-Eigenschaft](https://msdn.microsoft.com/library/system.text.encoding.aspx). Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". | Nein | 
 
-#### Beispiele
+#### TextFormat-Beispiel
 Im folgenden Beispiel werden einige der Formateigenschaften für "TextFormat" gezeigt.
 
 	"typeProperties":
@@ -345,6 +345,8 @@ Wenn das Format auf "AvroFormat" festgelegt ist, müssen Sie im Abschnitt "Forma
 
 Um das Avro-Format in einer Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Tutorial](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
 
+[AZURE.INCLUDE [data-factory-json-format](../../includes/data-factory-json-format.md)]
+
 [AZURE.INCLUDE [data-factory-compression](../../includes/data-factory-compression.md)]
 
 ## Eigenschaften von HDFS-Kopieraktivitätstyp
@@ -353,7 +355,7 @@ Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Akt
 
 Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren hingegen bei jedem Aktivitätstyp. Bei der Kopieraktivität variieren sie je nach Typ der Quellen und Senken.
 
-Wenn bei der Kopieraktivität „source“ den Typ **FileSystemSource** aufweist, sind im Abschnitt „typeProperties“ die folgenden Eigenschaften verfügbar:
+Wenn die Quelle bei der Kopieraktivität vom Typ **FileSystemSource** ist, sind im Abschnitt typeProperties die folgenden Eigenschaften verfügbar:
 
 **FileSystemSource** unterstützt die folgenden Eigenschaften:
 
@@ -365,4 +367,4 @@ Wenn bei der Kopieraktivität „source“ den Typ **FileSystemSource** aufweist
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

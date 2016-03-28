@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Übersicht über Service Bus AMQP mit Java | Microsoft Azure" 
-	description="Erfahren Sie mehr über die Verwendung von Java mit AMQP (Advanced Message Queuing Protocol) 1.0 in Azure." 
+	description="Erfahren Sie mehr über die Verwendung von Java mit AMQP (Advanced Message Queuing Protocol) 1.0 in Azure." 
 	services="service-bus" 
 	documentationCenter="java" 
 	authors="sethmanheim" 
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="03/09/2016" 
 	ms.author="sethm"/>
 
 
 # Unterstützung für AMQP 1.0 in Service Bus
 
-Sowohl der Azure Service Bus-Clouddienst als auch [Service Bus für Windows Server (Service Bus 1.1)](https://msdn.microsoft.com/library/dn282144.aspx) unterstützen das Advanced Message Queueing Protocol (AMQP) 1.0. AMQP gibt Ihnen die Möglichkeit, plattformübergreifende Hybridanwendungen mit einem offenen Standard zu erstellen. Sie können Anwendungen erstellen, deren Komponenten unter Verwendung unterschiedlicher Sprachen und Frameworks erstellt wurden und unter unterschiedlichen Betriebssystemen ausgeführt werden. Alle diese Komponenten können über Service Bus eine Verbindung herstellen und strukturierte Geschäftsnachrichten effizient und sicher nahtlos austauschen.
+Sowohl der Azure Service Bus-Clouddienst als auch [Service Bus für Windows Server (Service Bus 1.1)](https://msdn.microsoft.com/library/dn282144.aspx) unterstützen das Advanced Message Queueing Protocol (AMQP) 1.0. AMQP gibt Ihnen die Möglichkeit, plattformübergreifende Hybridanwendungen mit einem offenen Standard zu erstellen. Sie können Anwendungen erstellen, deren Komponenten unter Verwendung unterschiedlicher Sprachen und Frameworks erstellt wurden und unter unterschiedlichen Betriebssystemen ausgeführt werden. Alle diese Komponenten können über Service Bus eine Verbindung herstellen und strukturierte Geschäftsnachrichten effizient und sicher nahtlos austauschen.
 
 ## Einführung: Was ist AMQP 1.0 und warum ist es wichtig?
 
@@ -27,7 +27,7 @@ Traditionell nutzen nachrichtenorientierte Middlewareprodukte proprietäre Proto
 
 Zudem ist es schwierig, Messagingbroker unterschiedlicher Anbieter zu kombinieren. In der Regel ist hierfür eine Überbrückung auf Anwendungsebene erforderlich, um Nachrichten von einem System in ein anderes zu übertragen und die jeweils proprietären Nachrichtenformate zu konvertieren. Dies ist eine häufig gestellte Anforderung, etwa um eine neue, vereinheitlichte Oberfläche für ältere, dezentrale Systeme bereitzustellen oder nach einem Unternehmenszusammenschluss die IT-Systeme zu integrieren.
 
-Die Softwarebranche ist äußerst schnelllebig, und neue Programmiersprachen und Anwendungsframeworks werden in einem manchmal verblüffenden Tempo eingeführt. Ganz ähnlich entwickeln sich die Anforderungen von IT-Systemen im Laufe der Zeit, und Entwickler möchten die Vorteile der neuesten Plattformfeatures nutzen. Manchmal jedoch unterstützt der gewählte Messaginganbieter nicht die gewünschten Plattformen. Da die Messagingprotokolle proprietär sind, ist es nicht möglich, dass Dritte die Bibliotheken für diese neuen Plattformen bereitstellen. Daher müssen Sie Ansätze wie z. B. Gateways oder Bridges entwickeln, damit Sie das Messagingprodukt weiterhin verwenden können.
+Die Softwarebranche ist äußerst schnelllebig, und neue Programmiersprachen und Anwendungsframeworks werden in einem manchmal verblüffenden Tempo eingeführt. Ganz ähnlich entwickeln sich die Anforderungen von IT-Systemen im Laufe der Zeit, und Entwickler möchten die Vorteile der neuesten Plattformfeatures nutzen. Manchmal jedoch unterstützt der gewählte Messaginganbieter nicht die gewünschten Plattformen. Da die Messagingprotokolle proprietär sind, ist es nicht möglich, dass Dritte die Bibliotheken für diese neuen Plattformen bereitstellen. Daher müssen Sie Ansätze wie z. B. Gateways oder Bridges entwickeln, damit Sie das Messagingprodukt weiterhin verwenden können.
 
 All diese Probleme waren der Grund für die Entwicklung von AMQP (Advanced Message Queuing Protocol) 1.0. Das Projekt wurde angestoßen von JP Morgan Chase, da dieses Unternehmen wie die meisten Finanzdienstleister nachrichtenorientierte Middleware in großem Umfang nutzt. Das Ziel war ganz einfach: ein Messagingprotokoll mit offenem Standard zu entwickeln, das die Erstellung nachrichtenbasierter Anwendungen aus Komponenten ermöglicht, die auf unterschiedlichen Sprachen, Frameworks und Betriebssystemen beruhen, um so die jeweils besten Komponenten verschiedenster Hersteller einsetzen zu können.
 
@@ -85,7 +85,7 @@ Weitere Informationen zur Beschaffung dieser Bibliotheken und ihrer Verwendung m
 ## Zusammenfassung
 
 *    AMQP 1.0 ist ein offenes, zuverlässiges Messagingprotokoll, mit dem Sie plattformübergreifende Hybridanwendungen erstellen können. AMQP 1.0 ist ein OASIS-Standard.
-*    Unterstützung für AMQP 1.0 ist nun für Azure Service Bus und Service Bus für Windows Server (Service Bus 1.1) verfügbar. Die Preise weichen nicht von denen existierender Protokolle ab.
+*    Unterstützung für AMQP 1.0 ist nun für Azure Service Bus und Service Bus für Windows Server (Service Bus 1.1) verfügbar. Die Preise weichen nicht von denen existierender Protokolle ab.
 
 ## Nächste Schritte
 
@@ -101,4 +101,4 @@ Klicken Sie auf die folgenden Links, um mehr über die AMQP-Unterstützung in Se
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -4,7 +4,7 @@
 	services="app-service\mobile"
 	documentationCenter=""
 	authors="adrianhall"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
@@ -642,37 +642,37 @@ Der folgende Code zeigt, wie Sie das Pushobjekt zum Senden einer Pushbenachricht
 	    // Send a push notification using APNS.
         context.push.apns.send(null, payload, function (error) {
             if (error) {
-                // Do something or log the error. 
-	        }           
+                // Do something or log the error.
+	        }
         });
     }
 
 Indem Sie auf dem Client eine Pushregistrierungsvorlage erstellen, können Sie stattdessen eine Pushnachrichtenvorlage an Geräte auf allen unterstützten Plattformen senden. Der folgende Code zeigt, wie eine Benachrichtigungsvorlage gesendet wird:
 
 	// Define the template payload.
-	var payload = '{"messageParam": "This is a template payload."}'; 
+	var payload = '{"messageParam": "This is a template payload."}';
 
     // Only do the push if configured
     if (context.push) {
 		// Send a template notification.
         context.push.send(null, payload, function (error) {
             if (error) {
-                // Do something or log the error.   
-            } 
+                // Do something or log the error.
+            }
         });
     }
 
 
 ##<a name="push-user"></a>Gewusst wie: Senden von Pushbenachrichtigungen mithilfe von Tags an einen authentifizierten Benutzer
-Wenn ein authentifizierter Benutzer für Pushbenachrichtigungen registriert wird, wird der Registrierung automatisch ein Tag mit der Benutzer-ID hinzugefügt. Mithilfe dieses Tags können Sie Pushbenachrichtigungen an alle Geräte senden, die von einem bestimmten Benutzer registriert wurden. Der folgende Code ruft die SID des Benutzers, der die Anforderung stellt, und sendet an jede Geräteregistrierung für diesen Benutzer eine Pushbenachrichtigungsvorlage:
+Wenn ein authentifizierter Benutzer für Pushbenachrichtigungen registriert wird, wird der Registrierung automatisch ein Tag mit der Benutzer-ID hinzugefügt. Mithilfe dieses Tags können Sie Pushbenachrichtigungen an alle Geräte senden, die von einem bestimmten Benutzer registriert wurden. Mit dem folgenden Code wird die SID des Benutzers abgerufen, der die Anforderung stellt, und an jede Geräteregistrierung für diesen Benutzer wird eine Pushbenachrichtigungsvorlage gesendet:
 
     // Only do the push if configured
     if (context.push) {
 		// Send a notification to the current user.
         context.push.send(context.user.id, payload, function (error) {
             if (error) {
-                // Do something or log the error.   
-            } 
+                // Do something or log the error.
+            }
         });
     }
 
@@ -815,12 +815,10 @@ Das Azure Mobile Apps-SDK ermöglicht über das Anforderungsobjekt Zugriff auf d
     api.get.access = 'authenticated';
     module.exports = api;
 
-
-
 ## <a name="Debugging"></a><a name="howto-diagnostic-logs"></a>Gewusst wie: Debugging, Diagnose und Problembehandlung bei Azure Mobile Apps
 
+Der Azure App Service stellt mehrere Debugging- und Problembehandlungsverfahren für Node.js-Anwendungen bereit. Folgende Artikel helfen Ihnen beim Einstieg in die Problembehandlung Ihres Node.js Mobile-Back-Ends:
 
-Der Azure App Service stellt mehrere Debugging- und Problembehandlungsverfahren für Node.js-Anwendungen bereit. All diese Verfahren sind verfügbar.
 - [Überwachen eines Azure App Service]
 - [Aktivieren der Diagnoseprotokollierung in Azure App Service]
 - [Problembehandlung für einen Azure App Service in Visual Studio]
@@ -872,7 +870,7 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [3]: ./media/app-service-mobile-node-backend-how-to-use-server-sdk/sqlexpress-config.png
 [4]: ./media/app-service-mobile-node-backend-how-to-use-server-sdk/sqlexpress-authconfig.png
 [5]: ./media/app-service-mobile-node-backend-how-to-use-server-sdk/sqlexpress-newuser-1.png
-[6]: ../../includes/media/app-service-mobile-dotnet-backend-create-new-service/dotnet-backend-create-db.png
+[6]: ./media/app-service-mobile-node-backend-how-to-use-server-sdk/dotnet-backend-create-db.png
 
 <!-- URLs -->
 [Android-Client-Schnellstart]: app-service-mobile-android-get-started.md
@@ -914,4 +912,4 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

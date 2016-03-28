@@ -29,15 +29,14 @@ In diesem Thema erfahren Sie, wie Sie Ressourcen aus einer Ressourcengruppe in e
 Beim Verschieben einer Ressource sollten Sie einige wichtige Aspekte berücksichtigen:
 
 1. Sie können nicht den Speicherort der Ressource ändern. Wenn Sie ein Ressource verschieben, wird sie nur in eine neue Ressourcengruppe verschoben. Die neue Ressourcengruppe hat möglicherweise einen anderen Speicherort, das heißt jedoch nicht, dass der Speicherort der Ressource geändert wird.
-2. Der Ressourcenanbieter der verschobenen Ressource muss im Zielabonnement registriert sein. Dieses Problem kann auftreten, wenn eine Ressource zu einem neuen Abonnement verschoben wird, dieses aber noch nie mit diesem Ressourcentyp verwendet wurde. Beispiel: Wenn Sie eine API Management-Dienstinstanz zu einem Abonnement verschieben, für das der Ressourcenanbieter **Microsoft.ApiManagement** nicht registriert wurde, wird die Verschiebung nicht durchgeführt. Weitere Informationen zum Überprüfen des Registrierungsstatus und der Ressourcenanbieter im Register finden Sie unter [Ressourcenanbieter und -typen](../resource-manager-supported-services/#resource-providers-and-types).
-2. Die Zielressourcengruppe sollte nur Ressourcen enthalten, die den gleichen Anwendungslebenszyklus wie die verschobenen Ressourcen haben.
-3. Wenn Sie Azure PowerShell oder die Azure-Befehlszeilenschnittstelle verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) und [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
-4. Es kann einige Zeit dauern, bis der Verschiebevorgang abgeschlossen ist. Die Eingabeaufforderung wartet so lange, bis der Vorgang abgeschlossen ist.
-5. Beim Verschieben von Ressourcen werden die Quellgruppe und die Zielgruppe für die Dauer des Vorgangs gesperrt. Schreib- und Löschvorgänge in den Gruppen werden bis zum Abschluss der Verschiebung blockiert.
+2. Nicht alle Dienste unterstützen derzeit die Möglichkeit, Ressourcen zu verschieben. In der Liste unten finden Sie Informationen darüber, welche Dienste das Verschieben von Ressourcen unterstützen.
+3. Der Ressourcenanbieter der verschobenen Ressource muss im Zielabonnement registriert sein. Dieses Problem kann auftreten, wenn eine Ressource zu einem neuen Abonnement verschoben wird, dieses aber noch nie mit diesem Ressourcentyp verwendet wurde. Beispiel: Wenn Sie eine API Management-Dienstinstanz zu einem Abonnement verschieben, für das der Ressourcenanbieter **Microsoft.ApiManagement** nicht registriert wurde, wird die Verschiebung nicht durchgeführt. Weitere Informationen zum Überprüfen des Registrierungsstatus und zum Registrieren von Ressourcenanbietern finden Sie unter [Ressourcenanbieter und -typen](../resource-manager-supported-services/#resource-providers-and-types).
+4. Die Zielressourcengruppe sollte nur Ressourcen enthalten, die den gleichen Anwendungslebenszyklus wie die verschobenen Ressourcen haben.
+5. Wenn Sie Azure PowerShell oder die Azure-Befehlszeilenschnittstelle verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) und [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+6. Es kann einige Zeit dauern, bis der Verschiebevorgang abgeschlossen ist. Die Eingabeaufforderung wartet so lange, bis der Vorgang abgeschlossen ist.
+7. Beim Verschieben von Ressourcen werden die Quellgruppe und die Zielgruppe für die Dauer des Vorgangs gesperrt. Schreib- und Löschvorgänge in den Gruppen werden bis zum Abschluss der Verschiebung blockiert.
 
-## Unterstützte Dienste
-
-Nicht alle Dienste unterstützen derzeit die Möglichkeit, Ressourcen zu verschieben.
+## Dienste, die das Verschieben unterstützen
 
 Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressourcengruppe und ein neues Abonnement:
 
@@ -45,6 +44,7 @@ Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressour
 - App Service-Apps (siehe unten [App Service-Einschränkungen](#app-service-limitations))
 - Automation
 - Batch
+- CDN
 - Data Factory
 - DocumentDB
 - HDInsight-Cluster
@@ -56,12 +56,16 @@ Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressour
 - Suche
 - SQL-Datenbankserver (siehe unten [SQL-Datenbank-Einschränkungen](#sql-database-limitations))
 
+## Dienste, die das Verschieben teilweise unterstützen
+
 Die folgenden Dienste unterstützen das Verschieben in eine neue Ressourcengruppe, jedoch nicht in ein neues Abonnement:
 
 - Virtuelle Computer (Klassisch)
 - Storage (Klassisch)
 - Virtuelle Netzwerke
 - Cloud Services
+
+## Dienste, die das Verschieben nicht unterstützen
 
 Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressource:
 
@@ -133,4 +137,4 @@ Geben Sie an, wohin die Ressource verschoben werden soll. Wenn andere Ressourcen
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

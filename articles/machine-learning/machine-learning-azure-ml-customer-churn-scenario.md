@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/09/2016" 
+	ms.date="03/11/2016" 
 	ms.author="jeannt"/>
 
 # Analysieren der Kundenabwanderung mithilfe von Microsoft Azure Machine Learning
@@ -174,9 +174,9 @@ Die folgende Tabelle fasst die Leistung der Algorithmen zusammen:
 
 *Tabelle 1: Allgemeine Leistung (Genauigkeit) der Algorithmen*
 
-**LR**|	**BT**|	**AP**|	**SVM**|
---|--|--|--|
-Durchschnittliches Modell|	Bestes Modell|	Unterdurchschnittliches Modell|	Durchschnittliches Modell
+| LR|BT|AP|SVM|
+|---|---|---|---|
+|Durchschnittliches Modell|Bestes Modell|Unterdurchschnittliches Modell|Durchschnittliches Modell|
 
 Die in Machine Learning Studio gehosteten Modelle haben SAS hinsichtlich der Ausführungsgeschwindigkeit um 15-25 % übertroffen, aber die Richtigkeit war größtenteils vergleichbar.
 
@@ -190,7 +190,7 @@ In der Telekommunikationsbranche haben sich verschiedene Methoden zur Analyse de
 	-	**Wettbewerbs- und Geschäftsdaten**. Abrufen aller möglichen Informationen zum Kunden (können nicht verfügbar oder schwer nachzuverfolgen sein).
 -	Verwenden der Gewichtung zur Steuerung der Funktionsauswahl. Das bedeutet, dass das Boosted Decision Tree-Modell immer einen vielversprechenden Ansatz darstellt.  
 
-Die Verwendung dieser vier Kategorien schafft die Illusion, dass ein einfacher *deterministischer* Ansatz basierend auf Indizes, die auf angemessenen Faktoren pro Kategorie geformt sind, ausreichen sollte, um abwanderungsgefährdete Kunden zu identifizieren. Obwohl dieser Gedanke plausibel scheint, beruht er leider auf einem falschen Verständnis. Der Grund hierfür ist, dass die Abwanderung ein temporaler Effekt ist, während die zur Abwanderung führenden Faktoren normalerweise schwankende Zustände aufweisen. Was bringt einen Kunden dazu, zu glauben, dass es einen Unterschied macht, ob er heute oder morgen oder in sechs Monaten abwandert? Daher ist ein *Wahrscheinlichkeitsmodell* erforderlich.
+Die Verwendung dieser vier Kategorien schafft die Illusion, dass ein einfacher *deterministischer* Ansatz basierend auf Indizes, die anhand von angemessenen Faktoren pro Kategorie gebildet werden, ausreichen sollte, um das Abwanderungsrisiko von Kunden zu erkennen. Obwohl dieser Gedanke plausibel scheint, beruht er leider auf einem falschen Verständnis. Der Grund hierfür ist, dass die Abwanderung ein temporaler Effekt ist, während die zur Abwanderung führenden Faktoren normalerweise schwankende Zustände aufweisen. Was bringt einen Kunden dazu, zu glauben, dass es einen Unterschied macht, ob er heute oder morgen oder in sechs Monaten abwandert? Daher ist ein *Wahrscheinlichkeitsmodell* erforderlich.
 
 Diese wichtige Beobachtung wird in Unternehmen häufig übersehen, die im Allgemeinen einen Business Intelligence-orientierten Ansatz für die Analyse bevorzugen (hauptsächlich, da er besser zu verkaufen ist und eine unkomplizierte Automatisierung gestattet).
 
@@ -215,13 +215,13 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 ##Referenzen
 [1]Predictive Analytics: Beyond the Predictions, W. McKnight, Information Management, Juli/August 2011, S. 18-20.
 
-[2] Wikipedia-Artikel: [Accuracy and precision](http://en.wikipedia.org/wiki/Accuracy_and_precision) (Präzision)
+[2] Wikipedia-Artikel: [Accuracy and precision](http://en.wikipedia.org/wiki/Accuracy_and_precision) (in englischer Sprache)
 
 [3] [CRISP-DM 1.0: Step-by-Step Data Mining Guide](http://www.the-modeling-agency.com/crisp-dm.pdf)
 
-[4] [Big Data Marketing: Engage Your Customers More Effectively and Drive Value](http://www.amazon.com/Big-Data-Marketing-Customers-Effectively/dp/1118733894/ref=sr_1_12?ie=UTF8&qid=1387541531&sr=8-12&keywords=customer+churn) (Big Data Marketing: effektivere Einbindung Ihrer Kunden und Schaffen von Werten)
+[4] [Big Data Marketing: Engage Your Customers More Effectively and Drive Value](http://www.amazon.com/Big-Data-Marketing-Customers-Effectively/dp/1118733894/ref=sr_1_12?ie=UTF8&qid=1387541531&sr=8-12&keywords=customer+churn) (in englischer Sprache)
 
-[5] [Telco churn model template](http://gallery.cortanaanalytics.com/Experiment/Telco-Customer-Churn-5) (Vorlage für ein Abwanderungsmodell für Telekommunikationsunternehmen) in der Cortana Analytics Gallery
+[5] [Telco churn model template](http://gallery.cortanaanalytics.com/Experiment/Telco-Customer-Churn-5) im Cortana Analytics-Katalog (in englischer Sprache)
 ##Anhang
 
 ![][10]
@@ -240,4 +240,4 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 [9]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-9.png
 [10]: ./media/machine-learning-azure-ml-customer-churn-scenario/churn-10.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

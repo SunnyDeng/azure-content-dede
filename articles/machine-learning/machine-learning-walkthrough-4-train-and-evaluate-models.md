@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Exemplarische Vorgehensweise, Schritt 4: Trainieren und Auswerten des Predictive Analytics-Modells | Microsoft Azure"
-	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 4: Trainieren, Bewerten und Auswerten mehrerer Modelle in Azure Machine Learning Studio."
+	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 4: Trainieren, Bewerten und Auswerten mehrerer Modelle in Azure Machine Learning Studio."
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="03/09/2016"
 	ms.author="garye"/>
 
 
-# Exemplarische Vorgehensweise, Schritt 4: Trainieren und Auswerten des Predictive Analytics-Modells
+# Exemplarische Vorgehensweise, Schritt 4: Trainieren und Auswerten des Predictive Analytics-Modells
 
 Dies ist der vierte Schritt der exemplarischen Vorgehensweise zum [Entwickeln einer Predictive Analytics-Lösung in Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
@@ -86,7 +86,7 @@ Dieser Teil des Experiments sieht jetzt in etwa wie folgt aus:
 Wir verwenden die Testdaten, die durch das Modul [Split Data][split] getrennt wurden, um die trainierten Modelle zu bewerten. Danach können die Ergebnisse der beiden Modelle verglichen werden, um festzustellen, welches bessere Ergebnisse erbrachte.
 
 1.	Suchen Sie das Modul [Modell bewerten][score-model], und ziehen Sie es in den Bereich.
-2.	Verbinden Sie den linken Eingabeport dieses Moduls mit dem Boosted Decision Tree-Modell (d. h., verbinden Sie es mit dem Ausgabeport des Moduls [Modell trainieren][train-model], das mit dem Modul [Zweiklassiger Boosted Decision Tree][two-class-boosted-decision-tree] verbunden ist).
+2.	Verbinden Sie den linken Eingabeport dieses Moduls mit dem Boosted Decision Tree-Modell (d. h., verbinden Sie es mit dem Ausgabeport des Moduls [Modell trainieren][train-model], das mit dem Modul [Zweiklassiger Boosted Decision Tree][two-class-boosted-decision-tree] verbunden ist).
 3.	Verbinden Sie den rechten Eingabeport des Moduls [Score Model][score-model] mit der linken Ausgabe des rechten Moduls [Execute R Script][execute-r-script].
 
     Das Modul [Score Model][score-model] kann die Kreditinformationen aus den Testdaten entnehmen, sie durch das Modell laufen lassen und vom Modell generierte Vorhersagen mit der Spalte mit dem tatsächlichen Kreditrisiko in den Testdaten vergleichen.
@@ -143,4 +143,4 @@ Wenn Sie diese Werte prüfen, können Sie entscheiden, welches Modell am ehesten
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

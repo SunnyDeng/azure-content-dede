@@ -407,6 +407,7 @@ Sie können die Inline-Tabellenwertfunktionen nicht verwerfen, solange eine Tabe
 Öffnen Sie die Katalogsicht **sys.remote\_data\_archive\_tables**, und überprüfen Sie den Wert der Spalte **filter\_predicate**, um das auf eine Tabelle angewendete Filterprädikat zu prüfen. Wenn der Wert null ist, ist die gesamte Tabelle für die Archivierung berechtigt. Weitere Informationen finden Sie unter [sys.remote\_data\_archive\_tables (Transact-SQL)](https://msdn.microsoft.com/library/dn935003.aspx).
 
 ## Weitere Informationen
+
 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="TBD" 
-   ms.date="02/26/2016"
+   ms.date="03/15/2016"
    ms.author="coreyp"/>
 
 # Integrieren von Computern für die Verwaltung durch Azure Automation DSC
@@ -103,7 +103,7 @@ Informationen zum Suchen von Registrierungs-URL und Registrierungsschlüssel fü
      -VM $vm `
      -Publisher Microsoft.Powershell `
      -ExtensionName DSC `
-     -Version 2.14 `
+     -Version 2.15 `
      -PublicConfiguration $PublicConfiguration `
      -PrivateConfiguration $PrivateConfiguration `
      -ForceUpdate
@@ -164,7 +164,7 @@ Lokale Linux-Computer und Linux-Computer in Azure sowie in anderen Clouds könne
 
 	*    Informationen zum Suchen des Registrierungsschlüssels und der Registrierungs-URL für Ihr Automation-Konto finden Sie im Abschnitt [**Sichere Registrierung**](#secure-registration) weiter unten.
 
-	Wenn die Standardwerte des lokalen Konfigurations-Managers von PowerShell DSC ***nicht*** zu Ihrem Anwendungsszenario passen, oder Sie Computer so integrieren möchten, dass Sie nur an Azure Automation DSC berichten und keine Konfigurationen oder PowerShell-Module davon abrufen, führen Sie die Schritte 3 - 6 aus. Fahren Sie andernfalls direkt mit Schritt 6 fort.
+	Wenn die Standardwerte des lokalen Konfigurations-Managers von PowerShell DSC ****nicht**** zu Ihrem Anwendungsszenario passen, oder Sie Computer so integrieren möchten, dass Sie nur an Azure Automation DSC berichten und keine Konfigurationen oder PowerShell-Module davon abrufen, führen Sie die Schritte 3 - 6 aus. Fahren Sie andernfalls direkt mit Schritt 6 fort.
 
 3.	Führen Sie die Schritte im Abschnitt [**Generieren von DSC-Metakonfigurationen**](#generating-dsc-metaconfigurations) aus, um einen Ordner mit den erforderlichen DSC-Metakonfigurationen zu generieren.
 4.  Wenden Sie die PowerShell DSC-Metakonfiguration remote auf die Computer an, die Sie integrieren möchten:
@@ -374,4 +374,4 @@ Eine erneute Registrierung kann auf die gleiche Weise wie beim ersten Registrier
 * [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 * [Azure Automation DSC – Preise](https://azure.microsoft.com/pricing/details/automation/)
 
-<!-----HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

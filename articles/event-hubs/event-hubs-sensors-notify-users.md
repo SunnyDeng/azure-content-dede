@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/16/2015"
+   ms.date="03/08/2016"
    ms.author="spyros;sethm" />
 
 # Benachrichtigen von Benutzern über Daten von Sensoren oder anderen Systemen
@@ -25,7 +25,7 @@ Anderes Szenario: Stellen Sie sich vor, Sie betreiben eine Tierpension und müss
 
 ![][2]
 
-Das Problem: Sie möchten wichtige Informationen nicht erst erhalten, wenn Sie dazu kommen, einen statischen Bericht zu prüfen, sondern sobald bestimmte Bedingungen erfüllt sind. Wenn Sie Daten von Geräten oder aus Unternehmensanwendungen wie [Dynamics AX][] über einen [Azure Event Hub][] oder [IoT Hub][] beziehen, haben Sie verschiedene Möglichkeiten. Die Daten können auf einer Website angezeigt, analysiert, gespeichert und als Auslöser für Befehle verwendet werden. Hierzu stehen Ihnen leistungsfähige Tools wie [Azure Websites][], [SQL Azure][], [HDInsight][], [Cortana Analytics Suite][], [IoT Suite][], [Logik-Apps][] oder [Azure Notification Hubs][] zur Verfügung. Manchmal möchten Sie die Daten jedoch einfach nur mit möglichst geringem Aufwand jemandem zukommen lassen. Unser neues Beispiel [AppToNotifyUsers][] zeigt, wie Sie genau das mit ganz wenig Code erreichen. Zu den verfügbaren Optionen zählen E-Mail (SMTP), SMS und Telefon.
+Das Problem: Sie möchten wichtige Informationen nicht erst erhalten, wenn Sie dazu kommen, einen statischen Bericht zu prüfen, sondern sobald bestimmte Bedingungen erfüllt sind. Wenn Sie Daten von Geräten oder aus Unternehmensanwendungen wie [Dynamics AX][] über einen [Azure Event Hub][] oder [Azure IoT Hub][] beziehen, haben Sie verschiedene Möglichkeiten. Die Daten können auf einer Website angezeigt, analysiert, gespeichert und als Auslöser für Befehle verwendet werden. Hierzu stehen Ihnen leistungsfähige Tools wie [Azure Websites][], [SQL Azure][], [HDInsight][], [Cortana Analytics Suite][], [IoT Suite][], [Logik-Apps][] oder [Azure Notification Hubs][] zur Verfügung. Manchmal möchten Sie die Daten jedoch einfach nur mit möglichst geringem Aufwand jemandem zukommen lassen. Unser neues Beispiel [AppToNotifyUsers][] zeigt, wie Sie genau das mit ganz wenig Code erreichen. Zu den verfügbaren Optionen zählen E-Mail (SMTP), SMS und Telefon.
 
 ## Anwendungsstruktur
 
@@ -35,9 +35,9 @@ Wir gehen davon aus, dass wichtige Ereignisse per Push an einen Azure Event Hub 
 
 Wenn Sie noch nicht über einen Event Hub oder IoT Hub verfügen, können Sie problemlos eine Testeinrichtung mit einem Arduino-Shield und einem Raspberry Pi erstellen, wie im Projekt [Connect The Dots](https://github.com/Azure/connectthedots) beschrieben. Der Lichtsensor des Arduino-Shields übermittelt die Lichtintensität über den Pi an einen [Azure Event Hub][] (**ehdevices**), und ein [Azure Stream Analytics-Auftrag](https://azure.microsoft.com/services/stream-analytics/) übermittelt Warnungen per Push an einen zweiten Event Hub (**ehalerts**), falls die Lichtintensität ein bestimmtes Niveau unterschreitet.
 
-Beim Start von **AppToNotify** werden aus einer Konfigurationsdatei (App.config) die URL und die Anmeldeinformationen für den Event Hub abgerufen, der die Warnungen empfängt. Anschließend wird ein Prozess erzeugt, der den Event Hub kontinuierlich auf Nachrichten überwacht. Solange Sie auf die URL für den Event Hub oder IoT Hub zugreifen können und über gültige Anmeldeinformationen verfügen, liest der Event Hubs-Code kontinuierlich sämtliche eingehende Daten. Beim Start liest die Anwendung auch die URL und die Anmeldeinformationen für den zu verwendenden Messaging-Dienst (E-Mail, SMS, Telefon) sowie Name/Adresse des Absenders und eine Liste von Empfängern.
+Beim Start von **AppToNotify** werden aus einer Konfigurationsdatei (App.config) die URL und die Anmeldeinformationen für den Event Hub abgerufen, der die Warnungen empfängt. Anschließend wird ein Prozess erzeugt, der den Event Hub kontinuierlich auf Nachrichten überwacht. Solange Sie auf die URL für den Event Hub oder IoT Hub zugreifen können und über gültige Anmeldeinformationen verfügen, liest der Event Hubs-Code kontinuierlich sämtliche eingehende Daten. Beim Start liest die Anwendung auch die URL und die Anmeldeinformationen für den zu verwendenden Messaging-Dienst (E-Mail, SMS, Telefon) sowie Name/Adresse des Absenders und eine Liste von Empfängern.
 
-Sobald die Event Hub-Überwachung eine Nachricht erkennt, löst sie einen Prozess aus, der diese Nachricht mithilfe der in der Konfigurationsdatei angegebenen Methode sendet. Beachten Sie, dass dabei jede erkannte Nachricht gesendet wird. Wenn Sie also auf einen Event Hub verweisen, bei dem pro Sekunde zehn Nachrichten eingehen, werden auch zehn Nachrichten pro Sekunde gesendet – zehn E-Mails pro Sekunde, zehn SMS-Nachrichten pro Sekunde, zehn Anrufe pro Sekunde. Überwachen Sie daher keinen Event Hub, bei dem sämtliche Rohdaten Ihrer Sensoren oder Anwendungen eingehen, sondern einen, der nur relevante Warnungen erhält.
+Sobald die Event Hub-Überwachung eine Nachricht erkennt, löst sie einen Prozess aus, der diese Nachricht mithilfe der in der Konfigurationsdatei angegebenen Methode sendet. Beachten Sie, dass dabei jede erkannte Nachricht gesendet wird. Wenn Sie also auf einen Event Hub verweisen, bei dem pro Sekunde zehn Nachrichten eingehen, werden auch zehn Nachrichten pro Sekunde gesendet – zehn E-Mails pro Sekunde, zehn SMS-Nachrichten pro Sekunde, zehn Anrufe pro Sekunde. Überwachen Sie daher keinen Event Hub, bei dem sämtliche Rohdaten Ihrer Sensoren oder Anwendungen eingehen, sondern einen, der nur relevante Warnungen erhält.
 
 ## Anwendbarkeit
 
@@ -64,13 +64,12 @@ Besuchen Sie die folgende Seite, um die Lösung bereitzustellen und Benutzer auf
 
 [Event Hubs-Lernprogramm]: event-hubs-csharp-ephcs-getstarted.md
 [Azure IoT Hub]: https://azure.microsoft.com/services/iot-hub/
-[IoT Hub]: https://azure.microsoft.com/services/iot-hub/
 [Azure Event Hubs]: https://azure.microsoft.com/services/event-hubs/
 [Azure Event Hub]: https://azure.microsoft.com/services/event-hubs/
-[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
 [AppToNotifyUsers]: https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications
-[Dynamics AX]: http://www.microsoft.com/de-DE/dynamics/erp-ax-overview.aspx
+[Dynamics AX]: http://www.microsoft.com/dynamics/erp-ax-overview.aspx
 [Azure Websites]: https://azure.microsoft.com/services/app-service/web/
 [SQL Azure]: https://azure.microsoft.com/services/sql-database/
 [HDInsight]: https://azure.microsoft.com/services/hdinsight/
@@ -83,4 +82,4 @@ Besuchen Sie die folgende Seite, um die Lösung bereitzustellen und Benutzer auf
 [1]: ./media/event-hubs-sensors-notify-users/event-hubs-sensor-alert.png
 [2]: ./media/event-hubs-sensors-notify-users/event-hubs-erp-alert.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0316_2016-->

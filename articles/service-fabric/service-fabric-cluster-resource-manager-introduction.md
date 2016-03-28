@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Einführung in den Clusterressourcen-Manager von Service Fabric"
+   pageTitle="Einführung in den Clusterressourcen-Manager von Service Fabric | Microsoft Azure"
    description="Eine Einführung in den Clusterressourcen-Manager von Service Fabric."
    services="service-fabric"
    documentationCenter=".net"
@@ -13,11 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/03/2016"
+   ms.date="03/10/2016"
    ms.author="masnider"/>
 
 # Einführung in den Clusterressourcen-Manager von Service Fabric
-
 Zur Verwaltung von IT-Systemen oder einer Gruppe von Diensten wurden üblicherweise verschiedene Computer beschafft und für diese Dienste oder Systeme eingerichtet. Viele wichtige Dienste wurden in eine „Web“- und eine „Daten“- oder „Speicher“-Schicht unterteilt, ggf. mit anderen speziellen Komponenten wie einem Cache. Andere Anwendungstypen verfügten über eine Messagingschicht, auf der Anforderungen ein- und ausgehen, und waren mit einer Verarbeitungsschicht verbunden, auf der die für das Messaging erforderlichen Analysen und Transformationen erfolgen. Für jeden Aufgabenbereich gab es bestimmte fest zugeordnete Computer oder Computergruppen, so z. B. für die Datenbank und die Webserver. Wenn ein bestimmter Workload eine Überlastung bestimmter Computer bewirkte, wurden weitere für die Ausführung dieses Workloads konfigurierte Computer hinzugefügt, oder einige der Computer wurden durch größere Computer ersetzt. Ganz einfach. Wenn ein Computer ausfiel, wurde dieser Teil der gesamten Anwendung mit niedriger Kapazität ausgeführt, bis der Computer wiederhergestellt werden konnte. Noch immer recht einfach (wenn auch nicht unbedingt spaßig).
 
 Lassen Sie uns nun annehmen, dass es einen Bedarf an einer horizontalen Hochskalierung gibt und Sie sich für den Ansatz mit Containern und/oder Microservices entschieden haben. Plötzlich sehen Sie sich Hunderten oder sogar Tausenden Computern, Dutzenden von verschiedenen Typen von Diensten, womöglich Hunderten von verschiedenen Instanzen dieser Dienste gegenüber, von denen jeder zum Zweck der Hochverfügbarkeit über eine oder mehrere Instanzen oder Replikate verfügt.
@@ -28,7 +27,7 @@ Als Folge dieser Entkopplung und Aufteilung Ihrer zuvor monolithisch geschichtet
 
 Vorgehensweise
 
-## Einführung von Orchestratoren
+## Einführung in Orchestratoren
 „Orchestrator“ ist der allgemeine Begriff für eine Softwarekomponente, mit deren Hilfe Administratoren diese Arten der Bereitstellung verwalten können. Orchestratoren sind die Komponenten, die Anforderungen wie „Ich möchte 5 Kopien dieses Diensts in meiner Umgebung ausführen“ erfüllen und versuchen, diesen Zustand zu erhalten. Orchestratoren (nicht Menschen) kommen zum Einsatz, wenn ein Computer ausfüllt oder ein Workload aus einem unerwarteten Grund nicht abgeschlossen wird. Die meisten Orchestratoren sind nicht nur mit Ausfällen beschäftigt, sondern helfen auch bei Neubereitstellungen, Upgrades und Optimierung der Ressourcennutzung. Doch grundlegend geht es stets um das Beibehalten eines gewünschten Konfigurationszustands in der Umgebung. Sie möchten einem Orchestrator angeben können, was Sie wünschen, und ihm die Hauptarbeit überlassen. Chronos auf Basis von Mesosphere, Fleet, Swarm, Kubernetes und Service Fabric sind allesamt Orchestratoren oder verfügen über integrierte Orchestratoren. Weitere werden ständig entwickelt, da die Komplexität der Verwaltung realer Bereitstellungen in verschiedenen Arten von Umgebungen und unter unterschiedlichen Bedingungen zunimmt und sich ändert.
 
 ## Orchestrierung als Dienst
@@ -50,12 +49,12 @@ Beachten Sie, dass dies bestenfalls ein Mechanismus war, um sicherzustellen, das
 
 Während einige dieser Strategien interessant sind, ist der Clusterressourcen-Manager von Service Fabric mit einem NLB oder Cache nicht vergleichbar. Ein NLB stellt sicher, dass die Front-Ends gleichmäßig ausgelastet sind, indem Datenverkehr dorthin verlagert wird, wo die Dienste ausgeführt werden. Der Ressourcen-Manager von Service Fabric verfolgt einen vollkommen anderen Ansatz, denn Service Fabric verschiebt Dienste dorthin, wo es am sinnvollsten ist. Dies können z. B. Knoten sein, die nicht viel zu tun haben, da die vorhandenen Dienste gerade nicht viel Arbeit verrichten. Es können auch Knoten vermieden werden, die kurz vor einem Upgrade stehen oder aufgrund einer Nutzungsspitze der Dienste, die darauf ausgeführt werden, überlastet sind. Da der Ressourcen-Manager von Service Fabric für das Verschieben von Diensten (und nicht das Übermitteln von Netzwerkverkehr dorthin, wo sich Dienste bereits befinden) zuständig ist, ist der Ressourcen-Manager vielseitiger und bietet außerdem zusätzliche Funktionen für das Steuern, wohin und wie Dienste verschoben werden.
 
-<!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
-- [Informationen zur Architektur des Clusterressourcen-Managers](service-fabric-cluster-resource-manager-architecture.md)
-- [Beschreiben des Clusters](service-fabric-cluster-resource-manager-cluster-description.md)
-- [Informationen zur Konfiguration von Diensten](service-fabric-cluster-resource-manager-configure-services.md)
-- [Informationen zu Metriken](service-fabric-cluster-resource-manager-metrics.md)
-- [Informationen zur Integration des Clusterressourcen-Managers in die restlichen Service Fabric-Verwaltungsfunktionen](service-fabric-cluster-resource-manager-management-integration.md)
+- Informationen über die Architektur und den Informationsfluss innerhalb des Clusterressourcen-Managers finden Sie in [diesem Artikel](service-fabric-cluster-resource-manager-architecture.md).
+- Der Clusterressourcen-Manager bietet viele Optionen für die Beschreibung des Clusters. Weitere Informationen hierzu finden Sie in diesem Artikel zum [Beschreiben eines Service Fabric-Clusters](service-fabric-cluster-resource-manager-cluster-description.md).
+- Weitere Informationen zu den anderen Optionen, die für die Konfiguration von Diensten zur Verfügung stehen, finden Sie im Thema zu den anderen verfügbaren Clusterressourcen-Manager-Konfigurationen, [Konfigurieren von Diensten](service-fabric-cluster-resource-manager-configure-services.md).
+- Metriken bestimmen, wie der Clusterressourcen-Manager von Service Fabric den Ressourcenverbrauch und die Kapazität im Cluster verwaltet. Weitere Informationen zu Metriken und deren Konfiguration finden Sie in [diesem Artikel](service-fabric-cluster-resource-manager-metrics.md).
+- Der Clusterressourcen-Manager arbeitet mit den Verwaltungsfunktionen von Service Fabric. Weitere Informationen hierzu finden Sie in [diesem Artikel](service-fabric-cluster-resource-manager-management-integration.md)
+- Informationen darüber, wie der Clusterressourcen-Manager die Auslastung im Cluster verwaltet und verteilt, finden Sie im Artikel zum [Lastenausgleich](service-fabric-cluster-resource-manager-balancing.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

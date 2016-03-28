@@ -1,6 +1,6 @@
 <properties
    pageTitle="Continuous Integration für Service Fabric | Microsoft Azure"
-   description="Hier erhalten Sie eine Übersicht über die Einrichtung der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS)."
+   description="Hier erhalten Sie eine Übersicht über die Einrichtung der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS)."
    services="service-fabric"
    documentationCenter="na"
    authors="cawams"
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="01/27/2015"
+   ms.date="01/27/2016"
    ms.author="cawa" />
 
-# Einrichten der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS)
+# Einrichten der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS)
 
 In diesem Artikel werden die Schritte zum Einrichten der Continuous Integration (CI) für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS) beschrieben, um die automatische Erstellung, Verpackung und Bereitstellung Ihrer Anwendung sicherzustellen. Beachten Sie, dass die Anweisungen jedes Mal eine Neuerstellung des Clusters zur Folge haben.
 
@@ -29,7 +29,7 @@ Richten Sie zunächst Ihr Projekt in Visual Studio Team Services ein.
 
 2. Erstellen Sie in Team Services mithilfe Ihres Microsoft-Kontos ein neues Projekt.
 
-3. Führen Sie für die Quelle Ihrer neuen oder vorhandenen Service Fabric-App einen Pushvorgang an dieses Projekt durch.
+3. Führen Sie für die Quelle Ihrer neuen oder vorhandenen Service Fabric-App einen Pushvorgang an dieses Projekt durch.
 
 Weitere Informationen zur Verwendung von Team Services-Projekten finden Sie unter [Herstellen einer Verbindung mit Visual Studio](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
 
@@ -42,9 +42,9 @@ Bevor Sie den Buildcomputer einrichten können, müssen Sie einen [Dienstprinzip
 ### Installieren von Azure PowerShell und Anmelden
 
 1.	Installieren Sie Azure PowerShell.
-2. Installieren Sie „PowerShellGet“. Installieren Sie hierzu [Windows Management Framework 5.0](http://www.microsoft.com/download/details.aspx?id=48729), da „PowerShellGet“ darin enthalten ist.
+2. Installieren Sie „PowerShellGet“. Installieren Sie hierzu [Windows Management Framework 5.0](http://www.microsoft.com/download/details.aspx?id=48729), da „PowerShellGet“ darin enthalten ist.
 
-    >[AZURE.NOTE] Bei Verwendung von Windows 10 mit neuesten Updates können Sie diesen Schritt überspringen.
+    >[AZURE.NOTE] Bei Verwendung von Windows 10 mit neuesten Updates können Sie diesen Schritt überspringen.
 
 3.	Installieren und aktualisieren Sie das AzureRM-Modul. Wenn Sie eine ältere Version von Azure PowerShell installiert haben, entfernen Sie sie:
 
@@ -131,9 +131,9 @@ Nach Abschluss des Skripts werden die folgenden drei Werte ausgegeben. Notieren 
 
 ### Installieren von Visual Studio 2015
 
-Wenn Sie bereits einen Computer bereitgestellt haben (oder Ihren eigenen bereitstellen möchten), installieren Sie auf dem ausgewählten Computer [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+Wenn Sie bereits einen Computer bereitgestellt haben (oder Ihren eigenen bereitstellen möchten), installieren Sie auf dem ausgewählten Computer [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 
-Wenn Sie noch nicht über einen Computer verfügen, können Sie schnell eine virtuelle Azure-Maschine (VM) mit vorinstalliertem Visual Studio 2015 bereitstellen. Gehen Sie dazu folgendermaßen vor:
+Wenn Sie noch nicht über einen Computer verfügen, können Sie schnell eine virtuelle Azure-Maschine (VM) mit vorinstalliertem Visual Studio 2015 bereitstellen. Gehen Sie dazu folgendermaßen vor:
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
@@ -141,25 +141,25 @@ Wenn Sie noch nicht über einen Computer verfügen, können Sie schnell eine vir
 
 3. Wählen Sie die Option **Marketplace** aus.
 
-4. Suchen Sie nach **Visual Studio 2015**.
+4. Suchen Sie nach **Visual Studio 2015**.
 
 5. Wählen Sie **Compute** > **Virtueller Computer** > **Aus Katalog** aus.
 
 6. Wählen Sie das Image **Visual Studio Enterprise 2015 Update 1 With Azure SDK 2.8 on Windows Server 2012 R2** aus.
 
-    >[AZURE.NOTE] Azure SDK ist zwar keine erforderliche Komponente, es sind jedoch derzeit keine Images verfügbar, bei denen nur Visual Studio 2015 installiert ist.
+    >[AZURE.NOTE] Azure SDK ist zwar keine erforderliche Komponente, es sind jedoch derzeit keine Images verfügbar, bei denen nur Visual Studio 2015 installiert ist.
 
 7.	Befolgen Sie die Anweisungen im Dialogfeld, um Ihren virtuellen Computer zu erstellen.
 
-### Installieren des Service Fabric-SDKs
+### Installieren des Service Fabric-SDKs
 
-Installieren Sie das [Service Fabric-SDK](https://azure.microsoft.com/campaigns/service-fabric/) auf Ihrem Computer.
+Installieren Sie das [Service Fabric-SDK](https://azure.microsoft.com/campaigns/service-fabric/) auf Ihrem Computer.
 
 ### Installieren von Azure PowerShell
 
 Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherigen Abschnitt (**Installieren von Azure PowerShell und Anmelden**) aus. Überspringen Sie dabei den Unterabschnitt **Melden Sie sich bei Azure PowerShell an**.
 
-### Registrieren der Azure PowerShell-Module beim lokalen Dienstkonto
+### Registrieren der Azure PowerShell-Module beim lokalen Dienstkonto
 
 >[AZURE.NOTE] Führen Sie diesen Schritt aus, *bevor* Sie den Build-Agent starten. Andernfalls wird die neue Umgebungsvariable nicht verwendet.
 
@@ -229,7 +229,7 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 |Agent Name|Übernehmen Sie den Standardwert. (`Agent-[machine name]`)|
 |TFS Url|Geben Sie die URL zu Ihrem Teamprojekt ein. Beispiel: `https://[your-VSTS-account-name].visualstudio.com`.|
 |Agent Pool|Geben Sie den Namen Ihres Agentpools ein. (Falls Sie keinen Agentpool erstellt haben, übernehmen Sie den Standardwert.)|
-|Work folder|Übernehmen Sie den Standardwert. In diesem Ordner erstellt der Build-Agent Ihre Anwendung. Hinweis: Wenn Sie ASP.NET 5-Webdienste erstellen möchten, empfiehlt sich die Wahl eines möglichst kurzen Ordnernamens. Andernfalls treten bei der Bereitstellung unter Umständen Fehler vom Typ „PathTooLongExceptions“ auf.|
+|Work folder|Übernehmen Sie den Standardwert. In diesem Ordner erstellt der Build-Agent Ihre Anwendung. Hinweis: Wenn Sie ASP.NET 5-Webdienste erstellen möchten, empfiehlt sich die Wahl eines möglichst kurzen Ordnernamens. Andernfalls treten bei der Bereitstellung unter Umständen Fehler vom Typ „PathTooLongExceptions“ auf.|
 |Install as Windows Service?|Ändern Sie den Standardwert „N“ in **Y**.|
 |User account to run the service|Übernehmen Sie den Standardwert. (`NT AUTHORITY\LocalService`)|
 |Un-configure existing agent?|Übernehmen Sie den Standardwert. (**N**)|
@@ -251,7 +251,7 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 
 >[AZURE.NOTE] Die Builddefinition, die Sie anhand dieser Anweisungen erstellen, unterstützt nicht mehrere parallele Builds, auch nicht auf separaten Computern. Das liegt daran, dass die einzelnen Builds jeweils die gleiche Ressourcengruppe/den gleichen Cluster beanspruchen würden. Wenn Sie mehrere Build-Agents ausführen möchten, müssen Sie die folgenden Anweisungen/Skripts anpassen, um diese Störung zu vermeiden.
 
-### Fügen Sie der Quellcodeverwaltung für Ihre Anwendung die Continuous Integration-Skripts hinzu.
+### Fügen Sie der Quellcodeverwaltung für Ihre Anwendung die Continuous Integration-Skripts hinzu.
 
 1.	Extrahieren Sie [ServiceFabricContinuousIntegrationScripts.zip](https://gallery.technet.microsoft.com/Set-up-continuous-f8b251f6) in einem beliebigen Ordner Ihres Computers. Kopieren Sie den Inhalt von `Powershell\Automation` in einen beliebigen Ordner der Quellcodeverwaltung.
 
@@ -411,4 +411,4 @@ Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen 
 - [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows)
 - [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

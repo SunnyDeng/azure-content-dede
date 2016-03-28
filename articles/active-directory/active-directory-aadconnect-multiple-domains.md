@@ -13,82 +13,144 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/21/2016"
+	ms.date="03/14/2016"
 	ms.author="billmath"/>
 
-#Unterstützung für mehrere Domänen
+# Unterstützung mehrerer Domänen für den Verbund mit Azure AD
+Die folgende Dokumentation enthält eine Anleitung dazu, wie Sie mehrere Domänen der obersten Ebene und Unterdomänen verwenden, wenn Sie einen Verbund mit Office 365- oder Azure AD-Domänen erstellen.
 
-Viele Benutzer haben gefragt, wie Sie mehrere Office 365- oder Azure AD-Domänen der obersten Ebene sowie Unterdomänen mit Verbund konfigurieren können. Im Prinzip ist dies ganz einfach, aber aufgrund einiger Vorgänge, die sozusagen hinter den Kulissen ablaufen, sollten Sie einige Tipps und Tricks kennen, um die folgenden Probleme zu vermeiden.
+## Unterstützung mehrerer Domänen der obersten Ebene
+Für die Erstellung mehrerer Domänen der obersten Ebene als Verbund mit Azure AD sind einige zusätzliche Konfigurationsschritte erforderlich, die nicht benötigt werden, wenn ein Verbund mit nur einer Domäne der obersten Ebene erstellt wird.
 
-- Fehlermeldungen beim Versuch, zusätzliche Domänen für den Verbund zu konfigurieren
-- Benutzer in untergeordneten Domänen können sich nicht mehr anmelden, nachdem mehrere Domänen der obersten Ebene für den Verbund konfiguriert wurden
+Bei einem Verbund einer Domäne mit Azure AD werden für die Domäne in Azure mehrere Eigenschaften festgelegt. Eine wichtige Eigenschaft ist die IssuerUri-Eigenschaft. Dies ist ein URI, der von Azure AD zum Identifizieren der Domäne verwendet wird, der das Token zugeordnet ist. Der URI muss nicht in einen bestimmten Wert aufgelöst werden, aber es muss sich um einen gültigen URI handeln. Standardmäßig wird diese Eigenschaft von Azure AD auf den Wert des Verbunddienstbezeichners in Ihrer lokalen AD FS-Konfiguration festgelegt.
 
-## Mehrere Domänen der obersten Ebene
-Betrachten wir das Setup der Beispielorganisation „contoso.com“, die eine zusätzliche Domäne namens „fabrikam.com“ benötigt.
+>[AZURE.NOTE]Der Bezeichner des Verbunddiensts ist ein URI, mit dem ein Verbunddienst eindeutig identifiziert wird. Der Verbunddienst ist eine Instanz von AD FS, die als Sicherheitstokendienst fungiert.
 
-Angenommen, in meinem lokalen System habe ich AD FS mit dem Verbunddienstnamen „fs.contoso100.com“ konfiguriert.
+Sie können den IssuerUri mit dem folgenden PowerShell-Befehl anzeigen: `Get-MsolDomainFederationSettings - DomainName <your domain>`.
 
-Wenn ich mich das erste Mal bei Office 365 oder Azure AD anmelde, konfiguriere ich „contoso.com“ als meine erste Anmeldedomäne. Das ist über Azure AD Connect oder Azure AD Powershell mithilfe von „New-MsolFederatedDomain“ möglich.
+![Get-MsolDomainFederationSettings](./media/active-directory-multiple-domains/MsolDomainFederationSettings.png)
 
-Sobald dies geschehen ist, sehen wir uns die Standardwerte für zwei der neuen Konfigurationseigenschaften der neuen Azure AD-Domäne an (diese können mithilfe von „Get-MsolDomainFederationSettings“ abgefragt werden):
+Ein Problem tritt auf, wenn wir mehr als eine Domäne der obersten Ebene hinzufügen möchten. Nehmen wir beispielsweise an, dass Sie einen Verbund zwischen Azure AD und Ihrer lokalen Umgebung eingerichtet haben. Für dieses Dokument verwende ich „bmcontoso.com“. Nun habe ich eine zweite Domäne der obersten Ebene hinzugefügt: „bmfabrikam.com“.
 
-| Eigenschaftenname | Wert | Beschreibung|
-| ----- | ----- | -----|
-|IssuerURI | http://fs.contoso100.com/adfs/services/trust| Diese Eigenschaft sieht zwar wie eine URL aus, ist aber eigentlich nur ein Name für das lokale Authentifizierungssystem, daher muss der Pfad nicht aufgelöst werden. Standardmäßig wird diese Eigenschaft von Azure AD auf den Wert des Verbunddienstbezeichners in meiner lokalen AD FS-Konfiguration festgelegt.
-|PassiveClientSignInUrl|https://fs.contoso100.com/adfs/ls/|This ist der Standort, an den passive Anmeldeanforderungen gesendet werden. Es wird in mein tatsächliches AD FS-System aufgelöst. Tatsächlich gibt es mehrere *Url-Eigenschaften, aber wir müssen lediglich ein Beispiel betrachten, um den Unterschied zwischen dieser Eigenschaft und einem URI wie IssuerURI zu verdeutlichen.
+![Domänen](./media/active-directory-multiple-domains/domains.png)
 
-Angenommen, ich füge nun meine zweite Domäne „fabrikam.com“ hinzu. Dazu führe ich den Azure AD Connect-Assistenten ein zweites Mal aus oder verwende PowerShell.
+Wenn wir versuchen, die Domäne „bmfabrikam.com“ in einen Verbund zu konvertieren, wird ein Fehler angezeigt. Der Grund hierfür ist, dass für Azure AD eine Einschränkung gilt. Es ist nicht zulässig, dass die IssuerUri-Eigenschaft für mehr als eine Domäne den gleichen Wert aufweist.
+  
 
-Wenn ich versuche, die zweite Domäne als Verbund mit Azure AD PowerShell hinzuzufügen, erhalte ich einen Fehler.
+![Partnerverbundfehler](./media/active-directory-multiple-domains/error.png)
 
-Der Grund dafür ist eine Einschränkung in Azure AD, durch die der IssuerURI nicht für mehrere Domänen den gleichen Wert aufweisen kann. Um diese Einschränkung zu umgehen, müssen Sie einen anderen IssuerURI für die neue Domäne verwenden. Und genau das bewirkt der SupportMultipleDomain-Parameter. Wird er mit den Cmdlets zum Konfigurieren eines Verbunds (New - Convert- und Update-MsolFederatedDomain) verwendet, bewirkt dieser Parameter, dass Azure AD den IssuerURI basierend auf den Namen der Domäne konfiguriert, die für Mandanten in Azure AD eindeutig sein muss und somit eindeutig sein sollte. Es gibt auch eine Änderung an den Anspruchsregeln, darauf werde ich jedoch später eingehen.
+### SupportMultipleDomain-Parameter
 
-Wenn ich also in PowerShell „fabrikam.com“ mit dem SupportMultipleDomain-Parameter hinzufüge,
+Um dieses Problem zu umgehen, müssen wir einen anderen IssuerUri hinzufügen. Hierfür können wir den Parameter `-SupportMultipleDomain` verwenden. Dieser Parameter wird mit den folgenden Cmdlets verwendet:
+	
+- `New-MsolFederatedDomain`
+- `Convert-MsolDomaintoFederated`
+- `Update-MsolFederatedDomain`
 
-    PS C:\>New-MsolFederatedDomain -DomainName fabrikam.com –SupportMultipleDomain
+Mit diesem Parameter wird erreicht, dass Azure AD den IssuerUri so konfiguriert, dass er auf dem Namen der Domäne basiert. Dies ist für Verzeichnisse in Azure AD eindeutig. Mit dem Parameter kann der PowerShell-Befehl erfolgreich abgeschlossen werden.
 
-erhalte ich die folgende Konfiguration in Azure AD:
+![Partnerverbundfehler](./media/active-directory-multiple-domains/convert.png)
 
-- DomainName: fabrikam.com
-- IssuerURI: http://fabrikam.com/adfs/services/trust
-- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/
+Wenn Sie sich die Einstellungen der neuen Domäne „bmfabrikam.com“ ansehen, erkennen Sie Folgendes:
 
-Beachten Sie, dass der IssuerURI zwar auf einen Wert auf Grundlage meiner Domäne festgelegt wurde und somit eindeutig ist, die Endpunkt-URL-Werte aber immer noch so konfiguriert sind, dass sie auf meinen Verbunddienst auf „fs.contoso100.com“ verweisen, genau wie bei der ursprünglichen Domäne „contoso.com“. Alle Domänen verweisen also weiterhin auf dasselbe AD FS-System.
+![Partnerverbundfehler](./media/active-directory-multiple-domains/settings.png)
 
-Zweitens stellt SupportMultipleDomain sicher, dass das AD FS-System den richtigen Ausstellerwert in Token verwendet, die für Azure AD ausgestellt wurden. Dazu wird der Domänenteil des Benutzerprinzipalnamens (UPN) verwendet und als Domäne im IssuerURI festgelegt, d. h. https://{upn suffix}/adfs/services/trust. Während der Authentifizierung in Azure AD oder Office 365 wird daher das Issuer-Element im Token des Benutzers verwendet, um die Domäne in Azure AD zu finden. Wenn keine Übereinstimmung gefunden wird, schlägt die Authentifizierung fehl.
+Beachten Sie, dass `-SupportMultipleDomain` nicht zu einer Änderung der anderen Endpunkte führt, die weiterhin so konfiguriert sind, dass sie auf unseren Verbunddienst unter „adfs.bmcontoso.com“ verweisen.
 
-Wenn der UPN eines Benutzers z. B. johndoe@fabrikam.com lautet, wird das Issuer-Element in dem von AD FS ausgestellten Token auf http://fabrikam.com/adfs/services/trust festgelegt. Dies entspricht der Azure AD-Konfiguration und die Authentifizierung ist erfolgreich.
+Außerdem wird mit `-SupportMultipleDomain` sichergestellt, dass das AD FS-System den richtigen Issuer-Wert in Token einfügt, die für Azure AD ausgegeben werden. Dazu wird der Domänenteil des Benutzerprinzipalnamens (UPN) verwendet und als Domäne im IssuerUri festgelegt, d. h. https://{upn suffix}/adfs/services/trust.
 
-Im folgenden sehen Sie die angepasste Anspruchsregel, die diese Logik implementiert:
+Während der Authentifizierung in Azure AD oder Office 365 wird daher das IssuerUri-Element im Token des Benutzers verwendet, um die Domäne in Azure AD zu finden. Wenn keine Übereinstimmung gefunden wird, schlägt die Authentifizierung fehl.
+
+Wenn der UPN eines Benutzers beispielsweise bsimon@bmcontoso.com lautet, wird das IssuerUri-Element in dem von AD FS ausgestellten Token auf http://bmcontoso.com/adfs/services/trust festgelegt. Dies entspricht der Azure AD-Konfiguration und die Authentifizierung ist erfolgreich.
+
+Unten sehen Sie die angepasste Anspruchsregel, die diese Logik implementiert:
 
     c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type =   "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)", "http://${domain}/adfs/services/trust/"));
 
-In meinem Setup hatte ich „contoso.com“ zuerst ohne den supportMultipleDomains-Switch und mit dem Wert des Standard-IssuerURI registriert. Beim Hinzufügen von „fabrikam.com“ muss ich jetzt sicherstellen, dass auch „contoso.com“ so konfiguriert ist, dass der SupportMultipleDomains-Switch verwendet wird, da vom Anspruchsregelupdate nie mehr der Standard-IssuerURI gesendet wird und die Authentifizierung aufgrund des nicht übereinstimmenden IssuerURI fehlschlägt. Aber keine Sorge, Sie werden entsprechend gewarnt, bevor ihnen gestattet wird, den supportMultipleDomains-Switch in einer anderen Domäne zu verwenden.
 
-Um dieses Problem zu vermeiden, müssen wir auch die Konfiguration für die Domäne „contoso.com“ aktualisieren. Der Azure AD Connect-Assistent erkennt recht gut, wann die oben genannten Schritte ausgeführt werden müssen, und ergreift entsprechende Maßnahmen, wenn Sie eine zweite Domäne hinzufügen. Wenn Sie sich beim ersten Durchlauf bereits in der SupportMultipleDomain-Konfiguration befinden, wird diese nicht außer Kraft gesetzt.
+>[AZURE.IMPORTANT]Zum Verwenden des Switch -SupportMultipleDomain bei dem Versuch, neue Domänen hinzuzufügen oder bereits hinzugefügte Domänen zu konvertieren, müssen Sie die Verbundvertrauensstellung so eingerichtet haben, dass diese standardmäßig unterstützt werden.
 
-In PowerShell müssen Sie den SupportMultipleDomain-Switch manuell bereitstellen.
 
-Nachfolgend finden Sie die detaillierten Schritte für den Übergang von einer einzelnen Domäne zu mehreren Domänen.
+## Aktualisieren der Vertrauensstellung zwischen AD FS und Azure AD
+Wenn Sie die Vertrauensstellung zwischen AD FS und Ihrer Instanz von Azure AD nicht eingerichtet haben, müssen Sie diese Vertrauensstellung unter Umständen neu erstellen. Dies liegt daran, dass für die IssuerUri der Standardwert festgelegt wird, wenn sie anfänglich ohne den Parameter `-SupportMultipleDomain` eingerichtet wird. Im Screenshot unten sehen Sie, dass die IssuerUri auf https://adfs.bmcontoso.com/adfs/services/trust festgelegt ist.
 
-Anschließend verfügen wir über die Konfiguration für zwei Domänen in Azure AD:
+Wir erhalten jetzt also den folgenden Fehler, wenn wir im Azure AD-Portal erfolgreich eine neue Domäne hinzugefügt und anschließend versucht haben, diese mit `Convert-MsolDomaintoFederated -DomainName <your domain>` zu konvertieren.
 
-- DomainName: contoso.com
-- IssuerURI: http://contoso.com/adfs/services/trust
-- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/
-- DomainName: fabrikam.com
-- IssuerURI: http://fabrikam.com/adfs/services/trust
-- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/
+![Partnerverbundfehler](./media/active-directory-multiple-domains/trust1.png)
 
-Die Verbundanmeldung für Benutzer aus den Domänen „contoso.com“ und „fabrikam.com“ funktioniert jetzt. Nur ein Problem bleibt bestehen: die Anmeldung für Benutzer in untergeordneten Domänen.
+Wenn Sie versuchen, den Switch `-SupportMultipleDomain` hinzuzufügen, erhalten Sie den folgenden Fehler:
 
-##Untergeordnete Domänen
-Angenommen, ich füge meine untergeordnete Domäne „sub.contoso.com“ zu Azure AD hinzu. Aufgrund der Art und Weise, wie Azure AD Domänen verwaltet, erbt die untergeordnete Domäne die Einstellungen der übergeordneten Domäne, in diesem Fall von „contoso.com“. Dies bedeutet, dass der IssuerURI für user@sub.contoso.com http://contoso.com/adfs/services/trust sein muss. Die oben implementierte Standardregel für
+![Partnerverbundfehler](./media/active-directory-multiple-domains/trust2.png)
 
-Azure AD generiert jedoch ein Token mit einem Aussteller http://sub.contoso.com/adfs/services/trust, der nicht dem erforderlichen Wert der Domäne entspricht, und die Authentifizierung schlägt fehl. Glücklicherweise gibt es eine Umgehung für dieses Problem, die jedoch nicht in unsere Tools integriert ist. Sie müssen AD FS-Vertrauensstellung für Microsoft Online manuell aktualisieren.
+Der einfache Versuch, `Update-MsolFederatedDomain -DomainName <your domain> -SupportMultipleDomain` in der ursprünglichen Domäne auszuführen, führt ebenfalls zu einem Fehler.
 
-Sie müssen die benutzerdefinierte Anspruchsregel so konfigurieren, dass beim Erstellen des benutzerdefinierten Issuer-Werts alle Unterdomänen aus dem UPN-Suffix des Benutzers entfernt werden. Die genauen Schritte hierzu finden Sie weiter unten.
+![Partnerverbundfehler](./media/active-directory-multiple-domains/trust3.png)
 
-Zusammenfassend gesagt: Sie können über mehrere Domänen mit unterschiedlichen Namen sowie Unterdomänen verfügen, die alle mit dem gleichen AD FS-Server verbunden sind. Sie müssen lediglich einige zusätzliche Schritte ausführen, um sicherzustellen, dass die Issuer-Werte für alle Benutzer richtig festgelegt sind.
+Verwenden Sie die unten angegebenen Schritte, um eine weitere Domäne der obersten Ebene hinzuzufügen. Wenn Sie bereits eine Domäne hinzugefügt und den Parameter `-SupportMultipleDomain` nicht verwendet haben, beginnen Sie mit den Schritten für das Entfernen und Aktualisieren Ihrer ursprünglichen Domäne. Falls Sie noch keine Domäne der obersten Ebene hinzugefügt haben, können Sie mit den Schritten zum Hinzufügen einer Domäne mit der PowerShell von Azure AD Connect beginnen.
 
-<!---HONumber=AcomDC_0128_2016-->
+Führen Sie die folgenden Schritte aus, um die Microsoft Online-Vertrauensstellung zu entfernen und die ursprüngliche Domäne zu aktualisieren.
+
+2.  Öffnen Sie auf Ihrem AD FS-Verbundserver die Option für die **AD FS-Verwaltung**. 
+2.  Erweitern Sie auf der linken Seite die Optionen **Vertrauensstellungen** und **Vertrauensstellungen der vertrauenden Seite**.
+3.  Löschen Sie auf der rechten Seite den Eintrag **Microsoft Office 365 Identity Platform**. ![Microsoft Online entfernen](./media/active-directory-multiple-domains/trust4.png)
+1.  Führen Sie auf einem Computer, auf dem das [Azure Active Directory-Modul für Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx) installiert ist, Folgendes aus: `$cred=Get-Credential`.  
+2.  Geben Sie den Benutzernamen und das Kennwort eines globalen Administrators für die Azure AD-Domäne ein, mit der Sie den Verbund erstellen.
+2.  Geben Sie in PowerShell `Connect-MsolService -Credential $cred` ein.
+4.  Geben Sie in PowerShell `Update-MSOLFederatedDomain -DomainName <Federated Domain Name> -SupportMultipleDomain` ein. Dies ist die Eingabe für die ursprüngliche Domäne. Mit den obigen Domänen ergibt sich Folgendes: `Update-MsolFederatedDomain -DomainName bmcontoso.com -SupportMultipleDomain`
+
+
+Führen Sie die folgenden Schritte aus, um die neue Domäne der obersten Ebene mit PowerShell hinzuzufügen.
+
+1.  Führen Sie auf einem Computer, auf dem das [Azure Active Directory-Modul für Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx) installiert ist, Folgendes aus: `$cred=Get-Credential`.  
+2.  Geben Sie den Benutzernamen und das Kennwort eines globalen Administrators für die Azure AD-Domäne ein, mit der Sie den Verbund erstellen.
+2.  Geben Sie in PowerShell `Connect-MsolService -Credential $cred` ein.
+3.  Geben Sie in PowerShell `New-MsolFederatedDomain –SupportMultipleDomain –DomainName` ein.
+
+Führen Sie die folgenden Schritte aus, um die neue Domäne der obersten Ebene mit Azure AD Connect hinzuzufügen.
+
+1.	Starten Sie Azure AD Connect über den Desktop oder das Menü „Start“
+2.	Wählen Sie die Option „Weitere Azure AD-Domäne hinzufügen“. ![Weitere Azure AD-Domäne hinzufügen](./media/active-directory-multiple-domains/add1.png)
+3.	Geben Sie Ihre Anmeldeinformationen für Azure AD und Active Directory ein.
+4.	Wählen Sie die zweite Domäne aus, die Sie für den Verbund konfigurieren möchten. ![Weitere Azure AD-Domäne hinzufügen](./media/active-directory-multiple-domains/add2.png)
+5.	Klicken Sie auf „Installieren“.
+
+
+### Überprüfen der neuen Domäne der obersten Ebene
+Mit dem PowerShell-Befehl `Get-MsolDomainFederationSettings - DomainName <your domain>` können Sie den aktualisierten IssuerUri anzeigen. Im folgenden Screenshot ist dargestellt, dass die Verbundeinstellungen für die ursprüngliche Domäne http://bmcontoso.com/adfs/services/trust aktualisiert wurden.
+
+![Get-MsolDomainFederationSettings](./media/active-directory-multiple-domains/MsolDomainFederationSettings.png)
+
+Außerdem wurde der IssuerUri für die neue Domäne auf https://bmfabrikam.com/adfs/services/trust festgelegt.
+
+![Get-MsolDomainFederationSettings](./media/active-directory-multiple-domains/settings2.png)
+
+
+##Unterstützung für Unterdomänen
+Wenn Sie eine Unterdomäne hinzufügen, erbt sie die Einstellungen der übergeordneten Domäne. Dies liegt an der Art und Weise, wie Azure AD Domänen behandelt. Dies bedeutet, dass der IssuerUri mit den übergeordneten Elementen übereinstimmen muss.
+
+Angenommen, Sie verfügen über „bmcontoso.com“ und fügen dann „corp.bmcontoso.com“ hinzu. Dies bedeutet, dass der IssuerUri für einen Benutzer von „corp.bmcontoso.com“ wie folgt lauten muss: ****http://bmcontoso.com/adfs/services/trust.** Mit der oben für Azure AD implementierten Standardregel wird aber ein Token mit folgendem Aussteller generiert: ****http://corp.bmcontoso.com/adfs/services/trust.**. Dies stimmt nicht mit dem erforderlichen Wert der Domäne überein, und für die Authentifizierung tritt ein Fehler auf.
+
+### Aktivieren der Unterstützung für Unterdomänen
+Um dieses Problem zu umgehen, muss die AD FS-Vertrauensstellung der vertrauenden Seite für Microsoft Online aktualisiert werden. Hierzu müssen Sie eine benutzerdefinierte Anspruchsregel so konfigurieren, dass beim Erstellen des benutzerdefinierten Issuer-Werts alle Unterdomänen aus dem UPN-Suffix des Benutzers entfernt werden.
+
+Dies ist mit dem folgenden Anspruch möglich:
+
+    c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, "^((.*)([.|@]))?(?<domain>[^.]*[.].*)$", "http://${domain}/adfs/services/trust/"));
+
+Führen Sie die folgenden Schritte aus, um einen benutzerdefinierten Anspruch zur Unterstützung von Unterdomänen hinzuzufügen.
+
+1.	Öffnen Sie die AD FS-Verwaltung.
+2.	Klicken Sie mit der rechten Maustaste auf die Microsoft Online-Vertrauensstellung der vertrauenden Seite, und wählen Sie „Anspruchsregeln bearbeiten“.
+3.	Wählen Sie die dritte Anspruchsregel aus, und führen Sie die Ersetzung durch. ![Anspruch bearbeiten](./media/active-directory-multiple-domains/sub1.png)
+4.	Ersetzen Sie den aktuellen Anspruch:
+    
+	    c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)","http://${domain}/adfs/services/trust/"));
+    	
+	durch
+    
+	    `c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, "^((.*)([.|@]))?(?<domain>[^.]*[.].*)$", "http://${domain}/adfs/services/trust/"));`
+	
+![Anspruch ersetzen](./media/active-directory-multiple-domains/sub2.png)
+5.	Klicken Sie auf "OK". Klicken Sie auf „Übernehmen“. Klicken Sie auf "OK". Schließen Sie die AD FS-Verwaltung.
+
+<!---HONumber=AcomDC_0316_2016-->

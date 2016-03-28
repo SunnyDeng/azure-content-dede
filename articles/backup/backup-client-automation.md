@@ -3,21 +3,21 @@
 	description="Erfahren Sie, wie Sie Azure Backup mit PowerShell bereitstellen und verwalten."
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
-	manager="shreeshd"
+	authors="nkolli1"
+	manager="shivamg"
 	editor=""/>
 
-<tags 
-	ms.service="backup" 
-	ms.workload="storage-backup-recovery" 
-	ms.tgt_pltfrm="na" 
+<tags
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article" 
-	ms.date="01/22/2016" 
-	ms.author="markgal"; "aashishr"; "jimpark"/>
+	ms.topic="article"
+	ms.date="01/22/2016"
+	ms.author="markgal;jimpark;nkolli"/>
 
 
-# Bereitstellen und Verwalten der Sicherung in Azure für Windows Server-/Windows-Clientcomputer mit PowerShell
+# Bereitstellen und Verwalten der Sicherung in Azure für Windows Server-/Windows-Clientcomputer mit PowerShell
 
 In diesem Artikel erfahren Sie, wie Sie PowerShell zum Einrichten von Azure Backup auf einem Windows-Server oder Windows-Client sowie zum Verwalten von Sicherungen und Wiederherstellungen verwenden.
 
@@ -25,7 +25,7 @@ In diesem Artikel erfahren Sie, wie Sie PowerShell zum Einrichten von Azure Back
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
-Im Oktober 2015 wurde Azure PowerShell 1.0 veröffentlicht. Diese Version war der Nachfolger der Version 0.9.8 und brachte einige bedeutende Änderungen, insbesondere beim Benennungsmuster von Cmdlets. Cmdlet-Namen der Version 1.0 haben das Muster {Verb}-AzureRm{Nomen}, während Namen der Version 0.9.8 nicht **Rm** enthalten (z. B. „New-AzureRmResourceGroup“ statt „New-AzureResourceGroup“). Wenn Sie Azure PowerShell 0.9.8 verwenden, müssen Sie zunächst den Ressourcen-Manager-Modus aktivieren, indem Sie den Befehl **Switch-AzureMode AzureResourceManager** ausführen. Dieser Befehl ist ab Version 1.0 nicht erforderlich.
+Im Oktober 2015 wurde Azure PowerShell 1.0 veröffentlicht. Diese Version war der Nachfolger der Version 0.9.8 und brachte einige bedeutende Änderungen, insbesondere beim Benennungsmuster von Cmdlets. Cmdlet-Namen der Version 1.0 haben das Muster {Verb}-AzureRm{Nomen}, während Namen der Version 0.9.8 nicht **Rm** enthalten (z. B. „New-AzureRmResourceGroup“ statt „New-AzureResourceGroup“). Wenn Sie Azure PowerShell 0.9.8 verwenden, müssen Sie zunächst den Ressourcen-Manager-Modus aktivieren, indem Sie den Befehl **Switch-AzureMode AzureResourceManager** ausführen. Dieser Befehl ist ab Version 1.0 nicht erforderlich.
 
 Wenn Sie Ihre Skripts, die für Version 0.9.8 geschrieben wurden, in einer Umgebung mit Versionen ab 1.0 verwenden möchten, sollten Sie die Skripts in einer Prädproduktionsumgebung sorgfältig testen, bevor Sie sie in der Produktion einsetzen, um unerwartete Auswirkungen zu vermeiden.
 
@@ -39,14 +39,14 @@ Wenn Sie Ihre Skripts, die für Version 0.9.8 geschrieben wurden, in einer Umgeb
 
 > [AZURE.WARNING] Kunden, die Azure Backup zum ersten Mal verwenden, müssen den Azure Backup-Anbieter registrieren, der mit ihrem Abonnement verwendet werden soll. Führen Sie hierzu den folgenden Befehl aus: Register-AzureProvider -ProviderNamespace "Microsoft.Backup"
 
-Sie können mit dem Cmdlet **New-AzureRMBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
+Sie können mit dem Cmdlet **New-AzureRmBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
 PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “West US”
 PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GeoRedundant
 ```
 
-Mit dem Cmdlet **Get-AzureRMBackupVault** können Sie die Sicherungstresore in einem Abonnement auflisten.
+Mit dem Cmdlet **Get-AzureRmBackupVault** können Sie die Sicherungstresore in einem Abonnement auflisten.
 
 
 ## Installieren des Azure Backup-Agents
@@ -76,16 +76,7 @@ Die verfügbaren Optionen umfassen:
 
 | Option | Details | Standard |
 | ---- | ----- | ----- |
-| /q | Unbeaufsichtigte Installation | - |
-| /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent |
-| /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
-| /m | Microsoft Update abonnieren | - |
-| /nu | Nach Abschluss der Installation nicht nach Updates suchen | - |
-| /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - |
-| /ph | Proxyhostadresse | - |
-| /po | Proxyhost-Portnummer | - |
-| /pu | Proxyhost-Benutzername | - |
-| /pw | Proxykennwort | - |
+| /q | Unbeaufsichtigte Installation | - | | /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent || /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch || /m | Microsoft Update abonnieren | - | | /nu | Nach Abschluss der Installation nicht nach Updates suchen | - | | /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - | | /ph | Proxyhostadresse | - | | /po | Proxyhost-Portnummer | - | | /pu | Proxyhost-Benutzername | - | | /pw | Proxykennwort | - |
 
 
 ## Registrieren beim Azure Backup-Dienst
@@ -94,7 +85,7 @@ Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass d
 - Gültiges Azure-Abonnement
 - Ein Sicherungstresor
 
-Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureRMBackupVaultCredentials** in einer Azure PowerShell-Konsole aus, und speichern Sie sie an einem geeigneten Speicherort, z. B. *C:\\Downloads*.
+Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureRmBackupVaultCredentials** in einer Azure PowerShell-Konsole aus, und speichern Sie sie an einem geeigneten Speicherort, z. B. *C:\\Downloads*.
 
 ```
 PS C:\> $credspath = "C:"
@@ -217,7 +208,7 @@ Ein ```OBFileSpec```-Objekt definiert die Dateien, die in eine Sicherung eingesc
 
 Letzteres wird durch Verwendung des -NonRecursive-Kennzeichens im New-OBFileSpec-Befehl erreicht.
 
-Im folgenden Beispiel sichern wir Volume „C:“ und „D:“ und schließen die Binärdateien des Betriebssystems im Windows-Ordner sowie alle temporären Ordner aus. Dazu erstellen wir zwei Dateispezifikationen mithilfe des [New-OBFileSpec](https://technet.microsoft.com/library/hh770408)-Cmdlets – eine Spezifikation für Einschluss und eine für Ausschluss. Nachdem die Dateispezifikationen erstellt wurden, werden sie mithilfe des [Add-OBFileSpec](https://technet.microsoft.com/library/hh770424)-Cmdlets mit der Richtlinie verknüpft.
+Im folgenden Beispiel sichern wir Volume „C:“ und „D:“ und schließen die Binärdateien des Betriebssystems im Windows-Ordner sowie alle temporären Ordner aus. Dazu erstellen wir zwei Dateispezifikationen mithilfe des [New-OBFileSpec](https://technet.microsoft.com/library/hh770408)-Cmdlets – eine Spezifikation für Einschluss und eine für Ausschluss. Nachdem die Dateispezifikationen erstellt wurden, werden sie mithilfe des [Add-OBFileSpec](https://technet.microsoft.com/library/hh770424)-Cmdlets mit der Richtlinie verknüpft.
 
 ```
 PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:", "D:")
@@ -595,4 +586,4 @@ Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Si
 - [Einführung in Azure Backup](backup-configure-vault.md)
 - [Sichern von Windows-Servern](backup-azure-backup-windows-server.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

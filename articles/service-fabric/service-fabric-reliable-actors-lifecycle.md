@@ -3,7 +3,7 @@
    description="Erläutert Lebenszyklus und Garbage Collection für Service Fabric Reliable Actors"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="myamanbh"
    manager="timlt"
    editor=""/>
 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/20/2016"
+   ms.date="03/15/2016"
    ms.author="amanbha"/>
 
 
@@ -32,7 +32,7 @@ Was geschieht bei der Actor-Deaktivierung?
 - Wenn ein Actor einige Zeit lang nicht verwendet wird, wird er aus der Tabelle der aktiven Actors entfernt.
 - Die Methode `OnDeactivateAsync` (die bei der Actor-Implementierung überschrieben werden kann) wird aufgerufen. Dadurch werden alle Timer für den Actor gelöscht.
 
-> [AZURE.TIP]Die Fabric Actors-Laufzeit gibt einige [Ereignisse im Zusammenhang mit der Actor-Aktivierung und -Deaktivierung](service-fabric-reliable-actors-diagnostics.md#actor-activation-and-deactivation-events) aus. Sie sind hilfreich bei der Diagnose und Leistungsüberwachung.
+> [AZURE.TIP] Die Fabric Actors-Laufzeit gibt einige [Ereignisse im Zusammenhang mit der Actor-Aktivierung und -Deaktivierung](service-fabric-reliable-actors-diagnostics.md#actor-activation-and-deactivation-events) aus. Sie sind hilfreich bei der Diagnose und Leistungsüberwachung.
 
 ## Actor-Garbage Collection
 Die Actors-Laufzeit sucht in regelmäßigen Abständen nach Actors, die eine Zeitlang nicht verwendet wurden, und deaktiviert sie. Sobald die Actors deaktiviert sind, können sie durch die Common Language Runtime (CLR) mit einer Garbage Collection entfernt werden.
@@ -68,7 +68,7 @@ Um den Standardwert des Attributs `ActorGarbageCollection` auf Assemblyebene zu 
 [assembly: ActorGarbageCollection(IdleTimeoutInSeconds = 10, ScanIntervalInSeconds = 2)]
 ```
 
-Für jeden Actor in der Tabelle der aktiven Actors verfolgt die Actors-Laufzeit die Zeitspanne, während der er im Leerlauf war (d. h. nicht verwendet wurde). Die Actors-Laufzeit überprüft jeden Actor alle `ScanIntervalInSeconds`, um festzustellen, ob eine Garbage Collection für ihn ausgeführt werden kann, und erfasst ihn, wenn er sich seit `IdleTimeoutInSeconds` im Leerlauf befindet.
+Für jeden Actor in der Tabelle der aktiven Actors verfolgt die Actors-Laufzeit die Zeitspanne, während der er im Leerlauf war (d. h. nicht verwendet wurde). Die Actors-Laufzeit überprüft jeden Actor alle `ScanIntervalInSeconds`, um festzustellen, ob eine Garbage Collection für ihn ausgeführt werden kann, und erfasst ihn, wenn er sich seit `IdleTimeoutInSeconds` im Leerlauf befindet.
 
 Bei jeder Verwendung eines Actors wird seine Leerlaufzeit auf 0 zurückgesetzt. Danach kann für den Actor nur dann eine Garbage Collection ausgeführt werden, wenn er erneut `IdleTimeoutInSeconds` lang im Leerlauf bleibt. Denken Sie daran, dass ein Actor als verwendet gilt, wenn entweder eine Actor-Schnittstellenmethode oder ein Erinnerungs-Rückruf ausgeführt wird. Ein Actor gilt **nicht** als verwendet, wenn der Timer-Rückruf ausgeführt wird.
 
@@ -90,4 +90,4 @@ Beachten Sie, dass für einen Actor nie eine Garbage Collection durchgeführt wi
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-lifecycle/garbage-collection.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0316_2016-->

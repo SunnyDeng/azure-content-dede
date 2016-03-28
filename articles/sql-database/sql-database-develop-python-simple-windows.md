@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="03/14/2016"
 	ms.author="meetb"/>
 
 
@@ -40,7 +40,7 @@ Installieren Sie [pymssql](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymssql).
 
 Stellen Sie sicher, dass Sie die richtige WHL-Datei auswählen.
 
-Wählen Sie z. B. bei Verwendung von Python 2.7 auf einem 64-Bit-Computer die Datei "pymssql‑2.1.1‑cp27‑none‑win\_amd64.whl" aus. Speichern Sie die WHL-Datei nach dem Herunterladen im Ordner "C:/Python27".
+Wählen Sie z. B. bei Verwendung von Python 2.7 auf einem 64-Bit-Computer die Datei "pymssql‑2.1.1‑cp27‑none‑win\_amd64.whl" aus. Speichern Sie die WHL-Datei nach dem Herunterladen im Ordner "C:/Python27".
 
 Installieren Sie danach an der Befehlszeile mithilfe von pip den pymssql-Treiber. Wechseln Sie zum Laufwerk "C:/Python27", und führen Sie Folgendes aus:
 
@@ -53,12 +53,12 @@ Anweisungen zum Aktivieren der Verwendung von pip erhalten Sie [hier](http://sta
 
 Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
-## Schritt 1: Abrufen der Verbindungsdetails
+## Schritt 1: Abrufen der Verbindungsdetails
 
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
 
-## Schritt 2: Verbinden
+## Schritt 2: Verbinden
 
 
 Die [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html)-Funktion dient zum Herstellen einer Verbindung mit der SQL-Datenbank.
@@ -67,7 +67,7 @@ Die [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html)-Funktion di
 	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 
 
-## Schritt 3: Ausführen einer Abfrage
+## Schritt 3: Ausführen einer Abfrage
 
 Mit der [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.execute)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und gibt ein Resultset zurück, das mithilfe von [cursor.fetchone()](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.fetchone) durchlaufen werden kann.
 
@@ -82,7 +82,7 @@ Mit der [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.C
 	    row = cursor.fetchone()
 
 
-## Schritt 4: Einfügen einer Zeile
+## Schritt 4: Einfügen einer Zeile
 
 In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
 
@@ -121,4 +121,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
 Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

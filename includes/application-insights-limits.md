@@ -7,8 +7,8 @@ Andere Datenpunkte pro Monat | 5 Mio. | 50 Mio.<sup>2</sup>
 Ablaufverfolgungs- oder Protokolldatenrate | 200 DP/s | 500 DP/s
 Ausnahmedatenrate | 50 DP/s | 50 DP/s
 Sonstige Telemetriedatenrate | 200 DP/s | 500 DP/s
-Beibehaltung von Rohdaten |7 Tage| 30 Tage
-Beibehaltung von aggregierten Daten | 13 Monate | Unbegrenzt
+Beibehaltung von Rohdaten | 7 Tage
+Beibehaltung von aggregierten Daten | 90 Tage
 Anzahl von Eigenschaftennamen für die App | 100 | 100
 Länge von Eigenschaftennamen | 100 | 100
 Länge von Eigenschaftswerten | 1000 | 1000
@@ -22,4 +22,4 @@ Verfügbarkeitstests | 10 | 10
  
 [Informationen zu Preisen und Kontingenten für Application Insights](../articles/application-insights/app-insights-pricing.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->
