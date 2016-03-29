@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/09/2015" 
+	ms.date="03/15/2016" 
 	ms.author="genemi"/>
 
 
@@ -48,32 +48,32 @@ In diesem Thema wird ein Codebeispiel in zwei Phasen vorgestellt:
  - Optional können Sie in wenigen Minuten [eine **AdventureWorksLT**-Demodatenbank erstellen](sql-database-get-started.md).
 
 
-- SQL Server Management Studio ("ssms.exe"), Vorschauversion August 2015 oder eine spätere Version. Sie können "ssms.exe" in der neuesten Version wie folgt herunterladen:
+- SQL Server Management Studio ("ssms.exe"), Vorschauversion August 2015 oder eine spätere Version. Sie können "ssms.exe" in der neuesten Version wie folgt herunterladen:
  - Im Thema [Download SQL Server Management Studio](http://msdn.microsoft.com/library/mt238290.aspx) (in englischer Sprache).
  - [Über diesen direkten Link zum Herunterladen.](http://go.microsoft.com/fwlink/?linkid=616025)
  - Microsoft empfiehlt, dass Sie die Datei "ssms.exe" in regelmäßigen Abständen aktualisieren. In einigen Fällen wird "ssms.exe" monatlich aktualisiert.
 
 
 - Die [Azure PowerShell-Module](http://go.microsoft.com/?linkid=9811175) müssen installiert sein.
- - Die Module umfassen verschiedene Befehle, z. B. **New-AzureStorageAccount**.
+ - Die Module umfassen verschiedene Befehle, z. B. **New-AzureStorageAccount**.
 
 
-## Phase 1: PowerShell-Code für den Azure-Speichercontainer
+## Phase 1: PowerShell-Code für den Azure-Speichercontainer
 
 
-Dieser PowerShell-Code wird in Phase 1 des zweiphasigen Codebeispiels erstellt.
+Dieser PowerShell-Code wird in Phase 1 des zweiphasigen Codebeispiels erstellt.
 
 Das Skript beginnt mit Befehlen zum Bereinigen nach einer möglichen vorherigen Ausführung und ist so konzipiert, dass es erneut ausgeführt werden kann.
 
 
 
-1. Fügen Sie das PowerShell-Skript in einem einfachen Texteditor (z. B. Editor) ein, und speichern Sie es als Datei mit der Erweiterung **.ps1**.
+1. Fügen Sie das PowerShell-Skript in einem einfachen Texteditor (z. B. Editor) ein, und speichern Sie es als Datei mit der Erweiterung **.ps1**.
 
 2. Starten Sie PowerShell ISE als Administrator.
 
 3. Geben Sie an der Eingabeaufforderung <br/>`Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`<br/>ein, und drücken Sie dann die EINGABETASTE.
 
-4. Öffnen Sie in PowerShell ISE Ihre Datei mit der Erweiterung **.ps1**. Führen Sie das Skript aus.
+4. Öffnen Sie in PowerShell ISE Ihre Datei mit der Erweiterung **.ps1**. Führen Sie das Skript aus.
 
 5. Mit dem Skript wird zunächst ein Fenster geöffnet, in dem Sie sich bei Azure anmelden.
  - Wenn Sie das Skript ohne Unterbrechung der Sitzung erneut ausführen, können Sie den **Add-AzureAccount**-Befehl auf einfache Weise auskommentieren.
@@ -255,14 +255,14 @@ Now shift to the Transact-SQL portion of the two-part code sample!'
 &nbsp;
 
 
-Beachten Sie die benannten Werte, die beim Beenden des PowerShell-Skripts ausgegeben werden. Diese Werte müssen Sie im Transact-SQL-Skript bearbeiten, das als Phase 2 folgt.
+Beachten Sie die benannten Werte, die beim Beenden des PowerShell-Skripts ausgegeben werden. Diese Werte müssen Sie im Transact-SQL-Skript bearbeiten, das als Phase 2 folgt.
 
 
-## Phase 2: Transact-SQL-Code zum Verwenden des Azure-Speichercontainers
+## Phase 2: Transact-SQL-Code zum Verwenden des Azure-Speichercontainers
 
 
-- In Phase 1 dieses Codebeispiels haben Sie ein PowerShell-Skript zum Erstellen eines Azure-Speichercontainers ausgeführt.
-- In Phase 2 muss das folgende Transact-SQL-Skript nun diesen Container verwenden.
+- In Phase 1 dieses Codebeispiels haben Sie ein PowerShell-Skript zum Erstellen eines Azure-Speichercontainers ausgeführt.
+- In Phase 2 muss das folgende Transact-SQL-Skript nun diesen Container verwenden.
 
 
 Das Skript beginnt mit Befehlen zum Bereinigen nach einer möglichen vorherigen Ausführung und ist so konzipiert, dass es erneut ausgeführt werden kann.
@@ -562,13 +562,13 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 Angenommen, Sie möchten das vorhergehende Transact-SQL-Codebeispiel in Microsoft SQL Server ausführen.
 
 
-- Der Einfachheit halber möchten Sie die Verwendung des Azure-Speichercontainers vollständig durch eine einfache Datei, ersetzen, z. B. durch **C:\\myeventdata.xel**. Die Datei wird auf die lokale Festplatte des Computers geschrieben, der SQL Server hostet.
+- Der Einfachheit halber möchten Sie die Verwendung des Azure-Speichercontainers vollständig durch eine einfache Datei, ersetzen, z. B. durch **C:\\myeventdata.xel**. Die Datei wird auf die lokale Festplatte des Computers geschrieben, der SQL Server hostet.
 
 
 - Sie benötigen keine Transact-SQL-Anweisungen für **CREATE MASTER KEY** und **CREATE CREDENTIAL**.
 
 
-- In der **ADD TARGET**-Klausel der **CREATE EVENT SESSION**-Anweisung ersetzen Sie den für **filename=** zugewiesenen HTTP-Wert durch eine vollständige Pfadzeichenfolge wie z. B. **C:\\myfile.xel**.
+- In der **ADD TARGET**-Klausel der **CREATE EVENT SESSION**-Anweisung ersetzen Sie den für **filename=** zugewiesenen HTTP-Wert durch eine vollständige Pfadzeichenfolge wie z. B. **C:\\myfile.xel**.
  - Es wird kein Azure-Speicherkonto benötigt.
 
 
@@ -597,4 +597,4 @@ Image references.
 
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/21/2016"
+    ms.date="03/11/2016"
     ms.author="adegeo"/>
 
 # Was ist das Clouddienstmodell, und wie kann es gepackt werden?
@@ -25,7 +25,7 @@ Wenn der Clouddienst in Azure ausgeführt wird, können Sie ihn über die Datei 
 * Ich benötige weitere Informationen zu den Dateien [ServiceDefinition.csdef](#csdef) und [ServiceConfig.cscfg](#cscfg).
 * Damit bin ich bereits vertraut, ich benötige [einige Beispiele](#next-steps) zur Konfiguration.
 * Ich möchte die Datei [ServicePackage.cspkg](#cspkg) erstellen.
-* Ich verwende Visual Studio und möchte ...
+* Ich verwende Visual Studio und möchte ...
     * [Erstellen eines Azure-Projekts mit Visual Studio][vs_create]
     * [Einen vorhandenen Clouddienst neu konfigurieren][vs_reconfigure]
     * [Ein Clouddienstprojekt bereitstellen][vs_deploy]
@@ -86,21 +86,21 @@ Die Datei **ServiceDefinition.csdef** gibt die Einstellungen an, mit denen ein C
 
 Ausführliche Informationen zu dem hier verwendeten XML-Schema finden Sie unter [Dienstdefinitionsschema][]. Im Folgenden werden jedoch einige Elemente kurz erläutert:
 
->**Sites** enthält die Definitionen für Websites oder Webanwendungen, die in IIS7 gehostet werden.
->
->**InputEndpoints** enthält die Definitionen für Endpunkte, die für Verbindungen mit dem Clouddienst verwendet werden.
->
->**InternalEndpoints** enthält die Definitionen für Endpunkte, die von Rolleninstanzen für die Kommunikation verwendet werden.
->
->**ConfigurationSettings** enthält die Einstellungsdefinitionen für Funktionen einer bestimmten Rolle.
->
->**Certificates** enthält die Definitionen für Zertifikate, die für eine Rolle erforderlich sind. Das Codebeispiel oben enthält ein Zertifikat, das für die Konfiguration von Azure Connect verwendet wird.
->
->**LocalResources** enthält die Definitionen für lokale Speicherressourcen. Eine lokale Speicherressource ist ein reserviertes Verzeichnis im Dateisystem des virtuellen Computers, in dem eine Instanz einer Rolle ausgeführt wird.
->
->**Imports** enthält die Definitionen für importierte Module. Im Codebeispiel oben werden die Module für die Remotedesktopverbindung und Azure Connect verwendet.
->
->**Startup** enthält Aufgaben, die beim Starten der Rolle ausgeführt werden. Die Aufgaben werden in einer CMD-Datei oder einer ausführbaren Datei definiert.
+**Sites** enthält die Definitionen für Websites oder Webanwendungen, die in IIS7 gehostet werden.
+
+**InputEndpoints** enthält die Definitionen für Endpunkte, die für Verbindungen mit dem Clouddienst verwendet werden.
+
+**InternalEndpoints** enthält die Definitionen für Endpunkte, die von Rolleninstanzen für die Kommunikation verwendet werden.
+
+**ConfigurationSettings** enthält die Einstellungsdefinitionen für Funktionen einer bestimmten Rolle.
+
+**Certificates** enthält die Definitionen für Zertifikate, die für eine Rolle erforderlich sind. Das Codebeispiel oben enthält ein Zertifikat, das für die Konfiguration von Azure Connect verwendet wird.
+
+**LocalResources** enthält die Definitionen für lokale Speicherressourcen. Eine lokale Speicherressource ist ein reserviertes Verzeichnis im Dateisystem des virtuellen Computers, in dem eine Instanz einer Rolle ausgeführt wird.
+
+**Imports** enthält die Definitionen für importierte Module. Im Codebeispiel oben werden die Module für die Remotedesktopverbindung und Azure Connect verwendet.
+
+**Startup** enthält Aufgaben, die beim Starten der Rolle ausgeführt werden. Die Aufgaben werden in einer CMD-Datei oder einer ausführbaren Datei definiert.
 
 
 
@@ -130,11 +130,11 @@ Die Dienstkonfigurationsdatei wird nicht mit der Anwendung gepackt, sondern als 
 
 Ausführliche Informationen zu dem hier verwendeten XML-Schema finden Sie unter [Dienstkonfigurationsschema](https://msdn.microsoft.com/library/azure/ee758710.aspx). Im Folgenden werden die Elemente jedoch kurz erläutert:
 
->**Instances** konfiguriert die Anzahl der ausgeführten Instanzen für die Rolle. Um zu verhindern, dass der Clouddienst während Aktualisierungen nicht verfügbar ist, wird empfohlen, dass Sie mehr als eine Instanz der Rollen mit Webzugriff bereitstellen. Auf diese Weise befolgen Sie die Richtlinien in der [Azure-Vereinbarung zum Servicelevel (SLA)](http://azure.microsoft.com/support/legal/sla/), in der eine Verfügbarkeit der externen Verbindungen von 99,95 % für Rollen mit Internetzugriff garantiert wird, wenn mindestens zwei Rolleninstanzen für einen Dienst bereitgestellt werden.
+**Instances** konfiguriert die Anzahl der ausgeführten Instanzen für die Rolle. Um zu verhindern, dass der Clouddienst während Aktualisierungen nicht verfügbar ist, wird empfohlen, dass Sie mehr als eine Instanz der Rollen mit Webzugriff bereitstellen. Auf diese Weise befolgen Sie die Richtlinien in der [Azure-Vereinbarung zum Servicelevel (SLA)](http://azure.microsoft.com/support/legal/sla/), in der eine Verfügbarkeit der externen Verbindungen von 99,95 % für Rollen mit Internetzugriff garantiert wird, wenn mindestens zwei Rolleninstanzen für einen Dienst bereitgestellt werden.
 
->**ConfigurationSettings** konfiguriert die Einstellungen für die ausgeführten Instanzen einer Rolle. Der Name der `<Setting>`-Elemente muss mit den Einstellungsdefinitionen in der Dienstdefinitionsdatei übereinstimmen.
+**ConfigurationSettings** konfiguriert die Einstellungen für die ausgeführten Instanzen einer Rolle. Der Name der `<Setting>`-Elemente muss mit den Einstellungsdefinitionen in der Dienstdefinitionsdatei übereinstimmen.
 
->**Certificates** konfiguriert die Zertifikate, die vom Dienst verwendet werden. Im Codebeispiel oben wird das Zertifikat für das RemoteAccess-Modul definiert. Der Wert des *thumbprint*-Attributs muss auf den Fingerabdruck des zu verwendenden Zertifikats festgelegt werden.
+**Certificates** konfiguriert die Zertifikate, die vom Dienst verwendet werden. Im Codebeispiel oben wird das Zertifikat für das RemoteAccess-Modul definiert. Der Wert des *thumbprint*-Attributs muss auf den Fingerabdruck des zu verwendenden Zertifikats festgelegt werden.
 
 <p/>
 
@@ -145,7 +145,7 @@ Ausführliche Informationen zu dem hier verwendeten XML-Schema finden Sie unter 
 ## Definieren von Ports für Rolleninstanzen
 In Azure ist nur ein Einstiegspunkt für eine Webrolle zulässig. Das bedeutet, dass der gesamte Datenverkehr über eine IP-Adresse erfolgt. Sie können Ihre Websites für die gemeinsame Nutzung eines Ports konfigurieren, indem Sie den Hostheader so konfigurieren, dass Anforderungen an den richtigen Ort geleitet werden. Sie können Ihre Anwendungen zudem so konfigurieren, dass sie bekannte Ports in der IP-Adresse abhören.
 
-Im folgenden Beispiel ist die Konfiguration für eine Webrolle mit einer Website und Webanwendung dargestellt. Die Website ist als Standardeinstiegspunkt auf Port 80 konfiguriert. Die Webanwendungen sind so konfiguriert, dass sie Anforderungen von einem alternativen Hostheader mit dem Namen "mail.mysite.cloudapp.net" empfangen.
+Im folgenden Beispiel ist die Konfiguration für eine Webrolle mit einer Website und Webanwendung dargestellt. Die Website ist als Standardeinstiegspunkt auf Port 80 konfiguriert. Die Webanwendungen sind so konfiguriert, dass sie Anforderungen von einem alternativen Hostheader mit dem Namen "mail.mysite.cloudapp.net" empfangen.
 
 ```xml
 <WebRole>
@@ -153,7 +153,7 @@ Im folgenden Beispiel ist die Konfiguration für eine Webrolle mit einer Website
     <Setting name="DiagnosticsConnectionString" />
   </ConfigurationSettings>
   <Endpoints>
-    <InputEndpoint name="HttpIn" protocol="http" port="80" />
+    <InputEndpoint name="HttpIn" protocol="http" <mark>port="80"</mark> />
     <InputEndpoint name="Https" protocol="https" port="443" certificate="SSL"/>
     <InputEndpoint name="NetTcp" protocol="tcp" port="808" certificate="SSL"/>
   </Endpoints>
@@ -169,7 +169,7 @@ Im folgenden Beispiel ist die Konfiguration für eine Webrolle mit einer Website
   </Site>
   <Site name="MailSite" packageDir="MailSite">
     <Bindings>
-      <Binding name="mail" endpointName="HttpIn" hostheader="mail.mysite.cloudapp.net" />
+      <Binding name="mail" endpointName="HttpIn" <mark>hostheader="mail.mysite.cloudapp.net"</mark> />
     </Bindings>
     <VirtualDirectory name="artifacts" />
     <VirtualApplication name="storageproxy">
@@ -201,13 +201,9 @@ Die [Azure-Laufzeitbibliothek](https://msdn.microsoft.com/library/azure/mt419365
 ## ServicePackage.cspkg
 Um eine Anwendung als Clouddienst in Azure bereitzustellen, müssen Sie zunächst die Anwendung im entsprechenden Format packen. Als Alternative zu Visual Studio können Sie das Befehlszeilentool **CSPack** (wird mit dem [Azure SDK](https://azure.microsoft.com/downloads/) installiert) verwenden, um die Paketdatei zu erstellen.
 
-**CSPack** verwendet den Inhalt der Dienstdefinitionsdatei und Dienstkonfigurationsdatei, um den Inhalt des Pakets zu definieren. **CSPack** generiert eine Anwendungspaketdatei (.cspkg), die Sie über das [klassische Azure-Portal](cloud-services-how-to-create-deploy/#how-to-deploy-a-cloud-service) in Azure hochladen können. Standardmäßig erhält das Paket den Namen `[ServiceDefinitionFileName].cspkg`, durch Verwendung der Option `/out` von **CSPack** können Sie jedoch auch einen anderen Namen angeben.
+**CSPack** verwendet den Inhalt der Dienstdefinitionsdatei und Dienstkonfigurationsdatei, um den Inhalt des Pakets zu definieren. **CSPack** generiert eine Anwendungspaketdatei (.cspkg), die Sie über das [Azure-Portal](cloud-services-how-to-create-deploy-portal.md/#create-and-deploy) in Azure hochladen können. Standardmäßig erhält das Paket den Namen `[ServiceDefinitionFileName].cspkg`, durch Verwendung der Option `/out` von **CSPack** können Sie jedoch auch einen anderen Namen angeben.
 
-###### Speicherort des CSPack-Tools (unter Windows)
-| SDK-Version | Path |
-| ----------- | ---- |
-| 1\.7 und höher | C:\\Programme\\Microsoft SDKs\\Azure\\.NET SDK\\[SDK-Version]\\bin\\ |
-| Vor 1.6 | C:\\Programme\\Azure SDK\\[SDK-Version]\\bin\\ |
+**CSPack** befindet sich im Allgemeinen unter `C:\Program Files\Microsoft SDKs\Azure\.NET SDK[sdk-version]\bin`.
 
 >[AZURE.NOTE]
 "CSPack.exe" ist (unter Windows) durch Ausführen der Verknüpfung **Microsoft Azure-Eingabeaufforderung** verfügbar, die mit dem SDK installiert wird.
@@ -251,13 +247,13 @@ Die Variablen sind dabei wie folgt definiert:
 
 ## Nächste Schritte
 
-Ich erstelle ein Clouddienstpaket und möchte ...
+Ich erstelle ein Clouddienstpaket und möchte ...
 
 * [Konfigurieren lokaler Speicherressourcen](cloud-services-configure-local-storage-resources.md)
 * [Eine Remotedesktopverbindung für eine Clouddienstinstanz einrichten][remotedesktop]
 * [Ein Clouddienstprojekt bereitstellen][deploy]
 
-Ich verwende Visual Studio und möchte ...
+Ich verwende Visual Studio und möchte ...
 
 * [Erstellen eines Azure-Projekts mit Visual Studio][vs_create]
 * [Einen vorhandenen Clouddienst neu konfigurieren][vs_reconfigure]
@@ -271,4 +267,4 @@ Ich verwende Visual Studio und möchte ...
 [vs_reconfigure]: ../vs-azure-tools-configure-roles-for-cloud-service.md
 [vs_create]: ../vs-azure-tools-azure-project-create.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

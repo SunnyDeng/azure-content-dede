@@ -128,8 +128,6 @@ Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berech
 
 > [AZURE.IMPORTANT] Stellen Sie bei der Verwendung von `EngagementListActivity` oder `EngagementExpandableListActivity` sicher, dass jeder Aufruf von `requestWindowFeature(...);` vor dem Aufruf von `super.onCreate(...);` erfolgt, da es andernfalls zu einem Absturz kommt.
 
-Wir stellen Unterklassen von `FragmentActivity` und `MapActivity` bereit, aber zur Vermeidung von Problemen mit Anwendungen, die **ProGuard** verwenden, wurden sie nicht in `engagement.jar` einbezogen.
-
 Sie finden diese Klassen im Ordner `src`, und Sie können sie in Ihr Projekt kopieren. Die Klassen befinden sich auch in **JavaDoc**.
 
 ### Alternative Methode: `startActivity()` und `endActivity()` manuell aufrufen.
@@ -382,4 +380,4 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 <!-- URLs. -->
 [Device API]: http://go.microsoft.com/?linkid=9876094
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

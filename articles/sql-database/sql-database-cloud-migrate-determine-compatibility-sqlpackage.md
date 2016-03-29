@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="12/17/2015"
+   ms.date="03/14/2016"
    ms.author="carlrab"/>
 
 # Ermitteln der SQL-Datenbankkompatibilität mithilfe von SqlPackage.exe
@@ -22,7 +22,7 @@
 - [SqlPackage](sql-database-cloud-migrate-determine-compatibility-sqlpackage.md)
 - [SQL Server Management Studio](sql-database-cloud-migrate-determine-compatibility-ssms.md)
 
-In diesem Artikel erfahren Sie, wie Sie ermitteln können, ob eine SQL Server-Datenbank für die Migration zur SQL-Datenbank geeignet ist, indem Sie das [SqlPackage](https://msdn.microsoft.com/library/hh550080.aspx)-Hilfsprogramm für die Eingabeaufforderung verwenden.
+In diesem Artikel erfahren Sie, wie Sie ermitteln können, ob eine SQL Server-Datenbank für die Migration zur SQL-Datenbank geeignet ist, indem Sie das [SqlPackage](https://msdn.microsoft.com/library/hh550080.aspx)-Hilfsprogramm für die Eingabeaufforderung verwenden.
 
 ## Verwenden von SqlPackage.exe
 
@@ -39,7 +39,7 @@ In diesem Artikel erfahren Sie, wie Sie ermitteln können, ob eine SQL Server-D
 	| < schema_name.table_name > | Tabellen, für die Daten in die Zieldatei ausgegeben werden |
 	| < output_file > | Dateiname und Speicherort für die Ausgabedatei mit Fehlern, falls vorhanden |
 
-	Der Grund für das Argument „/p:TableName“ ist, dass wir nur die Datenbankkompatibilität in Bezug auf das Exportieren nach Azure SQL-Datenbank V12 testen möchten und nicht die Daten aus allen Tabellen exportieren möchten. Leider unterstützt das export-Argument für „sqlpackage.exe“ das Extrahieren von 0 Tabellen nicht. Sie müssen also eine kleine Tabelle angeben. < output_file > enthält den Bericht zu etwaigen Fehlern. Mit der Zeichenfolge „> 2>&1“ werden sowohl die Standardausgabe als auch der Standardfehler, die bzw. der sich aus der Befehlsausführung ergibt, an die angegebene Ausgabedatei geleitet.
+	Der Grund für das Argument „/p:TableName“ ist, dass wir nur die Datenbankkompatibilität in Bezug auf das Exportieren nach Azure SQL-Datenbank V12 testen möchten und nicht die Daten aus allen Tabellen exportieren möchten. Leider unterstützt das export-Argument für „sqlpackage.exe“ das Extrahieren von 0 Tabellen nicht. Sie müssen also eine kleine Tabelle angeben. < output_file > enthält den Bericht zu etwaigen Fehlern. Mit der Zeichenfolge „> 2>&1“ werden sowohl die Standardausgabe als auch der Standardfehler, die bzw. der sich aus der Befehlsausführung ergibt, an die angegebene Ausgabedatei geleitet.
 
 	![Exportieren von Datenebenenanwendungen im Menü "Aufgaben"](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSQLPackage01.png)
 
@@ -51,4 +51,4 @@ In diesem Artikel erfahren Sie, wie Sie ermitteln können, ob eine SQL Server-D
 
 [Beheben von Problemen mit der Datenbankkompatibilität](sql-database-cloud-migrate-fix-compatibility-issues.md), falls vorhanden.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0316_2016-->

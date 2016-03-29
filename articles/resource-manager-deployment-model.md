@@ -52,7 +52,7 @@ Ressourcen, die über den Ressourcen-Manager erstellt wurden, weisen folgende Me
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
 
-  - Verwenden Sie in Azure PowerShell 1.0 für Befehle die Version mit dem Ressourcen-Manager. Diese Befehle haben das Format *Verb-AzureRm*, wie unten dargestellt.
+  - Verwenden Sie in Azure PowerShell 1.0 für Befehle die Version mit dem Ressourcen-Manager. Diese Befehle haben das Format *Verb-AzureRmNoun*, wie unten dargestellt.
 
             PS C:\> Get-AzureRmResourceGroupDeployment
 
@@ -93,7 +93,7 @@ Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen fol
 
         ![Classic portal](./media/resource-manager-deployment-model/azure-portal.png)
 
-        Alternativ können Sie das Vorschauportal nutzen und eine **klassische** Bereitstellung (für Compute-, Speicher- und Netzwerkressourcen) festlegen.
+        Or, the Azure portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
 
         ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
 
@@ -101,7 +101,7 @@ Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen fol
 
             PS C:\> Switch-AzureMode -Name AzureServiceManagement
 
-  - Verwenden Sie in Azure PowerShell 1.0 die Dienstverwaltungsversion der Befehle. Diese Befehlsnamen haben **nicht** das Format *Verb-AzureRm*, wie unten dargestellt.
+  - Verwenden Sie in Azure PowerShell 1.0 die Dienstverwaltungsversion der Befehle. Diese Befehlsnamen haben das Format *Verb-AzureNoun*, wie unten dargestellt.
 
             PS C:\> Get-AzureDeployment
 
@@ -111,7 +111,7 @@ Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen fol
 
     ![Klassischer Typ](./media/resource-manager-deployment-model/classic-type.png)
 
-Sie können weiterhin das Portal zur Verwaltung von Ressourcen verwenden, die über die klassische Bereitstellung erstellt wurden.
+Sie können weiterhin das Azure-Portal zur Verwaltung von Ressourcen verwenden, die über die klassische Bereitstellung erstellt wurden.
 
 Im Folgenden sind die Komponenten und deren Beziehungen für die Azure-Dienstverwaltung dargestellt.
 
@@ -125,7 +125,7 @@ Mit dem Ressourcen-Manager wurde das Konzept der Ressourcengruppen eingeführt. 
 - Sie können die Anwendung während des gesamten App-Lebenszyklus wiederholt bereitstellen und sicher sein, dass Ihre Ressourcen einheitlich bereitgestellt werden.
 - Sie können deklarative Vorlagen verwenden, um Ihre Bereitstellung zu definieren.
 - Sie können die Abhängigkeiten zwischen Ressourcen definieren, sodass diese in der richtigen Reihenfolge bereitgestellt werden.
-- Sie können die Zugriffssteuerung auf alle Dienste in der Ressourcengruppe anwenden, da die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) standardmäßig in die Verwaltungsplattform integriert ist.
+- Sie können die Zugriffssteuerung auf alle Ressourcen in der Ressourcengruppe anwenden, da die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) standardmäßig in die Verwaltungsplattform integriert ist.
 - Sie können Tags auf Ressourcen anwenden, um alle Ressourcen in Ihrem Abonnement logisch zu organisieren.
 
 
@@ -143,7 +143,7 @@ Weitere Informationen zur Verwendung von Tags im Ressourcen-Manager finden Sie u
 
 ## Unterstützte Vorgänge für die Bereitstellungsmodelle
 
-Ressourcen, die Sie im klassischen Bereitstellungsmodell erstellen, unterstützen keine Ressourcen-Manager-Vorgänge. In einigen Fällen können Sie mithilfe eines Ressourcen-Manager-Befehls Informationen zu einer mit der klassischen Bereitstellung erstellten Ressource abrufen oder administrative Aufgaben ausführen, z. B. eine klassische Ressource in eine andere Ressourcengruppe verschieben. Dies sollte jedoch nicht zu der Annahme verleiten, dass der entsprechende Ressourcentyp Ressourcen-Manager-Vorgänge unterstützt. Nehmen Sie beispielsweise an, Sie verfügen über eine Ressourcengruppe, die sowohl mit dem Ressourcen-Manager als auch mit dem klassischen Modell erstellte virtuelle Computer enthält. Wenn Sie folgenden PowerShell-Befehl ausführen, werden alle virtuellen Computer angezeigt:
+Ressourcen, die Sie im klassischen Bereitstellungsmodell erstellen, unterstützen keine Ressourcen-Manager-Vorgänge. In einigen Fällen können Sie mithilfe eines Ressourcen-Manager-Befehls Informationen zu einer mit der klassischen Bereitstellung erstellten Ressource abrufen oder administrative Aufgaben ausführen, z. B. eine klassische Ressource in eine andere Ressourcengruppe verschieben. Dies sollte jedoch nicht zu der Annahme verleiten, dass der entsprechende Ressourcentyp Ressourcen-Manager-Vorgänge unterstützt. Nehmen Sie beispielsweise an, Sie verfügen über eine Ressourcengruppe, die sowohl mit dem Ressourcen-Manager als auch mit dem klassischen Modell erstellte virtuelle Computer enthält. Wenn Sie folgenden PowerShell-Befehl ausführen, werden alle virtuellen Computer angezeigt:
 
     PS C:\> Get-AzureRmResourceGroup -Name ExampleGroup
     ...
@@ -155,9 +155,9 @@ Ressourcen, die Sie im klassischen Bereitstellungsmodell erstellen, unterstütze
      ExampleResourceVM    Microsoft.Compute/virtualMachines             eastus
     ...
 
-Wenn Sie jedoch den Befehl "Get-AzureVM" ausführen, werden nur die virtuellen Computer abgerufen, die mit dem Ressourcen-Manager erstellt wurden.
+Wenn Sie jedoch den Befehl „Get-AzureRmVM“ ausführen, werden nur die virtuellen Computer abgerufen, die mit Resource Manager erstellt wurden.
 
-    PS C:\> Get-AzureVM -ResourceGroupName ExampleGroup
+    PS C:\> Get-AzureRmVM -ResourceGroupName ExampleGroup
     ...
     Id       : /subscriptions/xxxx/resourceGroups/ExampleGroup/providers/Microsoft.Compute/virtualMachines/ExampleResourceVM
     Name     : ExampleResourceVM
@@ -188,4 +188,4 @@ Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellun
 - Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!----HONumber=AcomDC_0316_2016-->

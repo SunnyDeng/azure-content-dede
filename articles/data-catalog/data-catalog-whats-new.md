@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Neuigkeiten in Azure Data Catalog"
+   pageTitle="Neuigkeiten in Azure Data Catalog | Microsoft Azure"
    description="Übersicht über neue Funktionen in der Azure Data Catalog-Vorschauversion."
    services="data-catalog"
    documentationCenter=""
@@ -13,20 +13,26 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="02/19/2016"
+   ms.date="03/14/2016"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
 
+## Neuigkeiten in der Version der Woche ab dem 11. März 2016
+
+In der Woche ab dem 11. März 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Ein konsolidierter REST-API-Endpunkt für den programmgesteuerten Zugriff auf die Suchfunktionen und Funktionen zur Katalogbestandsverwaltung des **Azure Data Catalog**-Diensts. Der vorhandene Such-API-Endpunkt und Katalog-API-Endpunkt sind veraltet und werden zum 21. März 2016 eingestellt. Es gibt keine Änderungen der API-Semantik; nur der Endpunkt-URI wird geändert. Weitere Informationen finden Sie unter [Daten, Katalog-API-Referenz](https://msdn.microsoft.com/library/azure/mt267595.aspx). API-Beispiele finden Sie unter [Data Catalog – Entwicklerbeispiele](data-catalog-samples.md).
+
 ## Neuigkeiten in der Version der Woche ab dem 19. Februar 2016
 
 In der Woche ab dem 19. Februar 2016 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
-- Neu gestaltete Datenquellenauswahl im **Azure Data Catalog**-Tool zum Registrieren von Datenquellen. Das Tool zum Registrieren von Datenquellen wurde aktualisiert, um Benutzern das Suchen und Auswählen der von **Azure Data Catalog** unterstützten Datenquellen zu erleichtern.
+- Eine neu gestaltete Datenquellenauswahl im Tool zum Registrieren von Datenquellen von **Azure Data Catalog**. Das Tool zum Registrieren von Datenquellen wurde aktualisiert, um Benutzern das Suchen und Auswählen der von **Azure Data Catalog** unterstützten Datenquellen zu erleichtern.
 - Unterstützung für zehn weitere Sprachen im **Azure Data Catalog**-Portal und dem Tool zum Registrieren von Datenquellen. Zusätzlich zu Englisch ist **Azure Data Catalog** jetzt in Deutsch, Spanisch, Französisch, Italienisch, Japanisch, Koreanisch, Portugiesisch (Brasilien), Russisch, Chinesisch (vereinfacht) und Chinesisch (traditionell) verfügbar. Die in **Azure Data Catalog** verwendete Sprache entspricht den in Windows oder im Webbrowser des Benutzers festgelegten Spracheinstellungen.
-- Unterstützung für die Georeplikation von **Azure Data Catalog**-Daten für die Geschäftskontinuität und Notfallwiederherstellung. Alle **Azure Data Catalog**-Inhalte, einschließlich Datenquellenmetadaten und per Crowdsourcing gesammelten Kommentaren, werden jetzt zwischen zwei Azure-Regionen repliziert, ohne dass für Kunden zusätzliche Kosten anfallen. Die Azure-Regionen sind vorab festgelegt, mindestens 500 Meilen voneinander entfernt und entsprechen der unter [Geschäftskontinuität und Notfallwiederherstellung: Azure-Regionspaare](../best-practices-availability-paired-regions.md) beschriebenen Zuordnung. 
+- Unterstützung für die Georeplikation von **Azure Data Catalog**-Daten für die Geschäftskontinuität und Notfallwiederherstellung. Alle **Azure Data Catalog**-Inhalte, einschließlich Datenquellenmetadaten und per Crowdsourcing gesammelten Kommentaren, werden jetzt zwischen zwei Azure-Regionen repliziert, ohne dass für Kunden zusätzliche Kosten anfallen. Die Azure-Regionen sind vorab festgelegt, mindestens 500 Meilen voneinander entfernt und entsprechen der unter [Geschäftskontinuität und Notfallwiederherstellung: Azure-Regionspaare](../best-practices-availability-paired-regions.md) beschriebenen Zuordnung.
 
 
 ## Neuigkeiten in der Version der Woche ab dem 5. Februar 2016
@@ -210,4 +216,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure Blob Storage. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

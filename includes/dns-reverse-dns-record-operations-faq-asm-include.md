@@ -1,16 +1,18 @@
-<BR> 
-## FAQ 
-### How much do reverse DNS records cost?
-They’re free!  There is no additional cost for reverse DNS records or queries.
-### Will my reverse DNS records resolve from the internet?
-Yes. Once you set the reverse DNS property for your Cloud Service, Azure manages all the DNS delegations and DNS zones required to ensure that reverse DNS record resolves for all internet users.
-### Will a default reverse DNS record be created for my Cloud Services?
-No. Reverse DNS is an opt-in feature. No default reverse DNS records are created if you choose not to configure them.
-### What is the format for the fully-qualified domain name (FQDN)?
-FQDNs are specified in forward order, and must be terminated by a dot (e.g., “app1.contoso.com.”).
-### What happens if the validation checks for the reverse DNS I’ve specified fail?
-Where the validation for reverse DNS checks fail, the service management operation will fail. Please correct the reverse DNS value as required, and retry.
-### Can I manage reverse DNS for my Azure Website?
-Reverse DNS is not supported for Azure Websites. Reverse DNS is supported for Azure PaaS roles and IaaS virtual machines.
-### Can I configure multiple reverse DNS records for my Cloud Service?
-No. Azure supports a single reverse DNS record for each Azure Cloud Service. Each Azure Cloud Service however can have their own reverse DNS record.
+<BR>
+## Häufig gestellte Fragen 
+### Was kosten Reverse-DNS-Einträge?
+Sie sind kostenlos! Es fallen keine zusätzlichen Kosten für Reverse-DNS-Einträge oder -Abfragen an.
+### Werden meine Reverse-DNS-Einträge vom Internet aufgelöst?
+Ja. Sobald Sie die Reverse-DNS-Eigenschaft für Ihren Clouddienst festlegen, verwaltet Azure alle DNS-Delegierungen und DNS-Zonen, die erforderlich sind, um sicherzustellen, dass Reverse-DNS-Einträge für alle Internetbenutzer auflöst.
+### Wird für meine Clouddienste ein Standard-Reverse-DNS-Eintrag erstellt?
+Nein. Reverse-DNS ist eine optionale Funktion. Es werden keine Standard-DNS-Einträge erstellt, wenn Sie keine konfigurieren.
+### Wie sieht das Format für den vollqualifizierten Domänennamen (FQDN) aus?
+FQDNs werden aufsteigend angegeben und müssen einen Punkt am Ende haben (z. B. „app1.contoso.com.“).
+### Was passiert bei Fehlern bei den Überprüfungen der Reverse-DNS, die ich angegeben habe?
+Wo ein Fehler bei der Überprüfung der Reverse-DNS auftaucht, erfolgt ein Fehler beim Dienstverwaltungsvorgang. Korrigieren Sie bitte den Reverse-DNS-Wert entsprechend den Anforderungen, und versuchen Sie es erneut.
+### Kann ich für meine Azure-Website Reverse-DNS verwalten?
+Reverse-DNS wird für Azure Websites nicht unterstützt. Reverse-DNS wird für Azure-PaaS-Rollen und virtuelle IaaS-Computer unterstützt.
+### Kann ich für meinen Clouddienst mehrere Reverse-DNS-Einträge konfigurieren?
+Nein. Azure unterstützt für jeden Azure-Clouddienst nur einen Reverse-DNS-Eintrag. Jedoch kann jeder Azure-Clouddienst seinen eigenen Reverse-DNS-Eintrag haben.
+
+<!---HONumber=AcomDC_0316_2016-->

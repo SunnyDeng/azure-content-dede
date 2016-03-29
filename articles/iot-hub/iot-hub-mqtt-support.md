@@ -43,9 +43,25 @@ Die folgende Tabelle enthält Links zu Codebeispielen für jede unterstützte Sp
 
 Wenn ein Gerät die SDKs von Geräteclients nicht verwenden kann, lässt es sich dennoch mithilfe des Protokolls MQTT mit den öffentlichen Geräteendpunkten verbinden. Das Gerät muss im **CONNECT**-Paket die folgenden Werte verwenden:
 
-- Die **Geräte-ID** als **Client-ID**
-- `{iothubhostname}/{device_id}` im Feld **Benutzername**, wobei {iothubhostname} der vollständige CNAME des IoT Hubs (Beispiel: contoso.azure-devices.net ist) ist.
-- Ein SAS-Token im Feld **Kennwort**. Das [Format des SAS-Tokens][lnk-iothub-security] entspricht dem beschriebenen Format für die Protokolle HTTP und AMQP:<br/>`SharedAccessSignature sig={signature-string}&se={expiry}&skn={policyName}&sr={URL-encoded-resourceURI}`.
+- Verwenden Sie für das Feld **Client-ID** die **Geräte-ID**. 
+- Verwenden Sie `{iothubhostname}/{device_id}` für das Feld **Benutzername**, wobei {iothubhostname} der vollständige CNAME für den IoT Hub ist.
+
+    Beispiel: Wenn der Name für den IoT Hub **contoso.azure devices.net** und der Namen des Geräts **MyDevice01** ist, sollte das vollständige Feld **Benutzername** den Namen `contoso.azure-devices.net/MyDevice01` enthalten.
+
+- Verwenden Sie im Feld **Kennwort** ein SAS-Token. Das [Format des SAS-Tokens][lnk-iothub-security] entspricht dem beschriebenen Format für die Protokolle HTTP und AMQP:<br/>`SharedAccessSignature sig={signature-string}&se={expiry}&skn={policyName}&sr={URL-encoded-resourceURI}`.
+
+    Weitere Informationen zum Generieren von SAS-Token finden Sie unter [Verwenden von IoT Hub-Sicherheitstoken][lnk-sas-tokens].
+    
+    Beim Testen können Sie auch das Tool [Device Explorer][lnk-device-explorer] nutzen, um schnell ein SAS-Token zu generieren, das Sie kopieren und in Ihren eigenen Code einfügen können:
+    
+    1. Klicken Sie im Device Explorer auf die Registerkarte **Management**.
+    2. Klicken Sie auf **SAS Token** (oben rechts).
+    3. Wählen Sie unter **SASTokenForm** Ihr Gerät in der Dropdownliste **DeviceID** aus. Legen Sie Ihre **TTL** fest.
+    4. Klicken Sie auf **Generate**, um Ihr Token zu erstellen.
+    
+    Das generierte SAS-Token sieht folgendermaßen aus: `HostName={your hub name}.azure-devices.net;DeviceId=javadevice;SharedAccessSignature=SharedAccessSignature sr={your hub name}.azure-devices.net%2fdevices%2fMyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802`.
+
+    Folgender Teil wird im Feld **Kennwort** verwendet, um über MQTT eine Verbindung herzustellen: `SharedAccessSignature sr={your hub name}.azure-devices.net%2fdevices%2fyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802g%3d&se=1456481802`.
 
 Für die MQTT-Pakete CONNECT und DISCONNECT löst der IoT Hub ein Ereignis im Kanal **Vorgangsüberwachung** aus.
 
@@ -56,10 +72,10 @@ Nachdem Sie eine Verbindung hergestellt haben, kann ein Gerät Nachrichten mithi
 ```
 RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-encoded(<PropertyName2>)=RFC 2396-encoded(<PropertyValue2>)…
 ```
- 
+
 > [AZURE.NOTE] Dies ist die gleiche Codierung wie bei Abfragezeichenfolgen im HTTP-Protokoll.
 
-Die Geräteclientanwendung kann auch `devices/{did}/messages/events/{property_bag}` als **WILLTOPIC-Namen** verwenden, um festzulegen,dass *WILL-Nachrichten* als Telemetrienachricht weitergeleitet werden.
+Die Geräteclientanwendung kann auch `devices/{did}/messages/events/{property_bag}` als **WILLTOPIC-Namen** verwenden, um festzulegen, dass *WILL-Nachrichten* als Telemetrienachricht weitergeleitet werden.
 
 ### Empfangen von Nachrichten
 
@@ -67,7 +83,7 @@ Zum Empfangen von Nachrichten von einem IoT Hub muss ein Gerät ein Abonnement u
 
 ## Nächste Schritte
 
-Weitere Informationen zum Verwenden der SDKs von Geräteclients zum Kommunizieren mit einem IoT Hub finden Sie unter [Erste Schritte mit Azure IoT Hub][lnk-iot-get-stated].
+Weitere Informationen zum Verwenden der Geräteclient-SDKs zum Kommunizieren mit einem IoT Hub finden Sie unter [Erste Schritte mit Azure IoT Hub][lnk-iot-get-stated].
 
 Weitere Informationen zum Protokoll MQTT finden Sie in der [MQTT-Dokumentation][lnk-mqtt-docs].
 
@@ -80,5 +96,7 @@ Weitere Informationen zum Protokoll MQTT finden Sie in der [MQTT-Dokumentation][
 [lnk-sample-java]: https://github.com/Azure/azure-iot-sdks/blob/develop/java/device/samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/iothub/SendReceive.java
 [lnk-sample-c]: https://github.com/Azure/azure-iot-sdks/tree/master/c/iothub_client/samples/iothub_client_sample_mqtt
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
+[lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/readme.md
+[lnk-sas-tokens]: iot-hub-sas-tokens.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0316_2016-->

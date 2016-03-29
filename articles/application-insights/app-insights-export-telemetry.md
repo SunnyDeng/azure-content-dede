@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/06/2016" 
+	ms.date="03/10/2016" 
 	ms.author="awills"/>
  
 # Exportieren von Telemetriedaten aus Application Insights
@@ -91,6 +91,17 @@ Beim Öffnen Ihres Blobspeichers sehen Sie einen Container mit einer Gruppe von 
 ![Überprüfen Sie den Blobspeicher mit einem geeigneten Tool](./media/app-insights-export-telemetry/04-data.png)
 
 Datum und Uhrzeit werden in UTC angegeben und entsprechen dem Zeitpunkt, an dem die Telemetriedaten im Speicher abgelegt wurden, nicht dem Zeitpunkt ihrer Erzeugung. Wenn Sie also Code zum Herunterladen der Daten schreiben, kann sich dieser linear durch die Daten bewegen.
+
+Hier ist die Form des Pfads:
+
+
+    $"{applicationName}_{instrumentationKey}/{type}/{blobDeliveryTimeUtc:yyyy-MM-dd}/{ blobDeliveryTimeUtc:HH}/{blobId}_{blobCreationTimeUtc:yyyyMMdd_HHmmss}.blob"
+  
+Where
+
+-	`blobCreationTimeUtc` die Uhrzeit ist, zu der der Blob im internen Stagingspeicher erstellt wurde
+-	`blobDeliveryTimeUtc` die Uhrzeit ist, zu der der Blob nach dem Zielspeicher exportiert wird
+
 
 
 ## <a name="format"></a> Datenformat
@@ -212,4 +223,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](https://azure.microsoft.com/s
 
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

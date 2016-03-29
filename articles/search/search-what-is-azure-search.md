@@ -30,7 +30,7 @@ Für Suchleisten mit AutoVervollständigen und für Abfragen mit Textvervollstä
 
 Mit Azure Search kann Ihre Suchergebnisseite problemlos mit einer **Facettennavigation** versehen werden. Mit [einem einzigen Abfrageparameter](https://msdn.microsoft.com/library/azure/dn798927.aspx) gibt Azure Search alle Informationen zurück, die für die Facettennavigation auf Ihrer App-Benutzeroberfläche erforderlich sind. Dadurch können die Benutzer Detailinformationen zu Suchergebnissen anzeigen und Suchergebnisse filtern, um beispielsweise Katalogelemente nach Preisbereich oder Marke zu filtern.
 
-Die [Unterstützung](search-create-geospatial.md) **geografischer Daten** ermöglicht eine intelligente Verarbeitung, Filterung und Anzeige geografischer Standorte. Mit Azure Search können die Benutzer Daten auf der Grundlage der Nähe eines Suchergebnisses zu einem bestimmten Ort oder auf der Grundlage einer bestimmten geografischen Region untersuchen.
+Die Unterstützung **geografischer Daten** ermöglicht eine intelligente Verarbeitung, Filterung und Anzeige geografischer Standorte. Mit Azure Search können die Benutzer Daten auf der Grundlage der Nähe eines Suchergebnisses zu einem bestimmten Ort oder auf der Grundlage einer bestimmten geografischen Region untersuchen. In diesem Video wird erläutert, wie das funktioniert: [Channel 9: Azure Search and Geospatial Data](https://channel9.msdn.com/Shows/Data-Exposed/Azure-Search-and-Geospatial-Data).
 
 **Filter** ermöglichen die problemlose Integration einer Facettennavigation in die UI Ihrer Anwendung, die Erweiterung von Abfrageformulierungen sowie die Filterung auf der Grundlage von Kriterien von Benutzern oder Entwicklern. Erstellen Sie leistungsstarke Filter, indem Sie die [OData-Syntax](https://msdn.microsoft.com/library/azure/dn798921.aspx) verwenden.
 
@@ -83,4 +83,4 @@ Testen Sie Azure Search noch heute! Wenn Sie bereits über ein Azure-Konto verf�
 
 Falls Sie noch kein Azure-Konto besitzen, können Sie ganz ohne Registrierung eine kostenlose, 60-minütige Sitzung ausprobieren. Wählen Sie unter [Azure App Service testen](http://go.microsoft.com/fwlink/p/?LinkId=618214) die Option „Web-App“ aus. Wählen Sie anschließend die Vorlage „ASP.NET + Azure Search Site“ aus.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

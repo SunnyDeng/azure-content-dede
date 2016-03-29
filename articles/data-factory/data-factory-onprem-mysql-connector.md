@@ -231,7 +231,7 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 | password | Geben Sie das Kennwort für das Benutzerkonto an, das Sie für den Benutzernamen angegeben haben. | Nein | 
 | gatewayName | Name des Gateways, das der Data Factory-Dienst zum Herstellen einer Verbindung mit der lokalen MySQL-Datenbank verwenden soll. | Ja |
 
-Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale MySQL-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale MySQL-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#set-credentials-and-security).
 
 ## Eigenschaften des Dataset-Typs „MySQL“
 
@@ -313,4 +313,4 @@ Beim Verschieben von Daten in MySQL werden die folgenden Zuordnungen zwischen My
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

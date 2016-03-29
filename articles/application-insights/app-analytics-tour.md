@@ -33,7 +33,7 @@ Sehen Sie sich zu Beginn einige grundlegende Abfragen im Detail an.
 
 ![Öffnen Sie unter „portal.azure.com“ die Application Insights-Ressource, und wählen Sie „Analytics“.](./media/app-analytics/001.png)
 
-## Count: Zeilen zählen
+## [Count](app-analytics-aggregations.md#count)-Zeilen
 
 Metriken, wie z. B. Leistungsindikatoren, werden in einer Tabelle namens „metrics“ gespeichert. Jede Zeile ist ein Telemetriedatenpunkt, der aus dem Application Insights-SDK in einer App empfangen wird. Um herauszufinden, wie groß die Tabelle ist, leiten wir den Inhalt an einen Operator weiter, der die Zeilen zählt:
 
@@ -50,9 +50,9 @@ Das Ergebnis lautet wie folgt:
 ![](./media/app-analytics-tour/010.png)
 
 	
-`Count` ist einer von vielen [Abfrageoperatoren](app-analytics-queries.md), die wir in einer Pipe anordnen können, wobei die Daten in mehreren Phasen gefiltert, umgeformt und verbunden werden.
+[`Count`](app-analytics-aggregations.md#count) ist einer von vielen [Abfrageoperatoren](app-analytics-queries.md), die wir in einer Pipe anordnen können, wobei die Daten in mehreren Phasen gefiltert, umgeformt und verbunden werden.
 	
-## Take: n Zeilen anzeigen
+## [Take](app-analytics-aggregations.md#take): n Zeilen anzeigen
 
 
 Betrachten Sie einige Daten: Was sehen Sie in 5 Beispielzeilen?
@@ -75,7 +75,7 @@ Erweitern Sie ein Element, um die Details anzuzeigen:
 ![Wählen Sie „Tabelle“ aus, und verwenden Sie „Spalten konfigurieren“.](./media/app-analytics-tour/040.png)
 
 
-## Top und Sort
+## [Top](app-analytics-aggregations.md#top) und [sort](app-analytics-aggregations.md#sort)
 
 `take` ist hilfreich, um schnell eine Stichprobe aus dem Resultset abzurufen, es werden jedoch Zeilen aus der Tabelle in unbestimmter Reihenfolge angezeigt. Verwenden Sie für eine sortierte Ansicht `top` (für eine Stichprobe) oder `sort` (für die gesamte Tabelle).
 
@@ -87,7 +87,7 @@ Zeigen Sie die ersten n Zeilen, sortiert nach einer bestimmten Spalte an:
 ```
 
 * *Syntax:* Die meisten Operatoren besitzen Schlüsselwortparameter wie z. B. `by`.
-* `desc` = absteigende Reihenfolge `asc` = aufsteigende Reihenfolge.
+* `desc` = absteigende Reihenfolge, `asc` = aufsteigende Reihenfolge.
 
 ![](./media/app-analytics-tour/260.png)
 
@@ -103,9 +103,9 @@ Das Ergebnis wäre identisch, würde jedoch etwas langsamer ausgeführt. (Sie k�
 Die Spaltenüberschriften in der Tabellenansicht können auch zum Sortieren der Ergebnisse auf dem Bildschirm verwendet werden. Wenn Sie jedoch `take` oder `top` verwendet haben, um nur einen Teil einer Tabelle abzurufen, ordnen Sie nur die Reihenfolge der abgerufenen Datensätze neu.
 
 
-## Project: Spalten auswählen, umbenennen und berechnen
+## [Project](app-analytics-aggregations.md#project): Spalten auswählen, umbenennen und berechnen
 
-Verwenden Sie `project`, um nur die gewünschten Spalten auszuwählen:
+Verwenden Sie [`project`](app-analytics-aggregations.md#project), um nur die gewünschten Spalten auszuwählen:
 
 ```AIQL
 
@@ -138,9 +138,9 @@ Im skalaren Ausdruck:
 
 [Ausdrücke](app-analytics-scalars.md) können alle üblichen Operatoren (`+`, `-`, ...) enthalten, zudem gibt es zahlreiche nützliche Funktionen.
 
-## Extend: Spalten berechnen
+## [Extend](app-analytics-aggregations.md#extend): Spalten berechnen
 
-Wenn Sie neue Spalten zu den vorhandenen hinzufügen möchten, verwenden Sie `extend`:
+Wenn Sie neue Spalten zu den vorhandenen hinzufügen möchten, verwenden Sie [`extend`](app-analytics-aggregations.md#extend):
 
 ```AIQL
 
@@ -149,9 +149,9 @@ Wenn Sie neue Spalten zu den vorhandenen hinzufügen möchten, verwenden Sie `ex
     | extend timeOfDay = floor(timestamp % 1d, 1s)
 ```
 
-`extend` ist weniger ausführlich als die Nutzung von `project`, wenn Sie alle vorhandenen Spalten beibehalten möchten.
+[`extend`](app-analytics-aggregations.md#extend) ist weniger ausführlich als die Nutzung von [`project`](app-analytics-aggregations.md#project), wenn Sie alle vorhandenen Spalten beibehalten möchten.
 
-## Summarize: Gruppen von Zeilen aggregieren
+## [Summarize](app-analytics-aggregations.md#summarize): Gruppen von Zeilen aggregieren
 
 In einem Beispiel für eine Tabelle können Sie die Felder sehen, in denen die verschiedenen Telemetriedaten gemeldet werden. `exception | take 20` zeigt beispielsweise schnell, dass Ausnahmemeldungen in einem Feld namens `outerExceptionType` gemeldet werden.
 
@@ -214,7 +214,7 @@ Es gibt jedoch noch eine bessere Ansicht als die hier gezeigte Tabelle. Betracht
 Beachten Sie, dass die Diagrammdarstellung die Uhrzeitangaben immer in der richtigen Reihenfolge anzeigt, auch wenn wir die Ergebnisse nicht nach Zeit sortiert haben (wie es in der Tabellenansicht der Fall ist).
 
 
-## Where: Nach einer Bedingung filtern
+## [Where](app-analytics-aggregations.md#where): Nach einer Bedingung filtern
 
 Wenn Sie die Application Insights-Überwachung für die [Client](app-insights-javascript.md)- und Serverseite der App eingerichtet haben, stammen einige der Telemetriedaten in der Datenbank aus Browsern.
 
@@ -232,9 +232,9 @@ Sehen Sie sich nur die vom Browser gemeldeten Ausnahmen an:
 
 Der `where`-Operator akzeptiert einen booleschen Ausdruck. Dazu einige wichtige Punkte:
 
- * `and`, `or`: boolesche Operatoren
- * `==`, `<>` : gleich und ungleich
- * `=~`, `!=` : Zeichenfolge ohne Beachtung der Groß-/Kleinschreibung gleich und ungleich Es gibt viele weitere Zeichenfolgenvergleichsoperatoren.
+ * `and`, `or`: Boolesche Operatoren
+ * `==`, `<>`: gleich und ungleich
+ * `=~`, `!=`: Zeichenfolge ohne Beachtung der Groß-/Kleinschreibung gleich und ungleich Es gibt viele weitere Zeichenfolgenvergleichsoperatoren.
 
 Erfahren Sie mehr über [skalare Ausdrücke](app-analytics-scalars.md).
 
@@ -350,14 +350,14 @@ Wie viele Sitzungen unterschiedlicher Längen gibt es?
 
 Die letzte Linie ist erforderlich, um die Konvertierung in datetime-Angaben durchzuführen: Die x-Achse eines Liniendiagramms kann derzeit nur datetime-Angaben enthalten.
 
-Die `where`-Klausel schließt einmalige Sitzungen (SessionDuration==0) aus und legt die Länge der x-Achse fest.
+Die `where`-Klausel schließt einmalige Sitzungen (sessionDuration==0) aus und legt die Länge der x-Achse fest.
 
 
 ![](./media/app-analytics-tour/290.png)
 
 
 
-## Quantile
+## [Quantile](app-analytics-aggregations.md#percentiles)
 
 Welche Bereichsdauern decken verschiedene Prozentsätze von Sitzungen ab?
 
@@ -403,9 +403,9 @@ Um eine separate Aufstellung für jedes Land zu erhalten, müssen Sie die Spalte
 ![](./media/app-analytics-tour/190.png)
 
 
-## Join
+## [Join](app-analytics-aggregations.md#join)
 
-Wir haben Zugriff auf drei Tabellen: „metric“, „exceptions“ und „event“. `event` enthält Anforderungsberichte, Seitenaufrufe, benutzerdefinierte Ereignisse und so weiter.
+Wir haben Zugriff auf mehrere Tabellen, einschließlich der Anforderungen und Ausnahmen.
 
 Um Ausnahmen im Hinblick auf eine Anforderung zu suchen, die eine Fehlerantwort zurückgegeben hat, können wir die Tabellen anhand der `session_Id` verknüpfen:
 
@@ -422,7 +422,7 @@ Es ist üblich, `project` zu verwenden, um nur die Spalten auszuwählen, die wir
 
 
 
-## Let: Ergebnis einer Variablen zuweisen
+## [Let](app-analytics-aggregations.md#let): Ergebnis einer Variablen zuweisen
 
 Verwenden Sie [let](./app-analytics-syntax.md#let-statements), um die einzelnen Teile des vorherigen Ausdrucks auszusortieren. Die Ergebnisse sind wie folgt unverändert:
 
@@ -441,4 +441,4 @@ Verwenden Sie [let](./app-analytics-syntax.md#let-statements), um die einzelnen 
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

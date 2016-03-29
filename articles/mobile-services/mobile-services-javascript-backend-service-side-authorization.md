@@ -13,14 +13,18 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.topic="article"
 	ms.devlang="javascript"
-	ms.date="11/30/2015"
+	ms.date="03/09/2015"
 	ms.author="krisragh"/>
 
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
+> [AZURE.SELECTOR]
+- [.NET-Back-End](mobile-services-dotnet-backend-service-side-authorization.md)
+- [JavaScript-Back-End](mobile-services-javascript-backend-service-side-authorization.md)
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
-- [(Any | Javascript)](mobile-services-javascript-backend-service-side-authorization.md)
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Die entsprechende Mobile Apps-Version dieses Themas finden Sie in [diesem Beispielcode](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38).
 
 In diesem Thema wird veranschaulicht, wie serverseitige Skripts verwendet werden können, um Benutzer zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts für Azure Mobile Services, filtern Sie Abfragen anhand von Benutzer-IDs, und gewähren Sie Benutzern nur Zugriff auf deren eigene Daten. Das Filtern der Abfrageergebnisse eines Benutzers anhand der Benutzer-ID ist die einfachste Form der Autorisierung. Je nach Szenario möchten Sie vielleicht auch Benutzer oder Rollentabellen erstellen, um ausführlichere Berechtigungsinformationen für Benutzer zu verfolgen, beispielsweise auf welche Endpunkte ein angegebener Benutzer zugreifen darf.
 
@@ -39,7 +43,7 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 
 	Dieses Skript fügt dem Element vor dem Einfügen die Benutzer-ID des authentifizierten Benutzers hinzu.
 
-    >[AZURE.NOTE]Stellen Sie sicher, dass das [dynamische Schema](https://msdn.microsoft.com/library/azure/jj193175.aspx) aktiviert ist. Andernfalls wird die Spalte *userID* nicht automatisch hinzugefügt. Diese Einstellung ist für einen neuen mobilen Dienst standardmäßig aktiviert.
+    >[AZURE.NOTE] Stellen Sie sicher, dass das [dynamische Schema](https://msdn.microsoft.com/library/azure/jj193175.aspx) aktiviert ist. Andernfalls wird die Spalte *userID* nicht automatisch hinzugefügt. Diese Einstellung ist für einen neuen mobilen Dienst standardmäßig aktiviert.
 
 3. Ersetzen Sie auf gleiche Weise den vorhandenen **Read**-Vorgang durch die folgende Funktion: Dieses Skript filtert die zurückgegebenen TodoItem-Objekte, sodass ein Benutzer nur die Elemente empfängt, die er selbst eingefügt hat.
 
@@ -68,6 +72,5 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App]: /develop/mobile/tutorials/get-started-with-users-ios
 
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0316_2016-->

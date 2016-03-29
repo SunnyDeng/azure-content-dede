@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/08/2016"
    ms.author="barbkess;sonyama"/>
 
 #Transact-SQL-Themen
@@ -115,16 +115,16 @@
 
 
 ## Nächste Schritte
-Weitere TSQL-Beispiele finden Sie in der [Entwicklungsübersicht für SQL Data Warehouse][].
+Weitere TSQL-Beispiele finden Sie in unter [SQL Data Warehouse-Referenz – Übersicht][].
 
 <!--Image references-->
 
 <!--Article references-->
-[Entwicklungsübersicht für SQL Data Warehouse]: sql-data-warehouse-overview-reference.md
+[SQL Data Warehouse-Referenz – Übersicht]: sql-data-warehouse-overview-reference.md
 
 <!--MSDN references-->
 
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

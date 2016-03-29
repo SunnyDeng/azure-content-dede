@@ -84,7 +84,7 @@ Azure Active Directory Identity Protection ist aber viel mehr als ein Tool für 
 
 ### Risikoereignisse
 
-Risikoereignisse sind Ereignisse, die von Identity Protection als verdächtig gekennzeichnet wurden und mit denen angegeben wird, dass eine Identität unter Umständen kompromittiert wurde. Eine vollständige Liste der Risikoereignisse finden Sie unter [Arten von Risikoereignissen, die von Azure Active Directory Identity Protection erkannt werden](active-directory-identityprotection-risk-events-types).
+Risikoereignisse sind Ereignisse, die von Identity Protection als verdächtig gekennzeichnet wurden und mit denen angegeben wird, dass eine Identität unter Umständen kompromittiert wurde. Eine vollständige Liste der Risikoereignisse finden Sie unter [Arten von Risikoereignissen, die von Azure Active Directory Identity Protection erkannt werden](active-directory-identityprotection-risk-events-types.md).
 
 Einige dieser Risikoereignisse sind über die Berichte zu anomalen Aktivitäten von Azure AD im Azure-Verwaltungsportal verfügbar. Die Tabelle unten enthält die verschiedenen Risikoereignistypen und den entsprechenden **Azure AD-Bericht zu anomalen Aktivitäten**. Microsoft investiert weiter in diesen Bereich und plant, die Erkennungsgenauigkeit von vorhandenen Risikoereignissen ständig weiter zu verbessern und fortlaufend neue Risikoereignistypen hinzuzufügen.
 
@@ -133,7 +133,7 @@ Ihre Navigation durch Identity Protection beginnt normalerweise mit dem Identity
 Über das Dashboard haben Sie Zugriff auf folgende Komponenten:
  
 - Berichte, z. B. **Benutzer mit Risikokennzeichnung**, **Risikoereignisse** und **Sicherheitsrisiken**
-- Einstellungen, z. B. die Konfiguration von **Sicherheitsrichtlinien**, **Benachrichtigungen** und **Multi-Factor Authentication-Registrierung**
+- Einstellungen, z. B. die Konfiguration von **Sicherheitsrichtlinien**, **Benachrichtigungen** und **Registrierung für mehrstufige Authentifizierung**
  
 
 Hier beginnen Sie in der Regel mit dem Untersuchungsprozess. Dies ist der Prozess der Überprüfung von Aktivitäten, Protokollen und anderen relevanten Informationen zu einem Risikoereignis, um zu entscheiden, ob Schritte zur Fehlerbeseitigung oder Lösung erforderlich sind. Außerdem wird ermittelt, ob und wie die Identität kompromittiert und wie die kompromittierte Identität verwendet wurde.
@@ -168,7 +168,7 @@ Sie können die Benutzerrisikostufen verwenden, um Richtlinien für den bedingte
 In den meisten Fällen führen Sie Korrekturaktionen durch, z. B. das sichere Zurücksetzen des Kennworts, um Risikoereignisse automatisch zu schließen. Allerdings ist dies unter Umständen nicht immer möglich. <br> Dies gilt beispielsweise in folgenden Fällen:
 
 - Ein Benutzer mit aktiven Risikoereignissen wurde gelöscht.
-- Eine Untersuchung kommt zu dem Ereignis, dass ein gemeldetes Risikoereignis vom berechtigten Benutzer durchgeführt wurde.
+- Eine Untersuchung ergibt, dass ein gemeldetes Risikoereignis vom berechtigten Benutzer durchgeführt wurde.
 
 Da Risikoereignisse, die den Status **Aktiv** haben, in die Berechnung des Benutzerrisikos einfließen, müssen Sie eine Risikostufe ggf. manuell herabsetzen, indem Sie Risikoereignisse manuell schließen. <br> Während der Untersuchung können Sie die folgenden Aktionen durchführen, um den Status eines Risikoereignisses zu ändern:
 
@@ -184,11 +184,9 @@ Da Risikoereignisse, die den Status **Aktiv** haben, in die Berechnung des Benut
 
 **So öffnen Sie das zugehörige Konfigurationsdialogfeld**
 
-1. Klicken Sie auf dem Blatt **Azure AD Identity Protection** auf **Als risikobehaftet gekennzeichnete Benutzer**. <br><br> 
-![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/408.png "Manuelles Zurücksetzen des Kennworts") <br>
+1. Klicken Sie auf dem Blatt **Azure AD Identity Protection** auf **Als risikobehaftet gekennzeichnete Benutzer**. <br><br> ![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/408.png "Manuelles Zurücksetzen des Kennworts") <br>
 
-2. Klicken Sie mit der rechten Maustaste auf den betroffenen Benutzer. <br><br>
-![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/437.png "Manuelles Zurücksetzen des Kennworts") <br>
+2. Klicken Sie mit der rechten Maustaste auf den betroffenen Benutzer. <br><br> ![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/437.png "Manuelles Zurücksetzen des Kennworts") <br>
 
 ## Bereinigen von Benutzerrisikoereignissen
 
@@ -196,11 +194,11 @@ Eine Korrektur bzw. Bereinigung ist eine Aktion zum Schützen einer Identität o
 
 Sie können wie folgt vorgehen, um Benutzerrisikoereignisse zu bereinigen:
 
-- Durchführen einer sicheren Kennwortzurücksetzung, um Benutzerrisikoereignisse manuell zu bereinigen 
+- Durchführen einer sicheren Kennwortzurücksetzung, um Benutzerrisikoereignisse manuell zu beseitigen 
 
-- Konfigurieren einer Sicherheitsrichtlinie für das Benutzerrisiko, um Benutzerrisikoereignisse automatisch zu lösen oder zu bereinigen
+- Konfigurieren einer Sicherheitsrichtlinie für das Benutzerrisiko, um Benutzerrisikoereignisse automatisch zu minimieren oder zu beseitigen
 
-- Wiederherstellen des infizierten Geräts durch ein neues Image
+- Ein neues Image des infizierten Geräts erstellen
 
 
 ### Manuelle Kennwortzurücksetzung
@@ -219,11 +217,9 @@ Das zugehörige Dialogfeld bietet zwei verschiedene Methoden zum Zurücksetzen e
 
 1. Klicken Sie auf dem Blatt **Azure AD Identity Protection** auf **Als risikobehaftet gekennzeichnete Benutzer**. <br><br> ![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/408.png "Manuelles Zurücksetzen des Kennworts") <br>
 
-2. Klicken Sie auf den betroffenen Benutzer. <br><br>
-![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/404.png "Manuelles Zurücksetzen des Kennworts") <br>
+2. Klicken Sie auf den betroffenen Benutzer. <br><br> ![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/404.png "Manuelles Zurücksetzen des Kennworts") <br>
 
-2. Klicken Sie auf „Kennwort zurücksetzen“ <br><br>
-![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/420.png "Manuelles Zurücksetzen des Kennworts") <br>
+2. Klicken Sie auf „Kennwort zurücksetzen“ <br><br> ![Manuelles Zurücksetzen des Kennworts](./media/active-directory-identityprotection/420.png "Manuelles Zurücksetzen des Kennworts") <br>
 
 
 
@@ -235,30 +231,26 @@ Eine Benutzerrisiko-Sicherheitsrichtlinie ist eine Richtlinie für bedingten Zug
 
 Azure AD Identity Protection dient Ihnen als Unterstützung beim Verwalten der Korrektur- und Lösungsmaßnahmen für Benutzer, die als risikobehaftet eingestuft sind. Sie haben folgende Möglichkeiten:
 
-- Festlegen der Benutzer und Gruppen, für die die Richtlinie gilt <br><br> ![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/501.png "Benutzerrisiko-Richtlinie") <br>
+- Festlegen der Benutzer und Gruppen, für die die Richtlinie gilt: <br><br> ![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/501.png "Benutzerrisiko-Richtlinie") <br>
 
-- Festlegen des Schwellenwerts für die Benutzerrisikostufe (Niedrig, Mittel oder Hoch), mit der eine Kennwortänderung ausgelöst wird <br><br>
-![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/502.png "Benutzerrisiko-Richtlinie") <br>
+- Festlegen des Schwellenwerts für die Benutzerrisikostufe (Niedrig, Mittel oder Hoch), mit der eine Kennwortänderung ausgelöst wird <br><br> ![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/502.png "Benutzerrisiko-Richtlinie") <br>
 
-- Festlegen des Schwellenwerts für die Benutzerrisikostufe (Niedrig, Mittel oder Hoch), mit der die Blockierung eines Benutzers ausgelöst wird <br><br>
-![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/503.png "Benutzerrisiko-Richtlinie") <br>
+- Festlegen des Schwellenwerts für die Benutzerrisikostufe (Niedrig, Mittel oder Hoch), mit der die Blockierung eines Benutzers ausgelöst wird: <br><br> ![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/503.png "Benutzerrisiko-Richtlinie") <br>
 
-- Wechseln des Zustands der Richtlinie <br><br>
-![MFA-Registrierung](./media/active-directory-identityprotection/403.png "MFA-Registrierung") <br>
+- Wechseln des Zustands Ihrer Richtlinie: <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/403.png "MFA-Registrierung") <br>
 
-- Überprüfen und Bewerten der Auswirkungen einer Änderung vor dem Aktivieren <br><br>
-![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/504.png "Benutzerrisiko-Richtlinie") <br>
+- Überprüfen und Bewerten der Auswirkungen einer Änderung vor dem Aktivieren: <br><br> ![Benutzerrisiko-Richtlinie](./media/active-directory-identityprotection/504.png "Benutzerrisiko-Richtlinie") <br>
 
 
 Wenn Sie den Schwellenwert **Hoch** auswählen, wird die Richtlinie weniger häufig ausgelöst, und die Auswirkungen für Benutzer verringern sich. Benutzer mit der Einstufung **Niedrig** und **Mittel**, die als risikobehaftet gekennzeichnet sind, werden aber aus der Richtlinie ausgeschlossen. Dies trägt unter Umständen nicht zum Schutz von Identitäten oder Geräten bei, die zuvor vermutlich oder mit Sicherheit kompromittiert waren.
 
 Gehen Sie beim Festlegen der Richtlinie wie folgt vor:
 
-- Schließen Sie Benutzer aus, für die voraussichtlich viele falsch positive Ergebnisse generiert werden (Entwickler, Sicherheitsanalysten).
+- Schließen Sie die Benutzer aus, die voraussichtlich viele falsch positive Ergebnisse generieren (Entwickler, Sicherheitsanalysten).
 
-- Schließen Sie Benutzer mit Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
+- Schließen Sie die Benutzer nach Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
 
-- Verwenden Sie während des anfänglichen Rollouts der Richtlinie oder wenn Sie die Auswirkungen für Endbenutzer verringern möchten den Schwellenwert **Hoch**.
+- Verwenden Sie während des anfänglichen Rollouts der Richtlinie, oder wenn Sie die Auswirkungen für Endbenutzer verringern möchten, den Schwellenwert **Hoch**.
 
 - Verwenden Sie den Schwellenwert **Niedrig**, falls für Ihre Organisation eine höhere Sicherheitsebene erforderlich ist. Wenn Sie den Schwellenwert **Niedrig** auswählen, erhöht sich der Aufwand für die Benutzer bei der Anmeldung, aber die Sicherheit wird erhöht.
 
@@ -268,16 +260,14 @@ Eine Übersicht über die zugehörige Benutzeroberfläche finden Sie unter:
 
 - [Wiederherstellung für kompromittierte Konten](active-directory-identityprotection-flows.md#compromised-account-recovery)  
 
-- [Kompromittiertes Konto: Blockiert](active-directory-identityprotection-flows.md#Compromised-account-blocked)
+- [Blockierter Ablauf bei kompromittierten Konten](active-directory-identityprotection-flows.md#compromised-account-blocked)
 
 
 **So öffnen Sie das zugehörige Konfigurationsdialogfeld**
 
-1. Klicken Sie auf dem Blatt **Azure AD Identity Protection** auf **Einstellungen**. <br><br>
-![Richtlinie zum Benutzerrisiko](./media/active-directory-identityprotection/401.png "Richtlinie zum Benutzerrisiko") <br>
+1. Klicken Sie auf dem Blatt **Azure AD Identity Protection** auf **Einstellungen**. <br><br> ![Richtlinie zum Benutzerrisiko](./media/active-directory-identityprotection/401.png "Richtlinie zum Benutzerrisiko") <br>
 
-2. Klicken Sie im Abschnitt **Sicherheitsrichtlinien** auf **Benutzerrisiko**. <br><br>
-![Richtlinie zum Benutzerrisiko](./media/active-directory-identityprotection/500.png "Richtlinie zum Benutzerrisiko") <br>
+2. Klicken Sie im Abschnitt **Sicherheitsrichtlinien** auf **Benutzerrisiko**. <br><br> ![Richtlinie zum Benutzerrisiko](./media/active-directory-identityprotection/500.png "Richtlinie zum Benutzerrisiko") <br>
 
 
 
@@ -291,7 +281,7 @@ Das Sperren einer Anmeldung bewirkt Folgendes:
  
 - Verhindert die Generierung neuer Benutzerrisikoereignisse für den betroffenen Benutzer
 
-- Ermöglicht Administratoren die manuelle Bereinigung der Risikoereignisse, die die Identität des Benutzers beeinträchtigen, und die Wiederherstellung eines sicheren Zustands
+- Ermöglicht Administratoren die manuelle Bereinigung der Risikoereignisse, die die Identität des Benutzers beeinträchtigen, und stellen wieder einen sicheren Identitätszustand her
 
 
 
@@ -311,31 +301,28 @@ Eine Anmelderisiko-Sicherheitsrichtlinie ist eine bedingte Zugriffsrichtlinie, m
 
 Azure AD Identity Protection unterstützt Sie beim Verwalten der Entschärfung risikobehafteter Anmeldungen, indem Folgendes ermöglicht wird:
 
-- Festlegen der Benutzer und Gruppen, für die die Richtlinie gilt <br><br>
-![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/701.png "Richtlinie zum Anmelderisiko") <br>
+- Festlegen der Benutzer und Gruppen, für die die Richtlinie gilt: <br><br> ![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/701.png "Richtlinie zum Anmelderisiko") <br>
 
-- Festlegen des Schwellenwerts für die Anmelderisikostufe (Niedrig, Mittel oder Hoch), mit dem eine Multi-Factor Authentication-Abfrage für die betroffenen Anmeldungen ausgelöst wird <br><br> ![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/702.png "Richtlinie zum Anmelderisiko") <br>
+- Festlegen des Schwellenwerts für die Anmelderisikostufe (Niedrig, Mittel oder Hoch), mit dem eine mehrstufige Authentifizierungsabfrage für die betroffenen Anmeldungen ausgelöst wird: <br><br> ![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/702.png "Richtlinie zum Anmelderisiko") <br>
 
-- Festlegen des Schwellenwerts für die Anmelderisikostufe (Niedrig, Mittel oder Hoch) fest, mit dem die betroffenen Anmeldungen blockiert werden <br><br> ![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/703.png "Richtlinie zum Anmelderisiko") <br>
+- Festlegen des Schwellenwerts für die Anmelderisikostufe (Niedrig, Mittel oder Hoch) fest, mit dem die betroffenen Anmeldungen blockiert werden: <br><br> ![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/703.png "Richtlinie zum Anmelderisiko") <br>
 
-- Wechseln des Zustands der Richtlinie <br><br>
-![MFA-Registrierung](./media/active-directory-identityprotection/403.png "MFA-Registrierung") <br>
+- Wechseln des Zustands Ihrer Richtlinie: <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/403.png "MFA-Registrierung") <br>
 
-- Überprüfen und Bewerten der Auswirkungen einer Änderung vor dem Aktivieren <br><br>
-![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/704.png "Richtlinie zum Anmelderisiko") <br>
+- Überprüfen und Bewerten der Auswirkungen einer Änderung vor dem Aktivieren: <br><br> ![Richtlinie zum Anmelderisiko](./media/active-directory-identityprotection/704.png "Richtlinie zum Anmelderisiko") <br>
 
  
 Wenn Sie den Schwellenwert **Hoch** auswählen, wird die Richtlinie weniger häufig ausgelöst, und die Auswirkungen für Benutzer verringern sich.<br> Hierbei werden aber Anmeldungen mit dem Status **Niedrig** und **Mittel**, die als risikobehaftet gekennzeichnet sind, aus der Richtlinie ausgeschlossen. Für einen Angreifer wird das Ausnutzen einer kompromittierten Identität so ggf. nicht blockiert.
 
 Gehen Sie beim Festlegen der Richtlinie wie folgt vor:
 
-- Schließen Sie Benutzer aus, die nicht über Multi-Factor Authentication verfügen bzw. für die dies nicht möglich ist.
+- Schließen Sie die Benutzer aus, die nicht über eine mehrstufige Authentifizierung verfügen bzw. für die dies nicht möglich ist.
 
-- Schließen Sie Benutzer mit Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
+- Schließen Sie die Benutzer nach Gebietsschemas aus, für die die Aktivierung der Richtlinie keinen praktischen Nutzen hat (z. B. kein Zugriff auf den Helpdesk).
 
-- Schließen Sie Benutzer aus, für die voraussichtlich viele falsch positive Ergebnisse generiert werden (Entwickler, Sicherheitsanalysten).
+- Schließen Sie die Benutzer aus, die voraussichtlich viele falsch positive Ergebnisse generieren (Entwickler, Sicherheitsanalysten).
 
-- Verwenden Sie während des anfänglichen Rollouts der Richtlinie oder wenn Sie die Auswirkungen für Endbenutzer verringern möchten den Schwellenwert **Hoch**.
+- Verwenden Sie während des anfänglichen Rollouts der Richtlinie, oder wenn Sie die Auswirkungen für Endbenutzer verringern möchten, den Schwellenwert **Hoch**.
 
 - Verwenden Sie den Schwellenwert **Niedrig**, falls für Ihre Organisation eine höhere Sicherheitsebene erforderlich ist. Wenn Sie den Schwellenwert **Niedrig** auswählen, erhöht sich der Aufwand für die Benutzer bei der Anmeldung, aber die Sicherheit wird erhöht.
 
@@ -349,14 +336,14 @@ Für die Richtlinie zum Anmelderisiko gilt Folgendes:
 
 Auf der Seite **Risikoereignisse** in der Identity Protection-Konsole werden alle Ereignisse aufgeführt:
 
-- Ereignisse, auf die die Richtlinie angewendet wurde
-- Sie können die Aktivität überprüfen und ermitteln, ob die Aktion geeignet war 
+- Die Richtlinie wurde angewendet auf
+- Sie können die Aktivität überprüfen und ermitteln, ob die Aktion geeignet war oder nicht. 
 
 Eine Übersicht über die zugehörige Benutzeroberfläche finden Sie unter:
 
-- [Wiederherstellung risikobehafteter Anmeldungen](active-directory-identityprotection-flows.md#risky-sign-in-recovery)  
+- [Wiederherstellung risikobehafteter Anmeldungen](active-directory-identityprotection-flows.md#risky-sign-in-recovery) 
 
-- [Risikobehaftete Anmeldung: Blockiert](active-directory-identityprotection-flows.md#risky-sign-in-blocked)
+- [Risikobehaftete Anmeldung blockiert](active-directory-identityprotection-flows.md#risky-sign-in-blocked)
 
 - [Multi-Factor Authentication-Registrierung während einer risikobehafteten Anmeldung](active-directory-identityprotection-flows.md#multi-factor-authentication-registration-during-a-risky-sign-in)
 
@@ -368,8 +355,7 @@ Eine Übersicht über die zugehörige Benutzeroberfläche finden Sie unter:
 
 1. Klicken Sie auf dem Blatt **Azure AD Identity Protection** auf **Einstellungen**. <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/401.png "MFA-Registrierung") <br>
 
-1. Klicken Sie im Abschnitt **Sicherheitsrichtlinien** auf **Anmelderisiko**. <br><br>
-![MFA-Registrierung](./media/active-directory-identityprotection/700.png "MFA-Registrierung") <br>
+1. Klicken Sie im Abschnitt **Sicherheitsrichtlinien** auf **Anmelderisiko**. <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/700.png "MFA-Registrierung") <br>
 
 
 
@@ -378,23 +364,22 @@ Eine Übersicht über die zugehörige Benutzeroberfläche finden Sie unter:
 
 Azure Multi-Factor Authentication ist eine Methode zum Überprüfen der Identität, für die mehr als nur ein Benutzername und ein Kennwort erforderlich ist. Sie bietet eine zweite Sicherheitsebene für Benutzeranmeldungen und -transaktionen. <br> Es wird empfohlen, dass Sie die Azure Multi-Factor Authentication für Anmeldungen von Benutzern erzwingen. Gründe:
 
-- Sie bietet eine leistungsfähige Authentifizierung mit einem Bereich von einfachen Überprüfungsoptionen.
+- Sie bietet eine leistungsfähige Authentifizierung mit einer Auswahl von einfachen Überprüfungsoptionen.
 
-- Sie spielt eine wichtige Rolle bei der Vorbereitung des Schutzes Ihres Unternehmens und der Wiederherstellung von kompromittierten Konten.
+- Sie spielt eine wichtige Rolle bei der Vorbereitung Ihres Unternehmens zum Schutz und der Wiederherstellung von kompromittierten Konten.
 
 Weitere Informationen finden Sie unter [Was ist Azure Multi-Factor Authentication?](../multi-factor-authentication/multi-factor-authentication.md).
 
 
 Azure AD Identity Protection unterstützt Sie beim Verwalten des Rollouts der Multi-Factor Authentication-Registrierung, indem über eine konfigurierte Richtlinie Folgendes ermöglicht wird:
 
-- Anzeigen des Registrierungsstatus des aktuellen Benutzers <br><br>
-![MFA-Registrierung](./media/active-directory-identityprotection/603.png "MFA-Registrierung") <br>
+- Anzeigen des aktuellen Registrierungsstatus: <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/603.png "MFA-Registrierung") <br>
 
-- Festlegen der Benutzer und Gruppen, für die die Richtlinie gilt <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/601.png "MFA-Registrierung") <br>
+- Festlegen der Benutzer und Gruppen, für die die Richtlinie gilt: <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/601.png "MFA-Registrierung") <br>
 
-- Definieren, wie lange Benutzer die Registrierung überspringen dürfen <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/602.png "MFA-Registrierung") <br>
+- Definieren, wie lange Benutzer die Registrierung überspringen dürfen: <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/602.png "MFA-Registrierung") <br>
 
-- Wechseln des Zustands der Richtlinie <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/403.png "MFA-Registrierung") <br>
+- Wechseln des Zustands Ihrer Richtlinie: <br><br> ![MFA-Registrierung](./media/active-directory-identityprotection/403.png "MFA-Registrierung") <br>
 
 Eine Übersicht über die zugehörige Benutzeroberfläche finden Sie unter:
 
@@ -425,4 +410,4 @@ Eine Übersicht über die zugehörige Benutzeroberfläche finden Sie unter:
  - [Azure Active Directory Identity Protection-Playbook](active-directory-identityprotection-playbook.md)
  - [Azure Active Directory Identity Protection – Glossar](active-directory-identityprotection-glossary.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0316_2016-->

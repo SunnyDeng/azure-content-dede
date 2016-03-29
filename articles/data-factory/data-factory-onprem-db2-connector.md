@@ -29,7 +29,7 @@ Data Factory unterstützt derzeit nur das Verschieben von Daten aus DB2 in ander
 
 Damit sich das Datenverwaltungsgateway mit der DB2-Datenbank verbindet, müssen Sie den [IBM DB2 Data Server-Treiber](http://go.microsoft.com/fwlink/p/?LinkID=274911) auf dem System mit dem Datenverwaltungsgateway installieren.
 
-IBM hat bekannte Probleme bei der Installation des IBM DB2 Data Server-Treibers unter Windows 8 gemeldet, die zusätzliche Installationsschritte erforderlich machen. Weitere Informationen zum IBM DB2 Data Server-Treiber für Windows 8 finden Sie unter [http://www-01.ibm.com/support/docview.wss?uid=swg21618434](http://www-01.ibm.com/support/docview.wss?uid=swg21618434).
+IBM hat bekannte Probleme bei der Installation des IBM DB2 Data Server-Treibers unter Windows 8 gemeldet, die zusätzliche Installationsschritte erforderlich machen. Weitere Informationen zum IBM DB2 Data Server-Treiber für Windows 8 finden Sie unter [http://www-01.ibm.com/support/docview.wss?uid=swg21618434](http://www-01.ibm.com/support/docview.wss?uid=swg21618434).
 
 > [AZURE.NOTE] Unter [Problembehandlung bei Gateways](data-factory-move-data-between-onprem-and-cloud.md#gateway-troubleshooting) finden Sie Tipps zur Behandlung von Verbindungs- bzw. Gatewayproblemen.
 
@@ -229,7 +229,7 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 | password | Geben Sie das Kennwort für das Benutzerkonto an, das Sie für den Benutzernamen angegeben haben. | Nein |
 | gatewayName | Name des Gateways, das der Data Factory-Dienst zum Herstellen einer Verbindung mit der lokalen DB2-Datenbank verwenden soll. | Ja |
 
-Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale DB2-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale DB2-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#set-credentials-and-security).
 
 
 ## Eigenschaften des Dataset-Typs „DB2“
@@ -314,4 +314,4 @@ Char | String
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

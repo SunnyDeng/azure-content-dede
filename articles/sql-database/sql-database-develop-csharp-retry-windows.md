@@ -3,8 +3,8 @@
 	description="Das C#-Beispiel enthält die Wiederholungslogik für die zuverlässige Interaktion mit einer Azure SQL-Datenbank."
 	services="sql-database"
 	documentationCenter=""
-	authors="MightyPen"
-	manager="jeffreyg"
+	authors="annemill"
+	manager="jhubbard"
 	editor=""/>
 
 
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/17/2015"
-	ms.author="genemi"/>
+	ms.date="03/15/2016"
+	ms.author="annemill"/>
 
 
 # Codebeispiel: Wiederholungslogik in C# für das Herstellen einer Verbindung mit einer SQL-Datenbank
@@ -56,7 +56,7 @@ Die Liste mit den Fehlernummern, die als vorübergehende Fehler kategorisiert we
 ## C#-Codebeispiel
 
 
-Das C#-Codebeispiel in diesem Thema enthält eine benutzerdefinierte Erkennungs- und Wiederholungslogik zum Behandeln von vorübergehenden Fehlern. Bei dem Beispiel wird davon ausgegangen, dass .NET Framework 4.5.1 oder höher installiert ist.
+Das C#-Codebeispiel in diesem Thema enthält eine benutzerdefinierte Erkennungs- und Wiederholungslogik zum Behandeln von vorübergehenden Fehlern. Bei dem Beispiel wird davon ausgegangen, dass .NET Framework 4.5.1 oder höher installiert ist.
 
 
 Im Codebeispiel werden einige grundlegende Richtlinien oder Empfehlungen befolgt, die unabhängig davon gelten, welche Technologie Sie zum Interagieren mit Azure SQL-Datenbank verwenden. Allgemeine Empfehlungen finden Sie unter:
@@ -286,4 +286,4 @@ Führen Sie das Programm mit dem Parameter "test" aus, und überprüfen Sie, ob 
 
 - [Ausprobieren von SQL-Datenbank: Verwenden von C# zum Erstellen einer SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET](sql-database-get-started-csharp.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0316_2016-->

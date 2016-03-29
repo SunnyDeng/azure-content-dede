@@ -13,11 +13,16 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="02/01/2016"
+	ms.date="03/10/2016"
 	ms.author="piyushjo" />
 
 
 #Versionshinweise
+
+##4\.2.0 (03/11/2016)
+
+- Das SDK ist jetzt unter MIT lizenziert.
+- Erlauben Sie die Angabe eines benutzerdefinierten Gerätebezeichners während der SDK-Initialisierung.
 
 ##4\.1.5 (01.02.2016)
 
@@ -65,4 +70,4 @@
 -   Verbesserungen der Sicherheit.
 -   Google Play und die SmartAd-Nachverfolgung wurden entfernt.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

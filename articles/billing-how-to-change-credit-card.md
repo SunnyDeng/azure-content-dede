@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/21/2015"
+	ms.date="03/08/2016"
 	ms.author="genli"/>
 
 # Ändern der für die Zahlung eines Azure-Abonnements verwendeten Kreditkarte
@@ -23,7 +23,10 @@
 Sie können per Kreditkarte oder Debitkarte bezahlen oder eine Genehmigung für die Zahlung per Rechnung beantragen. Weitere Informationen zur Zahlung per Rechnung finden Sie unter [Azure – Rechnungsstellung](https://azure.microsoft.com/pricing/invoicing/).
 
 ## Bearbeiten von Zahlungsinformationen für eine vorhandene Kreditkarte
-1. Melden Sie sich im [Azure-Kontocenter](https://account.windowsazure.com/Subscriptions) als Kontoadministrator an.
+1. Melden Sie sich im [Azure-Kontocenter](https://account.windowsazure.com/Subscriptions) als Kontoadministrator an. Im [Azure-Portal](https://portal.azure.com) können Sie über **Abonnement**>*Abonnementname*>**Verwalten** auf das Kontocenter zugreifen.
+
+	**Hinweis** Nur der Kontoadministrator hat die Zugriffsberechtigung für das Kontocenter. Weitere Informationen zu den Kontoadministratoren finden Sie unter [Hinzufügen oder Ändern von Azure-Administratorrollen](billing-add-change-azure-subscription-administrator.md).
+
 2. Wählen Sie unter **Klicken Sie auf ein Abonnement, um Details und Nutzung anzuzeigen** das Abonnement, das mit der Kreditkarte verknüpft ist.</br> ![selectsub](./media/billing-how-to-change-credit-card/selectsub.png)
 3. Wählen Sie rechts auf der Seite die Option **Zahlungsmethode ändern**.</br> ![changesub](./media/billing-how-to-change-credit-card/changesub.png)
 4. Wählen Sie auf der Seite **Zahlungsmethode wählen** neben der Kreditkartennummer die Option **Bearbeiten**.</br> ![changesub](./media/billing-how-to-change-credit-card/editcard.png)
@@ -44,4 +47,4 @@ Sie können per Kreditkarte oder Debitkarte bezahlen oder eine Genehmigung für 
 3. Wählen Sie rechts auf der Seite die Option **Zahlungsmethode ändern**.
 4. Klicken Sie auf der Seite **Zahlungsmethode wählen** auf den Dropdownpfeil neben der Kreditkarte, wählen Sie die zu verwendende Kreditkarte aus, und klicken Sie dann auf ![checkbutton](./media/billing-how-to-change-credit-card/checkbutton.png), um das Fenster zu schließen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0316_2016-->

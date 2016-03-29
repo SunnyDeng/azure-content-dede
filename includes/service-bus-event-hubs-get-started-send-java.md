@@ -1,8 +1,8 @@
 ## Senden von Nachrichten an Ereignis-Hubs
 
-In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden. Wir verwenden den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Service Bus-Warteschlangen und -Themen mit AMQP über Java, wie [hier](../service-bus/service-bus-java-how-to-use-jms-api-amqp.md) beschrieben. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und unter [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
+In diesem Abschnitt schreiben wir eine Java-Konsolen-App, um Ereignisse an Ihren Ereignis-Hub zu senden. Wir verwenden den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Service Bus-Warteschlangen und -Themen mit AMQP über Java, wie [hier](../articles/service-bus/service-bus-java-how-to-use-jms-api-amqp.md) beschrieben. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und unter [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
 
-1. Installieren Sie in Eclipse die [Azure Toolkit für Eclipse](https://msdn.microsoft.com/library/azure/hh690946.aspx). Diese beinhaltet die Qpid JMS AMQP-Clientbibliotheken.
+1. Installieren Sie in Eclipse die [Azure Toolkit für Eclipse](../articles/azure-toolkit-for-eclipse.md). Diese beinhaltet die Qpid JMS AMQP-Clientbibliotheken.
 
 2. Erstellen Sie in Eclipse ein neues Java-Projekt namens **Sender**.
 
@@ -12,7 +12,7 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 
 4. Erstellen Sie im Stammverzeichnis des Projekts **Sender** eine Datei namens **servicebus.properties** mit folgendem Inhalt. Vergessen Sie nicht das Ersetzen der Werte für:
 	- den Ereignis-Hub-Namen.
-	- Namespace-Namen (dieser lautet normalerweise `{event hub name}-ns`).
+	- Namespace-Name (letzterer lautet normalerweise `{event hub name}-ns`).
 	- den URL-codierten **SendRule**-Schlüssel (diesen haben Sie sich bei der Erstellung des Ereignis-Hubs notiert). Die URL-Codierung können Sie [hier](http://www.w3schools.com/tags/ref_urlencode.asp) vornehmen.
 
 			# servicebus.properties - sample JNDI configuration
@@ -92,4 +92,4 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 <!-- Images -->
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0316_2016-->

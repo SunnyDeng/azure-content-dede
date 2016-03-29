@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="03/05/2016"
+	ms.date="03/09/2016"
 	ms.author="krisragh"/>
 
 # Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App
@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
 > Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Hinzufügen von Authentifizierung zu Ihrer iOS-App](../app-service-mobile/app-service-mobile-ios-get-started-users.md).
- 
+
 In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe eines unterstützten Identitätsanbieters eine Authentifizierung hinzu. Dieses Lernprogramm baut auf dem Schnellstartlernprogramm [Erste Schritte mit Mobile Services] auf, das Sie zuerst abschließen müssen.
 
 ##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
@@ -67,4 +67,4 @@ Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Benutzern in Mobile 
 [Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
 [Register your Windows Store app package for Microsoft authentication]: ../mobile-services-how-to-register-store-app-package-microsoft-authentication.md
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

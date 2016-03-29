@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="03/04/2016"
+   ms.date="03/15/2016"
    ms.author="alkohli"/>
 
 # StorSimple-Software, hohe Verfügbarkeit und Netzwerkanforderungen
@@ -72,6 +72,24 @@ Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der
 <sup>3</sup> Die festen IP-Adressen der Controller im StorSimple-Gerät müssen routingfähig sein und eine Verbindung mit dem Internet herstellen können. Die festen IP-Adressen werden für Anwendung von Updates auf dem Gerät verwendet. Wenn die Gerätecontroller über die festen IP-Adressen keine Verbindung mit dem Internet herstellen können, können Sie das StorSimple-Gerät nicht aktualisieren.
 
 > [AZURE.IMPORTANT] Achten Sie darauf, dass SSL-Datenverkehr zwischen dem StorSimple-Gerät und Azure nicht durch die Firewall geändert oder entschlüsselt wird.
+
+### URL-Muster für Firewallregeln 
+
+Netzwerkadministratoren können häufig erweiterte, auf den URL-Mustern basierende Firewallregeln konfigurieren, die zum Filtern des eingehenden und ausgehenden Verkehrs verwendet werden. Ihr StorSimple-Gerät und StorSimple Manager-Dienst hängen von anderen Microsoft-Anwendungen wie Azure Service Bus, Azure Active Directory Access Control, Speicherkonten und Microsoft Update-Servern ab. Die URL-Muster, die diesen Anwendungen zugeordnet sind, können verwendet werden, um Firewallregeln zu konfigurieren. Es ist wichtig, zu verstehen, dass sich diese den Anwendungen zugeordneten URL-Muster ändern können. Das bedeutet, dass der Netzwerkadministrator die Firewallregeln für Ihren StorSimple nach Bedarf überwachen und aktualisieren muss.
+
+Es ist empfehlenswert, die Firewallregeln in den meisten Fällen großzügig festzulegen. Sie können jedoch die folgenden Informationen verwenden, um erweiterte Firewallregeln festzulegen, die erforderlich sind, um sichere Umgebungen zu erstellen.
+
+> [AZURE.NOTE] Die Geräte-(Quellen-)IPs sollten immer für alle aktivierten Netzwerkschnittstellen eingerichtet sein. Die Ziel-IPs sollten in den [ IP-Bereich des Azure-Rechenzentrums](https://www.microsoft.com/de-DE/download/confirmation.aspx?id=41653) festgelegt werden.
+
+
+| URL-Muster | Komponente/Funktionalität | Geräte-IPs |
+|------------------------------------------------------------------|---------------------------------------------------------------|-----------------------------------------|
+| `https://*.storsimple.windowsazure.com/*`<br>`https://*.accesscontrol.windows.net/*`<br>`https://*.servicebus.windows.net/*` | StorSimple Manager-Dienst<br>Access Control Service<br>Azure Service Bus| Cloudaktivierte Netzwerkschnittstellen |
+|`http://crl.microsoft.com/pki/*` |Zertifikatswiderruf |Cloudaktivierte Netzwerkschnittstellen |
+| `https://*.core.windows.net/*` | Azure-Speicherkonten und Überwachung | Cloudaktivierte Netzwerkschnittstellen |
+| `http://*.windowsupdate.microsoft.com`<br>`https://*.windowsupdate.microsoft.com`<br>`http://*.update.microsoft.com`<br> `https://*.update.microsoft.com`<br>`http://*.windowsupdate.com`<br>`http://download.microsoft.com`<br>`http://wustat.windows.com`<br>`http://ntservicepack.microsoft.com`| Microsoft Update-Server<br> | Feste IPs des Controllers |
+| `http://*.deploy.akamaitechnologies.com` |Akamai CDN |Feste IPs des Controllers |
+| `https://*.partners.extranet.microsoft.com/*` | Supportpaket | Cloudaktivierte Netzwerkschnittstellen |
 
 ### Routingmetrik
 
@@ -261,4 +279,4 @@ Lesen Sie sich diese bewährten Methoden sorgfältig durch, um eine hohe Verfüg
 <!--Reference links-->
 [1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0316_2016-->

@@ -15,7 +15,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="02/01/2016"
+   ms.date="03/08/2016"
    ms.author="rickbyh"/>
 
 # Sicherheit von SQL-Datenbank: Verwalten von Datenbankzugriff und Anmeldesicherheit  
@@ -28,9 +28,9 @@ Wenn Sie sich in Microsoft Azure SQL-Datenbank für den Dienst registrieren, wer
 
 Das Serverebenenprinzipal-Konto von Azure SQL-Datenbank verfügt immer über die Berechtigung, die gesamte Sicherheit auf Server- und Datenbankebene zu verwalten. In diesem Thema wird beschrieben, wie Sie den Serverebenenprinzipal und andere Konten verwenden können, um in SQL-Datenbank Anmeldungen und Datenbanken zu verwalten.
 
-Azure-Benutzer, die auf SQL-Datenbank mittels Access Control auf Azure-Rollenbasis und Azure-Ressourcen-Manager-REST-API zugreifen, erhalten Berechtigungen gemäß ihrer Azure-Rollen. Die Aktionen der Azure-Rollenmitglieder führt das Datenbankmodul für sie aus. Sie sind nicht vom Datenbank-Engine-Berechtigungsmodell betroffen und werden in diesem Thema nicht behandelt. Weitere Informationen finden Sie unter [RBAC: Integrierte Rollen]( https://azure.microsoft.com/documentation/articles/role-based-access-built-in-roles/#sql-db-contributor).
+Azure-Benutzer, die auf SQL-Datenbank mittels Access Control auf Azure-Rollenbasis und Azure-Ressourcen-Manager-REST-API zugreifen, erhalten Berechtigungen gemäß ihrer Azure-Rollen. Die Aktionen der Azure-Rollenmitglieder führt das Datenbankmodul für sie aus. Sie sind nicht vom Datenbank-Engine-Berechtigungsmodell betroffen und werden in diesem Thema nicht behandelt. Weitere Informationen finden Sie unter [RBAC: Integrierte Rollen](../active-directory/role-based-access-built-in-roles/#sql-db-contributor).
 
-> [AZURE.IMPORTANT] Mit SQL-Datenbank V12 können sich Benutzer gegenüber der Datenbank authentifizieren, indem sie Benutzer für eigenständige Datenbanken verwenden. Benutzer für eigenständige Datenbanken benötigen keine Anmeldungen. Dies verbessert die Portabilität von Datenbanken, reduziert aber auch die Fähigkeit des Serverebenenprinzipals, den Zugriff auf die Datenbank zu steuern. Das Aktivieren von Benutzern für eigenständige Datenbanken ist mit wichtigen Auswirkungen auf die Sicherheit verbunden. Weitere Informationen finden Sie unter [Eigenständige Datenbankbenutzer – machen Sie Ihre Datenbank portabel](https://msdn.microsoft.com/library/ff929188.aspx), [Eigenständige Datenbanken](https://technet.microsoft.com/library/ff929071.aspx) und [CREATE USER (Transact-SQL)](https://technet.microsoft.com/library/ms173463.aspx) und [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md).
+> [AZURE.IMPORTANT] Mit SQL-Datenbank V12 können sich Benutzer gegenüber der Datenbank authentifizieren, indem sie Benutzer für eigenständige Datenbanken verwenden. Benutzer für eigenständige Datenbanken benötigen keine Anmeldungen. Dies verbessert die Portabilität von Datenbanken, reduziert aber auch die Fähigkeit des Serverebenenprinzipals, den Zugriff auf die Datenbank zu steuern. Das Aktivieren von Benutzern für eigenständige Datenbanken ist mit wichtigen Auswirkungen auf die Sicherheit verbunden. Weitere Informationen finden Sie unter [Eigenständige Datenbankbenutzer – machen Sie Ihre Datenbank portabel](https://msdn.microsoft.com/library/ff929188.aspx), [Eigenständige Datenbanken](https://technet.microsoft.com/library/ff929071.aspx) und [CREATE USER (Transact-SQL)](https://technet.microsoft.com/library/ms173463.aspx) und [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md).
 
 ## Übersicht über die Verwaltung der Sicherheit von SQL-Datenbank
 
@@ -69,7 +69,7 @@ CREATE USER user1 WITH password='<Strong_Password>';
 
 Weitere Benutzer für eigenständige Datenbanken können von jedem Benutzer mit der Berechtigung **ALTER ANY USER** erstellt werden.
 
-SQL-Datenbank, Version 12, unterstützt Azure Active Directory-Identitäten als Vorschaufeature als eigenständige Datenbankbenutzer. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md).
+SQL-Datenbank, Version 12, unterstützt Azure Active Directory-Identitäten als Vorschaufeature als eigenständige Datenbankbenutzer. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md).
 
 Microsoft empfiehlt die Verwendung von Benutzern für eigenständige Datenbanken mit SQL-Datenbank. Weitere Informationen finden Sie unter [Eigenständige Datenbankbenutzer – machen Sie Ihre Datenbank portabel](https://msdn.microsoft.com/library/ff929188.aspx).
 
@@ -157,7 +157,7 @@ CREATE USER login1User FROM LOGIN login1;
 Dieses Berechtigungsmodell auf Datenbankebene in Azure SQL-Datenbank ist mit einer lokalen Instanz von SQL Server identisch. Informationen hierzu finden Sie in den folgenden Themen der Referenz in der SQL Server-Onlinedokumentation.
 
 - [Verwalten von Anmeldungen, Benutzern und Schemas: Vorgehensweisen](https://msdn.microsoft.com/library/aa337552.aspx)
-- [Lektion 2: Konfigurieren von Berechtigungen für Datenbankobjekte](https://msdn.microsoft.com/library/ms365345.aspx)
+- [Lektion 2: Konfigurieren von Berechtigungen für Datenbankobjekte](https://msdn.microsoft.com/library/ms365345.aspx)
 
 > [AZURE.NOTE] Sicherheitsbezogene Transact-SQL-Anweisungen in Azure SQL-Datenbank können sich in Bezug auf die verfügbaren Parameter leicht unterscheiden. Weitere Informationen finden Sie in der Onlinedokumentation zur Syntax für bestimmte Anweisungen.
 
@@ -176,4 +176,4 @@ SELECT * FROM sys.databases;
 
 [Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank](sql-database-security-guidelines.md) [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md)
 
-<!----HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

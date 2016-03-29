@@ -70,7 +70,7 @@ Gilt für Version: 1.0.
 
 
 ### Bei Start eines anstehenden Ereignisses 
-Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis beginnt.
+Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis beginnt.  
 ```GET: /Events/OnUpcomingEvents```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -91,7 +91,7 @@ Löst einen Fluss aus, wenn ein anstehendes Kalenderereignis beginnt.
 
 
 ### E-Mails abrufen 
-Ruft E-Mails aus einem Ordner ab.
+Ruft E-Mails aus einem Ordner ab.  
 ```GET: /Mail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -117,7 +117,7 @@ Ruft E-Mails aus einem Ordner ab.
 
 
 ### E-Mail senden 
-Sendet eine E-Mail.
+Sendet eine E-Mail.  
 ```POST: /Mail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -138,7 +138,7 @@ Sendet eine E-Mail.
 
 
 ### E-Mail löschen 
-Löscht eine E-Mail anhand der ID.
+Löscht eine E-Mail anhand der ID.  
 ```DELETE: /Mail/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -158,7 +158,7 @@ Löscht eine E-Mail anhand der ID.
 
 
 ### Als gelesen markieren 
-Markiert eine E-Mail als gelesen.
+Markiert eine E-Mail als gelesen.  
 ```POST: /Mail/MarkAsRead/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -178,7 +178,7 @@ Markiert eine E-Mail als gelesen.
 
 
 ### Nachricht beantworten 
-Antwortet auf eine E-Mail.
+Antwortet auf eine E-Mail.  
 ```POST: /Mail/ReplyTo/{messageId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -200,7 +200,7 @@ Antwortet auf eine E-Mail.
 
 
 ### Anlagen abrufen 
-Ruft die Nachrichtenanlage anhand der ID ab.
+Ruft die Nachrichtenanlage anhand der ID ab.  
 ```GET: /Mail/{messageId}/Attachments/{attachmentId}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -221,7 +221,7 @@ Ruft die Nachrichtenanlage anhand der ID ab.
 
 
 ### Bei neuer E-Mail 
-Löst einen Fluss aus, wenn eine neue E-Mail eingeht.
+Löst einen Fluss aus, wenn eine neue E-Mail eingeht.  
 ```GET: /Mail/OnNewEmail```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -248,7 +248,7 @@ Löst einen Fluss aus, wenn eine neue E-Mail eingeht.
 
 
 ### E-Mails mit Optionen senden 
-Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit einer der Optionen antwortet.
+Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit einer der Optionen antwortet.  
 ```POST: /mailwithoptions/$subscriptions```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -269,7 +269,7 @@ Sendet eine E-Mail mit mehreren Optionen und wartet, bis der Empfänger mit eine
 
 
 ### Genehmigungs-E-Mail senden 
-Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers.
+Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers.  
 ```POST: /approvalmail/$subscriptions```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -293,7 +293,7 @@ Sendet eine Genehmigungs-E-Mail und wartet auf eine Antwort des Empfängers.
 
 
 ### Kalender abrufen 
-Ruft Kalender ab.
+Ruft Kalender ab.  
 ```GET: /datasets/calendars/tables```
 
 Es gibt keine Parameter für diesen Aufruf.
@@ -309,7 +309,7 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Ereignisse abrufen 
-Ruft Elemente aus einem Kalender ab.
+Ruft Elemente aus einem Kalender ab.  
 ```GET: /datasets/calendars/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -329,7 +329,7 @@ Ruft Elemente aus einem Kalender ab.
 
 
 ### Ereignis erstellen 
-Erstellt ein neues Ereignis.
+Erstellt ein neues Ereignis.  
 ```POST: /datasets/calendars/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -346,7 +346,7 @@ Erstellt ein neues Ereignis.
 
 
 ### Ereignis abrufen 
-Ruft ein bestimmtes Element aus einem Kalender ab.
+Ruft ein bestimmtes Element aus einem Kalender ab.  
 ```GET: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -363,7 +363,7 @@ Ruft ein bestimmtes Element aus einem Kalender ab.
 
 
 ### Ereignis löschen 
-Löscht ein Kalenderelement.
+Löscht ein Kalenderelement.  
 ```DELETE: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -380,7 +380,7 @@ Löscht ein Kalenderelement.
 
 
 ### Ereignis aktualisieren 
-Aktualisiert ein Kalenderelement teilweise.
+Aktualisiert ein Kalenderelement teilweise.  
 ```PATCH: /datasets/calendars/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -398,7 +398,7 @@ Aktualisiert ein Kalenderelement teilweise.
 
 
 ### Bei neuen Elementen 
-Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird.
+Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird.  
 ```GET: /datasets/calendars/tables/{table}/onnewitems```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -418,7 +418,7 @@ Wird ausgelöst, wenn ein neues Kalenderelement erstellt wird.
 
 
 ### Bei aktualisierten Elementen 
-Wird ausgelöst, wenn ein Kalenderelement geändert wird.
+Wird ausgelöst, wenn ein Kalenderelement geändert wird.  
 ```GET: /datasets/calendars/tables/{table}/onupdateditems```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -438,7 +438,7 @@ Wird ausgelöst, wenn ein Kalenderelement geändert wird.
 
 
 ### Ordner „Kontakte“ abrufen 
-Ruft Ordner des Typs „Kontakte“ ab.
+Ruft Ordner des Typs „Kontakte“ ab.  
 ```GET: /datasets/contacts/tables```
 
 Es gibt keine Parameter für diesen Aufruf.
@@ -452,7 +452,7 @@ Es gibt keine Parameter für diesen Aufruf.
 
 
 ### Kontakte abrufen 
-Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab.
+Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab.  
 ```GET: /datasets/contacts/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -472,7 +472,7 @@ Ruft Kontakte aus einem Ordner des Typs „Kontakte“ ab.
 
 
 ### Kontakt erstellen 
-Erstellt einen neuen Kontakt.
+Erstellt einen neuen Kontakt.  
 ```POST: /datasets/contacts/tables/{table}/items```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -489,7 +489,7 @@ Erstellt einen neuen Kontakt.
 
 
 ### Kontakt abrufen 
-Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab.
+Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab.  
 ```GET: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -506,7 +506,7 @@ Ruft einen bestimmten Kontakt aus einem Ordner „Kontakte“ ab.
 
 
 ### Kontakt löschen 
-Löscht einen Kontakt.
+Löscht einen Kontakt.  
 ```DELETE: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -523,7 +523,7 @@ Löscht einen Kontakt.
 
 
 ### Kontakt aktualisieren 
-Aktualisiert einen Kontakt teilweise.
+Aktualisiert einen Kontakt teilweise.  
 ```PATCH: /datasets/contacts/tables/{table}/items/{id}```
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
@@ -561,8 +561,7 @@ Aktualisiert einen Kontakt teilweise.
 |Body|string|Ja|
 |Priorität|string|no|
 |IsHtml|Boolescher Wert|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### SendAttachment: Anlage
 
@@ -589,8 +588,7 @@ Aktualisiert einen Kontakt teilweise.
 |Body|string|Ja|
 |Priorität|string|no|
 |IsHtml|Boolescher Wert|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 
 #### ReceiveAttachment: Anlage empfangen
@@ -613,8 +611,7 @@ Aktualisiert einen Kontakt teilweise.
 |Priorität|string|no|
 |Digest|array|Ja|
 |Anlagen|array|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### TriggerBatchResponse[ReceiveMessage]
 
@@ -677,8 +674,7 @@ Aktualisiert einen Kontakt teilweise.
 |Body|string|no|
 |Priorität|string|no|
 |Anlagen|array|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### SubscriptionResponse: Modell für das Genehmigungs-E-Mail-Abonnement
 
@@ -707,8 +703,7 @@ Aktualisiert einen Kontakt teilweise.
 |Body|string|no|
 |Priorität|string|no|
 |Anlagen|array|no|
-|To  
-|string|Ja|
+|To|string|Ja|
 
 #### ApprovalEmailResponse: Genehmigungs-E-Mail-Antwort
 

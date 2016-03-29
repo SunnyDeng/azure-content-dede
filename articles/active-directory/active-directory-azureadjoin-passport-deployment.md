@@ -54,7 +54,7 @@ Führen Sie den folgenden PowerShell-Befehl aus:
 Konfigurieren Sie für das Verwenden der zertifikatbasierten Passport for Work-Anmeldung/Microsoft Hello das Zertifikatprofil (**Assets & Compliance** -> **Kompatibilitätseinstellungen** -> **Company Resource Access** -> **Zertifikatprofile**). Wählen Sie eine Vorlage mit Smartcard-Anmeldung und erweiterter Schlüsselverwendung (Extended Key Usage, EKU) aus.
 
 ## Einrichten einer geplante Aufgabe zum Anfordern der Zertifikatauswertung
-Die geplante Aufgabe ist eine kurzfristige Lösung. Der Administrator muss dazu eine geplante Aufgabe erstellen, die auf das Erstellen eines Passport for Work-Containers lauscht und eine Zertifikatauswertung anfordert. Der geplante Task wird ausgelöst, wenn der Passport for Work-Container aktiviert wird. Durch den Task wird die Verzögerung bei der Einrichtung von Container und PIN und ihre Verfügbarkeit für die Verwendung bei der nächsten Anmeldung reduziert.
+Die geplante Aufgabe ist eine kurzfristige Lösung. Administratoren müssen eine geplante Aufgabe erstellen, die überwacht, ob ein Passport for Work-Container erstellt wurde, und dann eine Zertifikatsauswertung anfordern. Der geplante Task wird ausgelöst, wenn der Passport for Work-Container aktiviert wird. Durch den Task wird die Verzögerung bei der Einrichtung von Container und PIN und ihre Verfügbarkeit für die Verwendung bei der nächsten Anmeldung reduziert.
 
 **Um die geplante Aufgabe zu erstellen, können Sie die Benutzeroberfläche oder den folgenden Befehl verwenden:**
 
@@ -118,4 +118,4 @@ Hier der Beispiel-XML-Code:
 * [Benutzererfahrungen beim Verknüpfen von in die Domäne eingebundenen Windows 10-Geräten mit Azure AD](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

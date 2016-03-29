@@ -208,19 +208,19 @@ AzureSearch\_SkipContent | „true“ | Weist den Blobindexer an, nur die Metada
 <a name="IndexerParametersConfigurationControl"></a>
 ## Verwenden von Indexerparametern zum Steuern des Extrahierens von Dokumenten
 
-Wenn Sie die Inhaltsextraktion für alle Blobs überspringen möchten, können Sie dazu ein Indexer- Konfigurationsobjekt verwenden, anstatt zu jedem Blob einzeln benutzerdefinierte Metadaten hinzufügen zu müssen. Legen Sie zu diesem Zweck im `parameters`-Objekt die `SkipContent`-Konfigurationseigenschaft auf `true` fest:
+Falls Sie Metadaten extrahieren müssen, aber die Inhaltsextraktion für alle Blobs überspringen wollen, können Sie dieses Verhalten durch die Indexer-Konfiguration anfordern, statt `AzureSearch_SkipContent`-Metadaten zu jedem Blob einzeln hinzuzufügen. Legen Sie zu diesem Zweck im `parameters`-Objekt die `skipContent`-Konfigurationseigenschaft auf `true` fest:
 
- 	PUT https://[service name].search.windows.net/indexers/<your indexer name>?api-version=2015-02-28-Preview
+ 	PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2015-02-28-Preview
 	Content-Type: application/json
 	api-key: [admin key]
 
 	{
 	  ... other parts of indexer definition
-	  "parameters" : { "configuration" : { "SkipContent" : true } }
+	  "parameters" : { "configuration" : { "skipContent" : true } }
 	}
 
 ## Helfen Sie uns bei der Verbesserung von Azure Search
 
 Teilen Sie uns auf unserer [UserVoice-Website](https://feedback.azure.com/forums/263029-azure-search/) mit, wenn Sie sich Features wünschen oder Verbesserungsvorschläge haben.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

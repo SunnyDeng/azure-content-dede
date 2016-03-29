@@ -15,14 +15,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="03/08/2016"
 	ms.author="genli"/>
 
 # Herunterladen von Azure-Rechnungen und täglichen Nutzungsdaten
 
-Als Azure-Kontoadministrator können Sie die aktuelle Rechnung im Azure-Kontocenter ansehen sowie Aufstellungen für die letzten sechs Abrechnungszeiträume herunterladen. Das geht so:
+Als Azure-Kontoadministrator können Sie die aktuelle Rechnung im Azure-Kontocenter ansehen sowie Aufstellungen für die letzten sechs Abrechnungszeiträume herunterladen. So geht‘s:
 
-1. Melden Sie sich mit der ID Ihres Microsoft-, Geschäfts- oder Schulkontos beim Portal [Nutzung und Abrechnung](https://account.windowsazure.com/subscriptions) an.
+1. Melden Sie sich im [Azure-Kontocenter](https://account.windowsazure.com/subscriptions) als Kontoadministrator an. Im [Azure-Portal](https://portal.azure.com) können Sie über **Abonnement**>*Abonnementname*>**Verwalten** auf das Kontocenter zugreifen.
+
+	> [AZURE.NOTE] Nur der Kontoadministrator hat die Zugriffsberechtigung für das Kontocenter. Weitere Informationen zu den Kontoadministratoren finden Sie unter [Hinzufügen oder Ändern von Azure-Administratorrollen](billing-add-change-azure-subscription-administrator.md).
 2. Wählen Sie das Abonnement, für das Sie die Rechnung und Nutzungsinformationen abrufen möchten.
 3. Klicken Sie auf **ABRECHNUNGSVERLAUF**. </br>![billinghistory](./media/billing-download-azure-invoice-daily-usage-date/Billinghisotry.png)
 4. Sie können Ihre Aufstellungen für die letzten sechs Abrechnungszeiträume sowie den aktuellen, nicht berechneten Zeitraum anzeigen. </br>![billingsum](./media/billing-download-azure-invoice-daily-usage-date/billingSum.png)</br>
@@ -30,4 +32,4 @@ Als Azure-Kontoadministrator können Sie die aktuelle Rechnung im Azure-Kontocen
 6. Wählen Sie **Rechnung herunterladen**, um eine Kopie Ihrer letzten Rechnung anzuzeigen. </br>![DLInvoice](./media/billing-download-azure-invoice-daily-usage-date/DLInvoice1.png)
 7. Wählen Sie **Nutzung herunterladen**, um die täglichen Nutzungsdaten als CSV-Datei herunterzuladen.</br>![DLusage](./media/billing-download-azure-invoice-daily-usage-date/DLusage.png)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -3,8 +3,8 @@
 	description="Zeigt empfohlene Vorgehensweisen zum Verwenden komplexer Objekte, um Statusdaten für Azure-Ressourcen-Manager-Vorlagen und verknüpfte Vorlagen freizugeben."
 	services="azure-resource-manager"
 	documentationCenter=""
-	authors="mmercuri"
-	manager="georgem"
+	authors="tfitzmac"
+	manager="timlt"
 	editor="tysonn"/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/26/2016"
-	ms.author="mmercuri"/>
+	ms.author="tomfitz"/>
 
 # Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen
 
@@ -167,7 +167,7 @@ Bei der Verbindung mit verknüpften Vorlagen wird häufig eine Mischung aus stat
 
 #### Statische Variablen
 
-Mithilfe statischer Variablen werden häufig Basiswerte wie z. B. URLs bereitgestellt, die in einer Vorlage oder als Werte verwendet werden, um Werte für dynamische Variablen zu erstellen.
+Mithilfe statischer Variablen werden häufig Basiswerte wie z. B. URLs bereitgestellt, die in einer Vorlage oder als Werte verwendet werden, um Werte für dynamische Variablen zu erstellen.
 
 Im unten stehenden Vorlagenauszug gibt *templateBaseUrl*den Stammspeicherort für die Vorlage in GitHub zurück. Die nächste Zeile erstellt eine neue Variable*sharedTemplateUrl*, die den Wert von *TemplateBaseUrl* mit dem bekannten Namen der freigegebenen Ressourcenvorlage verkettet. Darunter wird eine komplexe Objektvariable verwendet, um eine T-Shirt-Größe zu speichern. Hierbei wird *templateBaseUrl* verkettet, um den Speicherort der Vorlage für die bekannte Konfiguration anzugeben, der in der Eigenschaft *vmTemplate* gespeichert ist.
 
@@ -198,7 +198,7 @@ Neben den statischen Variablen werden einige Variablen dynamisch generiert. In d
 
 Beim Aufrufen der Hauptvorlage können Sie aus einer bestimmten Anzahl von Optionen eine T-Shirt-Größe auswählen – in der Regel Werte wie *Small*, *Medium* und *Large*.
 
-In der Hauptvorlage wird diese Option als Parameter wie z. B *tshirtSize* angezeigt:
+In der Hauptvorlage wird diese Option als Parameter wie z. B *tshirtSize* angezeigt:
 
     "tshirtSize": {
       "type": "string",
@@ -298,7 +298,7 @@ In verknüpften Vorlagen erstellte Ressourcen werden häufig in einer Verfügbar
       "udCount": 5
     }
 
-Wenn Sie mehrere Verfügbarkeitsgruppen benötigen (z. B. eine für Masterknoten, eine weitere für Datenknoten), können Sie einen Namen als Präfix verwenden, mehrere Verfügbarkeitsgruppen angeben oder gemäß dem oben gezeigten Modell eine Variable für eine bestimmte T-Shirt-Größe erstellen.
+Wenn Sie mehrere Verfügbarkeitsgruppen benötigen (z. B. eine für Masterknoten, eine weitere für Datenknoten), können Sie einen Namen als Präfix verwenden, mehrere Verfügbarkeitsgruppen angeben oder gemäß dem oben gezeigten Modell eine Variable für eine bestimmte T-Shirt-Größe erstellen.
 
 ##### storageSettings
 
@@ -389,4 +389,4 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
 - [Authoring Azure Resource Manager Templates (in englischer Sprache)](resource-group-authoring-templates.md)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

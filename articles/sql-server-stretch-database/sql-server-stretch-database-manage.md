@@ -51,6 +51,9 @@ Empfehlungen zur Problembehandlung finden Sie unter [Überwachen und Behandeln v
 -   Möglicherweise haben sich die Netzwerkbedingungen verschlechtert. Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über aktuelle Probleme oder Ausfälle zu erhalten.
 
 ## Weitere Informationen
-[Überwachen von Stretch-Datenbank](sql-server-stretch-database-monitor.md) [Sichern und Wiederherstellen von Stretch-fähigen Datenbanken](sql-server-stretch-database-backup.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+[Überwachen von Stretch-Datenbank](sql-server-stretch-database-monitor.md)
+
+[Sichern und Wiederherstellen von Stretch-fähigen Datenbanken](sql-server-stretch-database-backup.md)
+
+<!---HONumber=AcomDC_0316_2016-->

@@ -14,7 +14,7 @@
 	ms.workload="search"
 	ms.topic="article" 
 	ms.tgt_pltfrm="na"
-	ms.date="03/08/2016"
+	ms.date="03/15/2016"
 	ms.author="heidist"/>
 
 #Azure Search: Codebeispiele, Demos, Videos und Tutorials
@@ -79,16 +79,14 @@ Link|Veröffentlicht|Details
 Exemplarische Vorgehensweise|Beschreibung
 -----------|-----------
 [Verwenden von Azure Search aus einer .NET-Anwendung](search-howto-dotnet-sdk.md)|Konfigurieren Sie eine Beispielwebanwendung für Visual Studio, die in Azure Search integriert ist, und führen Sie diese aus.
-[Durchsuchen von Stack Exchange-Daten mithilfe von Azure Search](search-howto-stackexchange-data.md)|Volltextsuche in StackExchange-Daten in einer in Azure Search integrierten Anwendung.
 [How to use Azure Search with D3.js to Build Interactive Data Visualizations](https://azure.microsoft.com/blog/2015/07/14/how-to-use-azure-search-with-d3-js-to-build-interactive-data-visualizations/)|Blogbeitrag und Beispielcode, der veranschaulicht, wie visuelle Suchfunktionen zu Ihrer benutzerdefinierten Anwendung hinzugefügt werden.
 [Erste Schritte mit Azure Search in NodeJS](search-get-started-nodejs.md)|Erfahren Sie, wie Sie mit Azure Search in NodeJS arbeiten.
 [Erste Schritte mit Azure Search in Java](search-get-started-java.md)|Tutorial für Java-Programmierer, die mit Eclipse und Apache Tomcat-Server eine Beispielanwendung erstellen und ausführen, die Azure Search verwendet.
 [Azure Search Scenarios and Capabilities](https://azure.microsoft.com/blog/2014/08/28/azure-search-scenarios-and-capabilities/)|Blogbeitrag zu den wichtigsten, durch die aktuellen Funktionen ermöglichten Szenarien.
 [How to Add Suggestions to your Search Applications](https://azure.microsoft.com/blog/2015/01/20/azure-search-how-to-add-suggestions-auto-complete-to-your-search-applications/)|Hier erfahren Sie, wie Sie Vorschläge implementieren. Dies wird häufig auch als automatisches Vervollständigen bezeichnet. Diese Demo führt Sie durch eine Reihe von Themen, z. B. das Erstellen einer MVC4-Anwendung, die Azure Search-Vorschläge nutzt, das Verwenden einer "typeahead.js"-Bibliothek für Twitter zum Erstellen einer effektiven JavaScript-Komponente für automatische Vorschläge sowie das Verwenden von Fuzzyvorschlägen, mit deren Hilfe auch dann Vorschläge angezeigt werden, wenn der Benutzer das Wort falsch geschrieben hat.
 [TechNet Virtual Lab: Building a Microsoft Azure Search Application](http://go.microsoft.com/?linkid=9874663)|Virtuelle Übungseinheit, die eine Entwicklungsumgebung, Tools, Dokumentation und Daten bereitstellt. Zur Durchführung der Übung benötigen Sie ein Azure-Konto, entweder ein Testabonnement oder Ihr persönliches Azure-Abonnement.
-[Erstellen einer geografischen Suchanwendung mit Azure Search](search-create-geospatial.md)|Verwenden von Bing-Karten und Koordinaten zur Unterstützung geografischer Suchvorgänge.
 [Synchronize SQL Server Data with Azure Search](https://azure.microsoft.com/blog/2014/11/10/how-to-sync-sql-server-data-with-azure-search/)|Blogbeitrag mit Erläuterungen zum Laden von Daten aus relationalen SQL Server-Datenbanken in einen Azure Search-Index.
 [Lernprogramm zu Bewertungsprofilen](search-get-started-scoring-profiles.md)|Testen von Bewertungsprofilen mit einer Konsolenanwendung.
 [Lernprogramm zur Azure Search Management-REST-API](search-get-started-management-api.md)|So verwenden Sie die Management-REST-API, um den Dienst bereitzustellen und Administrator- oder Abfrage-API-Schlüssel zu verwalten.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

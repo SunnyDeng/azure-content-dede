@@ -1,10 +1,10 @@
 <properties
 	pageTitle="EntLib-Wiederholungslogik zum Herstellen einer Verbindung mit SQL-Datenbank | Microsoft Azure"
-	description="Enterprise Library wurde zur Vereinfachung verschiedener Aufgaben für Clientprogramme von Clouddiensten entwickelt. Dazu zählt u. a. die Integration von Wiederherstellungslogik für vorübergehende Fehler."
+	description="Enterprise Library wurde zur Vereinfachung verschiedener Aufgaben für Clientprogramme von Clouddiensten entwickelt. Dazu zählt u. a. die Integration von Wiederherstellungslogik für vorübergehende Fehler."
 	services="sql-database"
 	documentationCenter=""
-	authors="MightyPen"
-	manager="jeffreyg"
+	authors="annemill"
+	manager="jhubbard"
 	editor="" />
 
 
@@ -14,11 +14,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/17/2015"
-	ms.author="genemi"/>
+	ms.date="03/15/2016"
+	ms.author="annemill"/>
 
 
-# Codebeispiel: Wiederholungslogik aus Enterprise Library 6 in C&#x23; für das Herstellen einer Verbindung mit SQL-Datenbank
+# Codebeispiel: Wiederholungslogik aus Enterprise Library 6 in C&#x23; für das Herstellen einer Verbindung mit SQL-Datenbank
 
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
@@ -28,11 +28,11 @@ Dieses Thema enthält ein vollständiges Codebeispiel, das die Enterprise Librar
 
 Bei EntLib-Klassen wird zwischen zwei Kategorien von Laufzeitfehlern unterschieden:
 
-- Fehler, die nicht von selbst behoben werden, z. B. ein falsch geschriebener Servername.
-- Vorübergehende Fehler, z. B. Situationen, in denen der Server für einige Sekunden keine neuen Verbindungen akzeptiert, während das Azure-System einen Lastenausgleich ausführt.
+- Fehler, die nicht von selbst behoben werden, z. B. ein falsch geschriebener Servername.
+- Vorübergehende Fehler, z. B. Situationen, in denen der Server für einige Sekunden keine neuen Verbindungen akzeptiert, während das Azure-System einen Lastenausgleich ausführt.
 
 
-Enterprise Library 6 (EntLib60) ist die aktuelle Version und wurde im April 2013 veröffentlicht.
+Enterprise Library 6 (EntLib60) ist die aktuelle Version und wurde im April 2013 veröffentlicht.
 
 - Microsoft stellt den Quellcode für die Öffentlichkeit zur Verfügung.
 - Microsoft plant keine weitere Verwaltung des Quellcodes.
@@ -41,10 +41,10 @@ Enterprise Library 6 (EntLib60) ist die aktuelle Version und wurde im April 20
 ## Voraussetzungen
 
 
-#### .NET Framework 4.0 oder höher
+#### .NET Framework 4.0 oder höher
 
 
-Installation von Microsoft .NET Framework 4.0 oder höher erforderlich. Zum Zeitpunkt der Verfassung dieses Artikels ist Version 4.6 verfügbar, und wir empfehlen die Verwendung dieser aktuellen Version.
+Installation von Microsoft .NET Framework 4.0 oder höher erforderlich. Zum Zeitpunkt der Verfassung dieses Artikels ist Version 4.6 verfügbar, und wir empfehlen die Verwendung dieser aktuellen Version.
 
 
 #### Visual Studio Community-Edition (kostenlos)
@@ -63,7 +63,7 @@ Möglicherweise müssen Sie sich mit Ihrer E-Mail-Adresse für MSDN registrieren
 5. Klicken Sie im unteren Bildschirmbereich auf **Konto erstellen**.
 
 
-#### Enterprise Library 6 (EntLib60)
+#### Enterprise Library 6 (EntLib60)
 
 
 Optionen für die Installation von EntLib60:
@@ -73,7 +73,7 @@ Optionen für die Installation von EntLib60:
  - Suchen Sie in NuGet nach **enterpriselibrary**.
 
 
-- Navigieren Sie im [Startdokumentationsthema zu EntLib60](http://msdn.microsoft.com/library/dn169621.aspx) zur Zeile **Downloads**, und klicken Sie auf [Microsoft Enterprise Library 6](http://go.microsoft.com/fwlink/?linkid=290898), um die .DLL-Assemblybinärdateien herunterzuladen.
+- Navigieren Sie im [Startdokumentationsthema zu EntLib60](http://msdn.microsoft.com/library/dn169621.aspx) zur Zeile **Downloads**, und klicken Sie auf [Microsoft Enterprise Library 6](http://go.microsoft.com/fwlink/?linkid=290898), um die .DLL-Assemblybinärdateien herunterzuladen.
 
 
 EntLib60 verfügt über verschiedene .DLL-Assemblydateien, deren Namen mit demselben Präfix beginnen (**Microsoft.Practices.EnterpriseLibrary.&#x2a;.dll**). Für dieses Codebeispiel sind jedoch lediglich die beiden folgenden Assemblys relevant:
@@ -318,7 +318,7 @@ SELECT TOP 3
 - [Namespace Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling](http://msdn.microsoft.com/library/microsoft.practices.enterpriselibrary.transientfaulthandling.aspx)
 
 
-- [Referenz zur Enterprise Library 6-Klassenbibliothek](http://msdn.microsoft.com/library/dn170426.aspx)
+- [Referenz zur Enterprise Library 6-Klassenbibliothek](http://msdn.microsoft.com/library/dn170426.aspx)
 
 
 - [Codebeispiel: Wiederholungslogik in C# für das Herstellen einer Verbindung mit einer SQL-Datenbank mithilfe von ADO.NET](sql-database-develop-csharp-retry-windows.md)
@@ -326,4 +326,4 @@ SELECT TOP 3
 
 - [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0316_2016-->

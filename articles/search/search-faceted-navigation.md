@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="02/18/2016" 
+	ms.date="03/15/2016" 
 	ms.author="heidist"/>
 
 #Implementieren der Facettennavigation in Azure Search
@@ -291,7 +291,7 @@ In Azure Search stehen zwei räumliche Funktionen zur Verfügung: **geo.distance
 
 - **geo.intersects** gibt „true“ zurück, wenn ein bestimmter Punkt innerhalb eines bestimmten Polygons liegt. Der Punkt ist hierbei ein Feld, das Polygon eine Konstantenliste mit Koordinaten, die als Teil des Filters übergeben werden.
 
-Filterbeispiele finden Sie unter [OData-Ausdruckssyntax für Azure Search](http://msdn.microsoft.com/library/azure/dn798921.aspx). Weitere Informationen zur räumlichen Suche finden Sie unter [Erstellen einer Anwendung für räumliche Suche in Azure Search](search-create-geospatial.md).
+Filterbeispiele finden Sie unter [OData-Ausdruckssyntax für Azure Search](http://msdn.microsoft.com/library/azure/dn798921.aspx).
 
 <a name="tryitout"></a>
 ##Ausprobieren
@@ -362,7 +362,6 @@ Auch [Azure Search Deep Dive](http://channel9.msdn.com/Events/TechEd/Europe/2014
 [Design Patterns: Faceted Navigation]: http://alistapart.com/article/design-patterns-faceted-navigation
 [Create your first application]: search-create-first-solution.md
 [OData expression syntax (Azure Search)]: http://msdn.microsoft.com/library/azure/dn798921.aspx
-[Create a geospatial search application in Azure Search]: search-create-geospatial.md
 [Azure Search Adventure Works Demo]: https://azuresearchadventureworksdemo.codeplex.com/
 [http://www.odata.org/documentation/odata-version-2-0/overview/]: http://www.odata.org/documentation/odata-version-2-0/overview/
 [Faceting on Azure Search forum post]: ../faceting-on-azure-search.md?forum=azuresearch
@@ -370,4 +369,4 @@ Auch [Azure Search Deep Dive](http://channel9.msdn.com/Events/TechEd/Europe/2014
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/05/2016"
+	ms.date="03/14/2016"
 	ms.author="antonba"/>
 
 # Einrichten von VPN-Verbindungen in Azure API Management
@@ -48,11 +48,25 @@ Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sic
 
 ![API über VPN hinzufügen][api-management-setup-vpn-add-api]
 
+## Erforderliche Ports für die API Management-VPN-Unterstützung
+
+Beim Hosten einer API Management-Dienstinstanz in einem VNET werden die in der folgenden Tabelle angegebenen Ports verwendet. Wenn diese Ports gesperrt sind, funktioniert der Dienst möglicherweise nicht ordnungsgemäß. Eine bestehende Sperre für mindestens einen dieser Ports ist die häufigste Fehlkonfiguration, die beim Verwenden von API Management in einem VNET auftritt.
+
+| Port(s) | Richtung | Transportprotokoll | Zweck | Quelle/Ziel |
+|------------------------------|------------------|--------------------|------------------------------------------------------------------|-----------------------------------|
+| 80, 443 | Eingehend | TCP | Kommunikation zwischen Clients und API Management | INTERNET/VIRTUAL\_NETWORK |
+| 80, 443 | Ausgehend | TCP | API Management-Abhängigkeit von Azure Storage und Azure Service Bus | VIRTUAL\_NETWORK/INTERNET |
+| 1433 | Ausgehend | TCP | API Management-Abhängigkeiten von SQL | VIRTUAL\_NETWORK/INTERNET |
+| 9350, 9351, 9352, 9353, 9354 | Ausgehend | TCP | API Management-Abhängigkeiten von Service Bus | VIRTUAL\_NETWORK/INTERNET |
+| 5671 | Ausgehend | AMQP | API Management-Abhängigkeit für Richtlinie zum Anmelden bei Event Hub | VIRTUAL\_NETWORK/INTERNET |
+| 6381, 6382, 6383 | Eingehend/ausgehend | UDP | API Management-Abhängigkeiten von Redis Cache | VIRTUAL\_NETWORK/VIRTUAL\_NETWORK |
+| 445 | Ausgehend | TCP | API Management-Abhängigkeit von Azure File Share für GIT | VIRTUAL\_NETWORK/INTERNET |
+
 
 ## <a name="related-content"> </a>Verwandte Inhalte
 
 
-* [Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen][]
+* [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem klassischen Azure-Portal][]
 * [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management][]
 
 [api-management-setup-vpn-configure]: ./media/api-management-howto-setup-vpn/api-management-setup-vpn-configure.png
@@ -65,7 +79,7 @@ Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sic
 
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-[Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen]: ../virtual-networks-create-site-to-site-cross-premises-connectivity
+[Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem klassischen Azure-Portal]: ../vpn-gateway/vpn-gateway-site-to-site-create.md
 [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management]: api-management-howto-api-inspector.md
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="03/14/2016"
 	ms.author="meetb"/>
 
 
@@ -30,7 +30,7 @@ Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird a
 ## Voraussetzungen
 
 
-- [Python 2.7.6](https://www.python.org/download/releases/2.7.6/).
+- [Python 2.7.6](https://www.python.org/download/releases/2.7.6/).
 - [FreeTDS](https://github.com/brianb/FreeTDS)
 - [Pymssql](https://github.com/pymssql/pymssql)
 
@@ -55,11 +55,11 @@ Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird a
 
 Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
-## Schritt 1: Abrufen der Verbindungsdetails
+## Schritt 1: Abrufen der Verbindungsdetails
 
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
-## Schritt 2: Verbinden
+## Schritt 2: Verbinden
 
 Die [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html)-Funktion dient zum Herstellen einer Verbindung mit der SQL-Datenbank.
 
@@ -67,7 +67,7 @@ Die [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html)-Funktion di
 	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 
 
-## Schritt 3: Ausführen einer Abfrage
+## Schritt 3: Ausführen einer Abfrage
 
 Mit der [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.execute)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und gibt ein Resultset zurück, das mithilfe von [cursor.fetchone()](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.fetchone) durchlaufen werden kann.
 
@@ -82,7 +82,7 @@ Mit der [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.C
 	    row = cursor.fetchone()
 
 
-## Schritt 4: Einfügen einer Zeile
+## Schritt 4: Einfügen einer Zeile
 
 In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
 
@@ -104,11 +104,11 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
--Starten von Transaktionen
+- Starten von Transaktionen
 
--Einfügen von Zeilen mit Daten
+- Einfügen von Zeilen mit Daten
 
--Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql
@@ -123,4 +123,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
 Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0316_2016-->

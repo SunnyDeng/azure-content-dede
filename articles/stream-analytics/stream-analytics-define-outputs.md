@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="03/02/2016"
+	ms.date="03/16/2016"
 	ms.author="jeffstok"/>
 
 # Ausrichten von Stream Analytics-Datentransformationsausgaben auf Analysetools und Datenspeicheroptionen
@@ -23,10 +23,60 @@
 
 Um verschiedene Anwendungsmuster zu ermöglichen, stellt Azure Stream Analytics verschiedene Optionen zum Speichern der Ausgabe und zum Anzeigen von Analyseergebnissen bereit. Dadurch wird sowohl einfaches Anzeigen der Auftragsausgabe als auch Flexibilität bei der Nutzung und Speicherung der Auftragsausgabe für Data Warehousing und andere Zwecke erreicht. Jede Ausgabe, die im Auftrag konfiguriert wird, muss vorhanden sein, bevor der Auftrag gestartet wird und Ereignisse übertragen werden. Wird beispielsweise ein Blob Storage als Ausgabe verwendet, erstellt der Auftrag nicht automatisch ein Speicherkonto. Es muss vom Benutzer erstellt werden, bevor der ASA-Auftrag gestartet wird.
 
+## Azure Data Lake-Speicher
 
-## SQL-Datenbank ##
+Stream Analytics unterstützt [Azure Data Lake-Speicher](https://azure.microsoft.com/services/data-lake-store/). Dieser Speicher bietet Ihnen die Möglichkeit, Daten von beliebiger Größe, Art und Erfassungsgeschwindigkeit zur Durchführung operativer und explorativer Analysen zu speichern. Derzeit wird die Erstellung und Konfiguration von Data Lake-Speicherausgaben nur im klassischen Azure-Portal unterstützt. Darüber hinaus muss Stream Analytics autorisiert werden, um auf Data Lake-Speicher zuzugreifen. Informationen zur Autorisierung und wie Sie sich für die Data Lake-Speicher-Vorschau anmelden (falls erforderlich), finden Sie im Artikel zur [Data Lake-Ausgabe](stream-analytics-data-lake-output.md).
 
-[Azure SQL-Datenbank](https://azure.microsoft.com/services/sql-database/) kann als Ausgabe für relationale Daten oder für Anwendungen verwendet werden, die auf Inhalten aufsetzen, die in einer relationalen Datenbank gehostet werden. Stream Analytics-Aufträge werden in eine vorhandene Tabelle in einer Azure SQL-Datenbank geschrieben. Beachten Sie, dass das Tabellenschema genau den Feldern und deren Typen entsprechen muss, die aus Ihrem Auftrag ausgegeben werden. Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer SQL-Datenbank-Ausgabe.
+Die folgende Tabelle enthält die Namen und Beschreibungen der Eigenschaften, die für die Erstellung einer Data Lake-Speicherausgabe erforderlich sind.
+
+<table>
+<tbody>
+<tr>
+<td><B>EIGENSCHAFTENNAME</B></td>
+<td><B>BESCHREIBUNG</B></td>
+</tr>
+<tr>
+<td>Ausgabealias</td>
+<td>Dies ist ein Anzeigename, der in Abfragen verwendet wird, um die Abfrageausgabe an diesen Data Lake-Speicher weiterzuleiten.</td>
+</tr>
+<tr>
+<td>Data Lake-Speicherkonto</td>
+<td>Der Name des Speicherkontos, an das Sie die Ausgabe senden. Ihnen wird eine Dropdown-Liste der Data Lake-Speicherkonten angezeigt, auf die der im Portal angemeldete Benutzer Zugriff hat.</td>
+</tr>
+<tr>
+<td>Präfixmuster des Pfads [<I>optional</I>]</td>
+<td>Der Dateipfad, mit dem Ihre Dateien im angegebenen Data Lake-Speicherkonto geschrieben werden. <BR>{date}, {time}<BR>Beispiel 1: folder1/logs / {date} / {time}<BR>Beispiel 2: folder1/logs / {date}</td>
+</tr>
+<tr>
+<td>Datumsformat [<I>optional</I>]</td>
+<td>Wenn das date-Token im Pfadpräfix verwendet wird, können Sie das Datumsformat auswählen, unter dem die Dateien gespeichert werden. Beispiel: YYYY/MM/TT</td>
+</tr>
+<tr>
+<td>Zeitformat [<I>optional</I>]</td>
+<td>Wenn das time-Token im Pfadpräfix verwendet wird, können Sie das Zeitformat auswählen, unter dem die Dateien gespeichert werden. Der einzige derzeit unterstützte Wert ist HH</td>
+</tr>
+<tr>
+<td>Ereignisserialisierungsformat</td>
+<td>Das Serialisierungsformat für Ausgabedaten. Es werden JSON, CSV und Avro unterstützt.</td>
+</tr>
+<tr>
+<td>Codieren</td>
+<td>Beim CSV- oder JSON-Format muss eine Codierung angegeben werden. Das einzige derzeit unterstützte Codierungsformat ist UTF-8.</td>
+</tr>
+<tr>
+<td>Trennzeichen</td>
+<td>Gilt nur für die CSV-Serialisierung. Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der CSV-Daten. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich.</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Gilt nur für die JSON-Serialisierung. "Separate Zeile" gibt an, dass die Ausgabe so formatiert wird, dass jedes JSON-Objekt in einer neuen Zeile enthalten ist. "Array" gibt an, dass die Ausgabe als Array aus JSON-Objekten formatiert wird.</td>
+</tr>
+</tbody>
+</table>
+
+## SQL-Datenbank
+
+[Azure SQL-Datenbank](https://azure.microsoft.com/services/sql-database/) kann als Ausgabe für relationale Daten oder für Anwendungen verwendet werden, die auf Inhalten aufsetzen, die in einer relationalen Datenbank gehostet werden. Stream Analytics-Aufträge werden in eine vorhandene Tabelle in einer Azure SQL-Datenbank geschrieben. Beachten Sie, dass das Tabellenschema genau den Feldern und deren Typen entsprechen muss, die aus Ihrem Auftrag ausgegeben werden. Ein [Azure SQL Data Warehouse](https://azure.microsoft.com/documentation/services/sql-data-warehouse/) kann auch über die SQL-Datenbank-Ausgabeoption als Ausgabe angegeben werden (diese Funktionen steht Ihnen im Vorschauportal zur Verfügung). Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Beschreibungen zum Erstellen einer SQL-Datenbank-Ausgabe.
 
 | Eigenschaftenname | Beschreibung |
 |---------------|-------------|
@@ -37,7 +87,7 @@ Um verschiedene Anwendungsmuster zu ermöglichen, stellt Azure Stream Analytics 
 | Kennwort | Das Kennwort, um eine Verbindung zur Datenbank herzustellen. |
 | Tabelle | Der Name der Tabelle, in die die Ausgabe geschrieben wird. Beim Tabellennamen muss die Groß-/Kleinschreibung beachtet werden. Das Schema dieser Tabelle sollte genau der Anzahl Felder und ihrer Typen entsprechen, die von der Auftragsausgabe generiert werden. |
 
-## Blob-Speicher ##
+## Blob-Speicher
 
 Blobspeicher bietet eine kostengünstige und skalierbare Lösung zum Speichern von großen Mengen unstrukturierter Daten in der Cloud. Eine Einführung in Azure-Blob-Speicher und dessen Nutzung finden Sie in der Dokumentation unter [Verwenden des Blob-Speichers mit .NET](../storage/storage-dotnet-how-to-use-blobs.md).
 
@@ -114,6 +164,7 @@ Es gibt einige Parameter, die erforderlich sind, um Event Hub-Datenströme als A
 | Codieren | Bei CSV und JSON ist UTF-8 gegenwärtig das einzige unterstützte Codierungsformat. |
 | Trennzeichen | Gilt nur für die CSV-Serialisierung. Stream Analytics unterstützt eine Reihe von üblichen Trennzeichen zum Serialisieren der Daten im CSV-Format. Unterstützte Werte sind Komma, Semikolon, Leerzeichen, Tabulator und senkrechter Strich. |
 | Format | Gilt nur für den JSON-Typ. "Separate Zeile" gibt an, dass die Ausgabe so formatiert wird, dass jedes JSON-Objekt in einer neuen Zeile enthalten ist. "Array" gibt an, dass die Ausgabe als Array aus JSON-Objekten formatiert wird. |
+
 ## Power BI
 
 [Power BI](https://powerbi.microsoft.com/) kann als Ausgabe für einen Stream Analytics-Auftrag verwendet werden, um eine umfassende Visualisierungsumgebung für die Analyseergebnisse bereitzustellen. Diese Funktionalität kann für betriebliche Dashboards, die Erstellung von Berichten und eine metrikgesteuerte Berichterstellung verwendet werden.
@@ -267,4 +318,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

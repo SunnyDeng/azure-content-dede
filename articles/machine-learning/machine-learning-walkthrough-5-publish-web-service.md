@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Schritt 5: Bereitstellen des Machine Learning-Webdiensts | Microsoft Azure"
-	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 5: Bereitstellen eines Vorhersageexperiments als Webdienst in Machine Learning Studio."
+	pageTitle="Schritt 5: Bereitstellen des Machine Learning-Webdiensts | Microsoft Azure"
+	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 5: Bereitstellen eines Vorhersageexperiments als Webdienst in Machine Learning Studio."
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/03/2016"
+	ms.date="03/09/2016"
 	ms.author="garye"/>
 
 
-# Anleitung Schritt 5: Bereitstellen des Azure Machine Learning-Webdiensts
+# Anleitung Schritt 5: Bereitstellen des Azure Machine Learning-Webdiensts
 
 Dies ist der fünfte Schritt der exemplarischen Vorgehensweise zum [Predictive Analytics-Lösung in Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
@@ -91,8 +91,7 @@ Unser Experiment sollte nun wie folgt aussehen:
 
 Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **Ausführen**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls [Score Model][score-model] und wählen **Ergebnisse anzeigen**. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko („Bewertete Beschriftungen“)' und dem Bewertungswahrscheinlichkeitswert („Bewertete Wahrscheinlichkeiten“) angezeigt werden.
 
-##
-Bereitstellen des Webdiensts
+## Bereitstellen des Webdiensts
 
 Zum Bereitstellen eines aus dem Experiment abgeleiteten Webdiensts klicken Sie unter dem Bereich auf **Webdienst bereitstellen**. Machine Learning Studio stellt das Experiment als Webdienst bereit und führt Sie zum Dashboard dieses Webdiensts. Von hier aus können Sie zum Experiment zurückkehren (**View snapshot** oder **View latest**) und einen einfachen Test des Webdiensts ausführen (Schaltfläche **Test** – siehe **Testen des Webdiensts** weiter unten). Dort befinden sich auch Informationen zum Erstellen von Anwendungen, die auf den Webdienst zugreifen können (mehr dazu im nächsten Schritt dieser exemplarischen Vorgehensweise).
 
@@ -155,4 +154,4 @@ Weitere Informationen finden Sie unter:
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
 [project-columns]: https://msdn.microsoft.com/de-DE/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0316_2016-->

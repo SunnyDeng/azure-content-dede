@@ -24,7 +24,7 @@ Wenn Sie **Aufträge für die elastische Datenbank** bereits aus einem vorhanden
 
 ## Voraussetzungen
 * Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/).
-* Azure PowerShell, Version >= 0.8.16. Installieren Sie die neueste Version (0.9.5) mithilfe des [Webplattform-Installationsprogramms](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+* Azure PowerShell. Installieren Sie die neueste Version mithilfe des [Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376). Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 * Zum Installieren des Pakets der Aufträge für die elastische Datenbank wird das [NuGet-Befehlszeilenhilfsprogramm](https://nuget.org/nuget.exe) verwendet. Weitere Informationen finden Sie unter http://docs.nuget.org/docs/start-here/installing-nuget.
 
 ## Herunterladen und Importieren des PowerShell-Pakets der Aufträge für die elastische Datenbank
@@ -154,7 +154,7 @@ Zum Aktualisieren der Größe der VM einer Installation führen Sie das folgende
 Nachdem Sie einen [elastischen Datenbankpool erstellt](sql-database-elastic-pool-portal.md) haben, können Sie die Komponenten der **Aufträge für die elastische Datenbank** installieren, um die Ausführung von Verwaltungsaufgaben für jede der Datenbanken im elastischen Datenbankpool zu ermöglichen. Anders als bei der Verwendung der PowerShell-APIs für die **Aufträge für die elastische Datenbank**, ist die Portalschnittstelle aktuell auf die Ausführung auf einem vorhandenen Pool beschränkt.
 
 
-**Geschätzter Zeitaufwand:** 10 Minuten.
+**Geschätzter Zeitaufwand:** 10 Minuten.
 
 1. Klicken Sie in der Dashboardansicht des elastischen Datenbankpools im [Azure-Portal](https://ms.portal.azure.com/#) auf **Auftrag erstellen**.
 2. Wenn Sie zum ersten Mal einen Auftrag erstellen, müssen Sie **Aufträge für die elastische Datenbank** installieren, indem Sie auf **PREVIEW TERMS** klicken. 
@@ -188,4 +188,4 @@ Stellen Sie sicher, dass Anmeldeinformationen mit den passenden Rechten für die
 [4]: ./media/sql-database-elastic-jobs-service-installation/not-done.png
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -81,7 +81,9 @@ In der aktuellen Vorversion von SQL Server 2016 haben Stretch-fähige Tabellen d
 
 -   Sie können keine UPDATE- oder DELETE-Vorgänge für eine Stretch-fähige Tabelle ausführen.
 
--   Sie können nichts in die Azure SQL-Datenbank-Remotetabelle einfügen.
+-   Sie können in einem verknüpften Server keinen INSERT in eine Tabelle, für die Stretch aktiviert ist, als Remotevorgang vornehmen.
+
+-   Sie können bei Tabellen, für die Stretch aktiviert ist, keine Replikation verwenden.
 
 -   Sie können keinen Index für eine Sicht erstellen, die Stretch-fähige Tabellen enthält.
 
@@ -90,6 +92,11 @@ In der aktuellen Vorversion von SQL Server 2016 haben Stretch-fähige Tabellen d
 -   Filter für Indizes werden nicht an die Remotetabelle weitergegeben.
 
 ## Weitere Informationen
-[Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank durch Ausführen von Stretch Database Advisor](sql-server-stretch-database-identify-databases.md) [Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md) [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+[Identifizieren von Datenbanken und Tabellen für Stretch-Datenbank durch Ausführen von Stretch Database Advisor](sql-server-stretch-database-identify-databases.md)
+
+[Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md)
+
+[Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
+
+<!---HONumber=AcomDC_0316_2016-->

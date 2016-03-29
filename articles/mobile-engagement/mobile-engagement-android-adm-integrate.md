@@ -21,7 +21,7 @@
 
 > [AZURE.IMPORTANT] Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 >
-> Das vorliegende Dokument ist nur hilfreich, wenn Sie das Reach-Modul für die jederzeitige Kampagnenunterstützung integriert haben. Lesen Sie zunächst das Dokument "So integrieren Sie Engagement Reach auf Android", um Informationen zum Integrieren von Reach-Kampagnen zu erhalten.
+> Dieses Dokument ist nur relevant, wenn Sie das Reach-Modul bereits integriert haben und Pushübertragungen an Amazon-Geräte planen. Lesen Sie zunächst das Dokument "So integrieren Sie Engagement Reach auf Android", um Informationen zum Integrieren von Reach-Kampagnen zu erhalten.
 
 ##Einführung
 
@@ -102,14 +102,11 @@ Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei `AndroidM
 
 ##Gewähren von OAuth-Anmeldeinformationen für Engagement
 
-Übermitteln Sie Ihre OAuth-Anmeldeinformationen (Client-ID und Clientschlüssel) an $/#application/YOUR\_APPID/native-push.
-
-Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Option "Any Time "(Jederzeit) auswählen.
-
+Übermitteln Sie Ihre OAuth-Anmeldeinformationen (Client-ID und geheimen Clientschlüssel) in das Engagement-Portal.
 
 [<https://developer.amazon.com/sdk/adm/credentials.html>]: https://developer.amazon.com/sdk/adm/credentials.html
 [ADM-Clientbibliothek]: https://developer.amazon.com/sdk/adm/setup.html
 [ADM-Integration]: https://developer.amazon.com/sdk/adm/integrating-app.html
 [dieses Verfahren]: https://developer.amazon.com/sdk/adm/integrating-app.html#Asset
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

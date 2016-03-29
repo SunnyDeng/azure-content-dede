@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="02/29/2016"
+   ms.date="03/10/2016"
    ms.author="tomfitz"/>
 
 # Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager
@@ -337,13 +337,13 @@ Sie haben eine Active Directory-Anwendung und einen Dienstprinzipal für diese A
 
 Wenn Sie sich als Dienstprinzipal manuell anmelden möchten, können Sie den Befehl **azure login** ausführen. Sie müssen die Mandanten-ID, Anwendungs-ID und das Kennwort angeben. Das direkte Hinzufügen eines Kennworts zu einem Skript ist nicht sicher, da das Kennwort in der Datei gespeichert wird. Im nächsten Abschnitt wird eine bessere Möglichkeit für die Ausführung eines automatisierten Skripts vorgestellt.
 
-1. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält. Sie müssen die öffnenden und schließenden doppelten Anführungszeichen, die von der JSON-Ausgabe zurückgegeben werden, entfernen, ehe das Übergeben als Parameter erfolgt.
+1. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält. Wenn Sie die Mandanten-ID für das derzeit authentifizierte Abonnement abrufen, müssen Sie nicht die Abonnement-ID als Parameter angeben. Mit dem Switch **-r** wird der Wert ohne Anführungszeichen abgerufen.
 
-        tenantId=$(azure account show -s <subscriptionId> --json | jq '.[0].tenantId' | sed -e 's/^"//' -e 's/"$//')
+        tenantId=$(azure account show -s <subscriptionId> --json | jq -r '.[0].tenantId')
 
 2. Verwenden Sie als Benutzernamen die **AppId**, die Sie beim Erstellen des Dienstprinzipals verwendet haben. Wenn Sie die Anwendungs-ID abrufen müssen, führen Sie den folgenden Befehl aus. Geben Sie den Namen der Active Directory-Anwendung im **search**-Parameter an.
 
-        appId=$(azure ad app show --search exampleapp --json | jq '.[0].appId' | sed -e 's/^"//' -e 's/"$//')
+        appId=$(azure ad app show --search exampleapp --json | jq -r '.[0].appId')
 
 3. Melden Sie sich als Dienstprinzipal an.
 
@@ -363,19 +363,19 @@ Dieser Abschnitt zeigt, wie Sie sich als Dienstprinzipal anmelden, ohne die Anme
 
 > [AZURE.NOTE] Das direkte Hinzufügen eines Kennworts zu Ihrer Azure-CLI ist nicht sicher, da das Kennwort als Text verfügbar gemacht wird. Verwenden Sie stattdessen einen Dienst wie Azure Key Vault zum Speichern des Kennworts, und rufen Sie es beim Ausführen des Skripts ab.
 
-Diese Schritte setzen voraus, dass Sie einen Schlüsseltresor mit einem geheimen Schlüssel eingerichtet haben, in dem das Kennwort gespeichert wird. Informationen zum Bereitstellen eines Schlüsseltresors und geheimen Schlüssels finden Sie unter [Key Vault-Vorlagenformat](). Allgemeine Informationen zu Key Vault finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](./key-vault/key-vault-get-started.md).
+Diese Schritte setzen voraus, dass Sie einen Schlüsseltresor mit einem geheimen Schlüssel eingerichtet haben, in dem das Kennwort gespeichert wird. Informationen zum Bereitstellen eines Schlüsseltresors und geheimen Schlüssels finden Sie unter [Key Vault-Vorlagenformat](). Informationen zu Schlüsseltresoren finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](./key-vault/key-vault-get-started.md).
 
-1. Rufen Sie Ihr Kennwort (das im nachstehenden Beispiel als geheimer Schlüssel mit dem Namen **appPassword** gespeichert wurde) aus dem Schlüsseltresor ab. Sie müssen die öffnenden und schließenden doppelten Anführungszeichen, die von der JSON-Ausgabe zurückgegeben werden, entfernen, ehe das Übergeben als Kennwortparameter erfolgt.
+1. Rufen Sie Ihr Kennwort (das im nachstehenden Beispiel als geheimer Schlüssel mit dem Namen **appPassword** gespeichert wurde) aus dem Schlüsseltresor ab. Fügen Sie den Switch **-r** ein, um die öffnenden und schließenden doppelten Anführungszeichen zu entfernen, die von der JSON-Ausgabe zurückgegeben werden.
 
-        secret=$(azure keyvault secret show --vault-name examplevault --secret-name appPassword --json | jq '.value' | sed -e 's/^"//' -e 's/"$//')
+        secret=$(azure keyvault secret show --vault-name examplevault --secret-name appPassword --json | jq -r '.value')
     
-2. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält.
+2. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält. Wenn Sie die Mandanten-ID für das derzeit authentifizierte Abonnement abrufen, müssen Sie nicht die Abonnement-ID als Parameter angeben.
 
-        tenantId=$(azure account show -s <subscriptionId> --json | jq '.[0].tenantId' | sed -e 's/^"//' -e 's/"$//')
+        tenantId=$(azure account show -s <subscriptionId> --json | jq -r '.[0].tenantId')
 
 3. Verwenden Sie als Benutzernamen die **AppId**, die Sie beim Erstellen des Dienstprinzipals verwendet haben. Wenn Sie die Anwendungs-ID abrufen müssen, führen Sie den folgenden Befehl aus. Geben Sie den Namen der Active Directory-Anwendung im **search**-Parameter an.
 
-        appId=$(azure ad app show --search exampleapp --json | jq '.[0].appId' | sed -e 's/^"//' -e 's/"$//')
+        appId=$(azure ad app show --search exampleapp --json | jq -r '.[0].appId')
 
 4. Melden Sie sich als Dienstprinzipal an, indem Sie die Anwendungs-ID, das Kennwort aus dem Schlüsseltresor und die Mandanten-ID angeben.
 
@@ -460,13 +460,13 @@ Sie haben eine Active Directory-Anwendung und einen Dienstprinzipal für diese A
 
         30996D9CE48A0B6E0CD49DBB9A48059BF9355851
 
-2. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält.
+2. Bestimmen Sie die **TenantId** des Abonnements, das den Dienstprinzipal enthält. Wenn Sie die Mandanten-ID für das derzeit authentifizierte Abonnement abrufen, müssen Sie nicht die Abonnement-ID als Parameter angeben. Mit dem Switch **-r** wird der Wert ohne Anführungszeichen abgerufen.
 
-        tenantId=$(azure account show -s <subscriptionId> --json | jq '.[0].tenantId' | sed -e 's/^"//' -e 's/"$//')
+        tenantId=$(azure account show -s <subscriptionId> --json | jq -r '.[0].tenantId')
 
 3. Verwenden Sie als Benutzernamen die **AppId**, die Sie beim Erstellen des Dienstprinzipals verwendet haben. Wenn Sie die Anwendungs-ID abrufen müssen, führen Sie den folgenden Befehl aus. Geben Sie den Namen der Active Directory-Anwendung im **search**-Parameter an.
 
-        appId=$(azure ad app show --search exampleapp --json | jq '.[0].appId' | sed -e 's/^"//' -e 's/"$//')
+        appId=$(azure ad app show --search exampleapp --json | jq -r '.[0].appId')
 
 4. Geben Sie für die Authentifizierung mit Azure-CLI den Zertifikatfingerabdruck, die Zertifikatdatei, Anwendungs-ID und Mandanten-ID an.
 
@@ -506,7 +506,7 @@ Zur Authentifizierung aus einer .NET-Anwendung heraus fügen Sie folgenden Code 
     var creds = new TokenCloudCredentials(subscriptionId, token.AccessToken); 
     var client = new ResourceManagementClient(creds); 
        
-Weitere Informationen zur Verwendung von Zertifikaten und Azure-CLI finden Sie unter [Certificate-based auth with Azure Service Principals from Linux command line](http://blogs.msdn.com/b/arsen/archive/2015/09/18/certificate-based-auth-with-azure-service-principals-from-linux-command-line.aspx) (Zertifikatbasierte Authentifizierung mit Azure-Dienstprinzipalen über Linux-Befehlszeile).
+Weitere Informationen zur Verwendung von Zertifikaten und der Azure-Befehlszeilenschnittstelle finden Sie unter [Certificate-based auth with Azure Service Principals from Linux command line](http://blogs.msdn.com/b/arsen/archive/2015/09/18/certificate-based-auth-with-azure-service-principals-from-linux-command-line.aspx) (Zertifikatbasierte Authentifizierung mit Azure-Dienstprinzipalen über Linux-Befehlszeile).
 
 ## Nächste Schritte
   
@@ -517,4 +517,4 @@ Weitere Informationen zur Verwendung von Zertifikaten und Azure-CLI finden Sie u
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

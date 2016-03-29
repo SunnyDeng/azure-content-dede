@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/12/2016" 
+	ms.date="03/14/2016" 
 	ms.author="spelluru"/>
 
 # Überwachen und Verwalten von Azure Data Factory-Pipelines mit der neuen App „Überwachung und Verwaltung“
@@ -24,7 +24,7 @@
 In diesem Artikel wird das Überwachen, Verwalten und Debuggen Ihrer Pipelines mithilfe der **App "Überwachung und Verwaltung"** beschrieben. Ferner wird erläutert, wie mithilfe dieser Anwendung Warnungen erstellt und Benachrichtigungen bei Fehlern eingerichtet werden.
       
 ## Starten der App „Überwachung und Verwaltung“ 
-Klicken Sie zum Starten der App "Überwachung und Verwaltung" auf dem Blatt Ihrer Data Factory auf der Kachel **DATA FACTORY** auf **Überwachungs-App**.
+Klicken Sie zum Starten der App „Überwachung und Verwaltung“ auf dem Blatt **Überwachung & Verwaltung** Ihrer Data Factory auf die Kachel **DATA FACTORY**.
 
 ![Kachel „Überwachung“ auf der Data Factory-Startseite](./media/data-factory-monitor-manage-app/MonitoringAppTile.png)
 
@@ -32,21 +32,24 @@ Die gestartete App „Überwachung und Verwaltung“ sollte auf einer separaten 
 
 ![App „Überwachung und Verwaltung“](./media/data-factory-monitor-manage-app/AppLaunched.png)
 
+> [AZURE.NOTE] Wenn Sie in der Liste unten keine Aktivitätsfenster sehen, klicken Sie auf die Schaltfläche **Aktualisieren** in der Symbolleiste, um die Liste zu aktualisieren. Legen Sie darüber hinaus die richtigen Werte für die **Startzeit**- und **Endzeit**-Filter fest.
+
 ## Grundlegendes zur App „Überwachung und Verwaltung“
-Links befinden sich drei Registerkarten (**Ressourcen-Explorer**, **Überwachungsansichten** und **Warnungen**). Die erste Registerkarte (Ressourcen-Explorer) ist standardmäßig ausgewählt.
+Links befinden sich drei Registerkarten: (**Ressourcen-Explorer**, **Überwachungsansichten** und **Warnungen**). Die erste Registerkarte (Ressourcen-Explorer) ist standardmäßig ausgewählt.
 
 ### Ressourcen-Explorer
-Die **Strukturansicht** von Ressourcen-Explorer sehen Sie im linken Bereich, die **Diagrammansicht** oben und die Liste **Aktivitätsfenster** im mittleren Bereich unten. Die Registerkarten **Eigenschaften/Aktivitätsfenster-Explorer** werden rechts angezeigt.
+Die **Strukturansicht** des Ressourcen-Explorers sehen Sie im linken Bereich, die **Diagrammansicht** oben und die Liste **Aktivitätsfenster** im mittleren Bereich unten. Die Registerkarten **Eigenschaften**/**Aktivitätsfenster-Explorer** werden rechts angezeigt.
 
 Sie können alle Ressourcen (Pipelines, Datasets, verknüpfte Dienste) in der Data Factory in einer Strukturansicht anzeigen. Wenn Sie ein Objekt im Ressourcen-Explorer auswählen, sehen Sie Folgendes:
 
 - die zugeordnete Data Factory-Entität ist in der Diagrammansicht hervorgehoben.
-- Zugeordnete Aktivitätsfenster sind in der Liste „Aktivitätsfenster“ unten hervorgehoben. (Klicken Sie [hier](data-factory-scheduling-and-execution.md), um mehr zu Aktivitätsfenstern zu erfahren.)  
+- Zugeordnete Aktivitätsfenster sind in der Liste „Aktivitätsfenster“ unten hervorgehoben (Klicken Sie [hier](data-factory-scheduling-and-execution.md), um mehr über Aktivitätsfenster zu erfahren.).  
 - Eigenschaften des ausgewählten Objekts im Fenster „Eigenschaften“ im rechten Bereich. 
+- Die JSON-Definition des ausgewählten Objekts, falls anwendbar. Zum Beispiel: ein verknüpfter Dienst, ein Dataset oder eine Pipeline. 
 
 ![Ressourcen-Explorer](./media/data-factory-monitor-manage-app/ResourceExplorer.png)
 
-Im Artikel [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie ausführliche konzeptionelle Informationen zum Aktivitätsfenster.
+Im Artikel [Planung und Ausführung mit Data Factory](data-factory-scheduling-and-execution.md) finden Sie ausführliche, grundlegende Informationen zum Aktivitätsfenster.
 
 ### Diagrammansicht
 Die Diagrammansicht einer Data Factory bietet eine zentrale Konsole zum Überwachen und Verwalten der Data Factory und ihrer Ressourcen. Wenn Sie in der Diagrammansicht eine Data Factory-Entität (Dataset bzw. Pipeline) auswählen, sehen Sie Folgendes:
@@ -67,7 +70,7 @@ Durch Klicken bei gedrückter STRG-Taste können zwei oder mehrere Pipelines aus
 
 ![Fortsetzen/Anhalten auf Befehlsleiste](./media/data-factory-monitor-manage-app/SuspendResumeOnCommandBar.png)
 
-Sie können alle Aktivitäten in der Pipeline anzeigen, indem Sie mit der rechten Maustaste auf die Pipeline klicken und dann auf **Pipeline öffnen** klicken.
+Sie können alle Aktivitäten in der Pipeline anzeigen, indem Sie mit der rechten Maustaste auf die Pipelinekachel und dann auf **Pipeline öffnen** klicken.
 
 ![Menü „Pipeline öffnen“](./media/data-factory-monitor-manage-app/OpenPipelineMenu.png)
 
@@ -86,6 +89,14 @@ Klicken Sie auf ein Aktivitätsfenster, um im rechten Bereich im Fenster **Eigen
 Wechseln Sie im rechten Bereich zur Registerkarte **Aktivitätsfenster-Explorer**, um weitere Details anzuzeigen.
 
 ![Aktivitätsfenster-Explorer](./media/data-factory-monitor-manage-app/ActivityWindowExplorer.png)
+
+Sie können im Bereich **Versuche** auch **aufgelöste Variablen** für jeden Aktivitätsausführungsversuch sehen.
+
+![Aufgelöste Variablen](./media/data-factory-monitor-manage-app/ResolvedVariables.PNG)
+
+Wechseln Sie zur Registerkarte **Skript**, um die JSON-Skriptdefinition für das ausgewählte Objekt anzuzeigen.
+
+![Registerkarte „Skript“](./media/data-factory-monitor-manage-app/ScriptTab.png)
 
 Sie können das Aktivitätsfenster an drei Stellen sehen:
 
@@ -170,12 +181,12 @@ Das Aktivitätsfenster kann einen der folgenden Status haben:
 </table>
 
 
-Wenn Sie in der Liste auf ein Aktivitätsfenster klicken, sehen Sie auf der rechten Seiten im Aktivitätsfenster-Explorer oder im Fenster „Eigenschaften“ Details zum Aktivitätsfenster.
+Wenn Sie in der Liste auf ein Aktivitätsfenster klicken, sehen Sie auf der rechten Seite im **Aktivitätsfenster-Explorer** oder im Fenster **Eigenschaften** Details zum Aktivitätsfenster.
 
 ![Aktivitätsfenster-Explorer](./media/data-factory-monitor-manage-app/ActivityWindowExplorer-2.png)
 
 ### Aktualisieren von Aktivitätsfenstern  
-Die Details werden nicht automatisch aktualisiert, weshalb Sie auf der Befehlsleiste auf die (zweite) Schaltfläche **Aktualisieren** klicken müssen, um die Liste der Aktivitätsfenster manuell zu aktualisieren.
+Die Details werden nicht automatisch aktualisiert, weshalb Sie in der Befehlsleiste auf die (zweite) Schaltfläche **Aktualisieren** klicken müssen, um die Liste der Aktivitätsfenster manuell zu aktualisieren.
  
 
 ### Fenster „Eigenschaften“
@@ -187,17 +198,21 @@ Es zeigt Eigenschaften für das im Ressourcen-Explorer (Strukturansicht) oder in
 
 ### Aktivitätsfenster-Explorer
 
-Das Fenster „Aktivitätsfenster-Explorer“ wird in der App „Überwachung und Verwaltung“ ganz rechts angezeigt. Es zeigt Details zum im Einblendfenster „Aktivitätsfenster“ oder in der Liste „Aktivitätsfenster“ ausgewählten Aktivitätsfenster.
+Das Fenster **Aktivitätsfenster-Explorer** wird in der App „Überwachung und Verwaltung“ ganz rechts angezeigt. Es zeigt Details zum im Einblendfenster „Aktivitätsfenster“ oder in der Liste „Aktivitätsfenster“ ausgewählten Aktivitätsfenster.
 
 ![Aktivitätsfenster-Explorer](./media/data-factory-monitor-manage-app/ActivityWindowExplorer-3.png)
 
-Sie können zu einem anderen Aktivitätsfenster wechseln, indem Sie in der Kalenderansicht oben darauf klicken. Sie können auch oben auf die Schaltflächen **Pfeil nach links/Pfeil nach rechts** klicken, um Aktivitätsfenster in der vorherigen oder nächsten Woche anzuzeigen.
+Sie können zu einem anderen Aktivitätsfenster wechseln, indem Sie in der Kalenderansicht oben darauf klicken. Sie können auch oben auf die Schaltflächen **Pfeil nach links**/**Pfeil nach rechts** klicken, um die Aktivitätsfenster der vorherigen/nächsten Woche anzuzeigen.
 
-Sie können im unteren Bereich auf der Symbolleiste auf die Schaltflächen klicken, um das Aktivitätsfenster zu **erneut aufzurufen** oder die Details im Bereich zu **aktualisieren**.
+Sie können im unteren Bereich in der Symbolleiste auf die Schaltflächen klicken, um das Aktivitätsfenster **erneut aufzurufen** oder die Details im Bereich zu **aktualisieren**.
 
+### Skript 
+Sie können die Registerkarte **Skript** verwenden, um die JSON-Definition der ausgewählten Data Factory-Entität (verknüpfter Dienst, Dataset und Pipeline) anzuzeigen.
+
+![Registerkarte „Skript“](./media/data-factory-monitor-manage-app/ScriptTab.png)
 
 ## Verwenden von Systemsichten
-Die App "Überwachung und Verwaltung" bietet vordefinierte Systemansichten (**Letzte Aktivitätsfenster**, **Fehlerhafte Aktivitätsfenster**, **In Bearbeitung befindliche Aktivitätsfenster**), in denen Sie die entsprechenden Aktivitätsfenster für Ihre Data Factory anzeigen können.
+Die App „Überwachung und Verwaltung“ bietet vordefinierte Systemansichten (**Letzte Aktivitätsfenster**, **Fehlerhafte Aktivitätsfenster**, **In Bearbeitung befindliche Aktivitätsfenster**), in denen Sie die entsprechenden Aktivitätsfenster für Ihre Data Factory anzeigen können.
 
 Wechseln Sie zur Registerkarte **Überwachungsansichten** auf der linken Seite, indem Sie darauf klicken.
 
@@ -205,7 +220,7 @@ Wechseln Sie zur Registerkarte **Überwachungsansichten** auf der linken Seite, 
 
 Derzeit werden drei Systemsichten unterstützt. Wählen Sie eine Option, um in der Liste „Aktivitätsfenster“ (unten im mittleren Bereich) die letzten Aktivitätsfenster oder fehlerhafte Aktivitätsfenster oder in Bearbeitung befindliche Aktivitätsfenster anzuzeigen.
 
-Bei der Wahl der Option **Letzte Aktivitätsfenster** finden Sie die letzten Aktivitätsfenster in absteigender Reihenfolge basierend auf dem **Zeitpunkt des letzten Versuchs**.
+Bei der Wahl der Option **Letzte Aktivitätsfenster** sehen Sie die letzten Aktivitätsfenster in absteigender Reihenfolge basierend auf dem **Zeitpunkt des letzten Versuchs**.
 
 Sie können die Option **Fehlerhafte Aktivitätsfenster** nutzen, um alle fehlerhaften Aktivitätsfenster in der Liste anzuzeigen. Wählen Sie ein fehlerhaftes Aktivitätsfenster in der Liste aus, um Details dazu im Fenster **Eigenschaften** oder im **Aktivitätsfenster-Explorer** anzuzeigen. Sie können für fehlerhafte Aktivitätsfenster auch Protokolle herunterladen.
 
@@ -217,7 +232,7 @@ Sie können die Option **Fehlerhafte Aktivitätsfenster** nutzen, um alle fehler
 
 > [AZURE.NOTE] Derzeit haben alle Zeiten in der App „Überwachung und Verwaltung“ das UTC-Format.
 
-Klicken Sie in der Liste **Aktivitätsfenster** auf den Namen einer Spalte (z. B. "Status").
+Klicken Sie in der Liste **Aktivitätsfenster** auf den Namen einer Spalte (z. B. „Status“).
 
 ![Liste „Aktivitätsfenster“, Spaltenmenü](./media/data-factory-monitor-manage-app/ActivityWindowsListColumnMenu.png)
 
@@ -239,7 +254,7 @@ Im selben Fenster können Sie Filter aufheben. Um alle Filter für die Liste „
 ## Durchführen von Batchaktionen
 
 ### Wiederholen ausgewählter Aktivitätsfenster
-Wählen Sie ein Aktivitätsfenster aus, klicken Sie für die erste Befehlsleisten-Schaltfläche auf den Pfeil nach unten, und wählen Sie **Wiederholen**/**Mit vorgelagerter Aktivität in der Pipeline wiederholen** aus. Bei Wahl der Option **Mit vorgelagerter Aktivität in der Pipeline wiederholen** werden alle vorgelagerten Aktivitätsfenster ebenfalls wiederholt. ![Wiederholen eines Aktivitätsfensters](./media/data-factory-monitor-manage-app/ReRunSlice.png)
+Wählen Sie ein Aktivitätsfenster aus, klicken Sie für die erste Befehlsleisten-Schaltfläche auf den Pfeil nach unten, und wählen Sie **Wiederholen**/**Mit Upstream in der Pipeline wiederholen** aus. Bei Wahl der Option **Mit Upstream in der Pipeline wiederholen** werden alle Upstream-Aktivitätsfenster ebenfalls wiederholt. ![Wiederholen eines Aktivitätsfensters](./media/data-factory-monitor-manage-app/ReRunSlice.png)
 
 Sie können auch mehrere Aktivitätsfenster in der Liste auswählen und diese gleichzeitig wiederholen. Sie können Aktivitätsfenster basierend auf dem Status (z. B. **Fehlerhaft**) filtern und das fehlerhafte Aktivitätsfenster wiederholen, nachdem Sie den Fehler behoben haben, der den Fehler des Aktivitätsfenster verursacht hat. Im folgenden Abschnitt finden Sie Details zum Filtern von Aktivitätsfenstern in der Liste.
 
@@ -268,7 +283,7 @@ Auf der Seite „Warnungen“ können Sie eine neue Warnung erstellen bzw. vorha
 2. Wählen Sie das **Ereignis**, den **Status** und den **Unterstatus** (optional) für die Warnung durch den Data Factory-Dienst aus, und klicken Sie auf **Weiter**. Daraufhin sollte die Seite **Empfänger** angezeigt werden.
 
 	![Warnung erstellen – Seite „Empfänger“](./media/data-factory-monitor-manage-app/CreateAlertRecipientsPage.png) 
-3. Wählen Sie **E-Mail-Abonnementadministratoren** aus, und/oder füllen Sie **E-Mail an weiteren Administrator** aus, und klicken Sie auf **Fertig stellen**. Sie sollten die Warnung in der Liste sehen. 
+3. Wählen Sie **E-Mail-Abonnementadministratoren** aus, und/oder füllen Sie **E-Mail an weiteren Administrator** aus, und klicken Sie auf **Fertigstellen**. Sie sollten die Warnung in der Liste sehen. 
 	
 	![Liste „Warnungen“](./media/data-factory-monitor-manage-app/AlertsList.png)
 
@@ -281,7 +296,7 @@ Ereignisname | Status | Unterstatus
 -------------- | ------ | ----------
 Aktivitätsausführung gestartet | Gestartet | Wird gestartet
 Aktivitätsausführung beendet | Succeeded | Succeeded 
-Aktivitätsausführung beendet | Fehler| Fehlerhafte Ressourcenzuordnung <br/><br/>Fehlerhafte Ausführung<br/><br/>Timeout<br/><br/>Fehlerhafte Überprüfung<br/><br/>Abgebrochen
+Aktivitätsausführung beendet | Fehler| Fehlerhafte Ressourcenzuordnung <br/><br/>Fehlerhafte Ausführung<br/><br/>Zeitüberschreitung<br/><br/>Fehlerhafte Überprüfung<br/><br/>Abgebrochen
 Bedarfsgesteuerte Erstellung eines HDI-Clusters gestartet | Gestartet | &nbsp; |
 Bedarfsgesteuerte Erstellung eines HDI-Clusters erfolgreich | Succeeded | &nbsp; |
 Bedarfsgesteuert erstellten HDI-Cluster gelöscht | Succeeded | &nbsp; |
@@ -295,4 +310,4 @@ Bedarfsgesteuert erstellten HDI-Cluster gelöscht | Succeeded | &nbsp; |
     
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

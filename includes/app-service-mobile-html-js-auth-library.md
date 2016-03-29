@@ -72,4 +72,4 @@ fetch(url)
 
 Sie können auch JQuery oder eine andere AJAX-API zum Abrufen der Informationen verwenden. Daten werden als JSON-Objekt empfangen.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!-----HONumber=AcomDC_0309_2016-->

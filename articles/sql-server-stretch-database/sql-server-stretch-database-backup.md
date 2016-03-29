@@ -17,7 +17,7 @@
 	ms.author="douglasl"/>
 
 
-# Sichern und Wiederherstellen von Stretch-fähigen Datenbanken 
+# Sichern und Wiederherstellen von Stretch-fähigen Datenbanken
 
 Zum Sichern und Wiederherstellen von Stretch-fähigen Datenbanken können Sie weiterhin die bereits verwendeten Methoden nutzen. Weitere Informationen zum SQL Server-Backup und zur Wiederherstellung finden Sie unter [Sichern und Wiederherstellen von SQL Server-Datenbanken](https://msdn.microsoft.com/library/ms187048.aspx).
 
@@ -59,7 +59,12 @@ Nachdem Sie die Verbindung erneut hergestellt haben, versucht Stretch-Datenbank,
 ![Stretch-Datenbank nach dem Backup][StretchBackupImage4]
 
 ## Weitere Informationen
-[Verwalten von Stretch-Datenbank und Behandeln von Problemen ](sql-server-stretch-database-manage.md) [sys.sp\_rda\_reauthorize\_db (Transact-SQL)](https://msdn.microsoft.com/library/mt131016.aspx) [Sichern und Wiederherstellen von SQL Server-Datenbanken](https://msdn.microsoft.com/library/ms187048.aspx)
+
+[Verwalten von Stretch Database und Behandeln von Problemen ](sql-server-stretch-database-manage.md)
+
+[Sys.sp\_rda\_reauthorize\_db (Transact-SQL)](https://msdn.microsoft.com/library/mt131016.aspx)
+
+[Sichern und Wiederherstellen von SQL Server-Datenbanken](https://msdn.microsoft.com/library/ms187048.aspx)
 
 <!--Image references-->
 [StretchBackupImage1]: ./media/sql-server-stretch-database-backup/StretchDBBackup1.png
@@ -67,4 +72,4 @@ Nachdem Sie die Verbindung erneut hergestellt haben, versucht Stretch-Datenbank,
 [StretchBackupImage3]: ./media/sql-server-stretch-database-backup/StretchDBBackup3.png
 [StretchBackupImage4]: ./media/sql-server-stretch-database-backup/StretchDBBackup4.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="storage-backup-recovery"
-   ms.date="11/27/2015"
+   ms.date="03/14/2016"
    ms.author="markgal; jimpark"/>
 
 # Behandeln verschlüsselter Festplatten während der Sicherung virtueller Computer
@@ -62,4 +62,4 @@ Wenn Sie für virtuelle Computer mit Sicherungen einen Rollover der Schlüssel d
 - [Deployment guide – PDF (in englischer Sprache)](http://www.cloudlinktech.com/Azure/CL_SecureVM_4_0_DG_EMC_Azure_R2.pdf)
 - [Deploying and using SecureVM – Video (in englischer Sprache)](https://www.youtube.com/watch?v=8AIRe92UDNg)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

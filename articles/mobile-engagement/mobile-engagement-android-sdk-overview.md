@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="02/01/2016"
+	ms.date="03/10/2016"
 	ms.author="piyushjo" />
 
 
@@ -35,9 +35,10 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-android-sdk-content.md) anzuz
 
 ##Versionshinweise
 
-##4\.1.5 (01.02.2016)
+##4\.2.0 (03/11/2016)
 
-- Verbesserungen der Stabilität.
+- Das SDK ist jetzt unter MIT lizenziert.
+- Erlauben Sie die Angabe eines benutzerdefinierten Gerätebezeichners während der SDK-Initialisierung.
 
 ##4\.1.0 (25.08.2015)
 
@@ -46,10 +47,10 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-android-sdk-content.md) anzuz
 - Korrektur eines Berechtigungsfehlers: bei Verwendung von `ACCESS_FINE_LOCATION` wird `ACCESS_COARSE_LOCATION` nicht mehr benötigt.
 - Verbesserungen der Stabilität.
 
-Frühere Versionen finden Sie unter [Vollständige Versionshinweise](mobile-engagement-android-release-notes.md)
+Alle Versionen finden Sie unter [Vollständige Versionshinweise](mobile-engagement-android-release-notes.md)
 
 ##Upgrade-Verfahren
 
 Wenn Sie bereits eine ältere Version unseres SDKs in die Anwendung integriert haben, finden Sie Informationen dazu in [Upgrade-Verfahren](mobile-engagement-android-upgrade-procedure.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0316_2016-->

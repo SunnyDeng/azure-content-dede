@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/22/2015"
+	ms.date="03/15/2016"
 	ms.author="swkrish"/>
 
 # Erstellen eines Azure Active Directory (Azure AD)-Mandanten oder eines Azure AD B2C-Mandanten – Probleme und Lösungen
@@ -27,9 +27,9 @@ Wenn Sie beim ersten Mal keinen Azure AD-Mandanten erstellen können, versuchen 
 ## Erstellen eines Azure AD B2C-Mandanten (Vorschau)
 
 Wenn beim [Erstellen eines Azure AD B2C-Mandanten](active-directory-b2c-get-started.md) Probleme auftreten, versuchen Sie Folgendes:
-
+ 
 - Wenn der Azure AD B2C-Mandant nicht in Ihrer Liste der Mandanten angezeigt wird, versuchen Sie es noch mal.
-- Wenn Sie eine Fehlermeldung erhalten, obwohl der Azure AD B2C-Mandant in der Liste der Mandanten angezeigt wird, löschen Sie den Mandanten, den Sie gerade erstellt haben, und versuchen Sie es erneut. Beispielsweise kann die folgende Fehlermeldung angezeigt werden: „Fehler beim Erstellen von B2B-Mandant 'contosob2c'. Besuchen Sie diesen [Link](http://go.microsoft.com/fwlink/?LinkID=624192&clcid=0x409), um weitere Informationen zu erhalten.“
-- Wenn keine dieser Lösungen für Sie funktioniert, wenden Sie sich an den Support. Hier finden Sie weitere Informationen zum [Senden von Supportanfragen für Azure AD B2C](active-directory-b2c-support.md).
+- Wenn der Azure AD B2C-Mandant in Ihrer Liste der Mandanten angezeigt wird, und Sie eine Fehlermeldung erhalten („Erstellung des B2C-Mandanten 'contosob2c' konnte nicht abgeschlossen werden. Besuchen Sie diesen [Link](http://go.microsoft.com/fwlink/?LinkID=624192&clcid=0x409), um weitere Anleitungen zu erhalten.“), löschen Sie anschließend den soeben erstellten Mandanten, und versuchen Sie es noch einmal.
+- Wenn diese Lösung für Sie nicht funktioniert, wenden Sie sich an den Support. Hier finden Sie weitere Informationen zum [Senden von Supportanfragen für Azure AD B2C](active-directory-b2c-support.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

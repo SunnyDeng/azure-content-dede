@@ -28,10 +28,7 @@ Der Quellcode für die vorkonfigurierten Lösungen ist auf GitHub in den folgend
 - Remoteüberwachung: [https://www.github.com/Azure/azure-iot-remote-monitoring](https://github.com/Azure/azure-iot-remote-monitoring)
 - Vorhersagbarer Wartungsbedarf: [https://github.com/Azure/azure-iot-predictive-maintenance](https://github.com/Azure/azure-iot-predictive-maintenance)
 
-Der Quellcode für die vorkonfigurierten Lösungen wird bereitgestellt, um Muster und Verfahren zum Implementieren der umfassenden Funktionalität von IoT-Lösungen mithilfe von Azure IoT Suite zu veranschaulichen. Eine Anleitung zum Erstellen und Bereitstellen über die Befehlszeile finden Sie im GitHub-Wiki zu den einzelnen vorkonfigurierten Lösungen:
-
-- [Wiki zu Remoteüberwachung](https://github.com/Azure/azure-iot-remote-monitoring/wiki)
-- [Wiki zu vorhersagbarem Wartungsbedarf](https://github.com/Azure/azure-iot-predictive-maintenance/wiki)
+Der Quellcode für die vorkonfigurierten Lösungen wird bereitgestellt, um Muster und Verfahren zum Implementieren der umfassenden Funktionalität von IoT-Lösungen mithilfe von Azure IoT Suite zu veranschaulichen. Weitere Informationen zur Erstellung und Bereitstellung von Lösungen finden Sie in den GitHub-Repositorys.
 
 ## Verwalten der Berechtigungen in einer vorkonfigurierten Lösung
 Das Lösungs-Portal für jede vorkonfigurierte Lösung wird als eine neue Azure Active Directory-Anwendung erstellt. Sie können die Berechtigungen für das Lösungs-Portal (AAD-Anwendung) wie folgt verwalten:
@@ -92,4 +89,4 @@ Weitere Informationen zu IoT-Geräten finden Sie auf der [Azure IoT-Entwicklerwe
 
 [IoT-Geräte-SDK]: https://azure.microsoft.com/documentation/articles/iot-hub-sdks-summary/
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

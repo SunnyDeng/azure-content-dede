@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/01/2016"
+   ms.date="03/10/2016"
    ms.author="alkohli"/>
 
 # Bereitstellen von StorSimple Virtual Array – Vorbereiten des Portals
@@ -26,8 +26,8 @@ Dieser Artikel bezieht sich auf Microsoft Azure StorSimple Virtual Array (auch a
 
 Sie benötigen Administratorrechte, um die Einrichtung und Konfiguration abzuschließen. Es wird empfohlen, die Prüfliste für die Bereitstellungskonfiguration durchzugehen, bevor Sie beginnen. Die Vorbereitung des Portals dauert weniger als 10 Minuten.
 
-Die in diesem Artikel veröffentlichten Informationen zur StorSimple-Bereitstellung gelten nur für StorSimple Virtual Arrays.
-
+Die in diesem Artikel veröffentlichten Informationen gelten für die Bereitstellung von StorSimple Virtual Arrays, sowohl im klassischen Azure-Portal als auch in der Microsoft Azure Government-Cloud.
+ 
 ### Erste Schritte
 
 Der Bereitstellungsworkflow umfasst das Vorbereiten des Portals, das Bereitstellen eines virtuellen Arrays in Ihrer virtualisierten Umgebung und das Durchführen des Setups. Zum Beginnen mit der StorSimple Virtual Array-Bereitstellung als Dateiserver oder iSCSI-Server benötigen Sie die folgenden Ressourcen (Artikel und Videos) in der angegebenen Tabelle.
@@ -38,7 +38,7 @@ Sehen Sie sich die folgenden Artikel in der angegebenen Reihenfolge an, um Ihr S
 
 | **#** | **Schritt** | **Aktion** | **Verwendete Dokumente**|
 |------|-------------------------------------------|--------------------------------------------------------------------------------|------------------------|
-|1\. | **Einrichten des klassischen Azure-Portals** | Erstellen und konfigurieren Sie Ihren StorSimple Manager-Dienst, bevor Sie ein virtuelles StorSimple-Gerät bereitstellen. |[Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md)| 
+|1\. | **Einrichten des klassischen Azure-Portals** | Erstellen und konfigurieren Sie Ihren StorSimple Manager-Dienst, bevor Sie ein virtuelles StorSimple-Gerät bereitstellen. |[Vorbereiten des Portals](storsimple-ova-deploy1-portal-prep.md)|
 |2\. | **Bereitstellen des Virtual Array** | Stellen Sie für Hyper-V ein virtuelles StorSimple-Gerät auf einem Hostsystem mit Hyper-V 2008 R2, Hyper-V 2012 oder Hyper-V 2012 R2 bereit, und stellen Sie die Verbindung her. <br></br> <br></br> Stellen Sie für VMware ein lokales virtuelles StorSimple-Gerät auf einem Hostsystem mit VMware ESXi 5.5 und höher bereit, und stellen Sie die Verbindung her.<br></br>| [Bereitstellen eines virtuellen Arrays in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) <br></br> <br></br> [Bereitstellen eines virtuellen Arrays in VMware](storsimple-ova-deploy2-provision-vmware.md)|
 |3\. | **Einrichten des Virtual Array** | Führen Sie für Ihren Dateiserver das anfängliche Setup durch, registrieren Sie Ihren StorSimple-Dateiserver, und führen Sie die Geräteinstallation durch. Anschließend können Sie die SMB-Freigaben bereitstellen. <br></br><br></br> Führen Sie für Ihren iSCSI-Server das anfängliche Setup durch, registrieren Sie Ihren StorSimple-iSCSI-Server, und führen Sie die Geräteinstallation durch. Anschließend können Sie die iSCSI-Volumes bereitstellen.| [Einrichten des virtuellen Arrays als Dateiserver](storsimple-ova-deploy3-fs-setup.md)<br></br> <br></br>[Einrichten des virtuellen Arrays als iSCSI-Server](storsimple-ova-deploy3-iscsi-setup.md)|
 
@@ -211,4 +211,4 @@ Im nächsten Schritt wird eine virtuelle Maschine für Ihr virtuelles StorSimple
 
 -   [Bereitstellen von StorSimple Virtual Array in VMware](storsimple-ova-deploy2-provision-vmware.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

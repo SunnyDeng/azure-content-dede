@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/07/2016" 
+	ms.date="03/11/2016" 
 	ms.author="awills"/>
 
 
@@ -47,7 +47,20 @@ Wir zeigen die Ergebnisse mit der Balkendiagramm-Präsentation und listen die Er
 
 Anscheinend ist unserer App zur Mittagszeit und zur Schlafenszeit in Hyderabad am beliebtesten. (Und wir sollten wir diese 500 Codes untersuchen.)
 
-Die Sprache verfügt über viele der Funktionen von SQL und noch vieles mehr. Wie bei SQL können Sie Daten filtern, Datensätze gruppieren sowie Tabellen sortieren und verknüpfen. Sie können auch Berechnungen für die Felder ausführen. Im Gegensatz zu SQL werden diese Funktionen in verschiedene Vorgänge unterteilt, und statt Abfragen zu verschachteln, übergeben Sie die Daten aus einem Vorgang ganz intuitiv zum nächsten. Dies erleichtert es, komplexe Abfragen zu schreiben.
+
+Es gibt auch leistungsstarke statistische Vorgänge:
+
+![](./media/app-analytics/025.png)
+
+
+Die Sprache verfügt über viele attraktive Features:
+
+* [Filtern](app-analytics-queries.md) Ihrer rohen App-Telemetrie nach beliebigen Feldern, einschließlich Ihrer benutzerdefinierten Eigenschaften und Metriken.
+* [Verbinden](app-analytics-queries.md#join-operator) mehrere Tabellen – Korrelation von Anforderungen mit Seitenansichten, Aufrufen von Abhängigkeiten, Ausnahmen und Protokollablaufverfolgungen.
+* Leistungsstarke statistische [Aggregationen](app-analytics-aggregations.md).
+* Genauso leistungsstark wie SQL, aber viel einfacher für komplexe Abfragen: anstelle der Schachtelung von Anweisungen übergeben Sie die Daten aus einem elementaren Vorgang an den nächsten.
+* Sofortige und leistungsfähige Visualisierungen.
+
 
 
 >[AZURE.NOTE] Es wird empfohlen, mit der [Einführung in die Abfragesprache](app-analytics-tour.md) anzufangen.
@@ -56,7 +69,7 @@ Die Sprache verfügt über viele der Funktionen von SQL und noch vieles mehr. Wi
 ## Verbinden mit Ihren Application Insights-Daten
 
 
-Öffnen Sie Analytics auf dem [Blatt „Übersicht“](app-insights-dashboards.md) Ihrer App in Application Insights:
+Öffnen Sie die Analyse über das [Blatt „Übersicht“](app-insights-dashboards.md) Ihrer App in Application Insights:
 
 ![Öffnen Sie unter „portal.azure.com“ die Application Insights-Ressource, und wählen Sie „Analytics“.](./media/app-analytics/001.png)
 
@@ -66,4 +79,4 @@ Die Sprache verfügt über viele der Funktionen von SQL und noch vieles mehr. Wi
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

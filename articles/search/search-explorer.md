@@ -39,10 +39,10 @@ In diesem Leitfaden erfahren Sie, wie Sie Ihren Azure Search-Index im Azure-Port
 ![](./media/search-explorer/search-explorer-tile.png)
 
 ## III. Beginnen Sie mit der Suche.
-1. Beginnen Sie mit einer Texteingabe in das Feld „*Abfragezeichenfolge*“, und drücken Sie danach auf „**Suchen**“.
+1. Beginnen Sie mit einer Texteingabe in das Feld „ *Abfragezeichenfolge* “, und drücken Sie danach auf „**Suchen**“.
  * Wenn Sie den Suchexplorer verwenden, können Sie alle beliebigen [Abfrageparameter](https://msdn.microsoft.com/library/dn798927.aspx) festlegen.
 
-2. Im Abschnitt „*Ergebnisse*“ werden die Abfrageergebnisse im unformatierten JSON-Format angezeigt, das Sie bei Suchanfragen an die Azure Search REST-API in einem HTML-Antworttext erhalten würden.
+2. Im Abschnitt „ *Ergebnisse* “ werden die Abfrageergebnisse im unformatierten JSON-Format angezeigt, das Sie bei Suchanfragen an die Azure Search REST-API in einem HTML-Antworttext erhalten würden.
 3. Die Abfragezeichenfolge wird automatisch in die richtige Anforderungs-URL gelesen, um eine HTTP-Anforderung für die Azure Search REST-API zu übermitteln.
 
 ![](./media/search-explorer/search-bar.png)

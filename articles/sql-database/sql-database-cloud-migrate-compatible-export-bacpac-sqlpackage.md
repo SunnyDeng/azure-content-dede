@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="12/17/2015"
+   ms.date="03/14/2016"
    ms.author="carlrab"/>
 
 # Exportieren einer SQL Server-Datenbank in eine BACPAC-Datei per SqlPackage
@@ -44,4 +44,4 @@ Dieser Artikel zeigt, wie Sie eine SQL-Serverdatenbank in eine [BACPAC](https://
 - [Azure-Portal](sql-database-import.md)
 - [PowerShell](sql-database-import-powershell.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0316_2016-->

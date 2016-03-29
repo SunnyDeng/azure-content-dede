@@ -61,6 +61,11 @@ Aktivieren Sie Stretch-Datenbank.
 -   Informationen zum Aktivieren von Stretch-Datenbank für eine andere **Tabelle**, bei bereits aktiviertem Stretch für die Datenbank, finden Sie unter [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md).
 
 ## Weitere Informationen
-[Oberflächeneinschränkungen und Hindernisse für Stretch-Datenbank](sql-server-stretch-database-limitations.md) [Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md) [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+[Oberflächeneinschränkungen und Hindernisse für Stretch-Datenbank](sql-server-stretch-database-limitations.md)
+
+[Aktivieren von Stretch-Datenbank für eine Datenbank](sql-server-stretch-database-enable-database.md)
+
+[Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
+
+<!---HONumber=AcomDC_0316_2016-->

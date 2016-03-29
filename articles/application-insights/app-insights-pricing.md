@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/28/2016" 
+	ms.date="03/15/2016" 
 	ms.author="awills"/>
 
 # Verwalten von Preisen und Kontingenten für Application Insights
@@ -136,8 +136,8 @@ Wenn Begrenzungsdrosselungen auftreten, können Sie verschiedene Schritte ausfü
 Ihr Tarif bestimmt, wie lange Daten im Portal aufbewahrt werden und dadurch auch, wie weit zurück Sie die Zeiträume festlegen können.
 
 
-* Rohdatenpunkte (also Instanzen, die Sie bei der Diagnosesuche überprüfen können): 7 bis 30 Tage.
-* Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für mindestens 13 Monate aufbewahrt.
+* Rohdatenpunkte (also Instanzen, die Sie bei der Diagnosesuche überprüfen können): 7 Tage.
+* Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für 90 Tage aufbewahrt.
 
 
 ## Stichproben
@@ -173,4 +173,4 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Virtuelle Computer und physische Server in Azure mit Azure Site Recovery (Legacy) replizieren | Microsoft Azure" 
-	description="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren." 
+	description="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren."
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/06/2016"
+	ms.date="03/15/2016"
 	ms.author="raynew"/>
 
 # Replizieren von virtuellen VMware-Computern und physischen Servern zu Azure mithilfe von Azure Site Recovery (Legacy)
@@ -204,7 +204,7 @@ Beachten Sie Folgendes:
 **Komponente** | **Anforderungen** | **Details**
 --- | --- | --- 
 **Azure-Konto** | Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
-**Azure-Speicher** | <p>Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern.</p><p>Das Konto sollte entweder ein [georedundantes Standardspeicherkonto](../storage/storage-redundancy.md#geo-redundant-storage) oder [Premium-Speicherkonto](../storage/storage-premium-storage.md) sein.</p><p>Es muss sich in der gleichen Region wie der Azure Site Recovery-Dienst befinden und dem gleichen Abonnement zugeordnet sein.</p><p>Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md)</p>
+**Azure-Speicher** | <p>Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern.</p><p>Das Konto sollte entweder ein [georedundantes Standardspeicherkonto](../storage/storage-redundancy.md#geo-redundant-storage) oder ein [Storage Premium-Konto](../storage/storage-premium-storage.md) sein.</p><p>Es muss sich in der gleichen Region wie der Azure Site Recovery-Dienst befinden und dem gleichen Abonnement zugeordnet sein. Das Verschieben von Speicherkonten, die mithilfe des [neuen Azure-Portals](../storage/storage-create-storage-account.md) erstellt wurden, über Ressourcengruppen hinweg wird nicht unterstützt.</p><p>Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md).</p>
 **Azure Virtual Network** | Sie benötigen ein virtuelles Azure-Netzwerk, in dem der Konfigurationsserver und der Masterzielserver bereitgestellt werden. Es muss in demselben Abonnement und in derselben Region enthalten sein wie der Azure Site Recovery-Tresor. Wenn Sie Daten über eine ExpressRoute- oder VPN-Verbindung replizieren möchten, muss das virtuelle Azure-Netzwerk mit Ihrem lokalen Netzwerk per ExpressRoute-Verbindung oder Standort-zu-Standort-VPN verbunden sein.
 **Azure-Ressourcen** | Stellen Sie sicher, dass Sie genügend Azure-Ressourcen für die Bereitstellung aller Komponenten besitzen. Weitere Informationen finden Sie unter [Beschränkungen des Azure-Abonnements](../azure-subscription-service-limits.md).
 **Azure Virtual Machines** | <p>Virtuelle Computer, die Sie schützen möchten, sollten die [Voraussetzungen für Azure](site-recovery-best-practices.md) erfüllen.</p><p>**Anzahl der Datenträger** – Auf einem einzelnen geschützten Server werden maximal 31 Datenträger unterstützt.</p><p>**Datenträgergrößen** – Die Kapazität eines einzelnen Datenträgers sollte nicht größer als 1023 GB sein.</p><p>**Clustering** – Gruppierte Server werden nicht unterstützt.</p><p>**Starten** – Das Starten im UEFI-Modus (Unified Extensible Firmware Interface)/EFI-Modus (Extensible Firmware Interface) wird nicht unterstützt.</p><p>**Volumes** – Mit Bitlocker verschlüsselte Volumes werden nicht unterstützt.</p><p> **Servernamen** – Die Namen müssen zwischen 1 und 63 Zeichen (Buchstaben, Zahlen und Bindestriche) enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und mit einem Buchstaben oder einer Zahl enden. Nachdem ein Computer geschützt wurde, können Sie den Azure-Namen ändern.</p>
@@ -705,6 +705,8 @@ Fügen Sie Computer wie folgt hinzu:
 	![vCenter-Server hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/select-vms.png)	
 4. Wählen Sie unter **Zielressourcen angeben** die Masterzielserver und den Speicher aus, die für die Replikation verwendet werden sollen, und wählen Sie aus, ob die Einstellungen für alle Workloads verwendet werden sollen. Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, [Premium-Speicherkonto](../storage/storage-premium-storage.md) aus, um E/A-intensive Workloads zu hosten. Wenn Sie ein Premium-Speicherkonto für Ihre Workloaddatenträger verwenden möchten, müssen Sie das Masterziel der DS-Serie verwenden. Sie können keine Datenträger des Premium-Speichers mit einem Masterziel verwenden, das nicht zur DS-Serie gehört.
 
+	>[AZURE.NOTE] Das Verschieben von Speicherkonten, die mit dem [neuen Azure-Portal](../storage/storage-create-storage-account.md) erstellt wurden, über Ressourcengruppen hinweg wird nicht unterstützt.
+
 	![vCenter-Server](./media/site-recovery-vmware-to-azure-classic-legacy/machine-resources.png)
 
 5. Wählen Sie unter **Konten angeben** das Konto aus, das Sie zum Installieren des Mobilitätsdiensts auf geschützten Computern verwenden möchten. Die Kontoanmeldeinformationen werden für die automatische Installation des Mobilitätsdiensts benötigt. Wenn Sie kein Konto auswählen können, müssen Sie ein Konto einrichten, wie in Schritt 2 beschrieben. Beachten Sie, dass Azure keinen Zugriff auf dieses Konto hat. Für Windows-Server sollte das Konto über Administratorrechte auf dem Quellserver verfügen. Für Linux muss das Konto "root" lauten.
@@ -812,4 +814,4 @@ The information in Section B is regarding Third Party Code components that are b
 
 The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!-----HONumber=AcomDC_0316_2016--->

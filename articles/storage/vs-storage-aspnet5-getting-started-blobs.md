@@ -32,11 +32,11 @@ Für den programmgesteuerten Zugriff auf Blobs in ASP.NET 5-Projekten müssen Si
 
 1. Fügen Sie die folgenden Namespace-Deklarationen zum Anfang aller C#-Dateien hinzu, in denen Sie programmgesteuert auf den Azure-Speicher zugreifen möchten:
 
-		using Microsoft.Framework.Configuration;
+		using Microsoft.Extensions.Configuration;
 		using Microsoft.WindowsAzure.Storage;
 		using Microsoft.WindowsAzure.Storage.Blob;
 		using System.Threading.Tasks;
-		using LogLevel = Microsoft.Framework.Logging.LogLevel;
+		using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 2. Rufen Sie ein **CloudStorageAccount**-Objekt ab, das die Informationen zu Ihrem Speicherkonto enthält. Verwenden Sie den folgenden Code, um Ihre Speicherverbindungszeichenfolge und Speicherkontoinformationen aus der Azure-Dienstkonfiguration abzurufen.
 
@@ -155,4 +155,4 @@ Wenn Sie einen BLOB löschen möchten, rufen Sie zuerst einen Verweis auf den BL
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0316_2016-->

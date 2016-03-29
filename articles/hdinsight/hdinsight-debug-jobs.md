@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/16/2016"
+	ms.date="03/15/2016"
 	ms.author="jgao"/>
 
 # Analysieren von HDInsight-Protokollen
@@ -106,15 +106,15 @@ Sie können jetzt Excel zum Filtern und Sortieren verwenden. Sie können nach Wu
 
 	![HDInsight Hadoop-Protokolle, Spalten auswählen](./media/hdinsight-debug-jobs/hdinsight-hadoop-analyze-logs-visual-studio-filter.png)
 
-	Weitere Informationen zum Erstellen von Filtern finden Sie unter [Erstellen von Filterzeichenfolgen für den Tabellen-Designer](https://msdn.microsoft.com/library/azure/ff683669.aspx).
+	Weitere Informationen zum Erstellen von Filtern finden Sie unter [Erstellen von Filterzeichenfolgen für den Tabellen-Designer](../vs-azure-tools-table-designer-construct-filter-strings.md).
  
 ##In Azure Blob Storage geschriebene Protokolle
 
-Die [in Azure-Tabellen geschriebenen Protokolle](#log-written-to-azure-tables) bieten einen ersten Einblick in das, was in einem HDInsight-Cluster passiert. Diese Tabellen bieten jedoch keine Protokolle auf Aufgabenebene, die bei der weiteren Untersuchung auftretender Probleme hilfreich sein können. Um diese nächste Detailebene zu bieten, sind HDInsight-Cluster für das Schreiben von Aufgabenprotokollen in Ihr Blob Storage-Konto für alle Aufträge konfiguriert, die über Templeton übermittelt werden. In der Praxis handelt es sich um Aufträge, die mithilfe von Microsoft Azure PowerShell-Cmdlets oder .NET-APIs für die Auftragsübermittlung übermittelt wurden, und nicht um Aufträge, die über einen RDB-/Befehlszeilenzugriff auf den Cluster übermittelt wurden.
+Die [in Azure-Tabellen geschriebenen Protokolle](#log-written-to-azure-tables) bieten Einblicke in das, was in einem HDInsight-Cluster passiert. Diese Tabellen bieten jedoch keine Protokolle auf Aufgabenebene, die bei der weiteren Untersuchung auftretender Probleme hilfreich sein können. Um diese nächste Detailebene zu bieten, sind HDInsight-Cluster für das Schreiben von Aufgabenprotokollen in Ihr Blob Storage-Konto für alle Aufträge konfiguriert, die über Templeton übermittelt werden. In der Praxis handelt es sich um Aufträge, die mithilfe von Microsoft Azure PowerShell-Cmdlets oder .NET-APIs für die Auftragsübermittlung übermittelt wurden, und nicht um Aufträge, die über einen RDB-/Befehlszeilenzugriff auf den Cluster übermittelt wurden.
 
 Informationen zum Anzeigen der Protokolle finden Sie unter [Zugreifen auf YARN-Anwendungsprotokolle unter Linux-basiertem HDInsight](hdinsight-hadoop-access-yarn-app-logs-linux.md).
 
-Weitere Informationen zu Anwendungsprotokollen finden Sie unter [Simplifying user-logs management and access in YARN](http://hortonworks.com/blog/simplifying-user-logs-management-and-access-in-yarn/) (Vereinfachen der Verwaltung von und des Zugriffs auf Benutzerprotokolle in YARN).
+Weitere Informationen zu Anwendungsprotokollen finden Sie unter [Simplifying user-logs management and access in YARN](http://hortonworks.com/blog/simplifying-user-logs-management-and-access-in-yarn/) (in englischer Sprache).
  
  
 ## Anzeigen von Clusterintegritäts- und Auftragsprotokollen
@@ -313,11 +313,11 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 
 ### <a id="UnableToResolveDNS"></a>UnableToResolveDNS
 - **Beschreibung**: DNS *IhreDnsUrl* konnte nicht aufgelöst werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit *http://* beginnen und auf *.com* enden.
 
 ### <a id="UnableToVerifyLocationOfResource"></a>UnableToVerifyLocationOfResource
 - **Beschreibung**: Der Speicherort der Ressource *IhreDnsUrl* konnte nicht überprüft werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit „**http://*“ beginnen und auf *.com* enden.
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, d. h., sie muss mit *http://* beginnen und auf *.com* enden.
 
 ### <a id="VersionCapabilityNotAvailable"></a>VersionCapabilityNotAvailable
 - **Beschreibung**: Die Versionsfunktion ist nicht für Version *AngegebeneVersion* und Abonnement-ID *IhreAbonnementID* verfügbar.  
@@ -337,6 +337,8 @@ Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wen
 
 ## Nächste Schritte
 
-[Debuggen von Tez-Aufträgen in HDInsight mithilfe von Ambari-Ansichten](hdinsight-debug-ambari-tez-view.md) [Aktivieren von Heapdumps für Hadoop-Dienste auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dump-linux.md)[Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md)
+- [Debuggen von Tez-Aufträgen in HDInsight mithilfe von Ambari-Ansichten](hdinsight-debug-ambari-tez-view.md)
+- [Aktivieren von Heapdumps für Hadoop-Dienste auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
+- [Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0316_2016-->

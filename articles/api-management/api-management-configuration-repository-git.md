@@ -13,11 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/07/2016" 
+	ms.date="03/14/2016" 
 	ms.author="sdanie"/>
 
 
 # Speichern und Konfigurieren der API Management-Dienstkonfiguration mit Git
+
+>[AZURE.IMPORTANT] Die Git-Konfiguration für API Management ist derzeit in der Vorschau. Sie ist funktionell abgeschlossen, aber in der Vorschau ist, da wir aktiv Feedback zu dieser Funktion suchen. Es ist möglich, dass wir als Reaktion auf Kundenfeedback eine wichtige Änderung vornehmen, und raten daher von der Verwendung der Funktion in Produktionsumgebungen ab. Wenn Sie Feedback oder Fragen haben, informieren Sie uns bitte unter `apimgmt@microsoft.com`.
 
 Jede API Management-Dienstinstanz verwaltet eine Konfigurationsdatenbank, die Informationen über die Konfiguration und die Metadaten für die Dienstinstanz enthält. Änderungen können an der Dienstinstanz durch Ändern einer Einstellung im Herausgeberportal, mithilfe eines PowerShell-Cmdlets oder durch einen REST-API-Aufruf vorgenommen werden. Neben diesen Methoden können Sie die Dienstinstanzkonfiguration auch mit Git verwalten, um Dienstverwaltungsszenarien wie die folgenden zu ermöglichen:
 
@@ -43,19 +45,23 @@ In diesem Artikel wird das Aktivieren und Verwenden von Git für die Verwaltung 
 
 ## So aktivieren Sie Git-Zugriff
 
-Um Git-Zugriff zu konfigurieren, klicken Sie auf das Menü **Sicherheit**, und navigieren Sie zur Registerkarte **Konfigurationsrepository**.
+Sie können den Status der Git-Konfiguration schnell anzeigen, indem Sie das Git-Symbol im Herausgeberportal in der oberen rechten Ecke anzeigen. In diesem Beispiel ist der Git-Zugriff noch nicht aktiviert.
+
+![Git-Status][api-management-git-icon-enable]
+
+Um Ihre Git-Konfiguration anzuzeigen und zu konfigurieren, können Sie entweder auf das Git-Symbol klicken, oder Sie klicken auf das Menü **Sicherheit** und navigieren zu der Registerkarte **Konfigurations-Repository**.
 
 ![Git aktivieren][api-management-enable-git]
 
-Um Git-Zugriff zu aktivieren, aktivieren Sie das Kontrollkästchen **Git-Zugriff aktivieren**.
+Um den Git-Zugriff zu aktivieren, aktivieren Sie das Kontrollkästchen **Git-Zugriff aktivieren**.
 
-Kurze Zeit später wird die Änderung gespeichert, und eine Meldung wird angezeigt.
+Kurze Zeit später wird die Änderung gespeichert, und eine Meldung wird angezeigt. Beachten Sie, dass das Git-Symbol farbig geworden ist, um anzuzeigen, dass der Git-Zugriff aktiviert ist, und die Statusmeldung jetzt angibt, dass Änderungen vorliegen, die noch nicht im Repository gespeichert sind. Dies liegt daran, dass die API Management-Dienstkonfigurationsdatenbank noch nicht im Repository gespeichert wurde.
 
 ![Git aktiviert][api-management-git-enabled]
 
->[AZURE.IMPORTANT] Geheime Schlüssel, die nicht als Eigenschaften definiert sind, werden im Repository gespeichert und verbleiben in dessen Verlauf, bis Sie den Git-Zugriff deaktivieren und erneut aktivieren. Eigenschaften stellen einen sicheren Ort zum Verwalten von konstanten Zeichenfolgenwerten, einschließlich geheimer Schlüssel, für alle API-Konfigurationen und -Richtlinien dar. Sie müssen sie also nicht direkt in Ihren Richtlinienanweisungen speichern. Weitere Informationen finden Sie unter [Verwenden von Eigenschaften in Azure API Management-Richtlinien](api-management-howto-properties.md).
+>[AZURE.IMPORTANT] Geheime Schlüssel, die nicht als Eigenschaften definiert sind, werden im Repository gespeichert und verbleiben in dessen Verlauf, bis Sie den Git-Zugriff deaktivieren und erneut aktivieren. Eigenschaften stellen einen sicheren Ort zum Verwalten von konstanten Zeichenfolgenwerten, einschließlich geheimer Schlüssel, für alle API-Konfigurationen und -Richtlinien dar. Sie müssen sie also nicht direkt in Ihren Richtlinienanweisungen speichern. Weitere Informationen finden Sie unter [How to use properties in Azure API Management policies](api-management-howto-properties.md) (Verwenden von Eigenschaften in Azure API Management-Richtlinien).
 
-Informationen zum Aktivieren oder Deaktivieren des Git-Zugriffs mithilfe der REST-API finden Sie unter [Aktivieren oder Deaktivieren von Git-Zugriff mithilfe der REST-API](https://msdn.microsoft.com/library/dn781420.aspx#EnableGit).
+Informationen zum Aktivieren oder Deaktivieren des Git-Zugriffs mithilfe der REST-API finden Sie unter [Azure API Management-REST-API-Mandanten-Entität](https://msdn.microsoft.com/library/dn781420.aspx#EnableGit).
 
 ## So speichern Sie die Dienstkonfiguration im Git-Repository
 
@@ -91,7 +97,7 @@ Um ein Kennwort zu generieren, stellen Sie zuerst sicher, dass **Ablauf** auf da
 
 >[AZURE.IMPORTANT] Notieren Sie sich dieses Kennwort. Das Kennwort wird nicht wieder angezeigt, nachdem Sie diese Seite verlassen haben.
 
-In den folgenden Beispielen wird das Tool Git Bash aus [Git für Windows](http://www.git-scm.com/downloads) verwendet, Sie können aber auch ein Git-Tool verwenden, mit dem Sie vertraut sind.
+In den folgenden Beispielen wird das Tool Git Bash aus [Git für Windows](http://www.git-scm.com/downloads) verwendet, Sie können aber auch ein beliebiges Git-Tool verwenden, mit dem Sie vertraut sind.
 
 Öffnen Sie Ihr Git-Tool im gewünschten Ordner, und führen Sie den folgenden Befehl zum Klonen des Git-Repositorys auf Ihrem lokalen Computer aus. Verwenden Sie dazu den Befehl aus dem Herausgeberportal.
 
@@ -140,7 +146,7 @@ Sobald ein Commit für Ihre lokalen Änderungen ausgeführt wurde und sie in das
 
 ![Bereitstellen][api-management-configuration-deploy]
 
-Informationen zum Ausführen dieses Vorgangs mit der REST-API finden Sie unter [Bereitstellen von Änderungen an der Konfigurationsdatenbank mithilfe der REST-API](https://msdn.microsoft.com/library/dn781420.aspx#DeployChanges).
+Informationen zum Ausführen dieses Vorgangs mit der REST-API finden Sie unter [Azure API Management-REST-API-Mandanten-Entität](https://msdn.microsoft.com/library/dn781420.aspx#DeployChanges).
 
 ## Referenz der Datei- und Ordnerstruktur des lokalen Git-Repositorys
 
@@ -238,7 +244,7 @@ Der Ordner `policies` enthält die Richtlinienanweisungen für Ihre Dienstinstan
 -	`policies\global.xml`: Enthält Richtlinien, die im globalen Bereich für Ihre Dienstinstanz definiert sind.
 -	`policies\apis<api name>`: Wenn Sie über Richtlinien verfügen, die im API-Bereich definiert sind, sind sie in diesem Ordner enthalten.
 -	Ordner `policies\apis<api name><operation name>`: Wenn Sie über Richtlinien verfügen, die im Vorgangsbereich definiert sind, sind sie in diesem Ordner in `<operation name>.xml`-Dateien enthalten, die den Richtlinienanweisungen für jeden Vorgang entsprechen.
--	`policies\products`: Wenn Sie über Richtlinien verfügen, die im Produktbereich definiert sind, sind sie in diesem Ordner enthalten, der `<product name>.xml`-Dateien aufweist, die den Richtlinienanweisungen für jedes Produkt entsprechen.
+-	`policies\products`: Wenn Sie über Richtlinien verfügen, die im Produktbereich definiert sind, sind sie in diesem Ordner enthalten, der `<product name>.xml`-Dateien enthält, die den Richtlinienanweisungen für jedes Produkt entsprechen.
 
 ### Ordner „portalStyles“
 
@@ -286,5 +292,6 @@ Informationen zu anderen Möglichkeiten für die Verwaltung Ihrer Dienstinstanz 
 [api-management-configuration-deploy]: ./media/api-management-configuration-repository-git/api-management-configuration-deploy.png
 [api-management-identity-settings]: ./media/api-management-configuration-repository-git/api-management-identity-settings.png
 [api-management-delegation-settings]: ./media/api-management-configuration-repository-git/api-management-delegation-settings.png
+[api-management-git-icon-enable]: ./media/api-management-configuration-repository-git/api-management-git-icon-enable.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0316_2016-->

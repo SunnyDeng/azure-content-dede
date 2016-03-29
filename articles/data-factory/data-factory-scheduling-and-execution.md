@@ -261,6 +261,27 @@ Die Diagrammansicht mit beiden Aktivitäten in derselben Pipeline sieht wie folg
 
 ![Verketten von Aktivitäten in derselben Pipeline](./media/data-factory-scheduling-and-execution/chaining-one-pipeline.png)
 
+### Sortierte Kopie
+Es ist möglich, mehrere Kopiervorgänge nacheinander sequenziell/sortiert auszuführen. Angenommen, Sie haben zwei Kopieraktivitäten in einer Pipeline: Kopieraktivität1 und Kopieraktivität mit den folgenden Eingabe-/Ausgabedatasets.
+
+Kopieraktivität1: Eingabe: Dataset1 Ausgabe: Dataset2
+
+Kopieraktivität2: Eingabe: Dataset2 Ausgabe: Dataset4
+
+Kopieraktivität2 wird nur ausgeführt, wenn Kopieraktivität1 erfolgreich ausgeführt wurde und Dataset2 verfügbar ist.
+
+Im obigen Beispiel kann Kopieraktivität2 eine andere Eingabe haben, z. B. Dataset3. Sie müssen jedoch auch Dataset2 als Eingabe für Kopieraktivität2 angeben, damit die Aktivität nicht solange ausgeführt wird, bis Kopieraktivität1 abgeschlossen ist. Beispiel:
+
+Kopieraktivität1: Eingabe: Dataset1 Ausgabe: Dataset2
+
+Kopieraktivität2: Eingabe: Dataset3, Dataset2 Ausgabe: Dataset4
+
+Wenn mehrere Eingaben angegeben wurden, wird nur das erste Eingabedataset zum Kopieren der Daten verwendet, die anderen Datasets werden aber als Abhängigkeiten verwendet. Kopieraktivität2 wird nur ausgeführt, wenn die folgenden Bedingungen erfüllt sind:
+
+- Kopieraktivität2 wurde erfolgreich abgeschlossen und Dataset2 ist verfügbar. Dieses Dataset wird beim Kopieren von Daten zu Dataset4 nicht verwendet. Es fungiert nur als Terminplanungsabhängigkeit für Kopieraktivität2.   
+- Dataset3 ist verfügbar. Dieses Dataset stellt die Daten dar, die zum Ziel kopiert werden.  
+
+
 
 ## Modellieren von Datasets mit unterschiedlichen Frequenzen
 
@@ -632,4 +653,4 @@ Ein Dataset kann als extern gekennzeichnet werden (siehe die nachstehende JSON),
 
   
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0316_2016-->
