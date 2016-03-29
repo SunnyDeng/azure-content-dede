@@ -61,7 +61,7 @@ Es wird empfohlen, dass Sie sich sofort an den Benutzer wenden, um zu überprüf
 
 ## Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten
 
-Bei dieser Art von Risikoereignis werden IP-Adressen identifiziert, für die eine hohe Zahl fehlgeschlagener Anmeldeversuche beobachtet wurde, und zwar mit mehreren Benutzerkonten innerhalb eines kurzen Zeitraums. Dies entspricht Datenverkehrsmustern von IP-Adressen, die von Angreifern verwendet werden, und es ist ein starker Hinweis darauf, dass Konten entweder bereits kompromittiert sind oder dass dies kurz bevorsteht. Dies ist ein Machine Learning-Algorithmus, bei dem offensichtliche „*falsch positive Ergebnisse*“ ignoriert werden, z. B. IP-Adressen, die regelmäßig von anderen Benutzern in der Organisation verwendet werden. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem es das Anmeldeverhalten eines neuen Benutzers und neuen Mandanten erlernt.
+Bei dieser Art von Risikoereignis werden IP-Adressen identifiziert, für die eine hohe Zahl fehlgeschlagener Anmeldeversuche beobachtet wurde, und zwar mit mehreren Benutzerkonten innerhalb eines kurzen Zeitraums. Dies entspricht Datenverkehrsmustern von IP-Adressen, die von Angreifern verwendet werden, und es ist ein starker Hinweis darauf, dass Konten entweder bereits kompromittiert sind oder dass dies kurz bevorsteht. Dies ist ein Machine Learning-Algorithmus, bei dem offensichtliche „ *falsch positive Ergebnisse* “ ignoriert werden, z. B. IP-Adressen, die regelmäßig von anderen Benutzern in der Organisation verwendet werden. Das System benötigt einen anfänglichen Lernzeitraum von 14 Tagen, in dem es das Anmeldeverhalten eines neuen Benutzers und neuen Mandanten erlernt.
 
 Es wird empfohlen, sich an den Benutzer zu wenden und zu überprüfen, ob dieser sich tatsächlich mit einer IP-Adresse angemeldet hat, die als verdächtig gekennzeichnet war. Die Risikostufe für diesen Ereignistyp lautet „Mittel“, da sich hinter einer IP-Adresse mehrere Geräte verbergen können, von denen nur einige Geräte für die verdächtige Aktivität verantwortlich sind.
 
@@ -78,4 +78,4 @@ Bei dieser Art von Risikoereignis handelt es sich um ein Verfahren zur Echtzeita
 
 - [Azure Active Directory Identity Protection](active-directory-identityprotection.md)
 
-<!----HONumber=AcomDC_0309_2016-->
+<!-----HONumber=AcomDC_0309_2016-->

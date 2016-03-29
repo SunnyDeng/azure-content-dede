@@ -87,7 +87,7 @@ Als wir die Empfehlungen umgesetzt hatten, konnten wir in Azure ML denselben Ben
 |Split: trainieren|Excel mithilfe der ersten 18 Zeilen trainiert, mit den letzten 8 Zeilen getestet|identisch|identisch|
 |Split: Test|Excels Regressionsformel auf die letzten 8 Zeilen angewendet|identisch|identisch|
 |**Leistung**||||
-|Angepasstes R-Quadrat|0,96|–||
+|Adjusted R Square|0,96|–||
 |Coefficient of Determination|–|0,78|0,952049|
 |Mittlerer absoluter Fehler |9,5 Mio. $|19,4 Mio. $|9,5 Mio. $|
 |Mean Absolute Error (%)|<span style="background-color: 00FF00;"> 6,03%</span>|12,2 %|<span style="background-color: 00FF00;"> 6,03%</span>|
@@ -161,4 +161,4 @@ Im Folgenden finden Sie einige Ressourcen für Ihre Arbeit mit Regression:
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!----HONumber=AcomDC_0309_2016-->
+<!-----HONumber=AcomDC_0309_2016-->
