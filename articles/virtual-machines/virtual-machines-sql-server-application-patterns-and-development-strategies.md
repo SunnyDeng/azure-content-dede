@@ -312,7 +312,7 @@ Zum Implementieren und Bereitstellen einer SQL Server-basierten Anwendung mit me
 
 Die folgende Tabelle enthält einen Vergleich der herkömmlichen Webentwicklung mit Azure Cloud Services und Azure-Web-Apps in Bezug auf SQL Server in Azure Virtual Machines. Die Tabelle umfasst Azure-Web-Apps, da es möglich ist, SQL Server auf einem virtuellen Azure-Computer als Datenquelle für Azure-Web-Apps über die öffentliche virtuelle IP-Adresse oder den DNS-Namen zu verwenden.
 
-|Herkömmliche Webentwicklung auf virtuellen Azure-Computern|Clouddienste in Azure|Webhosting mit Azure-Web-Apps|
+||Herkömmliche Webentwicklung auf virtuellen Azure-Computern|Clouddienste in Azure|Webhosting mit Azure-Web-Apps|
 |---|---|---|---|
 |**Lokale Anwendungsmigration**|Vorhandene Anwendungen ohne Änderungen|Anwendungen benötigen Web-und Workerrollen.|Vorhandene Anwendungen ohne Änderungen, die aber für eigenständige Webanwendungen geeignet sind und Webdienste, die eine schnelle Skalierbarkeit erfordern|
 |**Entwicklung und Bereitstellung**|Visual Studio, WebMatrix, Visual Web Developer, WebDeploy, FTP, TFS, IIS-Manager, PowerShell|Visual Studio, Azure SDK, TFS, PowerShell Jeder Clouddienst hat zwei Umgebungen, in denen Sie das Dienstpaket und die Konfiguration bereitstellen können: Staging und Produktion. Sie können einen Clouddienst in der Stagingumgebung bereitstellen, um sie zu testen, bevor Sie sie in die Produktionsumgebung überführen.|Visual Studio, WebMatrix, Visual Web Developer, FTP, GIT, BitBucket, CodePlex, DropBox, GitHub, Mercurial, TFS, Web Deploy, PowerShell.|
