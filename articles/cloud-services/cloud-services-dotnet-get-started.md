@@ -3,9 +3,9 @@
 	description="Hier erfahren Sie, wie Sie mit ASP.NET MVC und Azure eine Anwendung mit mehreren Ebenen erstellen. Die Anwendung wird in einem Clouddienst mit Webrolle und Workerrolle ausgeführt. Sie verwendet Entity Framework, SQL-Datenbank und Azure Storage-Warteschlangen und -Blobs."
 	services="cloud-services, storage"
 	documentationCenter=".net"
-	authors="tdykstra"
-	manager="wpickett"
-	editor="mollybos"/>
+	authors="Thraka"
+	manager="timlt"
+	editor=""/>
 
 <tags
 	ms.service="cloud-services"
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="12/28/2015"
-	ms.author="tdykstra"/>
+	ms.date="03/21/2016"
+	ms.author="adegeo"/>
 
 # Erste Schritte mit Azure-Clouddiensten und ASP.NET
 
@@ -60,7 +60,7 @@ Die Anweisungen im Tutorial funktionieren mit den folgenden beiden Produkten:
 * Visual Studio 2013
 * Visual Studio 2015
 
-Falls Sie keines dieser Produkte besitzen, wird Visual Studio 2015 automatisch zusammen mit dem Azure SDK installiert.
+Falls Sie keines dieser Produkte besitzen, wird Visual Studio 2015 automatisch zusammen mit dem Azure SDK installiert.
 
 ## Anwendungsarchitektur
 
@@ -88,7 +88,7 @@ Wenn ein Benutzer ein Bild hochlädt, speichert das in einer Webrolle ausgeführ
 
 3. Vergewissern Sie sich im **Projektmappen-Explorer**, dass **ContosoAdsCloudService** als Startprojekt ausgewählt ist.
 
-2. Wenn Sie Visual Studio 2015 verwenden, ändern Sie die SQL Server-Verbindungszeichenfolge in der Anwendungsdatei *Web.config* des ContosoAdsWeb-Projekts und in der Datei *ServiceConfiguration.Local.cscfg* des ContosoAdsCloudService-Projekts. Ändern Sie in beiden Fällen „(localdb)\v11.0“ in „(localdb)\MSSQLLocalDB“.
+2. Wenn Sie Visual Studio 2015 verwenden, ändern Sie die SQL Server-Verbindungszeichenfolge in der Anwendungsdatei *Web.config* des ContosoAdsWeb-Projekts und in der Datei *ServiceConfiguration.Local.cscfg* des ContosoAdsCloudService-Projekts. Ändern Sie in beiden Fällen „(localdb)\\v11.0“ in „(localdb)\\MSSQLLocalDB“.
 
 1. Drücken Sie STRG+F5, um die Anwendung auszuführen.
 
@@ -223,11 +223,13 @@ Sie werden eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/dep
 
 1. Öffnen Sie im ContosoAdsWeb-Projekt die *Web.Release.config*-Transformationsdatei für die Anwendungsdatei *Web.config*, löschen Sie den Kommentarblock, der ein `<connectionStrings>`-Element enthält, und fügen Sie den folgenden Code an derselben Stelle ein.
 
-		<connectionStrings>
-	        <add name="ContosoAdsContext" connectionString="{connectionstring}"
-		    providerName="System.Data.SqlClient" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-		</connectionStrings>
-
+    ```xml
+    <connectionStrings>
+        <add name="ContosoAdsContext" connectionString="{connectionstring}"
+        providerName="System.Data.SqlClient" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    </connectionStrings>
+    ```
+    
 	Lassen Sie die Datei geöffnet.
 
 2. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com) im linken Bereich auf **SQL-Datenbanken**, klicken Sie auf die Datenbank, die Sie für dieses Tutorial erstellt haben, dann auf die Registerkarte **Dashboard** und dann auf **Verbindungszeichenfolgen anzeigen**.
@@ -264,29 +266,29 @@ Sie werden eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/dep
 
 Die Verbindungszeichenfolgen für das Azure-Speicherkonto für das Web- und Workerrollenprojekt werden in Umgebungseinstellungen für das Clouddienstprojekt gespeichert. Für jedes Projekt existiert je ein separater Satz von Einstellungen für die lokale Ausführung und die Ausführung in der Cloud. Sie werden die Cloudumgebungseinstellungen für Web- und Workerrollenprojekt ändern.
 
-4. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **ContosoAdsWeb** unter **Rollen** im Projekt **ContosoAdsCloudService**, und klicken Sie dann auf **Eigenschaften**.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **ContosoAdsWeb** unter **Rollen** im Projekt **ContosoAdsCloudService**, und klicken Sie dann auf **Eigenschaften**.
 
 	![Rolleneigenschaften](./media/cloud-services-dotnet-get-started/roleproperties.png)
 
-5. Klicken Sie auf die Registerkarte **Einstellungen**. Wählen Sie in der Dropdownliste **Dienstkonfiguration** den Wert **Cloud** aus.
+2. Klicken Sie auf die Registerkarte **Einstellungen**. Wählen Sie in der Dropdownliste **Dienstkonfiguration** den Wert **Cloud** aus.
 
 	![Cloudkonfiguration](./media/cloud-services-dotnet-get-started/sccloud.png)
 
-6. Wenn Sie den Eintrag **StorageConnectionString** auswählen, sehen Sie eine elliptische Schaltfläche (**...**) am Ende der Zeile. Klicken Sie auf die elliptische Schaltfläche, um das Dialogfeld **Verbindungszeichenfolge für Speicherkonto erstellen** zu öffnen.
+3. Wenn Sie den Eintrag **StorageConnectionString** auswählen, sehen Sie eine elliptische Schaltfläche (**...**) am Ende der Zeile. Klicken Sie auf die elliptische Schaltfläche, um das Dialogfeld **Verbindungszeichenfolge für Speicherkonto erstellen** zu öffnen.
 
 	![Erstellungsdialog für Verbindungszeichenfolge](./media/cloud-services-dotnet-get-started/opencscreate.png)
 
-1. Klicken Sie im Dialogfeld **Verbindungszeichenfolge für Speicherkonto** auf **Mit meinem Abonnement**, wählen Sie das zuvor erstellte Speicherkonto aus, und klicken Sie auf **OK**. Falls Sie noch nicht angemeldet sind, werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert.
+4. Klicken Sie im Dialogfeld **Verbindungszeichenfolge für Speicherkonto** auf **Mit meinem Abonnement**, wählen Sie das zuvor erstellte Speicherkonto aus, und klicken Sie auf **OK**. Falls Sie noch nicht angemeldet sind, werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert.
 
 	![Speicherkonto-Verbindungszeichenfolge erstellen](./media/cloud-services-dotnet-get-started/createstoragecs.png)
 
-1. Speichern Sie die Änderungen.
+5. Speichern Sie die Änderungen.
 
-2. Führen Sie zum Einrichten der `Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString`-Verbindungszeichenfolge die gleichen Schritte aus, die Sie auch für die `StorageConnectionString`-Verbindungszeichenfolge ausgeführt haben.
+6. Führen Sie zum Einrichten der `Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString`-Verbindungszeichenfolge die gleichen Schritte aus, die Sie auch für die `StorageConnectionString`-Verbindungszeichenfolge ausgeführt haben.
 
 	Diese Verbindungszeichenfolge wird für die Protokollierung verwendet.
 
-2. Wiederholen Sie die Prozedur, die Sie für die **ContosoAdsWeb**-Rolle verwendet haben, um die beiden Verbindungszeichenfolgen für die **ContosoAdsWorker**-Rolle zu setzen. Vergessen Sie nicht, die **Dienstkonfiguration** auf **Cloud** zu setzen.
+7. Wiederholen Sie die Prozedur, die Sie für die **ContosoAdsWeb**-Rolle verwendet haben, um die beiden Verbindungszeichenfolgen für die **ContosoAdsWorker**-Rolle zu setzen. Vergessen Sie nicht, die **Dienstkonfiguration** auf **Cloud** zu setzen.
 
 Die Einstellungen, die Sie für die Rollenumgebung in der Visual Studio-GUI konfiguriert haben, werden in den folgenden Dateien im ContosoAdsCloudService-Projekt gespeichert:
 
@@ -296,28 +298,34 @@ Die Einstellungen, die Sie für die Rollenumgebung in der Visual Studio-GUI konf
 
 Die "Servicedefinition.csdef" enthält beispielsweise die folgenden Definitionen.
 
-		<ConfigurationSettings>
-		  <Setting name="StorageConnectionString" />
-		  <Setting name="ContosoAdsDbConnectionString" />
-		</ConfigurationSettings>
+```xml
+<ConfigurationSettings>
+    <Setting name="StorageConnectionString" />
+    <Setting name="ContosoAdsDbConnectionString" />
+</ConfigurationSettings>
+```
 
 Und die Datei *ServiceConfiguration.Cloud.cscfg* enthält die Werte, die Sie für diese Einstellungen in Visual Studio eingegeben haben:
 
-		<Role name="ContosoAdsWorker">
-		  <Instances count="1" />
-		  <ConfigurationSettings>
-		    <Setting name="StorageConnectionString" value="{yourconnectionstring}" />
-		    <Setting name="ContosoAdsDbConnectionString" value="{yourconnectionstring}" />
-		    <!-- other settings not shown -->
-		  </ConfigurationSettings>
-		  <!-- other settings not shown -->
-		</Role>
+```xml
+<Role name="ContosoAdsWorker">
+    <Instances count="1" />
+    <ConfigurationSettings>
+        <Setting name="StorageConnectionString" value="{yourconnectionstring}" />
+        <Setting name="ContosoAdsDbConnectionString" value="{yourconnectionstring}" />
+        <!-- other settings not shown -->
+    
+    </ConfigurationSettings>
+    <!-- other settings not shown -->
+    
+</Role>
+```
 
 Die `<Instances>`-Einstellung definiert die Anzahl der virtuellen Computer, auf denen Azure den Code der Workerrolle ausführt. Im Bereich [Nächste Schritte](#next-steps) finden Sie Links zu weiteren Hinweisen zur Skalierung von Clouddiensten.
 
 ###  Bereitstellen des Projekts in Azure
 
-3.	Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Cloudprojekt **ContosoAdsCloudService**, und wählen Sie **Veröffentlichen** aus.
+1.	Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Cloudprojekt **ContosoAdsCloudService**, und wählen Sie **Veröffentlichen** aus.
 
 	![Veröffentlichungsmenü](./media/cloud-services-dotnet-get-started/pubmenu.png)
 
@@ -331,21 +339,21 @@ Die `<Instances>`-Einstellung definiert die Anzahl der virtuellen Computer, auf 
 
 	Die Standardeinstellungen in der Registerkarte **Erweitert** brauchen für dieses Tutorial nicht geändert werden. Weitere Informationen zur Registerkarte Erweitert finden Sie unter [Assistent zum Veröffentlichen einer Azure-Anwendung](http://msdn.microsoft.com/library/hh535756.aspx).
 
-2. Klicken Sie auf der Seite **Zusammenfassung** auf **Veröffentlichen**.
+4. Klicken Sie auf der Seite **Zusammenfassung** auf **Veröffentlichen**.
 
 	![Zusammenfassung](./media/cloud-services-dotnet-get-started/pubsummary.png)
 
    Das **Azure-Aktivitätsprotokoll** wird in Visual Studio geöffnet.
 
-2. Klicken Sie auf den Pfeil nach rechts, um die Bereitstellungsdetails zu erweitern.
+5. Klicken Sie auf den Pfeil nach rechts, um die Bereitstellungsdetails zu erweitern.
 
 	Die Bereitstellung kann 5 oder mehr Minuten in Anspruch nehmen.
 
 	![Azure-Aktivitätsprotokoll](./media/cloud-services-dotnet-get-started/waal.png)
 
-1. Klicken Sie nach Abschluss der Bereitstellung auf die **Web-App-URL**, um die Anwendung zu starten.
+6. Klicken Sie nach Abschluss der Bereitstellung auf die **Web-App-URL**, um die Anwendung zu starten.
 
-9. Sie können die Anwendung nun testen und Werbungen erstellen, anzeigen und bearbeiten, wie Sie dies bereits bei der lokalen Ausführung getan haben.
+7. Sie können die Anwendung nun testen und Werbungen erstellen, anzeigen und bearbeiten, wie Sie dies bereits bei der lokalen Ausführung getan haben.
 
 >[AZURE.NOTE] Nach Abschluss der Tests sollten Sie den Clouddienst anhalten oder löschen. Selbst wenn Sie den Clouddienst nicht nutzen, fallen Kosten an, da Ressourcen auf virtuellen Computern für den Dienst reserviert sind. Wenn Sie den Dienst laufen lassen, kann jeder, der die URL findet, Werbungen erstellen und anzeigen. Navigieren Sie im [klassischen Azure-Portal](http://manage.windowsazure.com) zur Registerkarte **Dashboard** für Ihren Clouddienst, und klicken Sie am unteren Seitenrand auf **Löschen**. Klicken Sie stattdessen auf **Anhalten**, um vorübergehend zu verhindern, dass andere Personen auf die Website zugreifen. In diesem Fall entstehen weiterhin Kosten. Sie können die SQL-Datenbank und das Speicherkonto auf ähnliche Weise löschen, wenn Sie diese nicht mehr benötigen.
 
@@ -397,29 +405,29 @@ Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für C
 
 ### Aktualisieren und Hinzufügen von NuGet-Paketen
 
-11. Öffnen Sie das Dialogfeld **NuGet-Pakete verwalten** für die Lösung.
+1. Öffnen Sie das Dialogfeld **NuGet-Pakete verwalten** für die Lösung.
 
-12. Wählen Sie oben im Fenster **Aktualisieren** aus.
+2. Wählen Sie oben im Fenster **Updates** aus.
 
-13. Suchen Sie das Paket *WindowsAzure.Storage*. Wenn es sich in der Liste befindet, wählen Sie es aus, und wählen Sie anschließend die Web- und Workerprojekte aus, in denen es aktualisiert werden soll. Klicken Sie dann auf **Aktualisieren**.
+3. Suchen Sie das Paket *WindowsAzure.Storage*. Wenn es sich in der Liste befindet, wählen Sie es aus, und wählen Sie anschließend die Web- und Workerprojekte aus, in denen es aktualisiert werden soll. Klicken Sie dann auf **Aktualisieren**.
 
 	Die Speicherclient-Bibliothek wird häufiger aktualisiert als die Visual Studio-Projektvorlagen. Daher wird es öfter vorkommen, dass Sie die Version in einem neu erstellten Projekt aktualisieren müssen.
 
-14. Wählen Sie oben im Fenster **Durchsuchen** aus.
+4. Wählen Sie oben im Fenster **Durchsuchen** aus.
 
-16. Suchen Sie das NuGet-Paket *EntityFramework* und installieren Sie es in allen drei Projekten.
+5. Suchen Sie das NuGet-Paket *EntityFramework* und installieren Sie es in allen drei Projekten.
 
-17. Suchen Sie das NuGet-Paket *Microsoft.WindowsAzure.ConfigurationManager*, und installieren Sie es im Workerrollenprojekt.
+6. Suchen Sie das NuGet-Paket *Microsoft.WindowsAzure.ConfigurationManager*, und installieren Sie es im Workerrollenprojekt.
 
 ### Setzen von Projektverweisen
 
-10. Fügen Sie im Projekt ContosoAdsWeb einen Verweis auf das Projekt ContosoAdsCommon ein. Klicken Sie mit der rechten Maustaste auf das Projekt ContosoAdsWeb, und klicken Sie auf **Verweise** – **Verweise hinzufügen**. Wählen Sie im Dialogfeld **Verweis-Manager** im linken Bereich **Projektmappe – Projekte** aus, wählen Sie **ContosoAdsCommon** aus, und klicken Sie auf **OK**.
+1. Fügen Sie im Projekt ContosoAdsWeb einen Verweis auf das Projekt ContosoAdsCommon ein. Klicken Sie mit der rechten Maustaste auf das Projekt ContosoAdsWeb, und klicken Sie auf **Verweise** – **Verweise hinzufügen**. Wählen Sie im Dialogfeld **Verweis-Manager** im linken Bereich **Projektmappe – Projekte** aus, wählen Sie **ContosoAdsCommon** aus, und klicken Sie auf **OK**.
 
-11. Fügen Sie im Projekt ContosoAdsWorker einen Verweis auf das Projekt ContosoAdsCommon ein.
+2. Fügen Sie im Projekt ContosoAdsWorker einen Verweis auf das Projekt ContosoAdsCommon ein.
 
 	ContosoAdsCommon wird Datenmodell und Kontextklasse für das Entity Framework enthalten, das sowohl von Front-End als auch von Back-End verwendet wird.
 
-11. Fügen Sie im Projekt "ContosoAdsWorker" einen Verweis auf `System.Drawing` ein.
+3. Fügen Sie im Projekt "ContosoAdsWorker" einen Verweis auf `System.Drawing` ein.
 
 	Diese Assembly wird vom Back-End für die Konvertierung von Bildern zu Miniaturansichten verwendet.
 
@@ -427,39 +435,43 @@ Nach der Erstellung der Lösung werden Sie den Code prüfen, der speziell für C
 
 In diesem Abschnitt konfigurieren Sie die Verbindungszeichenfolgen für den Azure-Speicher und SQL für lokale Tests. In den Bereitstellungsanweisungen weiter oben in diesem Tutorial wurde beschrieben, wie Sie die Verbindungszeichenfolgen für die Ausführung der Anwendung in der Cloud einrichten.
 
-3. Öffnen Sie im Projekt "ContosoAdsWeb" die Datei "Web.config" der Anwendung, und fügen Sie das folgende `connectionStrings`-Element nach dem `configSections`-Element ein.
+1. Öffnen Sie im Projekt "ContosoAdsWeb" die Datei "Web.config" der Anwendung, und fügen Sie das folgende `connectionStrings`-Element nach dem `configSections`-Element ein.
 
-		<connectionStrings>
-		  <add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
-		</connectionStrings>
+    ```xml
+    <connectionStrings>
+        <add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
+    </connectionStrings>
+    ```
+    
+	Wenn Sie Visual Studio 2015 verwenden, ersetzen Sie „v11.0“ durch „MSSQLLocalDB“.
 
-	Wenn Sie Visual Studio 2015 verwenden, ersetzen Sie „v11.0“ durch „MSSQLLocalDB“.
+2. Speichern Sie die Änderungen.
 
-3. Speichern Sie die Änderungen.
-
-2. Klicken Sie im Projekt ContosoAdsCloudService mit der rechten Maustaste auf ContosoAdsWeb unter **Rollen**, und klicken Sie auf **Eigenschaften**.
+3. Klicken Sie im Projekt ContosoAdsCloudService mit der rechten Maustaste auf ContosoAdsWeb unter **Rollen**, und klicken Sie auf **Eigenschaften**.
 
 	![Rolleneigenschaften](./media/cloud-services-dotnet-get-started/roleproperties.png)
 
-3. Klicken Sie im **ContosAdsWeb [Rolle]**-Eigenschaftenfenster auf die Registerkarte **Einstellungen**, und klicken Sie auf **Einstellung hinzufügen**.
+4. Klicken Sie im **ContosAdsWeb [Rolle]**-Eigenschaftenfenster auf die Registerkarte **Einstellungen**, und klicken Sie auf **Einstellung hinzufügen**.
 
 	Lassen Sie den Wert von **Dienstkonfiguration** auf **Alle Konfigurationen**.
 
-4. Fügen Sie eine neue Einstellung mit dem Namen *StorageConnectionString* hinzu. Setzen Sie **Typ** auf *ConnectionString*, und setzen Sie den **Wert** auf *UseDevelopmentStorage=true*.
+5. Fügen Sie eine neue Einstellung mit dem Namen *StorageConnectionString* hinzu. Setzen Sie **Typ** auf *ConnectionString*, und setzen Sie den **Wert** auf *UseDevelopmentStorage=true*.
 
 	![Neue Verbindungszeichenfolge](./media/cloud-services-dotnet-get-started/scall.png)
 
-5. Speichern Sie die Änderungen.
+6. Speichern Sie die Änderungen.
 
-3. Wiederholen Sie die Prozedur, mit der Sie eine Speicher-Verbindungszeichenfolge zu den ContosoAdsWorker-Rolleneigenschaften hinzugefügt haben.
+7. Wiederholen Sie die Prozedur, mit der Sie eine Speicher-Verbindungszeichenfolge zu den ContosoAdsWorker-Rolleneigenschaften hinzugefügt haben.
 
-5. Fügen Sie ebenfalls im **ContosoAdsWorker [Role]**-Eigenschaftenfenster eine weitere Verbindungszeichenfolge hinzu:
+8. Fügen Sie ebenfalls im **ContosoAdsWorker [Role]**-Eigenschaftenfenster eine weitere Verbindungszeichenfolge hinzu:
 
 	* Name: ContosoAdsDbConnectionString
 	* Typ: Zeichenfolge
-	* Wert: Fügen Sie dieselbe Verbindungszeichenfolge ein, die Sie auch für das Webrollenprojekt verwendet haben. (Das folgende Beispiel bezieht sich auf Visual Studio 2013. Wenn Sie Visual Studio 2015 verwenden und dieses Beispiel kopieren, dürfen sich nicht vergessen, den Wert für „Data Source“ zu ändern.)
+	* Wert: Fügen Sie dieselbe Verbindungszeichenfolge ein, die Sie auch für das Webrollenprojekt verwendet haben. (Das folgende Beispiel bezieht sich auf Visual Studio 2013. Wenn Sie Visual Studio 2015 verwenden und dieses Beispiel kopieren, dürfen sich nicht vergessen, den Wert für „Data Source“ zu ändern.)
 
-			Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;
+	    ```
+        Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;
+        ```
 
 ### Hinzufügen von Codedateien
 
@@ -471,10 +483,10 @@ Um Dateien zu einem Projekt oder einem Ordner hinzuzufügen, klicken Sie mit der
 
 3. Fügen Sie im Projekt ContosoAdsWeb die folgenden Dateien aus dem heruntergeladenen Projekt hinzu.
 	- *Global.asax.cs*.  
-	- Im Ordner *Views\Shared*: <em>\_Layout.cshtml</em>
-	- Im Ordner *Views\Home*: *Index.cshtml*
+	- Im Ordner *Views\\Shared*: *\_Layout.cshtml*
+	- Im Ordner *Views\\Home*: *Index.cshtml*
 	- Im Ordner *Controllers*: *AdController.cs*
-	- Im Ordner *Views\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien
+	- Im Ordner *Views\\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien
 
 3. Fügen Sie im Projekt ContosoAdsWorker die Datei *WorkerRole.cs* aus dem heruntergeladenen Projekt hinzu.
 
@@ -490,60 +502,64 @@ In den folgenden Abschnitten wird der Code für die Arbeit mit Azure-Umgebung, B
 
 Die Datei Ad.cs definiert eine Enumeration für Werbekategorien und eine POCO-Entitätsklasse für Werbeinformationen.
 
-		public enum Category
-		{
-		    Cars,
-		    [Display(Name="Real Estate")]
-		    RealEstate,
-		    [Display(Name = "Free Stuff")]
-		    FreeStuff
-		}
+```csharp
+public enum Category
+{
+    Cars,
+    [Display(Name="Real Estate")]
+    RealEstate,
+    [Display(Name = "Free Stuff")]
+    FreeStuff
+}
 
-		public class Ad
-		{
-		    public int AdId { get; set; }
+public class Ad
+{
+    public int AdId { get; set; }
 
-		    [StringLength(100)]
-		    public string Title { get; set; }
+    [StringLength(100)]
+    public string Title { get; set; }
 
-		    public int Price { get; set; }
+    public int Price { get; set; }
 
-		    [StringLength(1000)]
-		    [DataType(DataType.MultilineText)]
-		    public string Description { get; set; }
+    [StringLength(1000)]
+    [DataType(DataType.MultilineText)]
+    public string Description { get; set; }
 
-		    [StringLength(1000)]
-		    [DisplayName("Full-size Image")]
-		    public string ImageURL { get; set; }
+    [StringLength(1000)]
+    [DisplayName("Full-size Image")]
+    public string ImageURL { get; set; }
 
-		    [StringLength(1000)]
-		    [DisplayName("Thumbnail")]
-		    public string ThumbnailURL { get; set; }
+    [StringLength(1000)]
+    [DisplayName("Thumbnail")]
+    public string ThumbnailURL { get; set; }
 
-		    [DataType(DataType.Date)]
-		    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-		    public DateTime PostedDate { get; set; }
+    [DataType(DataType.Date)]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    public DateTime PostedDate { get; set; }
 
-		    public Category? Category { get; set; }
-		    [StringLength(12)]
-		    public string Phone { get; set; }
-		}
+    public Category? Category { get; set; }
+    [StringLength(12)]
+    public string Phone { get; set; }
+}
+```
 
 ### ContosoAdsCommon - ContosoAdsContext.cs
 
 Die Klasse ContosoAdsContext gibt an, dass die Ad-Klasse in einer DbSet-Sammlung verwendet wird, die von Entity Framework in einer SQL-Datenbank gespeichert wird.
 
-		public class ContosoAdsContext : DbContext
-		{
-		    public ContosoAdsContext() : base("name=ContosoAdsContext")
-		    {
-		    }
-		    public ContosoAdsContext(string connString)
-		        : base(connString)
-		    {
-		    }
-		    public System.Data.Entity.DbSet<Ad> Ads { get; set; }
-		}
+```csharp
+public class ContosoAdsContext : DbContext
+{
+    public ContosoAdsContext() : base("name=ContosoAdsContext")
+    {
+    }
+    public ContosoAdsContext(string connString)
+        : base(connString)
+    {
+    }
+    public System.Data.Entity.DbSet<Ad> Ads { get; set; }
+}
+```
 
 Die Klasse besitzt zwei Konstruktoren. Der erste Konstruktor wird vom Webprojekt verwendet und gibt den Namen einer Verbindungszeichenfolge an, die in der Datei Web.config gespeichert ist. Mit dem zweiten Konstruktor können Sie die eigentliche Verbindungszeichenfolge übergeben. Diese wird vom Workerrollen-Projekt benötigt, da dieses keine eigene Web.config-Datei hat. Sie haben weiter oben gesehen, wo diese Verbindungszeichenfolge gespeichert wird, und weiter unten werden Sie sehen, wie der Code die Verbindungszeichenfolge beim Instanziieren der DbContext-Klasse abruft.
 
@@ -553,40 +569,48 @@ Der aus der `Application_Start`-Methode aufgerufene Code erstellt einen *images*
 
 Der Code verwendet die Speicher-Verbindungszeichenfolge aus der *.cscfg*-Datei für den Zugriff auf das Speicherkonto.
 
-		var storageAccount = CloudStorageAccount.Parse
-		    (RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString"));
+```csharp
+var storageAccount = CloudStorageAccount.Parse
+    (RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString"));
+```
 
 Anschließend ruft er einen Verweis auf den *images*-Blobcontainer ab, erstellt den Container, falls dieser noch nicht existiert, und setzt die Zugriffsberechtigungen für den neuen Container. Standardmäßig erlauben neue Container nur Clients mit Speicherkonto-Anmeldeinformationen den Zugriff auf Blobs. Für die Website müssen die Blobs öffentlich sein, um die Bilder mithilfe der URLs anzuzeigen, die auf die Bild-Blobs zeigen.
 
-		var blobClient = storageAccount.CreateCloudBlobClient();
-		var imagesBlobContainer = blobClient.GetContainerReference("images");
-		if (imagesBlobContainer.CreateIfNotExists())
-		{
-		    imagesBlobContainer.SetPermissions(
-		        new BlobContainerPermissions
-		        {
-		            PublicAccess =BlobContainerPublicAccessType.Blob
-		        });
-		}
+```csharp
+var blobClient = storageAccount.CreateCloudBlobClient();
+var imagesBlobContainer = blobClient.GetContainerReference("images");
+if (imagesBlobContainer.CreateIfNotExists())
+{
+    imagesBlobContainer.SetPermissions(
+        new BlobContainerPermissions
+        {
+            PublicAccess =BlobContainerPublicAccessType.Blob
+        });
+}
+```
 
 Ein ähnlicher Codeteil ruft einen Verweis auf die *images*-Warteschlange ab und erstellt eine neue Warteschlange. In diesem Fall sind keine Berechtigungsänderungen erforderlich.
 
-		CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-		var imagesQueue = queueClient.GetQueueReference("images");
-		imagesQueue.CreateIfNotExists();
+```csharp
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+var imagesQueue = queueClient.GetQueueReference("images");
+imagesQueue.CreateIfNotExists();
+```
 
 ### ContosoAdsWeb - \_Layout.cshtml
 
-Die *_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
+Die *\_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
 
-### ContosoAdsWeb - Views\Home\Index.cshtml
+### ContosoAdsWeb - Views\\Home\\Index.cshtml
 
-Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
+Die *Views\\Home\\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
 
-		<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
-		<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
-		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
-		<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
+```razor
+<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
+<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
+<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
+<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
+```
 
 ### ContosoAdsWeb - AdController.cs
 
@@ -594,101 +618,125 @@ In der *AdController.cs*-Datei ruft der Konstruktor die `InitializeStorage`-Meth
 
 Anschließend ruft der Code einen Verweis auf den *images*-Blobcontainer ab, wie weiter oben in *Global.asax.cs* gezeigt. Gleichzeitig wird eine angemessene Standard-[Wiederholungs-Richtlinie](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) für eine Webanwendung gesetzt. Mit der Standardrichtlinie (exponentiell ansteigende Wartezeiten) kann es passieren, dass die Webanwendung im Fall eines vorübergehenden Fehlers über eine Minute lang stehen bleibt. Die hier gezeigte Richtlinie wartet 3 Sekunden nach jedem Versuch für bis zu 3 Versuche.
 
-		var blobClient = storageAccount.CreateCloudBlobClient();
-		blobClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
-		imagesBlobContainer = blobClient.GetContainerReference("images");
+```csharp
+var blobClient = storageAccount.CreateCloudBlobClient();
+blobClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
+imagesBlobContainer = blobClient.GetContainerReference("images");
+```
 
 Ein ähnlicher Codeteil ruft einen Verweis auf die *images*-Warteschlange ab.
 
-		CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-		queueClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
-		imagesQueue = queueClient.GetQueueReference("images");
+```csharp
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+queueClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);
+imagesQueue = queueClient.GetQueueReference("images");
+```
 
 Ein Großteil des Controller-Codes ist typisch für die Arbeit mit einem Entity Framework-Datenmodell und einer DbContext-Klasse. Eine Ausnahme ist die HttpPost `Create`-Methode, die eine Datei hochlädt und im Blobspeicher ablegt. Die Modellbindung stellt ein [HttpPostedFileBase](http://msdn.microsoft.com/library/system.web.httppostedfilebase.aspx)-Objekt für die Methode bereit.
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<ActionResult> Create(
-		    [Bind(Include = "Title,Price,Description,Category,Phone")] Ad ad,
-		    HttpPostedFileBase imageFile)
+```csharp
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<ActionResult> Create(
+    [Bind(Include = "Title,Price,Description,Category,Phone")] Ad ad,
+    HttpPostedFileBase imageFile)
+```
 
 Wenn ein Benutzer eine hochzuladende Datei auswählt, lädt der Code die Datei hoch, speichert sie in einem Blob und aktualisiert den Ad-Datenbankeintrag mit einer URL, die auf den Blob zeigt.
 
-		if (imageFile != null && imageFile.ContentLength != 0)
-		{
-		    blob = await UploadAndSaveBlobAsync(imageFile);
-		    ad.ImageURL = blob.Uri.ToString();
-		}
+```csharp
+if (imageFile != null && imageFile.ContentLength != 0)
+{
+    blob = await UploadAndSaveBlobAsync(imageFile);
+    ad.ImageURL = blob.Uri.ToString();
+}
+```
 
 Der Code für den Upload befindet sich in der `UploadAndSaveBlobAsync`-Methode. Er erstellt einen GUID-Namen für den Blob, lädt die Datei hoch und speichert sie, und gibt einen Verweis auf den gespeicherten Blob zurück.
 
-		private async Task<CloudBlockBlob> UploadAndSaveBlobAsync(HttpPostedFileBase imageFile)
-		{
-		    string blobName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
-		    CloudBlockBlob imageBlob = imagesBlobContainer.GetBlockBlobReference(blobName);
-		    using (var fileStream = imageFile.InputStream)
-		    {
-		        await imageBlob.UploadFromStreamAsync(fileStream);
-		    }
-		    return imageBlob;
-		}
+```csharp
+private async Task<CloudBlockBlob> UploadAndSaveBlobAsync(HttpPostedFileBase imageFile)
+{
+    string blobName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
+    CloudBlockBlob imageBlob = imagesBlobContainer.GetBlockBlobReference(blobName);
+    using (var fileStream = imageFile.InputStream)
+    {
+        await imageBlob.UploadFromStreamAsync(fileStream);
+    }
+    return imageBlob;
+}
+```
 
 Nachdem mit HttpPost `Create`-Methode ein Blob hochgeladen und die Datenbank aktualisiert wurde, wird eine Nachricht in der Warteschlange erstellt, um den Back-End-Prozess darüber zu informieren, dass ein Bild für die Konvertierung in eine Miniaturansicht vorliegt.
 
-		string queueMessageString = ad.AdId.ToString();
-		var queueMessage = new CloudQueueMessage(queueMessageString);
-		await queue.AddMessageAsync(queueMessage);
+```csharp
+string queueMessageString = ad.AdId.ToString();
+var queueMessage = new CloudQueueMessage(queueMessageString);
+await queue.AddMessageAsync(queueMessage);
+```
 
 Der Code für die HttpPost `Edit`-Methode ist ähnlich, nur müssen hier alle vorhandenen Blobs gelöscht werden, wenn der Benutzer eine neue Bilddatei auswählt.
 
-		if (imageFile != null && imageFile.ContentLength != 0)
-		{
-		    await DeleteAdBlobsAsync(ad);
-		    imageBlob = await UploadAndSaveBlobAsync(imageFile);
-		    ad.ImageURL = imageBlob.Uri.ToString();
-		}
+```csharp
+if (imageFile != null && imageFile.ContentLength != 0)
+{
+    await DeleteAdBlobsAsync(ad);
+    imageBlob = await UploadAndSaveBlobAsync(imageFile);
+    ad.ImageURL = imageBlob.Uri.ToString();
+}
+```
 
 Das nächste Beispiel zeigt den Code, der Blobs löscht, wenn Sie eine Werbeanzeige löschen.
 
-		private async Task DeleteAdBlobsAsync(Ad ad)
-		{
-		    if (!string.IsNullOrWhiteSpace(ad.ImageURL))
-		    {
-		        Uri blobUri = new Uri(ad.ImageURL);
-		        await DeleteAdBlobAsync(blobUri);
-		    }
-		    if (!string.IsNullOrWhiteSpace(ad.ThumbnailURL))
-		    {
-		        Uri blobUri = new Uri(ad.ThumbnailURL);
-		        await DeleteAdBlobAsync(blobUri);
-		    }
-		}
-		private static async Task DeleteAdBlobAsync(Uri blobUri)
-		{
-		    string blobName = blobUri.Segments[blobUri.Segments.Length - 1];
-		    CloudBlockBlob blobToDelete = imagesBlobContainer.GetBlockBlobReference(blobName);
-		    await blobToDelete.DeleteAsync();
-		}
+```csharp
+private async Task DeleteAdBlobsAsync(Ad ad)
+{
+    if (!string.IsNullOrWhiteSpace(ad.ImageURL))
+    {
+        Uri blobUri = new Uri(ad.ImageURL);
+        await DeleteAdBlobAsync(blobUri);
+    }
+    if (!string.IsNullOrWhiteSpace(ad.ThumbnailURL))
+    {
+        Uri blobUri = new Uri(ad.ThumbnailURL);
+        await DeleteAdBlobAsync(blobUri);
+    }
+}
+private static async Task DeleteAdBlobAsync(Uri blobUri)
+{
+    string blobName = blobUri.Segments[blobUri.Segments.Length - 1];
+    CloudBlockBlob blobToDelete = imagesBlobContainer.GetBlockBlobReference(blobName);
+    await blobToDelete.DeleteAsync();
+}
+```
 
-### ContosoAdsWeb - Views\Ad\Index.cshtml und Details.cshtml
+### ContosoAdsWeb - Views\\Ad\\Index.cshtml und Details.cshtml
 
 Die Datei *Index.cshtml* zeigt Miniaturansichten zusammen mit den restlichen Werbedaten an.
 
-		<img  src="@Html.Raw(item.ThumbnailURL)" />
+```razor
+<img src="@Html.Raw(item.ThumbnailURL)" />
+```
 
 Die Datei *Details.cshtml* zeigt das Bild in voller Größe an.
 
-		<img src="@Html.Raw(Model.ImageURL)" />
+```razor
+<img src="@Html.Raw(Model.ImageURL)" />
+```
 
-### ContosoAdsWeb - Views\Ad\Create.cshtml und Edit.cshtml
+### ContosoAdsWeb - Views\\Ad\\Create.cshtml und Edit.cshtml
 
 Die Dateien *Create.cshtml* und *Edit.cshtml* geben die Formularcodierung an, mit der der Controller das `HttpPostedFileBase`-Objekt abruft.
 
-		@using (Html.BeginForm("Create", "Ad", FormMethod.Post, new { enctype = "multipart/form-data" }))
+```razor
+@using (Html.BeginForm("Create", "Ad", FormMethod.Post, new { enctype = "multipart/form-data" }))
+```
 
 Ein `<input>`-Element weist den Browser an, ein Dateiauswahl-Dialogfeld zu öffnen.
 
-		<input type="file" name="imageFile" accept="image/*" class="form-control fileupload" />
+```razor
+<input type="file" name="imageFile" accept="image/*" class="form-control fileupload" />
+```
 
 ### ContosoAdsWorker - WorkerRole.cs - OnStart-Methode
 
@@ -696,8 +744,10 @@ Die Azure Workerrollen-Umgebung ruft die `OnStart`-Methode in der `WorkerRole`-K
 
 Die `OnStart`-Methode ruft die Datenbank-Verbindungszeichenfolge aus der *CSCFG*-Datei ab und übergibt sie an die DbContext-Klasse des Entity Framework. Der SQLClient-Anbieter wird standardmäßig verwendet, daher muss kein Anbieter angegeben werden.
 
-		var dbConnString = CloudConfigurationManager.GetSetting("ContosoAdsDbConnectionString");
-		db = new ContosoAdsContext(dbConnString);
+```csharp
+var dbConnString = CloudConfigurationManager.GetSetting("ContosoAdsDbConnectionString");
+db = new ContosoAdsContext(dbConnString);
+```
 
 Anschließend ruft die Methode einen Verweis auf das Speicherkonto ab und erstellt Blobcontainer und Warteschlange, falls diese noch nicht existieren. Dieser Code ähnelt dem Code, den Sie bereits in der `Application_Start`-Methode der Webrolle gesehen haben.
 
@@ -705,34 +755,36 @@ Anschließend ruft die Methode einen Verweis auf das Speicherkonto ab und erstel
 
 Die `Run`-Methode wird aufgerufen, wenn die Initialisierung der `OnStart`-Methode abgeschlossen ist. Die Methode führt eine Endlosschleife aus, die nach neuen Nachrichten in der Warteschlange sucht und diese beim Eintreffen verarbeitet.
 
-		public override void Run()
-		{
-		    CloudQueueMessage msg = null;
+```csharp
+public override void Run()
+{
+    CloudQueueMessage msg = null;
 
-		    while (true)
-		    {
-		        try
-		        {
-		            msg = this.imagesQueue.GetMessage();
-		            if (msg != null)
-		            {
-		                ProcessQueueMessage(msg);
-		            }
-		            else
-		            {
-		                System.Threading.Thread.Sleep(1000);
-		            }
-		        }
-		        catch (StorageException e)
-		        {
-		            if (msg != null && msg.DequeueCount > 5)
-		            {
-		                this.imagesQueue.DeleteMessage(msg);
-		            }
-		            System.Threading.Thread.Sleep(5000);
-		        }
-		    }
-		}
+    while (true)
+    {
+        try
+        {
+            msg = this.imagesQueue.GetMessage();
+            if (msg != null)
+            {
+                ProcessQueueMessage(msg);
+            }
+            else
+            {
+                System.Threading.Thread.Sleep(1000);
+            }
+        }
+        catch (StorageException e)
+        {
+            if (msg != null && msg.DequeueCount > 5)
+            {
+                this.imagesQueue.DeleteMessage(msg);
+            }
+            System.Threading.Thread.Sleep(5000);
+        }
+    }
+}
+```
 
 Nach jedem Durchgang der Schleife geht das Programm für eine Sekunde in den Ruhezustand, wenn keine Nachricht gefunden wurde. So wird verhindert, dass die Workerrolle übermäßige Kosten für CPU-Zeit und Speichertransaktionen verursacht. Das Microsoft-Kundenberatungsteam erzählt eine Geschichte von einem Entwickler, der diesen Mechanismus vergessen hat, seine Anwendung bereitgestellt hat und in den Urlaub gefahren ist. Als er zurückkam, war sein Versehen teurer als der gesamte Urlaub.
 
@@ -740,32 +792,34 @@ Manchmal kann der Inhalt einer Nachricht in der Warteschlange einen Verarbeitung
 
 `ProcessQueueMessage` wird aufgerufen, wenn eine Warteschlangennachricht gefunden wurde.
 
-		private void ProcessQueueMessage(CloudQueueMessage msg)
-		{
-		    var adId = int.Parse(msg.AsString);
-		    Ad ad = db.Ads.Find(adId);
-		    if (ad == null)
-		    {
-		        throw new Exception(String.Format("AdId {0} not found, can't create thumbnail", adId.ToString()));
-		    }
+```csharp
+private void ProcessQueueMessage(CloudQueueMessage msg)
+{
+    var adId = int.Parse(msg.AsString);
+    Ad ad = db.Ads.Find(adId);
+    if (ad == null)
+    {
+        throw new Exception(String.Format("AdId {0} not found, can't create thumbnail", adId.ToString()));
+    }
 
-		    CloudBlockBlob inputBlob = this.imagesBlobContainer.GetBlockBlobReference(ad.ImageURL);
+    CloudBlockBlob inputBlob = this.imagesBlobContainer.GetBlockBlobReference(ad.ImageURL);
 
-		    string thumbnailName = Path.GetFileNameWithoutExtension(inputBlob.Name) + "thumb.jpg";
-		    CloudBlockBlob outputBlob = this.imagesBlobContainer.GetBlockBlobReference(thumbnailName);
+    string thumbnailName = Path.GetFileNameWithoutExtension(inputBlob.Name) + "thumb.jpg";
+    CloudBlockBlob outputBlob = this.imagesBlobContainer.GetBlockBlobReference(thumbnailName);
 
-		    using (Stream input = inputBlob.OpenRead())
-		    using (Stream output = outputBlob.OpenWrite())
-		    {
-		        ConvertImageToThumbnailJPG(input, output);
-		        outputBlob.Properties.ContentType = "image/jpeg";
-		    }
+    using (Stream input = inputBlob.OpenRead())
+    using (Stream output = outputBlob.OpenWrite())
+    {
+        ConvertImageToThumbnailJPG(input, output);
+        outputBlob.Properties.ContentType = "image/jpeg";
+    }
 
-		    ad.ThumbnailURL = outputBlob.Uri.ToString();
-		    db.SaveChanges();
+    ad.ThumbnailURL = outputBlob.Uri.ToString();
+    db.SaveChanges();
 
-		    this.imagesQueue.DeleteMessage(msg);
-		}
+    this.imagesQueue.DeleteMessage(msg);
+}
+```
 
 Der Code liest die Bild-URL aus der Datenbank, konvertiert das Bild zu einer Miniaturansicht, speichert die Miniaturansicht in einem Blob, aktualisiert die Datenbank mit der URL der Miniaturansicht und löscht die Warteschlangen-Nachricht.
 
@@ -802,7 +856,7 @@ Die Contoso Ads-Anwendung wurde für dieses Tutorial bewusst einfach gehalten. S
 Hier finden Sie einige Beispielanwendungen für Clouddienste mit realitätsnäheren Programmierpraktiken, geordnet vom einfachsten hin zum komplexesten Projekt:
 
 * [PhluffyFotos](http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31). Ähnlich der Contoso Ads-Anwendung, jedoch mit mehr Funktionen und realitätsnäheren Programmierpraktiken.
-* [Azure-Clouddienst-Anwendung mit mehreren Ebenen mit Tabellen, Warteschlangen und Blobs](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Bietet eine Einführung in Azure-Speichertabellen sowie in Blobs und Warteschlangen. Dieser Artikel basiert auf einer älteren Version des Azure SDK für .NET. Es müssen einige Änderungen vorgenommen werden, damit die Anweisungen für die aktuelle Version funktionieren.
+* [Azure-Clouddienst-Anwendung mit mehreren Ebenen mit Tabellen, Warteschlangen und Blobs](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Bietet eine Einführung in Azure-Speichertabellen sowie in Blobs und Warteschlangen. Dieser Artikel basiert auf einer älteren Version des Azure SDK für .NET. Es müssen einige Änderungen vorgenommen werden, damit die Anweisungen für die aktuelle Version funktionieren.
 * [Clouddienstgrundlagen in Microsoft Azure](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ein umfassendes Beispiel mit einer breiten Palette bewährter Methoden, erarbeitet von der Microsoft Patterns and Practices-Gruppe.
 
 Weitere Informationen zur Entwicklung für die Cloud finden Sie unter [Erstellen von Cloud-Apps mit Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction).
@@ -815,4 +869,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Verwalten von Cloud Services](cloud-services-how-to-manage.md)
 * [Azure Storage (in englischer Sprache)](/documentation/services/storage/)
 
-<!-----HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

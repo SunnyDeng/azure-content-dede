@@ -12,7 +12,7 @@ Sie können vordefinierte ARM-Vorlagen, die in ein von Microsoft verwaltetes und
 
 	![ARM-Vorlagenparameter](./media/virtual-networks-create-vnet-arm-template-click-include/figure2.png)
 
-4. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine Ressourcengruppe aus, zu der Sie das VNet hinzufügen möchten, oder klicken Sie auf **Neu erstellen**, um das VNet zu einer neuen Ressourcengruppe hinzuzufügen. Weitere Informationen zu Ressourcengruppen finden Sie unter [](). Die folgende Abbildung zeigt die Ressourcengruppeneinstellungen für eine neue Ressourcengruppe mit dem Namen **TestRG**.
+4. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine Ressourcengruppe aus, zu der Sie das VNet hinzufügen möchten, oder klicken Sie auf **Neu erstellen**, um das VNet zu einer neuen Ressourcengruppe hinzuzufügen. Die folgende Abbildung zeigt die Ressourcengruppeneinstellungen für eine neue Ressourcengruppe mit dem Namen **TestRG**.
 
 	![Ressourcengruppe](./media/virtual-networks-create-vnet-arm-template-click-include/figure3.png)
 
@@ -27,4 +27,4 @@ Sie können vordefinierte ARM-Vorlagen, die in ein von Microsoft verwaltetes und
 
 	![Erstellen von VNet im Vorschauportal](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.gif)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

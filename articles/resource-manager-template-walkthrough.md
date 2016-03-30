@@ -308,7 +308,7 @@ Sie erstellen zwei Netzwerkschnittstellen, und zwar eine für jeden virtuellen C
 ```
 
 ## Virtual Machine
-Sie erstellen zwei virtuelle Computer, indem Sie die copyIndex()-Funktion verwenden, wie dies bei der Erstellung der [Netzwerkschnittstellen](#network-interface) der Fall war. Die VM-Erstellung hängt vom Speicherkonto, der Netzwerkschnittstelle und der Verfügbarkeitsgruppe ab. Diese VM wird aus einem Marketplace-Image erstellt, wie dies in der `storageProfile`-Eigenschaft definiert ist. `imageReferece` wird verwendet, um für das Image Herausgeber, Angebot, SKU und Version zu definieren. Zuletzt wird ein Diagnoseprofil konfiguriert, um die Diagnose für die VM zu ermöglichen.
+Sie erstellen zwei virtuelle Computer, indem Sie die copyIndex()-Funktion verwenden, wie dies bei der Erstellung der [Netzwerkschnittstellen](#network-interface) der Fall war. Die VM-Erstellung hängt vom Speicherkonto, der Netzwerkschnittstelle und der Verfügbarkeitsgruppe ab. Diese VM wird aus einem Marketplace-Image erstellt, wie dies in der `storageProfile`-Eigenschaft definiert ist. `imageReference` wird verwendet, um für das Image Herausgeber, Angebot, SKU und Version zu definieren. Zuletzt wird ein Diagnoseprofil konfiguriert, um die Diagnose für die VM zu ermöglichen.
 
 Befolgen Sie die Anleitung im Artikel [VM-Suche](./virtual-machines/resource-groups-vm-searching.md), um nach den relevanten Eigenschaften für ein Marketplace-Image zu suchen. Für Images, die von Drittanbietern veröffentlicht werden, müssen Sie eine andere Eigenschaft mit dem Namen `plan` angeben. Ein Beispiel hierfür finden Sie in [dieser Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/checkpoint-single-nic) im Schnellstartkatalog.
 
@@ -503,4 +503,4 @@ Sie haben die Erstellung Ihrer Vorlage abgeschlossen, und sie ist fertig für di
 - Weitere Informationen zur Struktur einer Vorlage finden Sie unter [Erstellen von Azure Resource Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zur Bereitstellung einer Vorlage finden Sie unter [Bereitstellen einer Ressourcengruppe mit einer Azure Resource Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

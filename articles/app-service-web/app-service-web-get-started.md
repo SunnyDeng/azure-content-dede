@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="hero-article"
-	ms.date="03/14/2016" 
+	ms.date="03/17/2016" 
 	ms.author="cephalin"
 />
 	
@@ -34,7 +34,7 @@ Für dieses Tutorial benötigen Sie Folgendes:
 
 - Git. Sie können die Binärdateien für die Installation [hier](http://www.git-scm.com/downloads) herunterladen. Sie sollten `git --version` über das Befehlszeilenterminal Ihrer Wahl ausführen können. 
 - Git-Grundkenntnisse.
-- Azure-Befehlszeilenschnittstelle. Eine Installationsanleitung finden Sie [hier](../xplat-cli-install.md).
+- Azure-Befehlszeilenschnittstelle. Eine Installationsanleitung finden Sie [hier](../xplat-cli-install.md). Sie sollten `azure --version` über das Befehlszeilenterminal Ihrer Wahl ausführen können.
 - Ein Microsoft Azure-Konto. Wenn Sie kein Konto haben, können Sie sich [für eine kostenlose Testversion anmelden](/pricing/free-trial/?WT.mc_id=A261C142F) oder [Ihre Visual Studio-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
 >[AZURE.NOTE] Unter [Azure App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) können Sie Azure App Service in Aktion erleben, bevor Sie sich für ein Azure-Konto registrieren. Dort können Sie sofort eine kurzzeitige Start-App in App Service erstellen – ohne Kreditkarte und weitere Verpflichtungen.
@@ -49,15 +49,15 @@ Wir stellen jetzt eine Web-App unter Azure App Service bereit.
 
     Verwenden Sie für *&lt;github\_sample\_url>* je nach gewünschtem Framework eine der folgenden URLs:
 
-    - ASP.NET: [https://github.com/azure-appservice-samples/aspnet-get-started.git](https://github.com/azure-appservice-samples/aspnet-get-started.git)
-    - PHP (CodeIgniter): [https://github.com/azure-appservice-samples/php-get-started.git](https://github.com/azure-appservice-samples/php-get-started.git)
-    - Node.js (Express): [https://github.com/azure-appservice-samples/nodejs-get-started.git](https://github.com/azure-appservice-samples/nodejs-get-started.git) 
-    - Python (Django): [https://github.com/azure-appservice-samples/python-get-started.git](https://github.com/azure-appservice-samples/python-get-started.git)
-    - Java: [https://github.com/azure-appservice-samples/java-get-started.git](https://github.com/azure-appservice-samples/java-get-started.git)
+    - ASP.NET: [https://github.com/Azure-Samples/app-service-web-dotnet-get-started.git](https://github.com/Azure-Samples/app-service-web-dotnet-get-started.git)
+    - PHP (CodeIgniter): [https://github.com/Azure-Samples/app-service-web-php-get-started.git](https://github.com/Azure-Samples/app-service-web-php-get-started.git)
+    - Node.js (Express): [https://github.com/Azure-Samples/app-service-web-nodejs-get-started.git](https://github.com/Azure-Samples/app-service-web-nodejs-get-started.git) 
+    - Java: [https://github.com/Azure-Samples/app-service-web-java-get-started.git](https://github.com/Azure-Samples/app-service-web-java-get-started.git)
+    - Python (Django): [https://github.com/Azure-Samples/app-service-web-python-get-started.git](https://github.com/Azure-Samples/app-service-web-python-get-started.git)
 
-2. Wechseln Sie mit `CD` in das Projektstammverzeichnis der Beispiel-App. Beispiel:
+2. Wechseln Sie mit `CD` in das Stammverzeichnis Ihrer Beispiel-App. Beispiel:
 
-        cd aspnet-get-started
+        cd app-service-web-dotnet-get-started
 
 3. Melden Sie sich wie folgt an Azure an:
 
@@ -93,15 +93,15 @@ Wenn die Fehlermeldung `Site <app_name> does not exist or has no hostnames` ange
 
 ## Durchführen von Updates für die App
 
-Genauso wie Sie die App zum ersten Mail für Azure bereitgestellt haben, können Sie jetzt jederzeit Git für die Pushübertragung aus Ihrem Projektstamm (Repositorystamm) verwenden, um ein Update der Livewebsite durchzuführen. Wenn Sie beispielsweise neue Änderungen übertragen möchten, die Sie lokal getestet haben, führen Sie einfach die folgenden Befehle in Ihrem Projektstamm (Repositorystamm) aus:
+Sie können jetzt Git verwenden, um aus Ihrem Projektstamm (Repositorystamm) jederzeit einen Pushvorgang durchzuführen und so ein Update für die Live-Website vorzunehmen. Dies entspricht der Vorgehensweise, die Sie bei der ersten Bereitstellung Ihrer App für Azure genutzt haben. Wenn Sie beispielsweise eine neue Änderung übertragen möchten, die Sie lokal getestet haben, führen Sie einfach die folgenden Befehle in Ihrem Projektstamm (Repositorystamm) aus:
     
     git add .
-    git commit -m "<you_message>"
+    git commit -m "<your_message>"
     git push azure master
 
 ## Andere Bereitstellungsmöglichkeiten
 
-Sie haben verschiedene Möglichkeiten, wie Sie Ihre Web-App bereitstellen. Die Git-Bereitstellung aus einem lokalen Repository ist nur eine dieser Möglichkeiten. Es gibt die intuitive Bereitstellung per Assistent in Visual Studio, die fortlaufende Bereitstellung direkt aus GitHub, die Inhaltssynchronisierung aus DropBox und viele andere Optionen, z. B. die FTP-Methode, mit der Webentwickler vertraut sind. Weitere Informationen zu Bereitstellungsoptionen finden Sie unter [Bereitstellen der App in Azure App Service](../app-service-web/web-sites-deploy.md).
+Sie haben verschiedene Möglichkeiten, wie Sie Ihre Web-App bereitstellen. Die Git-Bereitstellung aus einem lokalen Repository ist nur eine dieser Möglichkeiten. Sie können die Bereitstellung direkt aus Visual Studio oder fortlaufend über GitHub durchführen, über DropBox oder OneDrive synchronisieren, Dateien per FTP hochladen usw. Weitere Informationen zu Bereitstellungsoptionen finden Sie unter [Bereitstellen der App in Azure App Service](../app-service-web/web-sites-deploy.md).
 
 ## Anzeigen der App im Azure-Portal
 
@@ -115,7 +115,7 @@ Wir wechseln jetzt zum Azure-Portal, um anzuzeigen, was Sie erstellt haben:
 
     ![Anzeige der ersten App im Portal unter Azure App Service](./media/app-service-web-get-started/portal-view.png)
 
-Das Blatt der App Service-App enthält viele Einstellungen und Tools, mit denen Sie die App konfigurieren, überwachen und schützen und die Problembehandlung durchführen können. Machen Sie sich kurz mit dieser Oberfläche vertraut, indem Sie einige einfache Aufgaben durchführen:
+Das Portalblatt Ihrer App Service-App enthält viele Einstellungen und Tools, mit denen Sie die App konfigurieren, überwachen und schützen und die Problembehandlung durchführen können. Machen Sie sich kurz mit dieser Oberfläche vertraut, indem Sie einige einfache Aufgaben durchführen:
 
 - Beenden Sie die App.
 - Starten Sie die App neu.
@@ -127,7 +127,7 @@ Das Blatt der App Service-App enthält viele Einstellungen und Tools, mit denen 
 
 Erweitern Sie die bereitgestellte App auf die nächste Ebene. Schützen Sie die App per Authentifizierung. Skalieren Sie die App je nach Bedarf. Richten Sie einige Leistungswarnungen ein. Es sind jeweils nur wenige Klickvorgänge erforderlich. Weitere Informationen finden Sie unter [Erste Schritte mit Azure App Service – Teil 2](app-service-web-get-started-2.md).
 
-Sie können sich auch weiter darüber informieren, wie Sie eine Web-App für App Service von Grund auf erstellen:
+Sie können sich auch weiter darüber informieren, wie Sie eine Web-App für App Service mit einem speziellen Sprachframework erstellen:
 
 - [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md)
 - [Erstellen einer PHP-Web-App in Azure App Service](web-sites-php-mysql-deploy-use-git.md)
@@ -135,10 +135,10 @@ Sie können sich auch weiter darüber informieren, wie Sie eine Web-App für App
 - [Erstellen einer Java Web-App in Azure App Service](web-sites-java-get-started.md)
 - [Erstellen einer Python-Web-App in Azure App Service](web-sites-python-ptvs-django-mysql.md)
 
-Es sind viele Informationen dazu verfügbar, welche unterschiedlichen Apps Sie mit Azure App Service erstellen können, z. B. Web-Apps, Back-Ends für mobile Apps und API-Apps.
+Es sind auch weitere Inhalte dazu verfügbar, welche unterschiedlichen Apps Sie mit Azure App Service erstellen können, z.B. Web-Apps, Back-Ends für mobile Apps und API-Apps.
 
 - [Erstellen von Web-Apps](/documentation/learning-paths/appservice-webapps/)
 - [Erstellen von mobilen Apps](/documentation/learning-paths/appservice-mobileapps/)
 - [Erstellen von API-Apps](../app-service-api/app-service-api-apps-why-best-platform.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

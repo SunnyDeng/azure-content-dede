@@ -50,12 +50,12 @@ Sie können Ihren vorhandenen Windows- oder Linux-HPC-Cluster zum Ausführen rec
 
 HPC Pack ist die kostenlose HPC-Lösung von Microsoft, die auf Microsoft Azure und Windows Server-Technologien basiert und in der Lage ist, Windows- und Linux HPC-Workloads auszuführen.
 
-* [HPC Pack 2012 R2 Update 3 herunterladen](https://www.microsoft.com/download/details.aspx?id=49922)
+* [HPC Pack 2012 R2 Update 3 herunterladen](https://www.microsoft.com/download/details.aspx?id=49922)
 
 * [Dokumentation](https://technet.microsoft.com/library/jj899572.aspx)
 
 
-* [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](../virtual-machines/virtual-machines-hpcpack-cluster-options.md)
+* [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](../virtual-machines/virtual-machines-linux-hpcpack-cluster-options.md)
 
 * [Burst to Azure with Microsoft HPC Pack (in englischer Sprache)](https://technet.microsoft.com/library/gg481749.aspx)
 
@@ -87,11 +87,12 @@ Verwenden Sie die folgenden Azure-Vorlagen zum Bereitstellen von Linux-HPC-Clust
 
 ## Rechenintensive Instanzen
 
-Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe unterschiedlicher Größen](../virtual-machines/virtual-machines-size-specs.md) an, einschließlich rechenintensiver [A8- und A9-Instanzen](../virtual-machines/virtual-machines-a8-a9-a10-a11-specs.md), die mit einem Back-End-RDMA-Netzwerk verbunden werden können.
+Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe unterschiedlicher Größen](../virtual-machines/virtual-machines-windows-sizes.md) an, einschließlich rechenintensiver [A8- und A9-Instanzen](../virtual-machines/virtual-machines-windows-a8-a9-a10-a11-specs.md), die mit einem Back-End-RDMA-Netzwerk verbunden werden können.
 
-* [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](../virtual-machines/virtual-machines-linux-cluster-rdma.md)
 
-* [Einrichten eines Windows RDMA-Clusters mit Microsoft HPC Pack zum Ausführen von MPI-Anwendungen](../virtual-machines/virtual-machines-windows-hpcpack-cluster-rdma.md)
+* [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](../virtual-machines/virtual-machines-linux-classic-rdma-cluster.md)
+
+* [Einrichten eines Windows RDMA-Clusters mit Microsoft HPC Pack zum Ausführen von MPI-Anwendungen](../virtual-machines/virtual-machines-windows-classic-hpcpack-rdma-cluster.md)
 
 ## Architekturpläne
 
@@ -145,4 +146,4 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](https://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](https://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](https://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="03/14/2016"
-	ms.author="trinadhk;jimpark"/>
+	ms.date="03/18/2016"
+	ms.author="jimpark; trinadhk"/>
 
 # Was ist Azure Backup?
 Azure Backup ist der Dienst zum Sichern und Wiederherstellen von Daten in der Microsoft Cloud. Dieser Dienst ersetzt Ihre vorhandene lokale bzw. standortexterne Lösung durch eine zuverlässige, sichere und wirtschaftliche Cloudlösung. Außerdem trägt er zum Schutz von in der Cloud ausgeführten Assets bei. Azure Backup bietet Wiederherstellungsdienste in einer erstklassigen Infrastruktur, die skalierbar, beständig und hoch verfügbar ist.
@@ -30,7 +30,7 @@ Herkömmliche Sicherungslösungen haben sich dahingehend entwickelt, dass die Cl
 | Automatische Speicherverwaltung | Es sind keine Investitionen für lokale Speichergeräte erforderlich. Azure Backup sorgt im Rahmen eines nutzungsabhängigen Zahlungsmodells für die automatische Zuteilung und Verwaltung von Sicherungsspeicher. |
 | Unbegrenzte Skalierung | Hohe Verfügbarkeit wird ohne Aufwand für Wartung und Überwachung gewährleistet. Azure Backup nutzt die zugrunde liegende Leistung und Skalierbarkeit der Azure-Cloud und automatische Skalierungsmöglichkeiten ohne Benutzereingriffe. |
 | Mehrere Speicheroptionen | Wählen Sie Sicherungsspeicher je nach Bedarf: <li>Ein lokal redundanter Speicherblockblob ist ideal für preisbewusste Kunden und bietet Schutz der Daten vor lokalen Hardwareausfällen. <li>Ein Speicherblockblob mit Georeplikation bietet drei weitere Kopien in einem gekoppelten Rechenzentrum. Mit diesen zusätzlichen Kopien wird sichergestellt, dass Ihre Sicherungsdaten auch bei einem Ausfall eines Azure-Rechenzentrums hoch verfügbar sind. |
-| Unbegrenzte Dateiübertragungen | Es werden keine Kosten für die Übertragung ausgehender Daten während eines Wiederherstellungsvorgangs mithilfe des Azure Backup-Tresors berechnet. In Azure eingehende Datenübertragungen sind ebenfalls kostenlos. |
+| Unbegrenzte Dateiübertragungen | Es werden keine Kosten für die Übertragung ausgehender Daten während eines Wiederherstellungsvorgangs mithilfe des Azure Backup-Tresors berechnet. In Azure eingehende Datenübertragungen sind ebenfalls kostenlos. Funktioniert in Verbindung mit dem Importdienst, falls verfügbar. |
 | Datenverschlüsselung | Die Datenverschlüsselung ermöglicht eine sichere Übertragung und Speicherung von Kundendaten in der öffentlichen Cloud. Die Passphrase für die Verschlüsselung wird in der Quelle gespeichert und niemals in Azure übertragen oder gespeichert. Der Verschlüsselungsschlüssel ist zum Wiederherstellen der Daten erforderlich, und nur der Kunde hat vollen Zugriff auf die Daten im Dienst. |  
 | Anwendungskonsistente Sicherungen | Mit anwendungskonsistenten Sicherungen unter Windows wird sichergestellt, dass zum Zeitpunkt der Wiederherstellung keine Fixes erforderlich sind. Dadurch wird die angestrebte Wiederherstellungszeit verkürzt, und es wird Kunden ermöglicht, schneller zu einem Ausführungsstatus zurückzukehren. |
 | Langfristige Aufbewahrung | Anstatt für standortexterne Bandsicherungslösungen zu zahlen, können Kunden Daten in Azure sichern. Dies ist eine attraktive Lösung, die mit der Bandsicherung vergleichbar und kostengünstig ist. |
@@ -40,28 +40,47 @@ Als eine hybride Sicherungslösung besteht Azure Backup aus mehreren Komponenten
 
 ![Azure Backup-Komponenten](./media/backup-introduction-to-azure-backup/azure-backup-overview.png)
 
-## Bereitstellungsszenarien
+### Bereitstellungsszenarien
 
 | Komponente | Bereitstellung in Azure möglich? | Lokale Bereitstellung möglich? | Unterstützter Zielspeicher|
 | --- | --- | --- | --- |
 | Azure Backup-Agent | <p>Ja</p> <p>Der Azure Backup-Agent kann auf allen virtuellen Windows Server-Computern bereitgestellt werden, die in Azure ausgeführt werden.</p> | <p>Ja</p> <p>Der Azure Backup-Agent kann auf allen virtuellen Windows Server-Computern oder physischen Computern bereitgestellt werden.</p> | <p>Azure Backup-Tresor</p> |
-| System Center Data Protection Manager (DPM) | <p>Ja</p> <p>Erfahren Sie mehr über den [Schutz von Workloads in Azure mithilfe von System Center DPM](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx).</p> | <p>Ja</p> <p>Erfahren Sie mehr zum [Schutz von Workloads und virtuellen Computern im Rechenzentrum](https://technet.microsoft.com/library/hh758173.aspx).</p> | <p>Lokal angefügter Datenträger, </p><p>Azure Backup-Tresor,</p> <p>Band (nur lokal)</p> |
-| Azure Backup Server | <p>Ja</p> <p>Erfahren Sie mehr zum [Schutz von Workloads in Azure mithilfe von Azure Backup Server](backup-azure-microsoft-azure-backup.md).</p> | <p>Ja</p> <p>Erfahren Sie mehr zum [Schutz von Workloads in Azure mithilfe von Azure Backup Server](backup-azure-microsoft-azure-backup.md).</p> | <p>Lokal angefügter Datenträger,</p> <p>Azure Backup-Tresor</p> |
-| Azure Backup (VM-Erweiterung) | <p>Ja</p> <p>Speziell für die [Sicherung von Azure IaaS-VMs (Infrastructure as a Service)](backup-azure-vms-introduction.md).</p> | <p>Nein</p> <p>Sichern Sie virtuelle Computer in Ihrem Rechenzentrum mit System Center DPM.</p> | <p>Azure Backup-Tresor</p> |
+| System Center Data Protection Manager (DPM) | <p>Ja</p><p>Erfahren Sie mehr über den [Schutz von Workloads in Azure mithilfe von System Center DPM](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx).</p> | <p>Ja</p> <p>Erfahren Sie mehr zum [Schutz von Workloads und virtuellen Computern im Rechenzentrum](https://technet.microsoft.com/library/hh758173.aspx).</p> | <p>Lokal angefügter Datenträger, </p><p>Azure Backup-Tresor,</p> <p>Band (nur lokal)</p> |
+| Azure Backup Server | <p>Ja</p><p>Erfahren Sie mehr zum [Schutz von Workloads in Azure mithilfe von Azure Backup Server](backup-azure-microsoft-azure-backup.md).</p> | <p>Ja</p> <p>Erfahren Sie mehr zum [Schutz von Workloads in Azure mithilfe von Azure Backup Server](backup-azure-microsoft-azure-backup.md).</p> | <p>Lokal angefügter Datenträger,</p> <p>Azure Backup-Tresor</p> |
+| Azure Backup (VM-Erweiterung) | <p>Ja</p><p>Teil von Azure Fabric</p><p>Speziell für die [Sicherung von Azure IaaS-VMs (Infrastructure as a Service)](backup-azure-vms-introduction.md).</p> | <p>Nein</p> <p>Sichern Sie virtuelle Computer in Ihrem Rechenzentrum mit System Center DPM.</p> | <p>Azure Backup-Tresor</p> |
+
+### Vorteile und Einschränkungen auf Komponentenebene
+
+| Component | Vorteile | Einschränkungen | Granularität der Wiederherstellung |
+| --- | --- | --- | --- |
+| Azure Backup-Agent (MARS) | <li>Ermöglicht die Sicherung von Dateien und Ordnern auf einem Computer mit Windows-Betriebssystem – physisch oder virtuell (VMs können sich an einem beliebigen Ort lokal oder unter Azure befinden)<li>Kein separater Sicherungsserver erforderlich<li>Verwendung des Azure-Sicherungstresors | <li>Dreimal pro Tag Sicherung bzw. Wiederherstellung auf Dateiebene<li>Nur Wiederherstellung auf Datei-/Ordner-/Volumeebene, nicht anwendungsorientiert<li>Keine Unterstützung von Linux | Dateien/Ordner/Volumes |
+| System Center Data Protection Manager | <li>App-fähige Momentaufnahmen (VSS)<li>Vollständige Flexibilität in Bezug auf Sicherungszeitpunkt<li>Wiederherstellungsgranularität (alle)<li>Verwendung des Azure-Sicherungstresors möglich<li>Linux-Unterstützung (bei Hosting unter Hyper-V) | <li>Fehlende heterogene Unterstützung (VMware-VM-Sicherung, Oracle-Workloadsicherung). | Dateien/Ordner/Volumes<br>/VMs/Anwendungen |
+| Microsoft Azure Backup Server | <li>App-fähige Momentaufnahmen (VSS)<li>Vollständige Flexibilität in Bezug auf Sicherungszeitpunkt<li>Wiederherstellungsgranularität (alle)<li>Verwendung des Azure-Sicherungstresors möglich<li>Linux-Unterstützung (bei Hosting unter Hyper-V)<li>Keine System Center-Lizenz erforderlich | <li>Fehlende heterogene Unterstützung (VMware-VM-Sicherung, Oracle-Workloadsicherung).<li>Aktives Azure-Abonnement immer erforderlich<li>Keine Unterstützung der Bandsicherung | Dateien/Ordner/Volumes<br>/VMs/Anwendungen |
+| Azure IaaS-VM-Sicherung | <li>Native Sicherungen für Windows/Linux<li>Keine spezielle Agentinstallation erforderlich<li>Sicherung auf Fabric-Ebene ohne Sicherungsinfrastruktur<li>Verwendung des Azure-Sicherungstresors möglich | <li>Einmal pro Tag Sicherung/Wiederherstellung auf Datenträgerebene<li>Lokale Sicherung nicht möglich | VMs<br>Einzelne Datenträger |
 
 ## Welche Anwendungen und Workloads kann ich sichern?
 
 | Workload | Quellcomputer | Azure Backup-Lösung |
 | --- | --- |---|
-| Dateien und Ordnern | Windows Server | <p>[Azure Backup-Agent](backup-configure-vault.md),</p> <p>[System Center DPM](backup-azure-dpm-introduction.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Dateien und Ordnern | Windows-Client | <p>[Azure Backup-Agent](backup-configure-vault.md),</p> <p>[System Center DPM](backup-azure-dpm-introduction.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Virtueller Hyper-V-Computer (Windows) | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Virtueller Hyper-V-Computer (Linux) | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Microsoft SQL Server | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Microsoft SharePoint | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Microsoft Exchange | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md)</p> |
-| Azure IaaS-VMs (Windows)| - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
-| Azure IaaS VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+| Dateien und Ordnern | Windows Server | <p>[Azure Backup-Agent](backup-configure-vault.md),</p> <p>[System Center DPM](backup-azure-dpm-introduction.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
+| Dateien und Ordnern | Windows-Client | <p>[Azure Backup-Agent](backup-configure-vault.md),</p> <p>[System Center DPM](backup-azure-dpm-introduction.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
+| Virtueller Hyper-V-Computer (Windows) | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
+| Virtueller Hyper-V-Computer (Linux) | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
+| Microsoft SQL Server | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
+| Microsoft SharePoint | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
+| Microsoft Exchange | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
+| Azure IaaS-VMs (Windows) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) | | Azure IaaS-VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+
+## ARM- und Linux-Unterstützung
+
+| Component | ARM-Unterstützung | Linux-Unterstützung (von Azure unterstützt) |
+| --- | --- | --- |
+| Azure Backup-Agent (MARS) | Ja | Keine (nur Windows-basierter Agent) |
+| System Center Data Protection Manager | Ja (Agent in Gastbetriebssystem) | Nur Hyper-V (nicht Azure VM) Nur dateikonsistente Sicherung möglich |
+| Azure Backup Server (MABS) | Ja (Agent in Gastbetriebssystem) | Nur Hyper-V (nicht Azure VM) Nur dateikonsistente Sicherung möglich (wie bei DPM) |
+| Azure IaaS-VM-Sicherung | In Kürze verfügbar | In Kürze verfügbar – V2 Linux-VMs <br><br>(Konsistenz auf Dateisystemebene) |
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 ## Funktionalität
 In diesen fünf Tabellen wird zusammengefasst, wie Azure Backup-Funktionen in jeder Komponente gehandhabt werden:
@@ -143,15 +162,15 @@ Der Azure Backup-Agent verfügt über eine Drosselungsfunktion, mit der Sie steu
 
 ### Sicherung und Aufbewahrung
 
-| | Azure Backup-Agent | System Center DPM und Azure Backup Server | Azure Backup (VM-Erweiterung) |
-| --- | --- | --- | --- |
-| Sicherungshäufigkeit (für Sicherungstresor) | Drei Sicherungen pro Tag | Zwei Sicherungen pro Tag | Eine Sicherung pro Tag |
-| Sicherungshäufigkeit (auf Datenträger) | Nicht zutreffend | <p>Alle 15 Minuten für SQL-Server</p> <p>Stündlich für andere Workloads</p> | Nicht zutreffend |
-| Aufbewahrungsoptionen | Täglich, wöchentlich, monatlich, jährlich | Täglich, wöchentlich, monatlich, jährlich | Täglich, wöchentlich, monatlich, jährlich |
-| Aufbewahrungszeitraum | Bis zu 99 Jahre | Bis zu 99 Jahre | Bis zu 99 Jahre |
-| Wiederherstellungspunkte in Azure Backup-Tresor | Unbegrenzt | Unbegrenzt | Unbegrenzt |
-| Wiederherstellungspunkte auf lokalem Datenträger | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
-| Wiederherstellungspunkte auf Band | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
+| | Azure Backup-Agent | System Center DPM | Azure Backup Server | Azure Backup (VM-Erweiterung) |
+| --- | --- | --- | --- | --- |
+| Sicherungshäufigkeit (für Sicherungstresor) | Drei Sicherungen pro Tag | Zwei Sicherungen pro Tag |Zwei Sicherungen pro Tag | Eine Sicherung pro Tag |
+| Sicherungshäufigkeit (auf Datenträger) | Nicht zutreffend | <p>Alle 15 Minuten für SQL-Server</p> <p>Stündlich für andere Workloads</p> | <p>Alle 15 Minuten für SQL-Server</p> <p>Stündlich für andere Workloads</p> |Nicht zutreffend |
+| Aufbewahrungsoptionen | Täglich, wöchentlich, monatlich, jährlich | Täglich, wöchentlich, monatlich, jährlich | Täglich, wöchentlich, monatlich, jährlich |Täglich, wöchentlich, monatlich, jährlich |
+| Aufbewahrungszeitraum | Bis zu 99 Jahre | Bis zu 99 Jahre | Bis zu 99 Jahre | Bis zu 99 Jahre |
+| Wiederherstellungspunkte in Azure Backup-Tresor | Unbegrenzt | Unbegrenzt | Unbegrenzt | Unbegrenzt |
+| Wiederherstellungspunkte auf lokalem Datenträger | Nicht zutreffend | 64 für Dateiserver,<br><br>448 für Anwendungsserver | 64 für Dateiserver,<br><br>448 für Anwendungsserver |Nicht zutreffend |
+| Wiederherstellungspunkte auf Band | Nicht zutreffend | Unbegrenzt | Nicht zutreffend | Nicht zutreffend |
 
 ## Was ist die Datei mit Tresoranmeldeinformationen?
 
@@ -170,18 +189,25 @@ Die folgenden Konzepte dienen Ihnen als Unterstützung beim Treffen wichtiger En
 | ------- | ------- | ------ | ----------------- |
 | Recovery Point Objective (RPO) | Dies ist der Umfang des zulässigen Datenverlusts, falls eine Wiederherstellung durchgeführt werden muss. | Sicherungslösungen weisen eine große Varianz beim akzeptablen RPO auf. Sicherungen virtueller Computer haben zumeist ein RPO von einem Tag, während Datenbanksicherungskopien RPOs von bis zu 15 Minuten aufweisen. | Lösungen für die Notfallwiederherstellung haben niedrige RPO-Werte. Die Kopie für die Notfallwiederherstellung kann einige Sekunden bzw. einige Minuten hinterherhinken. |
 | Recovery Time Objective (RTO) | Der Zeitraum, der für eine Wiederherstellung erforderlich ist. | Aufgrund des höheren RPO-Werts ist die Datenmenge, die eine Sicherungslösung verarbeiten muss, meist wesentlich größer, was zu längeren RTOs führt. Beispielsweise kann das Wiederherstellen von Daten von Bändern Tage dauern, was davon abhängt, wie lange der Transport des Bands von einem standortexternen Aufbewahrungsort dauert. | Lösungen für die Notfallwiederherstellung weisen kleinere RTOs auf, da sie synchroner mit der Quelle sind. Weniger Änderungen müssen verarbeitet werden. |
-| Aufbewahrung | Die Dauer der Datenspeicherung. | <p>Bei Szenarien, in denen die Wiederherstellung des Geschäftsbetriebs (nach Datenbeschädigung, versehentlichem Löschen von Dateien oder Betriebssystemausfällen) erforderlich ist, werden Sicherungsdaten in der Regel maximal 30 Tage lang aufbewahrt.</p> <p>Vom Standpunkt der Compliance aus müssen Daten möglicherweise Monate oder sogar Jahre gespeichert werden. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet.</p> | Für die Notfallwiederherstellung werden nur betriebliche Wiederherstellungsdaten benötigt. Dies dauert normalerweise einige Stunden oder bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
-
+| Aufbewahrung | Die Dauer der Datenspeicherung. | Für Szenarien, für die eine operative Wiederherstellung (Beschädigung von Daten, versehentliches Löschen von Dateien, Ausfall des Betriebssystems) erforderlich ist, werden die Sicherungsdaten normalerweise maximal 30 Tage aufbewahrt.<br>Aus Gründen der Compliance kann es sein, dass Daten mehrere Monate oder sogar Jahre gespeichert werden müssen. In solchen Fällen sind Sicherungsdaten ideal für die Archivierung geeignet. | Für die Notfallwiederherstellung werden nur betriebliche Wiederherstellungsdaten benötigt. Dies dauert normalerweise einige Stunden oder bis zu einem Tag. Aufgrund der differenzierten Datensammlung in Lösungen für die Notfallwiederherstellung empfehlen sich Notfallwiederherstellungsdaten nicht für eine langfristige Aufbewahrung. |
 
 ## Nächste Schritte
 
+Testen Sie eine einfache Sicherung mit Azure Backup. Weitere Anweisungen finden Sie in einem der folgenden Lernprogramme:
+
 - [Azure Backup testen](backup-try-azure-backup-in-10-mins.md)
-- [Häufig gestellte Fragen zum Azure Backup-Dienst](backup-azure-backup-faq.md)
-- Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
+- [Azure-VM-Sicherung testen](backup-azure-vms-first-look.md)
+
+Da diese Tutorials als schnelle Hilfe beim Sichern dienen sollen, wird nur der direkte Weg zum Sichern Ihrer Daten gezeigt. Weitere Informationen zur gewünschten Art der Sicherung finden Sie unter:
+
+- [Sichern von Windows-Computern](backup-configure-vault.md)
+- [Sichern von Anwendungsworkloads](backup-azure-microsoft-azure-backup.md)
+- [Sichern von Azure IaaS-VMs](backup-azure-vms-prepare.md)
+
 
 
 [green]: ./media/backup-introduction-to-azure-backup/green.png
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

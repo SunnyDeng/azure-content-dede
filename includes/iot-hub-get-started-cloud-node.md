@@ -95,7 +95,7 @@ In diesem Abschnitt erstellen Sie eine Node.js-Konsolen-App, die D2C-Nachrichten
     var Promise = require('bluebird');
     ```
 
-5. Fügen Sie die folgenden Variablendeklarationen hinzu, und ersetzen Sie die Platzhalter durch die Werte, die Sie zuvor notiert haben. Der Wert des Platzhalters **{your event hub-compatible namespace}** stammt vom **Event Hub-kompatiblen Endpunkt** und hat das folgende Format: **xxxxnamespace.servicebus.windows.net**.
+5. Fügen Sie die folgenden Variablendeklarationen hinzu, und ersetzen Sie die Platzhalter durch die Werte, die Sie zuvor notiert haben. Der Wert des Platzhalters **{your event hub-compatible namespace}** stammt vom Feld **Event Hub-kompatibler Endpunkt** im Portal und hat das folgende Format: **xxxxnamespace.servicebus.windows.net** (ohne das Präfix **sb://*).
 
     ```
     var protocol = 'amqps';
@@ -108,7 +108,7 @@ In diesem Abschnitt erstellen Sie eine Node.js-Konsolen-App, die D2C-Nachrichten
 
     > [AZURE.NOTE] In diesem Code wird davon ausgegangen, dass Sie Ihren IoT Hub auf der Ebene F1 (Free) erstellt haben. Ein kostenloser IoT Hub verfügt über zwei Partitionen mit den Bezeichnungen „0“ und „1“. Wenn Sie Ihren IoT Hub mit einem der anderen Tarife erstellt haben, sollten Sie den Code so anpassen, dass ein **MessageReceiver**-Element für jede Partition erstellt wird.
 
-6. Fügen Sie die folgende Filterdefinition hinzu. Bei dieser Anwendung wird beim Erstellen eines Receiver-Elements ein Filter verwendet, damit das Receiver-Element nur Nachrichten liest, die nach Beginn der Ausführung des Receiver-Elements an IoT Hub gesendet werden. Dies ist in einer Testumgebung nützlich, da Sie den aktuellen Satz von Nachrichten anzeigen können. In einer Produktionsumgebung sollte durch Ihren Code hingegen sichergestellt werden, dass alle Nachrichten verarbeitet werden. Weitere Informationen hierzu finden Sie im Tutorial [Gewusst wie: Verarbeiten von D2C-Nachrichten mit IoT Hub][lnk-processd2c-tutorial].
+6. Fügen Sie die folgende Filterdefinition hinzu. Bei dieser Anwendung wird beim Erstellen eines Receiver-Elements ein Filter verwendet, damit das Receiver-Element nur Nachrichten liest, die nach Beginn der Ausführung des Receiver-Elements an IoT Hub gesendet werden. Dies ist in einer Testumgebung nützlich, damit Sie den aktuellen Satz an Nachrichten anzeigen können. In einer Produktionsumgebung sollten Sie per Code sicherstellen, dass alle Nachrichten verarbeitet werden. Weitere Informationen finden Sie im Tutorial [Verarbeiten von D2C-Nachrichten mit IoT Hub][lnk-processd2c-tutorial].
 
     ```
     var filterOffset = new Date().getTime();
@@ -182,4 +182,4 @@ In diesem Abschnitt erstellen Sie eine Node.js-Konsolen-App, die D2C-Nachrichten
 [lnk-event-hubs-overview]: ../event-hubs/event-hubs-overview.md
 [lnk-processd2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

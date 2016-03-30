@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/02/2016"
+   ms.date="03/15/2016"
    ms.author="telmos"/>
 
 # Erstellen eines virtuellen Netzwerks mit einer ARM-Vorlage
@@ -39,4 +39,4 @@ Wenn Sie die ARM-Vorlage, ohne sie zu ändern, einfach direkt aus GitHub bereits
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-arm-template-click-include](../../includes/virtual-networks-create-vnet-arm-template-click-include.md)]
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

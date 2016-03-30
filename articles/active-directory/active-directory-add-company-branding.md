@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite"
-	description="Bei diesem Thema wird erklärt, wie viele Unternehmen ein einheitliches Erscheinungsbild für all ihre verwalteten Websites und Dienste anstreben, damit ihre Endbenutzer beim Besuch dieser Websites nicht verwirrt werden."
+	description="Erfahren Sie, wie Sie Unternehmensbranding der Anmelde- und Zugriffsbereichsseite hinzufügen."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
@@ -13,62 +13,70 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/12/2016" 
+	ms.date="03/22/2016" 
 	ms.author="MarkVi"/>
 
 # Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite
+
+Viele Unternehmen streben ein einheitliches Erscheinungsbild für all ihre verwalteten Websites und Dienste an, damit ihre Endbenutzer beim Besuch dieser Websites nicht verwirrt werden. Dies ist mit Azure Active Directory möglich, indem Sie die Anpassung der Darstellung folgender Websites für Endbenutzer mit Ihrem Firmenlogo und Ihren benutzerdefinierten Farbschemas durchführen:
+
+- **Anmeldeseite** – Auf diese Seite werden Benutzer weitergeleitet, wenn sie sich bei Office 365 oder anderen webbasierten, modernen Anwendungen anmelden, die Azure AD als Identitätsanbieter verwenden. Die meisten Benutzer interagieren mit dieser Seite entweder beim Durchlaufen der Startbereichserkennung, was dem System das Umleiten von Verbundbenutzern auf ihren lokalen STS (z. B. AD FS) ermöglicht, oder bei der Eingabe ihrer Anmeldeinformationen.
+
+- **Seite "Zugriffsbereich"** – Der Zugriffsbereich ist ein webbasiertes Portal, das einem Endbenutzer die Arbeit mit einem Geschäfts- oder Schulkonto in einem Azure AD-Verzeichnis ermöglicht, um cloudbasierte Anwendungen anzuzeigen und zu starten, zu denen sie vom Azure AD-Administrator Zugriff erhalten haben. Der Zugriffsbereich ist für alle Benutzer in Ihrer Organisation über myapps.microsoft.com zugänglich.
+
+In diesem Thema wird beschrieben, wie Sie die Anmeldeseite und die Zugriffsbereichsseite anpassen können.
 
 > [AZURE.NOTE]
 >
 - Unternehmensbranding ist ein Feature, das nur verfügbar ist, wenn Sie Ihr Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 - Die Azure Active Directory Premium und Basic Editions stehen für Kunden in China zur Verfügung, die mit der weltweit verfügbaren Instanz von Azure Active Directory arbeiten. Allerdings werden die Azure Active Directory-Editionen Premium und Basic derzeit durch den in China von 21Vianet betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
-Viele Unternehmen streben ein einheitliches Erscheinungsbild für all ihre verwalteten Websites und Dienste an, damit ihre Endbenutzer beim Besuch dieser Websites nicht verwirrt werden. Azure Active Directory ermöglicht dies, indem Sie die Anpassung der Darstellung folgender Websites für Endbenutzer vornehmen können, sodass Firmenlogo und Farbschemas enthalten sind:
 
-- **Anmeldeseite** – Auf diese Seite werden Benutzer weitergeleitet, wenn sie sich bei Office 365 oder anderen webbasierten, modernen Anwendungen anmelden, die Azure AD als Identitätsanbieter verwenden. Die meisten Benutzer interagieren mit dieser Seite entweder beim Durchlaufen der Startbereichserkennung, was dem System das Umleiten von Verbundbenutzern auf ihren lokalen STS (z. B. AD FS) ermöglicht, oder bei der Eingabe ihrer Anmeldeinformationen.
 
-- **Seite "Zugriffsbereich"** – Der Zugriffsbereich ist ein webbasiertes Portal, das einem Endbenutzer die Arbeit mit einem Geschäfts- oder Schulkonto in einem Azure AD-Verzeichnis ermöglicht, um cloudbasierte Anwendungen anzuzeigen und zu starten, zu denen sie vom Azure AD-Administrator Zugriff erhalten haben. Der Zugriffsbereich ist für alle Benutzer in Ihrer Organisation über myapps.microsoft.com zugänglich.
+## Anpassen der Anmeldeseite
 
-## Anpassung der Anmeldeseite
+Die Anmeldeseite ist in der Regel die am häufigsten von Endbenutzern verwendete Webseite, die browserbasierten Zugriff auf die von Ihrer Organisation abonnierten Cloud-Apps und -dienste benötigen. <br> Falls Sie Änderungen an Ihrer Anmeldeseite vorgenommen haben, kann es bis zu einer Stunde dauern, bis die Benutzer die neuen Änderungen am Branding der Anmeldeseite sehen.
 
-Die Anmeldeseite ist in der Regel die am häufigsten von Endbenutzern verwendete Webseite, die browserbasierten Zugriff auf die Cloudanwendungen und -dienste benötigen, die Ihre Organisation abonniert. Daher ist das Aussehen dieser Seite äußerst wichtig. Wenn Sie die Standardanmeldeseite ohne Branding verwenden möchten, ist keine weitere Aktion erforderlich.
+Benutzern wird eine Anmeldeseite mit Branding angezeigt, wenn sie einen Dienst mit einer mandantenspezifischen URL besuchen, z.B. https://outlook.com/**contoso**.com oder https://mail.**contoso**.com (wenn Sie einen CNAME erstellt haben).
 
-### Wie lange dauert es, bis die Brandingänderungen auf den Anmeldeseiten sichtbar werden?
-
-Es kann bis zu einer Stunde dauern, bis Benutzer Neuerungen sehen, die Sie am Branding der Anmeldeseite vorgenommen haben.
-
-### Wann wird den Benutzern eine Anmeldeseite mit Branding angezeigt?
-
-Benutzern wird eine Anmeldeseite mit Branding angezeigt, wenn sie einen Dienst mit einer mandantenspezifischen URL besuchen, wie https://outlook.com/**contoso**.com oder https://mail.**contoso**.com (wenn Sie einen CNAME erstellt haben).
-
-Wenn sie einen Dienst ohne mandantenspezifische URLs besuchen (z. B. https://mail.office365.com), sehen Sie eine Anmeldeseite ohne Branding. Der Anmeldeseite wird aktualisiert, um Ihr Branding anzuzeigen, sobald die Benutzer ihre Benutzer-ID eingegeben oder eine Benutzerkachel ausgewählt haben.
+Wenn Benutzer einen Dienst ohne mandantenspezifische URLs besuchen (z.B. https://mail.office365.com), sehen sie eine Anmeldeseite ohne Branding. Die Anmeldeseite wird aktualisiert, um Ihr Branding anzuzeigen, sobald die Benutzer ihre Benutzer-ID eingegeben oder eine Benutzerkachel ausgewählt haben.
 
 > [AZURE.NOTE]
 >
-- Ihr Domänenname muss im Abschnitt **Active Directory** > **Verzeichnis** > **Domänen** im Azure-Verwaltungsportal, wo Sie das Branding konfiguriert haben, als "Aktiv" angezeigt werden.
+- Ihr Domänenname muss im Abschnitt **Active Directory** > **Verzeichnis** > **Domänen** im klassischen Azure-Portal, in dem Sie das Branding konfiguriert haben, als „Aktiv“ angezeigt werden.
 - Die Anmeldeseite mit dem Branding wird nicht auf die Verbraucheranmeldeseite von Microsoft übertragen. Dies bedeutet, dass Benutzer, die sich mit einem persönlichen Microsoft-Konto (früher Windows Live ID) anmelden, eine Liste an von Azure AD gerenderten Benutzerkacheln mit Branding sehen, aber das Branding Ihrer Organisation nicht auf die Microsoft-Kontoanmeldeseite übertragen wird.
 
-### Was wird meinen Endbenutzern angezeigt, nachdem ich die Anmeldeseite angepasst habe?
 
 Wenn Sie Ihre Unternehmensmarke, -farben und andere anpassbare Elemente auf dieser Seite anzeigen möchten, schauen Sie sich die folgenden Bilder an, um den Unterschied zwischen den beiden Eindrücken zu verstehen.
 
-Für einen Benutzer, der sich über einen Desktop-Computer anmeldet, ist hier ein Beispiel für die dem Benutzer angezeigte Office 365-Anmeldeseite *vor* der Anpassung:
+Der folgende Screenshot zeigt ein Beispiel für die Office 365-Anmeldeseite auf einem Desktopcomputer *vor* einer Anpassung:
 
-![][1]
+![Office 365-Anmeldeseite vor der Anpassung][1]
 
-Und dies sieht derselbe Benutzer *nach* der Anpassung:
+Nach einer Anpassung würde diese Seite wie folgt aussehen:
 
-![][2]
+![Office 365-Anmeldeseite nach der Anpassung][2]
 
-Für einen Benutzer, der sich über mobiles Gerät anmeldet, ist hier ein Beispiel für die dem Benutzer angezeigte Office 365-Anmeldeseite *vor* der Anpassung:
+Der folgende Screenshot zeigt ein Beispiel für die Office 365-Anmeldeseite auf einem mobilen Gerät vor einer Anpassung:
 
-![][3]
+![Office 365-Anmeldeseite vor der Anpassung][3]
 
-Und dies sieht derselbe Benutzer *nach* der Anpassung:
+Nach einer Anpassung würde diese Seite wie folgt aussehen:
 
-![][4]
+![Office 365-Anmeldeseite nach der Anpassung][4]
 
-### Welche Elemente auf der Seite können angepasst werden?
+
+Während der Größenänderung eines Browserfensters wird die große Abbildung (wie die zuvor gezeigte) fast immer so zugeschnitten, dass verschiedene Bildschirm-Seitenverhältnisse möglich sind. Vor diesem Hintergrund sollten Sie die wichtigsten visuellen Elemente in der Abbildung beibehalten, sodass Sie immer in der oberen linken Ecke (oben rechts für Rechts-nach-links-Sprachen) erscheinen. Dies ist wichtig, da die Größenänderung normalerweise über die rechte untere Ecke nach oben links oder von unten nach oben erfolgt.
+
+Die folgende Abbildung zeigt, wie die Abbildung zugeschnitten wird, wenn die Größe des Browsers nach links verschoben wird:
+
+![][6]
+
+Hier wird verdeutlicht, wie der Browser nach Erweiterung der Größe nach oben aussieht:
+
+![][7]
+
+## Welche Elemente auf der Seite können angepasst werden?
 
 Sie können die folgenden Elemente auf der Anmeldeseite anpassen:
 
@@ -78,70 +86,73 @@ Sie können die folgenden Elemente auf der Anmeldeseite anpassen:
 	------------- | -------------
 Bannerlogo | Rechts oben auf der Seite angezeigt. Ersetzt das Logo, das normalerweise von der Zielwebsite angezeigt wird, bei der sich die Benutzer anmelden (z. B. Office 365 oder Azure).
 Große Abbildung / Hintergrundfarbe | Am linken Rand der Seite angezeigt. Ersetzt das Bild, das normalerweise von der Zielwebsite angezeigt wird, bei der sich die Benutzer anmelden. Die Hintergrundfarbe wird möglicherweise bei Verbindungen mit geringer Bandbreite oder auf sehr kleinen Bildschirmen anstelle der großen Abbildung angezeigt.
-Text der Anmeldeseite | Über dem Seitenfuß angezeigt, wenn Sie hilfreiche Informationen an Ihre Benutzer vermitteln wollen, bevor sie sich mit Ihrem Geschäfts- oder Schulkonto anmelden. Ein Beispiel: Sie möchten die Telefonnummer zu Ihrem Helpdesk oder einen rechtlichen Hinweis einfügen.
+Text der Anmeldeseite | Wird über der Fußzeile angezeigt, wenn Sie hilfreiche Informationen an Ihre Benutzer vermitteln möchten, bevor diese sich mit ihrem Geschäfts- oder Schulkonto anmelden. Ein Beispiel: Sie möchten die Telefonnummer zu Ihrem Helpdesk oder einen rechtlichen Hinweis einfügen.
 
 > [AZURE.NOTE]
-Alle Elemente sind optional. Wenn Sie z. B. ein Bannerlogo, jedoch keine große Abbildung angeben, wird die Anmeldeseite Ihr Logo und die Abbildung für den Zielstandort (d. h. das Office 365-Bild mit dem kalifornischen Highway) anzeigen.
+Alle Elemente sind optional. Wenn Sie z.B. ein Bannerlogo angeben, aber keine große Abbildung, werden auf der Anmeldeseite Ihr Logo und die Abbildung für den Zielstandort (d.h. das Office 365-Bild mit dem kalifornischen Highway) angezeigt.
 
 Sie können auch alle Elemente auf dieser Seite lokalisieren. Sobald Sie einen "Standard"-Satz an Anpassungselementen konfiguriert haben, können Sie zusätzliche Versionen für verschiedene Gebietsschemas konfigurieren. Sie können auch verschiedene Elemente miteinander kombinieren. Dazu zählen z. B.:
 
 - Erstellen Sie eine große "Standard"-Abbildung, die für alle Kulturen funktioniert, und erstellen Sie dann spezifische Versionen für Englisch und Französisch. Benutzer mit Browsern, die auf eine dieser beiden Sprachen festgelegt sind, sehen das spezifische Bild, während allen anderen das Standardbild angezeigt wird.
 - Konfigurieren Sie verschiedene Logos für Ihre Organisation (z. B. japanische oder hebräische Versionen).
 
-### Wie wird die Abbildung angezeigt, nachdem die Größe des Browsers geändert wurde?
 
-Während der Größenänderung eines Browserfensters wird die große Abbildung (wie die zuvor gezeigte) fast immer so zugeschnitten, dass verschiedene Bildschirm-Seitenverhältnisse möglich sind. Vor diesem Hintergrund sollten Sie die wichtigsten visuellen Elemente in der Abbildung beibehalten, sodass Sie immer in der oberen linken Ecke (oben rechts für Rechts-nach-links-Sprachen) erscheinen. Dies ist wichtig, da die Größenänderung normalerweise über die rechte untere Ecke nach oben links oder von unten nach oben erfolgt.
-
-Die folgende Abbildung zeigt, wie die Abbildung zugeschnitten wird, wenn die Größe des Browsers nach links verschoben wird:
-
-![][6]
-
-Und hier wird deutlich, wie der Browser nach Verschiebung der Größe nach oben aussehen wird:
-
-![][7]
 
 ## Anpassung der Zugriffsbereichsseite
 
-Die Seite "Zugriffsbereich" ist im Wesentlichen eine Portalseite für alle Endbenutzer, die schnellen Zugriff über klickbare Anwendungskacheln auf verschiedene Cloud-Anwendungen benötigen, auf die Sie Zugriff erteilt haben. Wenn Sie die Standardzugriffsbereichsseite ohne Branding verwenden möchten, ist keine weitere Aktion erforderlich.
+Die Seite "Zugriffsbereich" ist im Wesentlichen eine Portalseite für alle Endbenutzer, die schnellen Zugriff über klickbare Anwendungskacheln auf verschiedene Cloud-Anwendungen benötigen, auf die Sie Zugriff erteilt haben.
 
-### Was sehen die Endbenutzer, nachdem die Zugriffsbereichsseite angepasst wurde?
+Der folgende Screenshot zeigt ein Beispiel für eine Zugriffsbereichsseite nach der Anpassung:
 
 ![][8]
 
 ## Konfigurieren Sie Ihr Verzeichnis mit Unternehmensbranding
 
-Ein Standardsatz von anpassbaren Elementen kann pro Verzeichnis im Verwaltungsportal konfiguriert werden. Nachdem die Standardeinstellungen gespeichert wurden, hat ein Administrator auch die Möglichkeit, lokalisierte Versionen jedes Elements für verschiedene Sprachen/Gebietsschemas hinzuzufügen. Alle anpassbaren Elemente sind optional.
+Ein Standardsatz mit anpassbaren Elementen kann pro Verzeichnis im klassischen Azure-Portal konfiguriert werden. Nachdem die Standardeinstellungen gespeichert wurden, hat ein Administrator auch die Möglichkeit, lokalisierte Versionen jedes Elements für verschiedene Sprachen/Gebietsschemas hinzuzufügen. Alle anpassbaren Elemente sind optional.
 
-Wenn Sie z. B. ein Standardbannerlogo konfigurieren, jedoch keine große Abbildung, so wird Ihr Logo auf der Anmeldeseite in der oberen rechten Ecke angezeigt und ansonsten die Standardabbildung. Wenn Sie ein Standardbannerlogo und den Text der Anmeldeseite auf Englisch konfigurieren sowie eine sprachspezifische Anmeldeseite für Deutsch, wird Benutzern mit einer deutscher Spracheinstellung das Standardbannerlogo und deutscher Text angezeigt. Während Sie technisch gesehen einen anderen Satz für jede von Azure AD unterstützte Sprache konfigurieren könnten, empfehlen wir, dass die Anzahl der Varianten aus Wartungs- und Leistungsgründen so klein wie möglich bleibt.
+Wenn Sie z.B. ein Standardbannerlogo konfigurieren, aber keine große Abbildung, wird Ihr Logo auf der Anmeldeseite in der oberen rechten Ecke und ansonsten die Standardabbildung angezeigt. Wenn Sie ein Standardbannerlogo und den Text der Anmeldeseite auf Englisch sowie eine sprachspezifische Anmeldeseite für Deutsch konfigurieren, wird Benutzern mit einer deutscher Spracheinstellung das Standardbannerlogo und deutscher Text angezeigt. Während Sie technisch gesehen einen anderen Satz für jede von Azure AD unterstützte Sprache konfigurieren könnten, empfehlen wir, dass die Anzahl der Varianten aus Wartungs- und Leistungsgründen so klein wie möglich bleibt.
 
-So fügen Sie Ihrem Verzeichnis Unternehmensbranding hinzu:
+**Führen Sie die folgenden Schritte aus, um Ihrem Verzeichnis Unternehmensbranding hinzuzufügen:**
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) als Administrator des Verzeichnisses an, das Sie anpassen möchten.
+1. Melden Sie sich am [klassischen Azure-Portal](https://manage.windowsazure.com) als Administrator des Verzeichnisses an, das Sie anpassen möchten.
 2. Wählen Sie das Verzeichnis, das Sie anpassen möchten.
-3. Wählen Sie die Registerkarte **Konfigurieren** und anschließend **Branding anpassen**.
+3. Klicken Sie in der Symbolleiste oben auf **Konfigurieren**.
+4. Klicken Sie auf **Branding anpassen**.
 4. Ändern Sie die Elemente, die Sie anpassen möchten. Beachten Sie, dass alle Felder optional sind.
 5. Klicken Sie auf **Speichern**.
 
 Es kann bis zu einer Stunde dauern, bis Benutzer Neuerungen sehen, die Sie am Branding der Anmeldeseite vorgenommen haben.
 
-So fügen Sie sprachspezifisches Unternehmensbranding hinzu:
+**Führen Sie die folgenden Schritte aus, um sprachspezifisches Unternehmensbranding hinzuzufügen:**
 
-1. Wählen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) unter der Registerkarte **Konfigurieren** **Branding anpassen** aus.
-2. Wählen Sie **Hinzufügen von Branding für eine bestimmte Sprache**, wählen Sie dann die Sprache aus, für die Sie das Logo anpassen möchten, und klicken Sie anschließend auf **Weiter**.
+1. Melden Sie sich am [klassischen Azure-Portal](https://manage.windowsazure.com) als Administrator des Verzeichnisses an, das Sie anpassen möchten.
+2. Wählen Sie das Verzeichnis, das Sie anpassen möchten.
+3. Klicken Sie in der Symbolleiste oben auf **Konfigurieren**.
+4. Klicken Sie auf **Branding anpassen**.
+2. Klicken Sie auf **Brandingeinstellungen für eine bestimmte Sprache hinzufügen**.
+3. Wählen Sie die Sprache, für die Sie das Logo anpassen möchten, und klicken Sie dann auf **Weiter**.
 3. Bearbeiten Sie nur die Elemente, für die Sie sprachspezifische Überschreibungen konfigurieren möchten. Beachten Sie, dass alle Felder optional sind. Wenn ein Feld leer bleibt, wird stattdessen der benutzerdefinierte Standardwert angezeigt (oder die Microsoft-Standardeinstellung, wenn kein benutzerdefinierter Standardwert konfiguriert ist).
 4. Klicken Sie auf **Speichern**.
 
-So entfernen Sie das Unternehmensbranding aus Ihrem Verzeichnis
+**Führen Sie die folgenden Schritte aus, um das Unternehmensbranding für Ihr Verzeichnis zu entfernen:**
 
-1. Wählen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) unter der Registerkarte **Konfigurieren** **Branding anpassen** aus.
-2. Wählen Sie auf der Seite Branding anpassen **Vorhandene Brandingeinstellungen bearbeiten** und fahren Sie anschließend mit der nächsten Seite fort.
+1. Melden Sie sich am [klassischen Azure-Portal](https://manage.windowsazure.com) als Administrator des Verzeichnisses an, das Sie anpassen möchten.
+2. Wählen Sie das Verzeichnis, das Sie anpassen möchten.
+3. Klicken Sie in der Symbolleiste oben auf **Konfigurieren**.
+4. Klicken Sie auf **Branding anpassen**.
+5. Wählen Sie auf der Seite Branding anpassen **Vorhandene Brandingeinstellungen bearbeiten** und fahren Sie anschließend mit der nächsten Seite fort.
 3. Abhängig von den Elementen, die Sie entfernen möchten, führen Sie eine oder mehrere der folgenden Aktionen aus:
-	1. Für das Banner-Logo klicken Sie auf das Kontrollkästchen **Hochgeladenes Logo entfernen**.
-    2. Für das Kachel-Logo klicken Sie auf das Kontrollkästchen **Hochgeladenes Logo entfernen**.
-    3. Für die Benutzernamenbezeichnung auf der Anmeldeseite löschen Sie den gesamten Text.
-    4. Für den Text auf der Anmeldeseite löschen Sie den gesamten Text.
-    5. Für die Abbildung auf der Anmeldeseite klicken Sie auf das Kontrollkästchen **Abbildung entfernen**.
-    6. Für die Hintergrundfarbe auf der Anmeldeseite löschen Sie den gesamten Text.
+
+	a. Wählen Sie unter **Bannerlogo** die Option **Hochgeladenes Logo entfernen**.
+
+    b. Wählen Sie unter **Kachellogo** die Option **Hochgeladenes Logo entfernen**.
+
+    c. Entfernen Sie den Text aus allen Textfeldern.
+
+    d. Klicken Sie auf **Weiter**.
+
+    e. Entfernen Sie den Text aus allen Textfeldern.
+
 4. Klicken Sie auf **Speichern**, um die Elemente zu entfernen.
 5. Klicken Sie ggf. erneut auf **Branding anpassen**, und wiederholen Sie diese Schritte für das gesamte sprachspezifische Branding, das entfernt werden soll. Alle Brandingeinstellungen wurden entfernt, wenn Sie auf **Branding anpassen** klicken und das Formular **Standardmäßiges Branding anpassen** ohne konfigurierte Einstellungen angezeigt wird.
 
@@ -186,4 +197,4 @@ Hintergrundfarbe auf der Anmeldeseite | Die Hintergrundfarbe auf der Anmeldeseit
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

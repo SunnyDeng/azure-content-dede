@@ -3,9 +3,9 @@
 	description="In diesem Lernprogramm wird gezeigt, wie Sie eine PHP-Web-App erstellen, die Daten in MySQL speichert, und wie Sie die Git-Bereitstellung in Azure verwenden."
 	services="app-service\web"
 	documentationCenter="php"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"
+	editor=""
 	tags="mysql"/>
 
 <tags
@@ -15,7 +15,7 @@
 	ms.devlang="PHP"
 	ms.topic="hero-article"
 	ms.date="02/09/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 #Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über Git
 
@@ -214,7 +214,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 
 		php -S localhost:8000
 
-Nun können Sie zu **http://localhost:8000/** navigieren, um die Anwendung zu testen.
+Nun können Sie zu ****http://localhost:8000/** navigieren, um die Anwendung zu testen.
 
 
 ##Veröffentlichen der App
@@ -325,4 +325,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [sql-database-editions]: http://msdn.microsoft.com/library/windowsazure/ee621788.aspx
  
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

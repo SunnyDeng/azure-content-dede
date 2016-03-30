@@ -20,21 +20,21 @@
 # Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem VNet
 
 > [AZURE.SELECTOR]
-- [PowerShell - Resource Manager](vpn-gateway-howto-point-to-site-rm-ps.md)
-- [Portal - Classic](vpn-gateway-point-to-site-create.md)
+- [PowerShell – Resource Manager](vpn-gateway-howto-point-to-site-rm-ps.md)
+- [Portal – klassisch](vpn-gateway-point-to-site-create.md)
 
-Mit einer Punkt-zu-Standort-Konfiguration können Sie von einem Clientcomputer eine einzelne sichere Verbindung mit Ihrem virtuellen Netzwerk herstellen. Eine VPN-Verbindung wird hergestellt, indem Sie die Verbindung vom Clientcomputer aus starten. Dies ist eine hervorragende Lösung, wenn Sie von einem Remotestandort, z. B. von zu Hause oder in einer Konferenz, eine Verbindung mit Ihrem VNet herstellen möchten. Dieses Methode eignet sich auch, wenn Sie nur wenige Clients besitzen, die mit einem virtuellen Netzwerk verbunden werden müssen. Damit Punkt-zu-Standort-Verbindungen funktionieren, ist kein VPN-Gerät und keine öffentliche IP-Adresse erforderlich. Weitere Informationen zu Punkt-zu-Standort-Verbindungen finden Sie unter [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md#point-to-site-connections) und [Informationen zu standortübergreifenden Verbindungen](vpn-gateway-cross-premises-options.md).
+Mit einer Punkt-zu-Standort-Konfiguration können Sie von einem Clientcomputer eine einzelne sichere Verbindung mit Ihrem virtuellen Netzwerk herstellen. Eine VPN-Verbindung wird hergestellt, indem Sie die Verbindung vom Clientcomputer aus starten. Dies ist eine hervorragende Lösung, wenn Sie von einem Remotestandort, z. B. von zu Hause oder in einer Konferenz, eine Verbindung mit Ihrem VNet herstellen möchten. Dieses Methode eignet sich auch, wenn Sie nur wenige Clients besitzen, die mit einem virtuellen Netzwerk verbunden werden müssen. Damit Punkt-zu-Standort-Verbindungen funktionieren, ist kein VPN-Gerät und keine öffentliche IP-Adresse erforderlich. Weitere Informationen zu Punkt-zu-Standort-Verbindungen finden Sie unter [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md#point-to-site-connections) und [Informationen zu standortübergreifenden Verbindungen](vpn-gateway-cross-premises-options.md).
 
-Dieser Artikel gilt für Punkt-zu-Standort-VPN-Gatewayverbindungen mit einem virtuellen Netzwerk, das mit dem **klassischen Bereitstellungsmodell** (Dienstverwaltung) erstellt wurde. Wenn Sie eine Punkt-zu-Standort-Verbindung für ein VNet konfigurieren möchten, das mit dem Ressourcen-Manager erstellt wurde, lesen Sie die Informationen unter [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen Netzwerk mithilfe von PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md).
+Dieser Artikel gilt für Punkt-zu-Standort-VPN Gateway-Verbindungen mit einem virtuellen Netzwerk, das mit dem **klassischen Bereitstellungsmodell** (Dienstverwaltung) erstellt wurde. Wenn Sie eine Punkt-zu-Standort-Verbindung für ein VNet konfigurieren möchten, das mit dem Resource Manager erstellt wurde, lesen Sie die Informationen unter [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen Netzwerk mithilfe von PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md).
 
-[AZURE.INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 
 ## Informationen zum Erstellen einer Punkt-zu-Standort-Verbindung
  
 Die folgenden Abschnitte führen Sie schrittweise durch den Erstellungsprozess einer sicheren Punkt-zu-Standort-Verbindung mit einem virtuellen Netzwerk. Auch wenn zum Konfigurieren einer Punkt-zu-Standort-Verbindung mehrere Schritte erforderlich sind, ist es eine hervorragende Möglichkeit, eine sichere Verbindung von Ihrem Computer mit dem virtuellen Netzwerk herzustellen, ohne ein VPN-Gerät kaufen und konfigurieren zu müssen.
 
-Die Konfiguration einer Punkt-zu-Standort-Verbindung ist in drei Abschnitte unterteilt. **Abschnitt 1** erläutert die Erstellung eines virtuellen Netzwerks und VPN-Gateways. **Abschnitt 2** bietet wichtige Informationen zum Erstellen der für die Authentifizierung erforderlichen Zertifikate. **Abschnitt 3** beschreibt die Schritte, die für den VPN-Client durchgeführt werden müssen, der zur Verbindung mit dem virtuellen Netzwerk verwendet wird. Da die Reihenfolge wichtig ist, in der Sie diese Komponenten konfigurieren, dürfen Sie keine Schritte überspringen oder vorgreifen.
+Die Konfiguration einer Punkt-zu-Standort-Verbindung ist in drei Abschnitte unterteilt. **Abschnitt 1** erläutert die Erstellung eines virtuellen Netzwerks und VPN-Gateways. **Abschnitt 2** bietet wichtige Informationen zum Erstellen der für die Authentifizierung erforderlichen Zertifikate. **Abschnitt 3** beschreibt die Schritte, die für den VPN-Client durchgeführt werden müssen, der zur Verbindung mit dem virtuellen Netzwerk verwendet wird. Da die Reihenfolge wichtig ist, in der Sie diese Komponenten konfigurieren, dürfen Sie keine Schritte überspringen oder vorgreifen.
 
 ## Abschnitt 1: Erstellen des virtuellen Netzwerks und eines VPN-Gateways
 
@@ -90,7 +90,7 @@ Schritt 4: Exportieren und Installieren des Clientzertifikats
 
 ### Identifizieren oder Generieren eines Stammzertifikats
 
-Wenn Sie keine Unternehmenszertifikatlösung verwenden, müssen Sie ein selbstsigniertes Stammzertifikat generieren. Die Schritte in diesem Abschnitt wurden für Windows 8 geschrieben. Schritte für Windows 10 finden Sie unter [Arbeiten mit selbstsignierten Stammzertifikaten für Punkt-zu-Standort-Verbindungen](vpn-gateway-certificates-point-to-site.md).
+Wenn Sie keine Unternehmenszertifikatlösung verwenden, müssen Sie ein selbstsigniertes Stammzertifikat generieren. Die Schritte in diesem Abschnitt wurden für Windows 8 geschrieben. Schritte für Windows 10 finden Sie unter [Arbeiten mit selbstsignierten Stammzertifikaten für Punkt-zu-Standort-Verbindungen](vpn-gateway-certificates-point-to-site.md).
 
 Eine Möglichkeit zum Erstellen eines x. 509-Zertifikats ist die Verwendung des Certificate Creation Tool (makecert.exe). Wenn Sie „makecert“ verwenden möchten, laden Sie das kostenlose Produkt [Microsoft Visual Studio Express](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) herunter, und installieren Sie es.
 
@@ -98,7 +98,7 @@ Eine Möglichkeit zum Erstellen eines x. 509-Zertifikats ist die Verwendung des 
 3. Mit dem Befehl im folgenden Beispiel wird ein Stammzertifikat im persönlichen Zertifikatspeicher auf Ihrem Computer erstellt und installiert. Zudem wird eine entsprechende *CER*-Datei erstellt, die Sie später in das klassische Azure-Portal hochladen.
 4. Wechseln Sie zu dem Verzeichnis, in dem die CER-Datei generiert werden soll, und führen Sie den folgenden Befehl aus, wobei *RootCertificateName* für den Namen steht, den Sie für das Zertifikat verwenden möchten. Wenn Sie das folgende Beispiel ohne Änderungen ausführen, erhalten Sie ein Stammzertifikat und die zugehörige Datei *RootCertificateName.cer*.
 
->[AZURE.NOTE]Da Sie ein Stammzertifikat erstellt haben, aus dem Clientzertifikate generiert werden, ist es empfehlenswert, dass Sie dieses Zertifikat zusammen mit dessen privaten Schlüssel exportieren und an einem sicheren Ort speichern, von dem es wiederhergestellt werden kann.
+>[AZURE.NOTE] Da Sie ein Stammzertifikat erstellt haben, aus dem Clientzertifikate generiert werden, ist es empfehlenswert, dass Sie dieses Zertifikat zusammen mit dessen privaten Schlüssel exportieren und an einem sicheren Ort speichern, von dem es wiederhergestellt werden kann.
 
     makecert -sky exchange -r -n "CN=RootCertificateName" -pe -a sha1 -len 2048 -ss My "RootCertificateName.cer"
 
@@ -112,7 +112,7 @@ Sie müssen die entsprechende CER-Datei für jedes Stammzertifikat in Azure hoch
 
 ### Generieren eines Client-Zertifikats
 
-Die folgenden Schritte gelten für das Generieren eines Clientzertifikats aus dem selbstsignierten Stammzertifikat. Die Schritte in diesem Abschnitt wurden für Windows 8 geschrieben. Schritte für Windows 10 finden Sie unter [Arbeiten mit selbstsignierten Stammzertifikaten für Punkt-zu-Standort-Verbindungen](vpn-gateway-certificates-point-to-site.md). Wenn Sie eine Unternehmenszertifikatlösung verwenden, befolgen Sie die Richtlinien für die Lösung, die Sie verwenden.
+Die folgenden Schritte gelten für das Generieren eines Clientzertifikats aus dem selbstsignierten Stammzertifikat. Die Schritte in diesem Abschnitt wurden für Windows 8 geschrieben. Schritte für Windows 10 finden Sie unter [Arbeiten mit selbstsignierten Stammzertifikaten für Punkt-zu-Standort-Verbindungen](vpn-gateway-certificates-point-to-site.md). Wenn Sie eine Unternehmenszertifikatlösung verwenden, befolgen Sie die Richtlinien für die Lösung, die Sie verwenden.
 
 1. Öffnen Sie auf dem gleichen Computer, den Sie zum Erstellen des selbstsigniertes Stammzertifikats verwendet haben, ein Visual Studio-Eingabeaufforderungsfenster als Administrator.
 2. Wechseln Sie zu dem Speicherort, an dem die Clientzertifikatdatei gespeichert werden soll. *RootCertificateName* steht für das selbstsignierte Stammzertifikat, das Sie generiert haben. Wenn Sie das folgende Beispiel ausführen (wobei Sie "RootCertificateName" in den Namen Ihres Stammzertifikats ändern), erhalten Sie ein Clientzertifikat mit dem Namen "ClientCertificateName" in Ihrem persönlichen Zertifikatspeicher.
@@ -192,8 +192,8 @@ Beispiel:
 
 ## Nächste Schritte
 
-Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
+Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-windows-classic-createportal.md).
 
 Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Dokumentation zu virtuellen Netzwerken](https://azure.microsoft.com/documentation/services/virtual-network/).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0323_2016-->

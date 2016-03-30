@@ -63,4 +63,4 @@ Nachdem Sie eine Einführung in SQL-Datenbank gelesen und die Frage „Was ist S
 
 - Einen Index der Titel und Beschreibungen finden Sie in den [Themen zum Azure SQL-Datenbank-Dienst](sql-database-index-all-articles.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->
