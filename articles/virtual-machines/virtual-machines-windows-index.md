@@ -53,7 +53,7 @@ Hier finden Sie die gesamte Dokumentation, die Sie zum Erstellen und Verwalten W
 
 
 ### Erste Schritte
-[Lernpfad für virtuelle Windows-Computer](https://azure.microsoft.com/de-DE/documentation/learning-paths/virtual-machines/)
+[Lernpfad für virtuelle Windows-Computer](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
 
 [Erstellen einer virtuellen Windows-Maschine im Azure-Portal](virtual-machines-windows-classic-tutorial.md)
 
@@ -228,7 +228,7 @@ Hier finden Sie die gesamte Dokumentation, die Sie zum Erstellen und Verwalten W
 
 
 ### Erste Schritte
-[Lernpfad für virtuelle Windows-Computer](https://azure.microsoft.com/de-DE/documentation/learning-paths/virtual-machines/)
+[Lernpfad für virtuelle Windows-Computer](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
 
 [Create a Windows virtual machine in the Azure classic portal](virtual-machines-windows-classic-tutorial.md) (Erstellen eines virtuellen Windows-Computers im klassischen Azure-Portal)
 
@@ -375,4 +375,4 @@ Hier finden Sie die gesamte Dokumentation, die Sie zum Erstellen und Verwalten W
 
 [Problembehandlung für Zuordnungsfehler beim Erstellen, Neustarten oder Ändern der Größen von virtuellen Computern in Azure](virtual-machines-windows-allocation-failure.md)
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016--->

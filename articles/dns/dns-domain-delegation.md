@@ -71,8 +71,8 @@ Zum Einrichten der Delegierung müssen Sie den Namenserver für die Zone kennen.
 
 Mithilfe von Azure PowerShell können die autoritativen NS-Einträge folgendermaßen abgerufen werden. (Der Eintragsname "@" wird verwendet, um auf Einträge an der Spitze der Zone zu verweisen.).
 
-	PS C:\> $zone = Get-AzureRmDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
-	PS C:\> Get-AzureRmDnsRecordSet –Name “@” –RecordType NS –Zone $zone
+	PS C:> $zone = Get-AzureRmDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
+	PS C:> Get-AzureRmDnsRecordSet –Name “@” –RecordType NS –Zone $zone
 
 	Name              : @
 	ZoneName          : contoso.com

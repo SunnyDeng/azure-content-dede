@@ -116,7 +116,10 @@ Nachdem Sie die bereitgestellte Konfigurationsvorlage für das VPN-Gerät herunt
 | IKE-Version | IKEv1 | IKEv2 |
 | Hashalgorithmus | SHA1(SHA128) | SHA1(SHA128) |
 | Phase 2 Sicherheitszuordnung (SA) Lebensdauer (Zeit) | 3\.600 Sekunden | 3\.600 Sekunden |
-| Phase 2 Sicherheitszuordnung (SA) Lebensdauer (Durchsatz) | 102.400.000 KB | - | | IPsec-SA-Verschlüsselung und Authentifizierungsangebote (Rangfolge) | 1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/V | Siehe *IPsec-Sicherheitszuordnungsangebote (SA) für routenbasierte Gateways* (unten) | | Perfect Forward Secrecy (PFS) | Nein | Ja (DH-Gruppe 1, 2, 5, 14, 24) | | Erkennung inaktiver Peers | Nicht unterstützt | Unterstützt |
+| Phase 2 Sicherheitszuordnung (SA) Lebensdauer (Durchsatz) | 102.400.000 KB | - | 
+| IPsec-SA-Verschlüsselung und Authentifizierungsangebote (Rangfolge) | 1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/V | Siehe *IPsec-Sicherheitszuordnungsangebote (SA) für routenbasierte Gateways* (unten) | 
+| Perfect Forward Secrecy (PFS) | Nein | Ja (DH-Gruppe 1, 2, 5, 14, 24) | 
+| Erkennung inaktiver Peers | Nicht unterstützt | Unterstützt |
 
 ### IPsec-Sicherheitszuordnungsangebote (SA) für routenbasierte Gateways
 
@@ -140,7 +143,8 @@ Die folgende Tabelle listet die IPSec-SA-Verschlüsselungs und -Authentifizierun
 | 14 | AH MD5 mit ESP DES Null HMAC, keine vorgesehene Lebensdauer | AH MD5 mit ESP DES MD5, keine Lebensdauer |
 | 15 | AH SHA1 mit ESP DES SHA1, keine Lebensdauer | ESP SHA, keine Lebensdauer |
 | 16 | AH MD5 mit ESP DES MD5, keine Lebensdauer | ESP MD5, keine Lebensdauer |
-| 17 | - | AH SHA, keine Lebensdauer || 18 | - | AH MD5, keine Lebensdauer |
+| 17 | - | AH SHA, keine Lebensdauer |
+| 18 | - | AH MD5, keine Lebensdauer |
 
 
 - Sie können IPsec-ESP-NULL-Verschlüsselung mit routenbasierten und High-Performance-VPN Gateways angeben. Verschlüsselung auf Basis von NULL bietet keinen Schutz der Daten während der Übertragung und sollte nur verwendet werden, wenn maximaler Durchsatz und minimale Latenz erforderlich sind. Clients können diese in Szenarios mit VNET-zu-VNET-Kommunikation oder bei Anwendung der Verschlüsselung an anderer Stelle in der Lösung verwenden.

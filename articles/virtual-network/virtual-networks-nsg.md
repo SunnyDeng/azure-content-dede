@@ -40,7 +40,8 @@ NSG-Regeln haben die folgenden Eigenschaften:
 |---|---|---|---|
 |**Name**|Name der Regel|Muss innerhalb der Region eindeutig sein.<br/>Kann Buchstaben, Zahlen, Unterstriche, Punkte und Bindestriche enthalten.<br/>Muss mit einem Buchstaben oder einer Zahl beginnen.<br/>Muss mit einem Buchstaben, einer Zahl oder einem Unterstrich enden.<br/>Kann bis zu 80 Zeichen enthalten.|Da eine NSG mehrere Regeln enthalten kann, sollten Sie durch Ihre Namenskonvention sicherstellen, dass sich die Funktion der Regel leicht am Namen erkennen lässt.|
 |**Protokoll**|Protokoll entsprechend der Regel|TCP, UDP oder *|Wenn Sie das Protokoll mit * angeben, schließt dies ICMP (nur Ost-West-Datenverkehr) sowie UDP und TCP ein. Auf diese Weise können Sie u. U. die Anzahl der benötigten Regeln reduzieren.<br/>Gleichzeitig kann die Angabe von * zu allgemein sein. Verwenden Sie diesen Ansatz deshalb nur, wenn er wirklich nötig ist.|
-|**Quellportbereich**|Quellportbereich entsprechend der Regel|Eine einzelne Portnummer von 1 bis 65535, ein Portbereich (z.B. 1-65635) oder * (für alle Ports)|Quellports könnte kurzlebig sein. Sofern Ihr Clientprogramm keinen bestimmten Port nutzt, verwenden Sie in den meisten Fällen „*“.<br/>Versuchen Sie, weitestgehend mit Portbereichen zu arbeiten, um die Anzahl von notwendigen Regeln zu reduzieren.<br/>Mehrere Ports oder Portbereiche können nicht mit Kommas gruppiert werden. |**Zielportbereich**|Zielportbereich entsprechend der Regel|Eine einzelne Portnummer von 1 bis 65535, ein Portbereich (z.B. 1-65535) oder * (für alle Ports)|Versuchen Sie, weitestgehend mit Portbereichen zu arbeiten, um die Anzahl von notwendigen Regeln zu reduzieren.<br/>Mehrere Ports oder Portbereiche können nicht mit Kommas gruppiert werden
+|**Quellportbereich**|Quellportbereich entsprechend der Regel|Eine einzelne Portnummer von 1 bis 65535, ein Portbereich (z.B. 1-65635) oder * (für alle Ports)|Quellports könnte kurzlebig sein. Sofern Ihr Clientprogramm keinen bestimmten Port nutzt, verwenden Sie in den meisten Fällen „*“.<br/>Versuchen Sie, weitestgehend mit Portbereichen zu arbeiten, um die Anzahl von notwendigen Regeln zu reduzieren.<br/>Mehrere Ports oder Portbereiche können nicht mit Kommas gruppiert werden. 
+|**Zielportbereich**|Zielportbereich entsprechend der Regel|Eine einzelne Portnummer von 1 bis 65535, ein Portbereich (z.B. 1-65535) oder * (für alle Ports)|Versuchen Sie, weitestgehend mit Portbereichen zu arbeiten, um die Anzahl von notwendigen Regeln zu reduzieren.<br/>Mehrere Ports oder Portbereiche können nicht mit Kommas gruppiert werden
 |**Quelladresspräfix**|Quelladresspräfix oder -tag entsprechend der Regel|Eine einzelne IP-Adresse (z. B. 10.10.10.10), ein IP-Subnetz (z. B. 192.168.1.0/24), ein [Standardtag](#Default-Tags) oder * (für alle Adressen)|Verwenden Sie nach Möglichkeit Bereiche, Standard-Tags und *, um die Anzahl von Regeln zu reduzieren.|
 |**Zieladresspräfix**|Zieladresspräfix oder -tag entsprechend der Regel|Eine einzelne IP-Adresse (z. B. 10.10.10.10), ein IP-Subnetz (z. B. 192.168.1.0/24), ein [Standardtag](#Default-Tags) oder * (für alle Adressen)|Verwenden Sie nach Möglichkeit Bereiche, Standard-Tags und *, um die Anzahl von Regeln zu reduzieren.|
 |**Richtung**|Richtung des Datenverkehrs entsprechend der Regel|Eingehend oder ausgehend|Die Regeln für eingehenden und ausgehenden Datenverkehr werden getrennt verarbeitet, abhängig von der Richtung.|
@@ -249,9 +250,9 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 |Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
-|RDP aus dem Internet zulassen|Zulassen|100|INTERNET|**|*|3389|TCP|
+|RDP aus dem Internet zulassen|Zulassen|100|INTERNET|*|\*|3389|TCP|
 
->[AZURE.NOTE] Beachten Sie, dass der Quelladressbereich für dieser Regel **Internet** ist und nicht die VIP des Load Balancers; der Quellport ist ***** und nicht 500001. Verwechseln Sie NAT-Regeln und Lastenausgleichsregeln nicht mit NSG-Regeln. Die NSG-Regeln beziehen sich immer auf die ursprüngliche Quelle und das endgültige Ziel des Datenverkehrs, **NICHT** auf den zwischen beiden liegenden Load Balancer.
+>[AZURE.NOTE] Beachten Sie, dass der Quelladressbereich für dieser Regel **Internet** ist und nicht die VIP des Load Balancers; der Quellport ist **\*** und nicht 500001. Verwechseln Sie NAT-Regeln und Lastenausgleichsregeln nicht mit NSG-Regeln. Die NSG-Regeln beziehen sich immer auf die ursprüngliche Quelle und das endgültige Ziel des Datenverkehrs, **NICHT** auf den zwischen beiden liegenden Load Balancer.
 
 ### NSG für Verwaltungsnetzwerkkarten in „BackEnd“
 
@@ -259,7 +260,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 |Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
-|RDP von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|**|*|3389|TCP|
+|RDP von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|*|\*|3389|TCP|
 
 ### NSG für die Datenbankzugriffs-Netzwerkkarten in „BackEnd“
 
@@ -267,7 +268,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 |Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
-|SQL von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|**|*|1433|TCP|
+|SQL von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|*|\*|1433|TCP|
 
 Da einige der oben aufgeführten NSGs einzelnen Netzwerkkarten zugeordnet werden müssen, müssen Sie dieses Szenario als Ressourcen-Manager-Bereitstellung bereitstellen. Beachten Sie, wie der Regeln für die Subnetz- und Netzwerkkartenebene je nach Notwendigkeit kombiniert werden.
 
