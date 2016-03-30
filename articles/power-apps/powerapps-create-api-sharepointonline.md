@@ -39,7 +39,7 @@ Fügen Sie die SharePoint Online-API in der App Service-Umgebung Ihrer Organisat
 
 8. Wählen Sie **Einstellungen – Erforderliche Einstellungen konfigurieren** aus: ![Konfigurieren der Einstellungen der SharePoint Online-API][4]
 
-9. Geben Sie die *Client-ID* und den *geheimen App-Schlüssel * Ihrer Azure Active Directory-Anwendung (AAD) für SharePoint Online ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit der SharePoint Online-API in PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.
+9. Geben Sie die *Client-ID* und den *geheimen App-Schlüssel* Ihrer Azure Active Directory-Anwendung (AAD) für SharePoint Online ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit der SharePoint Online-API in PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.
 
 	> [AZURE.IMPORTANT] Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
 
@@ -112,4 +112,4 @@ In diesem Thema haben Sie die SharePoint Online-API zu PowerApps Enterprise hinz
 [14]: ./media/powerapps-create-api-sharepointonline/browseall.png
 [15]: ./media/powerapps-create-api-sharepointonline/allresources.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!----HONumber=AcomDC_0309_2016-->
