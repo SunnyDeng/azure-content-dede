@@ -169,7 +169,7 @@ Bei der Verbindung mit verknüpften Vorlagen wird häufig eine Mischung aus stat
 
 Mithilfe statischer Variablen werden häufig Basiswerte wie z. B. URLs bereitgestellt, die in einer Vorlage oder als Werte verwendet werden, um Werte für dynamische Variablen zu erstellen.
 
-Im unten stehenden Vorlagenauszug gibt *templateBaseUrl*den Stammspeicherort für die Vorlage in GitHub zurück. Die nächste Zeile erstellt eine neue Variable*sharedTemplateUrl*, die den Wert von *TemplateBaseUrl* mit dem bekannten Namen der freigegebenen Ressourcenvorlage verkettet. Darunter wird eine komplexe Objektvariable verwendet, um eine T-Shirt-Größe zu speichern. Hierbei wird *templateBaseUrl* verkettet, um den Speicherort der Vorlage für die bekannte Konfiguration anzugeben, der in der Eigenschaft *vmTemplate* gespeichert ist.
+Im unten stehenden Vorlagenauszug gibt *templateBaseUrl* den Stammspeicherort für die Vorlage in GitHub zurück. Die nächste Zeile erstellt eine neue Variable *sharedTemplateUrl* , die den Wert von *TemplateBaseUrl* mit dem bekannten Namen der freigegebenen Ressourcenvorlage verkettet. Darunter wird eine komplexe Objektvariable verwendet, um eine T-Shirt-Größe zu speichern. Hierbei wird *templateBaseUrl* verkettet, um den Speicherort der Vorlage für die bekannte Konfiguration anzugeben, der in der Eigenschaft *vmTemplate* gespeichert ist.
 
 Der Vorteil dieses Ansatzes ist, dass Sie die Vorlage problemlos verschieben, verzweigen oder als Grundlage für eine neue Vorlage verwenden können. Wenn sich der Speicherort für die Vorlage ändert, müssen Sie nur die statische Variable an einer Stelle ändern: der Hauptvorlage. Diese übergibt die Änderung an alle anderen Vorlagen.
 

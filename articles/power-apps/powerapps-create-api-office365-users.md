@@ -49,7 +49,7 @@ Fügen Sie die Office 365-Benutzer-API in der App Service-Umgebung Ihrer Organis
 8. Wählen Sie **Einstellungen – Erforderliche Einstellungen konfigurieren** aus:  
 ![Einstellungen für die Office 365-Benutzer-API konfigurieren][4]
 
-9. Geben Sie die *Client-ID* und den *geheimen App-Schlüssel * Ihrer Azure Active Directory-Anwendung (AAD) für Office 365 ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.  
+9. Geben Sie die *Client-ID* und den *geheimen App-Schlüssel* Ihrer Azure Active Directory-Anwendung (AAD) für Office 365 ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für die ID und den geheimen Schlüssel.  
 
 	> [AZURE.IMPORTANT] Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
 
@@ -128,4 +128,4 @@ In diesem Thema haben Sie PowerApps Enterprise die Office 365-Benutzer-API hinzu
 [10]: ./media/powerapps-create-api-office365-users/contoso-aad-app.PNG
 [11]: ./media/powerapps-create-api-office365-users/contoso-aad-app-configure.PNG
 
-<!----HONumber=AcomDC_0309_2016-->
+<!-----HONumber=AcomDC_0309_2016-->

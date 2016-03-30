@@ -14,20 +14,29 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/04/2016"
+   ms.date="03/16/2016"
    ms.author="cherylmc"/>
 
-# Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit dem klassischen Azure-Portal
+# Erstellen eines virtuellen Netzwerks mit einer Site-to-Site-VPN-Verbindung mit dem klassischen Azure-Portal
 
 > [AZURE.SELECTOR]
-- [Azure Classic Portal](vpn-gateway-site-to-site-create.md)
-- [PowerShell - Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
+- [Klassisches Azure-Portal](vpn-gateway-site-to-site-create.md)
+- [PowerShell – Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
 
-Dieser Artikel führt Sie durch den Erstellungsvorgang eines virtuellen Netzwerks und einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk. Standort-zu-Standort-Verbindungen können für standortübergreifende Konfigurationen und Hybridkonfigurationen verwendet werden. Dieser Artikel gilt für das **klassische** Bereitstellungsmodell. Wenn Sie eine Standort-zu-Standort-Verbindung für das **Ressourcen-Manager**-Bereitstellungsmodell erstellen möchten, finden Sie Informationen dazu unter [Konfigurieren einer Standort-zu-Standort-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md). Wenn Sie VNets miteinander verbinden, aber keine Verbindung mit einem lokalen Standort erstellen möchten, finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung im klassischen Azure-Portal](virtual-networks-configure-vnet-to-vnet-connection.md) oder [Konfigurieren einer VNet-zu-VNet-Verbindung für das Ressourcen-Manager-Bereitstellungsmodell](vpn-gateway-vnet-vnet-rm-ps.md) entsprechende Informationen.
+Dieser Artikel führt Sie durch den Erstellungsvorgang eines virtuellen Netzwerks und einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk. Standort-zu-Standort-Verbindungen können für standortübergreifende Konfigurationen und Hybridkonfigurationen verwendet werden. Dieser Artikel gilt für das klassische Bereitstellungsmodell, und es wird das klassische Azure-Portal verwendet.
 
 **Informationen zu Azure-Bereitstellungsmodellen**
 
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+ 
+![Site-to-Site-Diagramm](./media/vpn-gateway-site-to-site-create/site2site.png "Site-to-Site")
+
+**Bereitstellungsmodelle und Tools für Site-to-Site-Verbindungen**
+
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
+ 
+Wenn Sie VNets miteinander verbinden, aber keine Verbindung mit einem lokalen Standort erstellen möchten, finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung für das klassische Bereitstellungsmodell](virtual-networks-configure-vnet-to-vnet-connection.md) oder [Konfigurieren einer VNet-zu-VNet-Verbindung für das Resource Manager-Bereitstellungsmodell](vpn-gateway-vnet-vnet-rm-ps.md) entsprechende Informationen.
+
  
 ## Voraussetzungen
 
@@ -37,12 +46,12 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 -  Eine externe öffentliche IP-Adresse für Ihr VPN-Gerät. Diese IP-Adresse darf sich nicht hinter einer NAT befinden.
 
-- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für ein [kostenloses Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 
 ## Erstellen des virtuellen Netzwerks
 
-1. Melden Sie sich beim **klassischen Azure-Portal** an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an.
 
 2. Klicken Sie unten links auf dem Bildschirm auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerkdienste** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Custom Create**, um den Konfigurationsassistenten zu starten.
 
@@ -53,7 +62,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 Geben Sie Folgendes ein:
 
 - **Name**: Name des virtuellen Netzwerks. Beispiel: *EastUSVNet*. Sie verwenden den hier festgelegten Namen bei der Bereitstellung Ihrer VMs und PaaS-Instanzen. Deshalb sollte der Name nicht zu kompliziert sein.
-- **Speicherort**: Der Speicherort steht in direkter Beziehung zu dem physischen Standort (Region), an dem sich Ihre Ressourcen (VMs) befinden soll. Wenn Sie z. B. möchten, dass sich die virtuellen Computer, die Sie für Ihr virtuelles Netzwerk bereitstellen, physisch in *East US* (USA, Osten) befinden, wählen Sie diesen Speicherort aus. Sie können die Ihrem virtuellen Netzwerk zugeordnete Region nach dem Erstellen nicht mehr ändern.
+- **Speicherort**: Der Speicherort steht in direkter Beziehung zu dem physischen Standort (Region), an dem sich Ihre Ressourcen (VMs) befinden soll. Wenn Sie z. B. möchten, dass sich die virtuellen Computer, die Sie für Ihr virtuelles Netzwerk bereitstellen, physisch in *East US* (USA, Osten) befinden, wählen Sie diesen Speicherort aus. Sie können die Ihrem virtuellen Netzwerk zugeordnete Region nach dem Erstellen nicht mehr ändern.
 
 ## Seite "DNS-Server und VPN-Konnektivität"
 
@@ -71,8 +80,8 @@ Geben Sie die folgenden Informationen ein, und klicken Sie dann auf den Pfeil �
 
 - 	**Name:** Der Name, den Sie Ihrem lokalen Netzwerkstandort geben möchten.
 - 	**IP-Adresse des VPN-Geräts:** Dies ist die öffentliche IPv4-Adresse des lokalen VPN-Geräts, mit dem Sie die Verbindung mit Azure herstellen. Das VPN-Gerät kann sich nicht hinter einer NAT befinden.
-- 	**Adressraum:** Umfasst die Start-IP und CIDR (Adressenanzahl). Hier geben Sie die Adressbereiche an, die Sie über das Gateway für das virtuelle Netzwerk an Ihren lokalen Standort senden möchten. Wenn eine IP-Zieladresse in die hier angegebenen Bereiche fällt, wird sie über das Gateway für das virtuelle Netzwerk geleitet.
-- 	**Adressraum hinzufügen:** Wenn Sie mehrere Adressbereiche über das Gateway für das virtuelle Netzwerk senden möchten, geben Sie hier alle zusätzlichen Adressbereiche an. Sie können die Bereiche später auf der Seite **Lokales Netzwerk** hinzufügen oder entfernen.
+- 	**Adressraum:** Umfasst die Start-IP und CIDR (Adressenanzahl). Hier geben Sie die Adressbereiche an, die über das Gateway für das virtuelle Netzwerk an Ihren lokalen Standort gesendet werden sollen. Wenn eine IP-Zieladresse in die hier angegebenen Bereiche fällt, wird sie über das Gateway für das virtuelle Netzwerk geleitet.
+- 	**Adressraum hinzufügen:** Wenn mehrere Adressbereiche über das Gateway für das virtuelle Netzwerk gesendet werden sollen, geben Sie hier alle zusätzlichen Adressbereiche an. Sie können die Bereiche später auf der Seite **Lokales Netzwerk** hinzufügen oder entfernen.
 
 ## Seite "Adressräume von Virtual Network"
 
@@ -96,8 +105,6 @@ Als Nächstes konfigurieren Sie das Gateway für das virtuelle Netzwerk, um eine
 
 ## Nächste Schritte
 
-Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
+Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Dokumentation zu Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/).
 
-Wenn Sie eine Verbindung zwischen dem klassischen virtuellen Netzwerk und einem virtuellen Netzwerk, das mit dem Azure-Ressourcen-Manager-Modus erstellt wurde, konfigurieren möchten, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und VNets des Azure-Ressourcen-Managers](../virtual-network/virtual-networks-arm-asm-s2s-howto.md).
-
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -60,4 +60,4 @@ Mithilfe von „azure network public-ip set“ können Sie eine Reverse-DNS-Eige
 
 [AZURE.INCLUDE [HÄUFIG GESTELLTE FRAGEN](../../includes/dns-reverse-dns-record-operations-faq-arm-include.md)]
 
-<!-----HONumber=AcomDC_0316_2016-->
+<!------HONumber=AcomDC_0316_2016-->

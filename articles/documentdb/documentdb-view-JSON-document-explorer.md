@@ -92,7 +92,7 @@ Mit dem Dokument-Explorer können Sie ganz einfach die Systemeigenschaften des a
 ## Filtern von Dokumenten
 Der Dokument-Explorer unterstützt eine Reihe an Navigationsoptionen und erweiterten Einstellungen.
 
-Standardmäßig lädt der Dokument-Explorer die ersten 100 Dokumente in die ausgewählte Sammlung, sortiert nach Erstellungsdatum, vom ältesten bis zum neuesten. Sie können weitere Dokumente (in Batches von je 100) laden, indem Sie die Option **Mehr laden** am unteren Rand des Dokument-Explorer-Blatts wählen. Sie können auswählen, welche Dokumente geladen werden sollen, indem Sie den Befehl **Filter** verwenden.
+Standardmäßig lädt der Dokument-Explorer die ersten 100 Dokumente in die ausgewählte Sammlung, sortiert nach Erstellungsdatum, vom ältesten bis zum neuesten. Sie können weitere Dokumente (in Batches von je 100) laden, indem Sie die Option **Mehr laden** am unteren Rand des Dokument-Explorer-Blatts wählen. Sie können auswählen, welche Dokumente geladen werden sollen, indem Sie den Befehl **Filter** verwenden.
 
 1. [Starten Sie den Dokument-Explorer](#launch-document-explorer).
 
@@ -124,7 +124,7 @@ Standardmäßig lädt der Dokument-Explorer die ersten 100 Dokumente in die aus
 
 ## Massenhinzufügen von Dokumenten
 
-Dokument-Explorer unterstützt die Sammelerfassung von einem oder mehreren JSON-Dokumenten. Pro Uploadvorgang sind bis zu 100 JSON-Dateien zulässig.
+Dokument-Explorer unterstützt die Sammelerfassung von einem oder mehreren JSON-Dokumenten. Pro Uploadvorgang sind bis zu 100 JSON-Dateien zulässig.
 
 1. [Starten Sie den Dokument-Explorer](#launch-document-explorer).
 
@@ -144,7 +144,7 @@ Dokument-Explorer unterstützt die Sammelerfassung von einem oder mehreren JSON-
 
 	![Screenshot des Dokument-Explorers – Sammelerfassungsergebnisse](./media/documentdb-view-JSON-document-explorer/uploaddocument3.png)
 
-4. Sobald der Vorgang abgeschlossen ist, können Sie bis zu 100 weitere Dokumente auswählen, die Sie hochladen möchten.
+4. Sobald der Vorgang abgeschlossen ist, können Sie bis zu 100 weitere Dokumente auswählen, die Sie hochladen möchten.
 
 ## Verwenden von JSON-Dokumenten außerhalb des Portals
 
@@ -158,4 +158,4 @@ Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Dokument-Explorer unt
 
 Der [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/) ist auch ein nützlicher Anhaltspunkt, um mehr über DocumentDB zu erfahren.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

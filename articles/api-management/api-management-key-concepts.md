@@ -13,14 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="hero-article" 
-	ms.date="03/04/2016" 
+	ms.date="03/23/2016" 
 	ms.author="sdanie"/>
 
 #Was ist API Management?
 
 API Management unterstützt Organisationen beim Veröffentlichen von APIs für externe, Partner- und interne Entwickler, um das volle Potenzial von Daten und Diensten nutzen zu können. Unternehmen sind weltweit dabei, ihren Betrieb als digitale Plattform zu erweitern, neue Kanäle zu erschließen, neue Kunden zu finden und die Bindung zu existierenden Kunden zu vertiefen. API Management bietet die Kernkompetenzen zur Sicherstellung eines erfolgreichen API-Programms in Form von Entwicklerengagement, Geschäftserkenntnissen, Analyse, Sicherheit und Schutz.
 
-> [AZURE.VIDEO microsoft-ignite-2015-azure-api-management-and-the-api-economy]
+Im folgenden Video erhalten Sie eine Übersicht über Azure API Management und erfahren, wie Sie API Management ohne größeren Aufwand zum Hinzufügen vieler Features zu Ihrer API verwenden, z.B. Zugriffssteuerung, Ratenbegrenzung, Überwachung, Ereignisprotokollierung und Zwischenspeicherung von Antworten.
+
+> [AZURE.VIDEO azure-api-management-overview]
 
 Administratoren erstellen APIs, um API Management zu nutzen. Jede API besteht aus einer oder mehreren Operationen, und jede API kann zu einem oder mehreren Produkten hinzugefügt werden. Um eine API zu nutzen, abonnieren Entwickler ein Produkt, das diese API enthält. Anschließend können sie die Operationen der API aufrufen und unterliegen dabei allen geltenden Nutzungsrichtlinien.
 
@@ -92,6 +94,12 @@ Im Entwicklerportal können Entwickler auf Ihre APIs zugreifen, Operationen anze
 
 Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Sie eigene Inhalte hinzufügen, Stilregeln anpassen und Ihr Markenbild einfügen.
 
+## API Management und API-Ökonomie
+
+Weitere Informationen zu API Management erhalten Sie, indem Sie sich die folgende Präsentation von der Konferenz Microsoft Ignite 2015 ansehen.
+
+> [AZURE.VIDEO microsoft-ignite-2015-azure-api-management-and-the-api-economy]
+
 [APIs and operations]: #apis
 [Products]: #products
 [Groups]: #groups
@@ -114,4 +122,4 @@ Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Si
 
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

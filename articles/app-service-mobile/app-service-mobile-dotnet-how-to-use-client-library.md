@@ -440,7 +440,7 @@ Insgesamt werden zwei Authentifizierungsflüsse unterstützt: ein _Serverfluss_ 
 In jedem Fall müssen Sie die App bei Ihrem Identitätsanbieter registrieren. Der Identitätsanbieter stellt eine Client-ID und einen geheimen Clientschlüssel bereit. Anschließend müssen Sie die Azure App Service-Authentifizierung/-Autorisierung mit der Client-ID und dem geheimen Clientschlüssel von Ihrem Identitätsanbieter konfigurieren. Weitere Informationen finden Sie in den detaillierten Anleitung im Tutorial [Hinzufügen der Authentifizierung zu Ihrer Windows-App].
 
 ###<a name="serverflow"></a>Serverfluss
-Rufen Sie nach der Registrierung bei Ihrem Identitätsanbieter den „MobileServiceClient“ auf. [LoginAsync-Methode] mit dem [[MobileServiceAuthenticationProvider]]-Wert Ihres Anbieters. Der folgende Beispielcode startet eine Serverfluss-Anmeldung über Facebook.
+Rufen Sie nach der Registrierung bei Ihrem Identitätsanbieter den „MobileServiceClient“ auf. [LoginAsync-Methode] mit dem [MobileServiceAuthenticationProvider]-Wert Ihres Anbieters. Der folgende Beispielcode startet eine Serverfluss-Anmeldung über Facebook.
 
 	private MobileServiceUser user;
 	private async System.Threading.Tasks.Task Authenticate()
@@ -611,7 +611,7 @@ Nutzen Sie die Active Directory-Authentifizierungsbibliothek (Active Directory A
 
 * Ersetzen Sie **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der nativen Clientanwendung kopiert haben.
 
-* Ersetzen Sie **INSERT-REDIRECT-URI-HERE** durch den Endpunkt _/.auth/login/done_ Ihrer Website mithilfe des HTTPS-Schemas. Dieser Wert sollte etwa so aussehen: \__https://contoso.azurewebsites.net/.auth/login/done_.
+* Ersetzen Sie **INSERT-REDIRECT-URI-HERE** durch den Endpunkt _/.auth/login/done_ Ihrer Website mithilfe des HTTPS-Schemas. Dieser Wert sollte etwa so aussehen: _https://contoso.azurewebsites.net/.auth/login/done_.
 
 Der für jede Plattform erforderliche Code:
 
@@ -868,7 +868,7 @@ Um Ihr spezielles App-Szenario zu unterstützen, müssen Sie unter Umständen di
 [MobileServiceCollection]: https://msdn.microsoft.com/de-DE/library/azure/dn250636(v=azure.10).aspx
 [MobileServiceIncrementalLoadingCollection]: https://msdn.microsoft.com/de-DE/library/azure/dn268408(v=azure.10).aspx
 [MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider(v=azure.10).aspx
-[[MobileServiceAuthenticationProvider]]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider(v=azure.10).aspx
+[MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider(v=azure.10).aspx
 [MobileServiceUser]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser(v=azure.10).aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken(v=azure.10).aspx
 [GetTable]: https://msdn.microsoft.com/de-DE/library/azure/jj554275(v=azure.10).aspx
@@ -912,3 +912,4 @@ Um Ihr spezielles App-Szenario zu unterstützen, müssen Sie unter Umständen di
 [SymbolSource-Anweisungen]: http://www.symbolsource.org/Public/Wiki/Using
 
 <!---HONumber=AcomDC_0316_2016-->
+

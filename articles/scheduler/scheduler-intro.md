@@ -17,11 +17,11 @@
 
 # Was ist Azure Scheduler?
 
-Mit Azure Scheduler können Sie Aktionen, die in der Cloud ausgeführt werden sollen, deklarativ beschreiben. Anschließend werden diese Aktionen automatisch geplant und ausgeführt. Mit Scheduler erfolgt dies über das [Azure-Portal](scheduler-get-started-portal.md), über Code, über die [REST-API](https://msdn.microsoft.com/library/dn528946) oder über Azure PowerShell.
+Mit Azure Scheduler können Sie Aktionen, die in der Cloud ausgeführt werden sollen, deklarativ beschreiben. Anschließend werden diese Aktionen automatisch geplant und ausgeführt. Mit Scheduler erfolgt dies über das [Azure-Portal](scheduler-get-started-portal.md), über Code, über die [REST-API](https://msdn.microsoft.com/library/mt629143.aspx) oder über Azure PowerShell.
 
-Scheduler erstellt, pflegt und startet geplante Arbeit. Scheduler kann weder Workloads hosten noch Code ausführen. Der Dienst _ruft_ nur Code auf, der an anderer Stelle gehostet wird, z. B. in Azure, lokal oder bei einem anderen Anbieter. und über HTTP, HTTPS oder eine Speicherwarteschlange aufgerufen werden.
+Scheduler erstellt, pflegt und startet geplante Arbeit. Scheduler kann weder Workloads hosten noch Code ausführen. Der Dienst _ruft_ nur Code auf, der an anderer Stelle gehostet wird, z. B. in Azure, lokal oder bei einem anderen Anbieter. Der Aufruf erfolgt per HTTP, HTTPS, Speicherwarteschlange, Service Bus-Warteschlange oder Service Bus-Thema.
 
-Scheduler plant [Aufträge](scheduler-concepts-terms.md), protokolliert einen Verlauf der Auftragsausführungsergebnisse, die überprüft werden können, und plant deterministisch und zuverlässig auszuführende Workloads. Azure WebJobs (Teil des Web-Apps-Features im Azure App Service) und andere Planungsfunktionen von Azure verwenden Scheduler im Hintergrund. Mit der [Scheduler-REST-API](https://msdn.microsoft.com/library/dn528946) wird die Kommunikation für diese Aktionen verwaltet. Auf diese Weise unterstützt Scheduler mühelos [komplexe Zeitpläne und Wiederholungszeitpläne](scheduler-advanced-complexity.md).
+Scheduler plant [Aufträge](scheduler-concepts-terms.md), protokolliert einen Verlauf der Auftragsausführungsergebnisse, die überprüft werden können, und plant deterministisch und zuverlässig auszuführende Workloads. Azure WebJobs (Teil des Web-Apps-Features im Azure App Service) und andere Planungsfunktionen von Azure verwenden Scheduler im Hintergrund. Mit der [Scheduler-REST-API](https://msdn.microsoft.com/library/mt629143.aspx) wird die Kommunikation für diese Aktionen verwaltet. Auf diese Weise unterstützt Scheduler mühelos [komplexe Zeitpläne und Wiederholungszeitpläne](scheduler-advanced-complexity.md).
 
 Mehrere Szenarios bieten sich für die Verwendung von Scheduler an. Beispiel:
 
@@ -50,4 +50,4 @@ Mit Scheduler können Sie [Auftragssammlungen](scheduler-concepts-terms.md) prog
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

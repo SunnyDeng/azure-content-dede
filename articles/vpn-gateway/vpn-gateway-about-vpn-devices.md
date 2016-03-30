@@ -106,7 +106,7 @@ Nachdem Sie die bereitgestellte Konfigurationsvorlage für das VPN-Gerät herunt
 | Authentifizierungsmethode | Vorab ausgetauschter Schlüssel | Vorab ausgetauschter Schlüssel |
 | Verschlüsselungsalgorithmen | AES256 AES128 3DES | AES256 3DES |
 | Hashalgorithmus | SHA1(SHA128) | SHA1(SHA128), SHA2(SHA256) |
-| Phase 1 Sicherheitszuordnung (SA) Lebensdauer (Zeit) | 28\.800 Sekunden | 28\.800 Sekunden |
+| Phase 1 Sicherheitszuordnung (SA) Lebensdauer (Zeit) | 28\.800 Sekunden | 10\.800 Sekunden |
 
 
 ### IKE Phase 2-Einrichtung
@@ -115,10 +115,10 @@ Nachdem Sie die bereitgestellte Konfigurationsvorlage für das VPN-Gerät herunt
 |--------------------------------------------------------------------------|------------------------------------------------|--------------------------------------------------------------------|
 | IKE-Version | IKEv1 | IKEv2 |
 | Hashalgorithmus | SHA1(SHA128) | SHA1(SHA128) |
-| Phase 2 Sicherheitszuordnung (SA) Lebensdauer (Zeit) | 3.600 Sekunden | - |
-| Phase 2 Sicherheitszuordnung (SA) Lebensdauer (Durchsatz) | 102.400.000 KB | - |
-| IPSec-SA-Verschlüsselung und Authentifizierungsangebote (Rangfolge) | 1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/V | Siehe *IPsec-Sicherheitszuordnungsangebote (SA) für routenbasierte Gateways* (unten) |
-| Perfect Forward Secrecy (PFS) | Nein | Ja (DH-Gruppe 1, 2, 5, 14, 24) |
+| Phase 2 Sicherheitszuordnung (SA) Lebensdauer (Zeit) | 3\.600 Sekunden | 3\.600 Sekunden |
+| Phase 2 Sicherheitszuordnung (SA) Lebensdauer (Durchsatz) | 102.400.000 KB | - | 
+| IPsec-SA-Verschlüsselung und Authentifizierungsangebote (Rangfolge) | 1. ESP-AES256 2. ESP-AES128 3. ESP-3DES 4. N/V | Siehe *IPsec-Sicherheitszuordnungsangebote (SA) für routenbasierte Gateways* (unten) | 
+| Perfect Forward Secrecy (PFS) | Nein | Ja (DH-Gruppe 1, 2, 5, 14, 24) | 
 | Erkennung inaktiver Peers | Nicht unterstützt | Unterstützt |
 
 ### IPsec-Sicherheitszuordnungsangebote (SA) für routenbasierte Gateways
@@ -151,4 +151,4 @@ Die folgende Tabelle listet die IPSec-SA-Verschlüsselungs und -Authentifizierun
 
 - Verwenden Sie für standortübergreifende Konnektivität über das Internet die Standardeinstellungen für Azure-VPN-Gateways mit Verschlüsselung und Hashalgorithmen, die in der Tabelle oben aufgelistet werden, um die Sicherheit Ihrer kritischen Kommunikation zu gewährleisten.
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

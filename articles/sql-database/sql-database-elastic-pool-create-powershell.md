@@ -26,6 +26,8 @@
 
 Hier erfahren Sie, wie Sie einen [Pool für elastische Datenbanken](sql-database-elastic-pool.md) mit PowerShell-Cmdlets erstellen.
 
+Häufige Fehlercodes finden Sie unter [SQL-Fehlercodes für SQL-Datenbank-Clientanwendungen: Datenbankverbindungsfehler und andere Probleme](sql-database-develop-error-messages.md).
+
 > [AZURE.NOTE] Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server-portal.md).
 
 
@@ -89,6 +91,6 @@ Dieses Skript erstellt einen neuen Server. Wenn Sie also zur Eingabe eines Benut
 
 ## Referenz für elastische Datenbanken
 
-Weitere Informationen über elastische Datenbanken und elastische Datenbankpools finden Sie unter [SQL-Datenbank – Pool für elastische Datenbanken](sql-database-elastic-pool-reference.md).
+Weitere Informationen zu elastischen Datenbanken und Pools für elastische Datenbanken finden Sie unter [SQL-Datenbank – Pool für elastische Datenbanken](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

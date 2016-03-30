@@ -25,7 +25,7 @@ Wenn Sie sofort mit Stretch-Datenbank beginnen möchten, lesen Sie [Erste Schrit
 ## Was sind die Vorteile von Stretch-Datenbank?
 Stretch-Datenbank bietet die folgenden Vorteile:
 
-**Bietet kostengünstige Verfügbarkeit für inaktive Daten** – Verlagern Sie aktive und inaktive Transaktionsdaten dynamisch von SQL Server zu Microsoft Azure mit SQL Server-Stretch-Datenbank. Im Gegensatz zu anderen Arten der Speicherung von inaktiven Daten, sind Ihre Daten immer online und jederzeit abfragbar. Sie können eine längere Dauer der Datenaufbewahrung anbieten, ohne für große Tabellen wie eine Kundenauftragshistorie hohe Ausgaben tätigen zu müssen. Profitieren Sie vom kostengünstigen Azure statt teure lokale Speicher hochzuskalieren. Wählen Sie einen Tarif und konfigurieren Sie die Einstellungen im Azure-Portal, um die Kontrolle über die Kosten und Datenzugriffsgeschwindigkeiten zu behalten. Skalieren Sie je nach Bedarf hoch oder herunter. Weitere Details finden Sie auf der Seite [SQL-Datenbank – Preise](https://azure.microsoft.com/pricing/details/sql-database/).
+**Bietet kostengünstige Verfügbarkeit für inaktive Daten** – Verlagern Sie aktive und inaktive Transaktionsdaten dynamisch von SQL Server zu Microsoft Azure mit SQL Server-Stretch-Datenbank. Im Gegensatz zu anderen Arten der Speicherung von inaktiven Daten, sind Ihre Daten immer online und jederzeit abfragbar. Sie können eine längere Dauer der Datenaufbewahrung anbieten, ohne für große Tabellen wie eine Kundenauftragshistorie hohe Ausgaben tätigen zu müssen. Profitieren Sie vom kostengünstigen Azure statt teure lokale Speicher hochzuskalieren. Wählen Sie einen Tarif, und konfigurieren Sie die Einstellungen im Azure-Portal, um die Kontrolle über die Kosten zu behalten. Skalieren Sie je nach Bedarf hoch oder herunter. Einzelheiten finden Sie auf der Seite [SQL Server Stretch Database – Preise](https://azure.microsoft.com/pricing/details/sql-server-stretch-database/).
 
 **Erfordert keine Änderungen der Abfragen oder Anwendungen** – Greifen Sie unkompliziert auf Ihre SQL Server-Daten zu, unabhängig davon, ob diese lokal oder in die Cloud verlagert sind. Sie legen die Richtlinien dafür fest, wo Daten gespeichert werden, und wie SQL Server das Verschieben von Daten im Hintergrund handhabt. Die ganze Tabelle ist immer online und jederzeit abfragbar. Die Stretch-Datenbank benötigt außerdem keine Änderungen der vorhandenen Abfragen oder Anwendungen – der Speicherort der Daten ist für die Anwendung vollständig transparent.
 
@@ -123,4 +123,4 @@ Stretch-Datenbank ändert das Berechtigungsmodell einer vorhandenen Datenbank ni
 [StretchOverviewImage2]: ./media/sql-server-stretch-database-overview/StretchDBOverview1.png
 [StretchOverviewImage3]: ./media/sql-server-stretch-database-overview/StretchDBOverview2.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

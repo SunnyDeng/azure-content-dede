@@ -13,16 +13,16 @@
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="12/21/2015"
+     ms.date="03/22/2016"
      ms.author="dobett"/>
 
-# Erste Schritte mit Azure IoT Hub für Java
+# Erste Schritte mit Azure IoT Hub für Java
 
 [AZURE.INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 ## Einführung
 
-Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Lösungs-Back-End ermöglicht. Eines der größten Probleme im Zusammenhang mit IoT-Projekten ist die sichere und zuverlässige Verbindung von Geräten mit dem Lösungs-Back-End. Um diese Herausforderungen zu meistern, bietet IoT Hub:
+Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Lösungs-Back-End ermöglicht. Eines der größten Probleme im Zusammenhang mit IoT-Projekten ist die sichere und zuverlässige Verbindung von Geräten mit dem Lösungs-Back-End. Um diese Herausforderungen zu meistern, bietet IoT Hub:
 
 - Ein zuverlässiges, hyperskalierbares Messaging zwischen Geräten und Cloud (Device-to-Cloud, D2C) sowie zwischen Cloud und Geräten (Cloud-to-Device, C2D)
 - Eine sichere Kommunikation unter Verwendung von Zugriffssteuerung und Sicherheitsanmeldeinformationen auf Gerätebasis
@@ -30,8 +30,8 @@ Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige un
 
 Dieses Tutorial veranschaulicht folgende Vorgehensweisen:
 
-- Erstellen eines IoT Hubs mit dem Azure-Portal
-- Erstellen einer Geräteidentität im IoT Hub
+- Erstellen eines IoT Hubs mit dem Azure-Portal
+- Erstellen einer Geräteidentität im IoT Hub
 - Erstellen Sie ein simuliertes Gerät, das Telemetriedaten an Ihr Cloud-Back-End sendet.
 
 Am Ende dieses Tutorials verfügen Sie über drei Java-Konsolenanwendungen:
@@ -52,28 +52,28 @@ Für dieses Tutorial benötigen Sie Folgendes:
 
 ## Erstellen eines IoT Hubs
 
-Sie müssen einen IoT Hub erstellen, mit dem Ihr simuliertes Gerät verbunden werden kann. Die folgenden Schritte veranschaulichen, wie Sie diese Aufgabe mit dem Azure-Portal ausführen.
+Sie müssen einen IoT Hub erstellen, mit dem Ihr simuliertes Gerät verbunden werden kann. Die folgenden Schritte veranschaulichen, wie Sie diese Aufgabe mit dem Azure-Portal ausführen.
 
 1. Melden Sie sich beim [Azure-Portal][lnk-portal] an.
 
-2. Klicken Sie in der Navigationsleiste auf **Neu**, klicken Sie auf **Internet der Dinge** und dann auf **Azure IoT Hub**.
+2. Klicken Sie in der Navigationsleiste auf **Neu**, klicken Sie auf **Internet der Dinge** und dann auf **Azure IoT Hub**.
 
     ![][1]
 
-3. Wählen Sie auf dem Blatt **IoT Hub** die gewünschte Konfiguration für Ihren IoT Hub.
+3. Wählen Sie auf dem Blatt **IoT Hub** die gewünschte Konfiguration für Ihren IoT Hub.
 
     ![][2]
 
-    * Geben Sie im Feld **Name** einen Namen für Ihren IoT Hub ein. Wenn der **Name** gültig und verfügbar ist, wird im Feld **Name** ein grünes Häkchen angezeigt.
+    * Geben Sie im Feld **Name** einen Namen für Ihren IoT Hub ein. Wenn der **Name** gültig und verfügbar ist, wird im Feld **Name** ein grünes Häkchen angezeigt.
     * Wählen Sie eine **Preis- und Skalierungsstufe** aus. Für dieses Tutorial ist keine bestimmte Stufe erforderlich.
     * Erstellen Sie in **Ressourcengruppe** eine neue Ressourcengruppe, oder wählen Sie eine vorhandene aus. Weitere Informationen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][lnk-resource-groups].
-    * Wählen Sie in **Standort** den Standort aus, an dem Ihr IoT Hub gehostet werden soll.  
+    * Wählen Sie in **Standort** den Standort aus, an dem Ihr IoT Hub gehostet werden soll.  
 
-4. Wenn Sie die Konfigurationsoptionen für Ihren IoT Hub ausgewählt haben, klicken Sie auf **Erstellen**. Die Erstellung des IoT Hubs kann einige Minuten dauern. Im Startmenü oder im Benachrichtigungsbereich können Sie den Fortschritt überwachen und den Status überprüfen.
+4. Wenn Sie die Konfigurationsoptionen für Ihren IoT Hub ausgewählt haben, klicken Sie auf **Erstellen**. Die Erstellung des IoT Hubs kann einige Minuten dauern. Im Startmenü oder im Benachrichtigungsbereich können Sie den Fortschritt überwachen und den Status überprüfen.
 
     ![][3]
 
-5. Nachdem der IoT Hub erfolgreich erstellt wurde, öffnen Sie das Blatt für den neuen IoT Hub, notieren Sie den **Hostnamen**, und klicken Sie dann auf das **Schlüsselsymbol**.
+5. Nachdem der IoT Hub erfolgreich erstellt wurde, öffnen Sie das Blatt für den neuen IoT Hub, notieren Sie den **Hostnamen**, und klicken Sie dann auf das **Schlüsselsymbol**.
 
     ![][4]
 
@@ -85,7 +85,7 @@ Sie müssen einen IoT Hub erstellen, mit dem Ihr simuliertes Gerät verbunden w
 
     ![][6]
 
-Sie haben nun Ihren IoT Hub erstellt und verfügen über den IoT Hub-Hostnamen, die IoT Hub-Verbindungszeichenfolge, den Event Hub-kompatiblen Namen und den Event Hub-kompatiblen Endpunkt. Diese Angaben benötigen Sie, um den Rest dieses Tutorials abschließen zu können.
+Sie haben nun Ihren IoT Hub erstellt und verfügen über den IoT Hub-Hostnamen, die IoT Hub-Verbindungszeichenfolge, den Event Hub-kompatiblen Namen und den Event Hub-kompatiblen Endpunkt. Diese Angaben benötigen Sie, um den Rest dieses Tutorials abschließen zu können.
 
 [AZURE.INCLUDE [iot-hub-get-started-cloud-java](../../includes/iot-hub-get-started-cloud-java.md)]
 
@@ -114,7 +114,7 @@ Sie können nun die Anwendungen ausführen.
 
 ## Nächste Schritte
 
-In diesem Tutorial haben Sie im Portal einen neuen IoT Hub konfiguriert und anschließend in der Identitätsregistrierung des Hubs eine Geräteidentität erstellt. Sie haben diese Geräteidentität in einem simulierten Gerät verwendet, das D2C-Nachrichten (Device-to-Cloud, Gerät-an-Cloud) an den Hub sendet, und Sie haben eine weitere App erstellt, die die vom Hub empfangenen Nachrichten anzeigt. In den folgenden Tutorials werden weitere Features und Szenarien für IoT Hubs vorgestellt:
+In diesem Tutorial haben Sie im Portal einen neuen IoT Hub konfiguriert und anschließend in der Identitätsregistrierung des Hubs eine Geräteidentität erstellt. Sie haben diese Geräteidentität in einem simulierten Gerät verwendet, das D2C-Nachrichten (Device-to-Cloud, Gerät-an-Cloud) an den Hub sendet, und Sie haben eine weitere App erstellt, die die vom Hub empfangenen Nachrichten anzeigt. In den folgenden Tutorials werden weitere Features und Szenarien für IoT Hubs vorgestellt:
 
 - Unter [Senden von C2D-Nachrichten mit IoT Hub][lnk-c2d-tutorial] wird erläutert, wie Sie Nachrichten an Geräte senden und das von IoT Hub generierte Feedback zur Übermittlung verarbeiten.
 - In [Verarbeiten von D2C-Nachrichten][lnk-process-d2c-tutorial] wird erläutert, wie Sie zuverlässig Telemetriedaten und interaktive Nachrichten von Geräten verarbeiten können.
@@ -141,4 +141,4 @@ In diesem Tutorial haben Sie im Portal einen neuen IoT Hub konfiguriert und ans
 [lnk-resource-groups]: resource-group-portal.md
 [lnk-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

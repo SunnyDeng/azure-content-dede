@@ -28,7 +28,7 @@ In diesem Tutorial verwenden Sie den Data Factory-Kopier-Assistenten, um eine Pi
 
 > [AZURE.IMPORTANT] Lesen Sie sich den Artikel [Übersicht über das Tutorial](data-factory-get-started.md) durch, und führen Sie die vorbereitenden Schritte aus, bevor Sie mit diesem Tutorial beginnen.
 
-## <a name="CreateDataFactory"></a>Schritt 1: Erstellen einer Azure Data Factory
+## Erstellen einer Data Factory
 In diesem Schritt erstellen Sie im Azure-Portal eine Azure Data Factory namens **ADFTutorialDataFactory**.
 
 1.	Nach der Anmeldung beim [Azure-Portal](https://portal.azure.com) klicken Sie links oben auf **+ NEU**, wählen auf dem Blatt **Erstellen** die Option **Datenanalyse** aus und klicken auf dem Blatt **Datenanalyse** auf **Data Factory**. 
@@ -60,7 +60,7 @@ In diesem Schritt erstellen Sie im Azure-Portal eine Azure Data Factory namens *
 
     ![Data Factory-Startseite](./media/data-factory-copy-data-wizard-tutorial/getstarted-data-factory-home-page.png)
 
-## Erstellen einer Pipeline mit dem Kopier-Assistenten
+## Erstellen der Pipeline
 
 1. Klicken Sie auf der Data Factory-Startseite auf die Kachel **Daten kopieren**, um den **Kopier-Assistenten** zu starten. 
 2. Auf der Seite **Eigenschaften**:
@@ -108,4 +108,4 @@ In diesem Schritt erstellen Sie im Azure-Portal eine Azure Data Factory namens *
 	![Überwachungs-App](./media/data-factory-copy-data-wizard-tutorial/monitoring-app.png)
   
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->
