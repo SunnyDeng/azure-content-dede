@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/04/2016"
+   ms.date="03/15/2016"
    ms.author="cherylmc"/>
 
 # Konfigurieren einer VNet-zu-VNet-Verbindung mit Azure Resource Manager und PowerShell
@@ -23,13 +23,18 @@
 - [Klassisches Azure-Portal](virtual-networks-configure-vnet-to-vnet-connection.md)
 - [PowerShell – Azure Resource Manager](vpn-gateway-vnet-vnet-rm-ps.md)
 
-Dieser Artikel führt Sie durch die Schritte zum Erstellen einer Verbindung zwischen virtuellen Netzwerken mit dem **Resource Manager**-Bereitstellungsmodell und PowerShell. Die virtuellen Netzwerke können sich in derselben oder in unterschiedlichen Regionen befinden und aus demselben oder unterschiedlichen Abonnements stammen.
+Dieser Artikel führt Sie durch die Schritte zum Erstellen einer Verbindung zwischen virtuellen Netzwerken mit dem Resource Manager-Bereitstellungsmodell und PowerShell. Die virtuellen Netzwerke können sich in derselben oder in unterschiedlichen Regionen befinden und aus demselben oder unterschiedlichen Abonnements stammen.
 
-[AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
 **Informationen zu Azure-Bereitstellungsmodellen**
 
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+
+**Bereitstellungsmodelle und Tools für VNet-zu-VNet**
+
+Eine VNET-zu-VNET-Verbindung kann in beiden Bereitstellungsmodellen und mit unterschiedlichen Tools konfiguriert werden. Weitere Informationen finden Sie in der folgenden Tabelle. Wir aktualisieren diese Tabelle, wenn neue Artikel, neue Bereitstellungsmodelle und weitere Tools für diese Konfiguration verfügbar werden. Wenn ein Artikel verfügbar ist, fügen wir in der Tabelle einen direkten Link dazu ein.
+
+[AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
 
 ## Über VNet-zu-VNet-Verbindungen
@@ -73,7 +78,7 @@ Aus den folgenden Gründen empfiehlt sich das Herstellen von Verbindungen zwisch
 
 - VNet-zu-VNet-Datenverkehr wird über das Microsoft-Netzwerk übertragen, nicht über das Internet.
 
-- VNet-zu-VNet-Datenverkehr innerhalb derselben Region ist in beiden Richtungen kostenlos. Ausgehender regionsübergreifender VNet-zu-VNet-Datenverkehr wird zu den Raten für die ausgehende Datenübertragung zwischen VNets basierend auf den Quellregionen berechnet. Ausführliche Informationen hierzu finden Sie auf der [Seite mit den Preisen](https://azure.microsoft.com/pricing/details/vpn-gateway/).
+- VNet-zu-VNet-Datenverkehr innerhalb derselben Region ist in beiden Richtungen kostenlos. Ausgehender regionsübergreifender VNet-zu-VNet-Datenverkehr wird zu den Raten für die ausgehende Datenübertragung zwischen VNets basierend auf den Quellregionen berechnet. Angaben zu den Preisen finden Sie in der [Preisübersicht](https://azure.microsoft.com/pricing/details/vpn-gateway/).
 
 
 ## Welche Schritte soll ich ausführen?
@@ -523,6 +528,6 @@ Da sich die Gateways in diesem Beispiel in unterschiedlichen Abonnements befinde
 
 ## Nächste Schritte
 
-Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
+Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

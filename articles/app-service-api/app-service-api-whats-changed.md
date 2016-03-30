@@ -111,6 +111,10 @@ Das vorherige API-Apps-Modell verfügte über APIs zum Ermitteln anderer API-App
 3. Erstellen Sie Ihre eigene Ermittlungs-API-App, und sorgen Sie dafür, dass andere API-Apps beim Starten für die Ermittlungs-App registriert werden.
 4. Füllen Sie die App-Einstellungen aller API-Apps (und Clients) zur Bereitstellungszeit mit den Endpunkten der anderen API-Apps. Dies eignet sich für Vorlagenbereitstellungen und wird aufgrund des Umstands ermöglicht, dass Sie mit API-Apps jetzt die Kontrolle über die URL haben.
 
+## Verwenden von API-Apps mit Logik-Apps
+
+Das neue API-App-Modell eignet sich gut für die Verwendung mit der [Logik-Apps-Schemaversion 2015-08-01](../app-service-logic/app-service-logic-schema-2015-08-01.md).
+
 ## Nächste Schritte
 
 Weitere Informationen finden Sie in den Artikeln im [Abschnitt zur API-Apps-Dokumentation](https://azure.microsoft.com/documentation/services/app-service/api/). Sie wurden aktualisiert und für das neue Modell für API-Apps angepasst. Darüber hinaus haben Sie in den Foren Zugriff auf weitere Details und Anleitungen zur Migration:
@@ -118,4 +122,4 @@ Weitere Informationen finden Sie in den Artikeln im [Abschnitt zur API-Apps-Doku
 - [MSDN-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureAPIApps)
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-api-apps)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

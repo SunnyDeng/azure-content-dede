@@ -4,9 +4,9 @@
 	description="Dies ist die Azure AD Connect Health-Seite, auf der Sie erfahren, wie Sie Ihre lokale AD FS-Infrastruktur überwachen."
 	services="active-directory"
 	documentationCenter=""
-	authors="billmath"
+	authors="karavar"
 	manager="stevenpo"
-	editor="curtand"/>
+	editor="karavar"/>
 
 <tags
 	ms.service="active-directory"
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/17/2016"
-	ms.author="billmath"/>
+	ms.date="03/21/2016"
+	ms.author="vakarand"/>
 
 # Verwenden von Azure AD Connect Health mit AD FS
 Die folgende Dokumentation bezieht sich auf die Überwachung Ihrer AD FS-Infrastruktur mit Azure AD Connect Health.
@@ -32,7 +32,7 @@ Durch Auswahl einer Warnung werden zusätzliche Informationen, Lösungsschritte 
 ## Nutzungsanalyse für AD FS
 In der Azure AD Connect Health-Nutzungsanalyse wird der Authentifizierungsdatenverkehr für Ihre Verbundserver analysiert. Bei Auswahl des Felds "Nutzungsanalyse" wird das Blatt zur Nutzungsanalyse geöffnet, in dem Metriken und Gruppierungen angezeigt werden.
 
->[AZURE.NOTE] Um die Nutzungsanalyse mit AD FS verwenden zu können, müssen Sie sicherstellen, dass die AD FS-Überwachung aktiviert ist. Weitere Informationen finden Sie unter [Aktivieren der Überwachung für AD FS](active-directory-aadconnect-health-operations.md#enable-auditing-for-ad-fs).
+>[AZURE.NOTE] Um die Nutzungsanalyse mit AD FS verwenden zu können, müssen Sie sicherstellen, dass die AD FS-Überwachung aktiviert ist. Weitere Informationen finden Sie unter [Aktivieren der Überwachung für AD FS](active-directory-aadconnect-health-agent-install.md#enable-auditing-for-ad-fs).
 
 ![Azure AD Connect Health-Portal](./media/active-directory-aadconnect-health/report1.png)
 
@@ -79,13 +79,13 @@ Azure AD Connect Health für AD FS bietet einen Bericht über die 50 Benutzer, b
 In diesem Bericht können Sie ganz einfach auf die folgenden Informationen zugreifen:
 
 - Gesamtanzahl fehlgeschlagener Anforderungen mit falschem Benutzernamen/Kennwort in den letzten 30 Tagen
-- Durchschnittliche Anzahl von Benutzern pro Tag, bei denen die Anmeldung wegen eines ungültigen Benutzernamens/Kennworts fehlschlägt 
- 
+- Durchschnittliche Anzahl von Benutzern pro Tag, bei denen die Anmeldung wegen eines ungültigen Benutzernamens/Kennworts fehlschlägt
+
 Wenn Sie auf diesen Bereich klicken, gelangen Sie zum Hauptberichtblatt, das zusätzliche Details enthält. Dazu zählen ein Graph mit Trendinformationen zum Einrichten einer Baseline für Anforderungen mit falschem Benutzernamen oder Kennwort und die Liste der 50 Benutzer mit den meisten Anmeldefehlern und der zugehörigen Anzahl fehlgeschlagener Versuche.
- 
+
 Der Graph zeigt die folgenden Informationen:
 
-- Gesamtanzahl fehlgeschlagener Anmeldeversuche aufgrund eines ungültigen Benutzernamens/Kennworts pro Tag 
+- Gesamtanzahl fehlgeschlagener Anmeldeversuche aufgrund eines ungültigen Benutzernamens/Kennworts pro Tag
 - Gesamtanzahl eindeutiger Benutzer, bei denen die Anmeldung fehlgeschlagen ist, pro Tag.
 
 ![Azure AD Connect Health-Portal](./media/active-directory-aadconnect-health-adfs/report2a.png)
@@ -93,10 +93,10 @@ Der Graph zeigt die folgenden Informationen:
 Der Bericht enthält die folgenden Informationen:
 
 | Berichtselement | Beschreibung
-| ------ | -------- | 
+| ------ | -------- |
 |Benutzer-ID| Die verwendete Benutzer-ID. Beachten Sie, dass es sich bei diesem Wert um die vom Benutzer eingegebene ID handelt. Mitunter kommt es vor, dass eine falsche Benutzer-ID verwendet wird.|
 |Fehlgeschlagene Anmeldeversuche|Die Gesamtanzahl fehlgeschlagener Anmeldeversuche für die jeweilige Benutzer-ID. Die Tabelle ist nach der höchsten Anzahl fehlgeschlagener Versuche in absteigender Reihenfolge sortiert.|
-|Letzter Fehler|Der Zeitstempel des letzten Fehlers. 
+|Letzter Fehler|Der Zeitstempel des letzten Fehlers.
 
 
 
@@ -113,4 +113,4 @@ Der Bericht enthält die folgenden Informationen:
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 * [Azure AD Connect Health: Versionsverlauf](active-directory-aadconnect-health-version-history.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

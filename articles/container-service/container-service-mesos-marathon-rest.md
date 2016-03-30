@@ -28,11 +28,11 @@ Bevor Sie diese Beispiele durchgehen, benötigen Sie einen in ACS konfigurierten
 - [Herstellen der Verbindung mit einem ACS-Cluster](./container-service-connect.md)
 
 
-Sobald eine Verbindung mit dem ACS-Cluster hergestellt wurde, kann über http://localhost:local-port auf Mesos und die zugehörigen REST-APIs zugegriffen werden. Bei den Beispielen in diesem Dokument wird davon ausgegangen, dass das Tunneling über Port 80 erfolgt. Der Marathon-Endpunkt kann beispielsweise unter `http://localhost/marathon/v2/` erreicht werden. Weitere Informationen zu den verschiedenen APIs finden Sie in der Mesosphere-Dokumentation für die [Marathon-API](https://mesosphere.github.io/marathon/docs/rest-api.html) und die [Chronos-API](https://mesos.github.io/chronos/docs/api.html) sowie in der Apache-Dokumentation für die [Mesos Scheduler-API](http://mesos.apache.org/documentation/latest/scheduler-http-api/).
+Sobald eine Verbindung mit dem ACS-Cluster hergestellt wurde, kann über http://localhost:local-port auf Mesos und die zugehörigen REST-APIs zugegriffen werden. Bei den Beispielen in diesem Dokument wird davon ausgegangen, dass das Tunneling über Port 80 erfolgt. Der Marathon-Endpunkt kann beispielsweise unter `http://localhost/marathon/v2/` erreicht werden. Weitere Informationen zu den verschiedenen APIs finden Sie in der Mesosphere-Dokumentation für die [Marathon-API](https://mesosphere.github.io/marathon/docs/rest-api.html) und die [Chronos-API](https://mesos.github.io/chronos/docs/api.html) sowie in der Apache-Dokumentation für die [Mesos Scheduler-API](http://mesos.apache.org/documentation/latest/scheduler-http-api/).
 
 ## Erfassen von Informationen von Mesos und Marathon
 
-Erfassen Sie vor dem Bereitstellen von Containern im Mesos-Cluster einige Informationen zum Mesos-Cluster, z. B. die Namen und den aktuellen Status der Mesos-Agents. Fragen Sie dazu den `master/slaves`-Endpunkt auf einem Mesos-Master ab. Wenn alles gut geht, wird eine Liste der Mesos-Agents mit jeweils einigen Eigenschaften angezeigt.
+Erfassen Sie vor dem Bereitstellen von Containern im Mesos-Cluster einige Informationen zum Mesos-Cluster, z. B. die Namen und den aktuellen Status der Mesos-Agents. Fragen Sie dazu den `master/slaves`-Endpunkt auf einem Mesos-Master ab. Wenn alles gut geht, wird eine Liste der Mesos-Agents mit jeweils einigen Eigenschaften angezeigt.
 
 ```bash
 curl http://localhost/master/slaves
@@ -46,9 +46,9 @@ curl localhost/marathon/v2/apps
 {"apps":[]}
 ```
 
-## Bereitstellen eines Docker-Containers
+## Bereitstellen eines Containers im Docker-Format
 
-Docker-Container werden über Marathon mithilfe einer JSON-Datei bereitgestellt, die die vorgesehene Bereitstellung beschreibt. Im folgenden Beispiel wird der nginx-Container bereitgestellt; dabei wird Port 80 des Mesos-Agents an Port 80 des Containers gebunden.
+Container im Docker-Format werden über Marathon mithilfe einer JSON-Datei bereitgestellt, die die vorgesehene Bereitstellung beschreibt. Im folgenden Beispiel wird der nginx-Container bereitgestellt; dabei wird Port 80 des Mesos-Agents an Port 80 des Containers gebunden.
 
 ```json
 {
@@ -69,7 +69,7 @@ Docker-Container werden über Marathon mithilfe einer JSON-Datei bereitgestellt,
 }
 ```
 
-Zum Bereitstellen eines Docker-Containers erstellen Sie eine eigene JSON-Datei, oder verwenden Sie das hier bereitgestellte Beispiel ([Azure ACS Demo](https://raw.githubusercontent.com/rgardler/AzureDevTestDeploy/master/marathon/marathon.json)), und speichern Sie es an einem zugänglichen Speicherort. Führen Sie anschließend den folgenden Befehl aus, und geben Sie den Namen der JSON-Datei an, um den Container bereitzustellen.
+Zum Bereitstellen eines Containers im Docker-Format erstellen Sie eine eigene JSON-Datei, oder verwenden Sie das hier bereitgestellte Beispiel ([Azure ACS Demo](https://raw.githubusercontent.com/rgardler/AzureDevTestDeploy/master/marathon/marathon.json)), und speichern Sie es an einem zugänglichen Speicherort. Führen Sie anschließend den folgenden Befehl aus, und geben Sie den Namen der JSON-Datei an, um den Container bereitzustellen.
 
 ```
 curl -X POST http://localhost/marathon/v2/groups -d @marathon.json -H "Content-type: application/json"
@@ -87,7 +87,7 @@ Wenn Sie jetzt Marathon auf Anwendungen abfragen, wird diese neue Anwendung in d
 curl localhost/marathon/v2/apps
 ```
 
-## Skalieren eines Docker-Containers
+## Skalieren der Container
 
 Die Marathon-API kann auch zum horizontalen Hoch- oder Herunterskalieren von Anwendungsbereitstellungen verwendet werden. Im vorherigen Beispiel wurde eine Instanz einer Anwendung bereitgestellt; diese skalieren wir jetzt horizontal auf drei Instanzen hoch. Dazu erstellen Sie eine JSON-Datei mit dem folgenden JSON-Text und speichern sie an einem zugänglichen Speicherort.
 
@@ -113,13 +113,13 @@ curl localhost/marathon/v2/apps
 
 Dieselbe Aktion kann mithilfe von PowerShell auf einem Windows-System ausgeführt werden. Mit dieser schnellen Übung werden ähnliche Aufgaben wie bei der letzten Übung ausgeführt, dieses Mal werden jedoch PowerShell-Befehle verwendet.
 
-Führen Sie den folgenden Befehl aus, um Informationen zum Mesos-Cluster zu erfassen, z. B. Agent-Namen und -Status.
+Führen Sie den folgenden Befehl aus, um Informationen zum Mesos-Cluster zu erfassen, z. B. Agent-Namen und -Status.
 
 ```powershell
 Invoke-WebRequest -Uri http://localhost/mesos/master/slaves
 ```
 
-Docker-Container werden über Marathon mithilfe einer JSON-Datei bereitgestellt, die die vorgesehene Bereitstellung beschreibt. Im folgenden Beispiel wird der nginx-Container bereitgestellt; dabei wird Port 80 des Mesos-Agents an Port 80 des Containers gebunden.
+Container im Docker-Format werden über Marathon mithilfe einer JSON-Datei bereitgestellt, die die vorgesehene Bereitstellung beschreibt. Im folgenden Beispiel wird der nginx-Container bereitgestellt; dabei wird Port 80 des Mesos-Agents an Port 80 des Containers gebunden.
 
 ```json
 {
@@ -160,4 +160,4 @@ Führen Sie den folgenden Befehl aus, um die Anwendung zu horizontal hochzuskali
 Invoke-WebRequest -Method Put -Uri http://localhost/marathon/v2/apps/nginx -ContentType application/json -InFile 'c:\scale.json'
 ```
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

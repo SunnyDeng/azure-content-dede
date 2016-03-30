@@ -13,7 +13,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="csharp"
     ms.workload="data-management"
-    ms.date="03/15/2016"
+    ms.date="03/22/2016"
     ms.author="sstein"/>
 
 # Erstellen eines Pools für elastische Datenbanken (C&#x23;)
@@ -26,9 +26,11 @@
 
 Hier erfahren Sie, wie Sie mithilfe von (C&#x23;) einen [Pool für elastische Datenbanken](sql-database-elastic-pool.md) erstellen.
 
+Häufige Fehlercodes finden Sie unter [SQL-Fehlercodes für SQL-Datenbank-Clientanwendungen: Datenbankverbindungsfehler und andere Probleme](sql-database-develop-error-messages.md).
+
 > [AZURE.NOTE] Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server-portal.md).
 
-Die Beispiele verwenden die [SQL-Datenbankbibliothek für .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx). Sie müssen die Bibliothek daher installieren. Verwenden Sie den folgenden Befehl zur Installation über die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) in Visual Studio (**Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
+In den Beispielen wird die [SQL-Datenbankbibliothek für .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx) verwendet. Sie müssen die Bibliothek daher installieren. Verwenden Sie den folgenden Befehl zur Installation über die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) in Visual Studio (**Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
 
@@ -45,7 +47,7 @@ Die Beispiele verwenden die [SQL-Datenbankbibliothek für .NET](https://msdn.mic
         Properties = new ElasticPoolCreateOrUpdateProperties()
         {
             Edition = "Standard",
-            Dtu = 400
+            Dtu = 400,
             DatabaseDtuMin = 0,
             DatabaseDtuMax = 100
          }
@@ -106,13 +108,13 @@ Die Beispiele verwenden die [SQL-Datenbankbibliothek für .NET](https://msdn.mic
 ## Beispiel für das Erstellen eines Pools für elastische Datenbanken C&#x23;
 
 
-Die folgenden Bibliotheken sind erforderlich, um dieses Beispiel auszuführen. Verwenden Sie die folgenden Befehle zur Installation über die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) in Visual Studio (**Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
+Die folgenden Bibliotheken sind erforderlich, um dieses Beispiel auszuführen. Verwenden Sie den folgenden Befehl zur Installation über die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) in Visual Studio (**Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
     PM> Install-Package Microsoft.Azure.Management.Resources –Pre
     PM> Install-Package Microsoft.Azure.Common.Authentication –Pre
 
-Erstellen Sie eine Konsolenanwendung und ersetzen Sie den Inhalt von Program.cs durch Folgendes. Die erforderliche Client-ID und die verknüpften Werte finden Sie unter [Register your app and get the required client values for connecting your app to SQL Database](sql-database-client-id-keys.md) (Ihre App registrieren und die erforderlichen Clientwerte erhalten, um Ihre App mit der SQL-Datenbank zu verbinden).
+Erstellen Sie eine Konsolenanwendung, und ersetzen Sie den Inhalt von Program.cs durch den folgenden Code. Die erforderliche Client-ID und die verknüpften Werte finden Sie unter [Register your app and get the required client values for connecting your app to SQL Database](sql-database-client-id-keys.md) (Registrieren Ihrer App und Erhalt der erforderlichen Clientwerte für die Verbindung Ihrer App mit der SQL-Datenbank).
 
     using Microsoft.Azure;
     using Microsoft.Azure.Management.Resources;
@@ -278,4 +280,4 @@ Erstellen Sie eine Konsolenanwendung und ersetzen Sie den Inhalt von Program.cs 
 - [APIs für Azure-Ressourcenverwaltung](https://msdn.microsoft.com/library/azure/dn948464.aspx)
 - [Referenz für Pools für elastische Datenbanken](sql-database-elastic-pool-reference.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

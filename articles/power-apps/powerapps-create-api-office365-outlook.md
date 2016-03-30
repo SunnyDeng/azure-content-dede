@@ -49,7 +49,7 @@ Fügen Sie die Office 365-Outlook-API der App Service-Umgebung Ihrer Organisatio
 8. Wählen Sie **Einstellungen – Erforderliche Einstellungen konfigurieren** aus:  
 ![Einstellungen für die Office 365-Outlook-API konfigurieren][4]
 
-9. Geben Sie den *App-Schlüssel* und den *geheimen App-Schlüssel * Ihrer Azure Active Directory-Anwendung (AAD) für Office 365 ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für den Schlüssel und den geheimen Schlüssel.
+9. Geben Sie den *App-Schlüssel* und den *geheimen App-Schlüssel* Ihrer Azure Active Directory-Anwendung (AAD) für Office 365 ein. Wenn Sie nicht über diese Daten verfügen, finden Sie weiter unten im Abschnitt „Registrieren einer AAD-App zur Verwendung mit PowerApps“ Informationen zum Erstellen der benötigten Werte für den Schlüssel und den geheimen Schlüssel.
  
 	> [AZURE.IMPORTANT] Speichern Sie die **Umleitungs-URL**. Möglicherweise benötigen Sie diesen Wert an späterer Stelle in diesem Thema.
 
@@ -84,7 +84,7 @@ Wenn Sie über keine vorhandene AAD-App mit den Werten für den Schlüssel und d
 
 6. Unter **App-Eigenschaften**:  
 
-	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf \__https://login.windows.net_ fest.
+	1. Geben Sie unter **ANMELDE-URL** die Anmelde-URL Ihrer Anwendung ein. Da Sie die Authentifizierung mit AAD für PowerApps durchführen, legen Sie die Anmelde-URL auf _https://login.windows.net_ fest.  
 	2. Geben Sie einen gültigen **APP-ID-URI** für Ihre App ein.  
 	3. Klicken Sie auf **OK**.  
 
@@ -144,6 +144,6 @@ In diesem Thema haben Sie PowerApps Enterprise die Office 365-Outlook-API hinzug
 [14]: ./media/powerapps-create-api-office365-outlook/browseall.png
 [15]: ./media/powerapps-create-api-office365-outlook/allresources.png
 
-<!----HONumber=AcomDC_0309_2016-->
+<!-----HONumber=AcomDC_0309_2016-->
 
 

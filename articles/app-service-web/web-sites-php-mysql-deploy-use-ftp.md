@@ -3,7 +3,7 @@
 	description="In diesem Lernprogramm wird gezeigt, wie Sie eine PHP-Web-App erstellen, die Daten in MySQL speichert, und wie Sie die FTP-Bereitstellung in Azure verwenden." 
 	services="app-service\web" 
 	documentationCenter="php" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="PHP" 
 	ms.topic="hero-article" 
 	ms.date="01/12/2016" 
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 
 #Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über FTP
@@ -23,8 +23,8 @@
 - [.Net](web-sites-dotnet-get-started.md)
 - [Node.js](web-sites-nodejs-develop-deploy-mac.md)
 - [Java](web-sites-java-get-started.md)
-- [PHP - Git](web-sites-php-mysql-deploy-use-git.md)
-- [PHP - FTP](web-sites-php-mysql-deploy-use-ftp.md)
+- [PHP – Git](web-sites-php-mysql-deploy-use-git.md)
+- [PHP – FTP](web-sites-php-mysql-deploy-use-ftp.md)
 - [Python](web-sites-python-ptvs-django-mysql.md)
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-MySQL-Web-App erstellen und über FTP bereitstellen. Dieses Lernprogramm setzt voraus, dass Sie [PHP][install-php], [MySQL][install-mysql], einen Webserver und einen FTP-Client auf Ihrem Computer installiert haben. Die Anweisungen in diesem Lernprogramm lassen sich von jedem Betriebssystem aus befolgen, einschließlich Windows, Max und Linux. Nachdem Sie diese Anleitung durchgearbeitet haben, verfügen Sie über eine in Azure ausgeführte PHP-/MySQL-Web-App.
@@ -54,7 +54,7 @@ Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstell
 
 	![Neue Website benutzerdefiniert erstellen][custom-create]
 
-4. Klicken Sie auf **Erstellen**. Geben Sie einen eindeutigen App Service-Namen, einen gültigen Namen für die Ressourcengruppe und einen neuen Dienstplan ein.
+4. Klicken Sie auf **Erstellen**. Geben Sie einen eindeutigen App Service-Namen, einen gültigen Namen für die Ressourcengruppe und einen neuen Dienstplan ein.
 
     ![Ressourcengruppenname festlegen][resource-group]
 
@@ -220,7 +220,7 @@ Nun können Sie zu [http://localhost/registration/index.php][localhost-index] na
 
 Um eine Verbindung mit der in Web-Apps ausgeführten MySQL-Datenbank herzustellen, benötigen Sie die Verbindungsinformationen. Befolgen Sie die folgenden Schritte, um MySQL-Verbindungsinformationen abzurufen:
 
-1. Klicken Sie auf dem Blatt der App Service-Web-App auf den Ressourcengruppenlink:
+1. Klicken Sie auf dem Blatt der App Service-Web-App auf den Ressourcengruppenlink:
 
 	![Ressourcengruppen auswählen][select-resourcegroup]
 
@@ -303,4 +303,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

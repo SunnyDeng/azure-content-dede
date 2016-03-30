@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="03/07/2016"
+	ms.date="03/16/2016"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -90,7 +90,7 @@ In diesem Fall überschreibt das neue Kennwort das synchronisierte Kennwort des 
 
 Wenn Sie beim Installieren von Azure AD Connect die Express-Einstellungen verwenden, wird die Kennwortsynchronisierung standardmäßig aktiviert.
 
-Wenn Sie beim Installieren von Azure AD Connect die benutzerdefinierten Einstellungen verwenden, aktivieren Sie die Kennwortsynchronisierung auf der Seite „Benutzeranmeldung“. ![Benutzeranmeldung](./media/active-directory-aadsync-implement-password-synchronization/usersignin.png)
+Wenn Sie beim Installieren von Azure AD Connect die benutzerdefinierten Einstellungen verwenden, aktivieren Sie die Kennwortsynchronisierung auf der Seite „Benutzeranmeldung“. ![Benutzeranmeldung](./media/active-directory-aadconnectsync-implement-password-synchronization/usersignin.png)
 
 Wenn Sie die Option **Verbund mit AD FS** auswählen, können Sie die Kennwortsynchronisierung optional als zusätzliche Sicherheit für den Fall aktivieren, dass Ihre AD FS-Infrastruktur ausfällt. Sie können sie auch aktivieren, wenn Sie vorhaben, die Azure AD-Domänendienste zu verwenden.
 
@@ -116,13 +116,17 @@ Informationen über Sicherheitsfragen und FIPS finden Sie im Blogbeitrag [AAD Pa
 
 Starten Sie den **Synchroisierungsdienst-Manager**, öffnen Sie **Connectors**, wählen Sie den Active Directory Connector aus, in dem sich der Benutzer befindet, wählen Sie **Connectorbereich durchsuchen** aus, und suchen Sie den gewünschten Benutzer.
 
-![Benutzer im Connectorbereich](./media/active-directory-aadsync-implement-password-synchronization/cspasswordsync.png)
+![Benutzer im Connectorbereich](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync.png)
 
 Wählen Sie für den Benutzer die Registerkarte **Herkunft** aus und stellen Sie sicher, dass für mindestens eine Synchronisierungsregel die **Kennwortsynchronisierung** als **Wahr** angezeigt wird. In der Standardsynchronisierung ist dies die Synchronisierungsregel **Eingehend von AD – Benutzerkonto aktiviert**.
 
+Außerdem sollten Sie [den Benutzer durch den Metaverse zum Azure AD-Connectorbereich verfolgen](active-directory-aadconnectsync-service-manager-ui-connectors.md#follow-an-object-and-its-data-through-the-system) und sicherstellen, dass auch eine ausgehende Regel vorhanden ist, für die **Kennwortsynchronisierung** auf **Wahr** festgelegt ist. In der Standardkonfiguration wäre dies die Synchronisierungsregel mit dem Namen **Ausgehend von AAD – Benutzerverknüpfung**.
+
+![csuser2](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync2.png)
+
 Um die Details zur Kennwortsynchronisierung für das Objekt anzuzeigen, klicken Sie unten auf der Seite auf die Schaltfläche **Protokoll...**. Daraufhin wird eine Seite mit Verlaufsdaten zum Kennwortsynchronisierungsstatus des Benutzers für die vergangene Woche angezeigt.
 
-![Protokoll für Objekt](./media/active-directory-aadsync-implement-password-synchronization/csobjectlog.png)
+![Protokoll für Objekt](./media/active-directory-aadconnectsync-implement-password-synchronization/csobjectlog.png)
 
 Die Statusspalte kann die nachfolgend aufgeführten Werte enthalten, die auch auf das Problem hinweisen. Außerdem wird kurz beschrieben, warum das Kennwort nicht synchronisiert wurde.
 
@@ -159,4 +163,4 @@ Das Erzwingen einer vollständigen Synchronisierung aller Kennwörter sollte in 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

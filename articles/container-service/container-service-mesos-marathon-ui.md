@@ -27,7 +27,7 @@ Mesos stellt eine Umgebung für die Bereitstellung und Skalierung geclusterter W
 
 ## Erkunden der Mesos-Benutzeroberfläche
 
-Navigieren Sie mit eingerichtetem SSH-Tunnel zu http://localhost/Mesos. Dadurch wird die Mesos-Webbenutzeroberfläche geladen. Auf der Seite können Sie Informationen zum Mesos-Cluster erfassen, z. B. aktivierte Agents, Aufgabenstatus und die Ressourcenverfügbarkeit.
+Navigieren Sie mit eingerichtetem SSH-Tunnel zu http://localhost/Mesos. Dadurch wird die Mesos-Webbenutzeroberfläche geladen. Auf der Seite können Sie Informationen zum Mesos-Cluster erfassen, z. B. aktivierte Agents, Aufgabenstatus und die Ressourcenverfügbarkeit.
 
 ![Bereitstellung erstellen](media/ui1.png)
 
@@ -37,7 +37,7 @@ Navigieren Sie zum Anzeigen der Marathon-Benutzeroberfläche zu http://localhost
 
 ![Bereitstellung erstellen](media/ui2.png)
 
-## Bereitstellen eines Docker-Containers
+## Bereitstellen eines Containers im Docker-Format
 
 Um mit Marathon einen neuen Container auf dem Mesos-Cluster zu starten, klicken Sie auf die Schaltfläche `Create Application`. Das Formular „Neue Anwendung“ wird zum Definieren der Anwendungs- oder Containerparameter verwendet. In diesem Beispiel wird ein einfacher nginx-Container bereitgestellt. Geben Sie Folgendes ein: Klicken Sie nach dem Abschluss auf „Erstellen“.
  
@@ -56,11 +56,11 @@ Auf der Marathon-Hauptseite wird der Bereitstellungsstatus für den Container an
 
 ![Bereitstellung erstellen](media/ui4.png)
 
-Wenn Sie zurück zur Mesos-App wechseln (http://localhost/Mesos)), sehen Sie, dass jetzt eine Aufgabe – in diesem Fall ein Docker-Container – auf dem Mesos-Cluster ausgeführt wird. Sie sehen auch, auf welchem Clusterknoten die Aufgabe ausgeführt wird.
+Wenn Sie zurück zur Mesos-App wechseln (http://localhost/Mesos)), sehen Sie, dass jetzt eine Aufgabe – in diesem Fall ein Container im Docker-Format – auf dem Mesos-Cluster ausgeführt wird. Sie sehen auch, auf welchem Clusterknoten die Aufgabe ausgeführt wird.
 
 ![Bereitstellung erstellen](media/ui5.png)
 
-## Skalieren eines Docker-Containers
+## Skalieren der Container
 
 Auf der Marathon-Webbenutzeroberfläche kann auch die Anzahl der Instanzen eines Containers skaliert werden. Navigieren Sie dazu zur Marathon-Seite, wählen Sie den zu skalierenden Container aus, und klicken Sie auf die Schaltfläche `scale`. Geben Sie im Fenster zum Skalieren der Anwendung die gewünschte Anzahl der Containerinstanzen ein, und wählen Sie `Scale Application`.
 
@@ -70,4 +70,4 @@ Sobald der Skalierungsvorgang abgeschlossen ist, sehen Sie mehrere Instanzen der
 
 ![Bereitstellung erstellen](media/ui8.png)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

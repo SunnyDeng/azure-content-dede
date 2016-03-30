@@ -46,7 +46,7 @@ Wählen Sie die Tabellen, die Sie für Stretch aktivieren möchten.
 |**Gestreckt**|Gibt an, ob die Tabelle bereits aktiviert ist.|
 |**beibehalten**|Gibt die Anzahl der Zeilen in der Tabelle an|
 |**Größe (KB)**|Gibt die Größe der Tabelle in KB an.|
-|**Migrieren**|In CTP 3.1 bis RC0 können Sie nur eine gesamte Tabelle mithilfe des Assistenten migrieren. Wenn Sie ein Prädikat für die Auswahl von Zeilen zur Migration aus einer Tabelle angeben möchten, die historische und aktuelle Daten enthält, führen Sie die ALTER TABLE-Anweisung aus, um ein Prädikat anzugeben, nachdem Sie den Assistenten beendet haben. Weitere Informationen finden Sie unter [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md) oder [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx).|
+|**Migrieren**|In CTP 3.1 bis RC1 können Sie nur eine gesamte Tabelle mithilfe des Assistenten migrieren. Wenn Sie ein Prädikat für die Auswahl von Zeilen zur Migration aus einer Tabelle angeben möchten, die historische und aktuelle Daten enthält, führen Sie die ALTER TABLE-Anweisung aus, um ein Prädikat anzugeben, nachdem Sie den Assistenten beendet haben. Weitere Informationen finden Sie unter [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md) oder [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx).|
 
 ## <a name="Configure"></a>Konfigurieren der Azure-Bereitstellung
 
@@ -141,4 +141,4 @@ Aktivieren von zusätzlichen Tabellen für Stretch-Datenbank Überwachen der Dat
 [StretchWizardImage7]: ./media/sql-server-stretch-database-wizard/stretchwiz7.png
 [StretchWizardImage8]: ./media/sql-server-stretch-database-wizard/stretchwiz8.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

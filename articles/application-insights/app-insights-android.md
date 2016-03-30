@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Analysen für Android-Apps | Microsoft Azure"
+    pageTitle="Analysen für Android-Apps"
     description="Analysieren Sie die Nutzung und Leistung Ihrer Android-App."
     services="application-insights"
     documentationCenter="android"
@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="mobile-android"
     ms.devlang="na"
     ms.topic="get-started-article"
-	ms.date="02/04/2016"
+	ms.date="03/17/2016"
     ms.author="awills"/>
 
 # Analysen für Android-Apps
@@ -29,6 +29,9 @@ Wechseln Sie zu:
 * Nehmen Sie an [Hockeyapp Preseason](http://hockeyapp.net/preseason/) teil, um frühe Veröffentlichungen zu erhalten.
 
 Wenn Ihre App serverseitige Komponenten hat, verwenden Sie [Application Insights](app-insights-overview.md) zum Überwachen der Webserverseite der App in [ASP.NET](app-insights-asp-net.md) oder [J2EE](app-insights-java-get-started.md).
- 
 
-<!---HONumber=AcomDC_0211_2016-->
+> [AZURE.NOTE] Am 15. Juni 2016 wird die Anzeige von Daten in Application Insights für iOS-, Android-, Windows Store- und Windows Phone-Apps beendet.
+>
+> [Weitere Informationen zu dieser Änderung](https://azure.microsoft.com/blog/transitioning-mobile-apps-from-application-insights-to-hockeyapp/)
+
+<!---HONumber=AcomDC_0323_2016-->

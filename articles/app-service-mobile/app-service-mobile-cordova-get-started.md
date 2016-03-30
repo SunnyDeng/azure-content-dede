@@ -32,7 +32,7 @@ Das Absolvieren dieses Tutorials ist Voraussetzung für alle anderen Apache Cord
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Einen PC mit [Visual Studio Community 2015] oder höher.
+* Einen PC mit [Visual Studio Community 2015] oder höher.
 * [Visual Studio-Tools für Apache Cordova].
 * Ein [aktives Azure-Konto](https://azure.microsoft.com/pricing/free-trial/)
 
@@ -64,6 +64,7 @@ Erfahren Sie mehr über die Schlüsselkonzepte von Azure App Service.
 
 Erfahren Sie, wie Sie die SDKs nutzen,
 
+* [Apache Cordova-SDK]
 * [ASP.NET Server-SDK]
 * [Node.js Server-SDK]
 
@@ -71,13 +72,14 @@ Erfahren Sie, wie Sie die SDKs nutzen,
 
 <!-- URLs -->
 [Azure portal]: https://portal.azure.com/
-[Visual Studio Community 2015]: http://www.visualstudio.com/
+[Visual Studio Community 2015]: http://www.visualstudio.com/
 [Visual Studio-Tools für Apache Cordova]: https://www.visualstudio.com/de-DE/features/cordova-vs.aspx
 [Hinzufügen von Authentifizierung]: app-service-mobile-cordova-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen]: app-service-mobile-cordova-get-started-push.md
 [Authentifizierung]: app-service-mobile-auth.md
 [Pushbenachrichtigungen]: ../notification-hubs/notification-hubs-overview.md
+[Apache Cordova-SDK]: app-service-mobile-codova-how-to-use-client-library.md
 [ASP.NET Server-SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 [Node.js Server-SDK]: app-service-mobile-node-backend-how-to-use-server-sdk.md
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->
