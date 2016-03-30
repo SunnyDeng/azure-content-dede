@@ -16,7 +16,8 @@
 
 #Tutorial: Azure Active Directory-Integration mit ITRP
   
-In diesem Tutorial wird die Integration von Azure und ITRP erläutert. Das in diesem Tutorial verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
+In diesem Tutorial wird die Integration von Azure und ITRP erläutert.  
+Das in diesem Tutorial verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen ITRP-Mandanten
@@ -64,7 +65,9 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für ITR
     ![ITRP](./media/active-directory-saas-itrp-tutorial/IC775566.png "ITRP")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ITRP zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für ITRP müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ITRP zu authentifizieren.  
+Zum Konfigurieren des einmaligen Anmeldens für ITRP müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen.  
+Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -76,7 +79,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-itrp-tutorial/IC775567.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ITRP-Anmelde-URL** die URL im Format „*https://\<Mandantenname>.ITRP.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ITRP-Anmelde-URL** die URL im Format „ *https://\<Mandantenname>.ITRP.com* “ ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-itrp-tutorial/IC775568.png "App-URL konfigurieren")
 
@@ -114,7 +117,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-itrp-tutorial/IC775574.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
   
-Damit sich Azure AD-Benutzer bei ITRP anmelden können, müssen sie in ITRP bereitgestellt werden. Im Fall von ITRP ist die Bereitstellung eine manuelle Aufgabe.
+Damit sich Azure AD-Benutzer bei ITRP anmelden können, müssen sie in ITRP bereitgestellt werden.  
+Im Fall von ITRP ist die Bereitstellung eine manuelle Aufgabe.
 
 ###So stellen Sie Benutzerkonten bereit
 
