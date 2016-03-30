@@ -2,7 +2,7 @@
 
 Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die Sie mithilfe der Azure-Befehlszeilenschnittstelle heruntergeladen haben.
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../articles/xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
 2. Führen Sie den Befehl **`azure config mode`** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
 
 		azure config mode arm
@@ -11,7 +11,7 @@ Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die 
 
 		info:    New mode is arm
 
-3. Erstellen Sie ggf. eine neue Ressourcengruppe, indem Sie wie unten dargestellt **`azure group create`** ausführen. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
+3. Erstellen Sie ggf. eine neue Ressourcengruppe, indem Sie wie unten dargestellt **`azure group create`** ausführen. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../articles/resource-group-overview.md).
 
 		azure group create -n TestRG -l centralus
 
@@ -89,4 +89,4 @@ Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die 
 		data:
 		info:    network vnet show command OK
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

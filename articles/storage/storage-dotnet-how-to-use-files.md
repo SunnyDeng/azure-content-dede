@@ -210,8 +210,9 @@ Wenn ein Client auf den Dateispeicher zugreift, richtet sich die verwendete SMB-
 
 Um zu veranschaulichen, wie eine Azure-Dateifreigabe eingebunden wird, erstellen wir nun einen virtuellen Azure-Computer unter Windows und greifen zum Einbinden der Freigabe remote darauf zu.
 
-1. Erstellen Sie zunächst eine neue virtuelle Azure-Maschine, indem Sie die Anweisungen in [Erstellen einer virtuellen Windows-Maschine im Azure-Portal](../virtual-machines/virtual-machines-windows-tutorial.md) befolgen.
-2. Erstellen Sie als nächstes eine neue virtuelle Maschine, indem Sie die Anweisungen in [Anmelden bei einer virtuellen Windows-Maschine über das Azure-Portal](../virtual-machines/virtual-machines-arm-log-on-windows-vm.md) befolgen.
+
+1. Erstellen Sie zunächst einen neuen virtuellen Azure-Computer, indem Sie die Anweisungen unter [Erstellen einer virtuellen Windows-Maschine im Azure-Portal](../virtual-machines/virtual-machines-windows-hero-tutorial.md) befolgen.
+2. Erstellen Sie als nächstes einen neuen virtuellen Computer, indem Sie die Anweisungen unter [Anmelden bei einem virtuellen Windows-Computer über das Azure-Portal](../virtual-machines/virtual-machines-windows-log-on.md) befolgen.
 3. Öffnen Sie ein PowerShell-Fenster auf dem virtuellen Computer.
 
 ### Fortbestehen der Anmeldeinformationen Ihres Speicherkontos für den virtuellen Computer
@@ -646,4 +647,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

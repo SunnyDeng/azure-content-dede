@@ -45,11 +45,11 @@ AGENTVMSIZE | Gibt die Größe der virtuellen Agent-Maschinen an. Wählen Sie ei
 ADMINUSERNAME | Dies ist der Benutzername, der für ein Konto auf jeder der virtuellen Maschinen und Skalierungsgruppen für virtuelle Maschinen im ACS-Cluster verwendet wird.
 ORCHESTRATORTYPE| Wählen Sie den Orchestrator aus, den Sie in Ihrem ACS-Cluster verwenden möchten.
 MASTERCOUNT | Dies ist die Anzahl der virtuellen Maschinen, die als Master für den Cluster konfiguriert werden. Sie können 1 auswählen, dies bietet in Ihrem Cluster allerdings keinerlei Ausfallsicherheit und wird nur für Testzwecke empfohlen. Der empfohlene Wert für einen Produktionscluster ist 3 oder 5. 
-SSHRSAPUBLICKEY | Für die Authentifizierung für die virtuellen Maschinen muss SSH verwendet werden. Hier fügen Sie Ihren öffentlichen Schlüssel hinzu. Fügen Sie den Schlüsselwert exakt in dieses Feld ein. Manchmal enthält der Inhalt einen Zeilenumbruch, wodurch der Schlüssel geteilt wird. Prüfen Sie, dass Ihr Schlüssel keine Zeilenumbrüche enthält und das Präfix „ssh-rsa“ sowie das Postfix „username@domain“ enthält. Er sollte etwa wie folgt aussehen: „ssh-rsa AAAAB3Nz...SNIPPEDCONTENT...UcyupgH azureuser@linuxvm'“. Wenn Sie einen SSH-Schlüssel erstellen müssen, finden Sie auf der Website mit der Azure-Dokumentation Informationen zu [Windows](../virtual-machines/virtual-machines-windows-use-ssh-key.md) und [Linux](../virtual-machines/virtual-machines-linux-use-ssh-key.md).
+SSHRSAPUBLICKEY | Für die Authentifizierung für die virtuellen Maschinen muss SSH verwendet werden. Hier fügen Sie Ihren öffentlichen Schlüssel hinzu. Fügen Sie den Schlüsselwert exakt in dieses Feld ein. Manchmal enthält der Inhalt einen Zeilenumbruch, wodurch der Schlüssel geteilt wird. Prüfen Sie, dass Ihr Schlüssel keine Zeilenumbrüche enthält und das Präfix „ssh-rsa“ sowie das Postfix „username@domain“ enthält. Er sollte etwa wie folgt aussehen: „ssh-rsa AAAAB3Nz...SNIPPEDCONTENT...UcyupgH azureuser@linuxvm'“. Wenn Sie einen SSH-Schlüssel erstellen müssen, finden Sie auf der Website mit der Azure-Dokumentation Informationen zu [Windows](../virtual-machines/virtual-machines-linux-ssh-from-windows.md) und [Linux](../virtual-machines/virtual-machines-linux-ssh-from-linux.md).
   
 Wenn Sie die entsprechenden Werte für Ihre Parameter festgelegt haben, klicken Sie auf „OK“. Vergeben Sie als Nächstes einen Namen für die Ressourcengruppe, wählen Sie eine Region aus, lesen Sie die rechtlichen Bedingungen, und stimmen Sie diesen zu.
 
-> Während der Vorschau fallen keine Gebühren für Azure Container Service an, sondern nur standardmäßige Compute-Gebühren wie z. B. für virtuelle Maschinen, Speicher, Netzwerk usw.
+> Während der Vorschau fallen keine Gebühren für Azure Container Service an, sondern nur standardmäßige Compute-Gebühren wie z. B. für virtuelle Maschinen, Speicher, Netzwerk usw.
  
 ![Ressourcengruppe auswählen](media/resourcegroup.png)
  
@@ -119,7 +119,7 @@ Alternativ können Sie eine JSON-formatierte Parameterdatei mit dem Switch `-e` 
 azure group deployment create RESOURCE_GROUP DEPLOYMENT_NAME --template-uri TEMPLATE_URI -e PATH/FILE.JSON'
  ```
  
-Eine Beispielparameterdatei mit dem Namen `azuredeploy.parameters.json` befindet sich bei den ACS-Vorlagen in GitHub.
+Eine Beispielparameterdatei mit dem Namen `azuredeploy.parameters.json` befindet sich unter den ACS-Vorlagen in GitHub.
  
 ## Erstellen eines Diensts mithilfe von PowerShell
 
@@ -148,7 +148,7 @@ Bei der Bereitstellung in einer neue Ressourcengruppe müssen Sie zunächst die 
 New-AzureRmResourceGroup -Name GROUP_NAME -Location REGION
 ```
 
-Nach dem Erstellen der Ressourcengruppe können Sie mithilfe des folgenden Befehls Ihren Cluster erstellen. Die Befehlszeilenschnittstelle der gewünschten Vorlage wird für den Parameter `-TemplateUri` festgelegt. Beim Ausführen dieses Befehls werden Sie von PowerShell aufgefordert, Parameterwerte für die Bereitstellung einzugeben.
+Nach dem Erstellen der Ressourcengruppe können Sie mithilfe des folgenden Befehls Ihren Cluster erstellen. Der URI der gewünschten Vorlage wird für den Parameter `-TemplateUri` festgelegt. Beim Ausführen dieses Befehls werden Sie von PowerShell aufgefordert, Parameterwerte für die Bereitstellung einzugeben.
 
 ```powershell
 New-AzureRmResourceGroupDeployment -Name DEPLOYMENT_NAME -ResourceGroupName RESOURCE_GROUP_NAME -TemplateUri TEMPLATE_URI
@@ -156,12 +156,12 @@ New-AzureRmResourceGroupDeployment -Name DEPLOYMENT_NAME -ResourceGroupName RESO
  
 ### Eingeben von Vorlagenparametern
  
-Wenn Sie mit PowerShell vertraut sind, wissen Sie, dass Sie die für ein Cmdlet verfügbaren Parameter durchlaufen können, indem Sie ein Minuszeichen (-) eingeben und die TAB-TASTE drücken. Dieselbe Funktionalität gilt auch für Parameter, die Sie in der Vorlage definieren. Sobald Sie den Namen der Vorlage eingeben, ruft das Cmdlet die Vorlage ab, analysiert die Parameter und fügt die Vorlagenparameter dynamisch dem Befehl hinzu. Auf diese Weise wird das Angeben der Vorlagenparameterwerte stark vereinfacht. Wenn Sie einen erforderlichen Parameterwert vergessen haben, fordert PowerShell Sie zur Angabe des Werts auf.
+Wenn Sie mit PowerShell vertraut sind, wissen Sie, dass Sie die für ein Cmdlet verfügbaren Parameter durchlaufen können, indem Sie ein Minuszeichen (-) eingeben und die TAB-TASTE drücken. Dieselbe Funktionalität gilt auch für Parameter, die Sie in der Vorlage definieren. Sobald Sie den Vorlagennamen eingeben, ruft das Cmdlet die Vorlage ab, analysiert die Parameter und fügt die Vorlagenparameter dynamisch dem Befehl hinzu. Auf diese Weise wird das Angeben der Vorlagenparameterwerte stark vereinfacht. Wenn Sie einen erforderlichen Parameterwert vergessen haben, fordert PowerShell Sie zur Angabe des Werts auf.
  
 Es folgt der vollständige Befehl mit Parametern. Sie können Ihre eigenen Werte für die Namen der Ressourcen angeben.
 
 ```
-New-AzureRmResourceGroupDeployment -ResourceGroupName RESOURCE\_GROUP\_NAME-TemplateURI TEMPLATE\_URI -adminuser value1 -adminpassword value2 ....
+New-AzureRmResourceGroupDeployment -ResourceGroupName RESOURCE_GROUP_NAME-TemplateURI TEMPLATE_URI -adminuser value1 -adminpassword value2 ....
 ```
  
 ## Nächste Schritte
@@ -173,4 +173,4 @@ Da Sie nun einen funktionierenden Cluster haben, lesen Sie die folgenden Dokumen
 
  
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

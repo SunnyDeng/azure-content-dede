@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 # Verwalten von Azure Traffic Manager-Profilen
@@ -30,7 +30,7 @@ Sie können sehr schnell ein Traffic Manager-Profil erstellen, indem Sie im klas
 2. **Melden Sie sich beim klassischen Azure-Portal an.** Um ein neues Traffic Manager-Profil zu erstellen, klicken Sie links unten im Portal auf **Neu**. Klicken Sie auf **Netzwerkdienste > Traffic Manager** und dann auf **Schnellerfassung**, um mit der Konfiguration des Profils zu beginnen.
 3. **Konfigurieren Sie das DNS-Präfix.** Geben Sie Ihre Traffic Manager-Profilen einen eindeutigen DNS-Präfixnamen. Sie können nur das Präfix für einen Traffic Manager-Domänennamen angeben.
 4. **Wählen Sie das Abonnement.** Wählen Sie das entsprechende Azure-Abonnement. Jedes Profil ist einem einzelnen Abonnement zugeordnet. Wenn Sie nur über ein Abonnement verfügen, wird diese Option nicht angezeigt.
-5. **Wählen Sie die Routingmethode für Datenverkehr aus.** Wählen Sie die Routingmethode für Datenverkehr in der **Routingrichtlinie für Datenverkehr** aus. Weitere Informationen zu Routingmethoden für Datenverkehr finden Sie unter [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md).
+5. **Wählen Sie die Routingmethode für Datenverkehr aus.** Wählen Sie die Routingmethode für Datenverkehr in der **Routingrichtlinie für Datenverkehr** aus. Weitere Informationen zu Routingmethoden für Datenverkehr finden Sie unter [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-routing-methods.md).
 6. **Klicken Sie auf "Erstellen", um ein neues Profil zu erstellen**. Nach Abschluss der Profilkonfiguration finden Sie Ihr Profil im klassischen Azure-Portal im Bereich „Traffic Manager“.
 7. **Konfigurieren Sie Endpunkte, Überwachung und weitere Einstellungen im klassischen Azure-Portal.** Da Sie mithilfe der Schnellerfassung nur grundlegende Einstellungen konfigurieren können, ist es notwendig, zusätzliche Einstellungen, z. B. die Liste der Endpunkte und deren Failoverreihenfolge zu konfigurieren, um die gewünschte Konfiguration abzuschließen. 
 
@@ -85,4 +85,4 @@ Sie können den Änderungsverlauf für Ihr Traffic Manager-Profil im klassischen
 
 [Problembehandlung beim Status „Heruntergestuft“ in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

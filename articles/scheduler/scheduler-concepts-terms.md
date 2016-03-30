@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="get-started-article"
- ms.date="03/09/2016" 
+ ms.date="03/09/2016"
  ms.author="krisragh"/>
 
 # Konzepte, Terminologie und Entitätshierarchie für Scheduler
@@ -23,9 +23,8 @@ Die folgende Tabelle beschreibt die wichtigsten Ressourcen, die von der Schedule
 
 |Ressource | Beschreibung |
 |---|---|
-|**Clouddienst**|Ein Clouddienst stellt im Prinzip eine Anwendung dar. Ein Abonnement kann mehrere Clouddienste enthalten.|
 |**Auftragssammlung**|Eine Auftragssammlung enthält eine Gruppe von Aufträgen und dient zum Verwalten von Einstellungen, Kontingenten und Drosselungen für die Aufträge in der Sammlung. Eine Auftragssammlung wird von einem Abonnementbesitzer erstellt und fasst Aufträge auf der Grundlage von Verwendungs- oder Anwendungsgrenzen zusammen. Sie ist auf eine einzelne Region beschränkt. Außerdem ermöglicht sie die Erzwingung von Kontingenten, um die Verwendung aller Aufträge in der Sammlung zu beschränken. Dazu gehören „MaxJobs“ und „MaxRecurrence“.|
-|**Auftrag**|Ein Auftrag definiert eine einzelne wiederkehrende Aktion mit einfachen oder komplexen Ausführungsstrategien. Zu diesen Aktionen zählen beispielsweise HTTP-Anforderungen oder Anforderungen für die Speicherwarteschlange.|
+|**Auftrag**|Ein Auftrag definiert eine einzelne wiederkehrende Aktion mit einfachen oder komplexen Ausführungsstrategien. Beispiele für Aktionen sind HTTP, Speicherwarteschlange, Service Bus-Warteschlange oder Service Bus-Warteschlangenanforderungen.|
 |**Auftragsverlauf**|Ein Auftragsverlauf liefert Details zur Ausführung eines Auftrags. Er gibt Aufschluss darüber, ob die Ausführung erfolgreich war, und enthält Details zur Antwort.|
 
 ## Entitätsverwaltung für Scheduler
@@ -34,14 +33,13 @@ Die Scheduler- und die Service Management-API machen für die Ressourcen allgeme
 
 |Funktion|Beschreibung und URI-Adresse|
 |---|---|
-|**Clouddienstverwaltung**|GET-, PUT- und DELETE-Unterstützung zum Erstellen und Ändern von Clouddiensten <p>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}`</p>|
-|**Auftragssammlungsverwaltung**|GET-, PUT- und DELETE-Unterstützung zum Erstellen und Ändern von Auftragssammlungen und der darin enthaltenen Aufträge. Bei einer Auftragssammlung handelt es sich um einen Container für Aufträge, der mit Kontingenten und gemeinsamen Einstellungen verknüpft ist. Beispiele für Kontingente (siehe Erläuterung weiter unten) wären die maximale Anzahl von Aufträgen sowie das kleinste Wiederholungsintervall. <p>PUT und DELETE: `https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET: `https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
-|**Auftragsverwaltung**|GET-, PUT-, POST-, PATCH- und DELETE-Unterstützung zum Erstellen und Ändern von Aufträgen. Alle Aufträge müssen einer bereits vorhandenen Auftragssammlung angehören. Es gibt also keine implizite Erstellung. <p>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
-|**Auftragsverlaufsverwaltung**|GET-Unterstützung zum Abrufen des Auftragsausführungsverlaufs für 60 Tage. Dieser enthält unter anderem Informationen zur verstrichenen Zeit sowie zu den Ergebnissen der Auftragsausführung. Bietet Unterstützung für Abfragezeichenfolgenparameter zur Filterung auf der Grundlage von Zustand und Status. <P>`https://management.core.windows.net/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
+|**Auftragssammlungsverwaltung**|GET-, PUT- und DELETE-Unterstützung zum Erstellen und Ändern von Auftragssammlungen und der darin enthaltenen Aufträge. Bei einer Auftragssammlung handelt es sich um einen Container für Aufträge, der mit Kontingenten und gemeinsamen Einstellungen verknüpft ist. Beispiele für Kontingente (siehe Erläuterung weiter unten) wären die maximale Anzahl von Aufträgen sowie das kleinste Wiederholungsintervall. <p>PUT und DELETE: `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}`</p><p>GET: `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}`</p>
+|**Auftragsverwaltung**|GET-, PUT-, POST-, PATCH- und DELETE-Unterstützung zum Erstellen und Ändern von Aufträgen. Alle Aufträge müssen einer bereits vorhandenen Auftragssammlung angehören. Es gibt also keine implizite Erstellung. <p>`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}`</p>|
+|**Auftragsverlaufsverwaltung**|GET-Unterstützung zum Abrufen des Auftragsausführungsverlaufs für 60 Tage. Dieser enthält unter anderem Informationen zur verstrichenen Zeit sowie zu den Ergebnissen der Auftragsausführung. Bietet Unterstützung für Abfragezeichenfolgenparameter zur Filterung auf der Grundlage von Zustand und Status. <P>`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}/history`</p>|
 
 ## Auftragstypen
 
-Es gibt zwei Arten von Aufträgen: HTTP-Aufträge (einschließlich HTTPS-Aufträge mit SSL-Unterstützung) und Speicherwarteschlangenaufträge. HTTP-Aufträge sind ideal, wenn Sie über einen Endpunkt einer vorhandenen Workload oder eines vorhandenen Diensts verfügen. Mit Speicherwarteschlangenaufträgen können Sie Nachrichten in Speicherwarteschlangen veröffentlichen. Daher eignen sich diese Aufträge perfekt für Workloads, die Speicherwarteschlangen verwenden.
+Es gibt mehrere Arten von Aufträgen: HTTP-Aufträge (z.B. HTTPS-Aufträge mit SSL-Unterstützung), Speicherwarteschlangen-Aufträge, Service Bus-Warteschlangenaufträge und Service Bus-Themenaufträge. HTTP-Aufträge sind ideal, wenn Sie über einen Endpunkt einer vorhandenen Workload oder eines vorhandenen Diensts verfügen. Mit Speicherwarteschlangenaufträgen können Sie Nachrichten in Speicherwarteschlangen veröffentlichen. Daher eignen sich diese Aufträge perfekt für Workloads, die Speicherwarteschlangen verwenden. Ebenso sind Service Bus-Aufträge ideal für Workloads, für die Service Bus-Warteschlangen und -Themen verwendet werden.
 
 ## Die Auftragsentität im Detail
 
@@ -131,7 +129,7 @@ Sehen wir uns die einzelnen Elemente im Detail an:
 
 ## action und errorAction
 
-„action“ ist die Aktion, die bei jedem Vorkommen aufgerufen wird, und beschreibt eine Art von Dienstaufruf. Die Aktion wird gemäß dem angegebenen Zeitplan ausgeführt. Scheduler unterstützt HTTP-Aktionen und Speicherwarteschlangenaktionen.
+„action“ ist die Aktion, die bei jedem Vorkommen aufgerufen wird, und beschreibt eine Art von Dienstaufruf. Die Aktion wird gemäß dem angegebenen Zeitplan ausgeführt. Scheduler unterstützt HTTP, Speicherwarteschlange, Service Bus-Themen und Service Bus-Warteschlangenaktionen.
 
 Die Aktion im obigen Beispiel ist eine HTTP-Aktion. Im folgenden Beispiel wird eine Speicherwarteschlangenaktion verwendet:
 
@@ -146,6 +144,15 @@ Die Aktion im obigen Beispiel ist eine HTTP-Aktion. Im folgenden Beispiel wird e
 					"My message body",
 			},
 	}
+
+Unten ist ein Beispiel für eine Service Bus-Themenaktion angegeben.
+
+  "action": { "type": "serviceBusTopic", "serviceBusTopicMessage": { "topicPath": "t1", "namespace": "mySBNamespace", "transportType": "netMessaging", // Kann entweder netMessaging oder AMQP sein "authentication": { "sasKeyName": "QPolicy", "type": "sharedAccessKey" }, "message": "Some message", "brokeredMessageProperties": {}, "customMessageProperties": { "appname": "FromScheduler" } }, }
+
+Unten ist ein Beispiel für eine Service Bus-Warteschlangenaktion angegeben:
+
+
+  "action": { "serviceBusQueueMessage": { "queueName": "q1", "namespace": "mySBNamespace", "transportType": "netMessaging", // Kann entweder netMessaging oder AMQP sein "authentication": { "sasKeyName": "QPolicy", "type": "sharedAccessKey" }, "message": "Some message", "brokeredMessageProperties": {}, "customMessageProperties": { "appname": "FromScheduler" } }, "type": "serviceBusQueue" }
 
 „errorAction“ ist der Fehlerhandler (also die Aktion, die aufgerufen wird, wenn bei der primären Aktion ein Fehler auftritt). Mit dieser Variablen können Sie einen Endpunkt für die Fehlerbehandlung aufrufen oder eine Benutzerbenachrichtigung senden. So können Sie einen sekundären Endpunkt erreichen, falls der primäre Endpunkt nicht verfügbar ist (beispielsweise bei einem Notfall am Standort des Endpunkts), oder einen Fehlerbehandlungsendpunkt benachrichtigen. Auch bei der Fehleraktion kann es sich um eine einfache oder um eine komplexe Logik handeln, die auf anderen Aktionen basiert. Informationen zum Erstellen eines SAS-Tokens finden Sie unter [Erstellen und Verwenden einer SAS (Shared Access Signature)](https://msdn.microsoft.com/library/azure/jj721951.aspx).
 
@@ -207,4 +214,4 @@ Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wir
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

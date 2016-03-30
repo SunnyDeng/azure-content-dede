@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie über das Azure-Portal eine neue Azure-Web-App für einen WordPress-Blog erstellen."
 	services="app-service\web"
 	documentationCenter="php"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="PHP"
 	ms.topic="hero-article"
 	ms.date="02/08/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 # Erstellen einer WordPress-Web-App in Azure App Service
 
@@ -30,7 +30,7 @@ Sie lernen Folgendes:
 * Erstellen einer Web-App in Azure App Service basierend auf der Vorlage
 * Konfigurieren der Azure App Service-Einstellungen für die neue Web-App und die Datenbank
 
-Azure Marketplace bietet eine breite Auswahl an beliebten Web-Apps, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Die Web-Apps basieren auf einer Vielzahl beliebter Frameworks, wie z. B. [PHP](/develop/nodejs/) (in diesem WordPress-Beispiel), [.NET](/develop/net/), [Node.js](/develop/nodejs/), [Java](/develop/java/) und [Python](/develop/python/), um nur einige zu nennen. Die einzige Software, die Sie zum Erstellen der Web-App über den Azure Marketplace benötigen, ist der Browser, den Sie für das [Azure-Portal](https://portal.azure.com/) verwenden.
+Azure Marketplace bietet eine breite Auswahl an beliebten Web-Apps, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Die Web-Apps basieren auf einer Vielzahl beliebter Frameworks, wie z. B. [PHP](/develop/nodejs/) (in diesem WordPress-Beispiel), [.NET](/develop/net/), [Node.js](/develop/nodejs/), [Java](/develop/java/) und [Python](/develop/python/), um nur einige zu nennen. Die einzige Software, die Sie zum Erstellen der Web-App über den Azure Marketplace benötigen, ist der Browser, den Sie für das [Azure-Portal](https://portal.azure.com/) verwenden.
 
 Die WordPress-Website, die Sie in diesem Lernprogramm bereitstellen, verwendet MySQL als Datenbank. Wenn Sie stattdessen die SQL-Datenbank verwenden möchten, finden Sie unter [Project Nami](http://projectnami.org/) entsprechende Informationen. **Project Nami** ist auch über den Marketplace vorhanden.
 
@@ -126,4 +126,4 @@ Zusätzliche Dokumentation zur Arbeit mit App Service-Web-Apps finden Sie in den
 [7]: ./media/web-sites-php-web-site-gallery/search-web-app.png
 [browse]: ./media/web-sites-php-web-site-gallery/browse-web.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

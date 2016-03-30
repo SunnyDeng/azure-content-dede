@@ -23,7 +23,7 @@
 **Einzeldatenbank**
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-get-started.md)
+- [Azure-Portal](sql-database-get-started.md)
 - [C#](sql-database-get-started-csharp.md)
 - [PowerShell](sql-database-get-started-powershell.md)
 
@@ -34,9 +34,9 @@ In diesem Tutorial zu SQL-Datenbanken wird gezeigt, wie Sie Ihre erste SQL-Daten
 
 Sie benötigen vor Beginn ein Azure-Konto und ein Azure-Abonnement. Falls Sie diese benötigen, können Sie sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
-> [AZURE.NOTE] In diesem Tutorial zu SQL-Datenbank wird das Einrichten einer Datenbank mithilfe des Managementsystems für relationale Datenbanken (Relational Database Management System, RDBMS) von Microsoft in der Cloud, Azure SQL-Datenbank, behandelt. Eine weitere Option ist das Ausführen von SQL Server auf einem virtuellen Azure-Computer. Unter [Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure VMs](data-management-azure-sql-database-and-sql-server-iaas.md) finden Sie einen Schnellvergleich oder unter [Bereitstellen eines virtuellen SQL Server-Computers](virtual-machines-provision-sql-server.md) die erste Schritte mit einem virtuellen Computer.
+> [AZURE.NOTE] In diesem Tutorial zu SQL-Datenbank wird das Einrichten einer Datenbank mithilfe des Managementsystems für relationale Datenbanken (Relational Database Management System, RDBMS) von Microsoft in der Cloud, Azure SQL-Datenbank, behandelt. Eine weitere Option ist das Ausführen von SQL Server auf einem virtuellen Azure-Computer. Unter [Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure VMs](data-management-azure-sql-database-and-sql-server-iaas.md) finden Sie einen Schnellvergleich oder unter [Bereitstellen eines virtuellen SQL Server-Computers](../virtual-machines/virtual-machines-windows-classic-portal-sql.md) die erste Schritte mit einem virtuellen Computer.
 
-## Schritt 1: Anmelden und Starten der Einrichtung der SQL-Datenbank
+## Schritt 1: Anmelden und Starten der Einrichtung der SQL-Datenbank
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken Sie auf **Neu** > **Daten + Speicher** > **SQL-Datenbank**.
 
@@ -46,7 +46,7 @@ Sie benötigen vor Beginn ein Azure-Konto und ein Azure-Abonnement. Falls Sie di
 
 	![Datenbank- und Servereinstellungen für SQL-Datenbank](./media/sql-database-get-started/get-started-dbandserversettings.png)
 
-## Schritt 2: Wählen der Servereinstellungen
+## Schritt 2: Wählen der Servereinstellungen
 Eine SQL-­Datenbank befindet sich in Azure auf einem Datenbankserver. Ein Server kann mehrere Datenbanken hosten. Beim Einrichten einer Datenbank können Sie auch einen Server erstellen und einrichten, der als Host fungieren soll, oder Sie können eine zuvor erstellte Datenbank verwenden. Wir werden eine neue einrichten.
 
 1. Geben Sie einen **Namen** für die Datenbank ein (wir verwenden **AdventureWorks**). Die anderen Datenbankeinstellungen werden später noch behandelt.
@@ -67,7 +67,7 @@ Eine SQL-­Datenbank befindet sich in Azure auf einem Datenbankserver. Ein Serve
 
 Die Datenbank und der Server wurden bisher noch nicht erstellt. Dies erfolgt erst nach dem nächsten Schritt, in dem Sie auswählen, die Datenbank aus dem AdventureWorks-Beispiel zu erstellen, und die Einstellungen bestätigen.
 
-## Schritt 3: Einrichten und Erstellen einer SQL-Datenbank
+## Schritt 3: Einrichten und Erstellen einer SQL-Datenbank
 1. Klicken Sie auf dem Blatt **SQL-Datenbank** auf **Quelle auswählen** und dann auf **Beispiel**.
 
 	![Erstellen einer Datenbank anhand eines Beispiels](./media/sql-database-get-started/new-sample-db.png)
@@ -82,7 +82,7 @@ Wechseln Sie zurück zum Azure-Startmenü, in dem eine Kachel den Fortschritt an
 
 Glückwunsch! Sie verfügen nun über eine SQL-Datenbank, die in der Cloud ausgeführt wird. Sie sind fast fertig. Es ist noch ein wichtiger Schritt zu erledigen. Sie müssen auf dem Datenbankserver eine Regel erstellen, damit Sie Verbindungen mit der Datenbank herstellen können.
 
-## Schritt 4: Konfigurieren der Firewall
+## Schritt 4: Konfigurieren der Firewall
 
 Sie müssen eine Firewallregel auf dem Server einrichten, die Verbindungen von der IP-Adresse des Clientcomputers ermöglicht, sodass Sie mit der Datenbank arbeiten können. Damit stellen Sie nicht nur sicher, dass Sie eine Verbindung herstellen können, sondern Sie können so auch weitere Details zu den SQL-Servers in Azure erhalten.
 
@@ -117,4 +117,4 @@ Nachdem Sie dieses Tutorial zu SQL-Datenbank ausgeführt und eine Datenbank mit 
 
 - Wenn Sie lokale SQL Server-Datenbanken in Azure verschieben möchten, finden Sie unter [Migrieren von Datenbanken zu Azure SQL-Datenbank](sql-database-cloud-migrate.md) weitere Informationen.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

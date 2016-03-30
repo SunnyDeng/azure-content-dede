@@ -38,7 +38,7 @@ Sie lernen Folgendes:
 
 * Erstellen einer neuen App Service-Web-App beim Erstellen eines neuen Webprojekts in Visual Studio
 * Bereitstellen eines Webprojekts für eine App Service-Web-App mit Visual Studio
-* Verwenden des [Azure-Portals](/overview/preview-portal/) zum Überwachen und Verwalten der Web-App
+* Verwenden des [Azure-Portals](/features/azure-portal/) zum Überwachen und Verwalten der Web-App
 
 Am Ende des Tutorials werden im Abschnitt [Problembehandlung](#troubleshooting) Hinweise dazu gegeben, was zu tun ist, wenn etwas nicht funktioniert. Der Abschnitt [Nächste Schritte](#next-steps) enthält Links zu anderen Tutorials, in denen die Verwendung von Azure App Service ausführlicher behandelt wird.
 
@@ -108,7 +108,7 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 	In diesem Kombinationsfeld können Sie eine vorhandene Ressourcengruppe auswählen oder eine neue Ressourcengruppe erstellen. Geben Sie hierfür einen Namen ein, der sich von einer vorhandenen Ressourcengruppe in Ihrem Abonnement unterscheidet.
 
-	Eine Ressourcengruppe ist eine Sammlung mit Azure-Ressourcen, z. B. API-Apps, Datenbanken, VMs usw. Für dieses Tutorial ist es im Allgemeinen besser, eine neue Ressourcengruppe zu erstellen. Es ist dann einfacher, alle Azure-Ressourcen, die Sie für das Tutorial erstellen, in einem Schritt zu löschen. Weitere Informationen finden Sie unter [Übersicht über den Azure Resource Manager](../resource-group-overview.md).
+	Eine Ressourcengruppe ist eine Sammlung mit Azure-Ressourcen, z.B. Web-Apps, Datenbanken und VMs. Für dieses Tutorial ist es im Allgemeinen besser, eine neue Ressourcengruppe zu erstellen. Es ist dann einfacher, alle Azure-Ressourcen, die Sie für das Tutorial erstellen, in einem Schritt zu löschen. Weitere Informationen finden Sie unter [Übersicht über den Azure Resource Manager](../resource-group-overview.md).
 
 4. Klicken Sie neben der Dropdownliste **App Service-Plan** auf die Schaltfläche **Neu**.
 
@@ -116,7 +116,7 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 	Der Screenshot enthält Beispielwerte für die Optionen **Web-App-Name**, **Abonnement** und **Ressourcengruppe**. Ihre Werte werden sich von diesen Werten unterscheiden.
 
-	In den folgenden Schritten erstellen Sie einen App Service-Plan für die neue Ressourcengruppe. Mit einem App Service-Plan werden die Computeressourcen angegeben, auf denen Ihre API-App ausgeführt wird. Wenn Sie beispielsweise den Free-Tarif wählen, wird Ihre API-App auf freigegebenen VMs ausgeführt. Für einige kostenpflichtige Tarife wird sie dagegen auf dedizierten VMs ausgeführt. Weitere Informationen finden Sie unter [App Service-Pläne – Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
+	In den folgenden Schritten erstellen Sie einen App Service-Plan für die neue Ressourcengruppe. Mit einem App Service-Plan werden die Computeressourcen angegeben, auf denen Ihre Web-App ausgeführt wird. Wenn Sie beispielsweise den Free-Tarif wählen, wird Ihre API-App auf freigegebenen VMs ausgeführt. Für einige kostenpflichtige Tarife wird sie dagegen auf dedizierten VMs ausgeführt. Weitere Informationen finden Sie unter [App Service-Pläne – Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
 5. Geben Sie im Dialogfeld **App Service-Plan konfigurieren** den Namen „MyExamplePlan“ oder einen anderen Namen Ihrer Wahl ein.
 
@@ -146,9 +146,11 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 	![Im Fenster „Azure App Service-Aktivität“ erstellte Web-App](./media/web-sites-dotnet-get-started/GS13sitecreated1.png)
 
-	Und Sie können die Web-App im **Cloud-Explorer** sehen.
+	Außerdem können Sie die Web-App im Fenster **Cloud-Explorer** von Visual Studio anzeigen.
 
 	![Im Cloud Explorer erstellte Web-App](./media/web-sites-dotnet-get-started/siteinse.png)
+	
+	In diesem Fenster können Sie viele Azure-Ressourcen anzeigen und verwalten. Im Screenshot sind nur Web-Apps zu sehen, aber das Fenster **Cloud-Explorer** enthält noch weitere Ressourcentypen. Klicken Sie mit der rechten Maustaste auf eine Ressource, z.B. Ihre Web-App, um die verfügbaren Optionen für die Verwaltung anzuzeigen.
 
 ## Bereitstellen des Webprojekts für die Azure-Web-App
 
@@ -162,7 +164,7 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 
 	Wenige Sekunden später wird der Assistent **Web veröffentlichen** geöffnet. Im Assistenten wird ein *Veröffentlichungsprofil* mit Einstellungen für die Bereitstellung des Webprojekts in der neuen Web-App angezeigt. Wenn die Bereitstellung in einer anderen Web-App erfolgen soll, können Sie auf die Registerkarte **Profil** klicken, um ein anderes Profil zu erstellen. In diesem Tutorial übernehmen Sie die Einstellungen für die Bereitstellung der zuvor erstellten Web-App.
 
-	Das Veröffentlichungsprofil enthält einen Benutzernamen und ein Kennwort für die Bereitstellung. Diese Anmeldeinformationen wurden für Sie generiert, aber Sie können sie in von Ihnen gewählte Werte ändern. Die Vorgehensweise wird in dem Abschnitt des Tutorials beschrieben, in dem das Azure-Portal vorgestellt wird. Das Kennwort wird in einer ausgeblendeten benutzerspezifischen Datei im Ordner `Properties\PublishProfiles` verschlüsselt.
+	Das Veröffentlichungsprofil enthält einen Benutzernamen und ein Kennwort für die Bereitstellung. Diese Anmeldeinformationen wurden für Sie generiert, und Sie müssen sie nicht eingeben oder ändern. Das Kennwort wird in einer ausgeblendeten benutzerspezifischen Datei im Ordner `Properties\PublishProfiles` verschlüsselt.
 
 8. Klicken Sie auf der Registerkarte **Verbindung** des Assistenten **Web veröffentlichen** auf **Weiter**.
 
@@ -174,7 +176,7 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 	* Während der Veröffentlichung vorkompilieren
 	* Dateien aus dem App\_Data-Ordner ausschließen
 
-	Für dieses Tutorial benötigen Sie diese Optionen nicht. Ausführliche Beschreibungen ihrer Funktionsweise finden Sie unter [Gewusst wie: Bereitstellen eines Webanwendungsprojekts mit der One-Click-Veröffentlichung in Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).
+	Für dieses Tutorial benötigen Sie diese Optionen nicht. Ausführliche Beschreibungen der Funktionsweise dieser Optionen finden Sie unter [Gewusst wie: Bereitstellen eines Webanwendungsprojekts mit der One-Click-Veröffentlichung in Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).
 
 10. Klicken Sie auf der Registerkarte **Einstellungen** auf **Weiter**.
 
@@ -198,7 +200,7 @@ In diesem Abschnitt stellen Sie das Webprojekt in der Web-App bereit (siehe Schr
 
 > [AZURE.TIP] Um eine schnelle Bereitstellung zu ermöglichen, können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht > Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. Auf der Symbolleiste können Sie ein Profil auswählen, auf eine Schaltfläche zum Veröffentlichen klicken oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen. ![Symbolleiste "Webveröffentlichung mit einem Klick"](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
-## Überwachen und Verwalten der Web-App im Azure-Portal
+## <a id="portal"></a> Überwachen und Verwalten der Web-App im Azure-Portal
 
 Das [Azure-Portal](/services/management-portal/) ist eine Weboberfläche, die das Verwalten und Überwachen Ihrer Azure-Dienste ermöglicht, z. B. der soeben erstellten Web-App. In diesem Abschnitt des Lernprogramms erfahren Sie, was Sie im Portal durchführen können.
 
@@ -218,8 +220,8 @@ Das [Azure-Portal](/services/management-portal/) ist eine Weboberfläche, die da
 
 	![Blatt „Einstellungen“ im Azure-Portal](./media/web-sites-dotnet-get-started/portalconfigure1.png)
 
-	Beachten Sie den Link **Anmeldeinformationen für Bereitstellung** im Abschnitt **Veröffentlichung**. Hier erstellen Sie einen neuen Benutzernamen und ein Kennwort für die Bereitstellung. Sie können einen Benutzernamen und ein Kennwort Ihrer Wahl eingeben und in Ihrem Webprojekt im Assistenten **Web veröffentlichen** auf der Registerkarte **Verbindung** dann die gleichen Werte eingeben.
-
+	Beachten Sie den Link **Anmeldeinformationen für Bereitstellung** im Abschnitt **Veröffentlichung**. Hier können Sie einen benutzerdefinierten Benutzernamen mit dazugehörigem Kennwort für die Bereitstellung erstellen. Klicken Sie oben im Blatt auf die Schaltfläche **Speichern**, um Ihre Änderung abzusenden. Wenn Sie einen neuen Benutzernamen mit dazugehörigem Kennwort erstellen, müssen Sie Ihrem Webprojekt im Assistenten **Web veröffentlichen** auf der Registerkarte **Verbindung** die gleichen Werte eingeben.
+	
 	Der Screenshot zeigt nur eine Teilansicht des Blatts **Einstellungen**. Dieses Blatt enthält noch mehr Abschnitte, die hier nicht angezeigt werden.
 
 4. Klicken Sie auf dem Blatt **Einstellungen** im Abschnitt **Allgemein** auf **Anwendungseinstellungen**, um ein Beispiel für die verschiedenen Einstellungen anzuzeigen, die Sie im Portal konfigurieren können.
@@ -234,7 +236,7 @@ Dies sind nur einige Funktionen des Portals. Sie können neue Web-Apps erstellen
 
 Wenn Sie die für dieses Tutorial erstellte Web-App nicht mehr benötigen, können Sie sie löschen.
 
-Eine einfache Möglichkeit, die Web-App zu löschen, ist das Klicken auf die Schaltfläche **Löschen** im Azure-Portal oben auf dem Blatt **Web-App**. Eine bessere Option ist das Löschen der Ressourcengruppe, die Sie für die Web-App erstellt haben. In diesem Tutorial enthält die Ressourcengruppe nur die Web-App, aber normalerweise enthält eine Ressourcengruppe eine Sammlung mit verwandten Ressourcen. Für die Web-App kann beispielsweise eine Datenbank oder ein Azure-Speicherkonto verwendet werden, die bzw. das nicht mehr erforderlich ist, wenn auch die Web-App nicht mehr benötigt wird. Beim Löschen einer Ressourcengruppe wird ihr gesamter Inhalt gelöscht. Führen Sie die folgenden Schritte aus, um eine Ressourcengruppe mit dem Azure-Portal zu löschen.
+Eine einfache Möglichkeit, die Web-App zu löschen, ist das Klicken auf die Schaltfläche **Löschen** im Azure-Portal oben auf dem Blatt **Web-App**. Eine bessere Option ist das Löschen der Ressourcengruppe, die Sie für die Web-App erstellt haben. In diesem Tutorial enthält die Ressourcengruppe nur die Web-App, aber normalerweise enthält eine Ressourcengruppe eine Sammlung mit verwandten Ressourcen. Für die Web-App kann beispielsweise eine Datenbank oder ein Azure-Speicherkonto verwendet werden, die bzw. das nicht mehr erforderlich ist, wenn Sie die Web-App löschen. Beim Löschen einer Ressourcengruppe wird ihr gesamter Inhalt gelöscht. Führen Sie die folgenden Schritte aus, um eine Ressourcengruppe mit dem Azure-Portal zu löschen.
 
 1. Wechseln Sie zur Startseite des [Azure-Portals](https://portal.azure.com).
 
@@ -270,7 +272,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 * Gewusst wie: Erstellen von API-Apps
 
-	Sie haben gelernt, wie Sie eine Instanz von Azure App Service erstellen, die in erster Linie eine Website hosten soll. App Service verfügt auch über Funktionen, die das Entwickeln, Testen und Hosten von APIs vereinfachen sollen. Weitere Informationen finden Sie unter [Erste Schritte mit API-Apps und ASP.NET in Azure App Service](../app-service-api/app-service-api-dotnet-get-started.md).
+	Sie haben gelernt, wie Sie eine Instanz von Azure App Service erstellen, die in erster Linie eine Website hosten soll. Diese Instanzen werden als Web-Apps bezeichnet. App Service verfügt auch über Funktionen, die das Entwickeln, Testen und Hosten von APIs vereinfachen sollen. Instanzen von App Service, die hauptsächlich zum Hosten von APIs bestimmt sind, werden als API-Apps bezeichnet. Weitere Informationen finden Sie unter [Erste Schritte mit API-Apps und ASP.NET in Azure App Service](../app-service-api/app-service-api-dotnet-get-started.md).
 
 * Andere Möglichkeiten für die Bereitstellung eines Webprojekts
 
@@ -291,4 +293,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 	In Azure können Sie Webanwendungen in App Service-Web-Apps (wie in diesem Lernprogramm gezeigt), in Cloud Services oder in Virtual Machines ausführen. Weitere Informationen finden Sie unter [Azure Web-Apps, Cloud Services und Virtual Machines im Vergleich](/manage/services/web-sites/choose-web-app-service/).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

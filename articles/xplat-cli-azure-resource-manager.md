@@ -11,7 +11,7 @@
 <tags
 	ms.service="azure-resource-manager"
 	ms.workload="multiple"
-	ms.tgt_pltfrm="command-line-interface"
+	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="01/19/2016"
@@ -20,7 +20,7 @@
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
 
 > [AZURE.SELECTOR]
-- [Azure CLI](xplat-cli-azure-resource-manager.md)
+- [Azure-Befehlszeilenschnittstelle](xplat-cli-azure-resource-manager.md)
 - [Azure PowerShell](powershell-azure-resource-manager.md)
 
 
@@ -33,15 +33,15 @@ In diesem Artikel erfahren Sie, wie Sie Ihre Azure-Ressourcen mit der Azure-Befe
 
 Mit dem Azure-Ressourcen-Manager können Sie eine Gruppe von _Ressourcen_ (vom Benutzer verwaltete Entitäten wie etwa virtuelle Computer, Datenbankserver, Datenbanken oder Websites) als einzelne logische Einheit (_Ressourcengruppe_) erstellen und verwalten.
 
-Ein Vorteil des Azure-Ressourcen-Managers besteht darin, dass Sie Ihre Azure-Ressourcen _deklarativ_ erstellen können, indem Sie die Struktur und die Beziehungen einer bereitstellbaren Gruppe von Ressourcen in *JSON-Vorlagen* beschreiben. Die Vorlage gibt Parameter an, die entweder beim Ausführen eines Befehls (Inline) ausgefüllt oder in einer separaten JSON-Datei („azuredeploy-parameters.json“) gespeichert werden. Auf diese Weise können Sie mühelos neue Ressourcen mit derselben Vorlage erstellen, indem Sie unterschiedliche Parameter bereitstellen. So enthält beispielsweise eine Vorlage für die Websiteerstellung Parameter für den Websitenamen und die Region, in der sich die Website befinden soll, sowie andere allgemeine Einstellungen.
+Ein Vorteil des Azure Resource Managers besteht darin, dass Sie Ihre Azure-Ressourcen _deklarativ_ erstellen können, indem Sie die Struktur und die Beziehungen einer bereitstellbaren Gruppe von Ressourcen in *JSON-Vorlagen* beschreiben. Die Vorlage gibt Parameter an, die entweder beim Ausführen eines Befehls (Inline) ausgefüllt oder in einer separaten JSON-Datei („azuredeploy-parameters.json“) gespeichert werden. Auf diese Weise können Sie mühelos neue Ressourcen mit derselben Vorlage erstellen, indem Sie unterschiedliche Parameter bereitstellen. So enthält beispielsweise eine Vorlage für die Websiteerstellung Parameter für den Websitenamen und die Region, in der sich die Website befinden soll, sowie andere allgemeine Einstellungen.
 
 Wenn mit einer Vorlage eine Gruppe geändert oder erstellt wird, wird eine _Bereitstellung_ erstellt, die dann auf die Gruppe angewendet wird. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
-Nach dem Erstellen einer Bereitstellung können Sie genau wie beim klassischen Bereitstellungsmodell (Verwaltungsdienst) die einzelnen Ressourcen imperativ über die Befehlszeile verwalten. Verwenden Sie beispielsweise Befehle der Befehlszeilenschnittstelle des Azure-Ressourcen-Managers, um Ressourcen wie [virtuelle Azure-Ressourcen-Manager-Computer](virtual-machines/virtual-machines-deploy-rmtemplates-azure-cli.md) zu starten, zu beenden oder zu löschen.
+Nach dem Erstellen einer Bereitstellung können Sie genau wie beim klassischen Bereitstellungsmodell (Verwaltungsdienst) die einzelnen Ressourcen imperativ über die Befehlszeile verwalten. Verwenden Sie beispielsweise Befehle der Befehlszeilenschnittstelle des Azure-Ressourcen-Managers, um Ressourcen wie [virtuelle Azure-Ressourcen-Manager-Computer](virtual-machines/virtual-machines-linux-cli-deploy-templates.md) zu starten, zu beenden oder zu löschen.
 
 ## Authentifizierung
 
-Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle nutzen möchten, müssen Sie sich mit einem Geschäfts- oder Schulkonto (Organisationskonto) oder einem Microsoft-Konto (ab Version 0.9.10 der Befehlszeilenschnittstelle) bei Microsoft Azure authentifizieren. Die Authentifizierung mit einem durch eine PUBLISHSETTINGS-Datei installierten Zertifikat ist in diesem Modus nicht möglich.
+Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle nutzen möchten, müssen Sie sich mit einem Geschäfts- oder Schulkonto (Organisationskonto) oder einem Microsoft-Konto (ab Version 0.9.10 der Befehlszeilenschnittstelle) bei Microsoft Azure authentifizieren. Die Authentifizierung mit einem durch eine PUBLISHSETTINGS-Datei installierten Zertifikat ist in diesem Modus nicht möglich.
 
 Weitere Informationen zur Authentifizierung bei Microsoft Azure finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](xplat-cli-connect.md).
 
@@ -61,7 +61,7 @@ Bei den meisten Azure-Ressourcen-Manager-Befehlen muss für die Ressourcenerstel
 
 	azure location list
 
-Damit werden die Azure-Ressourcen und Azure-Regionen aufgelistet, in denen sie verfügbar sind, z. B. „Westen USA“, „Osten USA“ usw.
+Damit werden die Azure-Ressourcen und Azure-Regionen aufgelistet, in denen sie verfügbar sind, z. B. „Westen USA“, „Osten USA“ usw.
 
 ## Erstellen einer Ressourcengruppe
 
@@ -78,13 +78,13 @@ Die Bereitstellung erfolgt später in dieser Ressourcengruppe „testRG“, wenn
 
 Sie können [eine eigene Vorlage erstellen](resource-group-authoring-templates.md) oder eine der Vorlagen aus dem [Vorlagenkatalog](https://azure.microsoft.com/documentation/templates/) verwenden, die ebenfalls bei [GitHub](https://github.com/Azure/azure-quickstart-templates) verfügbar sind.
 
-Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels sprengen. Daher verwenden wir zum Einstieg die im [Vorlagenkatalog](https://azure.microsoft.com/documentation/templates/101-vm-simple-linux/) verfügbare Vorlage _101-simple-vm-from-image_. Standardmäßig wird dabei ein einzelner virtueller Ubuntu 14.04.2-LTS-Computer in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in der Region „Westen USA“ erstellt. Sie müssen nur die folgenden wenigen Parameter angeben, um diese Vorlage zu verwenden:
+Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels sprengen. Daher verwenden wir zum Einstieg die im [Vorlagenkatalog](https://azure.microsoft.com/documentation/templates/101-vm-simple-linux/) verfügbare Vorlage _101-simple-vm-from-image_. Standardmäßig wird dabei ein einzelner virtueller Ubuntu 14.04.2-LTS-Computer in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in der Region „Westen USA“ erstellt. Sie müssen nur die folgenden wenigen Parameter angeben, um diese Vorlage zu verwenden:
 
 * Administratorbenutzername für den virtuellen Computer = `adminUsername`
 * Kennwort = `adminPassword`
 * Domänenname für den virtuellen Computer = `dnsLabelPrefix`
 
->[AZURE.TIP] Diese Schritte veranschaulichen nur eine Möglichkeit der Verwendung einer VM-Vorlage mit der Azure-Befehlszeilenschnittstelle. Weitere Beispiele finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines/virtual-machines-deploy-rmtemplates-azure-cli.md).
+>[AZURE.TIP] Diese Schritte veranschaulichen nur eine Möglichkeit der Verwendung einer VM-Vorlage mit der Azure-Befehlszeilenschnittstelle. Weitere Beispiele finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines/virtual-machines-linux-cli-deploy-templates.md).
 
 1. Klicken Sie auf den Link „Mehr erfahren via GitHub“und laden Sie die Dateien „azuredeploy.json“ und „azuredeploy.parameters.json“ von GitHub in einen Arbeitsordner auf Ihrem lokalen Computer herunter. (Stellen Sie sicher, dass Sie in GitHub für jede Datei das _Rohformat_ auswählen.)
 
@@ -155,7 +155,7 @@ Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels spren
 	>
 	> Wenn Sie keinen Bereitstellungsnamen angeben, wird automatisch einer anhand des Namens der Vorlagendatei erstellt. Dieser Name wird als Teil der Ausgabe des Befehls `azure group create` zurückgegeben.
 
-	Sie können jetzt unter Verwendung des angegebenen Domänennamens per SSH auf den virtuellen Computer zugreifen. Beim Herstellen einer Verbindung mit dem virtuellen Computer müssen Sie einen vollqualifizierten Domänennamen im Format `<domainName>.<region>.cloudapp.azure.com` verwenden, z. B. `MyDomainName.westus.cloudapp.azure.com`.
+	Sie können jetzt unter Verwendung des angegebenen Domänennamens per SSH auf den virtuellen Computer zugreifen. Beim Herstellen einer Verbindung mit dem virtuellen Computer müssen Sie einen vollqualifizierten Domänennamen im Format `<domainName>.<region>.cloudapp.azure.com` verwenden, z. B. `MyDomainName.westus.cloudapp.azure.com`.
 
 5. Verwenden Sie zum Anzeigen der Gruppe den folgenden Befehl.
 
@@ -215,4 +215,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

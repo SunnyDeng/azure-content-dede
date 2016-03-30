@@ -24,7 +24,6 @@
 - [Mithilfe von PowerShell](data-factory-monitor-manage-using-powershell.md)
 - [Verwenden des Kopier-Assistenten](data-factory-copy-data-wizard-tutorial.md)
 
-##Inhalt dieses Lernprogramms
 In diesem Lernprogramm führen Sie mit Visual Studio 2013 die folgenden Schritte aus:
 
 1. Erstellen von zwei verknüpften Diensten: **AzureStorageLinkedService1** und **AzureSqlinkedService1**. Der AzureStorageLinkedService1 verknüpft einen Azure-Speicher, und AzureSqlLinkedService1 verknüpft eine Azure SQL-Datenbank mit der Data Factory: **ADFTutorialDataFactoryVS**. Die Eingabedaten für die Pipeline befinden sich in einem Blobcontainer im Azure-Blobspeicher. Ausgabedaten werden in einer Tabelle in der Azure SQL-Datenbank gespeichert. Daher fügen Sie diese beiden Datenspeicher als verknüpfte Dienste der Data Factory hinzu.
@@ -32,18 +31,14 @@ In diesem Lernprogramm führen Sie mit Visual Studio 2013 die folgenden Schritte
 3. Erstellen einer Pipeline mit dem Namen **ADFTutorialPipeline** in ADFTutorialDataFactoryVS. Die Pipeline weist eine **Kopieraktivität** auf, die zum Kopieren von Eingabedaten aus dem Azure-Blob in die Azure SQL-Tabelle verwendet wird. Die Kopieraktivität führt die Datenverschiebung in Azure Data Factory durch, und die Aktivität wird von einem global verfügbaren Dienst gestützt, mit dem Daten zwischen verschiedenen Datenspeichern auf sichere, zuverlässige und skalierbare Weise kopiert werden können. Ausführliche Informationen zur Kopieraktivität finden Sie unter [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md). 
 4. Erstellen einer Data Factory und Bereitstellen von verknüpften Diensten, Tabellen und der Pipeline.    
 
-## Erstellen und Bereitstellen von Daten Factory-Entitäten mit Visual Studio 
-
-### Voraussetzungen
+## Voraussetzungen
 Lesen Sie sich den Artikel [Übersicht über das Tutorial](data-factory-get-started.md) durch, und führen Sie die vorbereitenden Schritte aus, bevor Sie mit diesem Tutorial beginnen.
 
 Folgendes muss auf Ihrem Computer installiert sein:
 - Visual Studio 2013
 - Laden Sie das Azure SDK für Visual Studio 2013 herunter. Navigieren Sie zur [Azure-Downloadseite](https://azure.microsoft.com/downloads/), und klicken Sie im Abschnitt **.NET** auf **VS 2013 installieren**.
 
-### Exemplarische Vorgehensweise
-
-#### Erstellen des Visual Studio-Projekts 
+## Erstellen eines Visual Studio-Projekts 
 1. Starten Sie **Visual Studio 2013**. Klicken Sie auf **Datei**, zeigen Sie auf **Neu**, und klicken Sie auf **Projekt**. Das Dialogfeld **Neues Projekt** sollte angezeigt werden.  
 2. Wählen Sie im Dialogfeld **Neues Projekt** die Vorlage **DataFactory** aus, und klicken Sie auf **Leeres Data Factory-Projekt**. Wenn die Vorlage DataFactory nicht angezeigt wird, schließen Sie Visual Studio, installieren Sie Azure SDK für Visual Studio 2013, und öffnen Sie Visual Studio erneut.  
 
@@ -53,12 +48,12 @@ Folgendes muss auf Ihrem Computer installiert sein:
 
 	![Projektmappen-Explorer](./media/data-factory-get-started-using-vs/solution-explorer.png)
 
-#### Erstellen von verknüpften Diensten
+## Erstellen von verknüpften Diensten
 Verknüpfte Dienste verknüpfen Datenspeicher oder Serverdienste mit einer Azure Data Factory. Ein Datenspeicher kann ein Azure-Speicher, eine Azure SQL-Datenbank oder eine lokale SQL Server-Datenbank sein.
 
 In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **AzureStorageLinkedService1** und **AzureSqlLinkedService1**. Der verknüpfte Dienst „AzureStorageLinkedService1“ verknüpft ein Azure-Speicherkonto, und der Dienst „AzureSqlLinkedService“ verknüpft eine Azure SQL-Datenbank mit der Data Factory **ADFTutorialDataFactory**.
 
-##### Erstellen des mit Azure Storage verknüpften Diensts
+### Erstellen des mit Azure Storage verknüpften Diensts
 
 4. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verknüpfte Dienste**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.      
 5. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Mit Azure-Speicher verknüpfter Dienst** aus der Liste aus, und klicken Sie auf **Hinzufügen**. 
@@ -71,7 +66,7 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **AzureStorageLinkedSe
 
 4. Speichern Sie die Datei **AzureStorageLinkedService1.json**.
 
-#### Erstellen des mit Azure SQL verknüpften Diensts
+### Erstellen des mit Azure SQL verknüpften Diensts
 
 5. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste erneut auf den Knoten **Verknüpfte Dienste**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**. 
 6. Wählen Sie dieses Mal **Azure SQL Linked Service** aus, und klicken Sie dann auf **Hinzufügen**. 
@@ -79,10 +74,10 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **AzureStorageLinkedSe
 8.  Speichern Sie die Datei **AzureSqlLinkedService1.json**. 
 
 
-### Erstellen von Eingabe- und Ausgabetabellen
+## Erstellen von Datasets
 Im vorherigen Schritt haben Sie die verknüpften Dienste **AzureStorageLinkedService1** und **AzureSqlLinkedService1** erstellt, um ein Azure-Speicherkonto und eine Azure SQL-Datenbank mit der Data Factory **ADFTutorialDataFactory** zu verknüpfen. In diesem Schritt definieren Sie die beiden Data Factory-Tabellen **EmpTableFromBlob** und **EmpSQLTable**, die Ein- und Ausgabedaten in den Datenspeichern darstellen, auf die von „AzureStorageLinkedService1“ und „AzureSqlLinkedService1“ verwiesen wird. Für die Tabelle "EmpTableFromBlob" geben Sie den Blobcontainer an, der ein Blob mit den Quelldaten enthält. Für die Tabelle "EmpSQLTable" geben Sie die SQL-Tabelle an, in der die Ausgabedaten gespeichert werden sollen.
 
-#### Erstellen der Eingabetabelle
+### Erstellen eines Eingabedatasets
 
 9. Klicken Sie mit der rechten Maustaste auf **Tabellen** im **Projektmappen-Explorer**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.
 10. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Azure-Blob** aus, und klicken Sie auf **Hinzufügen**.   
@@ -118,7 +113,7 @@ Im vorherigen Schritt haben Sie die verknüpften Dienste **AzureStorageLinkedSer
 		  }
 		}
 
-#### Erstellen der Ausgabetabelle
+### Erstellen des Ausgabedatasets
 
 11. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste erneut auf **Tabellen**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.
 12. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Azure SQL** aus, und klicken Sie auf **Hinzufügen**. 
@@ -149,7 +144,7 @@ Im vorherigen Schritt haben Sie die verknüpften Dienste **AzureStorageLinkedSer
 		  }
 		}
 
-#### Erstellen der Pipeline 
+## Erstellen der Pipeline 
 Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun erstellen Sie eine Pipeline mit einer **Kopieraktivität**, um Daten aus dem Azure-Blob in Azure SQL-Datenbank zu kopieren.
 
 
@@ -201,7 +196,7 @@ Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun er
 		  }
 		}
 
-#### Veröffentlichen/Bereitstellen der Data Factory-Entitäten
+## Veröffentlichen/Bereitstellen der Data Factory-Entitäten
   
 18. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und klicken Sie auf **Veröffentlichen**. 
 19. Wenn das Dialogfeld **Melden Sie sich bei Ihrem Microsoft-Konto an** angezeigt wird, geben Sie Ihre Anmeldeinformationen für das Konto mit dem Azure-Abonnement ein, und klicken Sie auf **Anmelden**.
@@ -226,7 +221,7 @@ Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun er
 25. Auf der Seite **Bereitstellungsstatus** sollte der Status des Bereitstellungsprozesses angezeigt werden. Klicken Sie auf „Fertig stellen“, nachdem die Bereitstellung abgeschlossen ist. 
 
 
-## Verwenden Sie Server-Explorer, um Data Factory-Entitäten zu überprüfen
+## Verwenden von Server-Explorer zum Anzeigen von Data Factorys
 
 1. Klicken Sie in **Visual Studio** im Menü auf **Ansicht** und dann auf **Server-Explorer**.
 2. Erweitern Sie im Server-Explorer-Fenster erst die Option **Azure** und dann **Data Factory**. Wenn **Anmelden bei Visual Studio** angezeigt wird, geben Sie das mit Ihrem Azure-Abonnement verknüpfte **Konto** ein, und klicken Sie auf **Weiter**. Geben Sie Ihr **Kennwort** ein, und klicken Sie auf **Anmelden**. Visual Studio versucht, Informationen über alle Azure Data Factorys abzurufen, die in Ihrem Abonnement enthalten sind. Der Status dieses Vorgangs wird im Fenster **Data Factory-Aufgabenliste** angezeigt. ![Server-Explorer](./media/data-factory-get-started-using-vs/server-explorer.png)
@@ -239,9 +234,9 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 2. Wählen Sie im linken Bereich **Updates** und dann **Visual Studio Gallery** aus.
 4. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Update**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
 
-Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-editor.md#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in diesem Tutorial erstellten Pipeline und Datasets über das Azure-Portal.
+Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-editor.md#monitor-pipeline) finden Sie eine Anleitung zum Überwachen der in diesem Tutorial erstellten Pipeline und Datasets über das Azure-Portal.
 
 ## Siehe auch
 Ausführliche Informationen zur **Kopieraktivität** in Azure Data Factory finden Sie im Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

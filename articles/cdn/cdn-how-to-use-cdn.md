@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/25/2016"
+	ms.date="03/18/2016"
 	ms.author="casoper"/>
 
 
 # Verwenden von CDN für Azure
 
-Azure Content Delivery Network (CDN) ist der grundlegende Baustein für die Skalierung beliebiger HTTP-Anwendungen in Azure. Es bietet Azure-Kunden eine globale Lösung für das Zwischenspeichern und Bereitstellen von Inhalten in geografischer Nähe zu den Endbenutzern. So müssen Anforderungen der Benutzer nicht jedes Mal an den ursprünglichen Inhaltsspeicherort gesendet werden – nachfolgend als „Ursprung“ bezeichnet –, sondern die Anforderungen werden intelligent an den CDN-Edge-POP mit der besten Leistung geroutet. Dies führt zu einer erheblichen Verbesserung von Leistung und Benutzerfreundlichkeit. Eine aktuelle Liste von CDN-Knotenstandorten finden Sie unter [POP-Standorte von Azure Content Delivery Network (CDN)](cdn-pop-locations.md).
+Azure Content Delivery Network (CDN) ist der grundlegende Baustein für die Skalierung beliebiger HTTP/HTTPS-Anwendungen in Azure. Es bietet Azure-Kunden eine globale Lösung für das Zwischenspeichern und Bereitstellen von Inhalten in geografischer Nähe zu den Endbenutzern. So muss nicht immer der Ursprung durchlaufen werden, sondern Benutzeranforderungen werden auf intelligente Weise über den CDN-Edgeknoten (POP oder Point of Presence) geleitet, der die besten Antwortzeiten bietet. Dies führt zu einer erheblichen Verbesserung von Leistung und Benutzerfreundlichkeit. Eine aktuelle Liste von CDN-Knotenstandorten finden Sie unter [POP-Standorte von Azure Content Delivery Network (CDN)](cdn-pop-locations.md).
 
 Die Verwendung von CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vorteile:
 
@@ -149,4 +149,4 @@ Microsoft Azure CDN kann mithilfe der [CDN-Ressourcenanbieter-REST-API](https://
 - [Löschen eines Azure CDN-Endpunkts](cdn-purge-endpoint.md)
 - [CDN-Ressourcenanbieter-REST-API](https://msdn.microsoft.com/library/mt634456.aspx)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

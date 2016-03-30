@@ -124,7 +124,6 @@ Ein Auftrag ist eine Sammlung von Tasks, die festlegt, wie die Berechnung auf Co
 	- Azure Batch kann nicht erfolgreich ausgeführte Aufgaben erkennen und wiederholen. Die **maximale Anzahl von Taskwiederholungen** kann als Einschränkung angegeben werden. Hierzu gehört auch, ob ein Task immer oder niemals wiederholt werden soll. Bei der Wiederholung eines Tasks wird dieser nochmals der Warteschlange hinzugefügt und erneut ausgeführt.
 - Tasks können dem Auftrag von Ihrer Clientanwendung hinzugefügt werden, oder es kann ein [Auftrags-Manager-Task](#jobmanagertask) angegeben werden. Ein Auftrags-Manager-Task verwendet die Batch-API und enthält die Informationen, die zum Erstellen der erforderlichen Tasks für einen Auftrag benötigt werden, wobei der Task auf einem der Computeknoten innerhalb des Pools ausgeführt wird. Der Auftrags-Manager-Task wird von Batch speziell behandelt: Er wird sofort nach der Auftragserstellung der Warteschlange hinzugefügt und erneut gestartet, falls er nicht erfolgreich ausgeführt werden konnte. Ein Auftrags-Manager-Task wird für Aufträge benötigt, die von einem Auftragszeitplan erstellt werden, da sich Tasks nur so vor der Auftragsinstanziierung definieren lassen. Weitere Informationen zu Auftrags-Manager-Tasks werden unten aufgeführt.
 
-
 ### <a name="task"></a>Aufgabe
 
 Ein Task ist eine Berechnungseinheit, die einem Auftrag zugeordnet ist und auf einem Knoten ausgeführt wird. Tasks werden einem Knoten zur Ausführung zugewiesen oder der Warteschlange hinzugefügt, bis ein Knoten verfügbar wird. Eine Aufgabe verwendet die folgenden Ressourcen:
@@ -192,7 +191,15 @@ Ausführliche Informationen zum Ausführen von MPI-Aufträgen in Batch mithilfe 
 
 #### <a name="taskdep"></a>Abhängigkeiten von Aufgaben
 
-Mithilfe von Abhängigkeiten von Aufgaben können Sie, wie der Name schon sagt, angeben, dass die Ausführung einer Aufgabe vom Abschluss einer oder mehrerer anderer Aufgaben abhängig ist. Die Downstreamaufgabe nutzt unter Umständen die Ausgabe der Upstreamaufgabe oder hängt von einer von der Upstreamaufgabe ausgeführten Initialisierung ab. In einem solchen Fall können Sie angeben, dass Ihr Auftrag Abhängigkeiten zwischen Aufgaben verwendet. Geben Sie dann für jede Aufgabe, die von einer (oder mehreren) anderen abhängig ist, die entsprechenden übergeordneten Aufgaben an.
+Mithilfe von Abhängigkeiten von Aufgaben können Sie, wie der Name schon sagt, angeben, dass die Ausführung einer Aufgabe vom Abschluss einer anderen Aufgaben abhängig ist. Dieses Feature bietet Unterstützung in Situationen, in denen eine Downstreamaufgabe die Ausgabe einer Upstreamaufgabe nutzt oder eine Upstreamaufgabe eine Initialisierung ausführt, die für einer Downstreamaufgabe erforderlich ist. Um dieses Feature verwenden zu können, müssen Sie zuerst Aufgabenabhängigkeiten für den Batchauftrag aktivieren. Geben Sie dann für jede Aufgabe, die von einer (oder mehreren) anderen abhängt, die übergeordneten Aufgaben an.
+
+Mit Abhängigkeiten von Aufgaben können Sie Szenarien wie etwa die folgenden konfigurieren:
+
+* *AufgabeB* hängt von *AufgabeA* ab (*AufgabeB* kann erst ausgeführt werden, wenn *AufgabeA* abgeschlossen ist).
+* *AufgabeC* hängt sowohl von *AufgabeA* als auch von *AufgabeB* ab.
+* *AufgabeD* hängt von einem Aufgabenbereich, z.B. von den Aufgaben *1* bis *10*, ab, bevor sie ausgeführt werden kann.
+
+Sehen Sie sich hierzu das Codebeispiel [TaskDependencies][github_sample_taskdeps] im GitHub-Repository [azure-batch-samples][github_samples] an. Dort erfahren Sie, wie Sie mithilfe der [Batch .NET][batch_net_api]-Bibliothek Aufgaben konfigurieren, die von anderen Aufgaben abhängen.
 
 ### <a name="jobschedule"></a>Geplante Aufträge
 
@@ -345,11 +352,11 @@ Wenn bei einigen Ihrer Tasks Fehler auftreten, kann Ihre Batch-Clientanwendung o
 
 	Manchmal ist es erforderlich, den Knoten aus dem Pool vollständig zu entfernen.
 
-- **Deaktivieren Sie die Taskplanung auf dem Knoten** ([REST][rest_offline] | [.NET][net_offline]).
+- **Deaktivieren Sie die Aufgabenplanung auf dem Knoten** ([REST][rest_offline] | [.NET][net_offline]).
 
-	Dadurch geht der Knoten „offline“, damit ihm keine weiteren Tasks mehr zugewiesen werden. Er wird jedoch weiterhin ausgeführt und verbleibt im Pool. So können Sie die Fehlerursache weiter untersuchen, ohne dass die Daten der fehlgeschlagenen Tasks verloren gehen und durch den Knoten weitere Fehler auftreten. Aktivieren Sie z. B. die Taskplanung auf dem Knoten, melden Sie sich remote an, um die Ereignisprotokolle des Knotens zu prüfen, oder führen Sie andere Schritte zur Fehlerbehebung aus. Schalten Sie den Knoten nach Abschluss der Prüfung wieder online, indem Sie die Taskplanung ([REST][rest_online], [.NET][net_online]) aktivieren oder eine andere der o. g. Aktionen ausführen.
+	Dadurch geht der Knoten „offline“, damit ihm keine weiteren Tasks mehr zugewiesen werden. Er wird jedoch weiterhin ausgeführt und verbleibt im Pool. So können Sie die Fehlerursache weiter untersuchen, ohne dass die Daten der fehlgeschlagenen Tasks verloren gehen und durch den Knoten weitere Fehler auftreten. Aktivieren Sie z. B. die Taskplanung auf dem Knoten, melden Sie sich remote an, um die Ereignisprotokolle des Knotens zu prüfen, oder führen Sie andere Schritte zur Fehlerbehebung aus. Schalten Sie den Knoten nach Abschluss der Prüfung wieder online, indem Sie die Aufgabenplanung ([REST][rest_online], [.NET][net_online]) aktivieren oder eine andere der o.g. Aktionen ausführen.
 
-> [AZURE.IMPORTANT] Mit jeder dieser Aktionen (Neustart, Reimaging,Deaktivieren der Taskplanung) können Sie festlegen, wie mit auf dem Knoten ausgeführten Tasks verfahren wird, wenn Sie die Aktion ausführen. Wenn Sie z. B. auf einem Knoten mit der Batch .NET-Clientbibliothek die Taskplanung deaktivieren, können Sie den Enumerationswert [DisableComputeNodeSchedulingOption][net_offline_option] festlegen, um zu bestimmen, ob ausgeführte Tasks **beendet**, für die Planung auf anderen Knoten in eine **Warteschlange eingefügt** oder vor dem Ausführen der Aktion abgeschlossen werden (**TaskCompletion**).
+> [AZURE.IMPORTANT] Mit jeder dieser Aktionen (Neustart, Reimaging,Deaktivieren der Taskplanung) können Sie festlegen, wie mit auf dem Knoten ausgeführten Tasks verfahren wird, wenn Sie die Aktion ausführen. Wenn Sie z.B. auf einem Knoten mit der Batch .NET-Clientbibliothek die Aufgabenplanung deaktivieren, können Sie den Enumerationswert [DisableComputeNodeSchedulingOption][net_offline_option] festlegen, um zu bestimmen, ob ausgeführte Aufgaben **beendet**, für die Planung auf anderen Knoten in eine **Warteschlange eingefügt** oder vor dem Ausführen der Aktion abgeschlossen werden (**TaskCompletion**).
 
 ## Nächste Schritte
 
@@ -366,6 +373,8 @@ Wenn bei einigen Ihrer Tasks Fehler auftreten, kann Ihre Batch-Clientanwendung o
 [batch_explorer_project]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [cloud_service_sizes]: https://azure.microsoft.com/documentation/articles/cloud-services-sizes-specs/
 [msmpi]: https://msdn.microsoft.com/library/bb524831.aspx
+[github_samples]: https://github.com/Azure/azure-batch-samples
+[github_sample_taskdeps]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/TaskDependencies
 
 [batch_net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [net_cloudjob_jobmanagertask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobmanagertask.aspx
@@ -392,7 +401,7 @@ Wenn bei einigen Ihrer Tasks Fehler auftreten, kann Ihre Batch-Clientanwendung o
 [rest_add_task]: https://msdn.microsoft.com/library/azure/dn820105.aspx
 [rest_create_user]: https://msdn.microsoft.com/library/azure/dn820137.aspx
 [rest_get_task_info]: https://msdn.microsoft.com/library/azure/dn820133.aspx
-[rest_multiinstance]: https://msdn.microsoft.com/de-DE/library/azure/mt637905.aspx
+[rest_multiinstance]: https://msdn.microsoft.com/library/azure/mt637905.aspx
 [rest_multiinstancesettings]: https://msdn.microsoft.com/library/azure/dn820105.aspx#multiInstanceSettings
 [rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
 [rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
@@ -402,4 +411,4 @@ Wenn bei einigen Ihrer Tasks Fehler auftreten, kann Ihre Batch-Clientanwendung o
 [rest_offline]: https://msdn.microsoft.com/library/azure/mt637904.aspx
 [rest_online]: https://msdn.microsoft.com/library/azure/mt637907.aspx
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

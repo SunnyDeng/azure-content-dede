@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 # Was sind benutzerdefinierte Routen und IP-Weiterleitung?
@@ -36,29 +36,26 @@ Die folgende Abbildung zeigt ein Beispiel für benutzerdefinierte Routen und IP-
 
 ![Systemrouten in Azure](./media/virtual-networks-udr-overview/Figure2.png)
 
->[AZURE.IMPORTANT] Benutzerdefinierte Routen werden nur auf den ein Subnetz verlassenden Datenverkehr angewendet. Sie können keine Routen erstellen, um anzugeben, wie Datenverkehr z. B. aus dem Internet in ein Subnetz gelangt. Das Gerät, an das Sie Datenverkehr weiterleiten, darf sich außerdem nicht in dem gleichen Subnetz befinden, aus dem der Datenverkehr stammt. Erstellen Sie immer ein separates Subnetz für Ihre Geräte.
+>[AZURE.IMPORTANT] Benutzerdefinierte Routen werden nur auf den ein Subnetz verlassenden Datenverkehr angewendet. Sie können keine Routen erstellen, um anzugeben, wie Datenverkehr z. B. aus dem Internet in ein Subnetz gelangt. Das Gerät, an das Sie Datenverkehr weiterleiten, darf sich außerdem nicht in dem gleichen Subnetz befinden, aus dem der Datenverkehr stammt. Erstellen Sie immer ein separates Subnetz für Ihre Geräte.
 
-## Routing
+## Weiterleiten von Ressourcen
 Pakete werden über ein TCP/IP-Netzwerk weitergeleitet, das auf einer Routentabelle beruht, die auf den einzelnen Knoten im physischen Netzwerk definiert wird. Eine Routentabelle ist eine Sammlung der einzelnen Routen, anhand derer entschieden wird, wohin die Pakete beruhend auf der Ziel-IP-Adresse weitergeleitet werden. Eine Route besteht aus den folgenden Elementen:
 
-- **Adresspräfix**. Das Ziel-CIDR, das für die Route gilt, z. B. 10.1.0.0/16.
-- **Nächster Hop-Typ**. Der Azure-Hop-Typ, an den das Paket gesendet werden soll. Mögliche Werte:
-	- **Lokal**. Entspricht dem lokalen virtuellen Netzwerk. Wenn Sie z. B. im gleichen virtuellen Netzwerk über die beiden Subnetze 10.1.0.0/16 und 10.2.0.0/16 verfügen, weist die Route für die einzelnen Subnetze in der Routentabelle für den nächsten Hop den Wert *Lokal* auf.
-	- **VPN-Gateway**. Entspricht einem Azure S2S-VPN-Gateway. 
-	- **Internet**. Entspricht dem Standard-Internet-Gateway der Azure-Infrastruktur. 
-	- **Virtuelles Gerät**. Entspricht einem virtuellen Gerät, das Sie Ihrem virtuellen Azure-Netzwerk hinzugefügt haben.
-	- **NULL**. Entspricht einem schwarzen Loch. Pakete, die an ein schwarzes Loch weitergeleitet werden, werden überhaupt nicht weitergeleitet.
-- **Wert für den nächsten Hop**. Der Wert für den nächsten Hop enthält die IP-Adresse, an die die Pakete weitergeleitet werden sollen. Die Werte für den nächsten Hop dürfen nur für Routen verwendet werden, für die als Typ des nächsten Hops *Virtuelles Gerät* ausgewählt wurde.
+|Eigenschaft|Beschreibung|Einschränkungen|Überlegungen|
+|---|---|---|---|
+| Adresspräfix | Das Ziel-CIDR, das für die Route gilt, z. B. 10.1.0.0/16.|Dies muss ein gültiger CIDR-Bereich sein, der Adressen im öffentlichen Internet, Azure Virtual Network oder lokalen Rechenzentrum repräsentiert.|Stellen Sie sicher, dass das **Adresspräfix** nicht die Adressen des **Werts für den nächsten Hop** enthält. Andernfalls gelangen Ihre Pakete in eine Schleife, die von der Quelle zum nächsten Hop verläuft, ohne dass das Ziel jemals erreicht wird. |
+| Typ des nächsten Hops | Der Azure-Hop-Typ, an den das Paket gesendet werden soll. | Dies muss einer der folgenden Werte sein: <br/> **Lokal**. Entspricht dem lokalen virtuellen Netzwerk. Wenn Sie z. B. im gleichen virtuellen Netzwerk über die beiden Subnetze 10.1.0.0/16 und 10.2.0.0/16 verfügen, weist die Route für die einzelnen Subnetze in der Routentabelle für den nächsten Hop den Wert *Lokal* auf. <br/> **VPN Gateway**. Entspricht einem Azure S2S-VPN-Gateway. <br/> **Internet**. Entspricht dem Standard-Internet-Gateway der Azure-Infrastruktur. <br/> **Virtuelles Gerät**. Entspricht einem virtuellen Gerät, das Sie Ihrem virtuellen Azure-Netzwerk hinzugefügt haben. <br/> **NULL**. Entspricht einem schwarzen Loch. Pakete, die an ein schwarzes Loch weitergeleitet werden, werden überhaupt nicht weitergeleitet.| Erwägen Sie die Verwendung des Typs **NULL**, um zu verhindern, dass Pakete an ein bestimmtes Ziel fließen. | 
+| Wert für den nächsten Hop | Der Wert für den nächsten Hop enthält die IP-Adresse, an die die Pakete weitergeleitet werden sollen. Die Werte für den nächsten Hop dürfen nur für Routen verwendet werden, für die als Typ des nächsten Hops *Virtuelles Gerät* ausgewählt wurde.| Dies muss eine erreichbare IP-Adresse sein. | Wenn die IP-Adresse für eine VM steht, müssen Sie sicherstellen, dass Sie in Azure für die VM die [IP-Weiterleitung](#IP-forwarding) aktivieren. |
 
-## Systemrouten
+### Systemrouten
 Jedes in einem virtuellen Netzwerk erstellte Subnetz wird automatisch einer Routentabelle zugeordnet, die folgende Systemroutenregeln enthält:
 
 - **Regel für das lokale VNet**: Diese Regel wird automatisch für jedes Subnetz in einem virtuellen Netzwerk erstellt. Sie gibt an, dass eine direkte Verbindung zwischen den virtuellen Computern im VNet besteht und dazwischen kein nächster Hop vorhanden ist.
 - **Lokale Regel**: Diese Regel gilt für den gesamten Datenverkehr an den lokalen Adressbereich. Hierbei wird das VPN-Gateway als der nächste Hop verwendet.
 - **Internetregel**: Diese Regel behandelt den gesamten Datenverkehr in das öffentliche Internet und verwendet das Infrastruktur-Internetgateway als nächsten Hop für den gesamten Datenverkehr ins Internet.
 
-## Benutzerdefinierte Routen
-Für die meisten Umgebungen benötigen Sie nur die von Azure bereits definierten Systemrouten. Möglicherweise müssen Sie in bestimmten Fällen jedoch eine Routentabelle erstellen und dieser eine oder mehrere Routen hinzufügen. Die gilt z. B. für:
+### Benutzerdefinierte Routen
+Für die meisten Umgebungen benötigen Sie nur die von Azure bereits definierten Systemrouten. Möglicherweise müssen Sie in bestimmten Fällen jedoch eine Routentabelle erstellen und dieser eine oder mehrere Routen hinzufügen. Die gilt z. B. für:
 
 - Tunnelerzwingung für das Internet über das lokale Netzwerk.
 - Verwendung von virtuellen Geräten in Ihrer Azure-Umgebung.
@@ -75,13 +72,13 @@ Informationen zum Erstellen von benutzerdefinierten Routen finden Sie unter [Ers
 
 >[AZURE.IMPORTANT] Benutzerdefinierte Routen sind nur für virtuelle Azure-Computer und Clouddienste möglich. Wenn Sie beispielsweise zwischen dem lokalen Netzwerk und Azure ein virtuelles Firewallgerät hinzufügen möchten, müssen Sie eine benutzerdefinierte Route für die Azure-Routentabellen erstellen, die den gesamten Datenverkehr zum lokalen Adressraum an das virtuelle Gerät weiterleitet. Allerdings durchläuft der eingehende Datenverkehr vom lokalen Adressraum das VPN-Gateway oder den ExpressRoute-Kreis, um unter Umgehung des virtuellen Geräts direkt zur Azure-Umgebung zu gelangen.
 
-## BGP-Routen
-Wenn Sie über eine ExpressRoute-Verbindung zwischen dem lokalen Netzwerk und Azure verfügen, können Sie BGP für das Weitergeben der Routen aus Ihrem lokalen Netzwerk an Azure aktivieren. Diese BGP-Routen werden auf die gleiche Weise wie System- und benutzerdefinierte Routen in den einzelnen Azure-Subnetzen verwendet. Weitere Informationen finden Sie unter [Einführung zu ExpressRoute](../articles/expressroute/expressroute-introduction.md).
+### BGP-Routen
+Wenn Sie über eine ExpressRoute-Verbindung zwischen dem lokalen Netzwerk und Azure verfügen, können Sie BGP für das Weitergeben der Routen aus Ihrem lokalen Netzwerk an Azure aktivieren. Diese BGP-Routen werden auf die gleiche Weise wie System- und benutzerdefinierte Routen in den einzelnen Azure-Subnetzen verwendet. Weitere Informationen finden Sie unter [Einführung zu ExpressRoute](../expressroute/expressroute-introduction.md).
 
 >[AZURE.IMPORTANT] Sie können die Azure-Umgebung für die Verwendung der Tunnelerzwingung über das lokale Netzwerk konfigurieren, indem Sie für das Subnetz 0.0.0.0/0 eine benutzerdefinierte Route erstellen, die als nächsten Hop das VPN-Gateway verwendet. Dies funktioniert nur mit einem VPN-Gateway, nicht jedoch mit ExpressRoute. In ExpressRoute wird die Tunnelerzwingung über BGP konfiguriert.
 
 ## SSL-Weiterleitung
-Wie oben angeführt, ist einer der wichtigsten Gründe für das Erstellen einer benutzerdefinierten Route das Weiterleiten von Datenverkehr an virtuelle Geräte. Ein virtuelles Gerät ist letztlich nur ein virtueller Computer, der eine Anwendung zur Verarbeitung des Netzwerkverkehrs ausführt, z. B. eine Firewall oder ein NAT-Gerät.
+Wie oben angeführt, ist einer der wichtigsten Gründe für das Erstellen einer benutzerdefinierten Route das Weiterleiten von Datenverkehr an virtuelle Geräte. Ein virtuelles Gerät ist letztlich nur ein virtueller Computer, der eine Anwendung zur Verarbeitung des Netzwerkverkehrs ausführt, z. B. eine Firewall oder ein NAT-Gerät.
 
 Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der nicht an ihn selbst adressiert ist. Damit ein virtueller Computer an andere Ziele gerichteten Datenverkehr empfangen kann, müssen Sie für den virtuellen Computer die IP-Weiterleitung aktivieren. Hierbei handelt es sich um eine Azure-Einstellung, keine Einstellung im Gastbetriebssystem.
 
@@ -90,4 +87,4 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 - Erfahren Sie, wie Sie [Routen im Ressourcen-Manager-Bereitstellungsmodell erstellen](virtual-network-create-udr-arm-template.md) und diese Subnetzen zuordnen. 
 - Erfahren Sie, wie Sie [Routen im klassischen Bereitstellungsmodell erstellen](virtual-network-create-udr-classic-ps.md) und diese Subnetzen zuordnen.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -13,7 +13,7 @@
    ms.devlang="na"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/11/2016"
+   ms.date="03/22/2016"
    ms.author="yurid"/>
  
 # Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center
@@ -25,9 +25,9 @@ In diesem Dokument erfahren Sie, wie Sie Azure Security Center-Funktionen verwen
  Security Center unterstützt Sie beim Vorbeugen, Erkennen und Beheben von Bedrohungen. Mit dieser Cloudlösung gewinnen Sie mehr Transparenz und bessere Kontrolle über die Sicherheit Ihrer Azure-Ressourcen. Es bietet integrierte Sicherheitsüberwachung und Richtlinienverwaltung für Ihre Abonnements, hilft bei der Erkennung von Bedrohungen, die andernfalls möglicherweise unbemerkt bleiben, und kann gemeinsam mit einem breiten Sektrum an Sicherheitslösungen verwendet werden.
 
 ## Was sind Sicherheitswarnungen?
-Security Center erfasst, analysiert und vereinigt automatisch Protokolldaten von Ihren Azure-Ressourcen, aus dem Netzwerk und von integrierter Antischadsoftware und von Firewalls, um echte Bedrohungen zu erkennen und falsch positive Ergebnisse zu reduzieren. Eine Liste mit priorisierten Sicherheitswarnungen, z. B. Warnungen integrierter Partnerlösungen, wird im Security Center zusammen mit den Informationen angezeigt, die Sie zum schnellen Untersuchen von Problemen benötigen. Außerdem sind Empfehlungen zum Reagieren auf einen Angriff vorhanden.
+Security Center erfasst, analysiert und vereinigt automatisch Protokolldaten von Ihren Azure-Ressourcen, aus dem Netzwerk und von integrierter Antischadsoftware und von Firewalls, um echte Bedrohungen zu erkennen und falsch positive Ergebnisse zu reduzieren. Eine Liste mit priorisierten Sicherheitswarnungen, z. B. Warnungen integrierter Partnerlösungen, wird im Security Center zusammen mit den Informationen angezeigt, die Sie zum schnellen Untersuchen von Problemen benötigen. Außerdem sind Empfehlungen zum Reagieren auf einen Angriff vorhanden.
  
-Microsoft-Sicherheitsexperten analysieren ständig neue weltweite Bedrohungen, z. B. neue Angriffsmuster und Trends, die für die unternehmenseigenen Verbraucher- und Unternehmensprodukte und Onlinedienste auftreten. Für Security Center können so die Erkennungsalgorithmen aktualisiert werden, wenn neue Sicherheitsrisiken und Exploits erkannt werden, und Kunden können über die sich verändernde Bedrohungslage informiert werden. Beispiele für Arten von Bedrohungen, die mit Security Center erkannt werden können:
+Microsoft-Sicherheitsexperten analysieren ständig neue weltweite Bedrohungen, z. B. neue Angriffsmuster und Trends, die für die unternehmenseigenen Verbraucher- und Unternehmensprodukte und Onlinedienste auftreten. Für Security Center können so die Erkennungsalgorithmen aktualisiert werden, wenn neue Sicherheitsrisiken und Exploits erkannt werden, und Kunden können über die sich verändernde Bedrohungslage informiert werden. Beispiele für Arten von Bedrohungen, die mit Security Center erkannt werden können:
 
 - **Brute-Force-Erkennung über Netzwerkdaten**: Hierbei werden Machine Learning-Modelle verwendet, die typische Muster von Netzwerkdatenverkehr für Ihre Anwendungen verstehen. Dies ermöglicht eine effektivere Erkennung von Zugriffsversuchen, die nicht von berechtigten Benutzern durchgeführt werden, sondern zu unlauteren Zwecken.
 - **Brute-Force-Erkennung über Endpunktdaten**: Basiert auf der Analyse von Computerprotokollen. Dies ermöglicht eine Unterscheidung zwischen fehlerhaften und erfolgreichen Versuchen.
@@ -58,7 +58,7 @@ Im unteren Teil dieses Blatts sind die Details für die einzelnen Warnungen zu s
 
 - **Schweregrad**: Gibt den Schweregrad an („Hoch“, „Mittel“ oder „Niedrig“).
 
-Sie können Warnungen nach Datum, Status und Schweregrad filtern. Das Filtern von Warnungen kann nützlich für Szenarien sein, in denen Sie den Bereich der angezeigten Warnungen einschränken müssen. Es könnte beispielsweise sein, dass Sie während der Untersuchung einer möglichen Sicherheitsverletzung im System die Sicherheitswarnungen überprüfen möchten, die in den letzten 24 Stunden aufgetreten sind.
+Sie können Warnungen nach Datum, Status und Schweregrad filtern. Das Filtern von Warnungen kann nützlich für Szenarien sein, in denen Sie den Bereich der angezeigten Warnungen einschränken müssen. Es könnte beispielsweise sein, dass Sie während der Untersuchung einer möglichen Sicherheitsverletzung im System die Sicherheitswarnungen überprüfen möchten, die in den letzten 24 Stunden aufgetreten sind.
 
 1. Klicken Sie auf dem Blatt **Sicherheitswarnungen** auf **Filter**. Das Blatt **Filter** wird geöffnet. Sie können Werte für Datum, Status und Schweregrad auswählen, die Sie anzeigen möchten.
 
@@ -75,7 +75,9 @@ Wählen Sie eine Sicherheitswarnung aus, um weitere Informationen zu den Ereigni
 
 In diesem Fall bezieht sich die ausgelöste Warnung auf eine verdächtige RDP-Aktivität (Remote Desktop Protocol). Die erste Spalte zeigt, welche Ressourcen angegriffen wurden. In der zweiten Spalte wird die Uhrzeit aufgeführt, zu der dieser Angriff erkannt wurde. Die dritte Spalte zeigt den Status der Warnung, und die vierte Spalte den Schweregrad des Angriffs. Klicken Sie nach dem Überprüfen dieser Informationen auf die Ressource, die angegriffen wurde. Ein neues Blatt wird geöffnet und enthält Vorschläge zur weiteren Vorgehensweise, wie im folgenden Beispiel gezeigt.
 
-![Vorschläge für die Bearbeitung von Sicherheitswarnungen in Azure Security Center](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig8.png)
+![Vorschläge für die Bearbeitung von Sicherheitswarnungen in Azure Security Center](./media/security-center-managing-and-responding-alerts/security-center-managing-and-responding-alerts-fig8-1.png)
+
+Im Feld **Warnung** auf diesem Blatt finden Sie weitere Informationen zu diesem Ereignis. Dank dieser zusätzlichen Details erhalten Sie Informationen dazu, wodurch die Sicherheitswarnung ausgelöst wurde, sowie die Zielressource, die IP-Quelladresse (falls zutreffend) und Empfehlungen zur Lösung. In einigen Fällen ist die IP-Quelladresse leer (nicht verfügbar), da nicht alle Windows-Sicherheitsereignisprotokolle die IP-Adresse enthalten.
 
 > [AZURE.NOTE] Die von Security Center vorgeschlagene Wiederherstellung variiert je nach Sicherheitshinweis. In einigen Fällen müssen Sie möglicherweise weitere Azure-Funktionen verwenden, um die empfohlenen Lösungen zu implementieren. Beispielsweise kann die Abhilfe für diesen Angriff darin bestehen, die IP-Adresse, die den Angriff generiert, durch Verwenden einer [Netzwerk-ACL](../virtual-network/virtual-networks-acl.md) oder einer Regel für die [Netzwerksicherheitsgruppe](../virtual-network/virtual-networks-nsg.md) auf eine Negativliste zu setzen.
 
@@ -83,8 +85,8 @@ In diesem Fall bezieht sich die ausgelöste Warnung auf eine verdächtige RDP-Ak
 ## Nächste Schritte
 In diesem Dokument haben Sie erfahren, wie Sie Sicherheitsrichtlinien in Security Center konfigurieren können. Weitere Informationen zu Security Center finden Sie in den folgenden Quellen:
 
-- [Überwachen der Sicherheitsintegrität in Azure Security Center](security-center-monitoring.md) – erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
-- [Azure Security Center – häufig gestellte Fragen](security-center-faq.md) zur Verwendung des Diensts.
-- [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/) – suchen Sie nach Blogbeiträgen über Azure-Sicherheit und -Compliance.
+- [Überwachen der Sicherheitsintegrität in Azure Security Center:](security-center-monitoring.md) Erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
+- [Azure Security Center – Häufig gestellte Fragen:](security-center-faq.md) Hier finden Sie häufig gestellte Fragen zur Verwendung des Diensts.
+- [Azure Security Blog:](http://blogs.msdn.com/b/azuresecurity/) Hier finden Sie Blogbeiträge über Azure-Sicherheit und -Compliance.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

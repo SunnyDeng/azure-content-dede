@@ -2,6 +2,7 @@
 	pageTitle="Azure Active Directory-Geräteregistrierung – Übersicht | Microsoft Azure"
 	description="Stellt die Grundlage für gerätebasierte Szenarien mit bedingtem Zugriff dar. Wenn ein Gerät registriert wurde, stellt die Azure Active Directory-Geräteregistrierung eine Identität für das Gerät bereit, die bei der Benutzeranmeldung zum Authentifizieren des Geräts dient."
 	services="active-directory"
+	keywords="Geräteregistrierung, Geräteregistrierung aktivieren"
 	documentationCenter=""
 	authors="femila"
 	manager="stevenpo"
@@ -12,8 +13,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="11/24/2015"
+	ms.topic="get-started-article"
+	ms.date="03/18/2016"
 	ms.author="femila"/>
 
 # Azure Active Directory-Geräteregistrierung – Übersicht
@@ -36,15 +37,16 @@ Sie können registrierte Geräte mithilfe des Verwaltungsportals in Azure Active
 
 ## Aktivieren der Azure Active Directory-Geräteregistrierung
 Im folgenden Abschnitt wird beschrieben, wie Sie den Geräteregistrierungsdienst von Azure Active Directory für Ihr Verzeichnis aktivieren.
-So aktivieren Sie den Azure Active Directory-Geräteregistrierungsdienst
--------------------------------------------------------------
-1. Melden Sie sich als Administrator beim Azure-Portal an.
-1. Wählen Sie im linken Bereich **Active Directory** aus.
-1. Wählen Sie auf der Registerkarte **Verzeichnis** Ihr Verzeichnis aus.
-1. Wählen Sie die Registerkarte **Konfigurieren** aus.
-1. Scrollen Sie zum Abschnitt **Geräte**.
-1. Wählen Sie für **Benutzer dürfen Geräte in den Arbeitsplatz einbinden** die Option **Alle** aus.
-1. Wählen Sie die maximale Anzahl von Geräten aus, die Sie pro Benutzer autorisieren möchten.
+
+###So aktivieren Sie den Azure Active Directory-Geräteregistrierungsdienst
+
+1. Melden Sie sich beim Azure-Portal als Administrator an.
+2. Wählen Sie im linken Bereich **Active Directory** aus.
+3. Wählen Sie auf der Registerkarte **Verzeichnis** Ihr Verzeichnis aus.
+4. Wählen Sie die Registerkarte **Konfigurieren** aus.
+5. Scrollen Sie zum Abschnitt **Geräte**.
+6. Wählen Sie für **Benutzer dürfen Geräte in den Arbeitsplatz einbinden** die Option **Alle** aus.
+7. Wählen Sie die maximale Anzahl von Geräten aus, die Sie pro Benutzer autorisieren möchten.
 
 >[AZURE.NOTE]
 Die Registrierung mit Microsoft Intune oder der Verwaltung mobiler Geräte für Office 365 erfordert eine Arbeitsbereichsverknüpfung. Wenn Sie einen dieser Dienste konfiguriert haben, wird "Alle" ausgewählt und die Schaltfläche "Keine" deaktiviert.
@@ -85,4 +87,4 @@ Sie können Ihre Windows 7- und Windows 8.1-Geräte, die einer Domäne angehöre
 - [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 8.1-Geräte](active-directory-conditional-access-automatic-device-registration-windows8_1.md)
 - [Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows 10-Geräte](active-directory-azureadjoin-devices-group-policy.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

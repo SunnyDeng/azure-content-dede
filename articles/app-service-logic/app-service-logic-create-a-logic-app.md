@@ -12,8 +12,8 @@
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="03/01/2016"
+	ms.topic="get-started-article"
+	ms.date="03/16/2016"
 	ms.author="stepsic"/>
 
 # Erstellen einer Logik-App zum Verbinden von SaaS-Diensten
@@ -67,4 +67,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Azure portal]: https://portal.azure.com
 [Verwenden von Logik-App-Features]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

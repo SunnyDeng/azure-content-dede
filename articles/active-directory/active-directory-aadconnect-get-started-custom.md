@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="03/04/2016"
+	ms.date="03/22/2016"
 	ms.author="billmath;andkjell"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -68,7 +68,7 @@ Falls ein Fehler auftritt und Sie Probleme mit der Konnektivität haben, können
 ## Seiten im Abschnitt "Synchronisierung"
 
 ### Verzeichnisse verbinden
-Zum Verbinden mit Ihrem Active Directory-Domänendienst benötigt Connect von Azure AD die Anmeldeinformationen für ein Konto, das über ausreichende Berechtigungen verfügt. Dieses Konto kann ein normales Benutzerkonto sein, da nur die standardmäßigen Leseberechtigungen benötigt werden. Abhängig von Ihrem Szenario benötigen Sie jedoch möglicherweise zusätzliche Berechtigungen. Weitere Informationen finden Sie unter [Azure AD Connect-Konten und -Berechtigungen](active-directory-aadconnect-accounts-permissions.md#create-the-ad-ds-account).
+Zum Verbinden mit Ihrem Active Directory-Domänendienst benötigt Connect von Azure AD die Anmeldeinformationen für ein Konto, das über ausreichende Berechtigungen verfügt. Sie können den Domänenteil entweder im NetBIOS- oder FQDN-Format eingeben, also „FABRIKAM\\syncuser“ oder „fabrikam.com\\syncuser“. Dieses Konto kann ein normales Benutzerkonto sein, da nur die standardmäßigen Leseberechtigungen benötigt werden. Abhängig von Ihrem Szenario benötigen Sie jedoch möglicherweise zusätzliche Berechtigungen. Weitere Informationen finden Sie unter [Azure AD Connect-Konten und -Berechtigungen](active-directory-aadconnect-accounts-permissions.md#create-the-ad-ds-account).
 
 ![Verzeichnis verbinden](./media/active-directory-aadconnect-get-started-custom/connectdir.png)
 
@@ -130,6 +130,8 @@ Wenn Sie einschränken möchten, welche Attribute mit Azure AD synchronisiert we
 Auf Grundlage der im vorherigen Schritt ausgewählten Dienste werden auf dieser Seite alle Attribute angezeigt, die synchronisiert werden. Diese Liste ist eine Kombination aller Objekttypen, die synchronisiert werden. Wenn einige bestimmte Attribute nicht synchronisiert werden sollen, können Sie deren Auswahl aufheben.
 
 ![Optionale Features](./media/active-directory-aadconnect-get-started-custom/azureadattributes2.png)
+
+>[AZURE.WARNING] Das Entfernen von Attributen kann sich negativ auf die Funktionalität auswirken. Bewährte Methoden und Empfehlungen finden Sie unter [Synchronisierte Attribute](active-directory-aadconnectsync-attributes-synchronized.md#attributes-to-synchronize).
 
 ### Verzeichniserweiterungen-Attributsynchronisierung
 Mit Verzeichniserweiterungen können Sie das Schema in Azure AD durch von Ihrer Organisation hinzugefügte benutzerdefinierte Attribute oder durch andere Attribute in Active Directory erweitern. Wählen Sie auf der Seite **Optionale Features** die Option **Verzeichniserweiterungen-Attributsynchronisierung** aus, um dieses Feature zu verwenden. Daraufhin wird Ihnen diese Seite angezeigt, auf der Sie zusätzliche Attribute auswählen können.
@@ -199,7 +201,7 @@ Wenn Sie die Domäne für den Verbund mit Ihrem lokalen Verzeichnis auswählen, 
 
 ![Azure AD-Domäne](./media/active-directory-aadconnect-get-started-custom/verifyfeddomain.png)
 
-> [AZURE.NOTE] AD Connect versucht in der Konfigurationsphase, die Domäne zu überprüfen. Wenn Sie die Konfiguration fortsetzen, ohne die erforderlichen DNS-Einträge zum Host Ihres Domänen-DNS hinzuzufügen, kann der Assistent die Konfiguration nicht abschließen.</br>
+> [AZURE.NOTE] AD Connect versucht in der Konfigurationsphase, die Domäne zu überprüfen. Wenn Sie die Konfiguration fortsetzen, ohne die erforderlichen DNS-Einträge zum Hoststandort Ihres Domänen-DNS hinzuzufügen, kann der Assistent die Konfiguration nicht abschließen.</br>
 
 ## Konfigurieren und Überprüfen von Seiten
 Auf dieser Seite wird die tatsächliche Konfiguration durchgeführt.
@@ -238,4 +240,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation ü
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->
