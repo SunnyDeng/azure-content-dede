@@ -40,7 +40,7 @@ Da die Tutorials darauf ausgerichtet sind, in wenigen Schritten einen virtuellen
 
 <!--links-->
 [App Service]: app-service-choose-me.md
-[Virtual Machines]: #tellmevm
-[Cloud Services]: cloud-services-choose-me.md
+[Cloud-Dienste]: cloud-services-choose-me.md
+[Virtuelle Computer]: #tellmevm
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->
