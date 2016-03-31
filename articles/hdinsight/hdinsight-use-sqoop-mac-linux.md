@@ -60,14 +60,14 @@ Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden ei
 | sessionid | bigint |
 | sessionpagevieworder | bigint |
 
-Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in SQL-Server in eine Tabelle mit dem Namen **mobiledata** und importieren diese Tabelle dann wieder in HDInsight unter ****wasb:///tutorials/usesqoop/importeddata**.
+Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in SQL-Server in eine Tabelle mit dem Namen **mobiledata** und importieren diese Tabelle dann wieder in HDInsight unter **wasb:///tutorials/usesqoop/importeddata**.
 
 
 ## Erstellen von Cluster und SQL-Datenbank
 
 1. Klicken Sie auf die folgende Abbildung, um eine ARM-Vorlage im Azure-Portal zu öffnen.         
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fusesqoop%2Fcreate-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/de-DE/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fusesqoop%2Fcreate-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
     
     Die ARM-Vorlage befindet sich in einem öffentlichen Blobcontainer, **https://hditutorialdata.blob.core.windows.net/usesqoop/create-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json*.
     
@@ -231,4 +231,4 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-<!---HONumber=AcomDC_0316_2016-->
+<!----HONumber=AcomDC_0316_2016-->
