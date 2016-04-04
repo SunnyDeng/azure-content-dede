@@ -709,7 +709,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
 5. Drücken Sie **F5**, um die App auszuführen. Ein Dialogfenster wird mit dem Registrierungsschlüssel angezeigt.
 
-6.	Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei „WMAppManifest.xml“, klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID\_CAP\_PUSH\_NOTIFICATION**.
+6.	Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei „WMAppManifest.xml“, klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID_CAP_PUSH_NOTIFICATION**.
 
    	![Aktivieren von Benachrichtigungen in VS](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-app-enable-push-wp8.png)
 

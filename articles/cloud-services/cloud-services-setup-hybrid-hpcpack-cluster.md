@@ -308,7 +308,7 @@ Nachdem Sie den Cluster getestet haben, können Sie die Azure-Knoten stoppen, um
 
 * [HPC Pack 2012 R2 und HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697
 
-* [Burst to Azure Worker Role Instances with Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)
+* [Erweiterung auf Azure mit Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)
 * [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](../virtual-machines/virtual-machines-linux-hpcpack-cluster-options.md)
 * [Big Compute in Azure: technische Ressourcen für Batch und HPC (High Performance Computing)](../batch/big-compute-resources.md)
 

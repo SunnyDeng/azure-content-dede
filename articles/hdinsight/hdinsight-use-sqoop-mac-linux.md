@@ -44,7 +44,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 ##Das Szenario
 
-Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden eine Hive-Tabelle namens **hivesampletable**, die auf die Datendatei unter ****wasb:///hive/warehouse/hivesampletable** verweist. Die Tabelle enthält einige Mobilgerätedaten. Die Hive-Tabelle hat folgendes Schema:
+Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden eine Hive-Tabelle namens **hivesampletable**, die auf die Datendatei unter **wasb:///hive/warehouse/hivesampletable** verweist. Die Tabelle enthält einige Mobilgerätedaten. Die Hive-Tabelle hat folgendes Schema:
 
 | Feld | Datentyp |
 | ----- | --------- |
@@ -60,7 +60,7 @@ Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden ei
 | sessionid | bigint |
 | sessionpagevieworder | bigint |
 
-Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in SQL-Server in eine Tabelle mit dem Namen **mobiledata** und importieren diese Tabelle dann wieder in HDInsight unter ****wasb:///tutorials/usesqoop/importeddata**.
+Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in SQL-Server in eine Tabelle mit dem Namen **mobiledata** und importieren diese Tabelle dann wieder in HDInsight unter **wasb:///tutorials/usesqoop/importeddata**.
 
 
 ## Erstellen von Cluster und SQL-Datenbank
@@ -139,7 +139,7 @@ Wenn Sie die vorhandene Azure SQL-Datenbank oder Microsoft SQL Server verwenden 
 
         sqoop export --connect 'jdbc:sqlserver://<serverName>.database.windows.net:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --export-dir 'wasb:///hive/warehouse/hivesampletable' --fields-terminated-by '\t' -m 1
 
-    Dies weist Sqoop an, sich mit SQL-Datenbank bzw. der Datenbank **sqooptest** zu verbinden und Daten aus ****wasb:///hive/warehouse/hivesampletable** (physische Dateien der *hivesampletable*) in die Tabelle **mobiledata** zu exportieren.
+    Dies weist Sqoop an, sich mit SQL-Datenbank bzw. der Datenbank **sqooptest** zu verbinden und Daten aus **wasb:///hive/warehouse/hivesampletable** (physische Dateien der *hivesampletable*) in die Tabelle **mobiledata** zu exportieren.
 
 5. Nach Abschluss des Befehls stellen Sie wie folgt über TSQL eine Verbindung mit der Datenbank her:
 
@@ -154,7 +154,7 @@ Wenn Sie die vorhandene Azure SQL-Datenbank oder Microsoft SQL Server verwenden 
 
 ##Sqoop-Import
 
-1. Importieren Sie wie folgt Daten aus der Tabelle **mobiledata** in der SQL-Datenbank in das Verzeichnis ****wasb:///tutorials/usesqoop/importeddata** auf HDInsight:
+1. Importieren Sie wie folgt Daten aus der Tabelle **mobiledata** in der SQL-Datenbank in das Verzeichnis **wasb:///tutorials/usesqoop/importeddata** auf HDInsight:
 
         sqoop import --connect 'jdbc:sqlserver://<serverName>.database.windows.net:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --target-dir 'wasb:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
 

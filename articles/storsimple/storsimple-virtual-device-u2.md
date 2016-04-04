@@ -146,7 +146,8 @@ Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu er
 
 Stellen Sie vorab sicher, dass Sie über eine Kopie des Verschlüsselungsschlüssels für die Dienstdaten verfügen. Der Schlüssel für die Dienstdatenverschlüsselung wurde beim Konfigurieren des ersten StorSimple-Geräts erstellt, und Sie wurden aufgefordert, diesen an einem sicheren Ort zu speichern. Wenn Sie über keine Kopie des Schlüssels für die Dienstdatenverschlüsselung verfügen, wenden Sie sich an den Microsoft-Support.
 
-Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:[AZURE.INCLUDE [Konfigurieren und Registrieren eines virtuellen Geräts](../../includes/storsimple-configure-register-virtual-device.md)]
+Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:
+[AZURE.INCLUDE [Konfigurieren und Registrieren eines virtuellen Geräts](../../includes/storsimple-configure-register-virtual-device.md)]
 
 ### Schritt 3: (Optional) Ändern der Konfigurationseinstellungen des Geräts
 
@@ -280,5 +281,7 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 - Erfahren Sie, wie Sie beim [Verwalten Ihres virtuellen Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md) vorgehen.
  
 - Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
+
+<!----HONumber=AcomDC_0323_2016-->
 
 <!---HONumber=AcomDC_0323_2016-->

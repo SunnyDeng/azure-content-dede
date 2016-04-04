@@ -163,7 +163,12 @@ Anhand der folgenden Tabelle können Sie ermitteln, ob das EBOD-Controllermodul 
 
 |Status | E/A-Modul OK (grün) | E/A-Modulfehler (bernsteinfarben) | Aktivität am Hostport (grün) |
 |-------|----------------------|-------------------------------|----------------------------|
-| Controllermodul OK | EIN | AUS | - | | Controllermodulfehler | AUS | EIN | - | | Keine externe Hostportverbindung | - | - | AUS | | Externe Hostportverbindung – keine Aktivität | - | - | EIN | | Externe Hostportverbindung – Aktivität | - | - | Blinken | | Metadatenfehler des Controllermoduls | Blinken | - | - |
+| Controllermodul OK | EIN | AUS | - |
+| Controllermodulfehler | AUS | EIN | - |
+| Keine externe Hostportverbindung | - | - | AUS |
+| Externe Hostportverbindung – keine Aktivität | - | - | EIN |
+| Externe Hostportverbindung – Aktivität | - | - | Blinken |
+| Metadatenfehler des Controllermoduls | Blinken | - | - |
 
 ## Indikator-LEDs des Datenträgerlaufwerks am primären und am EBOD-Gehäuse
 
@@ -256,5 +261,7 @@ Weitere Informationen zu [StorSimple-Hardwarekomponenten und ihrem Status](stors
 [6]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE06.png
 
  
+
+<!----HONumber=AcomDC_0323_2016-->
 
 <!---HONumber=AcomDC_0323_2016-->

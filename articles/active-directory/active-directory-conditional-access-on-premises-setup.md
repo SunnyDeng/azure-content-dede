@@ -120,7 +120,9 @@ Diese Anleitung hilft Ihnen bei der Integration Ihres Azure AD-Mandanten in die 
   1.	Fügen Sie Domänen hinzu.
   2.	Installieren und Ausführen von Azure AD Connect: Installieren Sie Azure AD Connect, indem Sie die Anleitung unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md) verwenden.
   3. Überprüfen und verwalten Sie die Verzeichnissynchronisierung. In diesem Schritt sind Anweisungen zum einmaligen Anmelden enthalten.
-  >[AZURE.NOTE] Konfigurieren Sie die Partnerbeziehung mit AD FS, wie im oben verlinkten Dokument beschrieben.[AZURE.NOTE] Sie müssen keine Preview-Funktionen konfigurieren.
+
+  >[AZURE.NOTE] Konfigurieren Sie die Partnerbeziehung mit AD FS, wie im oben verlinkten Dokument beschrieben.
+  >[AZURE.NOTE] Sie müssen keine Preview-Funktionen konfigurieren.
 
 
 

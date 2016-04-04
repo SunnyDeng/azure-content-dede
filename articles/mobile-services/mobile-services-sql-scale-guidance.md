@@ -282,7 +282,7 @@ Im Verwaltungsportal werden einige Metriken bereitgestellt, wenn die Stufen Basi
     ORDER BY start_time DESC
 
 > [AZURE.NOTE]
-Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.resource\\_stats** ist nur für diese Datenbank vorhanden.
+>Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.resource\\_stats** ist nur für diese Datenbank vorhanden.
 
 Das Ergebnis enthält folgende nützliche Metriken: CPU (% des Stufenlimits), Speicher (Megabyte), physische Datenlesevorgänge (% des Stufenlimits), Protokollschreibvorgänge (% des Stufenlimits), Speicher (% des Stufenlimits), Workerzähler, Sitzungszähler usw.
 
@@ -296,7 +296,7 @@ Die Sicht **[sys.event\_log](http://msdn.microsoft.com/library/azure/jj819229.as
     order by start_time desc
 
 > [AZURE.NOTE]
-Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.event\\_log** ist nur für diese Datenbank vorhanden.
+>Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.event\\_log** ist nur für diese Datenbank vorhanden.
 
 <a name="AdvancedIndexing" ></a>
 ### Erweiterte Indizierung
@@ -310,7 +310,7 @@ Eine Tabelle oder Sicht kann die folgenden Indizierungstypen enthalten:
 Betrachten Sie analog dazu: ein Buch oder ein technisches Handbuch. Der Inhalt jeder Seite entspricht einem Datensatz, die Seitenzahl ist der gruppierte Index und der Themenindex am Ende des Buchs ist der nicht gruppierte Index. Jeder Eintrag im Themenindex verweist auf den gruppierten Index, die Seitenzahl.
 
 > [AZURE.NOTE]
-Standardmäßig legt das JavaScript-Back-End für Azure Mobile Services **\\_createdAt** als gruppierten Index fest. Wenn Sie diese Spalte entfernen oder einen anderen gruppierten Index wählen möchten, müssen Sie die [Richtlinien für das Design von gruppierten Indizes](#ClusteredIndexes) unten befolgen. Im .NET-Back-End definiert die Klasse `EntityData` `CreatedAt` als gruppierten Index mit der Anmerkung `[Index(IsClustered = true)]`.
+>Standardmäßig legt das JavaScript-Back-End für Azure Mobile Services **\\_createdAt** als gruppierten Index fest. Wenn Sie diese Spalte entfernen oder einen anderen gruppierten Index wählen möchten, müssen Sie die [Richtlinien für das Design von gruppierten Indizes](#ClusteredIndexes) unten befolgen. Im .NET-Back-End definiert die Klasse `EntityData` `CreatedAt` als gruppierten Index mit der Anmerkung `[Index(IsClustered = true)]`.
 
 <a name="ClusteredIndexes"></a>
 #### Richtlinien für das Design von gruppierten Indizes

@@ -65,7 +65,8 @@ Die folgende Liste enthält Beispiele für die mittlere Zeit, die an verschieden
 |Seoul, KR| 190 | 190 | 0 % |
 
 
-* Hat einen Azure CDN-Knoten in derselben Stadt. ** Hat einen Azure CDN-Knoten in einer Nachbarstadt.
+\* Hat einen Azure CDN-Knoten in derselben Stadt. 
+\*\* Hat einen Azure CDN-Knoten in einer Nachbarstadt.
 
 ## Herausforderungen  
 

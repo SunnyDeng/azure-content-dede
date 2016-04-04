@@ -40,7 +40,7 @@ Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure Po
 
 Es gibt zwei Hauptoptionen für die Installation: [PowerShell-Katalog](https://www.powershellgallery.com/profiles/azure-sdk/) und [WebPI](http://aka.ms/webpi-azps). WebPI wird monatlich aktualisiert. Der PowerShell-Katalog wird fortlaufend aktualisiert.
 
-Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/de-DE/blog/azps-1-0/).
+Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
 
 ## Schritt 2: Festlegen des Abonnements
 
@@ -393,4 +393,4 @@ Hier finden Sie den Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen
 
 [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->

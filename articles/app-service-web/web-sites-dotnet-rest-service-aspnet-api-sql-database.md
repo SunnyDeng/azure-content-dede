@@ -46,7 +46,7 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 be
 1. Klicken Sie im Menü **Datei** auf **Neues Projekt**.
 3. Erweitern Sie im Dialogfeld **Neues Projekt** den Eintrag **Visual C#**, und wählen Sie die Option **Web** aus. Wählen Sie dann **ASP.NET-Webanwendung** aus. Nennen Sie die Anwendung **ContactManager**, und klicken Sie auf **OK**.
 
-	![Dialogfeld "Neues Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.png)
+	![Dialogfeld "Neues Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)
 
 1. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Vorlage **MVC** und **Web API** aus, und klicken Sie dann auf **Authentifizierung ändern**.
 
@@ -120,7 +120,7 @@ Das Markup oben ändert den App-Namen von "My ASP.NET App" auf "Contact Manager"
 
 ### Lokales Ausführen der Anwendung
 
-1. Drücken Sie STRG+F5, um die Anwendung auszuführen. Die Startseite der Anwendung wird im Standardbrowser angezeigt. ![Homepage To-Do-Liste](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.png)
+1. Drücken Sie STRG+F5, um die Anwendung auszuführen. Die Startseite der Anwendung wird im Standardbrowser angezeigt. ![Homepage To-Do-Liste](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.PNG)
 
 Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung zu erstellen, die Sie für Azure bereitstellen. Zu einem späteren Zeitpunkt fügen Sie Datenbankfunktionalität hinzu.
 
@@ -202,7 +202,7 @@ Mit dem ASP.NET MVC-Gerüstfeature kann automatisch Code generiert werden, der E
 
 1. Wählen Sie im Dialogfeld **Gerüst hinzufügen** die Option **MVC-Controller mit Ansichten mithilfe von Entity Framework** aus, und klicken Sie dann auf **Hinzufügen**.
 
- ![Controller hinzufügen](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.png)
+ ![Controller hinzufügen](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.PNG)
 
 6. Wählen Sie als Bezeichnung für den Controller **HomeController**. Wählen Sie **Contact** als Modellklasse. Klicken Sie auf **Neuer Datenkontext** und bestätigen Sie für **Neuer Datenkontexttyp** die Standardeinstellung "ContactManager.Models.ContactManagerContext". Klicken Sie auf **Hinzufügen**.
 
@@ -504,7 +504,7 @@ in:
 
 1. Wählen Sie im Dialogfeld **Add Scaffold** die Option **Web API 2 Controller with actions, using Entity Framework** aus, und klicken Sie dann auf **Hinzufügen**.
 
-	![API-Kontroller hinzufügen](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt1.png)
+	![API-Kontroller hinzufügen](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt1.PNG)
 
 4. Geben Sie im Dialogfeld **Controller hinzufügen** die Zeichenfolge "ContactsController" als Controllernamen ein. Wählen Sie "Contact (ContactManager.Models)" als **Modellklasse** aus. Behalten Sie für die **Datenkontextklasse** die Standardeinstellung bei.
 
@@ -545,7 +545,7 @@ Bei der websiteübergreifenden Anforderungsfälschung (auch bekannt als XSRF ode
 
 Ein XSRF-Angriff unterscheidet sich von einem Phishing-Angriff. Bei Phishing-Angriffen ist die Beihilfe des Opfers erforderlich. Bei Phishing-Angriffen wird die Zielwebsite durch eine schädliche Website imitiert und das Opfer dazu verleitet, geheime Daten an den Angreifer zu übermitteln. Bei einem XSRF-Angriff ist häufig keinerlei Aktion des Opfers erforderlich. Der Angreifer geht davon aus, dass der Browser automatisch alle relevanten Cookies an die Zielwebsite sendet.
 
-Weitere Informationen finden Sie unter [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page) (OWASP) XSRF(https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
+Weitere Informationen finden Sie unter [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **ContactManager**, und klicken Sie dann auf **Hinzufügen** > **Klasse**.
 
@@ -810,4 +810,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach beim Tutorial wie auch den dari
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->

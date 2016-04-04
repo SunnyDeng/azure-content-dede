@@ -233,7 +233,7 @@ end
 ```
 
 
-Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „*\_inmem*“ durch „*\_ondisk*“ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
+Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „ *\_inmem* “ durch „ *\_ondisk* “ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
 
 
 ### Installieren von RML-Hilfsprogrammen und ostress
@@ -310,7 +310,7 @@ Sobald Sie über das Ergebnis der Ausführung von „\_inmem“ verfügen, führ
 EXECUTE Demo.usp_DemoReset;
 ```
 
-2. Bearbeiten Sie die „ostress.exe“-Befehlszeile so, dass alle Vorkommen von „*\_inmem*“ durch „*\_ondisk*“ ersetzt werden.
+2. Bearbeiten Sie die „ostress.exe“-Befehlszeile so, dass alle Vorkommen von „ *\_inmem* “ durch „ *\_ondisk* “ ersetzt werden.
 
 3. Führen Sie „ostress.exe“ ein zweites Mal aus, und erfassen Sie die Dauer.
 

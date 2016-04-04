@@ -145,7 +145,7 @@ Der Connector versucht zu erkennen, ob die Optionen auf dem Server vorhanden sin
 
 Der Deltaimport ist nur verfügbar, wenn ein Supportverzeichnis erkannt wurde. Momentan werden folgende Methoden verwendet:
 
-- LDAP-Zugriffsprotokoll. Siehe „http://www.openldap.org/doc/admin24/overlays.html#Access Logging“ (http://www.openldap.org/doc/admin24/overlays.html#Access Logging)
+- LDAP-Zugriffsprotokoll. Siehe [http://www.openldap.org/doc/admin24/overlays.html#Access Logging](http://www.openldap.org/doc/admin24/overlays.html#Access Logging)
 - LDAP-Änderungsprotokoll. Siehe [http://tools.ietf.org/html/draft-good-ldap-changelog-04](http://tools.ietf.org/html/draft-good-ldap-changelog-04)
 - Zeitstempel. Für Novell/NetIQ eDirectory verwendet der Connector den letzten Datums-/Uhrzeitwert zum Abrufen erstellter und aktualisierter Objekte. Novell/NetIQ eDirectory bietet keine entsprechende Möglichkeit zum Abrufen gelöschter Objekte. Diese Option kann auch verwendet werden, wenn auf dem LDAP-Server keine andere Deltaimportmethode aktiv ist. Mit dieser Option können keine gelöschten Objekte importiert werden.
 - USNChanged. Siehe [https://msdn.microsoft.com/library/ms677627.aspx](https://msdn.microsoft.com/library/ms677627.aspx)
