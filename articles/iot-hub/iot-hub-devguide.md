@@ -68,7 +68,7 @@ Bei der Verwendung von SDKs (oder Produktintegrationen), die nicht IoT Hub-fähi
 
     ![][img-eventhubcompatible]
 
-> [AZURE.NOTE] Manchmal erfordert das SDK einen Wert für **Hostname** oder **Namespace**. Entfernen Sie in diesem Fall das Schema aus dem **Event Hub-kompatiblen Endpunkt**. Wenn es sich bei Ihrem Event Hub-kompatiblen Endpunkt beispielsweise um **sb://iothub-ns-myiothub-1234.servicebus.windows.net/** handelt, lautet der **Hostname** **iothub-ns-myiothub-1234.servicebus.windows.net** und der **Namespace** **iothub-ns-myiothub-1234**.
+> [AZURE.NOTE] Manchmal erfordert das SDK einen Wert für **Hostname** oder **Namespace**. Entfernen Sie in diesem Fall das Schema aus dem **Event Hub-kompatiblen Endpunkt**. Wenn es sich bei Ihrem Event Hub-kompatiblen Endpunkt beispielsweise um ****sb://iothub-ns-myiothub-1234.servicebus.windows.net/** handelt, lautet der **Hostname** **iothub-ns-myiothub-1234.servicebus.windows.net** und der **Namespace** **iothub-ns-myiothub-1234**.
 
 Sie können in diesem Fall eine beliebige gemeinsam genutzte Sicherheitsrichtlinie mit den **ServiceConnect**-Berechtigungen zur Verbindungsherstellung mit dem angegebenen Event Hub verwenden.
 
@@ -288,7 +288,7 @@ Sicherheitsanmeldeinformationen, beispielsweise symmetrische Schlüssel, werden 
 
 > [AZURE.NOTE] Der Azure IoT Hub-Ressourcenanbieter wird über Ihr Azure-Abonnement geschützt, ebenso wie alle Anbieter im [Azure-Ressourcen-Manager][lnk-azure-resource-manager].
 
-Weitere Informationen zur Erstellung und Verwendung von Sicherheitstoken finden Sie im Artikel [zu den IoT Hub-Sicherheitstoken][lnk-sas-tokens].
+Weitere Informationen zur Erstellung und Verwendung von Sicherheitstoken finden Sie im Artikel zu den [IoT Hub-Sicherheitstoken][lnk-sas-tokens].
 
 #### Protokolldetails
 
@@ -305,7 +305,7 @@ Für SASL PLAIN kann der **Benutzername** Folgendes sein:
 * `{policyName}@sas.root.{iothubName}` im Fall von Token auf Hubebene.
 * `{deviceId}` im Fall von Token für Geräte.
 
-In beiden Fällen enthält das Kennwortfeld das Token gemäß der Beschreibung im Abschnitt [IoT Hub security tokens][lnk-sas-tokens] (IoT Hub Sicherheitstoken).
+In beiden Fällen enthält das Kennwortfeld das Token gemäß der Beschreibung im Artikel zu den [IoT Hub-Sicherheitstoken][lnk-sas-tokens].
 
 Bei Verwenden von MQTT enthält das CONNECT-Paket die Geräte-ID als „Client-ID, {Iot Hub-Hostname}/{Geräte-ID} im Feld „Benutzername“ und ein SAS-Token im Feld „Kennwort“. {Iot Hub-Hostname} muss der vollständigen CNAME des IoT Hubs (z. B. contoso.azure-devices.net) sein.
 
@@ -356,7 +356,8 @@ Die folgende Tabelle zeigt den Satz an Systemeigenschaften in IoT Hub-Nachrichte
 | -------- | ----------- |
 | MessageId | Eine vom Benutzer festgelegte Kennung für die Nachricht, wird üblicherweise für Anforderung-Antwort-Muster verwendet. Format: Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':',’.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` besteht. |
 | Sequenznummer | Eine Nummer (für jede Gerätewarteschlange eindeutig), die jeder C2D-Nachricht von IoT Hub zugewiesen wird |
-| To | Gibt in [C2D](#c2d)-Nachrichten das Ziel an. |
+| To  
+ | Gibt in [C2D](#c2d)-Nachrichten das Ziel an. |
 | ExpiryTimeUtc | Datum und Uhrzeit des Nachrichtenablaufs. |
 | EnqueuedTime | Datum und Uhrzeit des Empfangs der Nachricht durch IoT Hub. |
 | CorrelationId | Zeichenfolgeneigenschaft in einer Antwortnachricht, die normalerweise die Nachrichten-ID der Anforderung im Anforderung-Antwort-Muster enthält. |
@@ -601,7 +602,7 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-pricing]: https://azure.microsoft.com/pricing/details/iot-hub
 [lnk-resource-provider-apis]: https://msdn.microsoft.com/library/mt548492.aspx
 
-[lnk-sas-tokens]: iot-hub-sas-tokens
+[lnk-sas-tokens]: iot-hub-sas-tokens.md
 [lnk-azure-gateway-guidance]: iot-hub-guidance.md#field-gateways
 [lnk-guidance-provisioning]: iot-hub-guidance.md#provisioning
 [lnk-guidance-scale]: iot-hub-scaling.md
@@ -634,4 +635,4 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-eventhub-partitions]: ../event-hubs/event-hubs-overview.md#partitions
 [lnk-manage]: iot-hub-manage-through-portal.md
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -34,7 +34,7 @@ API-Apps stellt die folgenden Funktionen bereit:
 
 - **Visual Studio-Integration** – Dedizierte Tools in Visual Studio optimieren das Erstellen, Bereitstellen, Nutzen, Debuggen und Verwalten von API-Apps. Weitere Informationen finden Sie unter [Announcing the Azure SDK 2.8.1 for .NET](/blog/announcing-azure-sdk-2-8-1-for-net/) (in englischer Sprache).
 
-- **Integration in Logik-Apps** – Von Ihnen erstellte API-Apps können von [App Service-Logik-Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md) genutzt werden. Wie, das erfahren Sie unter [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md). Informationen zu aktuellen Änderungen im Hinblick auf die Integration von API-Apps in Logik-Apps finden Sie unter [App Service-API-Apps – Änderungen](app-service-api-whats-changed.md).
+- **Integration in Logik-Apps** – Von Ihnen erstellte API-Apps können von [App Service-Logik-Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md) genutzt werden. Weitere Informationen finden Sie unter [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md) und [Neue Schemaversion „2015-08-01-preview“](../app-service-logic/app-service-logic-schema-2015-08-01.md).
 
 - **Nutzen Sie eigene APIs in unveränderter Form** – Es ist nicht erforderlich, den Code vorhandener APIs zu ändern, um all die API-App-Features zu nutzen – stellen Sie lediglich Ihren Code in einer API-App bereit. Ihre API kann alle von App Service unterstützten Sprachen oder Frameworks verwenden, einschließlich ASP.NET und C#, Java, PHP, Node.js und Python.
 
@@ -64,4 +64,4 @@ Arbeiten Sie zum Einstieg in API-Apps eines der Tutorials unter [Erste Schritte 
 
 Um Fragen über API-Apps zu stellen, starten Sie einen Thread im [API-Apps-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureAPIApps).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

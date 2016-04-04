@@ -45,12 +45,12 @@ Befolgen Sie je nach Szenario die im entsprechenden Abschnitt angegebenen Schrit
 ### Voraussetzungen
 - Sie benötigen ein Azure-Abonnement. Wenn Sie kein Abonnement besitzen, können Sie für einen Monat eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) abonnieren, oder Sie besuchen die Seite mit den [Azure-Preisen](https://azure.microsoft.com/pricing/) für weitere Optionen.
 - Zum Ausführen von PowerShell-Cmdlets benötigen Sie das Microsoft Azure PowerShell-Modul. Informationen zum Herunterladen dieses Moduls finden Sie unter [Microsoft Azure-Downloads](https://azure.microsoft.com/downloads/).
-- Wenn Sie Azure-VMs unter Storage Premium nutzen möchten, müssen Sie VMs der DS-Serie oder GS-Serie verwenden. Mit VMs der DS-Serie können Sie Standard- und Premium-Speicherdatenträger verwenden. Premium-Datenträger werden zukünftig mit mehreren VM-Typen verfügbar sein. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer](../virtual-machines/virtual-machines-size-specs.md) und [Größen für Cloud Services](../cloud-services/cloud-services-sizes-specs.md).
+- Wenn Sie Azure-VMs unter Storage Premium nutzen möchten, müssen Sie VMs der DS-Serie oder GS-Serie verwenden. Mit VMs der DS-Serie können Sie Standard- und Premium-Speicherdatenträger verwenden. Premium-Datenträger werden zukünftig mit mehreren VM-Typen verfügbar sein. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer](../virtual-machines/virtual-machines-windows-sizes.md) und [Größen für Cloud Services](../cloud-services/cloud-services-sizes-specs.md).
 
 ### Überlegungen
 
 #### VM-Größen
-Die Größenspezifikationen der Azure-VM sind unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md) aufgelistet. Sehen Sie sich die Leistungsmerkmale von virtuellen Computern für Storage Premium an, und wählen Sie die am besten für Ihre Workload geeignete VM-Größe aus. Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist.
+Die Größenspezifikationen der Azure-VM sind unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-windows-sizes.md) aufgelistet. Sehen Sie sich die Leistungsmerkmale von virtuellen Computern für Storage Premium an, und wählen Sie die am besten für Ihre Workload geeignete VM-Größe aus. Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist.
 
 
 #### Datenträgergrößen
@@ -73,6 +73,7 @@ Premium-Speicherkonten haben zusätzlich zu den unter [Ziele für Skalierbarkeit
 Weitere Informationen zu den Spezifikationen für Storage Premium finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](storage-premium-storage.md#scalability-and-performance-targets-whde-DEing-premium-storage).
 
 #### Zusätzliche Datenträger
+
 Legen Sie je nach Workload fest, ob zusätzliche Datenträger für Ihren virtuellen Computer erforderlich sind. Sie können mehrere Datenträger für permanente Daten auf Ihrem virtuellen Computer anfügen. Bei Bedarf können Sie Daten über die Datenträger verteilen, um die Kapazität und die Leistung des Volumens zu erhöhen. Wenn Sie Daten über Premium-Speicher-Datenträger mithilfe von [Speicherplätzen](http://technet.microsoft.com/library/hh831739.aspx) verteilen, sollten Sie sie für jeden verwendeten Datenträger eine Spalte konfigurieren. Andernfalls kann die Gesamtleistung des Stripesetvolume aufgrund ungleicher Verteilung des Datenverkehrs auf die Datenträger niedriger sein als erwartet. Für Linux-VMs können Sie dazu das Hilfsprogramm *mdadm* verwenden. Weitere Informationen finden Sie im Artikel [Konfigurieren von Software-RAID unter Linux](../virtual-machines/virtual-machines-linux-configure-raid.md).
 
 #### Zwischenspeicherungsrichtlinie für Datenträger
@@ -296,7 +297,7 @@ Erstellen Sie eine neue Azure-VM-Instanz der DS-Serie mit dem **Azure-Betriebssy
 
 Geben Sie andere Azure-VM-Informationen an, z. B. Clouddienst, Region, Speicherkonto, Verfügbarkeitssatz und Zwischenspeicherungsrichtlinie. Beachten Sie, dass die VM-Instanz mit dem zugehörigen Betriebssystem oder Datenträger angeordnet werden muss, d. h., dass alle ausgewählten Clouddienste, Regionen und Speicherkonten sich an demselben Speicherort befinden müssen wie die zugrundeliegenden VHDs des Datenträgers.
 
-### Anfügen eines Datenträgers
+### Datenträger anfügen
 
 Wenn Sie Datenträger-VHDs registriert haben, fügen Sie sie im letzten Schritt an die neue Azure-VM der DS-Serie oder GS-Serie an.
 
@@ -312,7 +313,9 @@ Verwenden Sie das folgende PowerShell-Cmdlet, um Datenträger an den neuen virtu
 
 ## Migrieren von vorhandenen Azure-VMs nach Azure Storage Premium
 
-Wenn Sie derzeit über einen virtuellen Azure-Computer mit Standarddatenträger verfügen, befolgen Sie das nachfolgend beschriebene Verfahren für die Migration zu Storage Premium. Auf einer hohen Ebene umfasst die Migration zwei Phasen: - Migrieren der Datenträger vom Standardspeicherkonto in ein Storage Premium-Konto - Konvertieren der Größe des virtuellen Computers von A/D/G nach DS oder GS, was für die Verwendung von Storage Premium-Datenträgern erforderlich ist.
+Wenn Sie derzeit über einen virtuellen Azure-Computer mit Standarddatenträger verfügen, befolgen Sie das nachfolgend beschriebene Verfahren für die Migration zu Storage Premium. Im Allgemeinen umfasst die Migration zwei Phasen:
+-	Migrieren der Datenträger von einem Standardspeicherkonto zu einem Storage Premium-Konto
+-	Konvertieren der Größe des virtuellen Computers von A/D/G in DS oder GS für die Verwendung von Storage Premium-Datenträgern
 
 Im vorherigen Abschnitt unter "Überlegungen" finden Sie darüber hinaus Informationen über verschiedene Optimierungen, die Sie für Storage Premium durchführen können. Abhängig von der Optimierungen, die für Ihre Anwendungen verfügbar sind, kann der Migrationsvorgang einem der unten aufgeführten Migrationsszenarien zugeordnet werden.
 
@@ -663,8 +666,8 @@ Datenbanken und andere komplexe Anwendungen erfordern womöglich spezielle Schri
 Informationen zu bestimmten Szenarios zur Migration virtueller Computer finden Sie in den folgenden Ressourcen:
 
 - [Migrate Azure Virtual Machines between Storage Accounts (in englischer Sprache)](https://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/)
-- [Erstellen und Hochladen einer Windows Server-VHD nach Azure](../virtual-machines/virtual-machines-create-upload-vhd-windows-server.md)
-- [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](../virtual-machines/virtual-machines-linux-create-upload-vhd.md)
+- [Erstellen und Hochladen einer Windows Server-VHD nach Azure](../virtual-machines/virtual-machines-windows-classic-createupload-vhd.md)
+- [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](../virtual-machines/virtual-machines-linux-classic-create-upload-vhd.md)
 - [Migrating Virtual Machines from Amazon AWS to Microsoft Azure (in englischer Sprache)](http://channel9.msdn.com/Series/Migrating-Virtual-Machines-from-Amazon-AWS-to-Microsoft-Azure)
 
 Lesen Sie außerdem die folgenden Ressourcen, um mehr über Azure Sstorage und Azure Virtual Machines zu erfahren:
@@ -677,4 +680,4 @@ Lesen Sie außerdem die folgenden Ressourcen, um mehr über Azure Sstorage und A
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [3]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

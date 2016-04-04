@@ -23,7 +23,7 @@ Sie können Azure-Ressourcen IP-Adressen zuweisen, um die Kommunikation mit ande
 
 Private IP-Adressen werden für die Kommunikation innerhalb eines virtuellen Azure-Netzwerks (VNet), Clouddiensts und Ihres lokalen Netzwerks verwendet, wenn Sie Ihr Netzwerk mithilfe eines VPN-Gateways oder einer ExpressRoute-Verbindung auf Azure ausdehnen.
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] [Ressourcen-Manager-Bereitstellungsmodell](virtual-network-ip-addresses-overview-arm.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](virtual-network-ip-addresses-overview-arm.md).
 
 ## Öffentliche IP-Adressen
 Öffentliche IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit dem Internet und öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/), [SQL-Datenbanken](../sql-database/sql-database-technical-overview.md) und [Azure Storage](../storage/storage-introduction.md).
@@ -61,7 +61,7 @@ Statische (reservierte) öffentliche IP-Adressen werden häufig verwendet, wenn 
 >[AZURE.NOTE] Wenn Sie eine klassische VM erstellen, wird von Azure ein Container-*Clouddienst* erstellt, der über eine virtuelle IP-Adresse (VIP) verfügt. Wenn die Erstellung über das Portal durchgeführt wird, wird vom Portal ein standardmäßiger RDP- oder SSH-*Endpunkt* konfiguriert, sodass Sie eine Verbindung zur VM über die Clouddienst-VIP herstellen können. Diese Clouddienst-VIP kann reserviert werden, sodass praktisch eine reservierte IP-Adresse für die Verbindungsherstellung mit der VM bereitgestellt wird. Sie können weitere Ports öffnen, indem Sie mehr Endpunkte konfigurieren.
 
 ### IaaS-VMs und PaaS-Rolleninstanzen
-Sie können eine öffentliche IP-Adresse direkt einer IaaS-[VM](../virtual-machines/virtual-machines-about.md) oder einer PaaS-Rolleninstanz innerhalb eines Clouddiensts zuweisen. Diese wird als öffentliche IP auf Instanzebene (Instance-Level Public IP, [ILPIP](virtual-networks-instance-level-public-ip.md)) bezeichnet. Diese öffentliche IP-Adresse kann nur dynamisch sein.
+Sie können eine öffentliche IP-Adresse direkt einer IaaS-[VM](../virtual-machines/virtual-machines-linux-about.md) oder einer PaaS-Rolleninstanz innerhalb eines Clouddiensts zuweisen. Diese wird als öffentliche IP auf Instanzebene (Instance-Level Public IP, [ILPIP](virtual-networks-instance-level-public-ip.md)) bezeichnet. Diese öffentliche IP-Adresse kann nur dynamisch sein.
 
 >[AZURE.NOTE] Dies ist ein Unterschied gegenüber der VIP des Clouddiensts. Dabei handelt es sich um einen Container für IaaS-VMs oder PaaS-Rolleninstanzen, da ein Clouddienst mehrere IaaS-VMs oder PaaS-Rolleninstanzen enthalten kann, die allesamt über die gleiche Clouddienst-VIP verfügbar gemacht werden.
 
@@ -166,4 +166,4 @@ Im Folgenden werden IP-Adressfeatures im Ressourcen-Manager-Bereitstellungsmodel
 ## Nächste Schritte
 - [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-classic-pportal.md) mithilfe des klassischen Portals.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

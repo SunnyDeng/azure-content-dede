@@ -710,7 +710,6 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 * [Verwenden von Sqoop mit HDInsight][hdinsight-use-sqoop]
 * [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 * [Entwickeln von Java MapReduce-Programmen für HDInsight][hdinsight-develop-mapreduce]
-* [Entwickeln von C# Hadoop-Streamingprogrammen für HDInsight][hdinsight-develop-streaming]
 
 
 
@@ -730,7 +729,6 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 [hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started.md
 [hdinsight-use-sqoop]: hdinsight-use-sqoop.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
@@ -742,4 +740,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 [img-hdi-flightdelays-run-hive-job-output]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.RunHiveJob.Output.png
 [img-hdi-flightdelays-flow]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.Flow.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

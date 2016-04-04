@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Privileged Identity Management: Aktivieren einer Rolle"
+   pageTitle="Aktivieren oder Deaktivieren einer Rolle | Microsoft Azure"
    description="Erfahren Sie, wie Sie mit der Erweiterung Azure Privileged Identity Management Rollen für privilegierte Identitäten aktivieren."
    services="active-directory"
    documentationCenter=""
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="02/11/2016"
+   ms.date="03/17/2016"
    ms.author="kgremban"/>
 
-# Azure Privileged Identity Management: Aktivieren oder Deaktivieren einer Rolle
+# Azure AD Privileged Identity Management: Aktivieren oder Deaktivieren einer Rolle
 
 ## Aktivieren oder Deaktivieren einer Rolle
 
@@ -37,4 +37,4 @@ Weitere Informationen zu Sicherheitswarnungen für Rollenaktivierungseinstellung
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

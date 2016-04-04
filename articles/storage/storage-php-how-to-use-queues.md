@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie den Azure-Warteschlangenspeicherdienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele sind in PHP geschrieben."
 	documentationCenter="php"
 	services="storage"
-	authors="tfitzmac"
-	manager="carmonm"
-	editor="tysonn"/>
+	authors="rmcmurray"
+	manager="wpickett"
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -14,7 +14,7 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="02/17/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 # Verwenden des Warteschlangenspeichers mit PHP
 
@@ -384,4 +384,4 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 [require\_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure Portal]: https://portal.azure.com
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

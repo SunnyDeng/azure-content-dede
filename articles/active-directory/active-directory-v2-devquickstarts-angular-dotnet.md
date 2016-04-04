@@ -51,7 +51,8 @@ Erstellen Sie zuerst eine App im [App-Registrierungsportal](https://apps.dev.mic
 Kopieren oder notieren Sie die Ihrer App zugewiesene **Anwendungs-ID**. Sie benötigen Sie in Kürze.
 
 ## Installieren von „adal.js“
-Navigieren Sie zunächst zum heruntergeladenen Projekt, und installieren Sie „adal.js“. Wenn bei Ihnen [bower](http://bower.io/) installiert ist, können Sie einfach diesen Befehl ausführen. Falls Abhängigkeitsversionskonflikte auftreten, wählen Sie die höhere Version. ```
+Navigieren Sie zunächst zum heruntergeladenen Projekt, und installieren Sie „adal.js“. Wenn bei Ihnen [bower](http://bower.io/) installiert ist, können Sie einfach diesen Befehl ausführen. Falls Abhängigkeitsversionskonflikte auftreten, wählen Sie die höhere Version.
+```
 bower install adal-angular#experimental
 ```
 
@@ -228,4 +229,4 @@ Weitere Informationen zum v2.0-Endpunkt finden Sie im [v2.0- Entwicklerhandbuch]
 - [Azure AD auf Stack Overflow >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 - Azure AD-Dokumentation auf [Azure.com >>](https://azure.microsoft.com/documentation/services/active-directory/)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

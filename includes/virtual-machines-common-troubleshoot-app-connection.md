@@ -1,104 +1,105 @@
 
 
 
-If you can't access an application running on an Azure virtual machine, this article describes a methodical approach for isolating the source of the problem and correcting it.
+Wenn Sie auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird, nicht zugreifen können, finden Sie in diesem Artikel einen methodischen Ansatz zum Ermitteln der Ursache des Problems und zu seiner Behebung.
 
-> [AZURE.NOTE]  For help in connecting to an Azure virtual machine, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](virtual-machines-windows-troubleshoot-rdp-connection.md) or [Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](virtual-machines-linux-troubleshoot-ssh-connection.md).
+> [AZURE.NOTE]  Hilfeinformationen zum Herstellen einer Verbindung mit einem virtuellen Azure-Computer finden Sie unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-windows-troubleshoot-rdp-connection.md) oder [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-linux-troubleshoot-ssh-connection.md).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/options/) and click on **Get Support**.
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](https://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
 
 
-There are four main areas to troubleshoot the access of an application that is running on an Azure virtual machine.
+Die Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird, konzentriert sich auf vier Hauptbereiche.
 
 ![](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access1.png)
 
-1.	The application running on the Azure virtual machine.
-2.	The Azure virtual machine.
-3.	Azure endpoints for the cloud service that contains the virtual machine (for virtual machines in classic deployment model), inbound NAT rules (for virtual machines in Resource Manager deployment model), and Network Security Groups.
-4.	Your Internet edge device.
+1.	Die Anwendung, die auf dem virtuellen Azure-Computer ausgeführt wird.
+2.	Den virtuellen Azure-Computer.
+3.	Azure-Endpunkte für den Clouddienst, der den virtuellen Computer enthält (für virtuelle Computer im klassischen Bereitstellungsmodell), eingehende NAT-Regeln (für virtuelle Computer im Resource Manager-Bereitstellungsmodell) und Netzwerksicherheitsgruppen
+4.	Ihre Internet-Edgegerät.
 
-For client computers that are accessing the application over a site-to-site VPN or ExpressRoute connection, the main areas that can cause problems are the application and the Azure virtual machine.
-To determine the source of the problem and its correction, follow these steps.
+Bei Clientcomputern, die über eine Site-to-Site-VPN- oder ExpressRoute-Verbindung auf die Anwendung zugreifen, sind die Hauptbereiche, die zu Problemen führen können, die Anwendung und der virtuelle Azure-Computer. Gehen Sie folgendermaßen vor, um die Quelle des Problems und dessen Korrektur zu bestimmen.
 
-## Step 1: Can you access the application from the target VM?
+## Schritt 1: Können Sie von der virtuellen Ziel-VM aus auf die Anwendung zugreifen?
 
-Try to access the application with the appropriate client program from the VM on which it is running. Use the local host name, the local IP address, or the loopback address (127.0.0.1).
+Versuchen Sie, mithilfe des geeigneten Clientprogramms von der VM, auf der es läuft, auf die Anwendung zuzugreifen. Verwenden Sie den lokalen Hostnamen, die lokale IP-Adresse oder die Loopbackadresse (127.0.0.1).
 
 ![](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access2.png)
 
-For example, if the application is a web server, run a browser on the VM and try to access a web page hosted on the VM.
+Wenn es sich bei der Anwendung beispielsweise um einen Webserver handelt, öffnen Sie einen Browser auf der VM, und versuchen Sie, auf eine Webseite zuzugreifen, die auf der VM gehostet wird.
 
-If you can access the application, go to [Step 2](#step2).
+Wenn Sie auf die Anwendung zugreifen können, fahren Sie mit [Schritt 2](#step2) fort.
 
-If you cannot access the application, verify the following:
+Wenn kein Zugriff auf die Anwendung möglich ist, überprüfen Sie Folgendes:
 
-- The application is running on the target virtual machine.
-- The application is listening on the expected TCP and UDP ports.
+- Die Anwendung wird auf dem virtuellen Zielcomputer ausgeführt.
+- Die Anwendung überwacht die erwarteten TCP- und UDP-Ports.
 
-On both Windows and Linux-based virtual machines, use the **netstat -a** command to show the active listening ports. Examine the output for the expected ports on which your application should be listening. Restart the application or configure it to use the expected ports as needed.
+Verwenden Sie bei Windows- und Linux-basierten virtuellen Computern den Befehl **netstat -a**, um die aktiven Überwachungsports anzuzeigen. Überprüfen Sie die Ausgabe für die erwarteten Ports, die die Anwendung überwachen soll. Starten Sie die Anwendung neu, oder konfigurieren Sie sie so, dass Sie die erwarteten Ports nach Bedarf verwendet.
 
-## <a id="step2"></a>Step 2: Can you access the application from another virtual machine in the same virtual network?
+## <a id="step2"></a>Schritt 2: Können von einem anderen virtuellen Computer im gleichen virtuellen Netzwerk aus auf die Anwendung zugreifen?
 
-Try to access the application from a different VM but in the same virtual network, using the VM's host name or its Azure-assigned public, private, or provider IP address. For virtual machines created using the classic deployment model, do not use the public IP address of the cloud service.
+Versuchen Sie, von einer anderen VM im gleichen virtuellen Netzwerk auf die Anwendung zuzugreifen. Verwenden Sie dazu den VM-Hostnamen oder die von Azure zugewiesene öffentliche, private oder Anbieter-IP-Adresse. Verwenden Sie für mithilfe des klassischen Bereitstellungsmodells erstellte virtuelle Computer nicht die öffentliche IP-Adresse des Clouddiensts.
 
 ![](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access3.png)
 
-For example, if the application is a web server, try to access a web page from a browser on a different VM in the same virtual network.
+Wenn es sich bei der Anwendung beispielsweise um einen Webserver handelt, versuchen Sie, in einem Browser auf einer anderen VM im gleichen virtuellen Netzwerk auf eine Webseite zuzugreifen.
 
-If you can access the application, go to [Step 3](#step3).
+Wenn Sie auf die Anwendung zugreifen können, fahren Sie mit [Schritt 3](#step3) fort.
 
-If you cannot access the application, verify the following:
+Wenn kein Zugriff auf die Anwendung möglich ist, überprüfen Sie Folgendes:
 
-- The host firewall on the target VM is allowing the inbound request and outbound response traffic.
-- Intrusion detection or network monitoring software running on the target VM is allowing the traffic.
-- Network Security Groups are allowing the traffic.
-- A separate component running in your VM in the path between the test VM and your VM, such as a load balancer or firewall, is allowing the traffic.
+- Die Hostfirewall auf der Ziel-VM lässt die eingehende Anforderung und den ausgehenden Antwortdatenverkehr zu.
+- Software zur Angriffserkennung oder Netzwerküberwachung, die auf der Ziel-VM ausgeführt wird, lässt den Datenverkehr zu.
+- Netzwerksicherheitsgruppen lassen den Datenverkehr zu.
+- Eine separate Komponente, die auf Ihrer VM auf dem Pfad zwischen der Test-VM und Ihrer VM ausgeführt wird, z.B. ein Load Balancer oder eine Firewall, lässt den Datenverkehr zu.
 
-On a Windows-based virtual machine, use Windows Firewall with Advanced Security to determine whether the firewall rules exclude your application's inbound and outbound traffic.
+Verwenden Sie auf einem Windows-basierten virtuellen Computer die Windows-Firewall mit erweiterter Sicherheit, um zu bestimmen, ob die Firewallregeln den eingehenden und ausgehenden Datenverkehr der Anwendung ausschließen.
 
-## <a id="step3"></a>Step 3: Can you access the application from a computer that is outside the virtual network, but not connected to the same network as your computer?
+## <a id="step3"></a>Schritt 3: Können Sie von einem Computer aus, der sich außerhalb des virtuellen Netzwerks befindet, aber nicht mit demselben Netzwerk wie Ihr Computer verbunden ist, auf die Anwendung zugreifen?
 
-Try to access the application from a computer outside the virtual network as the VM on which the application is running, but is not on the same network as your original client computer.
+Versuchen Sie, von einem Computer, der sich nicht im gleichen Netzwerk wie die VM befindet, auf der die Anwendung ausgeführt wird, auf die Anwendung zuzugreifen. Der Computer darf sich aber ebenso wenig im Netzwerk Ihres ursprünglichen Clientcomputers befinden.
 
 ![](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access4.png)
 
-For example, if the application is a web server, try to access the web page from a browser running on a computer that is not in the virtual network.
+Wenn es sich bei der Anwendung beispielsweise um einen Webserver handelt, versuchen Sie, in einem Browser auf eine Webseite zuzugreifen, der auf einem Computer ausgeführt wird, der sich nicht im virtuellen Netzwerk befindet.
 
-If you cannot access the application, verify the following:
+Wenn kein Zugriff auf die Anwendung möglich ist, überprüfen Sie Folgendes:
 
-- For VMs created using the classic deployment model, that the endpoint configuration for the VM is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers. For more information, see [How to Set Up Endpoints to a Virtual Machine]( virtual-machines-windows-classic-setup-endpoints.md).
-- For VMs created using the classic deployment model, that access control lists (ACLs) on the endpoint are not preventing incoming traffic from the Internet. For more information, see [How to Set Up Endpoints to a Virtual Machine](virtual-machines-windows-classic-setup-endpoints.md).
-- For VMs created using the Resource Manager deployment model, that the inbound NAT rule configuration for the VM is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers.
-- That Network Security Groups are allowing the inbound request and outbound response traffic. For more information, see [What is a Network Security Group (NSG)?](../virtual-network/virtual-networks-nsg.md).
+- Bei VMs, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden, muss die Endpunktkonfiguration für die VM eingehenden Datenverkehr zulassen, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-windows-classic-setup-endpoints.md).
+- Bei VMs, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden, dürfen Zugriffssteuerungslisten (ACLs) auf dem Endpunkt aus dem Internet eingehenden Datenverkehr nicht verhindern. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-windows-classic-setup-endpoints.md).
+- Bei VMs, die mithilfe des Resource Manager-Bereitstellungsmodells erstellt wurden, muss die eingehende NAT-Regelkonfiguration für die VM den eingehenden Verkehr zulassen, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern.
+- Netzwerksicherheitsgruppen lassen die eingehende Anforderung und den ausgehende Antwortdatenverkehr zu. Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](../virtual-network/virtual-networks-nsg.md).
 
-If the virtual machine or endpoint is a member of a load-balanced set:
+Wenn der virtuelle Computer oder der Endpunkt Mitglied einer Gruppe mit Lastenausgleich ist:
 
-- Verify that the probe protocol (TCP or UDP) and port number are correct.
-- If the probe protocol and port is different than the load-balanced set protocol and port:
-	- Verify that the application is listening on the probe protocol (TCP or UDP) and port number (use **netstat –a** on the target VM).
-	- The host firewall on the target VM is allowing the inbound probe request and outbound probe response traffic.
+- Stellen Sie sicher, dass der Prüfpunkt-Protokoll (TCP oder UDP) und die Portnummer richtig sind.
+- Wenn das Prüfpunkt-Protokoll und der Port vom Protokoll und Port der Gruppe mit Lastenausgleich abweichen:
+	- Stellen Sie sicher, dass die Anwendung das Testprotokoll (TCP oder UDP) und die Portnummer überwacht (Verwenden Sie **netstat –a** auf der Ziel-VM).
+	- Die Hostfirewall auf der Ziel-VM lässt die eingehende Testanforderung und den ausgehenden Prüfpunkt-Antwortdatenverkehr zu.
 
-If you can access the application, ensure that your Internet edge device is allowing:
+Wenn Sie auf die Anwendung zugreifen können, stellen Sie sicher, dass Ihre Internet-Edgegeräte Folgendes zulassen:
 
-- The outbound application request traffic from your client computer to the Azure virtual machine.
-- The inbound application response traffic from the Azure virtual machine.
+- Den ausgehenden Anwendungsanforderungs-Datenverkehr vom Clientcomputer zum virtuellen Azure-Computer.
+- Den eingehenden Anwendungs-Antwortdatenverkehr vom virtuellen Azure-Computer.
 
-## Troubleshooting Endpoint Connectivity problems
+## Problembehandlung bei Endpunktverbindungen
 
-If you have problems when connecting to an Endpoint such as Remote Desktop  Endpoint, you can try the following general troubleshooting steps:
+Wenn Probleme beim Verbinden mit einem Endpunkt, z. B. Remotedesktop-Endpunkt, auftreten, können Sie die folgenden allgemeinen Schritte zur Fehlerbehebung ausprobieren:
 
-- Restart virtual machine
-- Recreate Endpoint
-- Connect from different location
-- Resize virtual machine
-- Recreate virtual machine
+- Neustarten des virtuellen Computers
+- Neuerstellen des Endpunkts
+- Herstellen einer Verbindung von einem anderen Standort
+- Ändern der Größe des virtuellen Computers
+- Neuerstellen des virtuellen Computers
 
-For more information, see [Troubleshooting Endpoint Connectivity (RDP/SSH/HTTP, etc. failures)](https://social.msdn.microsoft.com/Forums/azure/en-US/538a8f18-7c1f-4d6e-b81c-70c00e25c93d/troubleshooting-endpoint-connectivity-rdpsshhttp-etc-failures?forum=WAVirtualMachinesforWindows).
+Weitere Informationen finden Sie unter [Problembehandlung bei Endpunktverbindungen (RDP/SSH/HTTP-Fehler usw.)](https://social.msdn.microsoft.com/Forums/azure/de-DE/538a8f18-7c1f-4d6e-b81c-70c00e25c93d/troubleshooting-endpoint-connectivity-rdpsshhttp-etc-failures?forum=WAVirtualMachinesforWindows).
 
 
 
-## Additional resources
+## Zusätzliche Ressourcen
 
-[Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](virtual-machines-windows-troubleshoot-rdp-connection.md)
+[Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-windows-troubleshoot-rdp-connection.md)
 
-[Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](virtual-machines-linux-troubleshoot-ssh-connection.md)
+[Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-linux-troubleshoot-ssh-connection.md)
+
+<!---HONumber=AcomDC_0323_2016-->

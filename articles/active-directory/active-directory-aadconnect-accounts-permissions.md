@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="03/04/2016"
+   ms.date="03/16/2016"
    ms.author="andkjell;billmath"/>
 
 
@@ -113,7 +113,7 @@ Der Installations-Assistent erstellt ein lokales Dienstkonto (sofern das Konto n
 
 Das Konto wird mit einem langen komplexen Kennwort erstellt, das nicht abläuft.
 
-Dieses Konto wird von Windows verwendet, um die Verschlüsselungsschlüssel zu speichern, daher sollte das Kennwort für dieses Konto nicht zurückgesetzt oder geändert werden.
+Dieses Konto wird verwendet, um die Kennwörter für die anderen Konten auf sichere Weise zu speichern. Die Kennwörter dieser Konten sind verschlüsselt in der Datenbank gespeichert. Die privaten Schlüssel für die Verschlüsselungsschlüssel sind mit der Verschlüsselung des geheimen Schlüssels für kryptografische Dienste mithilfe der Windows-Datenschutz-API (DPAPI) geschützt. Setzen Sie das Kennwort für das Dienstkonto nicht zurück, da Windows ansonsten die Verschlüsselungsschlüssel aus Sicherheitsgründen zerstört.
 
 Bei Verwendung eines vollständigen SQL Servers wird das Dienstkonto zum DBO der Datenbank, die für das Synchronisierungsmodul erstellt wurde. Der Dienst funktioniert mit anderen Berechtigungen nicht wie vorgesehen. Eine SQL-Anmeldung wird ebenfalls erstellt.
 
@@ -134,4 +134,4 @@ Das Dienstkonto wird mit einem langen komplexen Kennwort erstellt, das nicht abl
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

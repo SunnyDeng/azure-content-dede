@@ -49,13 +49,14 @@ Sie können den Premium-Speicher für Datenträger auf zwei Arten verwenden:
 - Erstellen Sie zunächst ein neues Storage Premium-Konto. Wählen Sie beim Erstellen eines neuen virtuellen DS- oder GS-Computers dann das Storage Premium-Konto in den Speicherkonfigurationseinstellungen aus. Oder
 - Erstellen Sie beim Erstellen eines neuen virtuellen DS- oder GS-Computers in den Speicherkonfigurationseinstellungen ein neues Storage Premium-Konto, oder lassen Sie über das Azure-Portal ein Storage Premium-Standardkonto erstellen.
 
+
 Schrittweise Anweisungen finden Sie im Abschnitt [Schnellstart](#quick-start) weiter unten in diesem Artikel.
 
 >[AZURE.NOTE] Ein Premium-Speicherkonto kann keinem benutzerdefinierten Domänennamen zugeordnet werden.
 
 ## Virtuelle Computer der DS- und GS-Serie
 
-Storage Premium unterstützt virtuelle Azure-Computer der DS- und GS-Serie. Mit der DS- oder GS-Serie der virtuellen Computer können Sie Datenträger des Standard- und Premium-Speichers verwenden. Sie können jedoch keine Datenträger des Premium-Speichers mit virtuellen Computern verwenden, die nicht zur DS- oder GS-Serie gehören. Weitere Informationen zu den verfügbaren Typen und Größen von virtuellen Azure-Computern finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md). Im Folgenden sind einige Funktionen der virtuellen Computer der DS- und GS-Serie aufgeführt.
+Storage Premium unterstützt virtuelle Azure-Computer der DS- und GS-Serie. Mit der DS- oder GS-Serie der virtuellen Computer können Sie Datenträger des Standard- und Premium-Speichers verwenden. Sie können jedoch keine Datenträger des Premium-Speichers mit virtuellen Computern verwenden, die nicht zur DS- oder GS-Serie gehören. Weitere Informationen zu den verfügbaren Typen und Größen von virtuellen Azure-Computern finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-linux-sizes.md). Im Folgenden sind einige Funktionen der virtuellen Computer der DS- und GS-Serie aufgeführt.
 
 **Clouddienst:** Virtuelle Computer der DS-Serie können einem Clouddienst hinzugefügt werden, der nur virtuelle Computer der DS-Serie umfasst. Fügen Sie virtuelle Computer der DS-Serie nicht einem vorhandenen Clouddienst mit virtuellen Computer hinzu, die nicht aus der DS-Serie stammen. Sie können vorhandene virtuelle Festplatten zu einem neuen Clouddienst migrieren, in dem nur virtuelle Computer der DS-Serie ausgeführt werden. Wenn Sie für den neuen Clouddienst dieselbe virtuelle IP-Adresse (VIP) beibehalten möchten, unter der die virtuellen Computer der DS-Serie gehostet werden, verwenden Sie [reservierte IP-Adressen](../virtual-network/virtual-networks-instance-level-public-ip.md). Virtuelle Computer der GS-Serie können einem vorhandenen Clouddienst hinzugefügt werden, in dem ausschließlich virtuelle Computer der G-Serie ausgeführt werden.
 
@@ -73,7 +74,7 @@ Storage Premium unterstützt virtuelle Azure-Computer der DS- und GS-Serie. Mit 
 
 Derzeit ist der größte virtuelle Computer der DS-Serie der STANDARD\_DS14. Er kann bis zu 512 MB pro Sekunde auf allen Datenträgern bereitstellen. Der größte virtuelle Computer der GS-Serie ist der STANDARD\_GS5. Er kann bis zu 2.000 MB pro Sekunde auf allen Datenträgern bereitstellen. Beachten Sie, dass diese Limits nur für den Datenträgerverkehr und nicht für Cachetreffer- und Netzwerkverkehr gelten. Für den Netzwerkdatenverkehr virtueller Computer steht eine separate Bandbreite zur Verfügung. Diese unterscheidet sich von der dedizierten Bandbreite für Premium-Speicherdatenträger.
 
-Aktuelle Informationen zu maximalen IOPS- und Durchsatzwerten (d. h. Bandbreitenwerte) für virtuelle Computer der DS- und GS-Serie finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md). Informationen zu Storage Premium-Datenträgern und ihren IOPS und Durchsatzlimits finden Sie in diesem Artikel in der Tabelle im Abschnitt [Skalierbarkeits- und Leistungsziele für Storage Premium](#premium-storage-scalability-and-performance-targets).
+Aktuelle Informationen zu maximalen IOPS- und Durchsatzwerten (d.h. Bandbreitenwerte) für virtuelle Computer der DS- und GS-Serie finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-linux-sizes.md). Informationen zu Datenträgern des Premium-Speichers und ihren IOPs und Durchsatzlimits finden Sie in diesem Artikel in der Tabelle im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage).
 
 ## Skalierbarkeits- und Leistungsziele für Storage Premium
 
@@ -145,7 +146,7 @@ Wenn Sie einen Datenträger für ein Premium-Speicherkonto bereitstellen, hänge
 
 Es folgen einige wichtige Punkte, die Sie in Bezug auf die Skalierbarkeits- und Leistungsziele für Storage Premium wissen müssen:
 
-- **Bereitgestellte Kapazität und Leistung:** Im Gegensatz zu einem Standard-Speicherdatenträger sind bei der Bereitstellung eines Storage Premium-Datenträgers die Kapazität, die IOPS und der Durchsatz für diesen Datenträger garantiert. Wenn Sie beispielsweise einen P30-Datenträger erstellen, werden in Azure eine Speicherkapazität von 1.024 TB, 5.000 IOPS und ein Durchsatz von 200 MB pro Sekunde für diesen Datenträger bereitgestellt. Die Anwendung kann die Kapazität und Leistung ganz oder teilweise nutzen.
+- **Bereitgestellte Kapazität und Leistung:** Im Gegensatz zu einem Standard-Speicherdatenträger sind bei der Bereitstellung eines Storage Premium-Datenträgers die Kapazität, die IOPS und der Durchsatz für diesen Datenträger garantiert. Wenn Sie beispielsweise einen P30-Datenträger erstellen, werden in Azure eine Speicherkapazität von 1.024 GB, 5.000 IOPS und ein Durchsatz von 200 MB pro Sekunde für diesen Datenträger bereitgestellt. Die Anwendung kann die Kapazität und Leistung ganz oder teilweise nutzen.
 
 - **Datenträgergröße:** Azure ordnet die (aufgerundete) Datenträgergröße der nächsten Option für Storage Premium-Datenträger wie in der Tabelle angegeben zu. Ein Datenträger mit der Größe 100 GB wird z. B. als Option „P10“ klassifiziert. Er kann bis zu 500 E/A-Einheiten pro Sekunde mit einem Durchsatz von bis zu 100 MB pro Sekunde ausführen. Analog wird ein Datenträger mit der Größe 400 GB als Option „P20“ klassifiziert. Er kann bis zu 2300 E/A-Einheiten pro Sekunde mit einem Durchsatz von bis zu 150 MB pro Sekunde ausführen.
 
@@ -241,7 +242,7 @@ Nachfolgend finden Sie wichtige Anweisungen zum Konfigurieren virtueller Linux-C
 	- Wenn Sie **XFS** verwenden, deaktivieren Sie Sperren mithilfe der Bereitstellungsoption „nobarrier“ (verwenden Sie zum Aktivieren von Sperren „barrier“).
 
 - Bei Premium-Speicherdatenträgern mit der Cacheeinstellung „ReadWrite“ müssen Sperren aktiviert werden, um die Beständigkeit von Schreibvorgängen zu gewährleisten.
-- Damit die Volumebezeichnungen nach dem Neustart des virtuellen Computers beibehalten werden, müssen Sie „/etc/fstab“ mit den UUID-Verweisen auf die Datenträger aktualisieren. Weitere Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](../virtual-machines/virtual-machines-linux-how-to-attach-disk.md).
+- Damit die Volumebezeichnungen nach dem Neustart des virtuellen Computers beibehalten werden, müssen Sie „/etc/fstab“ mit den UUID-Verweisen auf die Datenträger aktualisieren. Weitere Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](../virtual-machines/virtual-machines-linux-classic-attach-disk.md).
 
 Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Workloadmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Workload optimiert.
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
@@ -385,7 +386,7 @@ Sie müssen einen virtuellen Computer der DS- oder GS-Serie erstellen, um Storag
 
 	![Premium-Datenträger][Image2]
 
-Weitere ausführlichere Schritte finden Sie unter [Gewusst wie: Anfügen eines Datenträgers im Azure-Portal](../virtual-machines/virtual-machines-attach-disk-preview/).
+Weitere ausführlichere Schritte finden Sie unter [Gewusst wie: Anfügen eines Datenträgers im Azure-Portal](../virtual-machines/virtual-machines-windows-attach-disk-portal.md).
 
 #### IV. Ändern der Datenträger-Cacherichtlinie über das Azure-Portal
 
@@ -526,12 +527,14 @@ Weitere Informationen zu Azure Storage Premium finden Sie in den folgenden Artik
 
 - [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md)
 
+
 ### Blogbeiträge
 
 - [Azure Premium Storage Generally Available](https://azure.microsoft.com/blog/azure-premium-storage-now-generally-available-2/) (Azure Storage Premium allgemein verfügbar)
 - [Announcing the GS-Series: Adding Premium Storage Support to the Largest VMs in the Public Cloud](https://azure.microsoft.com/blog/azure-has-the-most-powerful-vms-in-the-public-cloud/) (Ankündigung der GS-Serie: Unterstützung von Storage Premium für die größten virtuellen Computer in der öffentlichen Cloud)
 
+
 [Image1]: ./media/storage-premium-storage/Azure_pricing_tier.png
 [Image2]: ./media/storage-premium-storage/Azure_attach_premium_disk.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

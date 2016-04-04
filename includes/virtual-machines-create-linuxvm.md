@@ -25,7 +25,7 @@
         + Creating VM
         info:    vm create command OK
 
-    >[AZURE.NOTE] Geben Sie bei einem virtuellen Linux-Computer die Option `-e` in `vm create` an. SSH kann nicht nach der Erstellung des virtuellen Computers aktiviert werden. Weitere Informationen zu SSH finden Sie unter [Verwenden von SSH mit Linux in Azure](virtual-machines-linux-use-ssh-key.md).
+    >[AZURE.NOTE] Geben Sie bei einem virtuellen Linux-Computer die Option `-e` in `vm create` an. SSH kann nicht nach der Erstellung des virtuellen Computers aktiviert werden. Weitere Informationen zu SSH finden Sie unter [Verwenden von SSH mit Linux in Azure](virtual-machines-linux-ssh-from-linux.md).
 
     Beim Image *b4590d9e3ed742e4a1d46e5424aa335e\_\_suse-opensuse-13.1-20141216-x86-64* handelt es sich um das Image, das wir im vorherigen Schritt in der Liste der Images ausgewählt haben. *MyTestVM* ist der Name des neuen virtuellen Computers, und *adminUser* ist der Benutzername, den wir für SSH auf dem virtuellen Computer verwenden. Sie können diese Variablen nach Bedarf ersetzen. Weitere Informationen zu diesem Befehl finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md).
 
@@ -41,4 +41,4 @@
 
 Ausführliche Informationen zu diesen Azure-CLI-Befehlen für virtuelle Computer finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](virtual-machines-command-line-tools.md).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

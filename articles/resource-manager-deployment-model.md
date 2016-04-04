@@ -32,7 +32,7 @@ Aufgrund der Architekturunterschiede zwischen den Modellen stellen einige Ressou
 - **Storage** – Unterstützt erforderliche Speicherkonten, die VHDs für virtuelle Maschinen speichern, einschließlich der Datenträger für Betriebssysteme und zusätzlicher Datenträger.
 - **Netzwerk** – Unterstützt erforderliche NICs, IP-Adressen virtueller Maschinen und Subnetze innerhalb von virtuellen Netzwerken sowie optionale Load Balancer, deren IP-Adressen und Netzwerksicherheitsgruppen.
 
-Für diese Ressourcentypen müssen Sie darauf achten, welche Version Sie verwenden, da sich die unterstützten Vorgänge unterscheiden. Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
+Für diese Ressourcentypen müssen Sie darauf achten, welche Version Sie verwenden, da sich die unterstützten Vorgänge unterscheiden. Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-windows-compare-deployment-models.md).
 
 ## Merkmale des Ressourcen-Managers
 
@@ -44,7 +44,7 @@ Ressourcen, die über den Ressourcen-Manager erstellt wurden, weisen folgende Me
 
         ![Azure portal](./media/resource-manager-deployment-model/preview-portal.png)
 
-        Für Compute-, Storage- und Netzwerkressourcen haben Sie die Möglichkeit, entweder den Ressourcen-Manager oder die klassische Bereitstellung zu nutzen. Wählen Sie **Ressourcen-Manager** .
+        For Compute, Storage, and Networking resources, you have the option of using either Resource Manager or Classic deployment. Select **Resource Manager**.
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
 
@@ -177,9 +177,9 @@ Bei der Arbeit mit virtuellen Computern sind einige wichtige Aspekte zu berücks
 
 Wenn Ausfallzeiten für Ihre virtuellen Computer eingeplant werden können, dann können Sie diese mit [ASM2ARM-PowerShell-Skripts](https://github.com/fullscale180/asm2arm) von der klassischen Bereitstellung zu Ressourcen-Manager übertragen.
 
-Eine Liste der entsprechenden Befehle der Azure-Befehlszeilenschnittstelle beim Wechsel von der klassischen zur Ressourcen-Manager-Bereitstellung finden Sie unter [Befehlsentsprechungen für Ressourcen-Manager und Dienstverwaltung für VM-Vorgänge](./virtual-machines/xplat-cli-azure-manage-vm-asm-arm.md).
+Eine Liste der entsprechenden Befehle der Azure-Befehlszeilenschnittstelle beim Wechsel von der klassischen zur Ressourcen-Manager-Bereitstellung finden Sie unter [Befehlsentsprechungen für Ressourcen-Manager und Dienstverwaltung für VM-Vorgänge](./virtual-machines/virtual-machines-linux-cli-manage.md).
 
-Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
+Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-windows-compare-deployment-models.md).
 
 Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellungsmodellen finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](./virtual-network/virtual-networks-arm-asm-s2s.md).
 
@@ -188,4 +188,4 @@ Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellun
 - Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!----HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

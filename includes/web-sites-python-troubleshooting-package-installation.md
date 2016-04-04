@@ -64,8 +64,8 @@ Wenn Sie die virtuelle Umgebung in das Repository einschließen, können Sie ver
 Es wird empfohlen, dass Sie die vorhandene virtuelle Umgebung auf der App löschen, um übrig gebliebene Dateien aus der Zeit zu verhindern, als die virtuelle Umgebung automatisch verwaltet wurde.
 
 
-[Erstellen eines virtuellen Computers unter Windows]: http://azure.microsoft.com/documentation/articles/virtual-machines-windows-tutorial/
+[Erstellen eines virtuellen Computers unter Windows]: http://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/
 [Microsoft Visual C++ Compiler für Python 2.7]: http://aka.ms/vcpython27
 [Microsoft Visual C++ 2010 Express]: http://go.microsoft.com/?linkid=9709949
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -47,7 +47,7 @@ Weitere Informationen zu Verbindungszeichenfolgen finden Sie unter [Konfiguriere
 
 Einige Azure Storage-Clientbibliotheken, wie z. B. die Xamarin-Bibliothek, unterstützen nur Authentifizierung mit einem SAS (Shared Access Signature)-Token. Sie benötigen zum Erstellen dieses SAS-Tokens ein Tool oder eine Anwendung mit Unterstützung für die Authentifizierung mit einem gemeinsam verwendeten Schlüssel. Eine einfache Möglichkeit zum Generieren des SAS-Tokens bietet Azure PowerShell:
 
-1. Installieren Sie Azure PowerShell, sofern noch nicht geschehen. Es empfiehlt sich, die neueste Version der Azure PowerShell-Cmdlets zu verwenden. Installationsanweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../articles/powershell-install-configure.md#Install).
+1. Installieren Sie Azure PowerShell, sofern noch nicht geschehen. Es empfiehlt sich, die neueste Version der Azure PowerShell-Cmdlets zu verwenden. Installationsanweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md#Install).
 
 2. Öffnen Sie Azure PowerShell, und führen Sie die folgenden Befehle aus. Ersetzen Sie unbedingt *ACCOUNT\_NAME* und *ACCOUNT\_KEY==* durch Ihre eigenen Anmeldeinformationen. Ersetzen Sie *CONTAINER\_NAME* durch einen Namen Ihrer Wahl.
 
@@ -232,4 +232,4 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 
 - Version 2013-08-15 der Azure Storage-Dienste wird jetzt vollständig unterstützt. (Zuvor wurde diese Version nur von Version 2.2.1 Preview des Speicheremulators unterstützt.)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

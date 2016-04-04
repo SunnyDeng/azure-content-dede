@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode "Failover"
@@ -38,7 +38,7 @@ Beachten Sie, dass Azure Websites unabhängig vom Websitemodus bereits die Funkt
 
 [Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne](traffic-manager-point-internet-domain.md)
 
-[Traffic Manager-Routingmethoden](traffic-manager-load-balancing-methods.md)
+[Traffic Manager-Routingmethoden](traffic-manager-routing-methods.md)
 
 [Konfigurieren der Routingmethode „Roundrobin“](traffic-manager-configure-round-robin-routing-method.md)
 
@@ -52,4 +52,4 @@ Beachten Sie, dass Azure Websites unabhängig vom Websitemodus bereits die Funkt
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

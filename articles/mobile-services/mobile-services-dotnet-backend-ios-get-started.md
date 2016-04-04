@@ -23,7 +23,7 @@
 &nbsp;
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
-> Informationen für die entsprechende Mobile Apps-Version dieses Themas finden Sie unter [Erstellen einer iOS-App in Azure Mobile Apps](../app-service-mobile/app-service-mobile-android-get-started.md).
+> Informationen zur entsprechenden Mobile Apps-Version dieses Themas finden Sie unter [Erstellen einer iOS-App in Azure Mobile Apps](../app-service-mobile/app-service-mobile-ios-get-started.md).
 
 In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Back-End-Dienst zu einer iOS-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im neuen mobilen Dienst speichert. Der mobile Dienst verwendet .NET und Visual Studio für die serverseitige Logik. Informationen zum Erstellen eines mobilen Diensts mit serverseitiger Geschäftslogik in JavaScript finden Sie in der [JavaScript-Back-End-Version] dieses Themas.
 
@@ -59,21 +59,17 @@ Nachdem Sie den mobilen Dienst erstellt haben, laden Sie Projekte herunter, die 
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Hier wird das Ausführen der neuen Client-App für den mobilen Dienst unter Azure demonstriert. Bevor Sie die iOS-App mit dem mobilen Dienst auf einem lokalen Computer testen können, müssen Sie den Webserver und die Firewall so konfigurieren, dass der Zugriff vom iOS-Entwicklungscomputer aus zulässig ist. Weitere Informationen finden Sie unter [Konfigurieren des lokalen Webservers für Verbindungen mit einem lokalen mobilen Dienst](mobile-services-dotnet-backend-how-to-configure-iis-express.md).
+Hier wird das Ausführen der neuen Client-App für den mobilen Dienst unter Azure demonstriert. Bevor Sie die iOS-App mit dem mobilen Dienst auf einem lokalen Computer testen können, müssen Sie den Webserver und die Firewall so konfigurieren, dass der Zugriff vom iOS-Entwicklungscomputer aus zulässig ist. Weitere Informationen finden Sie unter [Configure the local web server to allow connections to a local mobile service](mobile-services-dotnet-backend-how-to-configure-iis-express.md).
 
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten]
-  <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zu einer vorhandenen App]
-  <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]
-  <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
+* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
-* [Beheben von Problemen bei einem Mobile Services .NET-Back-End]
-  <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
+* [Beheben von Problemen bei einem Mobile Services .NET-Back-End] <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
@@ -105,4 +101,4 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [JavaScript-Back-End-Version]: mobile-services-ios-get-started.md
 
-<!----HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

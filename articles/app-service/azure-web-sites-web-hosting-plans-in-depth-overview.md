@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="03/15/2016" 
 	ms.author="byvinyal"/>
 
 #Azure App Service-Pläne – Detaillierte Übersicht#
@@ -49,7 +49,7 @@ Wenn Sie schließlich eine neue App in einer anderen Region erstellen möchten u
 
 ## Wie erstelle ich einen Plan?
 
-Sie können keinen leeren App Service-Plan erstellen. Sie können jedoch bei der App-Erstellung einen neuen Plan erstellen.
+Sie können einen leeren **App Service-Plan** erstellen, indem Sie die Browseroberfläche **App Service-Plan** verwenden oder den Schritt während der App-Erstellung ausführen.
 
 Klicken Sie hierzu im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf **NEU**, anschließend auf **Web + mobil** und dann auf **Web-Apps**, **Mobile Apps**, **Logik-Apps** oder **API-Apps**. ![][createWebApp]
 
@@ -57,19 +57,28 @@ Sie können dann den App Service-Plan für die neue Anwendung auswählen oder er
   
  ![][createASP]
 
-Um einen neuen App Service-Plan zu erstellen, klicken Sie auf **+ Neu erstellen**, geben Sie den Namen für den **App Services-Plan** ein, und wählen Sie einen geeigneten **Speicherort** aus. Klicken Sie auf **Tarif**, und wählen Sie einen dem Dienst angemessenen Tarif aus. Wählen Sie **Alle anzeigen** aus, um mehr Tarifoptionen anzuzeigen, z. B. **Free** und **Shared**. Klicken Sie nach dem Auswählen des Tarifs auf die Schaltfläche **Auswählen**.
+Um einen neuen App Service-Plan zu erstellen, klicken Sie auf **+ Neu erstellen**, geben Sie den Namen für den **App Services-Plan** ein, und wählen Sie einen geeigneten **Speicherort** aus. Klicken Sie auf **Tarif**, und wählen Sie einen dem Dienst angemessenen Tarif aus. Wählen Sie **Alle anzeigen** aus, um mehr Tarifoptionen anzuzeigen, z. B. **Free** und **Shared**. Klicken Sie nach dem Auswählen des Tarifs auf die Schaltfläche **Auswählen**.
  
 ## Wie kann ich eine App in einen anderen App Service-Plan verschieben?
 
-Sie können eine App im [Azure-Portal](https://portal.azure.com) in einen anderen App Service-Plan verschieben. Apps können zwischen Plänen in derselben geografischen Region verschoben werden.
+Sie können eine App im [Azure-Portal](https://portal.azure.com) in einen anderen App Service-Plan verschieben. Apps können zwischen Plänen verschoben werden, sofern sich die Pläne in derselben Ressourcengruppe und geografischen Region befinden.
 
-Um eine Anwendung in einen anderen Plan zu verschieben, navigieren Sie zu der App, die Sie verschieben möchten, und klicken dann auf **App Service-Plan ändern**.
+Navigieren Sie zu der App, die Sie verschieben möchten, um sie in einen anderen Plan zu verschieben. Suchen Sie im Menü „Einstellungen“ nach der Option **App Services-Plan ändern**.
  
-Dadurch wird das Blatt "App Service-Plan" geöffnet. Jetzt können Sie entweder einen vorhandenen Plan auswählen oder einen neuen erstellen. Pläne in einer anderen geografischen Region werden abgeblendet dargestellt und können nicht ausgewählt werden.
+Die Auswahl „App Service-Plan“ wird geöffnet. Jetzt können Sie entweder einen vorhandenen Plan auswählen oder einen neuen erstellen. Es werden nur gültige Pläne angezeigt (derselben Ressourcengruppe und geografischen Region).
 
 ![][change]
 
-Beachten Sie, dass jeder Plan eine eigene Preisstufe aufweist. Wenn Sie eine Website von der Preisstufe **Free** in die Preisstufe **Standard** verschieben, kann Ihre App alle Features und Ressourcen der Preisstufe **Standard** nutzen.
+Beachten Sie, dass jeder Plan eine eigene Preisstufe aufweist. Wenn Sie beispielsweise eine Website aus der Preisstufe **Free** in die Preisstufe **Standard** verschieben, kann Ihre App alle Features und Ressourcen der Preisstufe **Standard** nutzen.
+
+## Klonen einer App in einen anderen App Service-Plan
+Wenn Sie die App in eine andere Region verschieben möchten, ist das Klonen der App eine Möglichkeit. Beim Klonen wird eine Kopie Ihrer App in einem neuen oder vorhandenen App Service-Plan oder einer App Service-Umgebung in einer beliebigen Region erstellt.
+
+ ![][appclone]
+ 
+Sie finden die **App zum Klonen** im Menü **Tools**.
+
+Für das Klonen gelten einige Einschränkungen. Weitere Informationen finden Sie [hier](../app-service-web/app-service-web-app-cloning-portal.md).
 
 ## Skalieren eines App Service-Plans
 
@@ -77,9 +86,9 @@ Es gibt zwei Möglichkeiten, einen Plan zu skalieren:
 
 - Ändern Sie die **Preisstufe** des Plans. Ein Plan der Preisstufe **Basic** kann beispielsweise in einen Plan der Preisstufe **Standard** oder **Premium** geändert werden. Anschließend können alle Apps, die diesem Plan zugeordnet sind, die von der neuen Preisstufe bereitgestellten Funktionen nutzen.
 - Ändern Sie die **Instanzgröße** eines Plan. Ein Plan der Preisstufe **Basic** mit **kleinen** Instanzen kann beispielsweise zur Verwendung **großer** Instanzen geändert werden. Alle Apps, die diesem Plan zugeordnet sind, können die zusätzlichen Arbeitsspeicher- und CPU-Ressourcen nutzen, die aufgrund der größeren Instanzen verfügbar sind.
-- Ändern Sie die **Instanzanzahl** des Plans. Ein **Standard**-Plan mit 3 Instanzen kann z. B. auf 10 Instanzen skaliert werden. Ein **Premium**-Plan (Vorschau) kann (mit einigen Einschränkungen) auf 20 Instanzen skaliert werden. Alle Apps, die diesem Plan zugeordnet sind, können die zusätzlichen Arbeitsspeicher- und CPU-Ressourcen nutzen, die aufgrund der größeren Instanzanzahl verfügbar sind.
+- Ändern Sie die **Instanzanzahl** des Plans. Ein **Standard**-Plan mit drei Instanzen kann z.B. auf zehn Instanzen skaliert werden. Ein **Premium**-Plan kann auf 20 Instanzen skaliert werden. Alle Apps, die diesem Plan zugeordnet sind, können die zusätzlichen Arbeitsspeicher- und CPU-Ressourcen nutzen, die aufgrund der größeren Instanzanzahl verfügbar sind.
 
-In der folgenden Abbildung sehen Sie das Blatt **App Service-Plan** und das Blatt **Preisstufe**. Durch Klicken auf den Bereich **Preisstufe** im Blatt **App Service-Plan** wird das Blatt **Preisstufe** erweitert, in dem Sie die Preisstufe und Instanzgröße des Plans ändern können.
+Sie können den Tarif und die Instanzgröße ändern, indem Sie für die App oder den App Service-Plan unter „Einstellungen“ auf die Option **Zentral hochskalieren** klicken. Änderungen gelten für den **App Service-Plan** und wirken sich auf alle Apps aus, die darunter gehostet werden.
  
  ![][pricingtier]
 
@@ -96,5 +105,6 @@ App Service-Pläne stellen einen Satz an Funktionen und Kapazitäten dar, die Si
 [change]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/change-appserviceplan.png
 [createASP]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-appserviceplan.png
 [createWebApp]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-web-app.png
+[appclone]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/app-clone.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="01/25/2015" 
+	ms.date="03/18/2016" 
 	ms.author="donnam"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App
@@ -22,7 +22,8 @@
 
 &nbsp;
 
->[AZURE.NOTE]Dies ist ein Thema zu Azure Mobile Services. Microsoft Azure empfiehlt Azure Mobile App Service-Apps für alle neuen mobilen Back-End-Bereitstellungen. Weitere Informationen finden Sie in der [Mobile Apps-Dokumentation im entsprechenden Tutorial](../app-service-mobile/app-service-mobile-xamarin-ios-get-started-users.md).
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen zur entsprechenden Mobile Apps-Version dieses Themas finden Sie unter [Hinzufügen von Authentifizierung zu Ihrer Xamarin.iOS-App](../app-service-mobile/app-service-mobile-xamarin-ios-get-started-users.md).
 
 In diesem Thema erfahren Sie, wie Sie Benutzer in Mobile Services über Ihre App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
@@ -89,7 +90,7 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 			}
 		}
 		
-	Dann wird ein Anmeldebildschirm angezeigt, in dem die Authentifizierung versucht werden kann, wenn die **User**-Eigenschaft null ist. Bei erfolgreicher Anmeldung ist der **Benutzer** festgelegt.
+	Daraufhin wird ein Anmeldebildschirm angezeigt, in dem die Authentifizierung versucht werden kann, wenn die **User**-Eigenschaft NULL ist. Bei erfolgreicher Anmeldung ist der **Benutzer** festgelegt.
 
 5. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Simulator zu starten. Überprüfen Sie, dass die App keine Daten anzeigt. **RefreshAsync()** wurde noch nicht aufgerufen.
 
@@ -117,4 +118,4 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Authorize users with scripts]: ../mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts.md
 [JavaScript and HTML]: ../mobile-services-dotnet-backend-windows-store-javascript-get-started-users.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

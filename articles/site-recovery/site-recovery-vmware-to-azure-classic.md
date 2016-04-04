@@ -236,11 +236,11 @@ Wenn Sie virtuelle VMware-Computer replizieren möchten, installieren Sie die fo
 ## Schritt 5: Installieren des Verwaltungsservers
 > [AZURE.TIP] Stellen Sie sicher, dass die folgenden URLs vom Verwaltungsserver aus zugänglich sind:
 >
-- *.hypervrecoverymanager.windowsazure.com
-- *.accesscontrol.windows.net
-- *.backup.windowsazure.com
-- *.blob.core.windows.net
-- *.store.core.windows.net
+- **.hypervrecoverymanager.windowsazure.com
+- **.accesscontrol.windows.net
+- **.backup.windowsazure.com
+- **.blob.core.windows.net
+- **.store.core.windows.net
 - https://dev.mysql.com/get/archives/mysql-5.5/mysql-5.5.37-win32.msi
 - https://www.msftncsi.com/ncsi.txt
 
@@ -458,8 +458,7 @@ Die Installationsprogramme stehen unter „C:\\Programme (x86)\\Microsoft Azure 
 Quellbetriebssystem | Installationsdatei für den Mobilitätsdienst
 --- | ---
 Windows Server (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_Windows\_* release.exe
-CentOS 6.4, 6.5, 6.6 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_RHEL6-64\_*release.tar.gz 
-SUSE Linux Enterprise Server 11 SP3 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_SLES11-SP3-64\_*release.tar.gz
+CentOS 6.4, 6.5, 6.6 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_RHEL6-64\_*release.tar.gz SUSE Linux Enterprise Server 11 SP3 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_SLES11-SP3-64\_*release.tar.gz
 Oracle Enterprise Linux 6.4, 6.5 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_OL6-64\_*release.tar.gz
 
 
@@ -582,7 +581,9 @@ Außerdem können Sie den Schutzstatus unter **Geschützte Elemente** > <protect
 3. Sie können folgende Eigenschaften ändern:
 
 	-  **Name des virtuellen Azure-Computers**: Dies ist der Name, der dem Computer in Azure nach dem Failover zugewiesen wird. Der Name muss den Azure-Anforderungen entsprechen.
-	-  **Größe des virtuellen Azure-Computers**: Die Anzahl der Netzwerkkarten hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. [Erfahren Sie mehr](../virtual-machines/virtual-machines-size-specs.md#size-tables) über Größen und Adapter. Beachten Sie Folgendes:
+
+	-  **Größe des virtuellen Azure-Computers**: Die Anzahl der Netzwerkkarten hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. [Erfahren Sie mehr](../virtual-machines/virtual-machines-linux-sizes.md/#size-tables) über Größen und Adapter. Beachten Sie Folgendes:
+
 		- Wenn Sie die Größe für einen virtuellen Computer ändern und die Einstellungen speichern, wird die Anzahl der Netzwerkkarten beim nächsten Öffnen der Registerkarte **Konfigurieren** geändert. Die Anzahl der Netzwerkkarten der virtuellen Zielcomputer entspricht mindestens der Anzahl der Netzwerkkarten auf virtuellen Quellcomputern und der maximalen Anzahl der Netzwerkkarten, die von der ausgewählten Größe des virtuellen Computers unterstützt werden. 
 			- Wenn die Anzahl der Netzwerkkarten des Quellcomputers maximal der Anzahl der Netzwerkkarten entspricht, die für die Größe des Zielcomputers zulässig ist, hat der Zielcomputer die gleiche Anzahl von Netzwerkkarten wie der Quellcomputer.
 			- Wenn die Anzahl der Netzwerkadapter für den virtuellen Quellcomputer die maximal zulässige Anzahl für die Größe des Zielcomputers übersteigt, wird die Anzahl verwendet, die maximal für die Größe des Zielcomputers zulässig ist.
@@ -754,4 +755,4 @@ The complete file may be found on the [Microsoft Download Center](http://go.micr
 
 [Informieren Sie sich über das Failback](site-recovery-failback-azure-to-vmware-classic.md) von unter Azure ausgeführten Computern zur lokalen Umgebung.
 
-<!----HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

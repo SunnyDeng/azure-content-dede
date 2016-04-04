@@ -32,7 +32,7 @@ Es folgen die beiden Methoden, mit denen Sie Azure PowerShell installieren könn
 
 ###Installieren von Azure PowerShell per WebPI
 
-Die Installation von Azure PowerShell 1.0 und höher per WebPI ist mit der Installation der Version 0.9.x identisch. Laden Sie [Azure Powershell](http://aka.ms/webpi-azps) herunter, und starten Sie die Installation. Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, müssen Sie vor der Installation die Module entfernen, um die Einheitlichkeit der Azure PowerShell-Umgebung sicherzustellen.
+Die Installation von Azure PowerShell 1.0 und höher per WebPI ist mit der Installation der Version 0.9.x identisch. Laden Sie [Azure PowerShell](http://aka.ms/webpi-azps) herunter, und starten Sie die Installation. Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, müssen Sie vor der Installation die Module entfernen, um die Einheitlichkeit der Azure PowerShell-Umgebung sicherzustellen.
 
 > [AZURE.NOTE] Wenn Sie die Azure-Module aus dem PowerShell-Katalog installiert haben, entfernt das Installationsprogramm diese automatisch. Dies soll Verwirrung in Bezug darauf vermeiden, welche Module Sie installiert haben und wo sich diese befinden. Module des PowerShell-Katalogs werden normalerweise unter **%Programme%\\WindowsPowerShell\\Modules** installiert. Im Gegensatz dazu installiert das WebPI-Installationsprogramm die Azure-Module unter **%Programme%\\Microsoft SDKs\\Azure\\PowerShell**. **PowerShellGet** deinstalliert Module und lässt DLL-Dateien und deren Ordner zurück, wenn bei der Deinstallation eine Modulabhängigkeit geladen wird. Wenn während der Installation ein Fehler auftritt, entfernen Sie die Azure*-Ordner aus dem Ordner **%ProgramFiles%\\WindowsPowerShell\\Modules**.
 
@@ -42,7 +42,7 @@ Wenn Sie Azure PowerShell über den PowerShell-Katalog installiert haben, aber s
 
 ###Installieren von Azure PowerShell aus dem Katalog
 
-Installieren Sie Azure PowerShell 1.0 oder höher mit den folgenden Befehlen aus dem Katalog:
+Installieren Sie Azure PowerShell 1.0 oder höher mit den folgenden Befehlen aus dem Katalog:
 
     # Install the Azure Resource Manager modules from the PowerShell Gallery
     Install-Module AzureRM
@@ -61,7 +61,7 @@ Installieren Sie Azure PowerShell 1.0 oder höher mit den folgenden Befehlen au
 
 - Mit **Install-Module AzureRM** wird ein Bootstrappingmodul für die AzureRM-Module installiert. Dieses Modul enthält Cmdlets, die das Aktualisieren, Deinstallieren und Importieren der AzureRM-Module auf sichere und einheitliche Weise unterstützen. Das AzureRM-Modul enthält eine Liste mit Modulen und dem Versionsbereich (Min. und Max.), der erforderlich ist, um sicherzustellen, dass für die Hauptversion von AzureRM keine beeinträchtigenden Änderungen eingeführt werden. Weitere Informationen zu semantischen Versionsverwaltung finden Sie unter [semver.org](http://semver.org). Dies bedeutet, dass Sie Ihre Cmdlets mit einer speziellen Version von AzureRM erstellen und sicher sein können, dass für alle Module, die über den Bootstrapper installiert werden, keine beeinträchtigenden Änderungen eingeführt werden.
 - **Install-AzureRM** installiert alle Module, die im Bootstrappingmodul deklariert werden.
-- **Install-Module Azure** installiert das Azure-Modul. Dieses Modul ist das Service Management-Modul aus Azure PowerShell 0.9.x. Hierfür sollten keine größeren Änderungen gelten, und es sollte gegenüber der vorherigen Version des Azure-Moduls austauschbar sein.
+- **Install-Module Azure** installiert das Azure-Modul. Dieses Modul ist das Service Management-Modul aus Azure PowerShell 0.9.x. Hierfür sollten keine größeren Änderungen gelten, und es sollte gegenüber der vorherigen Version des Azure-Moduls austauschbar sein.
 - **Import-AzureRM** importiert alle Module, die in der Liste des AzureRM-Moduls mit den Modulen und Versionen enthalten sind. So wird sichergestellt, dass die geladenen Azure PowerShell-Module innerhalb des Versionsbereichs liegen, der für das AzureRM-Modul erforderlich ist.
 - **Import-Module Azure** importiert das Azure Service Management-Modul. Hinweis: Das Azure-Modul und die AzureRM-Module werden in Ihre PowerShell-Sitzung geladen und können zusammen verwendet werden.
 
@@ -69,9 +69,9 @@ Installieren Sie Azure PowerShell 1.0 oder höher mit den folgenden Befehlen au
 ## Schritt 2: Starten
 Sie können die Cmdlets über die Windows PowerShell-Standardkonsole oder über die PowerShell Integrated Scripting Environment (ISE) ausführen. Die Methode, die Sie zum Öffnen einer der beiden Konsolen verwenden, ist abhängig von der ausgeführten Windows-Version:
 
-- Auf einem Computer, auf dem mindestens Windows 8 oder Windows Server 2012 ausgeführt wird, können Sie die integrierte Suche verwenden. Beginnen Sie auf dem Bildschirm **Start** mit der Eingabe von „power“. Daraufhin wird eine entsprechende Liste von Anwendungen zurückgegeben, die auch Windows PowerShell umfasst. Klicken Sie auf eine dieser beiden Anwendungen, um die Konsole zu öffnen. (Klicken Sie mit der rechten Maustaste auf das Symbol, um die Anwendung an den **Startbildschirm** anzuheften.)
+- Auf einem Computer, auf dem mindestens Windows 8 oder Windows Server 2012 ausgeführt wird, können Sie die integrierte Suche verwenden. Beginnen Sie auf dem Bildschirm **Start** mit der Eingabe von „power“. Daraufhin wird eine entsprechende Liste von Anwendungen zurückgegeben, die auch Windows PowerShell umfasst. Klicken Sie auf eine dieser beiden Anwendungen, um die Konsole zu öffnen. (Klicken Sie mit der rechten Maustaste auf das Symbol, um die Anwendung an den **Startbildschirm** anzuheften.)
 
-- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das **Startmenü**. Klicken Sie im **Startmenü** auf **Alle Programme**, **Zubehör** und den **Windows PowerShell**-Ordner, und klicken Sie dann auf **Windows PowerShell**.
+- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das **Startmenü**. Klicken Sie im **Startmenü** auf **Alle Programme**, **Zubehör** und den **Windows PowerShell**-Ordner, und klicken Sie dann auf **Windows PowerShell**.
 
 Sie können auch die **Windows PowerShell ISE** ausführen, um Menüelemente und Tastenkombinationen zum Durchführen vieler Aufgaben zu nutzen, die Sie auch in der Windows PowerShell-Konsole durchführen würden. Geben Sie zum Verwenden der ISE in der Windows PowerShell-Konsole „Cmd.exe“ ein, oder geben Sie im Feld **Ausführen** den Befehl **powershell\_ise.exe** ein.
 
@@ -133,17 +133,17 @@ Melden Sie sich mit Ihrem Geschäfts- oder Schulkonto an:
 
 > [AZURE.NOTE] Diese nicht-interaktive Anmeldemethode funktioniert nur mit einem Geschäfts- oder Schulkonto. Bei einem Geschäfts- oder Schulkonto handelt es sich um ein von Ihrem Unternehmen bzw. Ihrer Bildungseinrichtung verwaltetes Benutzerkonto, das in der entsprechenden Azure Active Directory-Instanz definiert ist. Wenn Sie derzeit kein Geschäfts- oder Schulkonto besitzen und sich mit einem Microsoft-Konto bei Ihrem Azure-Abonnement anmelden, können Sie mit den folgenden Schritten auf einfache Weise ein solches Konto erstellen.
 
-> 1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an, und klicken Sie auf **Active Directory**.
+> 1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an, und klicken Sie auf **Active Directory**.
 
 > 2. Wenn kein Verzeichnis vorhanden ist, wählen Sie **Create your directory** (Verzeichnis erstellen) aus, und stellen Sie die geforderten Informationen bereit.
 
-> 3. Wählen Sie Ihr Verzeichnis aus, und fügen Sie einen neuen Benutzer hinzu. Mit diesem neuen Benutzer können Sie sich über ein Geschäfts- oder Schulkonto anmelden. Während der Erstellung des Benutzers erhalten Sie sowohl eine E-Mail-Adresse für den Benutzer als auch ein temporäres Kennwort. Speichern Sie diese Informationen, da sie in Schritt 5 weiter unten benötigt werden.
+> 3. Wählen Sie Ihr Verzeichnis aus, und fügen Sie einen neuen Benutzer hinzu. Mit diesem neuen Benutzer können Sie sich über ein Geschäfts- oder Schulkonto anmelden. Während der Erstellung des Benutzers erhalten Sie sowohl eine E-Mail-Adresse für den Benutzer als auch ein temporäres Kennwort. Speichern Sie diese Informationen, da sie in Schritt 5 weiter unten benötigt werden.
 
-> 4. Wählen Sie im Verwaltungsportal **Einstellungen** und anschließend **Administratoren** aus. Wählen Sie **Hinzufügen** aus, und fügen Sie den neuen Benutzer als Co-Administrator hinzu. Dies ermöglicht es dem Geschäfts- oder Schulkonto, Ihr Azure-Abonnement zu verwalten.
+> 4. Wählen Sie im klassischen Azure-Portal **Einstellungen** und anschließend **Administratoren**. Wählen Sie **Hinzufügen** aus, und fügen Sie den neuen Benutzer als Co-Administrator hinzu. Dies ermöglicht es dem Geschäfts- oder Schulkonto, Ihr Azure-Abonnement zu verwalten.
 
-> 5. Melden Sie sich schließlich vom Azure-Portal ab und dann unter Verwendung des Geschäfts- oder Schulkontos erneut beim Azure-Portal an. Wenn Sie sich zu diesem Zeitpunkt zum ersten Mal mit diesem Konto anmelden, werden Sie aufgefordert, das Kennwort zu ändern.
+> 5. Melden Sie sich schließlich vom klassischen Azure-Portal ab und dann unter Verwendung des Geschäfts- oder Schulkontos erneut an. Wenn Sie sich zu diesem Zeitpunkt zum ersten Mal mit diesem Konto anmelden, werden Sie aufgefordert, das Kennwort zu ändern.
 
-> Weitere Informationen zur Anmeldung bei Microsoft Azure mit einem Geschäfts- oder Schulkonto finden Sie unter [Anmelden bei Microsoft Azure als Organisation](sign-up-organization.md).
+> Weitere Informationen zur Anmeldung bei Microsoft Azure mit einem Geschäfts- oder Schulkonto finden Sie unter [Anmelden bei Microsoft Azure als Organisation](/active-directory/sign-up-organization.md).
 
 > Weitere Informationen zur Authentifizierungs- und Abonnemontverwaltung in Azure finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](http://go.microsoft.com/fwlink/?LinkId=324796).
 
@@ -178,4 +178,4 @@ Referenzinformationen zu den Cmdlets finden Sie unter [Azure-Cmdlet-Referenz](ht
 
 Beispielskripts und Anleitungen zur Unterstützung bei der Erstellung von Skripts zum Verwalten von Azure finden Sie im [Script Center](http://go.microsoft.com/fwlink/p/?LinkId=321940).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,7 +1,7 @@
 <properties
    pageTitle="Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure | Microsoft Azure"
    description="Hier werden allgemeine Probleme beim Bereitstellen von Ressourcen beschrieben, die mithilfe des Ressourcen-Manager-Bereitstellungsmodells erstellt wurden. Zudem wird erläutert, wie Sie diese Probleme ermitteln und beheben."
-   services="azure-resource-manager,virtual-machines"
+   services="azure-resource-manager,virtual-machines-linux"
    documentationCenter=""
    tags="top-support-issue"
    authors="tfitzmac"
@@ -293,9 +293,9 @@ Wenn Sie versuchen, eine Vorlage bereitzustellen, die mehr als vier Kerne in der
 
 In diesen Fällen sollten Sie zum Portal navigieren und ein Supportproblem einreichen, um Ihr Kontingent für die Region, in der Sie diese bereitstellen möchten, zu erhöhen.
 
-> [AZURE.NOTE] Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. 
+> [AZURE.NOTE] Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern.
 <!-- -->
-Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird:
+Um genaue Angaben zu Kernen zu machen, können Sie z.B. die Regionen angeben, für die Sie den entsprechenden Kontingentbetrag anfordern sollten, indem Sie den folgenden Befehl verwenden, der für die JSON-Analyse an **jq** weitergereicht wird.
 <!-- -->
         azure provider show Microsoft.Compute --json | jq '.resourceTypes[] | select(.name == "virtualMachines") | { name,apiVersions, locations}'
         {
@@ -415,7 +415,7 @@ Sie können jedoch Azure daran hindern, einen erfolgreichen Bereitstellungsstatu
 Wenn Sie mit Ihren Azure-Ressourcen über die Befehlszeile arbeiten, können Sie Tools verwenden, Sie bei Ihrer Arbeit unterstützen. Vorlagen für Azure-Ressourcengruppen sind JSON-Dokumente, und die Azure-Ressourcen-Manager-API akzeptiert JSON und gibt JSON zurück. JSON-Analysetools zählen also zu den ersten Instrumenten, die die Navigation durch Informationen zu Ihren Ressourcen sowie die Gestaltung von und die Interaktion mit Vorlagen und Parameterdateien von Vorlagen erleichtern.
 
 ### Mac-, Linux- und Windows-Tools
-Wenn Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden, sind Sie wahrscheinlich mit den Standarddownloadtools wie **[curl](http://curl.haxx.se/)** und **[wget](https://www.gnu.org/software/wget/)** oder **[Resty](https://github.com/beders/Resty)** sowie mit JSON-Dienstprogrammen wie **[jq](http://stedolan.github.io/jq/download/)**, **[jsawk](https://github.com/micha/jsawk)** und Sprachbibliotheken vertraut, die JSON verarbeiten können. (Viele dieser Tools verfügen auch über Ports für Windows – beispielsweise [wget](http://gnuwin32.sourceforge.net/packages/wget.htm). Tatsächlich gibt es verschiedene Arten, um Linux und andere Open Source-Tools auch unter Windows auszuführen.)
+Wenn Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden, sind Sie wahrscheinlich mit den Standarddownloadtools wie **[curl](http://curl.haxx.se/)** und **[wget](https://www.gnu.org/software/wget/)** oder **[Resty](https://github.com/beders/Resty)** sowie mit JSON-Dienstprogrammen wie **[jq](http://stedolan.github.io/jq/download/)**, **[jsawk](https://github.com/micha/jsawk)** und Sprachbibliotheken vertraut, die JSON verarbeiten können. (Viele dieser Tools verfügen auch über Ports für Windows – beispielsweise [wget](http://gnuwin32.sourceforge.net/packages/wget.htm). Tatsächlich gibt es verschiedene Arten, um Linux und andere Open Source-Tools auch unter Windows auszuführen.)
 
 Dieses Thema beinhaltet einige Azure Befehlszeilenschnittstelle-Befehle, die Sie mit **jq** verwenden können, um auf effizientere Weise genau die Informationen zu erhalten, die Sie wünschen. Sie sollten für ein besseres Verständnis Ihres Azure-Ressourceneinsatzes ein Ihnen vertrautes Toolset wählen.
 
@@ -435,4 +435,4 @@ Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Resso
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

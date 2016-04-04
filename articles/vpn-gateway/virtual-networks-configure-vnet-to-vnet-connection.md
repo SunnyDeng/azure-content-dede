@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/08/2016"
+   ms.date="03/15/2016"
    ms.author="cherylmc"/>
 
 
@@ -24,13 +24,15 @@
 - [PowerShell – Azure Resource Manager](vpn-gateway-vnet-vnet-rm-ps.md)
 
 
-Dieser Artikel führt Sie durch die Schritte zum Erstellen und Verbinden virtueller Netzwerke mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet). Inden unten beschriebenen Schritte kommt eine Kombination aus klassischem Azure-Portal und PowerShell zum Einsatz. Wenn Sie virtuelle Netzwerke, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, verbinden möchten, finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung für virtuelle Netzwerke im selben Abonnement mit dem Azure Resource Manager und PowerShell](vpn-gateway-vnet-vnet-rm-ps.md) weitere Informationen.
+Dieser Artikel führt Sie durch die Schritte zum Erstellen und Verbinden virtueller Netzwerke mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet). In den unten beschriebenen Schritten wird das klassische Azure-Portal zusammen mit PowerShell verwendet.
 
 **Informationen zu Azure-Bereitstellungsmodellen**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]Sie können ein mit dem klassischen Bereitstellungsmodell erstelltes VNET auch mit einem VNET verbinden, das mit dem Ressourcen-Manager-Modell erstellt wurde. Weitere Informationen erhalten Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 **Bereitstellungsmodelle und Tools für VNet-zu-VNet**
+
+Eine VNET-zu-VNET-Verbindung kann in beiden Bereitstellungsmodellen und mit unterschiedlichen Tools konfiguriert werden. Weitere Informationen finden Sie in der folgenden Tabelle. Wir aktualisieren diese Tabelle, wenn neue Artikel, neue Bereitstellungsmodelle und weitere Tools für diese Konfiguration verfügbar werden. Wenn ein Artikel verfügbar ist, fügen wir in der Tabelle einen direkten Link dazu ein.
 
 [AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
@@ -220,11 +222,12 @@ Warten Sie, bis die Verbindung initialisiert wird. Nachdem das Gateway initialis
 
 ## Nächste Schritte
 
-Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers](https://azure.microsoft.com/documentation/services/virtual-machines/).
+Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Dokumentation zu Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/).
+
 
 
 [1]: ../hdinsight-hbase-geo-replication-configure-vnets.md
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

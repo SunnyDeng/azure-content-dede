@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="03/03/2016" 
+	ms.date="03/18/2016" 
 	ms.author="jeffstok"/>
 
 #Versionshinweise zu Stream Analytics
@@ -62,7 +62,7 @@ Diese Version enthält die folgenden Updates.
 Titel | Beschreibung
 ---|---
 Öffentliche Vorschau zu Azure IoT Suite | Stream Analytics ist in der öffentlichen Vorschau von Azure IoT Suite enthalten.
-Azure-Vorschauportal, Integration | Stream Analytics ist nicht nur weiterhin im Azure-Verwaltungsportal enthalten, sondern jetzt auch im [Azure-Vorschauportal](https://azure.microsoft.com/overview/preview-portal/) integriert. Beachten Sie, dass im Vorschauportal derzeit nur ein Teil der im Azure-Verwaltungsportal bereitgestellten Stream Analytics-Funktionalität verfügbar ist. Nicht unterstützt werden Funktionen wir das Testen von Abfragen im Browser, das Konfigurieren der Power BI-Ausgabe und das Durchsuchen oder Erstellen neuer Eingabe- und Ausgaberessourcen in Abonnements, auf die Sie zugreifen können.
+Azure-Portal, „Integration“ | Stream Analytics ist nicht nur weiterhin im Azure-Verwaltungsportal enthalten, sondern jetzt auch in das [Azure-Portal](https://azure.microsoft.com/overview/preview-portal/) integriert. Beachten Sie, dass im Vorschauportal derzeit nur ein Teil der im Azure-Verwaltungsportal bereitgestellten Stream Analytics-Funktionalität verfügbar ist. Nicht unterstützt werden Funktionen wir das Testen von Abfragen im Browser, das Konfigurieren der Power BI-Ausgabe und das Durchsuchen oder Erstellen neuer Eingabe- und Ausgaberessourcen in Abonnements, auf die Sie zugreifen können.
 Unterstützung für DocumentDB-Ausgabe | Stream Analytics-Aufträge können jetzt Ausgaben an [DocumentDB](https://azure.microsoft.com/services/documentdb/) senden.
 Unterstützung für IoT Hub-Eingabe | Stream Analytics-Aufträge können jetzt Daten von IoT Hubs erfassen.
 TIMESTAMP BY für heterogene Ereignisse | Wenn ein einzelner Datenstrom mehrere Ereignistypen mit Zeitstempeln in verschiedenen Feldern enthält, können Sie nun [TIMESTAMP BY](http://msdn.microsoft.com/library/mt573293.aspx) mit Ausdrücken verwenden, um für jeden Fall unterschiedliche Zeitstempelfelder anzugeben.
@@ -141,4 +141,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

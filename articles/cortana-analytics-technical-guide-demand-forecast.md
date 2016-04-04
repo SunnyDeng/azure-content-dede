@@ -4,7 +4,7 @@
 	services="cortana-analytics"
 	documentationCenter=""
 	authors="yijichen"
-	manager="ireiter"
+	manager="ilanr9"
 	editor="yijichen"/>
 
 <tags
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/24/2016"
-	ms.author="inqiu;yijichen"/>
+	ms.author="inqiu;yijichen;ilanr9"/>
 
 # Technischer Leitfaden zur Cortana Analytics-Lösungsvorlage für die Prognose des Energiebedarfs
 
@@ -288,4 +288,4 @@ Es stehen zwei Tools zur Verfügung, mit denen Sie die Gesamtkosten zum Ausführ
 
 -   [Microsoft Azure-Kostenschätzungstool (Desktopversion)](http://www.microsoft.com/download/details.aspx?id=43376)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

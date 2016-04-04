@@ -19,7 +19,12 @@
 
 # Replizieren zwischen lokalen virtuellen Hyper-V-Maschinen und Azure (ohne VMM) mit Azure Site Recovery
 
-Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md).
+> [AZURE.SELECTOR]
+- [Klassisches Azure-Portal](site-recovery-hyper-v-site-to-azure.md)
+- [PowerShell – Resource Manager](site-recovery-deploy-with-powershell-resource-manager.md)
+
+
+Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md)
 
 ## Übersicht
 
@@ -59,11 +64,11 @@ Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Server
 - Es wird empfohlen, immer die aktuellen Versionen des Anbieters und des Agents auszuführen Diese sind im Site Recovery-Portal verfügbar.
 - Alle Hyper-V-Server in einem Tresor sollten über die gleichen Versionen des Anbieters und Agents verfügen.
 - Der Anbieter, der auf dem Server ausgeführt wird, stellt die Verbindung mit Site Recovery über das Internet her. Sie können dies ohne Proxy, mit den derzeit auf dem Hyper-V-Server konfigurierten Proxyeinstellungen oder mit benutzerdefinierten Proxyeinstellungen durchführen, die Sie während der Installation des Anbieters konfigurieren. Sie müssen sicherstellen, dass der Proxyserver, den Sie verwenden möchten, Zugriff auf die URLs für die Verbindungsherstellung mit Azure hat:
-	- *.hypervrecoverymanager.windowsazure.com
-	- *.accesscontrol.windows.net
-	- *.backup.windowsazure.com
-	- *.blob.core.windows.net
-	- *.store.core.windows.net
+	- **.hypervrecoverymanager.windowsazure.com
+- **.accesscontrol.windows.net
+- **.backup.windowsazure.com
+- **.blob.core.windows.net
+- **.store.core.windows.net
 	
 - Lassen Sie außerdem die unter [IP-Bereiche des Azure-Rechenzentrums](https://www.microsoft.com/download/details.aspx?id=41653) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
@@ -232,7 +237,7 @@ Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 		![Konfigurieren der Eigenschaften virtueller Computer](./media/site-recovery-hyper-v-site-to-azure/VMProperties.png)
 	- Konfigurieren weiterer Einstellungen für den virtuellen Computer unter *Geschützte Elemente** > **Schutzgruppen** > *<Name der Schutzgruppe>* > **Virtuelle Computer** > *<Name des virtuellen Computers>* > **Konfigurieren**. Hierzu zählen:
 
-		- **Netzwerkadapter**: Die Anzahl der Netzwerkadapter hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. Überprüfen Sie in den [Spezifikationen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md#size-tables), wie viele Netzwerkschnittstellenkarten von virtuellen Maschinen einer bestimmten Größe unterstützt werden.
+		- **Netzwerkadapter**: Die Anzahl der Netzwerkadapter hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. Überprüfen Sie in den [Spezifikationen für virtuelle Computer](../virtual-machines/virtual-machines-linux-sizes.md#size-tables), wie viele Netzwerkschnittstellenkarten von virtuellen Maschinen einer bestimmten Größe unterstützt werden.
 
 
 			Wenn Sie die Größe für einen virtuellen Computer ändern und die Einstellungen speichern, wird die Anzahl der Netzwerkadapter beim nächsten Öffnen der Seite **Konfigurieren** geändert. Die Anzahl der Netzwerkadapter der virtuellen Zielcomputer entspricht mindestens der Anzahl der Netzwerkadapter auf virtuellen Quellcomputern und der maximalen Anzahl der Netzwerkadapter, die nach der unterstützten Größe des virtuellen Computers ausgewählt werden. Hierzu eine kurze Erläuterung:
@@ -298,4 +303,4 @@ Führen Sie das Testfailover wie folgt aus:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!----HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

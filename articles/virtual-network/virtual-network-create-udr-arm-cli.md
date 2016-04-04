@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 #Erstellen benutzerdefinierter Routen (UDR) in der Azure-Befehlszeilenschnittstelle
@@ -52,7 +52,10 @@ Führen Sie zum Erstellen der Routingtabelle und der für das Front-End-Subnetz 
 		data:    Provisioning state              : Succeeded
 		info:    network route-table create command OK
 
-	Parameter: - **-g (oder --resource-group)**. Name der Ressourcengruppe, in der die NSG erstellt wird. In diesem Szenario *TestRG*. - **-l (oder --location)**. Azure-Region, in der die neue NSG erstellt wird. In diesem Szenario *westus*. - **-n (oder --name)**. Name der neuen NSG. In diesem Szenario *NSG-FrontEnd*.
+	Parameter:
+	- **-g (oder --resource-group)**. Name der Ressourcengruppe, in der die NSG erstellt wird. In diesem Szenario *TestRG*.
+	- **-l (oder --location)**. Azure-Region, in der die neue NSG erstellt wird. In diesem Szenario *westus*.
+	- **-n (oder --name)**. Name der neuen NSG. In diesem Szenario *NSG-FrontEnd*.
 
 4. Führen Sie den Befehl **`azure network route-table route create`** aus, um in der oben erstellten Routingtabelle eine Route zu erstellen, die sämtlichen an das Back-End-Subnetz (192.168.2.0/24) gerichteten Datenverkehr an den virtuellen Computer **FW1** (192.168.0.4) umleitet.
 
@@ -73,7 +76,11 @@ Führen Sie zum Erstellen der Routingtabelle und der für das Front-End-Subnetz 
 		data:    Address prefix                  : 192.168.2.0/24
 		info:    network route-table route create command OK
 
-	Parameter: - **-r (oder --route-table-name)**. Der Name der Routingtabelle, der die Route hinzugefügt wird. In diesem Szenario *UDR-FrontEnd*. - **-a (oder --address-prefix)**. Das Adresspräfix für das Zielsubnetz der Pakete. In diesem Szenario *192.168.2.0/24*. - **-y (oder --next-hop-type)**. Der Typ des Zielobjekts für den Datenverkehr. Mögliche Werte sind *VirtualAppliance*, *VirtualNetworkGateway*, *VNETLocal*, *Internet* oder *None*. - **-p (oder --next-hop-ip-address**). Die IP-Adresse für den nächsten Hop. In diesem Szenario *192.168.0.4*.
+	Parameter:
+	- **-r (oder --route-table-name)**. Der Name der Routingtabelle, der die Route hinzugefügt wird. In diesem Szenario *UDR-FrontEnd*.
+	- **-a (oder --address-prefix)**. Das Adresspräfix für das Zielsubnetz der Pakete. In diesem Szenario *192.168.2.0/24*.
+	- **-y (oder --next-hop-type)**. Der Typ des Zielobjekts für den Datenverkehr. Mögliche Werte sind *VirtualAppliance*, *VirtualNetworkGateway*, *VNETLocal*, *Internet* oder *None*.
+	- **-p (oder --next-hop-ip-address**). Die IP-Adresse für den nächsten Hop. In diesem Szenario *192.168.0.4*.
 
 5. Führen Sie den Befehl **`azure network vnet subnet set`** aus, um die oben erstellte Routingtabelle dem Subnetz **FrontEnd** zuzuordnen.
 
@@ -103,7 +110,8 @@ Führen Sie zum Erstellen der Routingtabelle und der für das Front-End-Subnetz 
 		data:    
 		info:    network vnet subnet set command OK
 
-	Parameter: - **-t (oder --vnet-name)**. Name des VNet mit dem Subnetz. In diesem Szenario *TestVNet*.
+	Parameter:
+	- **-e (oder --vnet-name**. Name des VNets mit dem Subnetz. In diesem Szenario *TestVNet*.
  
 ## Erstellen der benutzerdefinierten Route für das Back-End-Subnetz
 Führen Sie zum Erstellen der Routingtabelle und der für das Back-End-Subnetz erforderlichen Route anhand des oben beschriebenen Szenarios die folgenden Schritte aus.
@@ -191,4 +199,4 @@ Führen Sie zum Aktivieren der IP-Weiterleitung in der von **FW1** verwendeten N
 
 	- **-f (oder --enable-ip-forwarding)**. *true* oder *false*.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,139 +1,141 @@
 
 
 
-This article addresses some common questions users ask about Azure virtual machines created with the classic deployment model.
+Dieser Artikel enthält die am häufigsten gestellten Fragen zu virtuellen Azure-Computern, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
 
-## What can I run on an Azure VM?
+## Was kann ich auf einem virtuellen Azure-Computer ausführen?
 
-All subscribers can run server software on an Azure virtual machine. You can run recent versions of Windows Server, as well as a variety of Linux distributions. For support details, see:
+Alle Abonnenten können Serversoftware auf einem virtuellen Azure-Computer ausführen. Sie können die neuesten Versionen von Windows Server sowie eine Vielzahl von Linux-Distributionen ausführen. Supportinformationen finden Sie unter:
 
-• For Windows VMs -- [Microsoft server software support for Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=393550)
+• Virtuelle Windows-Computer: [Unterstützung für Microsoft-Serversoftware für virtuelle Azure-Computer](http://go.microsoft.com/fwlink/p/?LinkId=393550)
 
-• For Linux VMs -- [Linux on Azure-Endorsed Distributions](http://go.microsoft.com/fwlink/p/?LinkId=393551)
+• Virtuelle Linux-Computer: [Linux auf von Azure unterstützten Verteilungen](http://go.microsoft.com/fwlink/p/?LinkId=393551)
 
-For Windows client images, certain versions of Windows 7 and Windows 8.1 are available to MSDN Azure benefit subscribers and MSDN Dev and Test Pay-As-You-Go subscribers, for development and test tasks. For details, including instructions and limitations, see [Windows Client images for MSDN subscribers](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
+Für Windows-Client-Images stehen bestimmte Versionen von Windows 7 und Windows 8.1 für MSDN-Abonnenten von Azure-Vorteilen und Abonnenten von MSDN-Entwicklung und Tests mit nutzungsbasierter Zahlung für Entwicklungs- und Testzwecke bereit. Weitere Informationen, u. a. Anleitungen und Einschränkungen, finden Sie unter [Windows-Client-Images für MSDN-Abonnenten](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
 
-## How much storage can I use with a virtual machine?
+## Wie viel Speicher kann mit einem virtuellen Computer verwendet werden?
 
-Each data disk can be up to 1 TB. The number of data disks you can use depends on the size of the virtual machine. For details, see [Sizes for Virtual Machines](virtual-machines-linux-sizes.md).
+Jeder Datenträger kann bis zu 1 TB groß sein. Die Anzahl der Datenträger, die Sie verwenden können, hängt von der Größe des virtuellen Computers ab. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-linux-sizes.md).
 
-An Azure storage account provides storage for the operating system disk and any data disks. Each disk is a .vhd file stored as a page blob. For pricing details, see [Storage Pricing Details](http://go.microsoft.com/fwlink/p/?LinkId=396819).
+Azure-Speicherkonten bieten Speicher für Betriebssystem-Datenträger und Datenträger für Daten. Bei jedem Datenträger handelt es sich um eine VHD-Datei, die als Seiten-Blob gespeichert wird. Ausführliche Informationen zu Preisen finden Sie unter [Speicherpreisübersicht](http://go.microsoft.com/fwlink/p/?LinkId=396819).
 
-## Which virtual hard disk types can I use?
+## Welche Arten von virtuellen Festplatten kann ich verwenden?
 
-Azure only supports fixed, VHD-format virtual hard disks. If you have a VHDXyou want to use in Azure, you need to first convert it by using Hyper-V Manager or the [convert-VHD](http://go.microsoft.com/fwlink/p/?LinkId=393656) cmdlet. After you do that, use [Add-AzureVHD](https://msdn.microsoft.com/library/azure/dn495173.aspx) cmdlet (in Service Management mode) to upload the VHD to a storage account in Azure so you can use it with virtual machines. 
+Azure unterstützt nur virtuelle Festplatten mit fester Größe im VHD-Format. Wenn Sie einen Datenträger im VHDX-Format in Azure verwenden möchten, konvertieren Sie ihn mit Hyper-V-Manager oder dem Cmdlet [convert-VHD](http://go.microsoft.com/fwlink/p/?LinkId=393656). Laden Sie danach mit dem Cmdlet [Add-AzureVHD](https://msdn.microsoft.com/library/azure/dn495173.aspx) (im Dienstverwaltungsmodus) die virtuelle Festplatte in ein Speicherkonto in Azure hoch, damit Sie sie mit virtuellen Computern verwenden können.
 
-- For Linux instructions, see [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System](virtual-machines-linux-classic-create-upload-vhd.md).
+- Anweisungen für Linux finden Sie unter [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](virtual-machines-linux-classic-create-upload-vhd.md).
 
-- For Windows instructions, see [Create and upload a Windows Server VHD to Azure](virtual-machines-windows-classic-createupload-vhd.md).
+- Anweisungen für Windows finden Sie unter [Erstellen und Hochladen einer Windows Server-VHD nach Azure](virtual-machines-windows-classic-createupload-vhd.md).
 
-## Are these virtual machines the same as Hyper-V virtual machines?
+## Sind diese virtuellen Computer mit Hyper-V-Computern identisch?
 
-In many ways they’re similar to “Generation 1” Hyper-V VMs, but they’re not exactly the same. Both types provide virtualized hardware, and the VHD-format virtual hard disks are compatible. This means you can move them between Hyper-V and Azure. Three key differences that sometimes surprise Hyper-V users are:
+In vielerlei Hinsicht ähneln sie Hyper-V-Computer der "ersten Generation", sie sind jedoch nicht genau gleich. Beide Typen stellen virtualisierte Hardware bereit, und die virtuellen Festplatten im VHD-Format sind kompatibel. Dies bedeutet, dass Sie sie zwischen Hyper-V und Azure verschieben können. Drei wichtige Unterschiede, die für Benutzer von Hyper-V manchmal überraschend sind:
 
-- Azure doesn’t provide console access to a virtual machine. There is no way to access a VM until it is done booting.
-- Azure VMs in most [sizes](virtual-machines-linux-sizes.md) have only 1 virtual network adapter, which means that they also can have only 1 external IP address. (The A8 and A9 sizes use a second network adapter for application communication between instances in limited scenarios.)
-- Azure VMs don't support Generation 2 Hyper-V VM features. For details about these features, see [Virtual Machine Specifications for Hyper-V](http://technet.microsoft.com/library/dn592184.aspx) and [Generation 2 Virtual Machine Overview] (https://technet.microsoft.com/library/dn282285.aspx).
+- Azure stellt keinen Konsolenzugriff auf einem virtuellen Computer bereit. Es gibt keine Möglichkeit, auf einen virtuellen Computer zuzugreifen, bevor dieser vollständig gestartet wurde.
+- Azure-VMs der meisten [Größen](virtual-machines-linux-sizes.md) verfügen nur über einen virtuellen Netzwerkadapter. Dies bedeutet, dass sie auch nur eine externe IP-Adresse besitzen können. (Bei den Größen A8 und A9 wird ein zweiter Netzwerkadapter für die Anwendungskommunikation zwischen Instanzen in begrenzten Szenarien verwendet.)
+- Virtuelle Azure-Computer unterstützen keine Hyper-V-VM-Funktionen der zweiten Generation. Ausführliche Informationen zu diesen Funktionen finden Sie unter [Spezifikationen des virtuellen Computers für Hyper-V in Windows Server 2012 R2](http://technet.microsoft.com/library/dn592184.aspx) und [Virtuelle Computer der Generation 2 (Übersicht)](https://technet.microsoft.com/library/dn282285.aspx).
 
-## Can these virtual machines use my existing, on-premises networking infrastructure?
+## Können diese virtuellen Computer meine vorhandene lokale Netzwerkinfrastruktur verwenden?
 
-For virtual machines created in the classic deployment model, you can use Azure Virtual Network to extend your existing infrastructure. The approach is like setting up a branch office. You can provision and manage virtual private networks (VPNs) in Azure as well as securely connect them to on-premises IT infrastructure. For details, see [Virtual Network Overview](../virtual-network/virtual-networks-overview.md).
+Für virtuelle Computer, die im klassischen Bereitstellungsmodus erstellt wurden, können Sie Azure Virtual Network verwenden, um Ihre vorhandene Infrastruktur zu erweitern. Dieser Ansatz entspricht dem Einrichten einer Filiale. Sie können in Azure virtuelle private Netzwerke (VPN) bereitstellen und verwalten und diese sicher mit Ihrer IT-Infrastruktur vor Ort verbinden. Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md).
 
-You’ll need to specify the network that you want the virtual machine to belong to when you create the virtual machine. You can’t join an existing virtual machine to a virtual network. However, you can work around this by detaching the virtual hard disk (VHD) from the existing virtual machine, and then use it to create a new virtual machine with the networking configuration you want.
+Sie müssen beim Erstellen des virtuellen Computers das Netzwerk angeben, zu dem der virtuelle Computer gehören soll. Sie können einen vorhandenen virtuellen Computer nicht einem virtuellen Netzwerk hinzufügen. Allerdings können Sie dieses Problem umgehen, indem Sie die virtuelle Festplatte (VHD) vom vorhandenen virtuellen Computer trennen und dann hiermit einen neuen virtuellen Computer mit der gewünschten Netzwerkkonfiguration erstellen.
 
-## How can I access  my virtual machine?
+## Wie kann ich auf meinen virtuellen Computer zugreifen?
 
-You need to establish a remote connection to log on to the virtual machine, using Remote Desktop Connection for a Windows VM or a Secure Shell (SSH) for a Linux VM. For instructions, see:
+Sie müssen über Remotedesktopverbindung (virtuelle Windows-Computer) oder SSH (Secure Shell, für virtuelle Linux-Computer) eine Remoteverbindung herstellen, um sich bei dem virtuellen Computer anzumelden. Anweisungen dazu finden Sie unter:
 
-- [How to Log on to a Virtual Machine Running Windows Server](virtual-machines-windows-classic-connect-logon.md). A maximum of 2 concurrent connections are supported, unless the server is configured as a Remote Desktop Services session host.  
-- [How to Log on to a Virtual Machine Running Linux](virtual-machines-linux-classic-log-on.md). By default, SSH allows a maximum of 10 concurrent connections. You can increase this number by editing the configuration file.
+- [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](virtual-machines-windows-classic-connect-logon.md) Es werden maximal zwei gleichzeitige Verbindungen unterstützt, es sei denn, der Server wurde als Host für eine Remotedesktopdienste-Sitzung konfiguriert.  
+- [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-classic-log-on.md) SSH erlaubt standardmäßig maximal 10 gleichzeitige Verbindungen. Sie können diese Anzahl erhöhen, indem Sie die Konfigurationsdatei bearbeiten.
 
 
-If you’re having problems with Remote Desktop or SSH, install and use the [VMAccess](virtual-machines-windows-extensions-features.md) extension to help fix the problem. 
+Wenn bei Remotedesktop oder SSH Probleme auftreten, installieren und verwenden Sie die [VMAccess](virtual-machines-windows-extensions-features.md)-Erweiterung, um das Problem zu beheben.
 
-For Windows VMs, additional options include:
+Zusätzliche Optionen für virtuelle Windows-Computer:
 
-- In the Azure classic portal, find the VM, then click **Reset Remote Access** from the Command bar.
-- Review [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](virtual-machines-windows-troubleshoot-rdp-connection.md).
-- Use Windows PowerShell Remoting to connect to the VM, or create additional endpoints for other resources to connect to the VM. For details, see [How to Set Up Endpoints to a Virtual Machine](virtual-machines-windows-classic-setup-endpoints.md).
+- Suchen Sie den virtuellen Computer im klassischen Azure-Portal, und klicken Sie auf der Befehlsleiste auf **Remotezugriff zurücksetzen**.
+- Lesen Sie [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-windows-troubleshoot-rdp-connection.md).
+- Verwenden Sie Windows PowerShell-Remoting zum Herstellen der Verbindung mit dem virtuellen Computer, oder erstellen Sie zusätzliche Endpunkte, damit andere Ressourcen die Verbindung mit dem virtuellen Computer herstellen können. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-windows-classic-setup-endpoints.md).
 
-If you’re familiar with Hyper-V, you might be looking for a tool similar to VMConnect. Azure doesn’t offer a similar tool because console access to a virtual machine isn’t supported.
+Wenn Sie mit Hyper-V vertraut sind, suchen Sie möglicherweise nach einem ähnlichen Tool wie VMConnect. Azure bietet kein ähnliches Tool, da der Konsolenzugriff auf einem virtuellen Computer nicht unterstützt wird.
 
-## Can I use the temporary disk (the D: drive for Windows or /dev/sdb1 for Linux) to store data?
+## Kann ich den temporären Datenträger (Laufwerk D: bei Windows oder/dev/sdb1 unter Linux) zum Speichern von Daten verwenden?
 
-You shouldn’t use the temporary disk (the D: drive by default for Windows or /dev/sdb1 for Linux) to store data. They are only temporary storage, so you would risk losing data that can’t be recovered. This can occur when the virtual machine moves to a different host. Resizing a virtual machine, updating the host, or a hardware failure on the host are some of the reasons a virtual machine might move.
+Sie sollten den temporären Datenträger (standardmäßig Laufwerk D: bei Windows oder/dev/sdb1 unter Linux) nicht zum Speichern von Daten verwenden. Diese bieten nur einen temporären Speicher, sodass das Risiko eines Verlusts von Daten besteht, die nicht wiederhergestellt werden können. Dies kann vorkommen, wenn ein virtueller Computer auf einen anderen Host verschoben wird. Gründe für das Verschieben eines virtuellen Computers sind eine Änderung Größe des virtuellen Computers, Aktualisieren des Hosts oder ein Hardwarefehler auf dem Host.
 
-## How can I change the drive letter of the temporary disk?
+## Wie kann ich den Laufwerkbuchstaben des temporären Datenträgers ändern?
 
-On a Windows virtual machine, you can change the drive letter by moving the page file and reassigning drive letters, but you’ll need to make sure you do the steps in a specific order. For instructions, see [Change the drive letter of the Windows temporary disk](virtual-machines-windows-classic-change-drive-letter.md).
+Sie können auf einem virtuellen Windows-Computer den Laufwerkbuchstaben ändern, indem Sie die Auslagerungsdatei verschieben und die Laufwerkbuchstaben neu zuweisen. Sie müssen dabei jedoch sicherstellen, dass Sie die Schritte in einer bestimmten Reihenfolge ausführen. Anweisungen finden Sie unter [Ändern des Datenträgerbuchstabens des temporären Windows-Datenträgers](virtual-machines-windows-classic-change-drive-letter.md).
 
-## How can I upgrade the guest operating system?
+## Wie kann ich ein Upgrade des Gastbetriebssystems ausführen?
 
-The term upgrade generally means moving to a more recent release of your operating system, while staying on the same hardware. For Azure VMs, the process for moving to a more recent release differs for Linux and Windows:
+Der Begriff des Upgrades bezeichnet im Allgemeinen die Umstellung auf eine neuere Version des Betriebssystems, wobei die Hardware beibehalten wird. Für virtuelle Azure-Computer unterscheidet sich der Prozess für die Umstellung auf eine neuere Version für Linux und Windows:
 
-- For Linux VMs, use the package management tools and procedures appropriate for the distribution.
-- For a Windows virtual machine, you need to migrate the server using something like the Windows Server Migration Tools. Don’t attempt to upgrade the guest OS while it resides on Azure. It isn’t supported because of the risk of losing access to the virtual machine. If problems occur during the upgrade, you could lose the ability to start a Remote Desktop session and wouldn’t be able to troubleshoot the problems. 
+- Verwenden Sie für virtuelle Linux-Computer die für die Distribution geeigneten Paketverwaltungstools und -verfahren.
+- Für einen virtuellen Windows-Computer müssen Sie den Server z. B. mit den Windows Server-Migrationstools migrieren. Versuchen Sie nicht, das Gastbetriebssystem zu aktualisieren, während es sich in Azure befindet. Dies wird nicht unterstützt, da der Zugriff auf den virtuellen Computer verloren gehen kann. Wenn während des Upgrades Probleme auftreten, können Sie möglicherweise keine Remotedesktopsitzung mehr starten und die Probleme nicht beheben. 
 
-For general details about the tools and processes for migrating a Windows Server, see [Migrate Roles and Features to Windows Server](http://go.microsoft.com/fwlink/p/?LinkId=396940). 
+Allgemeine Informationen zu Tools und Verfahren zum Migrieren von Windows Server finden Sie unter [Migrieren von Rollen und Features zu Windows Server](http://go.microsoft.com/fwlink/p/?LinkId=396940).
 
 
 
-## What's the default user name and password on the virtual machine?
+## Wie lauten der Standardbenutzername und das Kennwort auf dem virtuellen Computer?
 
-The images provided by Azure don’t have a pre-configured user name and password. When you create virtual machine using one of those images, you’ll need to provide a user name and password, which you’ll use to log on to the virtual machine.
+Die von Azure bereitgestellten Images verfügen nicht über einen vorkonfigurierten Benutzernamen und ein Kennwort. Wenn Sie die virtuellen Computer mit einem dieser Images erstellen, müssen Sie einen Benutzernamen und ein Kennwort angeben, mit denen Sie sich beim virtuellen Computer anmelden.
 
-If you’ve forgotten the user name or password and you’ve installed the VM Agent, you can install and use the [VMAccess](virtual-machines-windows-extensions-features.md) extension to fix the problem.
+Wenn Sie den Benutzernamen oder das Kennwort vergessen und den VM-Agent installiert haben, können Sie die [VMAccess](virtual-machines-windows-extensions-features.md)-Erweiterung installieren und verwenden, um das Problem zu beheben.
 
-Additional details:
+Weitere Details:
 
 
-- For the Linux images, if you use the Azure classic portal, ‘azureuser’ is given as a default user name, but you can change this by using ‘From Gallery’ instead of ‘Quick Create’ as the way to create the virtual machine. Using ‘From Gallery’ also lets you decide whether to use a password, an SSH key, or both to log you in. The user account is a non-privileged user that has ‘sudo’ access to run privileged commands. The ‘root’ account is disabled.
+- Wenn Sie bei Linux-Images das klassische Azure-Portal verwenden, ist „azureuser“ als Standardbenutzername angegeben. Sie können diesen Namen aber ändern, indem Sie den virtuellen Computer mit der Option „Aus Katalog“ und nicht mit „Schnellerfassung“ erstellen. Mit "Aus Katalog" können Sie auch entscheiden, ob Sie ein Kennwort und/oder einen SSH-Schlüssel für die Anmeldung verwenden möchten. Bei dem Benutzerkonto handelt es sich um einen Benutzer ohne Berechtigungen mit sudo-Zugriff zum Ausführen von privilegierten Befehlen. Das root-Konto ist deaktiviert.
 
 
-- For Windows images, you’ll need to provide a user name and password when you create the VM. The account is added to the Administrators group.
+- Für Windows-Images müssen Sie einen Benutzernamen und ein Kennwort bereitstellen, wenn Sie den virtuellen Computer erstellen. Das Konto wird der Gruppe "Administratoren" hinzugefügt.
 
-## Can Azure run anti-virus on my virtual machines?
+## Kann Azure Antivirenprogramme auf meinen virtuellen Computern ausführen?
 
-Azure offers several options for anti-virus solutions, but it’s up to you to manage it. For example, you might need a separate subscription for antimalware software, and you’ll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protection, or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
+Azure bietet verschiedene Optionen für Virenschutz-Softwarelösungen. Ihre Verwaltung ist jedoch Ihnen überlassen. Sie benötigen z. B. möglicherweise ein separates Abonnement für Antischadsoftware und müssen entscheiden, wann Scans ausgeführt und Updates installiert werden. Sie können die Unterstützung für Antiviruslösungen mit einer VM-Erweiterung für Microsoft Antimalware, Symantec Endpoint Protection oder TrendMicro Deep Security Agent beim Erstellen eines virtuellen Windows-Computers oder zu einem späteren Zeitpunkt hinzufügen. Für die Erweiterungen für Symantec und TrendMicro können Sie ein kostenloses Testabonnement für einen begrenzten Zeitraum oder ein vorhandenes Enterprise-Abonnement verwenden. Microsoft Antimalware ist kostenlos. Einzelheiten dazu finden Sie hier:
 
-- [How to install and configure Symantec Endpoint Protection on an Azure VM](http://go.microsoft.com/fwlink/p/?LinkId=404207)
-- [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](http://go.microsoft.com/fwlink/p/?LinkId=404206)
-- [Deploying Antimalware Solutions on Azure Virtual Machines](https://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
+- [Gewusst wie: Installieren und Konfigurieren von Symantec Endpoint Protection auf einem virtuellen Azure-Computer](http://go.microsoft.com/fwlink/p/?LinkId=404207)
+- [Installieren und Konfigurieren von Trend Micro Deep Security als Dienst auf einem virtuellen Azure-Computer](http://go.microsoft.com/fwlink/p/?LinkId=404206)
+- [Deploying Antimalware Solutions on Azure Virtual Machines (Bereitstellen von Antischadsoftware-Lösungen auf virtuellen Azure-Computern, in englischer Sprache)](https://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
 
-## What are my options for backup and recovery?
+## Welche Optionen sind für Sicherung und Wiederherstellung verfügbar?
 
-Azure Backup is available as a preview in certain regions. For details, see [Back up Azure virtual machines](backup-azure-vms.md). Other solutions are available from certified partners. To find out what’s currently available, search the Azure Marketplace.
+Die Azure-Sicherung ist als Vorschau in bestimmten Regionen verfügbar. Weitere Informationen finden Sie unter [Sichern eines virtuellen Azure-Computers](backup-azure-vms.md). Andere Lösungen sind von zertifizierten Partnern erhältlich. Aktuelle Angebote finden Sie auf dem Azure Marketplace.
 
-An additional option is to use the snapshot capabilities of blob storage. To do this, you’ll need to shut down the VM before any operation that relies on a blob snapshot. This saves pending data writes and puts the file system in a consistent state.
+Eine weitere Option ist die Verwendung der Momentaufnahmefunktionen von Blob-Speichern. Hierfür müssen Sie den virtuellen Computer vor jedem Vorgang herunterfahren, für den eine Blob-Momentaufnahme benötigt wird. Dadurch werden ausstehende Schreibvorgänge gespeichert und das Dateisystem in einen konsistenten Zustand versetzt.
 
-## How does Azure charge for my VM?
+## Wie berechnet Azure die Gebühren für meinen virtuellen Computer?
 
-Azure charges an hourly price based on the VM’s size and operating system. For partial hours, Azure charges only for the minutes of use. If you create the VM with a VM image containing certain pre-installed software, additional hourly software charges may apply. Azure charges separately for storage for the VM’s operating system and data disks. Temporary disk storage is free.
+Bei Azure wird ein Stundenpreis basierend auf Größe und Betriebssystem des virtuellen Computers berechnet. Angefangene Stunden werden nur nach den Minuten der Nutzung abgerechnet. Wenn Sie den virtuellen Computer mithilfe eines VM-Images mit einer bestimmten vorinstallierte Software erstellen, können zusätzliche Softwarekosten auf Stundenbasis anfallen. Azure berechnet die Gebühren für den Speicher für das Betriebssystem des virtuellen Computers und für die Datenträger getrennt. Temporärer Speicherplatz ist kostenlos.
 
-You are charged when the VM status is Running or Stopped, but you are not charged when the VM status is Stopped (De-allocated). To put a VM in the Stopped (De-allocated) state, do one of the following:
+Es fallen Gebühren an, wenn der Status des virtuellen Computers "Wird ausgeführt" oder "Angehalten" lautet. Beim Status "Beendet (Zuordnung aufgehoben)" werden keine Gebühren berechnet. Um einen virtuellen Computer in den Status "Beendet (Zuordnung aufgehoben)"zu versetzen, führen Sie einen der folgenden Schritte aus:
 
-- Shut down or delete the VM from the Azure classic portal.
-- Use the Stop-AzureVM cmdlet, available in the Azure PowerShell module.
-- Use the Shutdown Role operation in the Service Management REST API and specify StoppedDeallocated for the PostShutdownAction element.
+- Fahren Sie den virtuellen Computer über das klassische Azure-Portal herunter, oder löschen Sie ihn darüber.
+- Verwenden Sie das Stop-AzureVM-Cmdlet, das im Azure PowerShell-Modul verfügbar ist.
+- Verwenden Sie den Vorgang "Shutdown Role" in der Dienstverwaltungs-REST-API, und geben Sie "StoppedDeallocated" für das PostShutdownAction-Element an.
 
-For more details, see [Virtual Machines Pricing](https://azure.microsoft.com/pricing/details/virtual-machines/).
+Ausführliche Informationen finden Sie unter [Virtuelle Computer – Preise](https://azure.microsoft.com/pricing/details/virtual-machines/).
 
-## Will Azure reboot my VM for maintenance?
+## Startet Azure meinen virtuellen Computer zur Wartung neu?
 
-Azure sometimes restarts your VM as part of regular, planned maintenance updates in the Azure datacenters. 
+Azure startet Ihren virtuellen Computer in einigen Fällen im Rahmen regelmäßiger, geplanter Wartungsupdates in den Azure-Rechenzentren neu.
 
-Unplanned maintenance events can occur when Azure detects a serious hardware problem that affects your VM. For unplanned events, Azure automatically migrates the VM to a healthy host and restarts the VM.
+Nicht geplante Wartungsereignisse können eintreten, wenn Azure ein schwerwiegendes Hardwareproblem erkennt, das Ihren virtuellen Computer betrifft. Bei ungeplanten Ereignissen migriert Azure den virtuellen Computer automatisch auf einen fehlerfreien Host und startet den virtuellen Computer neu.
 
-For any standalone VM (meaning the VM isn’t part of an availability set), Azure notifies the subscription’s Service Administrator by email at least one week before planned maintenance because the VMs could be restarted during the update. Applications running on the VMs could experience downtime.
+Für alle eigenständigen virtuellen Computer (d. h. virtuelle Computer, die nicht Teil einer Verfügbarkeitsgruppe sind) benachrichtigt Azure den Dienstadministrator des Abonnements per E-Mail mindestens eine Woche vor der geplanten Wartung, da die virtuellen Computer während des Updates möglicherweise neu gestartet werden. Bei Anwendungen, die auf den virtuellen Computer ausgeführt werden, kann es zu Ausfällen kommen.
 
-You also can use the Azure classic portal or Azure PowerShell to view the reboot logs when the reboot occurred due to planned maintenance. For details, see [Viewing VM Reboot Logs](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/).
+Sie können auch über das klassische Azure-Portal oder Azure PowerShell die Neustartprotokolle anzeigen, wenn der Neustart aufgrund einer geplanten Wartung durchgeführt wurde. Weitere Informationen finden Sie unter [Anzeigen von Neustartprotokollen für virtuelle Computer](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/).
 
-To provide redundancy, put two or more similarly configured VMs in the same availability set. This helps ensure at least one VM is available during planned or unplanned maintenance. Azure guarantees certain levels of VM availability for this configuration. For details, see [Manage the availability of virtual machines](virtual-machines-windows-manage-availability.md).
+Um Redundanz bereitzustellen, platzieren Sie zwei oder mehr ähnlich konfigurierte virtuelle Computer in der gleichen Verfügbarkeitsgruppe. Dadurch wird sichergestellt, dass während geplanter oder ungeplanter Wartungen mindestens ein virtueller Computer verfügbar ist. Azure garantiert für diese Konfiguration bestimmte Verfügbarkeitsstufen für virtuelle Computer. Weitere Details finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer](virtual-machines-windows-manage-availability.md).
 
-## Additional resources
+## Zusätzliche Ressourcen
 
-[About Azure Virtual Machines](virtual-machines-linux-about.md)
+[Über virtuelle Azure-Computer](virtual-machines-linux-about.md)
 
-[Different Ways to Create a Linux Virtual Machine](virtual-machines-linux-creation-choices.md)
+[Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-creation-choices.md)
 
-[Different Ways to Create a Windows Virtual Machine](virtual-machines-windows-creation-choices.md)
+[Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-creation-choices.md)
+
+<!---HONumber=AcomDC_0323_2016-->

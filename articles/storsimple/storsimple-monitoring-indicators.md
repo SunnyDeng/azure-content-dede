@@ -3,7 +3,7 @@
     description="Beschreibt die LEDs und akustischen Alarme, die zum Überwachen des Status Ihres StorSimple-Geräts verwendet werden."
     services="storsimple"
     documentationCenter="NA"
-    authors="SharS"
+    authors="alkohli"
     manager="carolz"
     editor="" />
  <tags 
@@ -12,8 +12,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="01/05/2016"
-    ms.author="v-sharos" />
+    ms.date="03/21/2016"
+    ms.author="alkohli" />
 
 # Verwalten von Geräten mithilfe von StorSimple-Überwachungsindikatoren   
 
@@ -37,7 +37,7 @@ Das vordere *Bedienfeld* oder *OPS-Bedienfeld* zeigt sämtliche Statusangaben zu
  
 Das vordere Bedienfeld enthält die folgenden Indikatoren:
 
-1. Netzschalter
+1. Taste zum Stummschalten
 2. Betriebsanzeige-LED (grün/rot-bernsteinfarben)
 3. Modulfehleranzeige-LED (EIN rot-bernsteinfarben/AUS)
 4. Logische Fehleranzeige-LED (EIN rot-bernsteinfarben/AUS)
@@ -144,10 +144,11 @@ Anhand der folgenden Tabelle können Sie ermitteln, ob das Controllermodul ordnu
 | Fehler-LED (bernsteinfarben) | Zeigt einen Fehler im Controller an.        
 | OK-LED (grün) | Gleichmäßig leuchtendes Grün zeigt an, dass der Controller ordnungsgemäß funktioniert. Blinkendes Grün zeigt einen VPD-Konfigurationsfehler des Controllers an. |
 | SAS-Aktivitäts-LEDs (grün) | Gleichmäßiges leuchtendes Grün zeigt eine Verbindung ohne aktuelle Aktivität an. Blinkendes Grün zeigt an, dass für die Verbindung eine laufende Aktivität besteht. |
-| Ethernetstatus-LEDs | Rechte Seite = Verbindung/Netzwerkaktivität: (gleichmäßig grün) Verbindung aktiv, (blinkend grün) Netzwerkaktivität. Linke Seite = Netzwerkgeschwindigkeit: 1000 MBit/s (gelb), 100 MBit/s (grün) und 10 MBit/s (AUS). Je nach Komponentenmodell kann diese LED auch blinken, wenn die Netzwerkschnittstelle nicht aktiviert ist. |
+| Ethernetstatus-LEDs | Rechte Seite = Verbindung/Netzwerkaktivität: (gleichmäßig grün) Verbindung aktiv, (blinkend grün) Netzwerkaktivität. Linke Seite = Netzwerkgeschwindigkeit: 1000 MBit/s (gelb), 100 MBit/s (grün) und 10 MBit/s (AUS). Je nach Komponentenmodell kann diese LED auch blinken, wenn die Netzwerkschnittstelle nicht aktiviert ist. |
 | POST-LEDs | Gibt den Startstatus an, wenn der Controller eingeschaltet wird. Wenn das StorSimple-Gerät nicht startet, kann der Microsoft-Support anhand dieser LED ermitteln, an welchem Punkt des Startvorgangs der Fehler aufgetreten ist. |
 
->[AZURE.IMPORTANT]Wenn die Fehler-LED leuchtet, besteht ein Problem mit dem Controllermodul, das eventuell durch einen Neustart des Controllers behoben werden kann. Wenden Sie sich an den Microsoft-Support, wenn dieses Problem nicht durch einen Neustart des Controllers behoben werden kann.
+>[AZURE.IMPORTANT] 
+Wenn die Fehler-LED leuchtet, besteht ein Problem mit dem Controllermodul, das eventuell durch einen Neustart des Controllers behoben werden kann. Wenden Sie sich an den Microsoft-Support, wenn dieses Problem nicht durch einen Neustart des Controllers behoben werden kann.
 
 
 ### Indikator-LEDs für EBOD (EBOD-Gehäuse)  
@@ -162,12 +163,7 @@ Anhand der folgenden Tabelle können Sie ermitteln, ob das EBOD-Controllermodul 
 
 |Status | E/A-Modul OK (grün) | E/A-Modulfehler (bernsteinfarben) | Aktivität am Hostport (grün) |
 |-------|----------------------|-------------------------------|----------------------------|
-| Controllermodul OK | EIN | AUS | - |
-| Controllermodulfehler | AUS | EIN | - |
-| Keine externe Hostportverbindung | - | - | AUS |
-| Externe Hostportverbindung – keine Aktivität | - | - | EIN |
-| Externe Hostportverbindung – Aktivität | - | - | Blinken |
-| Metadatenfehler des Controllermoduls | Blinken | - | - |
+| Controllermodul OK | EIN | AUS | - | | Controllermodulfehler | AUS | EIN | - | | Keine externe Hostportverbindung | - | - | AUS | | Externe Hostportverbindung – keine Aktivität | - | - | EIN | | Externe Hostportverbindung – Aktivität | - | - | Blinken | | Metadatenfehler des Controllermoduls | Blinken | - | - |
 
 ## Indikator-LEDs des Datenträgerlaufwerks am primären und am EBOD-Gehäuse
 
@@ -214,7 +210,7 @@ Die verschiedenen Alarmzustände werden in der folgenden Tabelle beschrieben.
 | S3 | Stummgeschalteter Modus: lautlos | Keine |
 | S4 | Kritischer Fehlermodus: Daueralarm | Nicht verfügbar: Stummschaltung nicht aktiv |
 
-> [AZURE.NOTE]
+> [AZURE.NOTE] 
 
 >  - Wenn Sie im Alarmzustand S1 die Stummschalttaste nicht innerhalb von zwei Minuten drücken, erfolgt automatisch ein Übergang in den Zustand S2 oder S3.  
 >  - Die Alarmzustände S1 bis S4 kehren zu S0 zurück, sobald die Fehlerbedingung behoben wurde.  
@@ -261,4 +257,4 @@ Weitere Informationen zu [StorSimple-Hardwarekomponenten und ihrem Status](stors
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0323_2016-->

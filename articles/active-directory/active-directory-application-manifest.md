@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/18/2015"
+   ms.date="03/16/2016"
    ms.author="dkershaw;bryanla"/>
 
 # Grundlegendes zum Azure Active Directory-Anwendungsmanifest
@@ -22,7 +22,7 @@ Anwendungen, die in Azure Active Directory (AD) integriert werden, müssen bei e
 
 ## Aktualisieren der Identitätskonfiguration für eine Anwendung
 
-Es gibt verschiedene Optionen zum Aktualisieren der Eigenschaften für die Identitätskonfiguration einer Anwendung, die sich im Hinblick auf Funktionen und Komplexität unterscheiden. Es stehen u. a. folgende Optionen zur Verfügung:
+Es gibt verschiedene Optionen zum Aktualisieren der Eigenschaften für die Identitätskonfiguration einer Anwendung, die sich im Hinblick auf Funktionen und Komplexität unterscheiden. Es stehen u. a. folgende Optionen zur Verfügung:
 
 - Die **Webbenutzeroberfläche im klassischen [Azure-Portal][AZURE-CLASSIC-PORTAL]** ermöglicht es Ihnen, die gängigsten Eigenschaften einer Anwendung zu aktualisieren. Dies ist die schnellste und am wenigsten fehleranfällige Möglichkeit zum Aktualisieren der Anwendungseigenschaften, sie bietet jedoch im Gegensatz zu den zwei weiteren Methoden keinen vollständigen Zugriff auf alle Eigenschaften.
 - Für einige erweiterte Szenarien, in denen Sie Eigenschaften aktualisieren müssen, die nicht im klassischen Azure-Portal verfügbar gemacht werden, können Sie das **Anwendungsmanifest** ändern. Dies ist der Schwerpunkt des vorliegenden Artikels, ausführliche Informationen erhalten Sie ab dem nächsten Abschnitt.
@@ -37,7 +37,7 @@ Um deshalb das Format und die Eigenschaften des Anwendungsmanifests verstehen zu
 - Deklarieren von Anwendungsrollen (appRoles), die von Ihrer App verfügbar gemacht werden. Die appRoles-Eigenschaft der Anwendungsentität ist eine Auflistung vom Typ [AppRole][APPLICATION-ENTITY-APP-ROLE]. Ein Implementierungsbeispiel finden Sie unter [Roles based access control in cloud applications using Azure AD][RBAC-CLOUD-APPS-AZUREAD] (in englischer Sprache).
 - Deklarieren Sie bekannte Clientanwendungen (knownClientApplications), mit deren Hilfe Sie die Zustimmung der angegebenen Clientanwendungen logisch an die Ressourcen-/Web-API binden können.
 - Fordern Sie bei Azure AD die Ausgabe eines Anspruchs für die Gruppenmitgliedschaften des angemeldeten Benutzers an (groupMembershipClaims). HINWEIS: Durch eine zusätzliche Konfiguration kann ein Anspruch für die Verzeichnisrollenmitgliedschaften des Benutzers ausgegeben werden. Ein Implementierungsbeispiel finden Sie im Artikel [Authorization in Cloud Applications using AD Groups][AAD-GROUPS-FOR-AUTHORIZATION] (in englischer Sprache).
-- Ermöglichen Sie für Ihre Anwendung die Unterstützung von impliziten OAuth 2.0-Code Grant-Datenflüssen (oauth2AllowImplicitFlow). Diese Art von Code Grant-Datenflüssen wird mit eingebetteten JavaScript-Webseiten oder Single-Page-Anwendungen (SPA) verwendet.
+- Ermöglichen Sie für Ihre Anwendung die Unterstützung von impliziten OAuth 2.0-Code Grant-Datenflüssen (oauth2AllowImplicitFlow). Diese Art von Code Grant-Datenflüssen wird mit eingebetteten JavaScript-Webseiten oder Single-Page-Anwendungen (SPA) verwendet.
 - Aktivieren Sie die Verwendung von X509-Zertifikaten als geheimer Schlüssel (keyCredentials). Beispiele für die Implementierung finden Sie in den Artikeln [Builddienst und Daemon-Apps in Office 365][O365-SERVICE-DAEMON-APPS] und [Entwicklerhandbuch für die Authentifizierung mit Azure-Ressourcen-Manager-API][DEV-GUIDE-TO-AUTH-WITH-ARM].
 
 Das Anwendungsmanifest bietet außerdem eine gute Möglichkeit, den Status Ihrer Anwendungsregistrierung nachzuverfolgen. Da dieser im JSON-Format verfügbar ist, kann die Dateidarstellung in Ihrer Quellcodeverwaltung geprüft werden, gemeinsam mit dem Quellcode der Anwendung.
@@ -104,7 +104,7 @@ Nachdem das Manifest gespeichert wurde, können Sie einer registrierten Clientan
 
 1. Navigieren Sie zuerst zur Seite „Konfigurieren“ der Clientanwendung, der Sie den Zugriff auf die neue API hinzufügen möchten, und klicken Sie auf die Schaltfläche „Anwendung hinzufügen“.
 2. Anschließend wird die Liste mit den registrierten Ressourcenanwendungen (APIs) des Mandanten angezeigt. Klicken Sie auf das Pluszeichen neben dem Namen der Ressourcenanwendung, um sie auszuwählen.  
-3. Klicken Sie anschließend unten rechts auf das Häkchen. 
+3. Klicken Sie anschließend unten rechts auf das Häkchen.
 4. Wenn Sie zurück zum Abschnitt „Anwendung hinzufügen“ auf der Konfigurationsseite Ihres Clients wechseln, ist die neue Ressourcenanwendung in der Liste aufgeführt. Wenn Sie rechts von dieser Zeile mit der Maus auf den Abschnitt „Delegierte Berechtigungen“ zeigen, wird eine Dropdownliste angezeigt. Klicken Sie auf die Liste, und wählen Sie dann die neue Berechtigung aus, um sie der angeforderten Liste mit den Berechtigungen des Clients hinzuzufügen. Hinweis: Diese neue Berechtigung wird in der Identitätskonfiguration der Clientanwendung in der Auflistungseigenschaft „RequiredResourceAccess“ gespeichert.
 
 ![Berechtigungen für andere Anwendungen][PERMS-TO-OTHER-APPS]
@@ -145,4 +145,4 @@ Verwenden Sie den unten angezeigten DISQUS-Kommentarabschnitt, um uns Feedback z
 [O365-SERVICE-DAEMON-APPS]: https://msdn.microsoft.com/office/office365/howto/building-service-apps-in-office-365
 [RBAC-CLOUD-APPS-AZUREAD]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0323_2016-->

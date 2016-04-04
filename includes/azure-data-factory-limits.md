@@ -27,6 +27,6 @@ Timeoutwert für Wiederholungsversuche | 1 Sekunde | 1 Sekunde
 
 ### Limits für Webdienstaufrufe
 
-Der Azure-Ressourcen-Manager weist Limits für API-Aufrufe auf. Sie können API-Aufrufe mit einer Rate innerhalb der [API-Limits des Azure-Ressourcen-Managers](../articles/azure-subscription-service-limits/#resource-group-limits) ausführen.
+Der Azure-Ressourcen-Manager weist Limits für API-Aufrufe auf. Sie können API-Aufrufe mit einer Rate innerhalb der [API-Limits des Azure-Ressourcen-Managers](../azure-subscription-service-limits/#resource-group-limits) ausführen.
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

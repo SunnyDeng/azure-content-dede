@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 # Traffic Manager-Routingmethoden
@@ -45,7 +45,7 @@ Abbildung 1 zeigt ein Beispiel für die Routingmethode für Failoverdatenverkehr
 
 **Abbildung 1**
 
-Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 1.
+Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 1.
 
 1. Traffic Manager empfängt eine eingehende Anforderung von einem Client über DNS und sucht nach dem Profil.
 2. Das Profil enthält eine sortierte Liste mit Endpunkten. Traffic Manager überprüft, welcher Endpunkt der erste in der Liste ist. Wenn der Endpunkt (basierend auf der aktuellen Endpunktüberwachung) online ist, wird der DNS-Name dieses Endpunkts in der DNS-Antwort an den Client angegeben. Wenn der Endpunkt offline ist, ermittelt Traffic Manager den nächsten Onlineendpunkt in der Liste. In diesem Beispiel ist CS-A offline (nicht verfügbar), CS-B ist jedoch online (verfügbar).
@@ -54,7 +54,7 @@ Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 1.
 
 ## Routingmethode für Round-Robin-Datenverkehr
 
-Ein gängiges Muster für das Datenverkehrsrouting besteht darin, eine Reihe identischer Endpunkte bereitzustellen und Datenverkehr im Roundrobin-Verfahren an die einzelnen Endpunkte zu senden. Die Methode "Roundrobin" teilt den Datenverkehr auf verschiedene Endpunkte auf. Dabei wird ein fehlerfreier Endpunkt nach dem Zufallsprinzip ausgewählt und kein Datenverkehr an Dienste gesendet, die ausgefallen sind. Weitere Informationen finden Sie unter [Traffic Manager-Überwachung](../traffic-manager-monitoring.md).
+Ein gängiges Muster für das Datenverkehrsrouting besteht darin, eine Reihe identischer Endpunkte bereitzustellen und Datenverkehr im Roundrobin-Verfahren an die einzelnen Endpunkte zu senden. Die Methode "Roundrobin" teilt den Datenverkehr auf verschiedene Endpunkte auf. Dabei wird ein fehlerfreier Endpunkt nach dem Zufallsprinzip ausgewählt und kein Datenverkehr an Dienste gesendet, die ausgefallen sind. Weitere Informationen finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
 
 Abbildung 2 zeigt ein Beispiel für die Routingmethode für Roundrobin-Datenverkehr für eine Reihe von Endpunkten.
 
@@ -62,7 +62,7 @@ Abbildung 2 zeigt ein Beispiel für die Routingmethode für Roundrobin-Datenverk
 
 **Abbildung 2**
 
-Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 2.
+Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 2.
 
 1. Traffic Manager empfängt eine eingehende Anforderung von einem Client und sucht nach dem Profil.
 2. Das Profil enthält eine Liste von Endpunkten. Traffic Manager wählt einen zufälligen Endpunkt aus dieser Liste aus. Dabei werden alle Offlineendpunkte (nicht verfügbare Endpunkte), die von der Traffic Manager-Endpunktüberwachung ermittelt wurden, ausgeschlossen. In diesem Beispiel ist dies der Endpunkt CS-B.
@@ -73,7 +73,7 @@ Das Routing von Roundrobin-Datenverkehr unterstützt auch die gewichtete Verteil
 
 ![Gewichtete Routingmethode für Roundrobin](./media/traffic-manager-routing-methods/IC750594.png)
 
-**Abbildung 3**
+**Abbildung 3**
 
 Gewichtetes Routing von Roundrobin-Datenverkehr ermöglicht das Verteilen der Last auf verschiedene Endpunkte basierend auf einem zugewiesenen "Gewichtungswert" jedes Endpunkts. Je höher die Gewichtung ist, desto häufiger wird ein Endpunkt zurückgegeben. In den folgenden Szenarien kann diese Methode sinnvoll sein:
 
@@ -99,9 +99,9 @@ Abbildung 4 zeigt ein Beispiel für die Routingmethode für Leistungsdatenverkeh
 
 ![Traffic Manager-Routingmethode für Leistung](./media/traffic-manager-routing-methods/IC753237.jpg)
 
-**Abbildung 4**
+**Abbildung 4**
 
-Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 4.
+Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 4.
 
 1. Traffic Manager erstellt die Internetlatenztabelle in regelmäßigen Abständen. Die Traffic Manager-Infrastruktur führt Tests aus, um die Roundtripzeiten zwischen verschiedenen Punkten weltweit und den Azure-Datencentern zu bestimmen, in denen Endpunkte gehostet werden.
 2. Traffic Manager empfängt eine eingehende Anforderung von einem Client über den lokalen DNS-Server und sucht nach dem Profil.
@@ -130,4 +130,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 [Hinzufügen eines Endpunkts](traffic-manager-endpoints.md)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

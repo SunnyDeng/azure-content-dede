@@ -44,7 +44,7 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 
 	**Hinweis**: Virtuelle Computer in einer Verfügbarkeitsgruppe werden in verschiedenen Fehlerdomänen bereitgestellt. Die Platzierung mehrerer virtueller Computer in einer Verfügbarkeitsgruppe sorgt dafür, dass Ihre Anwendung auch bei Netzwerkausfällen, bei Ausfällen der lokalen Hardware und während geplanter Ausfallzeiten verfügbar ist.
 
-15.  Prüfen Sie unter **Endpunkte** die neuen Endpunkte, die erstellt werden, um Verbindungen mit dem virtuellen Computer über Remote Desktop oder einen Secure Shell (SSH)-Client zu ermöglichen. Sie können entweder jetzt Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](../articles/virtual-machines/virtual-machines-set-up-endpoints.md).
+15.  Prüfen Sie unter **Endpunkte** die neuen Endpunkte, die erstellt werden, um Verbindungen mit dem virtuellen Computer über Remote Desktop oder einen Secure Shell (SSH)-Client zu ermöglichen. Sie können entweder jetzt Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](../articles/virtual-machines/virtual-machines-windows-classic-setup-endpoints.md).
 
 16.  Entscheiden sie unter **VM Agent**, ob der VM Agent installiert werden soll. Dieser Agent stellt die Umgebung bereit, in der Sie Erweiterungen installieren können, die Ihnen bei der Interaktion mit dem virtuellen Computer helfen können. Nähere Informationen finden Sie unter [Verwalten von Erweiterungen](http://go.microsoft.com/FWLink/p/?LinkID=390493).
 
@@ -55,7 +55,7 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 ##Nächste Schritte##
 Nachdem der virtuelle Computer erstellt wurde, wird er automatisch gestartet. Wenn im Portal der Status "Wird ausgeführt" angezeigt wird, können Sie sich beim virtuellen Computer anmelden. Weitere Anweisungen finden Sie in den folgenden Artikeln:
 
-- [Anmelden bei einem mit Linux betriebenen virtuellen Computer](../articles/virtual-machines/virtual-machines-linux-how-to-log-on.md)
-- [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../articles/virtual-machines/virtual-machines-log-on-windows-server.md)
+- [Anmelden bei einem mit Linux betriebenen virtuellen Computer](../articles/virtual-machines/virtual-machines-linux-classic-log-on.md)
+- [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../articles/virtual-machines/virtual-machines-windows-classic-connect-logon.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

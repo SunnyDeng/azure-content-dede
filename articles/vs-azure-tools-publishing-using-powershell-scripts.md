@@ -37,7 +37,7 @@ Für die Arbeit mit PowerShell in Visual Studio für die Azure-Entwicklung stehe
 
 ## Generieren der Veröffentlichungsskripts
 
-Sie können die Veröffentlichungsskripts für einen virtuellen Computer generieren, der Ihre Website hostet, wenn Sie ein neues Projekt anhand [dieser Anleitungen](/virtual-machines/virtual-machines-dotnet-create-visual-studio-powershell.md) erstellen. Sie können auch [Veröffentlichungsskripts für Web-Apps in Azure App Service generieren](/app-service-web/web-sites-dotnet-get-started.md).
+Sie können die Veröffentlichungsskripts für einen virtuellen Computer generieren, der Ihre Website hostet, wenn Sie ein neues Projekt anhand [dieser Anleitungen](virtual-machines/virtual-machines-windows-classic-web-app-visual-studio.md) erstellen. Sie können auch [Veröffentlichungsskripts für Web-Apps in Azure App Service generieren](/app-service-web/web-sites-dotnet-get-started.md).
 
 ## Von Visual Studio generierte Skripts
 
@@ -351,4 +351,4 @@ Wenn Sie Hilfe zu Funktionen abrufen möchten, können Sie an der Windows PowerS
 
 Weitere Informationen zur PowerShell-Skripterstellung finden Sie unter [Scripting with Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx). Weitere Azure PowerShell-Skripts finden Sie im [Script Center](https://azure.microsoft.com/documentation/scripts/).
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -14,41 +14,44 @@
    	ms.topic="article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="03/09/2016"
+   	ms.date="03/21/2016"
    	ms.author="nitinme"/>
 
 
-#Erstellen von Linux-basierten Clustern in HDInsight mithilfe des Azure-Vorschauportals
+#Erstellen von Linux-basierten Clustern in HDInsight mithilfe des Azure-Portals
 
 [AZURE.INCLUDE [Auswahl](../../includes/hdinsight-selector-create-clusters.md)]
 
-Das Azure-Vorschauportal ist ein webbasiertes Verwaltungstool für Dienste und Ressourcen, die in der Microsoft Azure-Cloud gehostet werden. Verwenden Sie die Informationen in diesem Dokument, um über das Vorschauportal und Ihren Webbrowser einen neuen Linux-basierten HDInsight-Cluster zu erstellen.
+Das Azure-Portal ist ein webbasiertes Verwaltungstool für Dienste und Ressourcen, die in der Microsoft Azure-Cloud gehostet werden. In diesem Artikel erfahren Sie, wie Sie mit dem Portal Linux-basierte HDInsight-Cluster erstellen.
 
 ## Voraussetzungen
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-- __Ein zeitgemäßer Webbrowser__. Das Azure-Vorschauportal verwendet HTML5 und Javascript und funktioniert in älteren Webbrowsern möglicherweise nicht ordnungsgemäß.
+
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- __Ein zeitgemäßer Webbrowser__. Das Azure-Portal verwendet HTML5 und JavaScript und funktioniert in älteren Webbrowsern unter Umständen nicht richtig.
 
 ##Erstellen von Clustern
 
-[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+Das Azure-Portal macht die meisten Clustereigenschaften verfügbar. Mit der Azure ARM-Vorlage können Sie viele Details ausblenden. Weitere Informationen finden Sie unter [Erstellen Linux-basierter Hadoop-Cluster in HDInsight mithilfe von ARM-Vorlagen](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **NEU**, auf **Datenanalyse** und anschließend auf **HDInsight**.
 
-    ![Erstellen eines neuen Clusters im Azure-Vorschauportal](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Vorschauportal")
+    ![Erstellen eines neuen Clusters im Azure-Portal](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Portal")
 
-3. Geben Sie einen **Clusternamen** ein, wählen Sie **Hadoop** als **Clustertyp** aus, und wählen Sie in der Dropdownliste **Clusterbetriebssystem** den Eintrag **Ubuntu** aus. Wenn der Clustername verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
+3. Geben Sie Folgendes ein:
 
-    > [AZURE.NOTE] Wählen Sie zum Bereitstellen von HBase- oder Storm-Clustern in der Dropdownliste **Clustertyp** den entsprechenden Wert aus.
+    - **Clustername**: Dieser Name muss global eindeutig sein.
+    - **Clustertyp**: Wenn Sie nicht sicher sind, welche Angabe hier richtig ist, können Sie **Hadoop** wählen.
+    - **Clusterbetriebssystem**: Wählen Sie **Linux** aus.
+    - **Version**: Verwenden Sie die Standardversion, wenn Sie nicht wissen, was Sie auswählen sollen. Weitere Informationen finden Sie unter [HDInsight-Clusterversionen](hdinsight-component-versioning.md).
 
-    ![Clusternamen und -typ eingeben](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.2.png "Clusternamen und -typ eingeben")
+4. Klicken Sie auf **Abonnement**, um das Azure-Abonnement auszuwählen, das für den Cluster verwendet werden soll.
 
-4. Falls Sie mehrere Abonnements besitzen, klicken Sie auf den Eintrag **Abonnement**, um das Azure-Abonnement für den Cluster auszuwählen.
-
-5. Klicken Sie auf **Ressourcengruppe**, um eine Liste der vorhandenen Ressourcengruppen anzuzeigen, und wählen Sie dann die Gruppe aus, in der der Cluster erstellt werden soll. Alternativ können Sie eine neue Ressourcengruppe erstellen, indem Sie auf **Neu erstellen** klicken und den Namen der neuen Gruppe eingeben. Wenn der neue Gruppenname verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
+5. Klicken Sie auf **Ressourcengruppe**, um eine vorhandene Ressourcengruppe auszuwählen, oder klicken Sie auf **Neu**, um eine neue Ressourcengruppe zu erstellen.
 
 	> [AZURE.NOTE] Dieser Eintrag ist standardmäßig auf eine Ihrer vorhandenen Ressourcengruppen festgelegt (sofern verfügbar).
 
@@ -70,13 +73,15 @@ Das Azure-Vorschauportal ist ein webbasiertes Verwaltungstool für Dienste und R
 
 	- **Auswahlmethode**: Wählen Sie **Aus allen Abonnements** aus, damit Speicherkonten aus all Ihren Abonnements durchsucht werden können. Wählen Sie **Zugriffsschlüssel** aus, wenn Sie den **Speichernamen** und **Zugriffsschlüssel** eines vorhandenen Speicherkontos eingeben möchten.
 
-	- **Speicherkonto auswählen/Neu erstellen**: Klicken Sie auf **Speicherkonto auswählen**, um ein vorhandenes Speicherkonto auszuwählen, das Sie dem Cluster zuordnen möchten. Alternativ können Sie auf **Neu erstellen** klicken, um ein neues Speicherkonto zu erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt.
+	- **Speicherkonto auswählen/Neu**: Klicken Sie auf **Speicherkonto auswählen**, um ein vorhandenes Speicherkonto auszuwählen, das Sie dem Cluster zuordnen möchten. Alternativ hierzu können Sie auf **Neu** klicken, um ein neues Speicherkonto zu erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt.
 
 	- **Standardcontainer auswählen**: Geben Sie den Namen des Standardcontainers für den Cluster ein. Sie können einen beliebigen Namen eingeben, es wird jedoch empfohlen, den Namen des Clusters zu verwenden. So können Sie leichter erkennen, dass es sich um den Container für diesen spezifischen Cluster handelt.
 
 	- **Standort**: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird.
 
 		> [AZURE.IMPORTANT] Durch die Auswahl des Standorts für die Standarddatenquelle wird auch der Standort des HDInsight-Clusters festgelegt. Der Cluster und die Standarddatenquelle müssen sich in der gleichen Region befinden.
+        
+    - **Azure Active Directory-Identität für den Cluster**: Durch die Konfiguration machen Sie den Cluster basierend auf der AAD-Konfiguration für die Azure Data Lake-Speicher zugänglich.
 
 	Klicken Sie auf **Auswählen**, um die Datenquellenkonfiguration zu speichern.
 
@@ -92,9 +97,7 @@ Das Azure-Vorschauportal ist ein webbasiertes Verwaltungstool für Dienste und R
 
 9. Klicken Sie auf **Optionale Konfiguration**, um die Clusterversion auszuwählen und andere optionale Einstellungen zu konfigurieren. Sie können den Cluster z. B. einem **virtuellen Netzwerk** hinzufügen, einen **externen Metastore** zum Speichern von Daten für Hive und Oozie einrichten, einen Cluster mithilfe von Skriptaktionen zum Installieren von benutzerdefinierten Komponenten anpassen oder zusätzliche Speicherkonten für einen Cluster angeben.
 
-	* Klicken Sie auf die Dropdownliste **HDInsight-Version**, und wählen Sie die Version aus, die Sie für den Cluster verwenden möchten. Weitere Informationen finden Sie unter [HDInsight-Clusterversionen](hdinsight-component-versioning.md).
-
-	* **Virtuelles Netzwerk**: Wählen Sie ein virtuelles Azure-Netzwerk und das Subnetz aus, wenn Sie den Cluster in einem virtuellen Netzwerk platzieren möchten.
+	* **Virtuelles Netzwerk**: Wählen Sie ein virtuelles Azure-Netzwerk und das Subnetz aus, wenn Sie den Cluster in einem virtuellen Netzwerk platzieren möchten.  
 
 		![Blatt „Virtuelles Netzwerk“](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.6.png "Details zum virtuellen Netzwerk angeben")
 
@@ -114,11 +117,13 @@ Das Azure-Vorschauportal ist ein webbasiertes Verwaltungstool für Dienste und R
 
 		![Blatt „Skriptaktionen“](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.8.png "Skriptaktion angeben")
 
-	* Klicken Sie auf **Azure-Speicherschlüssel**, um dem Cluster weitere Speicherkonten zuzuordnen. Klicken Sie auf dem Blatt **Azure-Speicherschlüssel** auf **Speicherschlüssel hinzufügen**, und wählen Sie ein vorhandenes Speicherkonto aus, oder erstellen Sie ein neues Konto.
+	* Klicken Sie auf **Verknüpfte Speicherkonten**, um dem Cluster weitere Speicherkonten zuzuordnen. Klicken Sie auf dem Blatt **Azure-Speicherschlüssel** auf **Speicherschlüssel hinzufügen**, und wählen Sie ein vorhandenes Speicherkonto aus, oder erstellen Sie ein neues Konto.
 
 		![Blatt „Zusätzlicher Speicher“](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.9.png "Zusätzliche Speicherkonten angeben")
 
 		Klicken Sie auf **Auswählen**, bis wieder das Blatt **Neues HDInsight-Cluster** angezeigt wird.
+        
+        Zusätzlich zum Blob-Speicherkonto können Sie auch Azure Data Lake-Speicher verknüpfen. Sie können die Konfiguration durchführen, indem Sie AAD über die Datenquelle konfigurieren, für die Sie das Standardspeicherkonto und den Standardcontainer konfiguriert haben.
 
 10. Vergewissern Sie sich auf dem Blatt **Neues HDInsight-Cluster**, dass **An Startmenü anheften** ausgewählt ist, und klicken Sie dann auf **Erstellen**. Der Cluster wird erstellt, und dem Startmenü Ihres Azure-Portals wird eine Kachel für den Cluster hinzugefügt. Das Symbol zeigt an, dass der Cluster bereitgestellt wird. Sobald die Bereitstellung abgeschlossen ist, ändert es sich in das HDInsight-Symbol.
 
@@ -146,7 +151,7 @@ Das Azure-Vorschauportal ist ein webbasiertes Verwaltungstool für Dienste und R
 
 	* **Benutzer** (![Benutzersymbol](./media/hdinsight-hadoop-create-linux-cluster-portal/users.png)): Dient zum Festlegen der Berechtigungen für die _Portalverwaltung_ dieses Clusters für andere Benutzer in Ihrem Azure-Abonnement.
 
-		> [AZURE.IMPORTANT] Die hier vorgenommenen Einstellungen betreffen _nur_ den Zugriff und die Berechtigungen für diesen Cluster im Azure-Vorschauportal und haben keine Auswirkung darauf, wer eine Verbindung mit dem HDInsight-Cluster herstellen oder Aufträge übermitteln kann.
+		> [AZURE.IMPORTANT] Die hier vorgenommenen Einstellungen betreffen _nur_ den Zugriff und die Berechtigungen für diesen Cluster im Azure-Portal und haben keine Auswirkung darauf, wer eine Verbindung mit dem HDInsight-Cluster herstellen oder Aufträge übermitteln kann.
 
 	* **Tags** (![Tagsymbol](./media/hdinsight-hadoop-create-linux-cluster-portal/tags.png)): Mithilfe von Tags können Sie Schlüssel-Wert-Paare festlegen, um eine benutzerdefinierte Taxonomie für Ihre Clouddienste zu definieren. Sie können z. B. einen Schlüssel mit dem Namen __Projekt__ erstellen und dann einen gemeinsamen Wert für alle mit einem bestimmten Projekt verknüpften Dienste verwenden.
 
@@ -188,4 +193,4 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 * [Spark mit Machine Learning: Vorhersage von Lebensmittelkontrollergebnissen mithilfe von Spark in HDInsight](hdinsight-apache-spark-machine-learning-mllib-ipython.md)
 * [Spark-Streaming: Erstellen von Echtzeit-Streaminganwendungen mithilfe von Spark in HDInsight](hdinsight-apache-spark-eventhub-streaming.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

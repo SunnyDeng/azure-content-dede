@@ -25,7 +25,7 @@
 
 Jede Anforderung für den Scheduler-Dienst gibt einen Antwortheader namens **x-ms-request-id** zurück. Dieser Header enthält einen opaken Wert, der die Anforderung eindeutig identifiziert.
 
-Wenn bei einer Anforderung kontinuierlich ein Fehler auftritt, obwohl die Anforderung ordnungsgemäß formuliert ist, können Sie den Fehler unter Angabe dieses Werts an Microsoft melden. Geben Sie in Ihrem Bericht den Wert von „x-ms-request-id“, die ungefähre Anforderungszeit, die ID des Abonnements, den Clouddienst, die Auftragssammlung und/oder den Auftrag sowie die Art des Vorgangs an, den die Anforderung ausführen sollte.
+Wenn bei einer Anforderung kontinuierlich ein Fehler auftritt, obwohl die Anforderung ordnungsgemäß formuliert ist, können Sie den Fehler unter Angabe dieses Werts an Microsoft melden. Geben Sie in Ihrem Bericht den Wert von „x-ms-request-id“, die ungefähre Anforderungszeit, die ID des Abonnements, die Auftragssammlung und/oder den Auftrag sowie die Art des Vorgangs an, den die Anforderung ausgeführt hat.
 
 ## Status- und Fehlercodes für Scheduler
 
@@ -70,4 +70,4 @@ API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, d
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

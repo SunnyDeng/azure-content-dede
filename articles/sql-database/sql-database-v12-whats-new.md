@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/08/2016" 
+	ms.date="03/21/2016" 
 	ms.author="genemi"/>
 
 
@@ -40,7 +40,7 @@ Die neueste Informationen zu Ressourceneinschränkungen für SQL-Datenbank finde
 Ein wichtiges Ziel für SQL-Datenbank V12 war, die Kompatibilität mit Microsoft SQL Server 2014 zu verbessern und die Kompatibilität zu gewährleisten, wenn neue Versionen von SQL Server veröffentlicht werden. Unter anderem ist V12 jetzt mit SQL Server im wichtigen Bereich der Programmierung gleichauf. Beispiel:
 
 
-- [Fensterfunktionen](http://msdn.microsoft.com/library/bb934097.aspx), mit [OVER](http://msdn.microsoft.com/library/ms189461.aspx) 
+- [Fensterfunktionen](http://msdn.microsoft.com/library/ms189798.aspx), mit [OVER](http://msdn.microsoft.com/library/ms189461.aspx) 
 
 - [XML-Indizes](http://msdn.microsoft.com/library/bb934097.aspx) und [selektive XML-Indizes](http://msdn.microsoft.com/library/jj670104.aspx)
 
@@ -166,4 +166,4 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 
 [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

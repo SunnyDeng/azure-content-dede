@@ -1,14 +1,14 @@
-<properties 
+<properties
    pageTitle="Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten (NICs)"
    description="Weitere Informationen zum Erstellen und Konfigurieren von virtuellen Computern mit mehreren Netzwerkkarten"
    services="virtual-network, virtual-machines"
    documentationCenter="na"
    authors="telmosampaio"
    manager="carmonm"
-   editor="tysonn" 
+   editor="tysonn"
    tags="azure-service-management,azure-resource-manager"
 />
-<tags 
+<tags
    ms.service="virtual-network"
    ms.devlang="na"
    ms.topic="article"
@@ -25,23 +25,13 @@ Sie können virtuelle Computer (VMs) in Azure erstellen und allen virtuellen Com
 
 Die obige Abbildung zeigt einen virtuellen Computer mit drei Netzwerkkarten, die jeweils mit einem anderen Subnetz verbunden sind.
 
-## Anforderungen und Einschränkungen
-
-Derzeit gelten für Multi-NIC die folgenden Anforderungen und Einschränkungen:
-
-- Multi-NIC-VMs müssen in virtuellen Azure-Netzwerken (VNets) erstellt werden. Virtuelle Computer, die nicht in ein virtuelles Netzwerk eingebunden sind, werden nicht unterstützt. 
-- Innerhalb eines Clouddiensts (klassische Bereitstellungen) oder einer Ressourcengruppe (Ressourcen-Manager-Bereitstellung) sind nur die folgenden Einstellungen möglich: 
-	- Alle virtuellen Computer in diesem Clouddienst müssen Multi-NIC-fähig sein, oder 
-	- alle virtuellen Computer in diesem Clouddienst müssen jeweils eine einzelne NIC haben. 
-	- Ein virtueller Computer ohne sekundäre Netzwerkschnittstellen kann nicht nachträglich mit einer solchen ausgerüstet werden. Auch können bestehende sekundäre Netzwerkschnittstellen nicht nachträglich entfernt werden.
-
 [AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
- 
-- Die Internet-VIP (klassische Bereitstellungen) wird nur bei der „Standard“-Netzwerkkarte unterstützt. Es gibt nur eine VIP-Adresse, die an die IP-Adresse der Standard-NIC gebunden ist. 
-- Derzeit werden öffentliche IP-Adressen auf Instanzebene (LPIP) (klassische Bereitstellungen) für Multi-NIC-VMs nicht unterstützt. 
-- Die interne Reihenfolge der Netzwerkkarten im virtuellen Computer ist zufällig und kann sich auch zwischen Azure-Infrastrukturaktualisierungen ändern. Die IP-Adressen und die zugehörigen Ethernet-MAC-Adressen ändern sich jedoch nicht. Nehmen wir beispielsweise an, **Eth1** hat die IP-Adresse 10.1.0.100 und die MAC-Adresse 00-0D-3A-B0-39-0D. Nach einer Azure-Infrastrukturaktualisierung und einem Neustart kann Eth1 in **Eth2** geändert worden sein, aber die zugehörige IP-Adresse und die MAC-Adresse bleiben gleich. Wenn der Neustart vom Benutzer initiiert wird, bleibt die NIC-Reihenfolge unverändert. 
-- Die Adressen der einzelnen NICs in den einzelnen virtuellen Computer müssen sich in einem Subnetz befinden, mehrere NICs in einem virtuellen Computer können Adressen zugewiesen werden, die sich im gleichen Subnetz befinden. 
-- Größe des virtuellen Computers bestimmt die Anzahl der Netzwerkkarten, die Sie für einen virtuellen Computer erstellen können. Die folgende Tabelle enthält die Anzahl der Netzwerkkarten für die verschiedenen Größen virtueller Computer: 
+
+- Die Internet-VIP (klassische Bereitstellungen) wird nur bei der „Standard“-Netzwerkkarte unterstützt. Es gibt nur eine VIP-Adresse, die an die IP-Adresse der Standard-NIC gebunden ist.
+- Derzeit werden öffentliche IP-Adressen auf Instanzebene (LPIP) (klassische Bereitstellungen) für Multi-NIC-VMs nicht unterstützt.
+- Die interne Reihenfolge der Netzwerkkarten im virtuellen Computer ist zufällig und kann sich auch zwischen Azure-Infrastrukturaktualisierungen ändern. Die IP-Adressen und die zugehörigen Ethernet-MAC-Adressen ändern sich jedoch nicht. Nehmen wir beispielsweise an, **Eth1** hat die IP-Adresse 10.1.0.100 und die MAC-Adresse 00-0D-3A-B0-39-0D. Nach einer Azure-Infrastrukturaktualisierung und einem Neustart kann Eth1 in **Eth2** geändert worden sein, aber die zugehörige IP-Adresse und die MAC-Adresse bleiben gleich. Wenn der Neustart vom Benutzer initiiert wird, bleibt die NIC-Reihenfolge unverändert.
+- Die Adressen der einzelnen NICs in den einzelnen virtuellen Computer müssen sich in einem Subnetz befinden, mehrere NICs in einem virtuellen Computer können Adressen zugewiesen werden, die sich im gleichen Subnetz befinden.
+- Größe des virtuellen Computers bestimmt die Anzahl der Netzwerkkarten, die Sie für einen virtuellen Computer erstellen können. Die folgende Tabelle enthält die Anzahl der Netzwerkkarten für die verschiedenen Größen virtueller Computer:
 
 |VM-Größe (Standard-SKUs)|NICs (maximal zulässige Anzahl pro VM)|
 |---|---|
@@ -95,8 +85,8 @@ In einer Ressourcen-Manager-Bereitstellung kann jede Netzwerkkarte in einem virt
 
 Wenn ein Subnetz einer NSG zugeordnet ist und eine Netzwerkkarte in diesem Subnetz einzeln einer NSG zugeordnet ist, dann werden die zugehörigen NSG-Regeln in der **Reihenfolge der Flussrichtung** entsprechend der Richtung des Datenverkehrs angewendet, der in die oder aus der Netzwerkkarte übertragen wird:
 
-- ****Eingehender Datenverkehr**, dessen Ziel die fragliche Netzwerkkarte ist, durchläuft zunächst das Subnetz, wobei die NSG-Regeln des Subnetzes angewendet werden, bevor er an die Netzwerkkarte übergeben wird, wodurch die NSG-Regeln der NIC zum Tragen kommen.
-- **Ausgehender Datenverkehr**, dessen Quelle die fragliche Netzwerkkarte ist, durchläuft zunächst die NIC, wobei die NSG-Regeln der NIC angewendet werden, bevor er an das Subnetz übergeben wird, wodurch die NSG-Regeln des Subnetzes zum Tragen kommen. 
+- **Eingehender Datenverkehr**, dessen Ziel die fragliche Netzwerkkarte ist, durchläuft zunächst das Subnetz. Hierbei werden die NSG-Regeln des Subnetzes angewendet, bevor er an die Netzwerkkarte übergeben wird, wodurch die NSG-Regeln der NIC zum Tragen kommen.
+- **Ausgehender Datenverkehr**, dessen Quelle die fragliche Netzwerkkarte ist, durchläuft zunächst die NIC, wobei die NSG-Regeln der NIC angewendet werden, bevor er an das Subnetz übergeben wird, wodurch die NSG-Regeln des Subnetzes zum Tragen kommen.
 
 Hier finden Sie weitere Informationen zu [Netzwerksicherheitsgruppen](virtual-networks-nsg.md) und deren Anwendung auf Grundlage von Zuordnungen zu Subnetzen, virtuellen Computern und Netzwerkkarte.
 
@@ -134,8 +124,8 @@ Um die PowerShell-Befehle in diesem Beispiel ausführen zu können, müssen die 
 
 Führen Sie die folgenden Schritte aus, um einen virtuellen Computer mit mehreren Netzwerkkarten zu erstellen
 
-1. Wählen Sie ein VM-Image aus der Azure-VM-Image-Galerie aus. Beachten Sie, dass sich die Images häufig ändern und nach Region verfügbar sind. Das im folgenden Beispiel angegebene Image kann sich möglicherweise ändern oder nicht in Ihrer Region verfügbar sein. Geben Sie daher unbedingt das Image an, das Sie benötigen. 
-	    
+1. Wählen Sie ein VM-Image aus der Azure-VM-Image-Galerie aus. Beachten Sie, dass sich die Images häufig ändern und nach Region verfügbar sind. Das im folgenden Beispiel angegebene Image kann sich möglicherweise ändern oder nicht in Ihrer Region verfügbar sein. Geben Sie daher unbedingt das Image an, das Sie benötigen.
+
 		$image = Get-AzureVMImage `
 	    	-ImageName "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201410.01-en.us-127GB.vhd"
 
@@ -152,13 +142,13 @@ Führen Sie die folgenden Schritte aus, um einen virtuellen Computer mit mehrere
 1. Fügen Sie der Konfiguration des virtuellen Computers zusätzliche Netzwerkkarten hinzu.
 
 		Add-AzureNetworkInterfaceConfig -Name "Ethernet1" `
-			-SubnetName "Midtier" -StaticVNetIPAddress "10.1.1.111" -VM $vm 
+			-SubnetName "Midtier" -StaticVNetIPAddress "10.1.1.111" -VM $vm
 		Add-AzureNetworkInterfaceConfig -Name "Ethernet2" `
 			-SubnetName "Backend" -StaticVNetIPAddress "10.1.2.222" -VM $vm
 
 1. Geben Sie das Subnetz und die IP-Adresse für die Standard-NIC an.
 
-		Set-AzureSubnet -SubnetNames "Frontend" -VM $vm 
+		Set-AzureSubnet -SubnetNames "Frontend" -VM $vm
 		Set-AzureStaticVNetIP -IPAddress "10.1.0.100" -VM $vm
 
 1. Erstellen Sie den virtuellen Computer in Ihrem virtuellen Netzwerk.
@@ -167,11 +157,20 @@ Führen Sie die folgenden Schritte aus, um einen virtuellen Computer mit mehrere
 
 >[AZURE.NOTE] Das virtuelle Netzwerk, das Sie hier angeben, muss bereits vorhanden sein (wie unter den Voraussetzungen angegeben). Im folgenden Beispiel wird ein virtuelles Netzwerk mit dem Namen **MultiNIC-VNet** angegeben.
 
-## Sekundärer Netzwerkkartenzugriff auf andere Subnetze
+## Einschränkungen
 
-Das aktuelle Modell in Azure sieht vor, dass alle Netzwerkkarten auf einem virtuellen Computer mit einem Standardgateway eingerichtet wurden. Dadurch können die Netzwerkkarten mit IP-Adressen außerhalb ihres Subnetzes kommunizieren. Bei Betriebssystemen, die das schwache Hostroutingmodell verwenden, z. B. Linux, werden Internetverbindungen unterbrochen, wenn eingehender und ausgehender Datenverkehr unterschiedliche Netzwerkkarten verwenden.
+Es gelten die folgenden Einschränkungen, wenn das Multi-NIC-Feature verwendet wird:
 
-Um dieses Problem zu beheben, wird Anfang Juli 2015 ein Update für die Azure-Plattform eingeführt, mit dem das Standardgateway aus den sekundären Netzwerkkarten entfernt wird. Dies hat keine Auswirkungen auf vorhandene virtuelle Computer, solange diese nicht neu gestartet werden. Nach dem Neustart werden die neuen Einstellungen wirksam und der Datenverkehrsfluss für die sekundären Netzwerkkarten werden auf das gleiche Subnetz beschränkt. Wenn die Benutzer die Kommunikation der sekundäre Netzwerkkarten mit Adressen außerhalb ihres Subnetzes zulassen möchten, müssen sie, wie unten beschrieben, der Routingtabelle einen Eintrag hinzufügen, mit dem das Gateway konfiguriert wird.
+- Multi-NIC-VMs müssen in virtuellen Azure-Netzwerken (VNets) erstellt werden. Andere VMs als VNet-VMs können nicht mit Multi-NICs konfiguriert werden.
+- Für alle VMs in einer Verfügbarkeitsgruppe muss entweder der Multi-NIC- oder der Single-NIC-Ansatz verwendet werden. Eine Mischung aus Multi-NIC-VMs und Single-NIC-VMs ist in einer Verfügbarkeitsgruppe nicht möglich. Die gleichen Regeln gelten für VMs in einem Clouddienst.
+- Eine VM mit einer einzelnen NIC (Single-NIC) kann nach ihrer Bereitstellung nicht mit Multi-NICs konfiguriert werden (und umgekehrt). Sie muss gelöscht und neu erstellt werden.
+
+
+## Zugriff sekundärer Netzwerkschnittstellenkarten (NICs) auf andere Subnetze
+
+Standardmäßig werden sekundäre NICs nicht mit einem Standardgateway konfiguriert, sodass der Datenverkehrsfluss auf den sekundären NICs auf die Grenzen desselben Subnetzes beschränkt ist. Wenn Benutzer die Kommunikation der sekundären NICs mit Adressen außerhalb ihres eigenen Subnetzes zulassen möchten, müssen sie, wie unten beschrieben, der Routingtabelle einen Eintrag hinzufügen, mit dem das Gateway konfiguriert wird.
+
+>[AZURE.NOTE] Für VMs, die vor Juli 2015 erstellt wurden, ist unter Umständen ein Standardgateway für alle NICs konfiguriert. Das Standardgateway für sekundäre NICs wird erst entfernt, nachdem diese VMs neu gestartet wurden. Bei Betriebssystemen, die das schwache Hostroutingmodell verwenden, z.B. Linux, werden Internetverbindungen ggf. unterbrochen, wenn für eingehenden und ausgehenden Datenverkehr unterschiedliche NICs verwendet werden.
 
 ### Konfigurieren von virtuellen Windows-Computern
 
@@ -208,7 +207,7 @@ Die IPv4-Routingtabelle für diesen virtuellen Computer sieht wie folgt aus:
 Beachten Sie, dass die Standardroute (0.0.0.0) nur für die primäre Netzwerkkarte verfügbar ist. Sie können nicht auf Ressourcen außerhalb des Subnetzes für die sekundäre Netzwerkkarte zugreifen, wie unten dargestellt:
 
 	C:\Users\Administrator>ping 192.168.1.7 -S 192.165.2.5
-	 
+
 	Pinging 192.168.1.7 from 192.165.2.5 with 32 bytes of data:
 	PING: transmit failed. General failure.
 	PING: transmit failed. General failure.
@@ -237,7 +236,7 @@ Führen Sie die folgenden Schritte aus, um eine Standardroute für die sekundär
 4. Zum Testen der Verbindung führen Sie an der Eingabeaufforderung von der sekundären Netzwerkkarte aus Ping-Befehle für die verschiedenen Subnetze aus, wie im Beispiel unten dargestellt:
 
 		C:\Users\Administrator>ping 192.168.1.7 -S 192.165.2.5
-		 
+
 		Reply from 192.168.1.7: bytes=32 time<1ms TTL=128
 		Reply from 192.168.1.7: bytes=32 time<1ms TTL=128
 		Reply from 192.168.1.7: bytes=32 time=2ms TTL=128
@@ -266,4 +265,4 @@ Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer Ressourcen-Manager-Bereitstellung](virtual-network-deploy-multinic-arm-template.md).
 - Bereitstellen von [MultiNIC-VMs in einem Anwendungsszenario mit 2-Ebenen in einer klassischen Bereitstellung](virtual-network-deploy-multinic-classic-ps.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

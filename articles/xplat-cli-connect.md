@@ -11,7 +11,7 @@
 <tags
 	ms.service="multiple"
 	ms.workload="multiple"
-	ms.tgt_pltfrm="command-line-interface"
+	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="12/29/2015"
@@ -33,7 +33,7 @@ Weitere Informationen zur Authentifizierung und Abonnementverwaltung finden Sie 
 
 Wenn Sie noch kein Azure-Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][free-trial].
 
->[AZURE.NOTE] Bei Verwendung einer älteren Version der Azure-Befehlszeilenschnittstelle als 0.9.10 können Sie den Befehl `azure login` nur mit Geschäfts- oder Schulkontoidentitäten verwenden, Microsoft-Kontoidentitäten werden dagegen nicht unterstützt. Mit der Azure-Befehlszeilenschnittstelle ab Version 0.9.10 können Sie sich jedoch mit dem interaktiven Befehl `azure login` mit jeder Identität bei Ihrem Konto anmelden.
+>[AZURE.NOTE] Bei Verwendung einer älteren Version der Azure-Befehlszeilenschnittstelle als 0.9.10 können Sie den Befehl `azure login` nur mit Geschäfts- oder Schulkontoidentitäten verwenden, Microsoft-Kontoidentitäten werden dagegen nicht unterstützt. Mit der Azure-Befehlszeilenschnittstelle ab Version 0.9.10 können Sie sich jedoch mit dem interaktiven Befehl `azure login` mit jeder Identität bei Ihrem Konto anmelden.
 >
 Befehlszeilenschnittstellen ab Version 0.9.9 unterstützen die mehrstufige Authentifizierung.
 
@@ -65,7 +65,7 @@ Kopieren Sie den oben angegebenen Code, und öffnen Sie einen Browser für http:
 ## Verwenden der nicht interaktiven Anmeldemethode mit einem Geschäfts- oder Schulkonto
 
 
-Die nicht interaktive Anmeldemethode funktioniert nur mit einem Geschäfts- oder Schulkonto (auch *Organisationskonto* genannt). Dieses Konto wird von der Organisation verwaltet und ist im Azure Active Directory der Organisation definiert. Sie können [ein Organisationskonto erstellen](#create-an-organizational-account), wenn Sie noch nicht über eines verfügen, oder Sie können [eine Arbeits- oder Schulidentität über Ihre Microsoft-Kontoidentität erstellen](./virtual-machines/resource-group-create-work-id-from-personal.md). Hierzu müssen Sie entweder einen Benutzernamen oder einen Benutzernamen und ein Kennwort für den Befehl `azure login` angeben, beispielsweise:
+Die nicht interaktive Anmeldemethode funktioniert nur mit einem Geschäfts- oder Schulkonto (auch *Organisationskonto* genannt). Dieses Konto wird von der Organisation verwaltet und ist im Azure Active Directory der Organisation definiert. Sie können [ein Organisationskonto erstellen](#create-an-organizational-account), wenn Sie noch nicht über eines verfügen, oder Sie können [eine Arbeits- oder Schulidentität über Ihre Microsoft-Kontoidentität erstellen](./virtual-machines/virtual-machines-windows-create-aad-work-id.md). Hierzu müssen Sie entweder einen Benutzernamen oder einen Benutzernamen und ein Kennwort für den Befehl `azure login` angeben, beispielsweise:
 
 	azure login -u ahmet@contoso.onmicrosoft.com
 	info:    Executing command login
@@ -156,4 +156,4 @@ Unabhängig davon, ob Sie sich mit einem Geschäfts- oder Schulkonto anmelden od
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: xplat-cli-azure-resource-manager.md
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,7 +1,7 @@
 ## Virtuelles Netzwerk
 Mit virtuellen Netzwerken (VNET) und Subnetzressourcen können Sie eine Sicherheitsbegrenzung für in Azure ausgeführte Workloads definieren. Ein VNet ist durch eine Auflistung von Adressräumen gekennzeichnet, die als CIDR-Blöcke bezeichnet werden.
 
->[AZURE.NOTE]Netzwerkadministratoren sind mit der CIDR-Notation vertraut. Wenn Sie CIDR nicht kennen, [erfahren Sie hier mehr darüber](http://whatismyipaddress.com/cidr).
+>[AZURE.NOTE] Netzwerkadministratoren sind mit der CIDR-Notation vertraut. Wenn Sie CIDR nicht kennen, [erfahren Sie hier mehr darüber](http://whatismyipaddress.com/cidr).
 
 ![VNet mit mehreren Subnetzen](./media/resource-groups-networking/Figure4.png)
 
@@ -72,8 +72,8 @@ Beispiel-VNet im JSON-Format:
 
 ### Zusätzliche Ressourcen
 
-- Weitere Informationen zu [VNet](virtual-networks-overview.md).
+- Weitere Informationen zu [VNet](../articles/virtual-network/virtual-networks-overview.md).
 - Lesen Sie die [REST-API-Referenzdokumentation](https://msdn.microsoft.com/library/azure/mt163650.aspx) für Informationen zu VNets.
 - Lesen Sie die [REST-API-Referenzdokumentation](https://msdn.microsoft.com/library/azure/mt163618.aspx) für Informationen zu Subnetzen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0323_2016-->

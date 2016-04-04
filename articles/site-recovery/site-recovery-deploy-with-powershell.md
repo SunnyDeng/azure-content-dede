@@ -16,8 +16,12 @@
 	ms.date="12/14/2015"
 	ms.author="lauraa"/>
 
-# Replizieren von virtuellen Hyper-V-Computern in VMM-Clouds mithilfe von Azure Site Recovery und PowerShell
+# Replizieren virtueller Hyper-V-Computer in VMM-Clouds in Azure mithilfe von PowerShell – klassisch
 
+> [AZURE.SELECTOR]
+- [Klassisches Azure-Portal](site-recovery-vmm-to-azure.md)
+- [PowerShell – klassisch](site-recovery-deploy-with-powershell.md)
+- [PowerShell – Resource Manager](site-recovery-vmm-to-azure-powershell-resource-manager.md) 
 
 ## Übersicht
 
@@ -27,7 +31,11 @@ In diesem Artikel erfahren Sie, wie Sie PowerShell zur Automatisierung häufiger
 
 Der Artikel Handbuch enthält Informationen zu Voraussetzungen für das Szenario und zeigt, wie Sie einen Site Recovery-Tresor einrichten, den Azure Site Recovery-Anbieter auf dem Quell-VMM-Server installieren, den Server im Tresor registrieren, Azure-Speicherkonten hinzufügen, den Azure Recovery Services Agent auf Hyper-V-Hostservern installieren, Schutzeinstellungen für VMM-Clouds konfigurieren, die auf alle geschützten virtuellen Computer angewendet werden, und den Schutz für diese virtuellen Computer aktivieren. Zum Schluss testen Sie das Failover, um sicherzustellen, dass alles wie erwartet funktioniert.
 
-Sollten beim Einrichten dieses Szenarios Probleme auftreten, besuchen Sie das [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Sollten beim Einrichten dieses Szenarios Probleme auftreten, besuchen Sie das [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+
+
+> [AZURE.NOTE] Azure verfügt über zwei verschiedene Bereitstellungsmodelle für das Erstellen und Verwenden von Ressourcen: [Resource Manager-Modell und klassisches Modell](../resource-manager-deployment-model.md). Dieser Artikel befasst sich mit der Verwendung des klassischen Bereitstellungsmodells.
+
 
 
 ## Vorbereitung
@@ -36,7 +44,7 @@ Stellen Sie sicher, dass diese Voraussetzungen erfüllt werden:
 
 ### Voraussetzungen für Azure
 
-- Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
+- Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
 - Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern. Für das Konto muss Georeplikation aktiviert sein. Es muss sich in der gleichen Region wie der Azure Site Recovery-Tresor befinden und dem gleichen Abonnement zugeordnet sein. [Weitere Informationen zu Azure Storage](../storage/storage-introduction.md)
 - Sie müssen sicherstellen, dass die virtuellen Computer, die Sie schützen möchten, den [Anforderungen an virtuelle Azure-Computer](site-recovery-best-practices.md#virtual-machines) entsprechen.
 
@@ -67,11 +75,11 @@ Wenn Sie eine Netzwerkzuordnung bereitstellen möchten, benötigen Sie Folgendes
 - [Informationen zur Netzwerkzuordnung](site-recovery-network-mapping.md) finden Sie unter:
 
 ###PowerShell-Voraussetzungen
-Stellen Sie sicher, dass Azure PowerShell einsatzbereit ist. Wenn Sie PowerShell bereits verwenden, müssen Sie auf Version 0.8.10 oder höher aktualisieren. Ausführliche Informationen zum Einrichten von PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md). Nach dem Einrichten und Konfigurieren von PowerShell können Sie alle verfügbaren Cmdlets für den Dienst [hier](https://msdn.microsoft.com/library/dn850420.aspx) anzeigen.
+Stellen Sie sicher, dass Azure PowerShell einsatzbereit ist. Wenn Sie PowerShell bereits verwenden, müssen Sie auf Version 0.8.10 oder höher aktualisieren. Ausführliche Informationen zum Einrichten von PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Nach dem Einrichten und Konfigurieren von PowerShell können Sie alle verfügbaren Cmdlets für den Dienst [hier](https://msdn.microsoft.com/library/dn850420.aspx) anzeigen.
 
 Tipps für die Verwendung von Cmdlets, z. B. wie Parameterwerte, Eingaben und Ausgaben in der Regel in Azure-PowerShell behandelt werden, finden Sie unter [Erste Schritte mit Azure-Cmdlets](https://msdn.microsoft.com/library/azure/jj554332.aspx).
 
-## Schritt 1: Festlegen des Abonnements 
+## Schritt 1: Festlegen des Abonnements 
 
 Führen Sie diese Cmdlets in PowerShell aus:
 
@@ -215,7 +223,7 @@ marsagentinstaller.exe /q /nu
 ```
 
 
-## Schritt 7: Konfigurieren der Cloudschutzeinstellungen
+## Schritt 7: Konfigurieren der Cloudschutzeinstellungen
 
 1.	Erstellen Sie ein Cloudschutzprofil für Azure durch Ausführen des folgenden Befehls:
 	
@@ -245,21 +253,19 @@ marsagentinstaller.exe /q /nu
 	
 4.	Nachdem der Auftrag abgeschlossen ist, führen Sie den folgenden Befehl aus:
 
-	```
 	
-	$job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
-	if($job -eq $null -or $job.StateDescription -ne "Completed")
-	{
+		$job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
+		if($job -eq $null -or $job.StateDescription -ne "Completed")
+		{
 		$isJobLeftForProcessing = $true;
-	}
-	
-	```
+		}
+
 
 5.	Nachdem die Verarbeitung des Auftrags abgeschlossen ist, führen Sie den folgenden Befehl aus:
 
-	```
-	Do
-	{
+	
+		Do
+		{
 		$job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
 		Write-Host "Job State:{0}, StateDescription:{1}" -f Job.State, $job.StateDescription;
 		if($job -eq $null -or $job.StateDescription -ne "Completed")
@@ -271,9 +277,9 @@ marsagentinstaller.exe /q /nu
 		{
 			Start-Sleep -Seconds 60
 		}
-	}While($isJobLeftForProcessing)
+		}While($isJobLeftForProcessing)
 		
-	```
+	
 
 Um den Abschluss des Vorgangs zu überprüfen, führen Sie die Schritte in [Überwachen der Aktivität](#monitor) aus.
 
@@ -284,42 +290,32 @@ Wenn das Zielnetzwerk mehrere Subnetze enthält und eines dieser Subnetze densel
 
 Der erste Befehl ruft Server für den aktuellen Azure Site Recovery-Tresor ab. Der Befehl speichert die Microsoft Azure Site Recovery-Server in der "$Servers"-Arrayvariablen.
 
-```
-$Servers = Get-AzureSiteRecoveryServer
+	$Servers = Get-AzureSiteRecoveryServer
 
-```
 
 Der zweite Befehl ruft das Site Recovery-Netzwerk für den ersten Server im "$Servers"-Array ab. Der Befehl speichert die Netzwerke in der "$Networks"-Variablen.
 
-```
 
-$Networks = Get-AzureSiteRecoveryNetwork -Server $Servers[0]
-
-```
+	$Networks = Get-AzureSiteRecoveryNetwork -Server $Servers[0]
 
 Der dritte Befehl ruft die Azure-Abonnements mithilfe des "Get-AzureSubscription"-Cmdlets ab und speichert dann diesen Wert in der "$Subscriptions"-Variablen.
 
-```
+	$Subscriptions = Get-AzureSubscription
 
-$Subscriptions = Get-AzureSubscription
 
-```
 
 Der vierte Befehl ruft virtuelle Azure-Netzwerke mithilfe des "Get-AzureVNetSite"-Cmdlets ab und speichert dann diesen Wert in der "$AzureVmNetworks"-Variablen.
 
-```
 
-$AzureVmNetworks = Get-AzureVNetSite
+	$AzureVmNetworks = Get-AzureVNetSite
 
-```
+
 
 Das letzte Cmdlet erstellt eine Zuordnung zwischen dem primären Netzwerk und dem virtuellen Azure-Computernetzwerk. Das Cmdlet gibt das primäre Netzwerk als erstes Element von "$Networks" an. Das Cmdlet gibt ein Netzwerk für virtuelle Computer als erstes Element von "$AzureVmNetworks" mithilfe seiner ID an. Der Befehl enthält Ihre Azure-Abonnement-ID.
 
-```
 
-PS C:\> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureSubscriptionId $Subscriptions[0].SubscriptionId -AzureVMNetworkId $AzureVmNetworks[0].Id
+	New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureSubscriptionId $Subscriptions[0].SubscriptionId -AzureVMNetworkId $AzureVmNetworks[0].Id
 
-```
 
 ## Schritt 9: Aktivieren des Schutzes für virtuelle Computer
 
@@ -333,27 +329,24 @@ Um den Schutz zu aktivieren, müssen die Eigenschaften "Betriebssystem" und "Bet
 	
 1.	Führen Sie den folgenden Befehl aus, um den Schutzcontainer abzurufen und den Schutz zu aktivieren:
 		
-	```
+		$ProtectionContainer = Get-AzureSiteRecoveryProtectionContainer -Name $CloudName
 	
-	$ProtectionContainer = Get-AzureSiteRecoveryProtectionContainer -Name $CloudName
-	
-	```
+
 	
 2. Rufen Sie die Schutzentität (VM) durch Ausführen des folgenden Befehls ab:
-		
-	```
 	
-	$protectionEntity = Get-AzureSiteRecoveryProtectionEntity -Name $VMName -ProtectionContainer $protectionContainer
+	
+		$protectionEntity = Get-AzureSiteRecoveryProtectionEntity -Name $VMName -ProtectionContainer $protectionContainer
 		
-	```
+	
 		
 3. Aktivieren Sie den DR für den virtuellen Computer, indem Sie den folgenden Befehl ausführen:
 
-	```
+
 	
-	$jobResult = Set-AzureSiteRecoveryProtectionEntity -ProtectionEntity $protectionEntity 	-Protection Enable -Force
+		$jobResult = Set-AzureSiteRecoveryProtectionEntity -ProtectionEntity $protectionEntity 	-Protection Enable -Force
 	
-	```
+
 	
 ## Testen der Bereitstellung
 
@@ -371,97 +364,87 @@ Um den Abschluss des Vorgangs zu überprüfen, führen Sie die Schritte in [Übe
 3. Ändern Sie den "ProtectionEntity"-Knoten "PrimaryProtectionEntityId" (vmid aus VMM).
 4. Sie können weitere virtuelle Computer hinzufügen, indem Sie weitere "ProtectionEntity"-Knoten hinzufügen.
 	
-	```
 	
-	<#
-	<?xml version="1.0" encoding="utf-16"?>
-	<RecoveryPlan Id="d0323b26-5be2-471b-addc-0a8742796610" Name="rp-test" 	PrimaryServerId="9350a530-d5af-435b-9f2b-b941b5d9fcd5" 	SecondaryServerId="21a9403c-6ec1-44f2-b744-b4e50b792387" Description="" 	Version="V2014_07">
-	  <Actions />
-	  <ActionGroups>
-	    <ShutdownAllActionGroup Id="ShutdownAllActionGroup">
-	      <PreActionSequence />
-	      <PostActionSequence />
-	    </ShutdownAllActionGroup>
-	    <FailoverAllActionGroup Id="FailoverAllActionGroup">
-	      <PreActionSequence />
-	      <PostActionSequence />
-	    </FailoverAllActionGroup>
-	    <BootActionGroup Id="DefaultActionGroup">
-	      <PreActionSequence />
-	      <PostActionSequence />
-	      <ProtectionEntity PrimaryProtectionEntityId="d4c8ce92-a613-4c63-9b03-	cf163cc36ef8" />
-	    </BootActionGroup>
-	  </ActionGroups>
-	  <ActionGroupSequence>
-	    <ActionGroup Id="ShutdownAllActionGroup" ActionId="ShutdownAllActionGroup" 	Before="FailoverAllActionGroup" />
-	    <ActionGroup Id="FailoverAllActionGroup" ActionId="FailoverAllActionGroup" 	After="ShutdownAllActionGroup" Before="DefaultActionGroup" />
-	    <ActionGroup Id="DefaultActionGroup" ActionId="DefaultActionGroup" After="FailoverAllActionGroup"/>
-	  </ActionGroupSequence>
-	</RecoveryPlan>
-	#>
 	
-	```
+		<#
+		<?xml version="1.0" encoding="utf-16"?>
+		<RecoveryPlan Id="d0323b26-5be2-471b-addc-0a8742796610" Name="rp-test" 	PrimaryServerId="9350a530-d5af-435b-9f2b-b941b5d9fcd5" 	SecondaryServerId="21a9403c-6ec1-44f2-b744-b4e50b792387" Description="" 	Version="V2014_07">
+		  <Actions />
+		  <ActionGroups>
+		    <ShutdownAllActionGroup Id="ShutdownAllActionGroup">
+		      <PreActionSequence />
+		      <PostActionSequence />
+		    </ShutdownAllActionGroup>
+		    <FailoverAllActionGroup Id="FailoverAllActionGroup">
+		      <PreActionSequence />
+		      <PostActionSequence />
+		    </FailoverAllActionGroup>
+		    <BootActionGroup Id="DefaultActionGroup">
+		      <PreActionSequence />
+		      <PostActionSequence />
+		      <ProtectionEntity PrimaryProtectionEntityId="d4c8ce92-a613-4c63-9b03-	cf163cc36ef8" />
+		    </BootActionGroup>
+		  </ActionGroups>
+		  <ActionGroupSequence>
+		    <ActionGroup Id="ShutdownAllActionGroup" ActionId="ShutdownAllActionGroup" 	Before="FailoverAllActionGroup" />
+		    <ActionGroup Id="FailoverAllActionGroup" ActionId="FailoverAllActionGroup" 	After="ShutdownAllActionGroup" Before="DefaultActionGroup" />
+		    <ActionGroup Id="DefaultActionGroup" ActionId="DefaultActionGroup" After="FailoverAllActionGroup"/>
+		  </ActionGroupSequence>
+		</RecoveryPlan>
+		#>
+	
+
 	
 4. Geben Sie die Daten in die Vorlage ein:
 	
-	```
+		
+		$TemplatePath = "C:\RPTemplatePath.xml";
 	
-	$TemplatePath = "C:\RPTemplatePath.xml";
-	
-	```
+
 	
 5. Erstellen Sie das "RecoveryPlan"-Objekt:
+
+		$RPCreationJob = New-AzureSiteRecoveryRecoveryPlan -File $TemplatePath -WaitForCompletion;
 	
-	```
 	
-	$RPCreationJob = New-AzureSiteRecoveryRecoveryPlan -File $TemplatePath -WaitForCompletion;
-	
-	```
 	
 ### Durchführen eines Test-Failovers
 
 1.	Rufen Sie das "RecoveryPlan"-Objekt durch Ausführen des folgenden Befehls ab:
-	
-	```
-	
-	$RPObject = Get-AzureSiteRecoveryRecoveryPlan -Name $RPName;
-	
-	```
+
+		$RPObject = Get-AzureSiteRecoveryRecoveryPlan -Name $RPName;
+
 	
 2.	Starten Sie dann den Test-Failover, indem Sie den folgenden Befehl ausführen:
 	
-	```
 	
-	$jobIDResult = Start-AzureSiteRecoveryTestFailoverJob -RecoveryPlan $RPObject -Direction PrimaryToRecovery;
+		$jobIDResult = Start-AzureSiteRecoveryTestFailoverJob -RecoveryPlan $RPObject -Direction PrimaryToRecovery;
 	
-	```
-	
+		
 ## <a name=monitor></a> Überwachen der Aktivität
 
 Verwenden Sie die folgenden Befehle zum Überwachen der Aktivität. Beachten Sie, dass Sie zwischen den Aufträgen auf den Abschluss der Verarbeitung warten müssen.
 
-```
 
-Do
-{
-        $job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
-        Write-Host "Job State:{0}, StateDescription:{1}" -f Job.State, $job.StateDescription;
-        if($job -eq $null -or $job.StateDescription -ne "Completed")
-        {
-        	$isJobLeftForProcessing = $true;
-        }
+	Do
+	{
+	        $job = Get-AzureSiteRecoveryJob -Id $associationJob.JobId;
+	        Write-Host "Job State:{0}, StateDescription:{1}" -f Job.State, $job.StateDescription;
+	        if($job -eq $null -or $job.StateDescription -ne "Completed")
+	        {
+	        	$isJobLeftForProcessing = $true;
+	        }
+	
+		if($isJobLeftForProcessing)
+	        {
+	        	Start-Sleep -Seconds 60
+	        }
+	}While($isJobLeftForProcessing)
 
-	if($isJobLeftForProcessing)
-        {
-        	Start-Sleep -Seconds 60
-        }
-}While($isJobLeftForProcessing)
-
-```
 
 
 ## Nächste Schritte
 
 [Erfahren Sie mehr](https://msdn.microsoft.com/library/dn850420.aspx) über PowerShell-Cmdlets für Azure Site Recovery. </a>
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

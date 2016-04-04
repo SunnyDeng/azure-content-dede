@@ -33,7 +33,6 @@ Wir haben verschiedene Beispiele bereitgestellt, um Ihnen die ersten Schritte be
 Im Internet finden Sie umfangreiche Dokumentationen zu Hadoop-verwandten Technologien, wie z. B. javabasierte MapReduce-Programmierung und Streaming, sowie Dokumentationen zu Cmdlets, die in Windwos PowerShell-Skripts verwendet werden. Weitere Informationen zu diesen Ressourcen finden Sie unter:
 
 - [Entwickeln von Java MapReduce-Programmen für Hadoop in HDInsight](hdinsight-develop-deploy-java-mapreduce.md)
-- [Entwickeln von C# Hadoop-Streamingprogrammen für HDInsight](hdinsight-hadoop-develop-deploy-streaming-jobs.md)
 - [Übermitteln von Hadoop-Aufträgen in HDInsight](hdinsight-submit-hadoop-jobs-programmatically.md)
 - [Einführung in Azure HDInsight][hdinsight-introduction]
 
@@ -998,4 +997,4 @@ Sie finden den Code für das TeraSort MapReduce-Programm in diesem Abschnitt zu 
 [streamreader]: http://msdn.microsoft.com/library/system.io.streamreader.aspx
 [console-writeline]: http://msdn.microsoft.com/library/system.console.writeline
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

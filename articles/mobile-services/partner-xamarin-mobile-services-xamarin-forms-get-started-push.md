@@ -13,16 +13,17 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="mobile-xamarin"
 	ms.workload="mobile"
-	ms.date="01/22/2016"
+	ms.date="03/18/2016"
 	ms.author="wesmc"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Xamarin Forms-App
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen zur entsprechenden Mobile Apps-Version dieses Themas finden Sie unter [Hinzufügen von Pushbenachrichtigungen zu Ihrer Xamarin.Forms-App](../app-service-mobile/app-service-mobile-xamarin-forms-get-started-push.md).
 
 ##Übersicht
 
@@ -856,4 +857,4 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 [Starter-Beispiel für Xamarin.Forms Azure-Pushbenachrichtigungen]: https://github.com/Azure/mobile-services-samples/tree/master/TodoListXamarinForms
 [Vollständiges Beispiel zu Xamarin.Forms Azure-Pushbenachrichtigungen]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

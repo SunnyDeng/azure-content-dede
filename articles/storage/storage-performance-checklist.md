@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/21/2016" 
+	ms.date="03/18/2016"
 	ms.author="robinsh"/>
 
 # Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage
@@ -33,51 +33,52 @@ Dieser Artikel unterteilt die bewährten Vorgehensweisen in Gruppen, die wie fol
 
 |Vorgehensweise|	Bereich|	Kategorie|	Frage
 |----|------|-----------|-----------
-|Alle Dienste|	Skalierbarkeitsziele|[Ist Ihre Anwendung so konzipiert, dass die Skalierbarkeitsziele nicht überschritten werden?](#subheading1)
-|Alle Dienste|	Netzwerk|	[Haben die clientseitigen Geräte genügend Bandbreite und niedrige Latenz, um die erforderliche Leistung zu erzielen?](#subheading2)
-|Alle Dienste|	Netzwerk|	[Haben die clientseitigen Geräte eine ausreichend hohe Verbindungsqualität?](#subheading3)
-|Alle Dienste|	Netzwerk|	[Befindet sich die Clientanwendung in der Nähe des Speicherkontos?](#subheading4)
-|Alle Dienste|	Inhaltsverteilung|	[Verwenden Sie ein CDN für die Inhaltsverteilung?](#subheading5)
-|Alle Dienste|	Direkter Clientzugriff|	[Verwenden Sie SAS und CORS statt eines Proxys, um direkten Zugriff auf den Speicher zu erlauben?](#subheading6)
-|Alle Dienste|	Zwischenspeichern|	[Speichert Ihre Anwendung Daten im Cache, die häufig verwendet werden und sich selten ändern?](#subheading7)
-|Alle Dienste|	Zwischenspeichern|	[Führt Ihre Anwendung Batchaktualisierungen durch (durch clientseitige Zwischenspeicherung und anschließendes Hochladen in größeren Mengen)?](#subheading8)
-|Alle Dienste|	.NET-Konfiguration|	[Haben Sie Ihren Client zur Verwendung einer ausreichenden Anzahl gleichzeitiger Verbindungen konfiguriert?](#subheading9)
-|Alle Dienste|	.NET-Konfiguration|	[Haben Sie .NET zur Verwendung einer ausreichenden Anzahl von Threads konfiguriert?](#subheading10)
-|Alle Dienste|	.NET-Konfiguration|	[Verwenden Sie .NET 4.5 oder höher mit verbesserter Garbage Collection?](#subheading11)
-|Alle Dienste|	Parallelität|	[Haben Sie sichergestellt, dass die Parallelität entsprechend gebunden ist, sodass weder die Clientkapazitäten noch die Skalierbarkeitsziele überlastet werden?](#subheading12)
-|Alle Dienste|	Tools|	[Verwenden Sie die aktuellste Version der von Microsoft bereitgestellten Clientbibliotheken und Tools?](#subheading13)
-|Alle Dienste|	Wiederholungsversuche|	[Verwenden Sie exponentiell ansteigende Wartezeiten für Wiederholungsversuche, um Fehler und Zeitüberschreitungen zu vermeiden?](#subheading14)
-|Alle Dienste|	Wiederholungsversuche|	[Vermeidet Ihre Anwendung Wiederholungsversuche für nicht wiederholbare Fehler?](#subheading15)
-|Blobs|	Skalierbarkeitsziele|	[Bleibt Ihre Anwendung innerhalb der Bandbreiten- oder Vorgangs-Skalierbarkeitsziele für einzelne Blobs?](#subheading16)
-|Blobs|	Kopieren von Blobs|	[Kopieren Sie Blobs effizient?](#subheading17)
-|Blobs|	Kopieren von Blobs|	[Verwenden Sie AzCopy für Massenkopien von Blobs?](#subheading18)
-|Blobs|	Kopieren von Blobs|	[Verwenden Sie Azure Import/Export zum Übertragen von großen Datenmengen?](#subheading19)
-|Blobs|	Verwenden von Metadaten|	[Speichern Sie häufig verwendete Metadaten für Blobs in ihren Metadaten?](#subheading20)
-|Blobs|	Schnelles Hochladen|	[Wenn Sie versuchen, einen Blob schnell hochzuladen, laden Sie dann Blöcke parallel hoch?](#subheading21)
-|Blobs|	Schnelles Hochladen|	[Wenn Sie versuchen, mehrere Blobs schnell hochzuladen, laden Sie dann Blobs parallel hoch?](#subheading22)
-|Blobs|	Richtiger Blobtyp|	[Verwenden Sie jeweils Seiten-Blobs oder Block-Blobs?](#subheading23)
-|Tabellen|	Skalierbarkeitsziele|	[Nähern Sie sich den Skalierbarkeitszielen für Entitäten pro Sekunde?](#subheading24)
-|Tabellen|	Konfiguration|	[Verwenden Sie JSON für Ihre Tabellenanforderungen?](#subheading25)
-|Tabellen|	Konfiguration|	[Haben Sie Nagle deaktiviert, um die Leistung kleiner Anfragen zu verbessern?](#subheading26)
-|Tabellen|	Tabellen und Partitionen|	[Haben Sie Ihre Daten richtig partitioniert?](#subheading27)
-|Tabellen|	Hot Partition|	[Vermeiden Sie Nur-Anhängen/Nur-Voranstellen-Muster?](#subheading28)
-|Tabellen|	Hot Partition|	[Verteilen sich Ihre Einfügungen/Aktualisierungen auf mehrere Partitionen?](#subheading29)  
-|Tabellen|	Abfragebereich|	[Haben Sie Ihr Schema so konzipiert, dass in den meisten Fällen Punktabfragen verwendet werden können und Tabellenabfragen nur sparsam erfolgen?](#subheading30)
-|Tabellen|	Abfragedichte|	[Erfassen Ihre Abfragen normalerweise nur Zeilen für die Rückgabe, die Ihre Anwendung auch verwenden wird?](#subheading31)
-|Tabellen|	Einschränken der zurückgegebenen Daten|	[Verwenden Sie Filterung, um die Rückgabe nicht benötigter Entitäten zu vermeiden?](#subheading32)
-|Tabellen|	Einschränken der zurückgegebenen Daten|	[Verwenden Sie Projektion, um die Rückgabe nicht benötigter Eigenschaften zu vermeiden?](#subheading33)
-|Tabellen|	Denormalisierung|	[Haben Sie Ihre Daten so normalisiert, dass Sie ineffiziente Abfragen oder mehrere Leseanforderungen beim Abrufen von Daten vermeiden?](#subheading34)
-|Tabellen|	Einfügen/Aktualisieren/Löschen|	[Verwenden Sie Batchverarbeitung für Anforderungen, die transaktional oder gleichzeitig erfolgen, um Roundtrips zu reduzieren?](#subheading35)
-|Tabellen|	Einfügen/Aktualisieren/Löschen|	[Vermeiden Sie das Abrufen von Entitäten, nur um zu bestimmen, ob Einfügen oder Aktualisieren erforderlich ist?](#subheading36)
-|Tabellen|	Einfügen/Aktualisieren/Löschen|	[Haben Sie überlegt, Datenreihen, die häufig zusammen abgerufen werden, in einer einzigen Entität als Eigenschaften zu speichern statt in mehreren Entitäten?](#subheading37)
-|Tabellen|	Einfügen/Aktualisieren/Löschen|	[Haben Sie überlegt, für Entitäten, die immer zusammen abgerufen werden und in Batches geschrieben werden können (z. B. Zeitreihendaten), Blobs statt Tabellen zu verwenden?](#subheading38)
-|Warteschlangen|	Skalierbarkeitsziele|	[Nähern Sie sich den Skalierbarkeitszielen für Nachrichten pro Sekunde?](#subheading39)
-|Warteschlangen|	Konfiguration|	[Haben Sie Nagle deaktiviert, um die Leistung kleiner Anfragen zu verbessern?](#subheading40)
-|Warteschlangen|	Nachrichtengröße|	[Sind Ihre Nachrichten kompakt, um die Leistung der Warteschlange zu verbessern?](#subheading41)
-|Warteschlangen|	Massenabruf|	[Rufen Sie mehrere Nachrichten mit einem einzigen „Get“-Vorgang ab?](#subheading41)
-|Warteschlangen|	Abrufhäufigkeit|	[Rufen Sie häufig genug ab, um die gefühlte Latenz der Anwendung zu reduzieren?](#subheading42)
-|Warteschlangen|	Aktualisieren von Nachrichten|	[Verwenden Sie UpdateMessage, um den Fortschritt bei der Nachrichtenverarbeitung zu speichern und so nicht die gesamten Nachrichten erneut verarbeiten zu müssen, falls ein Fehler auftritt?](#subheading43)
-|Warteschlangen|	Architektur|	[Verwenden Sie Warteschlangen, um die gesamte Anwendung besser skalierbar zu machen, indem Sie Arbeitsauslastungen mit langer Laufzeit aus dem kritischen Pfad heraushalten und unabhängig skalieren?](#subheading44)
+||Alle Dienste|	Skalierbarkeitsziele|[Ist Ihre Anwendung so konzipiert, dass die Skalierbarkeitsziele nicht überschritten werden?](#subheading1)
+||Alle Dienste|	Netzwerk|	[Haben die clientseitigen Geräte genügend Bandbreite und niedrige Latenz, um die erforderliche Leistung zu erzielen?](#subheading2)
+||Alle Dienste|	Netzwerk|	[Haben die clientseitigen Geräte eine ausreichend hohe Verbindungsqualität?](#subheading3)
+||Alle Dienste|	Netzwerk|	[Befindet sich die Clientanwendung in der Nähe des Speicherkontos?](#subheading4)
+||Alle Dienste|	Inhaltsverteilung|	[Verwenden Sie ein CDN für die Inhaltsverteilung?](#subheading5)
+||Alle Dienste|	Direkter Clientzugriff|	[Verwenden Sie SAS und CORS statt eines Proxys, um direkten Zugriff auf den Speicher zu erlauben?](#subheading6)
+||Alle Dienste|	Zwischenspeichern|	[Speichert Ihre Anwendung Daten im Cache, die häufig verwendet werden und sich selten ändern?](#subheading7)
+||Alle Dienste|	Zwischenspeichern|	[Führt Ihre Anwendung Batchaktualisierungen durch (durch clientseitige Zwischenspeicherung und anschließendes Hochladen in größeren Mengen)?](#subheading8)
+||Alle Dienste|	.NET-Konfiguration|	[Haben Sie Ihren Client zur Verwendung einer ausreichenden Anzahl gleichzeitiger Verbindungen konfiguriert?](#subheading9)
+||Alle Dienste|	.NET-Konfiguration|	[Haben Sie .NET zur Verwendung einer ausreichenden Anzahl von Threads konfiguriert?](#subheading10)
+||Alle Dienste|	.NET-Konfiguration|	[Verwenden Sie .NET 4.5 oder höher mit verbesserter Garbage Collection?](#subheading11)
+||Alle Dienste|	Parallelität|	[Haben Sie sichergestellt, dass die Parallelität entsprechend gebunden ist, sodass weder die Clientkapazitäten noch die Skalierbarkeitsziele überlastet werden?](#subheading12)
+||Alle Dienste|	Tools|	[Verwenden Sie die aktuellste Version der von Microsoft bereitgestellten Clientbibliotheken und Tools?](#subheading13)
+||Alle Dienste|	Wiederholungsversuche|	[Verwenden Sie exponentiell ansteigende Wartezeiten für Wiederholungsversuche, um Fehler und Zeitüberschreitungen zu vermeiden?](#subheading14)
+||Alle Dienste|	Wiederholungsversuche|	[Vermeidet Ihre Anwendung Wiederholungsversuche für nicht wiederholbare Fehler?](#subheading15)
+||Blobs|	Skalierbarkeitsziele|	[Greift eine große Anzahl von Clients gleichzeitig auf ein einzelnes Objekt zu?](#subheading46)
+||Blobs (in englischer Sprache)|	Skalierbarkeitsziele|	[Bleibt Ihre Anwendung innerhalb der Bandbreiten- oder Vorgangs-Skalierbarkeitsziele für einzelne Blobs?](#subheading16)
+||Blobs|	Kopieren von Blobs|	[Kopieren Sie Blobs effizient?](#subheading17)
+||Blobs|	Kopieren von Blobs|	[Verwenden Sie AzCopy für Massenkopien von Blobs?](#subheading18)
+||Blobs|	Kopieren von Blobs|	[Verwenden Sie Azure Import/Export zum Übertragen von großen Datenmengen?](#subheading19)
+||Blobs|	Verwenden von Metadaten|	[Speichern Sie häufig verwendete Metadaten für Blobs in ihren Metadaten?](#subheading20)
+||Blobs|	Schnelles Hochladen|	[Wenn Sie versuchen, einen Blob schnell hochzuladen, laden Sie dann Blöcke parallel hoch?](#subheading21)
+||Blobs|	Schnelles Hochladen|	[Wenn Sie versuchen, mehrere Blobs schnell hochzuladen, laden Sie dann Blobs parallel hoch?](#subheading22)
+||Blobs|	Richtiger Blobtyp|	[Verwenden Sie jeweils Seiten-Blobs oder Block-Blobs?](#subheading23)
+||Tabellen|	Skalierbarkeitsziele|	[Nähern Sie sich den Skalierbarkeitszielen für Entitäten pro Sekunde?](#subheading24)
+||Tabellen|	Konfiguration|	[Verwenden Sie JSON für Ihre Tabellenanforderungen?](#subheading25)
+||Tabellen|	Konfiguration|	[Haben Sie Nagle deaktiviert, um die Leistung kleiner Anfragen zu verbessern?](#subheading26)
+||Tabellen|	Tabellen und Partitionen|	[Haben Sie Ihre Daten richtig partitioniert?](#subheading27)
+||Tabellen|	Hot Partition|	[Vermeiden Sie Nur-Anhängen/Nur-Voranstellen-Muster?](#subheading28)
+||Tabellen|	Hot Partition|	[Verteilen sich Ihre Einfügungen/Aktualisierungen auf mehrere Partitionen?](#subheading29)  
+||Tabellen|	Abfragebereich|	[Haben Sie Ihr Schema so konzipiert, dass in den meisten Fällen Punktabfragen verwendet werden können und Tabellenabfragen nur sparsam erfolgen?](#subheading30)
+||Tabellen|	Abfragedichte|	[Erfassen Ihre Abfragen normalerweise nur Zeilen für die Rückgabe, die Ihre Anwendung auch verwenden wird?](#subheading31)
+||Tabellen|	Einschränken der zurückgegebenen Daten|	[Verwenden Sie Filterung, um die Rückgabe nicht benötigter Entitäten zu vermeiden?](#subheading32)
+||Tabellen|	Einschränken der zurückgegebenen Daten|	[Verwenden Sie Projektion, um die Rückgabe nicht benötigter Eigenschaften zu vermeiden?](#subheading33)
+||Tabellen|	Denormalisierung|	[Haben Sie Ihre Daten so normalisiert, dass Sie ineffiziente Abfragen oder mehrere Leseanforderungen beim Abrufen von Daten vermeiden?](#subheading34)
+||Tabellen|	Einfügen/Aktualisieren/Löschen|	[Verwenden Sie Batchverarbeitung für Anforderungen, die transaktional oder gleichzeitig erfolgen, um Roundtrips zu reduzieren?](#subheading35)
+||Tabellen|	Einfügen/Aktualisieren/Löschen|	[Vermeiden Sie das Abrufen von Entitäten, nur um zu bestimmen, ob Einfügen oder Aktualisieren erforderlich ist?](#subheading36)
+||Tabellen|	Einfügen/Aktualisieren/Löschen|	[Haben Sie überlegt, Datenreihen, die häufig zusammen abgerufen werden, in einer einzigen Entität als Eigenschaften zu speichern statt in mehreren Entitäten?](#subheading37)
+||Tabellen|	Einfügen/Aktualisieren/Löschen|	[Haben Sie überlegt, für Entitäten, die immer zusammen abgerufen werden und in Batches geschrieben werden können (z. B. Zeitreihendaten), Blobs statt Tabellen zu verwenden?](#subheading38)
+||Warteschlangen|	Skalierbarkeitsziele|	[Nähern Sie sich den Skalierbarkeitszielen für Nachrichten pro Sekunde?](#subheading39)
+||Warteschlangen|	Konfiguration|	[Haben Sie Nagle deaktiviert, um die Leistung kleiner Anfragen zu verbessern?](#subheading40)
+||Warteschlangen|	Nachrichtengröße|	[Sind Ihre Nachrichten kompakt, um die Leistung der Warteschlange zu verbessern?](#subheading41)
+||Warteschlangen|	Massenabruf|	[Rufen Sie mehrere Nachrichten mit einem einzigen „Get“-Vorgang ab?](#subheading42)
+||Warteschlangen|	Abrufhäufigkeit|	[Rufen Sie häufig genug ab, um die gefühlte Latenz der Anwendung zu reduzieren?](#subheading43)
+||Warteschlangen|	Aktualisieren von Nachrichten|	[Verwenden Sie UpdateMessage, um den Fortschritt bei der Nachrichtenverarbeitung zu speichern und so nicht die gesamten Nachrichten erneut verarbeiten zu müssen, falls ein Fehler auftritt?](#subheading44)
+||Warteschlangen|	Architektur|	[Verwenden Sie Warteschlangen, um die gesamte Anwendung besser skalierbar zu machen, indem Sie Arbeitsauslastungen mit langer Laufzeit aus dem kritischen Pfad heraushalten und unabhängig skalieren?](#subheading45)
 
 
 ##<a name="allservices"></a>Alle Dienste
@@ -102,10 +103,10 @@ Wenn sich Ihre Anwendung den Skalierbarkeitszielen für ein Speicherkonto näher
 -	Wenn Ihre Anwendung die Skalierbarkeitsziele erreicht, stellen Sie sicher, dass Sie exponentiell ansteigende Wartezeiten für Wiederholungsversuche verwenden (siehe [Wiederholungsversuche](#subheading14)). Sie sollten besser sicherstellen, dass Sie sich nicht an die Skalierbarkeitsziele annähern (mit einer der oben angegebenen Methoden), aber dies sorgt ebenfalls dafür, dass die Anwendung keine schnellen Wiederholungen versucht, sodass die Drosselung schlimmer wird.  
 
 ####Nützliche Ressourcen
-Die folgenden Links bieten zusätzliche Details zu Skalierbarkeitszielen:
-–	Sie können die aktuellen Skalierbarkeitsziele unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) anzeigen.
-–	Mehr über Speicherredundanzoptionen erfahren Sie unter [Azure Storage-Replikation](storage-redundancy.md) und im Blogbeitrag [Azure Storage-Redundanzoptionen und georedundanter Speicher mit Lesezugriff](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx).
-–	Aktuelle Informationen zu den Preisdetails für Azure-Dienste finden Sie unter [Azure-Preise](https://azure.microsoft.com/pricing/overview/).
+Die folgenden Links enthalten zusätzliche Details zu den Skalierbarkeitszielen:
+-	Weitere Informationen zu Skalierbarkeitszielen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](storage-scalability-targets.md).
+-	Weitere Informationen zu Speicherredundanzoptionen finden Sie unter [Azure Storage-Replikation](storage-redundancy.md) und im Blogbeitrag [Azure Storage Redundancy Options and Read Access Geo Redundant Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx) (Azure Storage-Redundanzoptionen und Lesezugriff für georedundanten Speicher).
+-	Aktuelle Informationen zu den Preisdetails für Azure-Dienste finden Sie auf der Seite [Preisübersicht](https://azure.microsoft.com/pricing/overview/).  
 
 ###Netzwerk
 Auch wenn die API-Aufrufe eine Rolle spielen, haben häufig die physischen Netzwerkeinschränkungen deutliche Auswirkungen auf die Leistung. Nachfolgend sind einige der Einschränkungen beschrieben, auf die Benutzer treffen können.
@@ -118,7 +119,7 @@ Bei der Bandbreite liegt das Problem häufig in der Clientfunktion. Während bei
 Seien Sie sich wie bei jeder Netzwerknutzung bewusst, dass Netzwerkbedingungen, die zu Fehlern und Verlusten von Paketen führen, den effektiven Durchsatz verlangsamen. Die Verwendung von WireShark oder NetMon kann bei der Diagnose dieses Problems helfen.
 
 #####Nützliche Ressourcen
-Weitere Informationen über Größen von virtuellen Computern und zur zugewiesenen Bandbreite finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md).
+Weitere Informationen über Größen von virtuellen Computern und zur zugewiesenen Bandbreite finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-linux-sizes.md).
 
 ####<a name="subheading4"></a>Standort
 In jeder verteilten Umgebung wird die beste Leistung erzielt, indem der Client in der Nähe des Servers platziert wird. Zum Zugriff auf den Azure-Speicher mit der niedrigsten Latenz befindet sich der beste Standort für den Client innerhalb derselben Azure-Region. Wenn Sie beispielsweise eine Azure-Website haben, die den Azure-Speicher verwendet, sollten Sie beide innerhalb derselben Region platzieren (z. B. Westeuropa oder Südostasien). Dadurch werden Latenz und Kosten verringert – zum Redaktionszeitpunkt war die Bandbreitennutzung innerhalb einer Region kostenlos.
@@ -203,6 +204,15 @@ Weitere Informationen zu Speicherfehlercodes finden Sie unter [Status- und Fehle
 Zusätzlich zu den zuvor beschriebenen bewährten Vorgehensweisen für [Alle Dienste](#allservices) können die folgenden bewährten Vorgehensweisen speziell für den Blobdienst angewendet werden.
 
 ###Blob-spezifische Skalierbarkeitsziele
+
+####<a name="subheading46"></a>Mehrere Clients greifen gleichzeitig auf ein einzelnes Objekt zu
+Wenn eine große Anzahl von Clients gleichzeitig auf ein einzelnes Objekt zugreift, müssen Sie pro Objekt und Speicherkonto Skalierbarkeitsziele berücksichtigen. Die genaue Anzahl von Clients, die auf ein einzelnes Objekt zugreifen können, hängt von verschiedenen Faktoren ab, wie z.B. der Anzahl der Clients, die das Objekt gleichzeitig anfordern, der Größe des Objekts, der Netzwerkbedingungen usw.
+
+Wenn das Objekt über ein CDN verteilt werden kann, wie beispielsweise Bilder oder Videos von einer Website, dann sollten Sie ein CDN verwenden. Klicken Sie [hier](#subheading5).
+
+In anderen Szenarios (z.B. in wissenschaftlichen Simulationen, in denen die Daten vertraulich sind) haben Sie zwei Optionen. Erstens können Sie den Zugriff Ihrer Arbeitslast staffeln, sodass über einen bestimmten Zeitraum hinweg auf das Objekt zugegriffen wird (andernfalls würde der Zugriff gleichzeitig erfolgen). Zweitens können Sie das Objekt zeitweise in mehrere Speicherkonten kopieren und so den Gesamt-IOPS pro Objekt und zwischen Speicherkonten vergrößern. Mithilfe beschränkter Tests stellten wir fest, dass bis zu 25 VMs gleichzeitig einen 100-GB-Blob parallel herunterladen können (jede VM hat den Download mithilfe von 32 Threads parallelisiert). Um 100 Clients Zugriff auf das Objekt zu gewähren, kopieren Sie es zunächst in ein zweites Speicherkonto. Lassen Sie dann die ersten 50 VMs auf das erste Blob und die zweiten 50 VMs auf das zweite Blob zugreifen. Die Ergebnisse variieren je nachdem, wie sich Ihre Anwendungen verhalten. Sie sollten dies also bereits in der Entwurfsphase testen.
+
+
 ####<a name="subheading16"></a>Bandbreite und Vorgänge pro Blob
 Sie können in einem einzelnen Blob bis zu maximal 60 MB/Sekunde lesen oder schreiben (dies entspricht etwa 480 MBit/s), was die Kapazität on vielen clientseitigen Netzwerken (einschließlich der physischen NIC auf dem Clientgerät) übersteigt. Außerdem unterstützt ein einzelner Blob bis zu 500 Anforderungen pro Sekunde. Wenn Sie über mehrere Clients verfügen, die denselben Blob lesen und Sie dieses Limit wahrscheinlich überschreiten, sollten Sie ein CDN für die Blob-Verteilung verwenden.
 
@@ -246,7 +256,7 @@ Um viele Blobs schnell hochzuladen, laden Sie die Blobs parallel hoch. Dies funk
 ###<a name="subheading23"></a>Auswählen des richtigen Blobtyps
 Azure Storage unterstützt zwei Blobtypen: *Seitenblobs* und *Blockblobs*. Je nach Nutzungsszenario wirkt sich die Auswahl des Blobtyps auf die Leistung und Skalierbarkeit der Lösung aus. Block-Blobs sind geeignet, wenn Sie große Datenmengen effizient hochladen möchten: z. B. eine Clientanwendung, die Fotos oder Videos in einen Blob-Speicher hochladen muss. Seiten-Blobs sind für Anwendungen geeignet, die sequentielle Schreibvorgänge auf den Daten ausführen: z. B. werden Azure-VHDs als Seiten-Blobs gespeichert.
 
-Weitere Informationen finden Sie unter [Grundlegendes zu Block-BLOBs, Anhang-BLOBS und Seiten-BLOBs](http://msdn.microsoft.com/library/azure/ee691964.aspx).
+Weitere Informationen finden Sie unter [Understanding Block Blobs, Append Blobs, and Page Blobs](http://msdn.microsoft.com/library/azure/ee691964.aspx) (Grundlegendes zu Blockblobs, angefügten Blobs und Seitenblobs).
 
 ##Tabellen
 Zusätzlich zu den zuvor beschriebenen bewährten Vorgehensweisen für [Alle Dienste](#allservices) können die folgenden bewährten Vorgehensweisen speziell für den Tabellendienst angewendet werden.
@@ -383,6 +393,5 @@ Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen.
 
 ##Zusammenfassung
 In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler, seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.
- 
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

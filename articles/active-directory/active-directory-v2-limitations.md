@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/20/2016"
+	ms.date="03/18/2016"
 	ms.author="dastrock"/>
 
-# Sollte ich den v2.0-Endpunkt verwenden? 
+# Sollte ich den v2.0-Endpunkt verwenden?
 
 Beim Erstellen von Anwendungen, die in Azure Active Directory integriert werden, müssen Sie entscheiden, ob der v2.0-Endpunkt und die Authentifizierungsprotokolle Ihren Anforderungen entsprechen. Das ursprüngliche Azure AD-App-Modell wird weiterhin vollständig unterstützt und umfasst in gewisser Hinsicht mehr Funktionen als v2.0. Der v2.0-Endpunkt bietet jedoch [entscheidende Vorteile](active-directory-v2-compare.md) für Entwickler, die Sie zur Verwendung des neuen Programmiermodells verleiten könnten. Im Laufe der Zeit wird v2.0 auf sämtliche Azure AD-Funktionen erweitert, sodass nur noch der v2.0-Endpunkt verwenden werden muss.
 
@@ -74,13 +74,15 @@ Wenn Sie den v2.0-Endpunkt in einer Produktionsanwendung verwenden möchten, bes
 
 - Wenn Sie eine Webanwendung erstellen, können Sie unsere allgemein verfügbare serverseitige Middleware bedenkenlos für die Anmeldung und die Tokenüberprüfung einsetzen. Dazu gehören die OWIN Open ID Connect-Middleware für ASP.NET und unser NodeJS Passport-Plug-In. Codebeispiele, in denen diese Middleware verwendet wird, stehen in unserem Abschnitt [Erste Schritte](active-directory-appmodel-v2-overview.md#getting-started) ebenfalls zur Verfügung.
 - Für andere Plattformen sowie für native und mobile Anwendungen können Sie die Integration mit dem v2.0-Endpunkt auch durchführen, indem Sie Nachrichten direkt in Ihrem Anwendungscode senden und empfangen. Die v2.0-Protokolle OpenID Connect und OAuth [wurden explizit dokumentiert](active-directory-v2-protocols.md), um Sie bei einer solchen Integration zu unterstützen.
-- Zudem können Sie die Open ID Connect- und OAuth-Open Source-Bibliotheken für die Integration in den v2.0-Endpunkt verwenden. Das v2.0-Protokoll sollte ohne wesentliche Änderungen mit vielen Open Source-Protokollbibliotheken kompatibel sein. Die Verfügbarkeit solcher Bibliotheken ist abhängig von Sprache und Plattform, und auf den [Open ID Connect](http://openid.net/connect/)- und [OAuth 2.0](http://oauth.net/2/)-Websites wird eine Liste der gängigen Implementierungen verwaltet. Im Folgenden sind die Open Source-Clientbibliotheken und -Beispiele aufgeführt, die mit dem v2.0-Endpunkt getestet wurden. Beachten Sie, dass Funktionen wie z. B. die [dynamische Clientregistrierung mit OpenID Connect](https://openid.net/specs/openid-connect-registration-1_0.html) und Endpunkte zur Tokenüberprüfung noch nicht unterstützt werden und zur Verwendung des v2.0-Endpunkts möglicherweise in der Bibliothek deaktiviert werden müssen: 
+- Zudem können Sie die Open ID Connect- und OAuth-Open Source-Bibliotheken für die Integration in den v2.0-Endpunkt verwenden. Das v2.0-Protokoll sollte ohne wesentliche Änderungen mit vielen Open Source-Protokollbibliotheken kompatibel sein. Die Verfügbarkeit solcher Bibliotheken ist abhängig von Sprache und Plattform, und auf den [Open ID Connect](http://openid.net/connect/)- und [OAuth 2.0](http://oauth.net/2/)-Websites wird eine Liste der gängigen Implementierungen verwaltet. Im Folgenden sind die Open Source-Clientbibliotheken und -Beispiele aufgeführt, die mit dem v2.0-Endpunkt getestet wurden.
 
   - [Java WSO2 Identity Server](https://docs.wso2.com/display/IS500/Introducing+the+Identity+Server)
   - [Java Gluu Federation](https://github.com/GluuFederation/oxAuth)
   - [Node.Js passport-openidconnect](https://www.npmjs.com/package/passport-openidconnect)
   - [PHP OpenID Connect Basic Client](https://github.com/jumbojett/OpenID-Connect-PHP)
-  - [Android OpenID Connect-Beispiel](https://github.com/learning-layers/android-openid-connect)
+  - [iOS-OAuth2-Client](https://github.com/nxtbgthng/OAuth2Client)
+  - [Android-OAuth2-Client](https://github.com/wuman/android-oauth-client)
+  - [Android OpenID Connect-Client](https://github.com/kalemontes/OIDCAndroidLib)
 
 ## Einschränkungen für Protokolle
 Der v2.0-Endpunkt unterstützt nur Open ID Connect und OAuth 2.0. Allerdings wurden nicht alle Features und Funktionen der einzelnen Protokolle in den v2.0-Endpunkt integriert. Beispiele hierfür sind:
@@ -96,4 +98,4 @@ Im Azure Active Directory-Dienst steht eine Reihe von Entwicklerfeatures zur Ver
 - Gruppenansprüche für Azure AD-Benutzer
 - Anwendungsrollen und Rollenansprüche
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

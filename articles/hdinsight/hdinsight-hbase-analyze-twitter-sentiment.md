@@ -28,7 +28,7 @@ Soziale Netzwerke sind einer der Hauptfaktoren für die Akzeptanz von Big Data. 
 - Die Streaminganwendung
 	- Abrufen von Tweets mit Geotagging in Echtzeit über die Twitter-Streaming-API
 	- Analysieren der Stimmung dieser Tweets
-	- Speichern der Stimmungsinformationen in HBase mithilfe des Microsoft HBase SDK
+	- Speichern der Stimmungsinformationen in HBase mithilfe des Microsoft HBase SDK
 - Die Azure Websites-Anwendung
 	- Grafisches Darstellen der Echtzeit-Statistikergebnisse auf Bing Maps mithilfe einer ASP.NET-Webanwendung Eine Visualisierung der Tweets sieht etwa so aus:
 
@@ -75,11 +75,11 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 
 	<table border="1">
-<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
-<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
-<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
-<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
-</table>
+	<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
+	<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
+	<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
+	<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
+	</table>
 
 - **Eine Workstation** mit installiertem Visual Studio 2013. [Installieren von Visual Studio](http://msdn.microsoft.com/library/e2h7fzkw.aspx)
 
@@ -140,12 +140,12 @@ Sie müssen eine Anwendung erstellen, um Tweets zu erhalten, einen Stimmungswert
 
 **So erstellen Sie die Streaminganwendung**
 
-1. Öffnen Sie **Visual Studio**, und erstellen Sie eine Visual C#-Konsolenanwendung mit der Bezeichnung **TweetSentimentStreaming**. 
+1. Öffnen Sie **Visual Studio**, und erstellen Sie eine Visual C#-Konsolenanwendung mit der Bezeichnung **TweetSentimentStreaming**. 
 2. Führen Sie in der **Paket-Manager-Konsole** die folgenden Befehle aus:
 
 		Install-Package Microsoft.HBase.Client
 		Install-Package TweetinviAPI
-    Mit den folgenden Befehle installieren Sie das Paket [HBase .NET SDK](https://www.nuget.org/packages/Microsoft.HBase.Client/), das die Clientbibliothek für den Zugriff auf den HBase-Cluster ist, und das Paket [Tweetinvi API](https://www.nuget.org/packages/TweetinviAPI/), das verwendet wird, um auf die Twitter-API zuzugreifen.
+    Mit den folgenden Befehle installieren Sie das Paket [HBase .NET SDK](https://www.nuget.org/packages/Microsoft.HBase.Client/), das die Clientbibliothek für den Zugriff auf den HBase-Cluster ist, und das Paket [Tweetinvi API](https://www.nuget.org/packages/TweetinviAPI/), das verwendet wird, um auf die Twitter-API zuzugreifen.
 3. Fügen Sie im **Projektmappen-Explorer** in der Referenz den Eintrag „System.Configuration“ hinzu.
 4. Fügen Sie dem Projekt die neue Klassendatei **HBaseWriter.cs** hinzu, und ersetzen Sie den Code durch Folgendes:
 
@@ -470,7 +470,7 @@ In diesem Abschnitt erstellen Sie eine ASP.NET MVC-Webanwendung, die die Echtzei
 7. Klicken Sie unter **Microsoft Azure-Abonnements verwalten** auf **Anmelden**.
 8. Geben Sie Ihre Azure-Anmeldeinformationen ein. Auf der Registerkarte **Konten** werden die Informationen zu Ihrem Azure-Abonnement angezeigt.
 9. Klicken Sie auf **Schließen**, um das Fenster **Microsoft Azure-Abonnements verwalten** zu schließen.
-10. Klicken Sie unter **Neues ASP.NET-Projekt – TweetSentimentWeb** auf **OK**.
+10. Klicken Sie unter **Neues ASP.NET-Projekt – TweetSentimentWeb** auf **OK**.
 11. Wählen Sie unter **Microsoft Azure-Site-Einstellungen konfigurieren** die Ihnen am nächsten gelegene **Region** aus. Sie müssen keinen Datenbankserver angeben. 
 12. Klicken Sie auf **OK**.
 
@@ -597,7 +597,7 @@ In diesem Abschnitt erstellen Sie eine ASP.NET MVC-Webanwendung, die die Echtzei
 
 4. Ändern Sie innerhalb der Klasse **HBaseReader** die Konstantenwerte wie folgt:
 
-	- **CLUSTERNAME**: Der HBase-Clustername, z. B. *https://<HBaseClusterName>.azurehdinsight.net/*. 
+	- **CLUSTERNAME**: Der HBase-Clustername, z. B. *https://<HBaseClusterName>.azurehdinsight.net/*. 
     - **HADOOPUSERNAME**: Der Hadoop-Benutzername des HBase-Clusters. Der Standardname lautet *admin*.
     - **HADOOPUSERPASSWORD**: Das Hadoop-Benutzerkennwort des HBase-Clusters.
     - **HBASETABLENAME** = "tweets\_by\_words";
@@ -1233,7 +1233,6 @@ In diesem Tutorial haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von 
 - [Konfigurieren der HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md) 
 - [Analysieren von Twitter-Daten mit Hadoop in HDInsight][hdinsight-analyze-twitter-data]
 - [Analysieren von Daten zu Flugverspätungen mit HDInsight][hdinsight-analyze-flight-delay-data]
-- [Entwickeln von C#-Hadoop-Streamingprogrammen für HDInsight][hdinsight-develop-streaming]
 - [Entwickeln von Java MapReduce-Programmen für HDInsight][hdinsight-develop-mapreduce]
 
 
@@ -1249,7 +1248,6 @@ In diesem Tutorial haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von 
 
 
 
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
 [hdinsight-analyze-twitter-data]: hdinsight-analyze-twitter-data.md
 [hdinsight-hbase-get-started]: ../hdinsight-hbase-tutorial-get-started.md
@@ -1279,4 +1277,4 @@ In diesem Tutorial haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von 
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

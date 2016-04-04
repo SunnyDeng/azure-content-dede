@@ -66,11 +66,11 @@ Um Anwendungspakete zu verwenden, müssen Sie zuerst ein Azure Storage-Konto mit
 
 ![Warnung im Azure-Portal, dass kein Storage-Konto konfiguriert ist][9]
 
-Der Batch-Dienst verwendet das zugeordnete Storage-Konto für Speicherung und Abruf von Anwendungspaketen. Nachdem Sie die beiden Konten verknüpft haben, kann Batch die im verknüpften Storage-Konto gespeicherten Pakete automatisch für Ihre Serverknoten bereitstellen. Klicken Sie auf dem Blatt *Warnung* auf **Speicherkontoeinstellungen**, dann auf dem Blatt *Speicherkonto* auf **Speicherkonto**, um ein vorhandenes Storage-Konto mit Ihrem Batch-Konto zu verknüpfen.
+Der Batch-Dienst verwendet das zugeordnete Storage-Konto für Speicherung und Abruf von Anwendungspaketen. Nachdem Sie die beiden Konten verknüpft haben, kann Batch die im verknüpften Storage-Konto gespeicherten Pakete automatisch für Ihre Serverknoten bereitstellen. Klicken Sie auf dem Blatt *Warnung* auf **Speicherkontoeinstellungen**, dann auf dem Blatt *Speicherkonto* auf **Speicherkonto**, um ein Speicherkonto mit Ihrem Batch-Konto zu verknüpfen.
 
 ![Auswählen des Storage-Kontoblatts im Azure-Portal][10]
 
-Sie können ein vorhandenes Storage-Konto in Ihrem Abonnement verwenden oder ein neues für Anwendungspaketspeicher erstellen. Weitere Informationen zum Erstellen eines Storage-Kontos finden Sie unter „Erstellen Sie ein Speicherkonto“ in [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md). Wenn Sie ein Storage-Konto erstellt haben, können Sie es anschließend mithilfe des Blatts *Speicherkonto* mit dem Batch-Konto verknüpfen.
+Es wird empfohlen, dass Sie ein Speicherkonto *speziell* für die Verwendung mit Ihrem Batch-Konto erstellen und dieses hier auswählen. Weitere Informationen zum Erstellen eines Speicherkontos finden Sie unter „Erstellen Sie ein Speicherkonto“ in [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md). Wenn Sie ein Speicherkonto erstellt haben, können Sie es anschließend mithilfe des Blatts *Speicherkonto* mit dem Batch-Konto verknüpfen.
 
 > [AZURE.WARNING] Da Batch Ihre Anwendungspakete mit Azure Storage speichert, werden Ihnen für die Blockblobdaten [normale Gebühren][storage_pricing] in Rechnung gestellt. Beachten Sie unbedingt Größe und Anzahl der Anwendungspakete, und entfernen Sie in regelmäßigen Abständen veraltete Pakete, um Kosten zu minimieren.
 
@@ -86,21 +86,21 @@ Daraufhin wird das Blatt *Anwendungen* geöffnet:
 
 Das Blatt *Anwendungen* zeigt sowohl die ID jeder Anwendung in Ihrem Konto als auch die folgenden Eigenschaften an:
 
-* **Pakete** – Die Anzahl der Versionen, die dieser Anwendung zugeordnet sind.
-* **Standardversion** – Wenn Sie keine Version angeben, wenn Sie die Anwendung für einen Pool festlegen, wird diese Version installiert. Diese Einstellung ist optional.
-* **Updates zulassen** – Wenn dieser Wert auf *Nein* gesetzt ist, sind Paketupdates und -löschungen für die Anwendung deaktiviert – nur neue Anwendungspaketversionen können hinzugefügt werden. Der Standardwert ist *Ja*.
+* **Pakete**: Die Anzahl der Versionen, die dieser Anwendung zugeordnet sind.
+* **Standardversion**: Wenn Sie keine Version angeben, wenn Sie die Anwendung für einen Pool festlegen, wird diese Version installiert. Diese Einstellung ist optional.
+* **Updates zulassen**: Wenn dieser Wert auf *Nein* gesetzt ist, sind Paketupdates und -löschungen für die Anwendung deaktiviert – nur neue Anwendungspaketversionen können hinzugefügt werden. Der Standardwert ist *Ja*.
 
 ### Anzeigen von Anwendungsdetails
 
-Bei Klicken auf eine Anwendung auf dem Blatt *Anwendungen* wird das Detailsblatt für die Anwendung angezeigt.
+Bei Klicken auf eine Anwendung auf dem Blatt *Anwendungen* wird das Blatt mit den Details für die Anwendung angezeigt.
 
 ![Anwendungsdetails][4]
 
-Im Detailsblatt für die Anwendung können Sie die folgenden Einstellungen für Ihre Anwendung konfigurieren.
+Auf dem Blatt mit den Details für die Anwendung können Sie die folgenden Einstellungen für Ihre Anwendung konfigurieren.
 
-* **Updates zulassen** – Geben Sie an, ob ihre Anwendungspakete aktualisiert oder gelöscht werden können (siehe „Aktualisieren oder Löschen eines Anwendungspakets“ im Folgenden).
-* **Standardversion** – Geben Sie ein Standardanwendungspaket an, das für Serverknoten bereitgestellt wird.
-* **Anzeigename** – Dies ist ein Anzeigename, den Ihre Batch-Lösung zur Anzeige von Informationen über die Anwendung verwenden kann, z. B. in der Benutzeroberfläche eines Diensts, den Sie Ihren Kunden über Batch anbieten.
+* **Updates zulassen**: Geben Sie an, ob ihre Anwendungspakete aktualisiert oder gelöscht werden können (siehe „Aktualisieren oder Löschen eines Anwendungspakets“ weiter unten).
+* **Standardversion**: Geben Sie ein Standardanwendungspaket an, das für Serverknoten bereitgestellt wird.
+* **Anzeigename**: Dies ist ein Anzeigename, den Ihre Batch-Lösung zur Anzeige von Informationen über die Anwendung verwenden kann, z. B. in der Benutzeroberfläche eines Diensts, den Sie für Ihre Kunden über Batch bereitstellen.
 
 ### Hinzufügen einer neuen Anwendung
 
@@ -114,9 +114,9 @@ Das Blatt *Neue Anwendung* umfasst die folgenden Felder zur Angabe der Einstellu
 
 **Metadaten**
 
-Sie können die Metadaten für die Anwendung entweder manuell durch direkte Eingabe von Werten in die Textfelder **Anwendungs-ID** und **Version** angeben oder eine JSON-Datei mit diesen Metadaten hochladen. Um ID und Version der Anwendung manuell anzugeben, lassen Sie einfach die Dropdownlistenauswahl **Metadaten** auf **Metadaten eingeben** (Standard), und geben Sie manuell die Werte in die Textfelder **Anwendungs-ID** und **Version** ein.
+Sie können die Metadaten für die Anwendung entweder manuell durch direkte Eingabe von Werten in die Textfelder **Anwendungs-ID** und **Version** angeben oder eine JSON-Datei mit diesen Metadaten hochladen. Um ID und Version der Anwendung manuell anzugeben, behalten Sie einfach in der Dropdownliste **Metadaten** die Einstellung **Metadaten eingeben** bei (Standardeinstellung), und geben Sie die Werte manuell in die Textfelder **Anwendungs-ID** und **Version** ein.
 
-Wählen Sie zum Angeben einer JSON-formatierten Metadatendatei mit ID und Version für ein Paket **Metadatendatei hochladen** aus der Dropdownliste **Metadaten**:
+Um eine JSON-formatierte Metadatendatei mit ID und Version für ein Paket anzugeben, wählen Sie in der Dropdownliste **Metadaten** die Einstellung **Metadatendatei hochladen** aus:
 
 ![Hochladen der Metadatendatei-Dropdownlistenauswahl][6]
 
@@ -133,7 +133,7 @@ Verwenden Sie das folgende JSON-Format, um die Anwendungspaket-Metadaten in eine
 }
 ```
 
-> [AZURE.NOTE] Wenn Sie eine JSON-Metadatendatei für ID und Version hochladen, müssen Sie *nicht* auch die Textfelder „Anwendungs-ID“ oder „Version“ bearbeiten – sie werden automatisch mit den Daten in der JSON-Datei gefüllt.
+> [AZURE.NOTE] Wenn Sie eine JSON-Metadatendatei für ID und Version hochladen, ist es *nicht* erforderlich, auch die Textfelder „Anwendungs-ID“ oder „Version“ zu bearbeiten – diese werden automatisch mit den Daten in der JSON-Datei gefüllt.
 
 **Anwendungs-ID**
 
@@ -155,9 +155,9 @@ Gibt die Version des Anwendungspakets an, das Sie hochladen. Für die Versionsze
 
 **Anwendungspaket**
 
-Dies gibt die ZIP-Datei an, die die Binärdateien der Anwendung und jegliche unterstützenden Dateien enthält, die für die Ausführung der Anwendung erforderlich sind. Klicken Sie auf das Textfeld **Datei auswählen** oder das Ordnersymbol, um dahin zu navigieren und eine ZIP-Datei mit den Dateien der Anwendung auszuwählen.
+Dies gibt die ZIP-Datei an, die die Binärdateien der Anwendung und jegliche unterstützenden Dateien enthält, die für die Ausführung der Anwendung erforderlich sind. Klicken Sie auf das Textfeld **Datei auswählen** oder auf Symbol zum Durchsuchen, um zum gewünschten Speicherort zu navigieren und eine ZIP-Datei mit den Dateien der Anwendung auszuwählen.
 
-Nachdem Sie eine Datei ausgewählt haben, klicken Sie auf **OK**, um das Hochladen in Azure Storage zu beginnen. Wenn das Hochladen abgeschlossen ist, werden Sie benachrichtigt, und das Blatt wird geschlossen. Beachten Sie, dass dieser Vorgang abhängig von der Größe der Datei, die Sie hochladen, und der Geschwindigkeit Ihrer Netzwerkverbindung einige Zeit dauern kann.
+Nachdem Sie eine Datei ausgewählt haben, klicken Sie auf **OK**, um mit dem Hochladen nach Azure Storage zu beginnen. Wenn das Hochladen abgeschlossen ist, werden Sie benachrichtigt, und das Blatt wird geschlossen. Beachten Sie, dass dieser Vorgang abhängig von der Größe der Datei, die Sie hochladen, und der Geschwindigkeit Ihrer Netzwerkverbindung einige Zeit dauern kann.
 
 > [AZURE.WARNING] Schließen Sie das Blatt *Neue Anwendung* nicht, bevor das Hochladen abgeschlossen ist. Dies würde das Hochladen abbrechen.
 
@@ -167,17 +167,17 @@ Um eine neue Anwendungspaketversion für eine vorhandene Anwendung hinzuzufügen
 
 ![Hinzufügen des Anwendungspaketblatts im Azure-Portal][8]
 
-Wie Sie sehen können, entsprechen die Felder mit Ausnahme des deaktivierten Textfelds „Anwendungs-ID“ denen des Blatts *Neue Anwendung*. Geben Sie wie oben die **Version** für das neue Paket ein, navigieren Sie zu Ihrer **Anwendungspaket**-ZIP-Datei, und klicken Sie dann zum Hochladen des Pakets auf **OK**.
+Wie Sie sehen können, entsprechen die Felder mit Ausnahme des deaktivierten Textfelds „Anwendungs-ID“ denen des Blatts *Neue Anwendung*. Geben Sie wie oben die **Version** für das neue Paket ein, navigieren Sie zu Ihrer ZIP-Datei mit dem **Anwendungspaket**, und klicken Sie dann zum Hochladen des Pakets auf **OK**.
 
 ### Aktualisieren oder Löschen eines Anwendungspakets
 
-Öffnen Sie zum Aktualisieren oder Löschen eines vorhandenen Anwendungspakets das Detailsblatt für die Anwendung, klicken Sie auf **Pakete**, um das Blatt *Pakete* anzuzeigen, klicken Sie auf die **Auslassungspunkte** in der Zeile des Anwendungspakets, das Sie ändern möchten, und wählen Sie die Aktion, die Sie ausführen möchten.
+Öffnen Sie zum Aktualisieren oder Löschen eines vorhandenen Anwendungspakets das Blatt mit den Details für die Anwendung, klicken Sie auf **Pakete**, um das Blatt *Pakete* anzuzeigen, klicken Sie auf die **Auslassungspunkte** in der Zeile des Anwendungspakets, das Sie ändern möchten, und wählen Sie die Aktion, die Sie ausführen möchten.
 
 ![Aktualisieren oder Löschen des Pakets im Azure-Portal][7]
 
 **Aktualisieren**
 
-Beim Klicken auf **Aktualisieren** wird das Blatt *Paket aktualisieren* angezeigt. Dieses Blatt ist vergleichbar mit dem Blatt *Neues Anwendungspaket*, doch nur das Paketauswahlfeld ist aktiviert, sodass Sie eine neue ZIP-Datei zum Hochladen angeben können.
+Beim Klicken auf **Aktualisieren** wird das Blatt *Paket aktualisieren* angezeigt. Dieses Blatt ist vergleichbar mit dem Blatt *Neues Anwendungspaket*, doch hier ist nur das Paketauswahlfeld aktiviert, sodass Sie eine neue ZIP-Datei zum Hochladen angeben können.
 
 ![Aktualisieren des Paketblatts im Azure-Portal][11]
 
@@ -191,9 +191,9 @@ Beim Klicken auf **Löschen** werden Sie aufgefordert, die Löschung der Paketve
 
 Da wir nun das Hochladen und Verwalten von Anwendungspaketen mithilfe des Azure-Portals behandelt haben, können wir jetzt deren eigentliche Bereitstellung für Serverknoten und ihre Ausführung mit Batch-Aufgaben erörtern.
 
-Um ein Anwendungspaket auf den Serverknoten in einem Pool zu installieren, geben Sie einen oder mehrere Anwendungspaket*verweise* für den Pool an. In Batch .NET fügen Sie hierzu einen oder mehrere [CloudPool][net_cloudpool].[ApplicationPackageReferences][net_cloudpool_pkgref] hinzu, wenn Sie den Pool erstellen, oder einem vorhandenen Pool hinzu.
+Um ein Anwendungspaket auf den Serverknoten in einem Pool zu installieren, geben Sie einen oder mehrere Anwendungspaket*verweise* für den Pool an. In Batch .NET fügen Sie hierzu einen oder mehrere Verweise vom Typ [CloudPool][net_cloudpool].[ApplicationPackageReferences][net_cloudpool_pkgref] hinzu. Sie fügen die Verweise entweder beim Erstellen des Pools hinzu, oder sie fügen sie einem vorhanden Pool hinzu.
 
-Die [ApplicationPackageReference][net_pkgref]-Klasse gibt eine Anwendungs-ID und Version zum Installieren auf den Serverknoten eines Pools an.
+Die [ApplicationPackageReference][net_pkgref]-Klasse gibt eine Anwendungs-ID und -Version zum Installieren auf den Serverknoten eines Pools an.
 
 ```csharp
 // Create the unbound CloudPool
@@ -222,7 +222,7 @@ Da jeder Serverknoten einem Pool beitritt (oder neu gestartet bzw. ein Reimaging
 
 `AZ_BATCH_APP_PACKAGE_appid#version`
 
-Wenn Sie beispielsweise angeben, dass Version 2.7 der Anwendung *blender* installiert werden soll, können Ihre Aufgaben über die folgende Umgebungsvariable in ihren Befehlszeilen auf die Binärdateien zugreifen:
+Wenn Sie beispielsweise angeben, dass Version 2.7 der Anwendung *Blender* installiert werden soll, können Ihre Aufgaben über die folgende Umgebungsvariable in ihren Befehlszeilen auf die Binärdateien zugreifen:
 
 `AZ_BATCH_APP_PACKAGE_BLENDER#2.7`
 
@@ -230,7 +230,7 @@ Wenn Ihre Anwendung eine Standardversion angibt, können Sie ohne Versionszeiche
 
 `AZ_BATCH_APP_PACKAGE_BLENDER`
 
-Der folgende Codeausschnitt zeigt, wie eine Aufgabe konfiguriert werden kann, wenn eine Standardversion für die Anwendung *blender* angegeben wurde.
+Der folgende Codeausschnitt zeigt, wie eine Aufgabe konfiguriert werden kann, wenn eine Standardversion für die Anwendung *Blender* angegeben wurde.
 
 ```csharp
 string taskId = "blendertask01";
@@ -244,7 +244,7 @@ CloudTask blenderTask = new CloudTask(taskId, commandLine);
 
 Wenn ein vorhandener Pool bereits mit einem Anwendungspaket konfiguriert wurde, können Sie ein neues Paket für den Pool angeben. Alle neuen Knoten, die dem Pool beitreten, installieren das neu angegebene Paket, wie jeder vorhandene Knoten, der neu gestartet bzw. an dem ein Reimaging durchgeführt wird. Serverknoten, die sich bereits im Pool befinden, wenn Sie die Paketverweise aktualisieren, werden nicht automatisch im neuen Anwendungspaket installiert.
 
-In diesem Beispiel hat der vorhandene Pool Version 2.7 der Anwendung *blender* als eine seiner [CloudPool][net_cloudpool].[ApplicationPackageReferences][net_cloudpool_pkgref] konfiguriert. Um die Knoten des Pools mit Version 2.76b zu aktualisieren, geben Sie eine neue [ApplicationPackageReference][net_pkgref] mit der neuen Version ein, und committen Sie die Änderung.
+In diesem Beispiel hat der vorhandene Pool Version 2.7 der Anwendung *Blender* als eine seiner [CloudPool][net_cloudpool].[ApplicationPackageReferences][net_cloudpool_pkgref] konfiguriert. Um die Knoten des Pools mit Version 2.76b zu aktualisieren, geben Sie eine neue [ApplicationPackageReference][net_pkgref] mit der neuen Version ein, und führen ein Commit für die Änderung aus.
 
 ```csharp
 string newVersion = "2.76b";
@@ -316,4 +316,4 @@ Mit Anwendungspaketen können Sie Ihren Kunden viel einfacher die Möglichkeit b
 [12]: ./media/batch-application-packages/app_pkg_12.png "Dialogfeld zum Bestätigen der Paketlöschung im Azure-Portal"
 [13]: ./media/batch-application-packages/app_pkg_13.png "Metadatendatei-Auswahldetail"
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

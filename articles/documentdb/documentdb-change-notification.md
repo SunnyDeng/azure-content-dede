@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="rest-api" 
     ms.topic="article" 
-    ms.date="03/10/2016" 
+    ms.date="03/17/2016" 
     ms.author="b-hoedid"/>
 
 # Benachrichtigungen über neue oder geänderte DocumentDB-Ressourcen mit Logik-Apps
@@ -624,7 +624,7 @@ Die nächste Aktion ist das Speichern der Dokumente im [Azure-Blobspeicher](http
 
 Der Code wird aus der Aktion im Designer generiert. Sie müssen den Code nicht ändern.
 
-Wenn Ihnen die Verwendung der Azure-Blob-API nicht vertraut ist, finden Sie weitere Informationen unter [Get started with the Azure blob storage API](../connectors/create-api-azureblobstorage.md) (Erste Schritte mit der Azure-Blobspeicher-API).
+Wenn Ihnen die Verwendung der Azure-Blob-API nicht vertraut ist, finden Sie weitere Informationen unter [Get started with the Azure blob storage API](../connectors/connectors-create-api-azureblobstorage.md) (Erste Schritte mit der Azure-Blobspeicher-API).
 
 #### Vorgänge
 
@@ -1156,4 +1156,4 @@ Bitte verwenden Sie den Logik-App-Code, den Sie bei [Github](https://github.com/
 
 Weitere Informationen zu DocumentDB finden Sie im [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

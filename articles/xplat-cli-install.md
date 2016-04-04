@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/08/2016"
+	ms.date="03/09/2016"
 	ms.author="danlep"/>
 
 # Installieren der Azure-Befehlszeilenschnittstelle
 
-Installieren Sie schnell die Azure-Befehlszeilenschnittstelle (Azure-CLI), um eine Reihe von auf der Open-Source-Shell basierenden Befehlen zum Erstellen und Verwalten von Ressourcen in Microsoft Azure zu verwenden. Verwenden Sie eines der bereitgestellten Installationspakete zum Installieren der Azure-Befehlszeilenschnittstelle in Ihrem Betriebssystem. Installieren Sie die CLI über Node.js und **npm**, oder installieren Sie die Azure-CLI als Container auf einem Docker-Host. Weitere Optionen und Hintergrundinformationen finden Sie im Projektrepository auf [GitHub](https://github.com/azure/azure-xplat-cli).
+Installieren Sie schnell die Azure-Befehlszeilenschnittstelle (Azure-CLI), um eine Reihe von auf der Open-Source-Shell basierenden Befehlen zum Erstellen und Verwalten von Ressourcen in Microsoft Azure zu verwenden. Verwenden Sie eines der bereitgestellten Installationspakete zum Installieren der Azure-Befehlszeilenschnittstelle in Ihrem Betriebssystem. Installieren Sie die Befehlszeilenschnittstelle über Node.js und **npm** oder als Container auf einem Docker-Host. Weitere Optionen und Hintergrundinformationen finden Sie im Projektrepository auf [GitHub](https://github.com/azure/azure-xplat-cli).
 
 
 Sobald die Azure-Befehlszeilenschnittstelle installiert ist, können Sie sie [mit Ihrem Azure-Abonnement verbinden](xplat-cli-connect.md) und die **azure**-Befehle in der Befehlszeilenschnittstelle (Bash, Terminal, Eingabeaufforderung usw.) für die Arbeit mit Ihren Azure-Ressourcen verwenden.
@@ -79,7 +79,7 @@ Für die Installation von „Node.js“ auf RPM-basierten Distributionen ist die
 
 ### Installieren von „Node.js“ und „npm“ unter Windows und Mac OS X
 
-Sie können „Node.js“ und „npm“ mit den Installationsprogrammen von [Nodejs.org](https://nodejs.org/en/download/) unter Windows und OS X installieren. Möglicherweise müssen Sie den Computer zum Abschließen der Installation neu starten. Überprüfen Sie, ob „Node.js“ und „npm“ ordnungsgemäß installiert wurden, indem Sie ein Befehls- oder Terminalfenster öffnen und Folgendes eingeben:
+Sie können „Node.js“ und „npm“ mit den Installationsprogrammen von [Nodejs.org](https://nodejs.org/en/download/) unter Windows und OS X installieren. Möglicherweise müssen Sie den Computer zum Abschließen der Installation neu starten. Überprüfen Sie, ob „Node.js“ und „npm“ ordnungsgemäß installiert wurden, indem Sie ein Befehls- oder Terminalfenster öffnen und Folgendes eingeben:
 
 	npm -v
 
@@ -142,9 +142,9 @@ npm update -g azure-cli
 
 ## Zusätzliche Ressourcen
 
-* [Verwenden der Azure-CLI mit dem Azure-Ressourcen-Manager (ARM)][cliarm]
+* [Azure-CLI-Befehle im Azure Resource Manager-Modus (ARM-Modus)][cliarm]
 
-* [Verwenden der Azure-CLI mit Azure Service Management][cliasm]
+* [Azure-CLI-Befehle im Modus „Azure-Dienstverwaltung“ (Azure Service Management, ASM)][cliasm]
 
 * Wenn Sie weitere Informationen zur Azure-Befehlszeilenschnittstelle erhalten, den Quellcode herunterladen, Probleme melden oder etwas zum Projekt beitragen möchten, besuchen Sie die Webseite [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli).
 
@@ -155,7 +155,7 @@ npm update -g azure-cli
 [mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
 [linux-installer]: http://go.microsoft.com/fwlink/?linkid=253472
-[cliasm]: virtual-machines/virtual-machines-command-line-tools.md
-[cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
+[cliasm]: virtual-machines-command-line-tools.md
+[cliarm]: virtual-machines/azure-cli-arm-commands.md
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

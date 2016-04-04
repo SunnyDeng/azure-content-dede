@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services" 
-	ms.date="12/07/2015"
+	ms.date="03/15/2016"
 	ms.author="telmos"/>
 
 # Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei
@@ -48,4 +48,4 @@ Beim Export werden alle Einstellungen für die virtuellen Netzwerke in Ihrem Abo
 3. Wechseln Sie auf der Seite **Die Netzwerkkonfigurationsdatei importieren** zu Ihrer Netzwerkkonfigurationsdatei, und klicken Sie dann auf den Pfeil für **Weiter**.
 4. Auf der Seite **Netzwerk wird erstellt** wird auf dem Bildschirm angezeigt, welche Teile Ihrer Netzwerkkonfiguration geändert oder erstellt werden. Wenn die Änderungen Ihnen richtig erscheinen, markieren Sie das Häkchen, um mit dem Aktualisieren oder Erstellen Ihres virtuellen Netzwerks fortzufahren. 
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

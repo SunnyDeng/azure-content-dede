@@ -42,7 +42,7 @@ Zum Erstellen einer internen Load Balancer-Gruppe und der Server, die den Datenv
 
 Anhand der folgenden Anleitung erstellen Sie auf der Grundlage des oben beschriebenen Szenarios einen internen Load Balancer.
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../../articles/xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
 
 2. Führen Sie den Befehl **azure config mode** aus, um in den klassischen Modus zu wechseln, wie unten dargestellt.
 
@@ -57,12 +57,12 @@ Anhand der folgenden Anleitung erstellen Sie auf der Grundlage des oben beschrie
 
 Das Szenario setzt die virtuellen Computer „DB1“ und „DB2“ in einem Clouddienst namens „mytestcloud“ voraus. Beide virtuelle Computer verwenden ein virtuelles Netzwerk namens „my testvnet“ mit dem Subnetz „subnet-1“.
 
-Dieses Handbuch erstellt eine interne Load Balancer-Gruppe, die Port 1433 als privaten Port und Port 1433 als lokalen Port verwendet.
+Dieses Handbuch erstellt eine interne Load Balancer-Gruppe, die Port 1433 als privaten Port und Port 1433 als lokalen Port verwendet.
 
 Dies ist ein häufiges Szenario, bei dem sich die virtuellen SQL-Computer im Back-End befinden und über einen internen Load Balancer sichergestellt wird, dass die Datenbankserver nicht direkt über eine öffentliche IP-Adresse offen gelegt werden.
 
 
-### Schritt 1 
+### Schritt 1 
 
 Erstellen Sie einen internen Load Balancer mit `azure network service internal-load-balancer add`.
 
@@ -87,7 +87,7 @@ Dies ist ein Beispiel für die Ausgabe:
 	info:    service internal-load-balancer list command OK
 
 
-## Schritt 2 
+## Schritt 2 
 
 Sie konfigurieren die interne Load Balancer-Gruppe, wenn Sie den ersten Endpunkt hinzufügen. Sie ordnen den Endpunkt, den virtuellen Computer und den Testport der internen Load Balancer-Gruppe in diesem Schritt zu.
 
@@ -98,7 +98,7 @@ Verwendete Parameter:
 **-k:** Port des lokalen virtuellen Computers<BR> **-t:** Testport<BR> **-r:** Testprotokoll <BR> **-e:** Testintervall in Sekunden <BR> **-f:** Timeoutintervall in Sekunden <BR> **-i:** Name des internen Load Balancers <BR>
 
 
-## Schritt 3 
+## Schritt 3 
 
 Überprüfen Sie die Load Balancer-Konfiguration mithilfe von `azure vm show` *Name des virtuellen Computers*.
 
@@ -179,4 +179,4 @@ Weitere Informationen finden Sie unter `azure vm endpoint --help`.
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -3,7 +3,7 @@
    description="Tipps für die Verwendung von temporären Tabellen in Azure SQL Data Warehouse zum Entwickeln von Lösungen."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="twounder"
+   authors="jrowlandjones"
    manager="barbkess"
    editor=""/>
 
@@ -17,11 +17,107 @@
    ms.author="mausher;jrj;barbkess;sonyama"/>
 
 # Temporäre Tabellen in SQL Data Warehouse
-Temporäre Tabellen befinden sich in SQL Data Warehouse auf Sitzungsebene. Sie sind als lokale temporäre Tabellen definiert, und im Gegensatz zu SQL Server-Tabellen kann von überall innerhalb der Sitzung auf sie zugegriffen werden.
+Temporäre Tabellen sind sehr nützlich bei der Verarbeitung von Daten – vor allem bei Transformationen, bei denen die Zwischenergebnisse vorübergehend sind. In SQL Data Warehouse befinden sich temporäre Tabellen auf Sitzungsebene. Sie sind jedoch als lokale temporäre Tabellen definiert, aber im Gegensatz zu SQL Server-Tabellen kann von überall innerhalb der Sitzung auf sie zugegriffen werden.
 
-Temporäre Tabellen sind sehr nützlich bei der Verarbeitung von Daten – vor allem bei Transformationen, bei denen die Zwischenergebnisse vorübergehend sind.
+Dieser Artikel enthält einige wichtige Anleitungen zur Verwendung von temporären Tabellen. Zudem werden die Grundsätze von temporären Tabellen auf Sitzungsebene behandelt. Mithilfe dieser Informationen können Sie Ihren Code modularisieren. Codemodularität ist wichtig für eine einfache Wartung und die Wiederverwendung von Code.
 
-In diesem Artikel werden einige spezifische Methoden für die Nutzung von temporären Tabellen hervorgehoben, mit denen der Code modularisiert werden kann.
+## Erstellen von temporären Tabellen
+Das Erstellen einer temporären Tabelle ist sehr unkompliziert. Sie müssen nur dem Tabellennamen das Zeichen # voranstellen, wie im folgenden Beispiel gezeigt:
+
+```
+CREATE TABLE #stats_ddl
+(
+	[schema_name]			NVARCHAR(128) NOT NULL
+,	[table_name]            NVARCHAR(128) NOT NULL
+,	[stats_name]            NVARCHAR(128) NOT NULL
+,	[stats_is_filtered]     BIT           NOT NULL
+,	[seq_nmbr]              BIGINT        NOT NULL
+,	[two_part_name]         NVARCHAR(260) NOT NULL
+,	[three_part_name]       NVARCHAR(400) NOT NULL
+)
+WITH
+(
+	DISTRIBUTION = HASH([seq_nmbr])
+,	HEAP
+)
+```
+
+Temporäre Tabellen können auch mit `CTAS` auf genau die gleiche Weise erstellt werden.
+
+```
+CREATE TABLE #stats_ddl
+WITH
+(
+	DISTRIBUTION = HASH([seq_nmbr])
+,	HEAP
+)
+AS
+(
+SELECT
+		sm.[name]				                                                AS [schema_name]
+,		tb.[name]				                                                AS [table_name]
+,		st.[name]				                                                AS [stats_name]
+,		st.[has_filter]			                                                AS [stats_is_filtered]
+,       ROW_NUMBER()
+        OVER(ORDER BY (SELECT NULL))                                            AS [seq_nmbr]
+,								 QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])  AS [two_part_name]
+,		QUOTENAME(DB_NAME())+'.'+QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])  AS [three_part_name]
+FROM	sys.objects			AS ob
+JOIN	sys.stats			AS st	ON	ob.[object_id]		= st.[object_id]
+JOIN	sys.stats_columns	AS sc	ON	st.[stats_id]		= sc.[stats_id]
+									AND st.[object_id]		= sc.[object_id]
+JOIN	sys.columns			AS co	ON	sc.[column_id]		= co.[column_id]
+									AND	sc.[object_id]		= co.[object_id]
+JOIN	sys.tables			AS tb	ON	co.[object_id]		= tb.[object_id]
+JOIN	sys.schemas			AS sm	ON	tb.[schema_id]		= sm.[schema_id]
+WHERE	1=1
+AND		st.[user_created]   = 1
+GROUP BY
+		sm.[name]
+,		tb.[name]
+,		st.[name]
+,		st.[filter_definition]
+,		st.[has_filter]
+)
+SELECT
+    CASE @update_type
+    WHEN 1
+    THEN 'UPDATE STATISTICS '+[two_part_name]+'('+[stats_name]+');'
+    WHEN 2
+    THEN 'UPDATE STATISTICS '+[two_part_name]+'('+[stats_name]+') WITH FULLSCAN;'
+    WHEN 3
+    THEN 'UPDATE STATISTICS '+[two_part_name]+'('+[stats_name]+') WITH SAMPLE '+CAST(@sample_pct AS VARCHAR(20))+' PERCENT;'
+    WHEN 4
+    THEN 'UPDATE STATISTICS '+[two_part_name]+'('+[stats_name]+') WITH RESAMPLE;'
+    END AS [update_stats_ddl]
+,   [seq_nmbr]
+FROM    t1
+;
+``` 
+
+>[AZURE.NOTE] `CTAS` ist ein sehr leistungsfähiger Befehl. Er bietet den zusätzlichen Vorteil, dass er bei der Verwendung des Speicherplatzes für das Transaktionsprotokoll sehr effizient ist.
+
+
+## Löschen von temporären Tabellen
+
+Damit Ihre `CREATE TABLE`-Anweisungen erfolgreich sind, müssen Sie sicherstellen, dass die Tabelle noch nicht in der Sitzung vorhanden ist. Dies kann mit einer einfachen Überprüfung auf das Vorhandensein nach dem folgenden Muster erledigt werden:
+
+```
+IF OBJECT_ID('tempdb..#stats_ddl') IS NOT NULL
+BEGIN
+	DROP TABLE #stats_ddl
+END
+```
+
+> [AZURE.NOTE] Für Codekonsistenz wird empfohlen, dieses Muster für Tabellen und temporäre Tabellen zu verwenden.
+
+Es ist auch eine gute Idee, mit `DROP TABLE` temporäre Tabellen zu entfernen, wenn Sie sie in Ihrem Code nicht mehr benötigen.
+
+```
+DROP TABLE #stats_ddl
+```
+
+Bei der Entwicklung gespeicherter Prozeduren ist es üblich, die Befehle zum Löschen am Ende einer Prozedur zu bündeln, um sicherzustellen, dass diese Objekte bereinigt werden.
 
 ## Modularisieren von Code
 
@@ -29,7 +125,7 @@ Die Tatsache, dass temporäre Tabellen in einer Benutzersitzung an einer beliebi
 
 Im Folgenden erstellen wir ein Beispiel.
 
-Die folgende gespeicherte Prozedur generiert die DDL-Anweisungen, die zum Aktualisieren der Statistiken für jede Spalte in der Datenbank erforderlich sind:
+Mit der folgenden gespeicherten Prozedur werden die oben genannten Beispiele zusammengeführt. Mit dem Code können die DDL-Anweisungen generiert werden, die zum Aktualisieren der Statistiken für jede Spalte in der Datenbank erforderlich sind:
 
 ```
 CREATE PROCEDURE    [dbo].[prc_sqldw_update_stats]
@@ -47,6 +143,11 @@ IF @sample_pct IS NULL
 BEGIN;
     SET @sample_pct = 20;
 END;
+
+IF OBJECT_ID('tempdb..#stats_ddl') IS NOT NULL
+BEGIN
+	DROP TABLE #stats_ddl
+END
 
 CREATE TABLE #stats_ddl
 WITH
@@ -95,13 +196,18 @@ SELECT
 ,   [seq_nmbr]
 FROM    t1
 ;
+GO
 ```
 
-Beachten Sie, dass mit diesen Daten bisher nichts vorgenommen wurde. Die Prozedur hat einfach die DDL-Anweisungen generiert und sie in einer temporären Tabelle gespeichert.
+An diesem Punkt wurde keine Aktion in der Tabelle ausgeführt. Die Prozedur hat einfach die DDL-Anweisungen generiert, die zum Aktualisieren der Statistiken erforderlich sind, und diesen Code in einer temporären Tabelle gespeichert.
 
-Es ist jedoch in SQL Data Warehouse möglich, diese temporäre Tabelle außerhalb der Prozedur zu verwenden, die sie erstellt hat. Dies unterscheidet sich bei SQL Server. Tatsächlich kann die temporäre Tabelle **überall** innerhalb der Sitzung verwendet werden.
+Beachten Sie jedoch, dass die gespeicherte Prozedur am Ende keinen `DROP TABLE`-Befehl enthält. Wir haben jedoch eine Überprüfung auf das Vorhandensein in die gespeicherte Prozedur aufgenommen, um den Code robuster und wiederholbar zu machen. Dadurch wird sichergestellt, dass `CTAS` nicht fehlschlägt, weil ein doppeltes Objekt in der Sitzung vorhanden ist.
 
-Dies kann zu modularerem und besser verwaltbarem Code führen.
+Und jetzt zum interessanten Teil!
+
+In SQL Data Warehouse ist es möglich, diese temporäre Tabelle außerhalb der Prozedur zu verwenden, die sie erstellt hat. Dies unterscheidet sich bei SQL Server. Tatsächlich kann die temporäre Tabelle **überall** innerhalb der Sitzung verwendet werden.
+
+Dies kann zu modularerem und besser verwaltbarem Code führen. Betrachten Sie das folgende Beispiel:
 
 ```
 EXEC [dbo].[prc_sqldw_update_stats] @update_type = 1, @sample_pct = NULL;
@@ -122,7 +228,9 @@ END
 DROP TABLE #stats_ddl;
 ```
 
-In einigen Fällen können Inline-Funktionen und Funktionen mit mehreren Anweisungen auch mithilfe dieses Verfahrens ersetzt werden.
+Der resultierende Code ist viel kompakter.
+
+In einigen Fällen können Inlinefunktionen und Funktionen mit mehreren Anweisungen auch mithilfe dieses Verfahrens ersetzt werden.
 
 > [AZURE.NOTE] Sie können diese Lösung auch erweitern. Wenn Sie beispielsweise nur eine einzelne Tabelle aktualisieren möchten, müssen Sie nur die #stats\_ddl-Tabelle filtern
 
@@ -133,7 +241,6 @@ Die wichtigsten Einschränkungen sind:
 
 - Globale temporäre Tabellen werden nicht unterstützt.
 - Sichten können nicht in temporären Tabellen erstellt werden.
-
 
 ## Nächste Schritte
 Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
@@ -147,4 +254,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

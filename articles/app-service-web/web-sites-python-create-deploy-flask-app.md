@@ -381,8 +381,7 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop/python/).
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 
 <!--Link references-->
@@ -403,4 +402,4 @@ Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop
 [Dokumentation zu Flask]: http://flask.pocoo.org/
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

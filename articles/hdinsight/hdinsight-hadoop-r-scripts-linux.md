@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/05/2016"
+	ms.date="02/29/2016"
 	ms.author="larryfr"/>
 
 # Installieren und Verwenden von R in HDInsight Hadoop-Clustern
@@ -37,8 +37,8 @@ Die Skriptaktion zur Installation von R in einem HDInsight-Cluster installiert d
 
 Folgende RHadoop-Pakete, die für die Integration von MapReduce und HDFS sorgen, werden ebenfalls installiert:
 
-* [rmr2](https://github.com/RevolutionAnalytics/rmr2): Ermöglicht R-Entwicklern die Verwendung von Hadoop MapReduce.
-* [rhdfs](https://github.com/RevolutionAnalytics/rhdfs): Ermöglicht R-Entwicklern die Verwendung von Hadoop HDFS (WASB für HDInsight).
+* [rmr2](https://github.com/RevolutionAnalytics/rmr2): Ermöglicht R-Entwicklern die Verwendung von Hadoop MapReduce.
+* [rhdfs](https://github.com/RevolutionAnalytics/rhdfs): Ermöglicht R-Entwicklern die Verwendung von Hadoop HDFS (WASB für HDInsight).
 
 Darüber hinaus werden die folgenden R-Pakete installiert:
 
@@ -58,9 +58,11 @@ Darüber hinaus werden die folgenden R-Pakete installiert:
 
 ## Installation von R mithilfe von Skriptaktionen
 
-Die Skriptaktion [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh) dient zum Installieren von R in einen HDInsight-Cluster. Dieser Abschnitt enthält Anweisungen zur Verwendung des Skripts während der Bereitstellung des Clusters mithilfe des Azure-Portals.
+Die folgende Skriptaktion dient zum Installieren von R in einem HDInsight-Cluster. https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
+    
+Dieser Abschnitt enthält Anweisungen zur Verwendung des Skripts während der Erstellung eines neuen Clusters mithilfe des Azure-Portals.
 
-> [AZURE.NOTE] Sie können auch Azure PowerShell oder das HDInsight .NET SDK zum Erstellen eines Clusters mit diesem Skript verwenden. Weitere Informationen zur Verwendung dieser Methoden finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
+> [AZURE.NOTE] Zum Anwenden von Skriptaktionen können auch Azure PowerShell, das HDInsight .NET SDK oder Azure Resource Manager-Vorlagen verwendet werden. Sie können auch Skriptaktionen auf bereits ausgeführte Cluster anwenden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
 1. Beginnen Sie die Bereitstellung eines Clusters anhand der Schritte in [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-hadoop-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
 
@@ -135,8 +137,6 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 
 - [Installieren und Verwenden von Hue in HDInsight-Clustern](hdinsight-hadoop-hue-linux.md) Hue ist eine Webbenutzeroberfläche, die das Erstellen, Ausführen und Speichern von Pig- und Hive-Aufträgen sowie das Durchsuchen des Standardspeichers für Ihre HDInsight-Cluster vereinfacht.
 
-- Unter [Installieren und Verwenden von Spark für HDInsight-Cluster][hdinsight-install-spark] finden Sie Anweisungen zum Verwenden der Clusteranpassung zum Installieren und Verwenden von Spark für HDInsight Hadoop-Cluster. Spark ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von Big Data zu steigern.
-
 - [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md). Verwenden Sie die Clusteranpassung, um Giraph in HDInsight Hadoop-Clustern zu installieren. Giraph ermöglicht Ihnen, mithilfe von Hadoop Graphverarbeitungen durchzuführen. Es kann zudem mit Azure HDInsight eingesetzt werden.
 
 - [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md). Verwenden Sie die Clusteranpassung, um Solr in HDInsight Hadoop-Clustern zu installieren. Solr ermöglicht Ihnen, leistungsstarke Suchvorgänge auf gespeicherte Daten anzuwenden.
@@ -144,6 +144,5 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 - [Installieren von Hue in HDInsight-Clustern](hdinsight-hadoop-hue-linux.md) Verwenden Sie die Clusteranpassung, um Hue in HDInsight Hadoop-Clustern zu installieren. Bei Hue handelt es sich um einen Satz von Webanwendungen zur Interaktion mit einem Hadoop-Cluster.
 
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -26,9 +26,11 @@
 
 Informationen zum Verwalten eines [Pools für elastische Datenbanken](sql-database-elastic-pool.md) mithilfe von C#
 
+Häufige Fehlercodes finden Sie unter [SQL-Fehlercodes für SQL-Datenbank-Clientanwendungen: Datenbankverbindungsfehler und andere Probleme](sql-database-develop-error-messages.md).
+
 > [AZURE.NOTE] Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server-portal.md).
 
-Die Beispiele verwenden die [SQL-Datenbankbibliothek für .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx). Sie müssen die Bibliothek daher installieren. Verwenden Sie den folgenden Befehl zur Installation über die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) in Visual Studio (**Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
+In den Beispielen wird die [SQL-Datenbankbibliothek für .NET](https://msdn.microsoft.com/library/azure/mt349017.aspx) verwendet. Sie müssen die Bibliothek daher installieren. Verwenden Sie den folgenden Befehl zur Installation über die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) in Visual Studio (**Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
 
@@ -455,4 +457,4 @@ Erstellen Sie eine Konsolenanwendung, und ersetzen Sie den Inhalt von Program.cs
 - [APIs für Azure-Ressourcenverwaltung](https://msdn.microsoft.com/library/azure/dn948464.aspx)
 - [Referenz zu Pools für elastische Datenbanken](sql-database-elastic-pool-reference.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

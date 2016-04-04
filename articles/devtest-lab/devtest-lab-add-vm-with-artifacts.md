@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/13/2016"
+	ms.date="03/21/2016"
 	ms.author="tarcher"/>
 
 # Hinzufügen einer VM mit Artefakten zu einem DevTest Lab
@@ -26,11 +26,11 @@ Sie erstellen eine VM in einem DevTest Lab aus einem Basisimage, das entweder ei
 
 Mit DevTest Lab-*Artefakten* können Sie *Aktionen* angeben, die ausgeführt werden, wenn die VM erstellt wird.
 
-Artefaktaktionen können Prozeduren ausführen, z. B. die Ausführung von Windows PowerShell-Skripts und Bash-Befehlen, und Software installieren.
+Artefaktaktionen können Prozeduren ausführen, z.B. die Ausführung von Windows PowerShell-Skripts und Bash-Befehlen und eine Softwareinstallation.
 
 Mit *Parametern* für Artefakte können Sie das Artefakt für ein bestimmtes Szenario anpassen.
 
-In diesem Artikel wird die Erstellung einer VM in Ihrem Lab mithilfe von Artefakten veranschaulicht.
+In diesem Artikel wird die Erstellung eines virtuellen Computers in Ihrem Lab mithilfe von Artefakten veranschaulicht.
 
 ## Hinzufügen einer VM mit Artefakten
 
@@ -38,7 +38,7 @@ In diesem Artikel wird die Erstellung einer VM in Ihrem Lab mithilfe von Artefak
 
 1. Tippen Sie auf **Durchsuchen**, und tippen Sie dann in der Liste auf **DevTest Labs**.
 
-1. Tippen Sie in der Liste der Labs auf das Lab, in dem Sie die neue VM erstellen möchten.
+1. Tippen Sie in der Liste der Labs auf das Lab, in dem Sie den neuen virtuellen Computer erstellen möchten.
 
 1. Tippen Sie auf dem Blatt des Labs auf **+ Lab-VM**, wie in der folgenden Abbildung dargestellt. ![DevTest Lab-Startblatt](./media/devtest-lab-add-vm-with-artifacts/devtestlab-home-blade-add-vm.png)
 
@@ -60,7 +60,7 @@ In diesem Artikel wird die Erstellung einer VM in Ihrem Lab mithilfe von Artefak
 
 1. Tippen Sie auf **VM-Größe**, und wählen Sie eines der vordefinierten Elemente aus, mit denen die Prozessorkerne, die RAM-Größe und die Größe der Festplatte der zu erstellenden VM angegeben werden.
 
-1. Tippen Sie auf **Virtuelles Netzwerk**, und wählen Sie das gewünschte VNET.
+1. Tippen Sie auf **Virtuelles Netzwerk**, und wählen Sie das gewünschte virtuelle Netzwerk aus.
 
 1. Tippen Sie auf **Subnetz**, und wählen Sie das Subnetz.
 
@@ -123,4 +123,4 @@ Die folgenden Schritte veranschaulichen das Anzeigen oder Ändern der Parameter 
 - Sobald die VM erstellt ist, können Sie sich durch Tippen auf **Verbinden** auf dem Blatt der VM mit der VM verbinden.
 - Informationen zum Erstellen von Artefakten finden Sie im Artikel [Erstellen von benutzerdefinierten Artefakten für Ihre DevTest Lab-VM](devtest-lab-artifact-author.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

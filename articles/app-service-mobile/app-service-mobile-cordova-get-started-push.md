@@ -88,9 +88,9 @@ Das Push-Plug-In lässt sich auf eine der folgenden Arten installieren:
 
 1.  Öffnen Sie die `config.xml`-Datei im Projektmappen-Explorer.
 2.  Klicken Sie auf **Plug-Ins** > **Benutzerdefiniert**, wählen Sie **Git** als Installationsquelle aus, und geben Sie dann `https://github.com/phonegap/phonegap-plugin-push` als Quelle ein.
-	
+
 	![](./media/app-service-mobile-cordova-get-started-push/add-push-plugin.png)
-	
+
 4.  Klicken Sie auf den Pfeil neben der Installationsquelle, und klicken Sie dann auf **Hinzufügen**.
 
 Das Push-Plug-In ist jetzt installiert.
@@ -115,23 +115,23 @@ Die aktuell erforderlichen Bibliotheken werden in der [phonegap-plugin-push inst
 
 1. Fügen Sie einen Aufruf von **registerForPushNotifications** während des Callbacks für den Anmeldeprozess oder am Ende der **onDeviceReady**-Methode hinzu:
 
- 
+
 		// Login to the service.
 		client.login('google')
 		    .then(function () {
 		        // Create a table reference
 		        todoItemTable = client.getTable('todoitem');
-		
+
 		        // Refresh the todoItems
 		        refreshDisplay();
-		
+
 		        // Wire up the UI Event Handler for the Add Item
 		        $('#add-item').submit(addItemHandler);
 		        $('#refresh').on('click', refreshDisplay);
-		
+
 				// Added to register for push notifications.
 		        registerForPushNotifications();
-		
+
 		    }, handleError);
 
 	Das Beispiel zeigt den Aufruf von **registerForPushNotifications** nach erfolgter Authentifizierung, was beim Gebrauch von Pushbenachrichtigungen und Authentifizierung in Ihrer App empfehlenswert ist.
@@ -152,18 +152,18 @@ Die aktuell erforderlichen Bibliotheken werden in der [phonegap-plugin-push inst
 	                sound: 'true'
 	            },
 	            wns: {
-	
+
 	            }
 	        });
-	
+
 	        pushRegistration.on('registration', function (data) {
 	            client.push.register('gcm', data.registrationId);
 	        });
-	
+
 	        pushRegistration.on('notification', function (data, d2) {
 	            alert('Push Received: ' + data.message);
 	        });
-	
+
 	        pushRegistration.on('error', handleError);
 	    }
 
@@ -182,6 +182,12 @@ Sie können die Android-App auch auf dem Android-Emulator testen. Denken Sie dar
 * Informationen zu Pushbenachrichtigungen finden Sie unter [Notification Hubs].
 * Falls noch nicht erfolgt, setzen Sie das Tutorial mit dem [Hinzufügen von Authentifizierung] zu Ihrer Apache Cordova-App fort.
 
+Erfahren Sie, wie Sie die SDKs nutzen,
+
+* [Apache Cordova SDK]
+* [ASP.NET Server-SDK]
+* [Node.js Server-SDK]
+
 <!-- URLs -->
 [Hinzufügen von Authentifizierung]: app-service-mobile-cordova-get-started-users.md
 [Apache Cordova Schnellstartprojekt]: app-service-mobile-cordova-get-started.md
@@ -196,5 +202,8 @@ Sie können die Android-App auch auf dem Android-Emulator testen. Denken Sie dar
 [Visual Studio Community 2015]: http://www.visualstudio.com/
 [Visual Studio-Tools für Apache Cordova]: https://www.visualstudio.com/de-DE/features/cordova-vs.aspx
 [Notification Hubs]: ../notification-hubs/notification-hubs-overview.md
+[Apache Cordova SDK]: app-service-mobile-codova-how-to-use-client-library.md
+[ASP.NET Server-SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
+[Node.js Server-SDK]: app-service-mobile-node-backend-how-to-use-server-sdk.md
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

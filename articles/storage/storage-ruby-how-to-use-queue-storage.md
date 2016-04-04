@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele wurden in Ruby geschrieben." 
 	services="storage" 
 	documentationCenter="ruby" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="tysonn"/>
+	editor=""/>
 
 <tags 
 	ms.service="storage" 
@@ -14,7 +14,7 @@
 	ms.devlang="ruby" 
 	ms.topic="article" 
 	ms.date="02/23/2016" 
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 
 # Verwenden des Warteschlangenspeichers mit Ruby
@@ -31,7 +31,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarios mit dem Microsoft
 
 ## Erstellen einer Ruby-Anwendung
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Ruby on Rails-Webanwendung auf einer Azure-VM](../virtual-machines/virtual-machines-ruby-rails-web-app-linux.md)
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Ruby on Rails Web application on an Azure VM](../virtual-machines/virtual-machines-linux-classic-ruby-rails-web-app.md) (Ruby on Rails-Webanwendung auf virtuellen Azure-Computern).
 
 ## Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -162,4 +162,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Gewusst wie: Verwenden von Service Bus-Warteschlangen](/develop/ruby/how-to-guides/service-bus-queues/) besprochenen Azure Service Bus-Warteschlangen finden sie unter [Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](../service-bus/service-bus-azure-and-service-bus-queues-compared-contrasted.md)
  
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

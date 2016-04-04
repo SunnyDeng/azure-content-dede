@@ -1,15 +1,16 @@
 
 
-A *custom* virtual machine simply means a virtual machine that you create using the **From Gallery** option because it gives you more configuration choices than the **Quick Create** option. These choices include:
+Ein *benutzerdefinierter* virtueller Computer ist einfach ein virtueller Computer, den Sie mit der Option **Aus Katalog** erstellen, da Sie durch diese Option mehr Konfigurationsmöglichkeiten erhalten als durch die Option **Schnellerfassung**. Zu diesen Möglichkeiten gehören:
 
-- Connecting the virtual machine to a virtual network.
-- Installing the Azure Virtual Machine Agent and Azure Virtual Machine Extensions, such as for antimalware.
-- Adding the virtual machine to existing cloud services.
-- Adding the virtual machine to an existing Storage account.
-- Adding the virtual machine to an availability set.
+- Verbinden des virtuellen Computers mit einem virtuellen Netzwerk.
+- Installieren des virtuellen Azure-Computer-Agents und der -Erweiterungen, z. B. für Antischadsoftware.
+- Hinzufügen des virtuellen Computers zu vorhandenen Clouddiensten.
+- Hinzufügen des virtuellen Computers zu einem vorhandenen Speicherkonto.
+- Hinzufügen des virtuellen Computers zu einer Verfügbarkeitsgruppe.
 
-> [AZURE.IMPORTANT] If you want your virtual machine to use a virtual network so you can connect to it directly by host name or set up cross-premises connections, make sure that you specify the virtual network when you create the virtual machine. A virtual machine can be configured to join a virtual network only when you create the virtual machine. For details on virtual networks, see [Azure Virtual Network overview](virtual-networks-overview.md).
+> [AZURE.IMPORTANT] Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, damit Sie sich direkt über den Hostnamen oder über eine lokal eingerichtete Verbindung mit ihm verbinden können, stellen Sie sicher, dass Sie das virtuelle Netzwerk schon dann angeben, wenn Sie den virtuellen Computer erstellen. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Ausführliche Informationen über virtuelle Netzwerke erhalten Sie unter [Übersicht über Azure Virtual Network](virtual-networks-overview.md).
 
 
-## To create the virtual machine
+## So erstellen Sie den virtuellen Computer
 
+<!---HONumber=AcomDC_0323_2016-->

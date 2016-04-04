@@ -173,7 +173,7 @@ Diese Verfahren werden im Folgenden beschrieben:
 
 ### Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer
 
-Der **Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer** ist eine einfache und empfohlene Möglichkeit zum Verschieben von Daten von einer lokalen SQL Server-Instanz nach SQL Server auf einem virtuellen Azure-Computer. Ausführliche Schritte sowie eine Erläuterung weitere Alternativen finden Sie unter [Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](../virtual-machines/virtual-machines-migrate-onpremises-database.md).
+Der **Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer** ist eine einfache und empfohlene Möglichkeit zum Verschieben von Daten von einer lokalen SQL Server-Instanz nach SQL Server auf einem virtuellen Azure-Computer. Ausführliche Schritte sowie eine Erläuterung weitere Alternativen finden Sie unter [Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](../virtual-machines/virtual-machines-windows-classic-migrate-sql.md).
 
 ### <a name="export-flat-file"></a>Exportieren in eine Flatfile
 
@@ -217,11 +217,11 @@ Einen Screenshot der Optionen für das Sichern/Wiederherstellen von Datenbanken 
 
 ## Ressourcen
 
-[Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer](../virtual-machines/virtual-machines-migrate-onpremises-database.md)
+[Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer](../virtual-machines/virtual-machines-windows-classic-migrate-sql.md)
 
-[Übersicht zu SQL Server auf virtuellen Azure-Computern](../virtual-machines/virtual-machines-sql-server-infrastructure-services.md)
+[Übersicht zu SQL Server auf virtuellen Azure-Computern](../virtual-machines/virtual-machines-windows-classic-sql-overview.md)
 
 [1]: ./media/machine-learning-data-science-move-sql-server-virtual-machine/sqlserver_builtin_utilities.png
 [2]: ./media/machine-learning-data-science-move-sql-server-virtual-machine/database_migration_wizard.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

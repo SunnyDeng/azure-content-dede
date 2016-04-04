@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="03/16/2016"
+    ms.date="03/21/2016"
     ms.author="markvi"/>
 
 #Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory
@@ -23,6 +23,7 @@ Um Sie bei der Integration Ihrer gesamten Cloudanwendungen (SaaS) in Azure Activ
 Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [Active Directory-Marketplace](https://azure.microsoft.com/marketplace/active-directory/).
 
 ##Liste der Tutorials
+
 
 | Logo| App-Name |
 | --- | --- |
@@ -72,6 +73,7 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CornerstoneOnDemand.jpg)| [Cornerstone OnDemand](https://go.microsoft.com/fwLink/?LinkID=512745&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Coupa.jpg)| [Coupa](https://go.microsoft.com/fwLink/?LinkID=510267&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CSStars.jpg)| [CS Stars](https://go.microsoft.com/fwLink/?LinkID=530245&clcid=0x409)|
+| ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Degreed.jpg)| [Degreed](https://go.microsoft.com/fwLink/?LinkID=733455&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Directions.jpg)| [Directions on Microsoft](https://go.microsoft.com/fwLink/?LinkID=522557&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_DocuSign.jpg)| [DocuSign](https://go.microsoft.com/fwLink/?LinkID=403254&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Domo.jpg)| [Domo](https://go.microsoft.com/fwLink/?LinkID=708692&clcid=0x409)|
@@ -216,4 +218,4 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 - [Artikelindex für die Anwendungsverwaltung in Azure Active Directory](active-directory-apps-index.md)
 - [Liste der Tutorials zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

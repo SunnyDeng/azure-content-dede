@@ -13,22 +13,29 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/05/2016"
+    ms.date="03/14/2016"
     ms.author="larryfr"/>
 
 # Entwickeln von Skriptaktionen mit HDInsight
 
-Skriptaktionen stellen eine Möglichkeit zum Anpassen von Azure HDInsight-Clustern dar, indem Cluster-Konfigurationseinstellungen während der Installation angegeben oder zusätzliche Dienste, Tools oder andere Software auf dem Cluster installiert werden.
+Skriptaktionen stellen eine Möglichkeit zum Anpassen von Azure HDInsight-Clustern dar, indem Cluster-Konfigurationseinstellungen angegeben oder zusätzliche Dienste, Tools oder andere Software auf dem Cluster installiert werden. Sie können Skriptaktionen während der Clustererstellung oder auf einem ausgeführten Cluster verwenden.
 
 > [AZURE.NOTE] Die Informationen in diesem Artikel gelten für Linux-basierte HDInsight-Cluster. Informationen zur Verwendung von Skriptaktionen mit Windows-basierten Clustern finden Sie unter [Entwickeln von Skriptaktionen mit HDInsight (Windows)](hdinsight-hadoop-script-actions.md).
 
 ## Was sind Skriptaktionen?
 
-Skriptaktionen sind Bash-Skripts, die während der Bereitstellung auf den Clusterknoten ausgeführt werden. Eine Skriptaktion wird als Stamm ausgeführt und bietet Vollzugriffsrechte auf die Clusterknoten.
+Skriptaktionen sind Bash-Skripts, die Azure auf dem Clusterknoten ausführt, um Konfigurationsänderungen vorzunehmen oder Software zu installieren. Eine Skriptaktion wird als Stamm ausgeführt und bietet Vollzugriffsrechte auf die Clusterknoten.
 
-Skriptaktionen können bei der Bereitstellung eines Clusters über das __Azure-Portal__, __Azure PowerShell__ oder das __HDInsight .NET SDK__ verwendet werden.
+Eine Skriptaktion kann mithilfe der folgenden Methoden angewendet werden:
 
-Eine exemplarische Vorgehensweise zum Anpassen eines Clusters mithilfe von Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion](hdinsight-hadoop-customize-cluster-linux.md).
+| Verwenden Sie dies, um ein Skript anzuwenden... | Während der Clustererstellung... | In einem ausgeführten Cluster... |
+| ----- |:-----:|:-----:|
+| Azure-Portal | ✓ | ✓ |
+| Microsoft Azure PowerShell | ✓ | ✓ |
+| HDInsight .NET-SDK | ✓ | ✓ |
+| Azure Resource Manager-Vorlage | ✓ | &nbsp; |
+
+Weitere Informationen zur Verwendung dieser Methoden zum Anwenden von Skriptaktionen finden Sie unter [Customize HDInsight clusters using script actions](hdinsight-hadoop-customize-cluster-linux.md) (Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen).
 
 ## <a name="bestPracticeScripting"></a>Bewährte Methoden für die Entwicklung von Skripts
 
@@ -51,7 +58,7 @@ In den verschiedenen HDInsight-Versionen sind unterschiedliche Versionen von Had
 
 ### <a name="bPS2"></a>Einrichten stabiler Verknüpfungen mit Skriptressourcen
 
-Benutzer müssen dafür sorgen, dass alle Skripts und Ressourcen, die im Skript verwendet werden, für die gesamte Nutzungsdauer des Clusters verfügbar bleiben und dass sich die Versionen dieser Dateien während dieses Zeitraums nicht ändern. Diese Ressourcen werden benötigt, wenn für die Knoten im Cluster ein neues Abbild erstellt wird.
+Benutzer müssen dafür sorgen, dass alle Skripts und Ressourcen, die im Skript verwendet werden, für die gesamte Nutzungsdauer des Clusters verfügbar bleiben und dass sich die Versionen dieser Dateien während dieses Zeitraums nicht ändern. Diese Ressourcen werden benötigt, wenn während der Skalierungsvorgänge neue Knoten zum Cluster hinzugefügt werden.
 
 Die bewährte Methode ist das Herunterladen und Archivieren aller Daten in einem Azure-Speicherkonto Ihres Abonnements.
 
@@ -65,7 +72,7 @@ Zur Verringerung des Zeitraums, der für die Ausführung des Skripts benötigt w
 
 ### <a name="bPS3"></a>Sicherstellen, dass das Clusteranpassungsskript idempotent ist
 
-Sie müssen davon ausgehen, dass für die Knoten eines HDInsight-Clusters während der Nutzungsdauer des Clusters ein neues Abbild erstellt wird und dass in diesem Fall das Clusteranpassungsskript verwendet wird. Das Skript muss dahingehend idempotent sein, dass beim Erstellen eines neuen Abbilds sichergestellt wird, dass der Cluster bei jeder Ausführung in denselben Status zurückgesetzt wird.
+Skripts müssen dahingehend idempotent sein, dass sichergestellt ist, dass der Cluster bei jeder Ausführung in denselben Zustand zurückgesetzt wird, wenn das Skript mehrmals ausgeführt wird.
 
 Beispiel: Wenn ein benutzerdefiniertes Skript bei der ersten Ausführung eine Anwendung unter "/usr/local/bin" installiert, muss das Skript bei allen nachfolgenden Ausführungen prüfen, ob die Anwendung am Speicherort "/usr/local/bin" bereits vorhanden ist, ehe mit anderen Schritten im Skript fortgefahren wird.
 
@@ -77,7 +84,7 @@ Linux-basierte HDInsight-Cluster umfassen zwei Hauptknoten, die im Cluster aktiv
 
 ### <a name="bPS6"></a>Konfigurieren benutzerdefinierter Komponenten zur Verwendung von Azure-Blobspeicher
 
-Die Komponenten, die Sie auf dem Cluster installieren, sind möglicherweise standardmäßig so konfiguriert, dass sie den HDFS-Speicher (Hadoop Distributed File System) verwenden. Bei einem Re-Imaging des Clusters wird das HDFS-Dateisystem formatiert, sodass alle darauf gespeicherten Daten verloren gehen. Sie sollten die Konfiguration so ändern, dass stattdessen der Azure-Blob-Speicher (WASB) verwendet wird, da dies der Standardspeicher für den Cluster ist, der auch dann nach dem Löschen des Clusters beibehalten wird.
+Die Komponenten, die Sie auf dem Cluster installieren, sind möglicherweise standardmäßig so konfiguriert, dass sie den HDFS-Speicher (Hadoop Distributed File System) verwenden. HDInsight verwendet Azure Blob Storage (WASB) als Standardspeicher. Dieser bietet ein mit HDFS kompatibles Dateisystem, das Daten auch dann beibehält, wenn der Cluster gelöscht wird. Sie sollten die Komponenten, die Sie installieren, so konfigurieren, dass sie WASB anstelle von HDFS verwenden.
 
 Mit dem folgenden Code wird beispielsweise die Datei "giraph-examples.jar" aus dem lokalen Dateisystem in WASB kopiert:
 
@@ -85,7 +92,9 @@ Mit dem folgenden Code wird beispielsweise die Datei "giraph-examples.jar" aus d
 
 ### <a name="bPS7"></a>Schreiben von Informationen in STDOUT und STDERR
 
-Die in STDOUT und STDERR geschriebenen Informationen werden protokolliert und können nach der Bereitstellung des Clusters über die Ambari-Webbenutzeroberfläche angezeigt werden.
+Die während der Skriptausführung in STDOUT und STDERR geschriebenen Informationen werden protokolliert und können über die Ambari-Webbenutzeroberfläche angezeigt werden.
+
+> [AZURE.NOTE] Ambari ist nur dann verfügbar, wenn der Cluster erfolgreich erstellt wurde. Wenn Sie während der Clustererstellung eine Skriptaktion verwenden und ein Fehler bei der Erstellung auftritt, finden Sie andere Wege zum Zugriff auf protokollierte Informationen im Problembehandlungsabschnitt in [Customize HDInsight clusters using script actions](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting) (Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen).
 
 Die meisten Dienstprogramme und Installationspakete schreiben bereits Informationen in STDOUT und STDERR. Möglicherweise möchten Sie jedoch weitere Protokollierungsinformationen hinzufügen. Verwenden Sie `echo`, um Text an STDOUT zu senden. Beispiel:
 
@@ -93,7 +102,7 @@ Die meisten Dienstprogramme und Installationspakete schreiben bereits Informatio
 
 Standardmäßig wird durch `echo` der String an STDOUT gesendet. Soll dieser an STDERR geleitet werden, setzen Sie `>&2` vor `echo`. Beispiel:
 
-        >&2 echo "An error occured installing Foo"
+        >&2 echo "An error occurred installing Foo"
 
 Damit werden die an STDOUT gesendeten Informationen (1, Standardwert und daher hier nicht aufgeführt) an STDERR (2) umgeleitet. Weitere Informationen zur E/A-Umleitung finden Sie unter [http://www.tldp.org/LDP/abs/html/io-redirection.html](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
@@ -133,7 +142,7 @@ In einigen Fällen müssen Sie Parameter für das Skript angeben. Beispielsweise
 
 Parameter, die an das Skript übergeben werden, werden als _Positionsparameter_ bezeichnet und werden für den ersten Parameter `$1` zugewiesen, für den zweiten Parameter `$2` usw. `$0` enthält den Namen des Skripts.
 
-Werte, die als Parameter an das Skript übergeben werden, sollten in einfache Anführungszeichen (') eingeschlossen werden, sodass der übergebene Wert als Literal behandelt wird und darin enthaltene Zeichen wie z. B. "!" nicht besonders behandelt werden.
+Werte, die als Parameter an das Skript übergeben werden, sollten in einfache Anführungszeichen (') eingeschlossen werden, sodass der übergebene Wert als Literal behandelt wird und darin enthaltene Zeichen wie z. B. "!" nicht besonders behandelt werden.
 
 ### Festlegen von Umgebungsvariablen
 
@@ -147,7 +156,7 @@ Dabei ist VARIABLENNAME der Name der Variable. Verwenden Sie `$VARIABLENAME`, um
 
 Für den anschließenden Zugriff auf die Informationen kann dann `$PASSWORD` verwendet werden.
 
-Umgebungsvariablen, die im Skript festgelegt werden, gelten nur innerhalb des Gültigkeitsbereichs des Skripts. In einigen Fällen müssen Sie möglicherweise systemweite Umgebungsvariablen hinzufügen, die nach Abschluss des Skripts beibehalten werden. Dies erfolgt in der Regel, damit Benutzer, die über SSH eine Verbindung mit dem Cluster herstellen, die mit Ihrem Skript installierten Komponenten verwenden können. Fügen Sie dazu `/etc/environment` die Umgebungsvariable hinzu. Mit dem folgenden Beispiel wird z. B. __HADOOP\_CONF\_DIR__ hinzugefügt:
+Umgebungsvariablen, die im Skript festgelegt werden, gelten nur innerhalb des Gültigkeitsbereichs des Skripts. In einigen Fällen müssen Sie möglicherweise systemweite Umgebungsvariablen hinzufügen, die nach Abschluss des Skripts beibehalten werden. Dies erfolgt in der Regel, damit Benutzer, die über SSH eine Verbindung mit dem Cluster herstellen, die mit Ihrem Skript installierten Komponenten verwenden können. Fügen Sie dazu `/etc/environment` die Umgebungsvariable hinzu. Mit dem folgenden Beispiel wird z. B. __HADOOP\_CONF\_DIR__ hinzugefügt:
 
     echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 
@@ -155,7 +164,7 @@ Umgebungsvariablen, die im Skript festgelegt werden, gelten nur innerhalb des G�
 
 Skripts zur Anpassung eines Clusters müssen entweder im Standardspeicherkonto des Clusters oder im Fall eines anderen Speicherkontos in einem öffentlichen schreibgeschützten Container gespeichert sein. Wenn Ihr Skript auf externe Ressourcen zugreift, müssen auch diese öffentlich zugänglich sein (oder mindestens einen öffentlichen Lesezugriff aufweisen). Beispielsweise können Sie eine Datei mithilfe von `download_file` in den Cluster herunterladen.
 
-Durch Speichern der Datei in einem Azure-Speicherkonto, auf das der Cluster zugreifen kann (z. B. das Standardspeicherkonto), wird ein schneller Zugriff ermöglicht, da sich dieser Speicher im Azure-Netzwerk befindet.
+Durch Speichern der Datei in einem Azure-Speicherkonto, auf das der Cluster zugreifen kann (z. B. das Standardspeicherkonto), wird ein schneller Zugriff ermöglicht, da sich dieser Speicher im Azure-Netzwerk befindet.
 
 ## <a name="deployScript"></a>Prüfliste für die Bereitstellung einer Skriptaktion
 
@@ -165,20 +174,19 @@ Es folgen unsere Schritte bei der Vorbereitung der Bereitstellung dieser Skripts
 
 - Fügen Sie Skripts Überprüfungen hinzu, um sicherzustellen, dass sie idempotent ausgeführt werden, damit das Skript mehrmals auf demselben Knoten ausgeführt werden kann.
 
-- Legen Sie die heruntergeladenen von den Skripts verwendeten Dateien in einem temporären Dateiverzeichnis ab (z. B. "/tmp"), und löschen Sie sie nach der Ausführung der Skripts.
+- Legen Sie die heruntergeladenen von den Skripts verwendeten Dateien in einem temporären Dateiverzeichnis ab (z. B. "/tmp"), und löschen Sie sie nach der Ausführung der Skripts.
 
-- Wenn sich Einstellungen auf Betriebssystemebene oder Hadoop-Dienstkonfigurationsdateien geändert haben, können Sie bei Bedarf die HDInsight-Dienste neu starten. Diese können dann Einstellungen auf Betriebssystemebene übernehmen, z. B. die in den Skripts festgelegten Umgebungsvariablen.
+- Wenn sich Einstellungen auf Betriebssystemebene oder Hadoop-Dienstkonfigurationsdateien geändert haben, können Sie bei Bedarf die HDInsight-Dienste neu starten. Diese können dann Einstellungen auf Betriebssystemebene übernehmen, z. B. die in den Skripts festgelegten Umgebungsvariablen.
 
 ## <a name="runScriptAction"></a>Ausführen einer Skriptaktion
 
-Sie können Skriptaktionen zum Anpassen von HDInsight-Clustern mithilfe des Azure-Portals, von Azure PowerShell oder des HDInsight .NET SDK ausführen. Anweisungen hierzu finden Sie unter [Verwenden einer Skriptaktion](hdinsight-hadoop-customize-cluster-linux.md#howto).
+Sie können Skriptaktionen zum Anpassen von HDInsight-Clustern mithilfe des Azure-Portals, von Azure PowerShell, Azure Resource Manager (ARM)-Vorlagen oder des HDInsight .NET SDK ausführen. Anweisungen hierzu finden Sie unter [Verwenden einer Skriptaktion](hdinsight-hadoop-customize-cluster-linux.md).
 
 ## <a name="sampleScripts"></a>Beispiele benutzerdefinierter Skripts
 
 Microsoft bietet Beispielskripts für die Installation von Komponenten in einem HDInsight-Cluster. Die Beispielskripts und Nutzungsanweisungen stehen unter den folgenden Links zur Verfügung:
 
 - [Installieren und Verwenden von Hue in HDInsight-Clustern](hdinsight-hadoop-hue-linux.md)
-- [Installieren und Verwenden von Spark in HDInsight-Clustern](hdinsight-hadoop-spark-install-linux.md)
 - [Installieren und Verwenden von R in HDInsight Hadoop-Clustern](hdinsight-hadoop-r-scripts-linux.md)
 - [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install-linux.md)
 - [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install-linux.md)  
@@ -216,8 +224,12 @@ _Lösung_: Speichern Sie die Datei entweder im ASCII-Format oder im UTF-8-Format
 
 Ersetzen Sie den oben aufgeführten Befehl __INFILE__ durch die Datei mit Bytereihenfolge-Marke. Für __OUTFILE__ sollte ein neuer Dateiname eingegeben werden. Die Datei enthält dann das Skript ohne Bytereihenfolge-Marke.
 
-## <a name="seeAlso"></a>Weitere Informationen
+## <a name="seeAlso"></a>Nächste Schritte
 
-[Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md)
+* Erfahren Sie, wie Sie HDInsight-Cluster mithilfe von Skriptaktionen anpassen ([Customize HDInsight clusters using script actions](hdinsight-hadoop-customize-cluster-linux.md)).
 
-<!---HONumber=AcomDC_0211_2016-->
+* Verwenden Sie die [HDInsight .NET SDK-Referenz](https://msdn.microsoft.com/library/mt271028.aspx), um mehr über das Erstellen von .NET-Anwendungen zu erfahren, die HDInsight verwalten.
+
+* Verwenden Sie die [HDInsight-REST-API](https://msdn.microsoft.com/library/azure/mt622197.aspx), um zu erfahren, wie Sie REST verwenden, um Verwaltungsaktionen auf HDInsight-Clustern auszuführen.
+
+<!---HONumber=AcomDC_0323_2016-->

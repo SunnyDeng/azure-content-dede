@@ -12,13 +12,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/21/2016"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 
 # Unterstützung des Azure-Ressourcen-Managers für Load Balancer 
 
-Der Azure-Ressourcen-Manager (ARM) ist das neue Verwaltungsframework für Dienste in Azure. Der Azure-Lastenausgleich kann jetzt mithilfe von APIs und Tools auf Basis von Azure-Ressourcen-Manager verwaltet werden. Weitere Informationen über den Azure-Ressourcen-Manager finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](../azure-preview-portal-using-resource-groups.md).
+Der Azure-Ressourcen-Manager (ARM) ist das neue Verwaltungsframework für Dienste in Azure. Der Azure-Lastenausgleich kann jetzt mithilfe von APIs und Tools auf Basis von Azure-Ressourcen-Manager verwaltet werden.
 
 ## Konzepte
 
@@ -46,7 +46,7 @@ Vorlagen umfassen virtuelle Computer, virtuelle Netzwerke, Verfügbarkeitsgruppe
 
 [Weitere Informationen zu Vorlagen](http://go.microsoft.com/fwlink/?LinkId=544798)
 
-[Weitere Informationen zu Netzwerkressourcen](../resource-groups-networking)
+[Weitere Informationen zu Netzwerkressourcen](../virtual-network/resource-groups-networking)
 
 Vorlagen, die Azure-Lastenausgleich verwenden, finden Sie in diesem [GitHub-Repository](https://github.com/Azure/azure-quickstart-templates) mit einer Reihe von Communityvorlagen.
 
@@ -65,15 +65,15 @@ Beispiele für Vorlagen:
 
 - [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](load-balancer-get-started-internet-arm-ps.md)
 
-- [Verwenden der Azure-CLI mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager)
+- [Verwenden der Azure-CLI mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager.md)
 
 - [Load Balancer REST APIs (in englischer Sprache)](https://msdn.microsoft.com/library/azure/mt163651.aspx)
 
 
 ## Nächste Schritte
 
-Sie können auch einen [Lastenausgleich mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-ps.md) und die Art des [Verteilungsmodus](load-balancer-distribution-mode.md) des Lastenausgleichs für ein bestimmtes Datenverkehrsverhalten im Netzwerk konfigurieren.
+Sie können auch einen [Load Balancer mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-ps.md) und die Art des [Verteilungsmodus](load-balancer-distribution-mode.md) des Load Balancers für ein bestimmtes Datenverkehrsverhalten im Netzwerk konfigurieren.
 
-Wenn es für Ihre Anwendung erforderlich ist, dass Verbindungen mit Servern hinter einem Lastenausgleich aufrechterhalten werden, informieren Sie sich über [TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md). Hier erfahren Sie mehr über das Verhalten von Leerlaufverbindungen bei der Verwendung des Azure-Lastenausgleichs.
+Wenn es für Ihre Anwendung erforderlich ist, dass Verbindungen mit Servern hinter einem Load Balancer aufrechterhalten werden, informieren Sie sich über [TCP-Leerlauftimeout-Einstellungen für den Load Balancer](load-balancer-tcp-idle-timeout.md). Hier erfahren Sie mehr über das Verhalten von Leerlaufverbindungen bei der Verwendung des Azure-Lastenausgleichs.
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

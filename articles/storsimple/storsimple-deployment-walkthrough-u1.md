@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="02/22/2016"
+   ms.date="03/16/2016"
    ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte (Update 1)
@@ -20,7 +20,7 @@
 > [AZURE.SELECTOR]
 - [Update 2](../articles/storsimple/storsimple-deployment-walkthrough-u2.md)
 - [Update 1](../articles/storsimple/storsimple-deployment-walkthrough-u1.md)
-- [GA Release](../articles/storsimple/storsimple-deployment-walkthrough.md)
+- [GA-Version](../articles/storsimple/storsimple-deployment-walkthrough.md)
 
 ## Übersicht
 
@@ -33,7 +33,7 @@ Bei den Informationen in diesen Tutorials wird davon ausgegangen, dass Sie die S
 
 Sie benötigen Administratorrechte, um die Einrichtung und Konfiguration abzuschließen. Es wird empfohlen, dass Sie die Konfigurationsprüfliste überprüfen, bevor Sie beginnen. Die Bereitstellung und Konfiguration kann einige Zeit in Anspruch nehmen.
 
-> [AZURE.NOTE] Die auf der Microsoft Azure-Website veröffentlichten StorSimple-Bereitstellungsinformationen gelten nur für Geräte der StorSimple 8000-Reihe. Vollständige Informationen zu Geräten der Serie 7000 finden Sie unter: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com). Bereitstellungsinformationen zur Serie 7000 finden Sie in der [Schnellstartanleitung zum StorSimple-System](http://onlinehelp.storsimple.com/111_Appliance/) (in englischer Sprache).
+> [AZURE.NOTE] Die auf der Microsoft Azure-Website veröffentlichten StorSimple-Bereitstellungsinformationen gelten nur für Geräte der StorSimple 8000-Reihe. Vollständige Informationen zu Geräten der Serien 5000 und 7000 finden Sie unter: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com). Bereitstellungsinformationen zu den Serien 5000 und 7000 finden Sie im [StorSimple System Quick Start Guide](http://onlinehelp.storsimple.com/111_Appliance/) (Schnellstartanleitung zum StorSimple-System).
 
 ## Bereitstellungsschritte
 
@@ -241,7 +241,8 @@ Zum Herstellen einer Verbindung mit Windows PowerShell für StorSimple benötige
 
 ## Suchen nach und Anwenden von Updates
 
-Die Aktualisierung eines Geräts kann mehrere Stunden dauern. Führen Sie die folgenden Schritte aus, um nach Updates für Ihr Gerät zu suchen und diese anzuwenden. <!--can take 1-4 hours-->
+Die Aktualisierung eines Geräts kann mehrere Stunden dauern. Führen Sie die folgenden Schritte aus, um nach Updates für Ihr Gerät zu suchen und diese anzuwenden.
+<!--can take 1-4 hours--> 
 
 <!--If you have a gateway configured on a network interface other than Data 0, you will need to disable Data 2 and Data 3 network interfaces before installing the update. Go to **Devices > Configure** and disable Data 2 and Data 3 interfaces. You should re-enable these interfaces after the device is updated.-->
 
@@ -289,4 +290,4 @@ Installations- und Konfigurationsanweisungen für MPIO auf einem StorSimple-Ger�
 - Verwenden des [StorSimple-Manager-Diensts](storsimple-manager-service-administration.md) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

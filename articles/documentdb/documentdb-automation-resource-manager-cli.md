@@ -59,7 +59,7 @@ Die folgende Ausgabe wird erzeugt:
     Enter the code E1A2B3C4D to authenticate. If you're signing in as an Azure
     AD application, use the --username and --password parameters.
 
-> [AZURE.NOTE] Wenn Sie kein Azure-Konto besitzen, wird eine Fehlermeldung mit dem Hinweis angezeigt, dass Sie einen anderen Kontotyp benötigen. Informationen zum Erstellen eines Kontos auf der Basis Ihres aktuellen Azure-Kontos finden Sie unter [Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory](../virtual-machines/resource-group-create-work-id-from-personal.md).
+> [AZURE.NOTE] Wenn Sie kein Azure-Konto besitzen, wird eine Fehlermeldung mit dem Hinweis angezeigt, dass Sie einen anderen Kontotyp benötigen. Informationen zum Erstellen eines Kontos auf der Basis Ihres aktuellen Azure-Kontos finden Sie unter [Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory](../virtual-machines/virtual-machines-windows-create-aad-work-id.md).
 
 Öffnen Sie [https://aka.ms/devicelogin](https://aka.ms/devicelogin) in einem Browser, und geben Sie den in der Befehlsausgabe angegebenen Code ein.
 
@@ -345,7 +345,7 @@ Nachdem Sie nun über ein DocumentDB-Datenbankkonto verfügen, besteht der näch
 
 Nach dem Erstellen der Datenbank müssen Sie der Datenbank [mindestens eine Sammlung hinzufügen](documentdb-create-collection.md) und den Sammlungen dann [Dokumente hinzufügen](documentdb-view-json-document-explorer.md).
 
-Nachdem eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Vorschauportal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
+Wenn eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Portal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
 
 Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
@@ -354,4 +354,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

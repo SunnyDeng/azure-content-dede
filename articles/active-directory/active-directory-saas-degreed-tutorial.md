@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/09/2016"
+	ms.date="03/21/2016"
 	ms.author="jeedes"/>
 
 
@@ -64,16 +64,16 @@ Zum Konfigurieren der Integration von Degreed in Azure AD müssen Sie Degreed au
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie im Suchfeld als Suchbegriff **Degreed** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-degreed-tutorial/tutorial_degreed_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **Degreed** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>
+7. Wählen Sie im Ergebnisbereich **Degreed** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-degreed-tutorial/tutorial_degreed_02.png)<br>
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll anhand eines Testbenutzers namens Britta Simon veranschaulicht werden, wie das einmalige Anmelden von Azure AD in Degreed konfiguriert und getestet werden kann.
 
-Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer in Degreed als Gegenbenutzer zu einem Benutzer in Azure AD fungiert. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Degreed muss eine Linkbeziehung eingerichtet werden.<br> Diese Linkbeziehung wird hergestellt, indem Sie den **Benutzernamen** in Azure AD als Wert dem **Benutzernamen** in Degreed zuweisen.
+Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer in Degreed als Gegenbenutzer zu einem Benutzer in Azure AD fungiert. Anders ausgedrückt: Zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Degreed muss eine Linkbeziehung eingerichtet werden.<br> Diese Linkbeziehung wird hergestellt, indem Sie den Wert des **Benutzernamens** in Azure AD dem **Benutzernamen** in Degreed zuweisen.
 
 Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Degreed müssen Sie die folgenden Bausteine ausführen:
 
-1. **[Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
+1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
 4. **[Erstellen eines Degreed-Testbenutzers](#creating-a-degreed-test-user)**, um eine Entsprechung von Britta Simon in Degreed zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
@@ -106,7 +106,7 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im
     b. Klicken Sie auf **Weiter**.
 
 
-5. Für die Konfiguration von SSO für Ihre Anwendung wenden Sie sich bitte unter [admin@degreed.com](mailto:admin@degreed.com) an das Supportteam von Degreed. Fügen Sie die Metadatendatei an Ihre E-Mail an.
+5. Wenden Sie sich zwecks Konfiguration von SSO für Ihre Anwendung bitte unter [admin@degreed.com](mailto:admin@degreed.com) an das Supportteam von Degreed. Fügen Sie die Metadatendatei an Ihre E-Mail an.
 
 
 6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
@@ -133,7 +133,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     a. Wählen Sie als **Benutzertyp** die Option **Neuer Benutzer in Ihrer Organisation** aus.
 
-    b. Geben Sie in das Textfeld **Benutzername** den Text **BrittaSimon** ein.
+    b. Geben Sie in das Textfeld **Benutzername** den Namen **BrittaSimon** ein.
 
     c. Klicken Sie auf **Weiter**.
 
@@ -216,4 +216,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-degreed-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-degreed-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

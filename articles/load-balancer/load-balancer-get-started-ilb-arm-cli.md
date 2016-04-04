@@ -19,11 +19,9 @@
 
 # Erste Schritte zum Erstellen eines internen Load Balancers mithilfe der Azure-Befehlszeilenschnittstelle
 
-[AZURE.INCLUDE [load-balancer-get-started-ilb-arm-selectors-include.md](../../includes/load-balancer-get-started-ilb-arm-selectors-include.md)]
-<BR>
-[AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
+[AZURE.INCLUDE [load-balancer-get-started-ilb-arm-selectors-include.md](../../includes/load-balancer-get-started-ilb-arm-selectors-include.md)]<BR>[AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [klassisches Bereitstellungsmodell](load-balancer-get-started-ilb-classic-cli.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](load-balancer-get-started-ilb-classic-cli.md).
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
@@ -45,7 +43,9 @@ Unter [Unterstützung des Azure-Ressourcen-Managers für den Load Balancer](load
 
 ## Einrichten der Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Managers
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht verwendet haben, ist es ratsam, den Abschnitt [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) zu lesen. Befolgen Sie die Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+
 
 2. Führen Sie den Befehl **azure config mode** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
 
@@ -59,11 +59,11 @@ Unter [Unterstützung des Azure-Ressourcen-Managers für den Load Balancer](load
 
 Anhand der folgenden Schritte erstellen Sie auf der Grundlage des oben beschriebenen Szenarios einen internen Load Balancer.
 
-### Schritt 1 
+### Schritt 1 
 
 Sofern Sie noch nicht über die neueste Version der [Azure-Befehlszeilenschnittstelle](https://azure.microsoft.com/downloads/) verfügen, laden Sie diese herunter.
 
-### Schritt 2 
+### Schritt 2 
 
 Authentifizieren Sie nach der Installation Ihr Konto.
 
@@ -71,7 +71,7 @@ Authentifizieren Sie nach der Installation Ihr Konto.
 
 Beim Authentifizierungsprozess werden Ihr Benutzername und das Kennwort für Ihr Azure-Abonnement angefordert.
 
-### Schritt 3
+### Schritt 3
 
 Wechseln Sie mit den Befehlstools in den Azure-Ressourcen-Manager-Modus.
 
@@ -87,16 +87,16 @@ Alle Ressourcen im Azure-Ressourcen-Manager werden einer Ressourcengruppe zugeor
 ## Erstellen Sie einen internen Load Balancer. 
 
 
-### Schritt 1 
+### Schritt 1 
 
 Erstellen Sie mit dem Befehl `azure network lb create` einen internen Load Balancer. Im folgenden Szenario wird die Ressourcengruppe „nrprg“ in der Region „USA, Osten“ erstellt.
  	
 	azure network lb create -n nrprg -l westus
 
->[AZURE.NOTE] Alle Ressourcen für einen internen Load Balancer, wie z. B. das virtuelle Netzwerk und das Subnetz des virtuellen Netzwerks, müssen sich in derselben Ressourcengruppe und in derselben Region befinden.
+>[AZURE.NOTE] Alle Ressourcen für einen internen Load Balancer, wie z. B. das virtuelle Netzwerk und das Subnetz des virtuellen Netzwerks, müssen sich in derselben Ressourcengruppe und in derselben Region befinden.
 
 
-### Schritt 2 
+### Schritt 2 
 
 Erstellen Sie eine Front-End-IP-Adresse für den internen Load Balancer. Die verwendete IP-Adresse muss sich im Subnetzbereich des virtuellen Netzwerks befinden.
 
@@ -105,14 +105,9 @@ Erstellen Sie eine Front-End-IP-Adresse für den internen Load Balancer. Die ver
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe 
-**-l**: Name der internen Load Balancer-Gruppe 
-**-n:** Name der Front-End-IP-Adresse 
-**-a:** private IP-Adresse innerhalb des Subnetzbereichs 
-**-e:** Subnetzname 
-**-m:** Name des virtuellen Netzwerks
+**-g:** Ressourcengruppe **-l**: Name der internen Load Balancer-Gruppe **-n:** Name der Front-End-IP-Adresse **-a:** private IP-Adresse innerhalb des Subnetzbereichs **-e:** Subnetzname **-m:** Name des virtuellen Netzwerks
 
-### Schritt 3 
+### Schritt 3 
 
 Erstellen Sie den Back-End-Adresspool.
 
@@ -120,27 +115,20 @@ Erstellen Sie den Back-End-Adresspool.
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe 
-**-l:** Name der internen Load Balancer-Gruppe 
-**-n:** Name des Back-End-Adresspools
+**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name des Back-End-Adresspools
 
 Nach der Definition einer Front-End-IP-Adresse und eines Back-End-Adresspools können Sie Load Balancer-Regeln und NAT-Eingangsregeln erstellen und Integritätstests anpassen.
 
-### Schritt 4
+### Schritt 4
 
 
-Erstellen Sie eine Load Balancer-Regel für den internen Load Balancer. Im oben beschriebenen Szenario erstellt der Befehl eine Load Balancer-Regel, die am Pool 1433 im Front-End-Pool lauscht und den ausgeglichenen Netzwerkdatenverkehr ebenfalls über Port 1433 zurück an den Back-End-Adresspool sendet.
+Erstellen Sie eine Load Balancer-Regel für den internen Load Balancer. Im oben beschriebenen Szenario erstellt der Befehl eine Load Balancer-Regel, die am Pool 1433 im Front-End-Pool lauscht und den ausgeglichenen Netzwerkdatenverkehr ebenfalls über Port 1433 zurück an den Back-End-Adresspool sendet.
 
 	azure network lb rule create -g nrprg -l ilbset -n ilbrule -p tcp -f 1433 -b 1433 -t feilb -o beilb
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe 
-**-l:** Name der internen Load Balancer-Gruppe 
-**-n:** Name der Load Balancer-Regel 
-**-p:** Protokoll für die Regel 
-**-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird 
-**-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
+**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name der Load Balancer-Regel **-p:** Protokoll für die Regel **-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird **-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
 
 ### Schritt 5
 
@@ -152,12 +140,7 @@ Erstellen Sie eingehende NAT-Regeln. Mit eingehenden NAT-Regeln werden Endpunkte
 
 Verwendete Parameter:
 
-**-g:** Ressourcengruppe 
-**-l:** Name der internen Load Balancer-Gruppe 
-**-n:** Name der eingehenden NAT-Regel 
-**-p**: Protokoll für die Regel 
-**-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird 
-**-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
+**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name der eingehenden NAT-Regel **-p**: Protokoll für die Regel **-f:** Port, an dem auf eingehenden Netzwerkdatenverkehr im Load Balancer-Front-End gelauscht wird **-b:** Port, an dem Netzwerkdatenverkehr im Back-End-Adresspool empfangen wird
 
 ### Schritt 5 
 
@@ -165,12 +148,7 @@ Erstellen Sie Integritätstests für den Load Balancer. Eine Integritätstest ü
 
 	azure network lb probe create -g nrprg -l ilbset -n ilbprobe -p tcp -i 300 -c 4
 
-**-g:** Ressourcengruppe 
-**-l:** Name der internen Load Balancer-Gruppe 
-**-n:** Name des Integritätstests 
-**-p:** Protokoll für den Integritätstest 
-**-i:** Testintervall in Sekunden 
-**-c:** Anzahl der Prüfungen
+**-g:** Ressourcengruppe **-l:** Name der internen Load Balancer-Gruppe **-n:** Name des Integritätstests **-p:** Protokoll für den Integritätstest **-i:** Testintervall in Sekunden **-c:** Anzahl der Prüfungen
 
 >[AZURE.NOTE] Die Microsoft Azure-Plattform nutzt eine statische, öffenlich routingfähige IPv4-Adresse für eine Vielzahl von administrativen Szenarien. Die IP-Adresse lautet 168.63.129.16. Diese IP-Adresse sollte nicht durch Firewalls blockiert werden, da dies zu unerwartetem Verhalten führen kann. In Bezug auf den internen Lastenausgleich in Azure wird diese IP-Adresse von Überwachungstests aus dem Lastenausgleich verwendet, um den Integritätsstatus von virtuellen Computern in einer Lastenausgleichsgruppe zu bestimmen. Wenn eine Netzwerksicherheitsgruppe verwendet wird, um den Datenverkehr auf virtuellen Azure-Computern in einer internen Lastenausgleichsgruppe einzuschränken, oder wenn eine Netzwerksicherheitsgruppe einem Subnetz eines virtuellen Netzwerks zugewiesen ist, stellen Sie sicher, dass eine Netzwerksicherheitsregel hinzugefügt wird, um Datenverkehr von 168.63.129.16 zuzulassen.
 
@@ -178,7 +156,7 @@ Erstellen Sie Integritätstests für den Load Balancer. Eine Integritätstest ü
 
 Sie müssen NICs erstellen (oder vorhandene ändern) und diese NAT-Regeln, Load Balancer-Regeln und Tests zuordnen.
 
-### Schritt 1 
+### Schritt 1 
 
 Erstellen Sie eine NIC mit dem Namen *lb-nic1-be*, und ordnen Sie sie der NAT-Regel *rdp1* und dem Back-End-Adresspool *beilb* zu.
 	
@@ -220,13 +198,13 @@ Erwartete Ausgabe:
 	data:
 	info:    network nic create command OK
 
-### Schritt 2
+### Schritt 2
 
 Erstellen Sie eine NIC mit dem Namen *lb-nic2-be*, und ordnen Sie sie der NAT-Regel *rdp2* und dem Back-End-Adresspool *beilb* zu.
 
  	azure network nic create -g nrprg -n lb-nic2-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/beilb" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp2" eastus
 
-### Schritt 3 
+### Schritt 3 
 
 Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *DB1*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic1-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde.
 
@@ -234,7 +212,7 @@ Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *DB1*, und ordnen Sie
 
 >[AZURE.IMPORTANT] VMs in einem Load Balancer müssen in derselben Verfügbarkeitsgruppe enthalten sein. Erstellen Sie mit `azure availset create` eine Verfügbarkeitsgruppe.
 
-### Schritt 4
+### Schritt 4
 
 Erstellen Sie einen virtuellen Computer (VM) mit dem Namen *DB2*, und ordnen Sie ihn der NIC mit dem Namen *lb-nic2-be* zu. Ein Speicherkonto namens *web1nrp* wurde erstellt, bevor der folgende Befehl ausgeführt wurde:
 
@@ -256,4 +234,4 @@ Verwenden Sie zum Entfernen eines Load Balancers den folgenden Befehl:
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

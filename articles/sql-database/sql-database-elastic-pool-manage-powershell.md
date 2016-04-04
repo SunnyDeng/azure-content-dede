@@ -26,6 +26,8 @@
 
 Erstellen und Verwalten eines [Pools für elastische Datenbanken](sql-database-elastic-pool.md) mit PowerShell-Cmdlets
 
+Häufige Fehlercodes finden Sie unter [SQL-Fehlercodes für SQL-Datenbank-Clientanwendungen: Datenbankverbindungsfehler und andere Probleme](sql-database-develop-error-messages.md).
+
 > [AZURE.NOTE] Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server-portal.md).
 
 Sie müssen Azure PowerShell 1.0 oder höher installiert haben. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
@@ -57,14 +59,14 @@ Verwenden Sie das Cmdlet [Set-AzureRmSqlElasticPool](https://msdn.microsoft.com/
 
 ## Abrufen des Status der Vorgänge für Pools für elastische Datenbanken
 
-Sie können den Status der Vorgänge im Pool für elastische Datenbanken, einschließlich Erstellung und Updates, mithilfe des Cmdlets [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/library/azure/mt603812.aspx) verfolgen.
+Sie können den Status der Vorgänge im Pool für elastische Datenbanken, einschließlich Erstellung und Updates, mithilfe des Cmdlets [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/library/azure/mt603812.aspx) nachverfolgen.
 
 	Get-AzureRmSqlElasticPoolActivity –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” 
 
 
 ## Abrufen des Status beim Verschieben einer elastischen Datenbank in und aus einem Pool für elastische Datenbanken
 
-Sie können den Status der Vorgänge der elastischen Datenbanken, einschließlich Erstellung und Updates, mithilfe des Cmdlets [Get-AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/library/azure/mt603687.aspx) verfolgen.
+Sie können den Status der Vorgänge der elastischen Datenbanken, einschließlich Erstellung und Updates, mithilfe des Cmdlets [Get-AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/library/azure/mt603687.aspx) nachverfolgen.
 
 	Get-AzureRmSqlDatabaseActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
@@ -169,11 +171,11 @@ Exportieren in eine CSV-Datei:
 
 ## Nächste Schritte
 
-- [Elastische Aufträge erstellen](sql-database-elastic-jobs-overview.md) Elastische Aufträge erleichtern die Ausführung von T-SQL-Skripts für eine beliebige Anzahl von Datenbanken im Pool.
+- [Erstellen elastischer Aufträge:](sql-database-elastic-jobs-overview.md) Elastische Aufträge erleichtern die Ausführung von T-SQL-Skripts für eine beliebige Anzahl von Datenbanken im Pool.
 
 
 ## Referenz für elastische Datenbanken
 
 Weitere Informationen über elastische Datenbanken und elastische Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbankpools](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

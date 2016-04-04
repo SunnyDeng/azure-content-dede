@@ -28,7 +28,7 @@ Bei der Skalierung einer Anwendung, die virtuelle Computer ausführt, werden kei
 
 Folgendes ist allerdings zu beachten, bevor die Skalierung einer Anwendung konfiguriert wird:
 
-- Virtuelle Computer müssen nach der Erstellung zu einer Verfügbarkeitsgruppe hinzugefügt werden, um sie für die Skalierung einer Anwendung verwenden zu können. Die derart in eine Gruppe eingefügten virtuellen Computer können zunächst beliebig aktiviert oder deaktiviert sein. Beim Hochskalieren werden sie allerdings definitiv aktiviert und beim Herunterskalieren deaktiviert. Weitere Information zu virtuellen Computern und Verfügbarkeitsgruppen finden Sie unter [Verwaltung der Verfügbarkeit virtueller Computer](../virtual-machines-manage-availability.md).
+- Virtuelle Computer müssen nach der Erstellung zu einer Verfügbarkeitsgruppe hinzugefügt werden, um sie für die Skalierung einer Anwendung verwenden zu können. Die derart in eine Gruppe eingefügten virtuellen Computer können zunächst beliebig aktiviert oder deaktiviert sein. Beim Hochskalieren werden sie allerdings definitiv aktiviert und beim Herunterskalieren deaktiviert. Weitere Information zu virtuellen Computern und Verfügbarkeitsgruppen finden Sie unter [Verwaltung der Verfügbarkeit virtueller Computer](../virtual/machines/virtual-machines-windows-manage-availability.md).
 
 - Die Skalierung ist abhängig von der Kernspeichernutzung. Größere Rolleninstanzen oder virtuelle Computer erfordern mehr Kernspeicher. Sie können eine Anwendung nur innerhalb der für Ihr Abonnement geltenden Kernspeichergrenzwerte skalieren. Wenn als Grenzwert für Ihr Abonnement beispielsweise zwanzig Kernspeicher festgelegt sind und Sie eine Anwendung mit zwei mittelgroßen virtuellen Computern ausführen (insgesamt vier Kernspeicher), stehen für das zentrale Hochskalieren anderer bereitgestellter Clouddienste in Ihrem Abonnement nur noch sechzehn Kernspeicher zur Verfügung. Für die Skalierung einer Anwendung können nur gleich große virtuelle Computer einer Verfügbarkeitsgruppe verwendet werden. Weitere Informationen über Kernspeichernutzung und Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure](http://msdn.microsoft.com/library/dn197896.aspx).
 
@@ -138,7 +138,11 @@ Auf der Skalierungsseite können Sie Ihren Clouddienst so konfigurieren, dass di
     
     **Hinweis:** Auf der Skalierungsseite steht **Instanz** entweder für eine Rolleninstanz oder für eine Instanz eines virtuellen Computers.
     
-    Die maximale Anzahl Instanzen ist durch die Anzahl der im Abonnement verfügbaren Kernspeicher beschränkt. Die Farben des Schiebereglers repräsentieren die verwendeten und verfügbaren Kernspeicher in Ihrem Abonnement: - Blau steht für die maximale Anzahl von Kernspeichern, die die Rolle nutzen kann. - Dunkelgrau steht für die Kernspeicher, die von allen Rollen und virtuellen Computern im Abonnement verwendet werden. Wenn dieser Wert die von der Rolle verwendeten Kernspeicher überlappt, ändert sich die Farbe in Dunkelblau. - Hellgrau steht für die Kernspeicher, die für die Skalierung zur Verfügung stehen. - Rosa stellt eine Änderung dar, die zwar eingearbeitet, aber nicht gespeichert wurde.
+    Die maximale Anzahl Instanzen ist durch die Anzahl der im Abonnement verfügbaren Kernspeicher beschränkt. Die Farben des Reglers lassen erkennen, wie viele Kernspeicher Ihres Abonnements belegt bzw. noch verfügbar sind:
+    - Blau steht für die maximale Anzahl der Kernspeicher, die die Rolle nutzen kann.
+    - Dunkelgrau steht für die Gesamtzahl der Kernspeicher, die von allen Rollen und virtuellen Computern in dem Abonnement genutzt werden. Wenn dieser Wert die von der Rolle verwendeten Kernspeicher überlappt, ändert sich die Farbe in Dunkelblau.
+    - Hellgrau steht für die Kernspeicher, die für die Skalierung zur Verfügung stehen.
+    - Pink steht für eine Änderung, die noch nicht gespeichert worden ist.
 
 5. Wählen Sie das Speicherkonto der Warteschlange aus, die Sie verwenden wollen.
 
@@ -227,4 +231,4 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
 [scale_schedule]: ./media/cloud-services-how-to-scale/CloudServices_SetUpSchedule.png
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

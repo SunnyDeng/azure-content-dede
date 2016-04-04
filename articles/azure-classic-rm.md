@@ -60,11 +60,11 @@ Mit [PowerShell](powershell-install-configure.md) können Sie eine Befehlszeile 
 - **PowerShell-Cmdlets mit einer Azure-Ressourcen-Manager-Vorlage:** Sie können PowerShell zum Erstellen von Azure-Ressourcen über eine Azure-Ressourcen-Manager-Vorlage verwenden. Vorlagen können gespeichert und versioniert werden. Weitere Informationen finden Sie im Artikel [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md). Es gibt mehrere [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/) für gängige Lösungen, die heruntergeladen und geändert werden können.
 
 ## Befehlszeilenschnittstelle (CLI)
-Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die Befehlszeilenschnittstelle erstellen und konfigurieren. Lesen Sie den Artikel [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md), um die Befehlszeilenschnittstelle auf dem Betriebssystem Ihrer Wahl zu installieren. Wie in PowerShell gibt es verschiedene Befehle, die je nachdem verwendet werden müssen, ob Sie Ressourcen mit dem [Ressourcen-Managers-](xplat-cli-azure-resource-manager.md) oder mit dem [klassischen Bereitstellungsmodell (Service Management)](virtual-machines/virtual-machines-command-line-tools.md) erstellen.
+Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die Befehlszeilenschnittstelle erstellen und konfigurieren. Lesen Sie den Artikel [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md), um die Befehlszeilenschnittstelle auf dem Betriebssystem Ihrer Wahl zu installieren. Wie in PowerShell gibt es verschiedene Befehle, die je nachdem verwendet werden müssen, ob Sie Ressourcen mit dem [Ressourcen-Managers-](xplat-cli-azure-resource-manager.md) oder mit dem [klassischen Bereitstellungsmodell (Service Management)](./virtual-machines/virtual-machines-linux-classic-manage-visual-studio.md) erstellen.
 
 ## Nächste Schritte
 
 - Erfahren Sie mehr über [Ressourcen-Manager](resource-group-overview.md).
 - Erlernen Sie das [Entwerfen von Vorlagen](best-practices-resource-manager-design-templates.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

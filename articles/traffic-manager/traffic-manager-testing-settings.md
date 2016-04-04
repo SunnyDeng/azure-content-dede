@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/02/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 # Testen der Traffic Manager-Einstellungen
@@ -42,7 +42,7 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
 3. Fordern Sie die DNS-Auflösung für den Namen Ihrer Unternehmensdomäne mithilfe des Tools "Nslookup.exe" oder eines ähnlichen Hilfsprogramms an.
 4. Stellen Sie sicher, dass die aufgelöste IP-Adresse, die Sie abrufen, zum primären Endpunkt gehört.
 5. Fahren Sie den primären Endpunkt herunter bzw. entfernen Sie die Überwachungsdatei, sodass Traffic Manager davon ausgeht, dass der Dienst nicht in Betrieb ist.
-6. Warten Sie den Zeitraum der im Traffic Manager-Profile angegebenen DNS-Gültigkeitsdauer zuzüglich weiterer zwei Minuten ab. Wenn Ihre DNS-Gültigkeitsdauer z. B. 300 Sekunden (5 Minuten) beträgt, müssen Sie 7 Minuten warten.
+6. Warten Sie den Zeitraum der im Traffic Manager-Profile angegebenen DNS-Gültigkeitsdauer zuzüglich weiterer zwei Minuten ab. Wenn Ihre DNS-Gültigkeitsdauer z. B. 300 Sekunden (5 Minuten) beträgt, müssen Sie 7 Minuten warten.
 7. Leeren Sie den DNS-Clientcache, und fordern Sie dann DNS-Auflösung an. In Windows können Sie den DNS-Cache mit dem Befehl "ipconfig /flushdns" leeren, den Sie an einer Eingabeaufforderung oder einer Windows PowerShell-Eingabeaufforderung aufrufen.
 8. Stellen Sie sicher, dass die abgerufene IP-Adresse zum sekundären Endpunkt gehört.
 9. Wiederholen Sie diesen Vorgang, indem Sie den sekundären Endpunkt beenden, dann den tertiären Endpunkt usw. In jedem dieser Fälle muss sichergestellt werden, dass von der DNS-Auflösung die IP-Adresse des nächsten Endpunkts in der Liste zurückgegeben wird. Wenn alle Endpunkte nicht betriebsbereit sind, sollte erneut die IP-Adresse des primären Endpunkts abgerufen werden.
@@ -53,7 +53,7 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
 2. Verwenden Sie einen einzelnen Client.
 3. Fordern Sie die DNS-Auflösung für Ihre Unternehmensdomäne mithilfe des Tools "Nslookup.exe" oder eines ähnlichen Hilfsprogramms an.
 4. Stellen Sie sicher, dass die erhaltene IP-Adresse eine Adresse aus Ihrer Liste ist.
-5. Leeren Sie den DNS-Clientcache, und wiederholen Sie dann immer wieder die Schritte 3 und 4. Für jeden Ihrer Endpunkte sollte eine andere IP-Adresse zurückgegeben werden. Anschließend wird der Prozess wiederholt.
+5. Leeren Sie den DNS-Clientcache, und wiederholen Sie dann immer wieder die Schritte 3 und 4. Für jeden Ihrer Endpunkte sollte eine andere IP-Adresse zurückgegeben werden. Anschließend wird der Prozess wiederholt.
 
 ### So testen Sie die Routingmethode für Datenverkehr "Leistung"
 
@@ -72,4 +72,4 @@ Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit ei
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

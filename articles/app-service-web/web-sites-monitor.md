@@ -27,8 +27,8 @@
 >[AZURE.NOTE] Die Aufbewahrungsrichtlinien für App-Metriken variieren je nach Granularität.
 
 - Metriken mit der Granularität **Minute** werden für **24 Stunden** beibehalten.
-- Metriken mit der Granularität **Stunde** werden für **7 Tage** beibehalten.
-- Metriken mit der Granularität **Tag** werden für **30 Tage** beibehalten.
+- Metriken mit der Granularität **Stunde** werden für **7 Tage** beibehalten.
+- Metriken mit der Granularität **Tag** werden für **30 Tage** beibehalten.
 
 ##<a name="websitemetrics"></a>Vorgehensweise: Hinzufügen von Web-App-Kennzahlen
 
@@ -52,7 +52,7 @@ Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachung
 
 ##<a name="howtoviewusage"></a>Vorgehensweise: Anzeigen der Nutzungskontingente für eine Web-App
 
-Web-Apps können im [klassischen Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Shared** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Shared** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
+Web-Apps können im [klassischen Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Shared** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Shared** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
 
 >[AZURE.NOTE] Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Clouddienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
 
@@ -62,8 +62,8 @@ Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungsk
 1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App im [klassischen Portal](https://manage.windowsazure.com).
 2. Im Abschnitt **Nutzungsübersicht** werden die Nutzungskontingente für den jeweiligen [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan angezeigt, der eine Teilmenge von Folgendem darstellt:
 	-	**Ausgehende Daten**, **CPU-Zeit** und **Arbeitsspeicher** – Wird das Kontingent überschritten, beendet Azure die Web-App für den Rest des aktuellen Kontingentintervalls. Azure startet die Web-Apps zu Beginn des nächsten Kontingentintervalls erneut.
-	-	**Dateisystemspeicher** - Wenn dieses Kontingent erreicht wird, bleibt der Dateisystemspeicher für Lesevorgänge weiterhin erreichbar. Alle Schreibvorgänge sind jedoch blockiert, einschließlich derjenigen, die für normale Web-App-Aktivitäten erforderlich sind. Schreibvorgänge werden wieder aufgenommen, wenn Sie die Dateinutzung verringern oder die Web-App in einen App Service-Plan mit einem höheren Kontingent verschieben.
-	-	**Verknüpfte Ressourcen** - Kontingente für etwaige verknüpfte Ressourcen in der Web-App wie etwa eine Datenbank oder Speicher werden hier ebenfalls angezeigt.
+	-	**Dateisystemspeicher** - Wenn dieses Kontingent erreicht wird, bleibt der Dateisystemspeicher für Lesevorgänge weiterhin erreichbar. Alle Schreibvorgänge sind jedoch blockiert, einschließlich derjenigen, die für normale Web-App-Aktivitäten erforderlich sind. Schreibvorgänge werden wieder aufgenommen, wenn Sie die Dateinutzung verringern oder die Web-App in einen App Service-Plan mit einem höheren Kontingent verschieben.
+	-	**Verknüpfte Ressourcen** - Kontingente für etwaige verknüpfte Ressourcen in der Web-App wie etwa eine Datenbank oder Speicher werden hier ebenfalls angezeigt.
 
 	Einige Kontingente lassen sich pro Webhostingplan nutzen, andere pro Website. Detailinformationen zu Nutzungskontingenten für jeden Webhostingplan finden Sie unter [Websitelimits](azure-subscription-service-limits.md#websiteslimits).
 
@@ -119,7 +119,7 @@ Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebs
 
 Der Abschnitt **Website-Diagnose** der Verwaltungsseite **Konfigurieren** steuert die vom Webserver durchgeführte Protokollierung, wie z. B. das Protokollieren von Webanfragen, Fehler bei der Seitenbereitstellung und wie lange es dauert, eine Seite bereitzustellen. Sie können die folgenden Optionen aktivieren oder deaktivieren:
 
-- **Webserverprotokollierung** - Aktivieren Sie die Webserverprotokollierung, um Web-App-Protokolle im erweiterten W3C-Protokolldateiformat zu speichern. Die Webserverprotokollierung erzeugt einen Datensatz aller eingehenden Anfragen an die Web-App, mit Informationen wie Client-IP-Adresse, angeforderte URI, HTTP-Statuscode der Antwort sowie Benutzer-Agent-Zeichenfolge des Clients. Sie können die Protokolle auf einem Azure-Speicherkonto oder im Dateisystem speichern.
+- **Webserverprotokollierung** - Aktivieren Sie die Webserverprotokollierung, um Web-App-Protokolle im erweiterten W3C-Protokolldateiformat zu speichern. Die Webserverprotokollierung erzeugt einen Datensatz aller eingehenden Anfragen an die Web-App, mit Informationen wie Client-IP-Adresse, angeforderte URI, HTTP-Statuscode der Antwort sowie Benutzer-Agent-Zeichenfolge des Clients. Sie können die Protokolle auf einem Azure-Speicherkonto oder im Dateisystem speichern.
 
  Um die Webserverprotokolle in einem Azure-Speicherkonto zu speichern, wählen Sie **Speicher** und dann **Speicher verwalten** aus, um ein Speicherkonto und einen Azure Blob-Container anzugeben, in dem die Protokolle gespeichert werden. Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Speicherkonten](/manage/services/storage/how-to-manage-a-storage-account/).
 
@@ -201,7 +201,7 @@ Sie können auch einen Live-Stream der Protokollereignisse mit dem folgenden Bef
 
 Daraufhin werden die Protokollinformationen an der Eingabeaufforderung, PowerShell, Bash- oder Terminalsitzung angezeigt, von der der Befehl ausgeführt wird.
 
-> [AZURE.NOTE] Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-CLI](../virtual-machines-command-line-tools.md).
+> [AZURE.NOTE] Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-CLI](../virtual-machines/virtual-machines-command-line-tools.md).
 
 ### Lesen der Protokolldateien ###
 
@@ -283,10 +283,9 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [fzilla]: http://go.microsoft.com/fwlink/?LinkId=247914
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->
