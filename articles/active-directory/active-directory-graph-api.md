@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="02/25/2016"
+   ms.date="03/18/2016"
    ms.author="mbaldwin" />
 
 # Azure Active Directory Graph-API
@@ -50,6 +50,13 @@ Die Graph-API bietet die folgenden Features:
 
 - **Verzeichniserweiterungen**: Wenn Sie eine Anwendung entwickeln, die eindeutige Eigenschaften für Verzeichnisobjekte lesen oder schreiben muss, können Sie mithilfe der Graph-API Erweiterungswerte registrieren und verwenden. Wenn Ihre Anwendung beispielsweise eine Skype-ID-Eigenschaft für jeden Benutzer erfordert, können Sie die neue Eigenschaft im Verzeichnis registrieren. Sie steht dann für jedes Benutzerobjekt zur Verfügung. Weitere Informationen finden Sie unter [Verzeichnisschemaerweiterungen der Azure AD Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions).
 
+- **Schutz durch Berechtigungsbereiche**: Die AAD Graph-API macht Berechtigungsbereiche verfügbar, die einen sicheren/zustimmungsbasierten Zugriff auf AAD-Daten ermöglichen und eine Reihe von Client-App-Typen unterstützen. Hierzu zählen:
+ - Apps mit einer Benutzeroberfläche, die über die Autorisierung des angemeldeten Benutzers delegierten Zugriff auf Daten erhalten. (delegiert)
+  - Apps, die eine anwendungsdefinierte, rollenbasierte Zugriffssteuerung verwenden – etwa Dienst-/Daemon-Clients. (App-Rollen)
+
+    Sowohl delegierte als auch App-rollenbasierte Berechtigungsbereiche stellen eine durch die Graph-API verfügbar gemachte Berechtigung dar und können von Clientanwendungen über Anwendungsregistrierungsberechtigungen bzw. mithilfe entsprechender [Features im klassischen Azure-Portal](https://manage.windowsazure.com) angefordert werden. Clients können die ihnen gewährten Berechtigungsbereiche überprüfen, indem sie bei delegierten Berechtigungen den im Zugriffstoken enthaltenen Bereichsanspruch („scp“) und bei App-Rollenberechtigungen den Rollenanspruch („roles“) untersuchen. Weitere Informationen zu Berechtigungsbereichen der Azure AD Graph-API finden Sie [hier](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes).
+
+
 ## Szenarios
 
 Die Graph-API ermöglicht eine Vielzahl von Anwendungsszenarios. Die gängigsten Szenarios sind die folgenden:
@@ -66,4 +73,4 @@ Die Graph-API ermöglicht eine Vielzahl von Anwendungsszenarios. Die gängigsten
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

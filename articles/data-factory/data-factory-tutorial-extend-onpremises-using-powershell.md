@@ -31,17 +31,17 @@ Sie **müssen** die exemplarische Vorgehensweise im [Lernprogramm: Verschieben u
 
 In dieser exemplarischen Vorgehensweise führen Sie die folgenden Schritte aus:
 
-1. [Schritt 1: Erstellen eines Datenverwaltungsgateways](#OnPremStep1). Das Datenverwaltungsgateway ist ein Client-Agent, der Zugriff auf lokale Datenquellen in Ihrer Organisation aus der Cloud bietet. Das Gateway ermöglicht die Übertragung von Daten zwischen einem lokalen SQL Server und Azure-Datenspeichern.	
+1. [Erstellen eines Datenverwaltungsgateways](#create-data-management-gateway). Das Datenverwaltungsgateway ist ein Client-Agent, der Zugriff auf lokale Datenquellen in Ihrer Organisation aus der Cloud bietet. Das Gateway ermöglicht die Übertragung von Daten zwischen einem lokalen SQL Server und Azure-Datenspeichern.	
 
 	Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert haben und dieses auch bei Azure Data Factory registrieren, bevor Sie eine lokale SQL Server-Datenbank als verknüpften Dienst für eine Azure Data Factory hinzufügen.
 
-2. [Schritt 2: Erstellen eines verknüpften Diensts für den lokalen SQL Server](#OnPremStep2). In diesem Schritt erstellen Sie zuerst eine Datenbank und eine Tabelle auf dem lokalen SQL Server-Computer und dann den verknüpften Dienst: **OnPremSqlLinkedService**.
-3. [Schritt 3: Erstellen der Tabelle und der Pipeline](#OnPremStep3). In diesem Schritt erstellen Sie die Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** und die Pipeline **EgressDataToOnPremPipeline**. 
+2. [Erstellen eines mit SQL Server verknüpften Diensts](#create-sql-server-linked-service). In diesem Schritt erstellen Sie zuerst eine Datenbank und eine Tabelle auf dem lokalen SQL Server-Computer und dann den verknüpften Dienst: **OnPremSqlLinkedService**.
+3. [Erstellen eines Datasets und einer Pipeline](#create-dataset-and-pipeline). In diesem Schritt erstellen Sie die Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** und die Pipeline **EgressDataToOnPremPipeline**. 
 
-4. [Schritt 4: Überwachen der Pipeline und Anzeigen des Ergebnisses](#OnPremStep4). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des klassischen Azure-Portals.
+4. [Überwachen der Pipeline](#monitor-pipeline). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des klassischen Azure-Portals.
 
 
-## <a name="OnPremStep1"></a> Schritt 1: Erstellen eines Datenverwaltungsgateways
+## Erstellen eines Datenverwaltungsgateways
 
 Das Datenverwaltungsgateway ist ein Client-Agent, der Zugriff auf lokale Datenquellen in Ihrer Organisation aus der Cloud bietet. Das Gateway ermöglicht die Übertragung von Daten zwischen einem lokalen SQL Server und Azure-Datenspeichern.
   
@@ -62,7 +62,7 @@ Wenn Sie ein vorhandenes Datengateway haben, das Sie verwenden können, überspr
 
 9. Klicken Sie auf **OK**, um das Blatt **Konfigurieren** zu schließen, und erneut auf **OK**, um das Blatt **Erstellen** zu schließen. Warten Sie, bis sich der Status von **MyGateway** auf dem Blatt **Verknüpfte Dienste** in **GUT** ändert. Sie können auch das Tool **Datenverwaltungsgateway-Konfigurations-Manager (Vorschau)** starten, um zu sich zu vergewissern, dass der Name des Gateways mit dem Namen im Portal übereinstimmt und dass der **Status** **Registriert** lautet. Sie müssen möglicherweise das Fenster "Verknüpfte Dienste" schließen und erneut öffnen, um den aktuellen Status anzuzeigen. Es kann ein paar Minuten dauern, bis der Bildschirm mit dem aktuellen Status aktualisiert wird.
 
-## <a name="OnPremStep2"></a> Schritt 2: Erstellen eines verknüpften Diensts für den lokalen SQL Server
+## Erstellen eines mit SQL Server verknüpften Diensts
 
 In diesem Schritt erstellen Sie zuerst die erforderliche Datenbank und Tabelle auf dem lokalen SQL Server-Computer und dann den verknüpften Dienst.
 
@@ -109,7 +109,7 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 12.	Klicken Sie auf dem Blatt **Neuer Datenspeicher** auf **OK**. 
 13.	Vergewissern Sie sich, dass auf dem Blatt **Verknüpfte Dienste** in der Liste **OnPremSqlLinkedService** angezeigt wird und dass der **Status** des verknüpften Diensts **Gut** lautet.
 
-## <a name="OnPremStep3"></a> Schritt 3: Erstellen der Tabelle und der Pipeline
+## Erstellen eines Datasets und einer Pipeline
 
 ### Erstellen der lokalen logischen Tabelle
 
@@ -133,9 +133,9 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 
 	Drücken Sie **J**, um fortzufahren.
 	
-## <a name="OnPremStep4"></a> Schritt 4: Überwachen der Pipeline und Anzeigen des Ergebnisses
+## Überwachen der Pipeline
 
-Jetzt können Sie dieselben Schritte verwenden, die in [Schritt 6: Überwachen von Pipelines und Datenslices](#MainStep6) aufgeführt sind, um die neue Pipeline und die Datenslices für die neue lokale ADF-Tabelle zu überwachen.
+Jetzt können Sie dieselben Schritte ausführen, die in [Überwachen von Pipelines](data-factory-tutorial-using-powershell.md#monitor-pipelines) aufgeführt sind, um die neue Pipeline und die Datenslices für die neue lokale ADF-Tabelle zu überwachen.
  
 Wenn Sie sehen, dass sich der Status eines Slice der Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** in "Bereit" ändert, bedeutet das, dass die Pipeline die Ausführung für den Slice abgeschlossen hat. Um die Ergebnisse anzuzeigen, fragen Sie die Tabelle **MarketingCampaignEffectiveness** in der **MarketingCampaigns**-Datenbank in Ihrem SQL Server ab.
  
@@ -170,4 +170,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

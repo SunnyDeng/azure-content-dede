@@ -1,5 +1,5 @@
 
-Weitere Detailinformationen zu Datenträgern finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md).
+Weitere Detailinformationen zu Datenträgern finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-linux-about-disks-vhds.md).
 
 ##<a id="attachempty"></a>Anfügen eines leeren Datenträgers
 
@@ -10,12 +10,12 @@ Eine einfachere Methode zum Hinzufügen eines Datenträgers besteht im Anfügen 
 2. Klicken Sie in der Befehlsleiste auf **Anschließen**, und klicken Sie dann auf **Leeren Datenträger anschließen**.
 
 
-	![Anfügen eines leeren Datenträgers](./media/howto-attach-disk-window-linux/AttachEmptyDisk.png)
+	![Anfügen eines leeren Datenträgers](./media/howto-attach-disk-windows-linux/AttachEmptyDisk.png)
 
 3.	Das Dialogfeld **Leeren Datenträger anfügen** wird angezeigt.
 
 
-	![Neuen leeren Datenträger anfügen](./media/howto-attach-disk-window-linux/AttachEmptyDetail.png)
+	![Neuen leeren Datenträger anfügen](./media/howto-attach-disk-windows-linux/AttachEmptyDetail.png)
 
 
 	Gehen Sie wie folgt vor:
@@ -28,7 +28,7 @@ Eine einfachere Methode zum Hinzufügen eines Datenträgers besteht im Anfügen 
 
 4.	Nachdem der Datenträger erstellt und angefügt ist, wird er im Dashboard des virtuellen Computers aufgeführt.
 
-	![Leerer Datenträger erfolgreich angefügt](./media/howto-attach-disk-window-linux/AttachEmptySuccess.png)
+	![Leerer Datenträger erfolgreich angefügt](./media/howto-attach-disk-windows-linux/AttachEmptySuccess.png)
 
 > [AZURE.NOTE] Nachdem Sie einen neuen Datenträger hinzugefügt haben, müssen Sie sich beim virtuellen Computer anmelden und den Datenträger initialisieren, sodass dieser verwendet werden kann.
 
@@ -42,16 +42,16 @@ Zum Anfügen eines vorhandenen Datenträgers wird eine VHD-Datei im Speicherkont
 2. Klicken Sie auf der Befehlsleiste auf **Anfügen**, und wählen Sie anschließend **Datenträger anfügen**.
 
 
-	![Datenträger anfügen](./media/howto-attach-disk-window-linux/AttachExistingDisk.png)
+	![Datenträger anfügen](./media/howto-attach-disk-windows-linux/AttachExistingDisk.png)
 
 
 3. Wählen Sie den Datenträger aus, und aktivieren Sie das Kontrollkästchen, um ihn anzufügen.
 
-	![Details zum Datenträger eingeben](./media/howto-attach-disk-window-linux/AttachExistingDetail.png)
+	![Details zum Datenträger eingeben](./media/howto-attach-disk-windows-linux/AttachExistingDetail.png)
 
 4.	Nachdem der Datenträger angefügt ist, wird er im Dashboard des virtuellen Computers aufgeführt.
 
 
-	![Datenträger erfolgreich angefügt](./media/howto-attach-disk-window-linux/AttachExistingSuccess.png)
+	![Datenträger erfolgreich angefügt](./media/howto-attach-disk-windows-linux/AttachExistingSuccess.png)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

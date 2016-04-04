@@ -57,11 +57,11 @@ Der Vorgang umfasst drei Schritte:
 
 Dies ist ein komplexer Vorgang. Wir haben daher ein PowerShell-Modul in ein Git-Repository hochgeladen, mit dem dieser Vorgang für Sie durchgeführt wird.
 
-**Schritt 2.1**: Kopieren Sie diesen Ordner aus [diesem Git-Repository](https://github.com/ChackDan/Service-Fabric/tree/master/Scripts/ServiceFabricRPHelpers) auf Ihren Computer.
+**Schritt 2.1**: Kopieren Sie diesen Ordner aus [diesem Git-Repository](https://github.com/ChackDan/Service-Fabric/tree/master/Scripts/ServiceFabricRPHelpers) auf Ihren Computer.
 
-**Schritt 2.2**: Stellen Sie sicher, dass mindestens Azure PowerShell 1.0 auf Ihrem Computer installiert ist. Falls noch nicht erfolgt, sollten Sie unbedingt die Schritte unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md) befolgen.
+**Schritt 2.2**: Stellen Sie sicher, dass mindestens Azure PowerShell 1.0 auf Ihrem Computer installiert ist. Falls noch nicht erfolgt, sollten Sie unbedingt die Schritte unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md) befolgen.
 
-**Schritt 2.3**: Öffnen Sie ein PowerShell-Fenster, und importieren Sie die Datei „ServiceFabricRPHelpers.psm“. (Dies ist das Modul, das Sie in Schritt 2.1 heruntergeladen haben.)
+**Schritt 2.3**: Öffnen Sie ein PowerShell-Fenster, und importieren Sie die Datei „ServiceFabricRPHelpers.psm“. (Dies ist das Modul, das Sie in Schritt 2.1 heruntergeladen haben.)
 
 ```
 Remove-Module ServiceFabricRPHelpers
@@ -81,7 +81,10 @@ Melden Sie sich beim Azure-Konto an. Wenn dieser PowerShell-Befehl aus irgendein
 Login-AzureRmAccount
 ```
 
-Das folgende Skript erstellt eine neue Ressourcengruppe und/oder einen Schlüsseltresor, sofern noch nicht vorhanden.
+Das folgende Skript erstellt eine neue Ressourcengruppe und/oder einen Schlüsseltresor, sofern noch nicht vorhanden. **Hinweis: Bei Verwendung eines bereits vorhandenen Schlüsseltresors muss er mithilfe dieses Skripts bereitstellungsfähig gemacht werden.**
+```
+Set-AzureRmKeyVaultAccessPolicy -VaultName <Name of the Vault> -ResourceGroupName <string> -EnabledForTemplateDeployment -EnabledForDeployment
+```
 
 ```
 Invoke-AddCertToKeyVault -SubscriptionId <your subscription id> -ResourceGroupName <string> -Location <region> -VaultName <Name of the Vault> -CertificateName <Name of the Certificate> -Password <Certificate password> -UseExistingCertificate -ExistingPfxFilePath <Full path to the .pfx file>
@@ -92,17 +95,17 @@ Hier ist ein ausgefülltes Skript als Beispiel angegeben.
 Invoke-AddCertToKeyVault -SubscriptionId 35389201-c0b3-405e-8a23-9f1450994307 -ResourceGroupName chackdankeyvault4doc -Location westus -VaultName chackdankeyvault4doc  -CertificateName chackdantestcertificate2 -Password abcd123 -UseExistingCertificate -ExistingPfxFilePath C:\MyCertificates\ChackdanTestCertificate.pfx
 ```
 
-Nach erfolgreichem Abschluss des Skripts erhalten Sie eine Ausgabe wie unten angegeben, die Sie für Schritt 3 (Einrichten eines sicheren Clusters) benötigen.
+Nach erfolgreichem Abschluss des Skripts erhalten Sie eine Ausgabe wie unten angegeben, die Sie für Schritt 3 (Einrichten eines sicheren Clusters) benötigen.
 
 - **Zertifikatfingerabdruck**: 2118C3BCE6541A54A0236E14ED2CCDD77EA4567A
 
 - **SourceVault** /Ressourcen-ID des Schlüsseltresors: /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc
 
-- **Zertifikat-URL** /URL zum Zertifikatspeicherort im Schlüsseltresor: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/ebc8df6300834326a95d05d90e0701ea
+- **Zertifikat-URL** /URL des Zertifikatspeicherorts im Schlüsseltresor: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/ebc8df6300834326a95d05d90e0701ea
 
 Jetzt verfügen Sie über die Informationen, die Sie zum Einrichten eines sicheren Clusters benötigen. Fahren Sie mit Schritt 3 fort.
 
-**Schritt 2.5**: Wenn Sie *kein* Zertifikat besitzen und ein neues selbstsigniertes Zertifikat erstellen und in den Schlüsseltresor hochladen möchten, gehen Sie folgendermaßen vor.
+**Schritt 2.5**: Wenn Sie *kein* Zertifikat besitzen und ein neues selbstsigniertes Zertifikat erstellen und in den Schlüsseltresor hochladen möchten, gehen Sie wie folgt vor.
 
 Melden Sie sich beim Azure-Konto an. Wenn dieser PowerShell-Befehl aus irgendeinem Grund Fehler verursacht, sollten Sie prüfen, ob Azure PowerShell ordnungsgemäß installiert ist.
 
@@ -144,7 +147,7 @@ Nach dem erfolgreichen Abschluss des Skripts erhalten Sie eine Ausgabe wie unten
 
 - **SourceVault** /Ressourcen-ID des Schlüsseltresors: /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc
 
-- **Zertifikat-URL** /URL zum Zertifikatspeicherort im Schlüsseltresor: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/fvc8df6300834326a95d05d90e0720ea
+- **Zertifikat-URL** /URL des Zertifikatspeicherorts im Schlüsseltresor: https://chackdankeyvalut4doc.vault.azure.net:443/secrets/chackdantestcertificate3/fvc8df6300834326a95d05d90e0720ea
 
 ### Schritt 3: Einrichten eines sicheren Clusters
 
@@ -158,7 +161,7 @@ Die benötigten Zertifikate werden auf Knotentypebene unter den Sicherheitskonfi
 Erforderliche Parameter:
 
 - **Sicherheitsmodus.** Wählen Sie **X.509-Zertifikat** aus. Dadurch geben Sie Service Fabric an, dass Sie einen sicheren Cluster einrichten möchten.
-- **Clusterschutzebene.** Informationen dazu, was die einzelnen Werte bedeuten, finden Sie im Dokument [Grundlagen der Schutzebene](https://msdn.microsoft.com/library/aa347692.aspx). Obwohl hier drei Werte („EncryptAndSign“, „Sign“ und „None“) zulässig sind, empfiehlt es sich, den Standardwert „EncryptAndSign“ beizubehalten. Sie sollten diesen Wert nur ändern, wenn Sie mit dem Vorgang vertraut sind.
+- **Clusterschutzebene.** Informationen zur Bedeutung der einzelnen Werte finden Sie im Dokument [Grundlagen der Schutzebene](https://msdn.microsoft.com/library/aa347692.aspx). Obwohl hier drei Werte („EncryptAndSign“, „Sign“ und „None“) zulässig sind, empfiehlt es sich, den Standardwert „EncryptAndSign“ beizubehalten. Sie sollten diesen Wert nur ändern, wenn Sie mit dem Vorgang vertraut sind.
 - **Quelltresor.** Dies bezieht sich auf die Ressourcen-ID des Schlüsseltresors. Sie sollte folgendes Format aufweisen:
 
     ```
@@ -184,7 +187,7 @@ Admin-Client: Mit diesen Informationen wird überprüft, ob der Client für die 
 
 - **Autorisieren mit.** Gibt für Service Fabric an, ob dieses Zertifikat anhand des Antragstellernamens oder anhand des Fingerabdrucks gesucht werden soll. Die Verwendung des Antragstellernamens für die Autorisierung ist aus Sicherheitsgründen nicht empfehlenswert, lässt jedoch mehr Flexibilität zu.
 - **Antragstellername.** Dies ist nur erforderlich, wenn Sie angegeben haben, dass die Autorisierung mit dem Antragstellernamen erfolgen soll.
-- **Fingerabdruck des Ausstellers.** Stellt eine zusätzliche Sicherheitsprüfung dar, die der Server ausführen kann, wenn ein Client seine Anmeldeinformationen an den Server übermittelt.
+- **Fingerabdruck des Ausstellers.** Eine zusätzliche Sicherheitsprüfung, die der Server ausführen kann, wenn ein Client seine Anmeldeinformationen an den Server übermittelt.
 
 Schreibgeschützter Client: Mit diesen Informationen wird überprüft, ob der Client für die Verbindung mit dem Endpunkt der Clusterverwaltung die richtigen Anmeldedaten zum Ausführen schreibgeschützter Vorgänge auf dem Cluster verwendet. Sie können weitere Zertifikate angeben, wenn Sie für schreibgeschützte Vorgänge autorisiert werden möchten.
 
@@ -210,7 +213,7 @@ Es folgt der Prozess zum Entfernen eines alten Zertifikats, damit der Cluster es
 
 1. Besuchen Sie das Portal, und navigieren Sie zu den Sicherheitseinstellungen Ihres Clusters.
 2. Entfernen Sie eines der Zertifikate.
-3. Klicken Sie auf **Speichern**, woraufhin eine neue Bereitstellung beginnt. Nachdem die Bereitstellung abgeschlossen ist, kann das entfernte Zertifikat nicht mehr zum Verbinden mit dem Cluster verwendet werden.
+3. Klicken Sie auf **Speichern**. Daraufhin beginnt eine neue Bereitstellung. Nachdem die Bereitstellung abgeschlossen ist, kann das entfernte Zertifikat nicht mehr zum Verbinden mit dem Cluster verwendet werden.
 
 >[AZURE.NOTE] Für einen sicheren Cluster muss stets mindestens ein gültiges (nicht widerrufenes oder abgelaufenes) Zertifikat (primär oder sekundär) bereitgestellt sein. Andernfalls können Sie nicht auf den Cluster zugreifen.
 
@@ -223,7 +226,9 @@ Arten von Zertifikaten, die von Service Fabric verwendet werden
 Digitale X.509-Zertifikate werden in der Regel verwendet, um Clients und Server zu authentifizieren sowie um Nachrichten zu verschlüsseln und digital zu signieren. Weitere Informationen zu diesen Zertifikaten finden Sie unter [Arbeiten mit Zertifikaten](http://msdn.microsoft.com/library/ms731899.aspx) in der MSDN Library.
 
 >[AZURE.NOTE]
-– Zertifikate, die in Clustern mit Produktionsworkloads verwendet werden, müssen entweder mit einem ordnungsgemäß konfigurierten Windows Server-Zertifikatsdienst erstellt oder über eine genehmigte [Zertifizierungsstelle](https://en.wikipedia.org/wiki/Certificate_authority) bezogen werden. – Verwenden Sie in der Produktion niemals temporäre oder Testzertifikate, die mit Tools wie „MakeCert.exe“ erstellt wurden. – Für Cluster, die Sie nur für Testzwecke verwenden, können Sie ein selbstsigniertes Zertifikat verwenden.
+- Zertifikate, die in Clustern mit Produktionsworkloads verwendet werden, müssen entweder mit einem korrekt konfigurierten Windows Server-Zertifikatsdienst erstellt oder über eine genehmigte [Zertifizierungsstelle](https://en.wikipedia.org/wiki/Certificate_authority) bezogen werden.
+- Verwenden Sie in der Produktion niemals temporäre oder Testzertifikate, die mit Tools wie „MakeCert.exe“ erstellt wurden.
+- Für Cluster, die Sie nur für Testzwecke verwenden, können Sie ein selbstsigniertes Zertifikat verwenden.
 
 ### Serverzertifikate und Clientzertifikate
 
@@ -233,9 +238,9 @@ Serverzertifikate müssen primär einen Server (Knoten) für Clients oder einen 
 
 Im folgenden Artikel erfahren Sie, wie Zertifikate mit alternativen Antragstellernamen (SAN) generiert werden: [Hinzufügen eines alternativen Antragstellernamens zu einem gesicherten LDAP-Zertifikat](http://support.microsoft.com/kb/931351).
 
->[AZURE.NOTE] Das Antragstellerfeld kann mehrere Werte enthalten. Jeder davon ist mit einer Initialisierung versehen, die den Typ des Werts als Präfix angibt. In den meisten Fällen verwendet die Initialisierung „CN“ für den allgemeinen Namen, z. B. „CN = www.contoso.com“. Das Feld für den Antragsteller kann auch leer gelassen werden. Wenn das optionale Feld für den alternativen Antragstellernamen ausgefüllt ist, muss es sowohl den allgemeinen Namen des Zertifikats als auch einen Eintrag pro alternativen Antragstellernamen enthalten. Diese werden als Werte für DNS-Namen eingegeben.
+>[AZURE.NOTE] Das Antragstellerfeld kann mehrere Werte enthalten. Jeder davon ist mit einer Initialisierung versehen, die den Typ des Werts als Präfix angibt. In den meisten Fällen verwendet die Initialisierung „CN“ für den allgemeinen Namen, z. B. „CN = www.contoso.com“. Das Feld für den Antragsteller kann auch leer gelassen werden. Wenn das optionale Feld für den alternativen Antragstellernamen ausgefüllt ist, muss es sowohl den allgemeinen Namen des Zertifikats als auch einen Eintrag pro alternativen Antragstellernamen enthalten. Diese werden als Werte für DNS-Namen eingegeben.
 
-Der Wert des Felds „Beabsichtigte Zwecke“ des Zertifikats muss einen entsprechenden Wert enthalten, z. B. „Serverauthentifizierung“ oder „Clientauthentifizierung“.
+Der Wert des Felds „Beabsichtigte Zwecke“ des Zertifikats muss einen entsprechenden Wert enthalten, z. B. „Serverauthentifizierung“ oder „Clientauthentifizierung“.
 
 #### Clientzertifikate
 
@@ -258,4 +263,4 @@ Clientzertifikate werden in der Regel nicht von einer Drittanbieter-Zertifizieru
 [Node-to-Node]: ./media/service-fabric-cluster-security/node-to-node.png
 [Client-to-Node]: ./media/service-fabric-cluster-security/client-to-node.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

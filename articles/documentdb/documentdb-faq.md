@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/04/2016" 
+	ms.date="03/23/2016" 
 	ms.author="mimig"/>
 
 
@@ -43,7 +43,7 @@ Ja, DocumentDB unterstützt dokumentübergreifende Transaktionen, die in Form vo
 DocumentDB ist eine gute Wahl für neue Web- und mobile Anwendungen, wenn Skalierung, Leistung und Abfrage schemafreier Daten wichtig sind. DocumentDB eignet sich für schnelle Entwicklungen und die Unterstützung kontinuierlicher Iterationen von Anwendungsdatenmodellen. Anwendungen, die von Benutzern erzeugte Inhalte und Daten verwalten, sind ein [häufiger Anwendungsfall von DocumentDB](documentdb-use-cases.md).
 
 ### Ist DocumentDB mit HIPAA kompatibel?
-DocumentDB ist derzeit nicht mit HIPAA kompatibel, es ist allerdings geplant, daraus einen HIPAA-kompatiblen Azure-Dienst zu machen. Weitere Informationen zu Microsoft und HIPAA finden Sie unter [HIPAA and the HITECH Act](https://www.microsoft.com/de-DE/TrustCenter/Compliance/HIPAA) (in englischer Sprache).
+Ja, DocumentDB ist mit HIPAA kompatibel. HIPAA gibt Anforderungen für die Verwendung, Offenlegung und den Schutz von individuell identifizierbaren Gesundheitsinformationen vor. Weitere Informationen finden Sie im [Microsoft Trust Center](https://www.microsoft.com/de-DE/TrustCenter/Compliance/HIPAA).
 
 ### Was sind die Größenbeschränkungen von DocumentDB?
 DocumentDB-Konten können hinsichtlich Speicher und Durchsatz durch Hinzufügen von Sammlungen skaliert werden. Die Dienstkontingente für die Anzahl der Sammlungen finden Sie unter [DocumentDB-Grenzen](documentdb-limits.md). Wenn Sie weitere Sammlungen benötigen, [wenden Sie sich an den Support](documentdb-increase-limits.md), um das Kontokontingent zu erhöhen.
@@ -115,4 +115,4 @@ Ja. Da es sich bei DocumentDB um einen RESTful-Dienst handelt, sind Ressourcenli
 [query]: documentdb-sql-query.md
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

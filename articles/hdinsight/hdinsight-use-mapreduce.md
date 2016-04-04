@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/08/2016"
+   ms.date="03/18/2016"
    ms.author="larryfr"/>
 
 # Verwenden von MapReduce mit Hadoop in HDInsight
@@ -54,15 +54,13 @@ Weitere Informationen finden Sie unter [Hadoop Streaming](http://hadoop.apache.o
 
 Beispiele für die Verwendung von Hadoop-Datenströmen mit HDInsight finden Sie hier:
 
-* [Entwickeln von C#-Hadoop-Streamingprogrammen](hdinsight-hadoop-develop-deploy-streaming-jobs.md)
-
 * [Entwickeln von Python-MapReduce-Aufträgen](hdinsight-hadoop-streaming-python.md)
 
 ##<a id="data"></a>Infos zu Beispiel-Daten
 
 In diesem Beispiel werden die Notizbücher von Leonardo Da Vinci als Beispieldaten verwendet, die in Form eines Textdokuments in Ihrem HDInsight-Cluster bereitgestellt werden.
 
-Die Beispieldaten werden in einem Azure-Blobspeicher gespeichert, den HDInsight als Standard-Dateisystem für Hadoop-Cluster verwendet. HDInsight kann mithilfe des Präfix **wasb** auf Dateien zugreifen, die im Blobspeicher gespeichert sind. Für die Datei "sample.log" gilt z. B. die folgende Syntax:
+Die Beispieldaten werden in einem Azure-Blobspeicher gespeichert, den HDInsight als Standard-Dateisystem für Hadoop-Cluster verwendet. HDInsight kann mithilfe des Präfix **wasb** auf Dateien zugreifen, die im Blobspeicher gespeichert sind. Für die Datei "sample.log" gilt z. B. die folgende Syntax:
 
 	wasb:///example/data/gutenberg/davinci.txt
 
@@ -169,8 +167,6 @@ MapReduce bietet zwar leistungsstarke Diagnosemöglichkeiten, ist jedoch eventue
 
 * [Entwickeln von Python-Streamingprogrammen für HDInsight](hdinsight-hadoop-streaming-python.md)
 
-* [Entwickeln von Hadoop-Streaming-MapReduce-Programmen in C# für HDInsight][hdinsight-develop-streaming]
-
 * [Entwickeln von Scalding-MapReduce-Aufträgen mit Apache Hadoop in HDInsight](hdinsight-hadoop-mapreduce-scalding.md)
 
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
@@ -193,4 +189,4 @@ MapReduce bietet zwar leistungsstarke Diagnosemöglichkeiten, ist jedoch eventue
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

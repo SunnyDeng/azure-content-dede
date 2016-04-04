@@ -22,7 +22,7 @@ Lesen Sie die Informationen zum Prozess vor Beginn sorgfältig durch, um nachvol
 ## Herunterladen der erforderlichen Tools und Anwendungen
 Sie sollten die folgenden Aufgaben ausgeführt haben, bevor Sie mit dem hier beschriebenen Verfahren beginnen:
 
-- Installieren Sie abhängig vom Zielbetriebssystem die Azure PowerShell-Cmdlets oder die Linux-Befehlszeilenschnittstelle über die Downloadseite von Azure.
+- Installieren Sie abhängig vom Zielbetriebssystem die Azure PowerShell-Cmdlets oder die Linux-Befehlszeilenschnittstelle über die Downloadseite von Azure.
 - Laden Sie den Azure-Speicher-Explorer aus CodePlex herunter.
 - Laden Sie „Certification Test Tool for Azure Certified“ herunter:
   - [http://go.microsoft.com/fwlink/?LinkID=526913](http://go.microsoft.com/fwlink/?LinkID=526913). Zum Ausführen des Zertifizierungstools benötigen Sie einen Windows-basierten Computer. Wenn kein Windows-basierter Computer zur Verfügung steht, können Sie das Tool unter Verwendung eines Windows-basierten virtuellen Computers in Azure ausführen.
@@ -33,7 +33,9 @@ Sie können Azure-basierte virtuelle Computer unter Windows oder Linux erstellen
 - Bei Verwendung von Linux finden Sie weitere Informationen im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md) im Abschnitt „Erstellen einer mit Azure kompatiblen VHD (Linux-basiert)“.
 - Bei Verwendung von Windows finden Sie weitere Informationen im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md) im Abschnitt „Erstellen einer mit Azure kompatiblen VHD (Windows-basiert)“.
 
-> [AZURE.NOTE] Sie benötigen Zugriff auf einen Windows-basierten Computer, um folgende Aufgaben auszuführen: – Ausführen des Tools für die Zertifizierungsprüfung. – Erstellen der VHD-SAS-URL zum Übermitteln der VHD-Zertifizierung.
+> [AZURE.NOTE] Sie benötigen Zugriff auf einen Windows-basierten Computer, um folgende Aufgaben auszuführen:
+- Ausführen des Tools für die Zertifizierungsprüfung.
+- Erstellen der VHD-SAS-URL zum Übermitteln der VHD-Zertifizierung.
 
 ## Entwickeln Ihrer virtuellen Festplatte
 Azure-VHDs können in der Cloud oder lokal entwickelt werden:
@@ -46,9 +48,9 @@ Sie haben die Voraussetzungen überprüft und die erforderlichen Aufgaben ausgef
 
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
-- [Erstellen eines virtuellen Computers unter Windows im Azure-Vorschauportal](../virtual-machines/virtual-machines-windows-tutorial/)
+- [Erstellen eines virtuellen Computers unter Windows im Azure-Vorschauportal](../virtual-machines/virtual-machines-windows-hero-tutorial/)
 
 
 [link-acct-creation]: marketplace-publishing-accounts-creation-registration.md
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

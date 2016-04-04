@@ -30,7 +30,7 @@ Azure Scheduler steht über die Benutzeroberfläche in nahezu allen geografische
 
 Das Front-End von Azure Scheduler ist nicht nur für Verwaltungsanforderungen verfügbar, Ihr eigener Auftrag wird auch geografisch repliziert. Bei einem Ausfall in einer Region wird mittels Failover für Azure Scheduler sichergestellt, dass der Auftrag in einem anderen Rechenzentrum in der gekoppelten geografischen Region ausgeführt wird.
 
-Wenn Sie also beispielsweise einen Auftrag in der Region „USA (Mitte/Süden)“ erstellt haben, repliziert Azure Scheduler diesen Auftrag automatisch in die Region „USA (Mitte/Norden)“. Bei einem Ausfall in der Region „USA (Mitte/Süden)“ sorgt Azure Scheduler dafür, dass der Auftrag in der Region „USA (Mitte/Norden)“ ausgeführt wird. Die Liste mit den gekoppelten Azure-Regionen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn758204.aspx).
+Wenn Sie also beispielsweise einen Auftrag in der Region „USA (Mitte/Süden)“ erstellt haben, repliziert Azure Scheduler diesen Auftrag automatisch in die Region „USA (Mitte/Norden)“. Bei einem Ausfall in der Region „USA (Mitte/Süden)“ sorgt Azure Scheduler dafür, dass der Auftrag in der Region „USA (Mitte/Norden)“ ausgeführt wird. [Eine ausführliche Erläuterung der Georeplikationsfunktionen von Azure finden Sie in diesem Thema.](../sql-database/sql-database-business-continuity-design.md)
 
 ![][1]
 
@@ -56,7 +56,7 @@ Ein Beispiel sehen Sie im folgenden Diagramm: Azure Scheduler wendet die Wiederh
 
 ![][2]
 
-Beachten Sie, dass die gleiche Wiederholungsrichtlinie sowohl für die ursprüngliche Aktion als auch für die alternative Fehleraktion gilt. Der Aktionstyp der alternativen Fehleraktion kann sich auch vom Aktionstyp der Hauptaktion unterscheiden. So kann die Fehleraktion beispielsweise eine Speicherwarteschlangenaktion mit Fehlerprotokollierung aufrufen, obwohl die Hauptaktion einen HTTP-Endpunkt aufruft.
+Beachten Sie, dass die gleiche Wiederholungsrichtlinie sowohl für die ursprüngliche Aktion als auch für die alternative Fehleraktion gilt. Der Aktionstyp der alternativen Fehleraktion kann sich auch vom Aktionstyp der Hauptaktion unterscheiden. So kann die Fehleraktion beispielsweise eine Speicherwarteschlangen-, Service Bus-Warteschlangen- oder Service Bus-Topic-Aktion mit Fehlerprotokollierung sein, obwohl die Hauptaktion einen HTTP-Endpunkt aufruft.
 
 Weitere Informationen zum Konfigurieren eines alternativen Endpunkts finden Sie unter [errorAction](scheduler-concepts-terms.md#action-and-erroraction).
 
@@ -85,4 +85,4 @@ Weitere Informationen zum Konfigurieren eines alternativen Endpunkts finden Sie 
 
 [2]: ./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image2.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

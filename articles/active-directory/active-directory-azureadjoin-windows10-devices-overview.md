@@ -9,7 +9,7 @@
 	editor=""
 	tags="azure-classic-portal"/>
 
-<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="get-started-article" ms.date="02/26/2016"
+<tags ms.service="active-directory" ms.workload="identity" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="03/18/2016"
 
 	ms.author="femila"/>
 
@@ -30,4 +30,4 @@ Die folgenden Themen bieten Einblicke in unterschiedliche Funktionen von Windows
 | Bereitstellung | [Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md) <br><br> [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)<br><br>[Microsoft Passport for Work in Unternehmen aktivieren](active-directory-azureadjoin-passport-deployment.md)<br><br> [Enabling Enterprise State Roaming for Windows 10](active-directory-windows-enterprise-state-roaming-overview.md) (Aktivieren des Zustandsroamings für Windows 10 in Unternehmen)<br><br> |
 | Benutzeraufgaben | [Einrichten eines neuen Windows 10-Geräts mit Azure AD während des Setups](active-directory-azureadjoin-user-frx.md) <br><br> [Setting up a Windows 10 device with Azure AD from the settings menu](active-directory-azureadjoin-user-upgrade.md) (Einrichten eines Windows 10-Geräts mit Azure AD im Einstellungsmenü) <br><br> [Verknüpfen eines persönlichen Windows 10-Geräts mit Ihrer Organisation](active-directory-azureadjoin-personal-device.md) |
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

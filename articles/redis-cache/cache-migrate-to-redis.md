@@ -12,7 +12,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="cache-redis"
     ms.workload="tbd"
-    ms.date="03/04/2016"
+    ms.date="03/17/2016"
     ms.author="sdanie" />
 
 # Migrieren von Managed Cache Service zu Azure Redis Cache
@@ -49,6 +49,7 @@ Azure Managed Cache Service und Azure Redis Cache sind zwar ähnlich, bei der Im
 |Ablaufrichtlinie|Die Standardablaufrichtlinie ist „Absolut“, und das Standardablaufintervall beträgt 10 Minuten. Außerdem sind die Richtlinien „Gleitend“ und „Nie“ verfügbar.|Standardmäßig laufen Elemente im Cache nicht ab, es kann jedoch ein Ablaufdatum pro Schreibvorgang mithilfe von Cachesatzüberladungen konfiguriert werden. Weitere Informationen finden Sie unter [Hinzufügen zu und Abrufen von Objekten aus dem Cache](cache-dotnet-how-to-use-azure-redis-cache.md#add-and-retrieve-objects-from-the-cache).|
 |Bereiche und Tagging|Bereiche sind Untergruppen für zwischengespeicherte Elemente. Bereiche unterstützen auch Anmerkungen für zwischengespeicherte Elemente mithilfe zusätzlicher beschreibender Zeichenfolgen, den sogenannten Tags. Bereiche unterstützen die Möglichkeit, Suchvorgänge für alle Elemente mit Tags in diesem Bereich auszuführen. Alle Elemente in einem Bereich befinden sich in einem einzelnen Knoten des Cacheclusters.|Ein Redis-Cache besteht aus einem einzelnen Knoten (sofern der Redis-Cluster nicht aktiviert ist), sodass das Konzept von Managed Cache Service-Bereichen nicht gilt. Redis unterstützt beim Abrufen von Schlüsseln Such- und Platzhaltervorgänge, damit beschreibende Tags in die Schlüsselnamen eingebettet und die Elemente später abgerufen werden können. Ein Beispiel für die Implementierung einer Tagginglösung mit Redis finden Sie unter [Implementieren des Cache-Taggings mit Redis](http://stackify.com/implementing-cache-tagging-redis/).|
 |Serialisierung|Managed Cache unterstützt NetDataContractSerializer, BinaryFormatter und die Verwendung von benutzerdefinierten Serialisierungsprogrammen. Der Standardwert ist NetDataContractSerializer.|Das Serialisieren von .NET Objekten vor dem Platzieren im Cache ist Aufgabe der Clientanwendung, wobei die Entscheidung für ein Serialisierungsprogramm dem Client-Anwendungsentwickler überlassen ist. Weitere Informationen und Beispielcode finden Sie unter [Arbeiten mit .NET-Objekten im Cache](cache-dotnet-how-to-use-azure-redis-cache.md#work-with-net-objects-in-the-cache).|
+| Cache-Emulator | Managed Cache bietet einen lokalen Cache-Emulator. | Azure Redis Cache enthält keinen Emulator, Sie können jedoch [das MSOpenTech-Build von „redis-server.exe“ lokal ausführen](cache-faq.md#cache-emulator), um Emulatorfunktionen bereitzustellen. |
 
 ## Auswählen eines Cacheangebots
 
@@ -195,4 +196,4 @@ Azure-Redis-Cache verfügt über Anbieter für den ASP.NET-Sitzungszustand und d
 
 In der [Azure Redis Cache-Dokumentation](https://azure.microsoft.com/documentation/services/cache/) finden Sie Lernprogramme, Beispiele, Videos und vieles mehr.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

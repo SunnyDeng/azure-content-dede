@@ -52,9 +52,9 @@ Erstellen Sie eine MapReduce-Anwendung zum Zählen von Wörtern. Diese einfache 
 
 	Daraufhin wird ein neues Unterverzeichnis mit dem im __artifactID__-Parameter (**wordcountjava** in diesem Beispiel) angegebenen Namen im aktuellen Verzeichnis erstellt. Dieses Verzeichnis enthält die folgenden Elemente:
 
-	* __pom.xml__ – Das [Projektobjektmodell (POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), das die Informationen und Konfigurationsdetails für das Erstellen des Projekts enthält.
+	* __pom.xml__ – Das [Projektobjektmodell (POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), das die Informationen und Konfigurationsdetails für das Erstellen des Projekts enthält.
 
-	* __src__ – Das Verzeichnis, das das __main\\java\\org\\apache\\hadoop\\examples__-Verzeichnis enthält, in dem Sie die Anwendung erstellen werden.
+	* __src__ – Das Verzeichnis, das das __main\\java\\org\\apache\\hadoop\\examples__-Verzeichnis enthält, in dem Sie die Anwendung erstellen werden.
 3. Löschen Sie die Datei __src\\test\\java\\org\\apache\\hadoop\\examples\\apptest.java__, da diese in diesem Beispiel nicht verwendet wird.
 
 **So aktualisieren Sie das POM**
@@ -283,7 +283,7 @@ Um den MapReduce-Auftrag auf dem Cluster erfolgreich auszuführen, müssen Sie e
 
 	![HDI.EMulator.WordCount.Run][image-emulator-wordcount-run]
 
-	Auf dem Screenshot können Sie sehen, dass die Map- und Reduce-Funktionen zu 100 % abgeschlossen sind. Außerdem wird die Job-ID aufgeführt. Derselbe Bericht kann auch durch Öffnen der **Hadoop MapReduce status**-Verknüpfung auf Ihrem Desktop und durch die Suche nach der Auftrags-ID abgerufen werden.
+	Auf dem Screenshot können Sie sehen, dass die Map- und Reduce-Funktionen zu 100 % abgeschlossen sind. Außerdem wird die Job-ID aufgeführt. Derselbe Bericht kann auch durch Öffnen der **Hadoop MapReduce status**-Verknüpfung auf Ihrem Desktop und durch die Suche nach der Auftrags-ID abgerufen werden.
 
 Die andere Option zur Ausführung eines MapReduce-Jobs ist die Verwendung von Azure PowerShell. Informationen dazu finden Sie unter [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator].
 
@@ -571,7 +571,6 @@ Sobald der Job abgeschlossen ist, haben Sie die Möglichkeit, die Daten in Excel
 ##<a id="nextsteps"></a>Nächste Schritte
 In diesem Lernprogramm haben Sie gelernt, wie Sie einen Java-MapReduce-Auftrag entwickeln können, wie die Anwendung mit dem HDInsight-Emulator getestet wird und wie ein Azure PowerShell-Skript geschrieben wird, um einen HDInsight-Cluster bereitzustellen und den MapReduce-Auftrag im Cluster auszuführen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-- [Entwickeln von Hadoop-Streaming-MapReduce-Programmen in C# für HDInsight][hdinsight-develop-streaming]
 - [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 - [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator]
 - [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage]
@@ -590,7 +589,6 @@ In diesem Lernprogramm haben Sie gelernt, wie Sie einen Java-MapReduce-Auftrag e
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
 [hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
 
 [hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started.md
 [hdinsight-emulator]: ../hdinsight-get-started-emulator.md
@@ -610,4 +608,4 @@ In diesem Lernprogramm haben Sie gelernt, wie Sie einen Java-MapReduce-Auftrag e
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

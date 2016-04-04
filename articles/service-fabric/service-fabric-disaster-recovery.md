@@ -108,4 +108,4 @@ Als Ursache von Datenverlust sind Codefehler in Diensten, Benutzerfehler und Sic
 
 [sfx-cluster-map]: ./media/service-fabric-disaster-recovery/sfx-clustermap.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

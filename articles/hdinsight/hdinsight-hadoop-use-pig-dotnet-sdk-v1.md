@@ -65,23 +65,23 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 3. Geben Sie für das neue Projekt die folgenden Werte ein, oder wählen Sie sie aus.
 
 	<table>
-<tr>
-<th>Eigenschaft</th>
-<th>Wert</th>
-</tr>
-<tr>
-<th>Kategorie</th>
-<th>Vorlagen/Visual C#/Windows</th>
-</tr>
-<tr>
-<th>Vorlage</th>
-<th>Konsolenanwendung</th>
-</tr>
-<tr>
-<th>Name</th>
-<th>SubmitPigJob</th>
-</tr>
-</table>
+	<tr>
+	<th>Eigenschaft</th>
+	<th>Wert</th>
+	</tr>
+	<tr>
+	<th>Kategorie</th>
+	<th>Vorlagen/Visual C#/Windows</th>
+	</tr>
+	<tr>
+	<th>Vorlage</th>
+	<th>Konsolenanwendung</th>
+	</tr>
+	<tr>
+	<th>Name</th>
+	<th>SubmitPigJob</th>
+	</tr>
+	</table>
 
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
@@ -126,7 +126,6 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 		            // Define the Pig job
 		            var parameters = new PigJobSubmissionParameters()
 		            {
-		                UserName = ExistingClusterUsername,
 		                Query = queryString,
 		            };
 		
@@ -161,4 +160,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

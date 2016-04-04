@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 # Anbieter von Netzwerkressourcen
@@ -254,26 +254,14 @@ Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerSh
 ![Bereitstellung von Beispielvorlagen](./media/resource-groups-networking/Figure6.png)
 
 
-## Weitere Informationen
-
-[Azure Netzwerk-API-Verweise](https://msdn.microsoft.com/library/azure/dn948464.aspx)
-
-[Azure PowerShell-Verweis für Netzwerke](https://msdn.microsoft.com/library/azure/mt163510.aspx)
+## Nächste Schritte
 
 [Azure Resource Manager-Vorlagensprache](../resource-group-authoring-templates.md)
 
 [Azure-Netzwerk – Häufig verwendete Vorlagen](https://github.com/Azure/azure-quickstart-templates)
 
-[Anbieter von Computerressourcen](../virtual-machines-azurerm-versus-azuresm)
+[Anbieter von Computerressourcen](../virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
 
-[Azure Resource Manager-Übersicht](../resource-group-overview)
+[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
-[Rollenbasierte Zugriffssteuerung im Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx)
-
-[Verwenden von Tags im Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn848368.aspx)
-
-[Bereitstellungen von Vorlagen](https://msdn.microsoft.com/library/azure/dn790549.aspx)
-
-Aktuell
-
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

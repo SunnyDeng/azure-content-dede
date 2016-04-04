@@ -49,7 +49,7 @@ Anweisungen hierzu finden Sie unter [Erstellen eines selbstsignierten Zertifikat
 
 Jedes Azure-Abonnement wird durch einen GUID-Wert gekennzeichnet, der als Abonnement-ID bezeichnet wird. Ermitteln Sie diesen Wert mithilfe der folgenden Schritte.
 
-1. Besuchen Sie das [Azure-Vorschauportal] [Vorschauportal].
+1. Besuchen Sie das [Azure-Portal][preview-portal].
 
 2. Klicken Sie links im Portal auf der Menüleiste auf __ALLE DURCHSUCHEN__, und wählen Sie dann auf dem Blatt __Durchsuchen__ die Option __Abonnements__.
 
@@ -64,23 +64,23 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 3. Geben Sie für das neue Projekt die folgenden Werte ein, oder wählen Sie sie aus.
 
 	<table>
-<tr>
-<th>Eigenschaft</th>
-<th>Wert</th>
-</tr>
-<tr>
-<th>Kategorie</th>
-<th>Vorlagen/Visual C#/Windows</th>
-</tr>
-<tr>
-<th>Vorlage</th>
-<th>Konsolenanwendung</th>
-</tr>
-<tr>
-<th>Name</th>
-<th>SubmitPigJob</th>
-</tr>
-</table>
+	<tr>
+	<th>Eigenschaft</th>
+	<th>Wert</th>
+	</tr>
+	<tr>
+	<th>Kategorie</th>
+	<th>Vorlagen/Visual C#/Windows</th>
+	</tr>
+	<tr>
+	<th>Vorlage</th>
+	<th>Konsolenanwendung</th>
+	</tr>
+	<tr>
+	<th>Name</th>
+	<th>SubmitPigJob</th>
+	</tr>
+	</table>
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 5. Wählen Sie im Menü **Extras** die Option **Bibliothekspaket-Manager** oder **Nuget-Paket-Manager** und dann **Paket-Manager-Konsole** aus.
 6. Führen Sie den folgenden Befehl in der Konsole aus, um die .NET SDK-Pakete zu installieren.
@@ -122,7 +122,6 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
                     // Define the Pig job
                     var parameters = new PigJobSubmissionParameters()
                     {
-                        UserName = ExistingClusterUsername,
                         Query = queryString,
                     };
         
@@ -155,7 +154,7 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) 
-[Vorschauportal]: https://portal.azure.com/
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
+[preview-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

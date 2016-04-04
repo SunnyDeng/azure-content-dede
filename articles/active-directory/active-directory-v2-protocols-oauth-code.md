@@ -1,4 +1,5 @@
 
+
 <properties
 	pageTitle="Azure AD v2.0 – OAuth-Autorisierungscodefluss | Microsoft Azure"
 	description="Erstellen von Webanwendungen mit der Azure AD-Implementierung des OAuth 2.0-Authentifizierungsprotokolls."
@@ -13,7 +14,7 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article"
+	ms.topic="article"
 	ms.date="02/20/2016"
 	ms.author="dastrock"/>
 
@@ -275,4 +276,4 @@ Eine erfolgreiche Tokenantwort sieht wie folgt aus:
 | trace\_id | Ein eindeutiger Bezeichner für die Anforderung, die bei der Diagnose helfen kann |
 | correlation\_id | Ein eindeutiger Bezeichner für die Anforderung, die bei der komponentenübergreifenden Diagnose helfen kann |
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

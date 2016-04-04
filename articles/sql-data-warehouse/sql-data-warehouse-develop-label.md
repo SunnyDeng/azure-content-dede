@@ -19,12 +19,12 @@
 # Verwenden von Bezeichnungen zum Instrumentieren von Abfragen in SQL Data Warehouse
 In SQL Data Warehouse wird das Konzept der „Abfragebezeichnungen“ unterstützt. Bevor wir darauf näher eingehen, sehen wir uns ein Beispiel an:
 
-	```
-	SELECT *
-	FROM sys.tables
-	OPTION (LABEL = 'My Query Label')
-	;
-	```
+```
+SELECT *
+FROM sys.tables
+OPTION (LABEL = 'My Query Label')
+;
+```
 
 Mit dieser letzten Zeile wird die Abfrage mit der Zeichenfolge „My Query Label“ versehen. Dies ist besonders hilfreich, da die Bezeichnung über die DMVs abgefragt werden kann. So erhalten wir ein Verfahren zum Ermitteln von Problemabfragen und können während einer ETL-Ausführung außerdem den Status abfragen.
 
@@ -32,12 +32,12 @@ Eine gute Benennungskonvention ist hierbei wirklich hilfreich. Beispielsweise is
 
 Um nach der Bezeichnung zu suchen, können Sie die folgende Abfrage nutzen, bei der die dynamischen Verwaltungssichten verwendet werden:
 
-	```
-	SELECT  *
-	FROM    sys.dm_pdw_exec_requests r
-	WHERE   r.[label] = 'My Query Label'
-	;
-	```
+```
+SELECT  *
+FROM    sys.dm_pdw_exec_requests r
+WHERE   r.[label] = 'My Query Label'
+;
+```
 
 > [AZURE.NOTE] Es ist wichtig, dass Sie das Wort „label“ bei Abfragen in eckige Klammern oder doppelte Anführungszeichen setzen. „label“ ist ein reserviertes Wort, das zu einem Fehler führen kann, wenn es nicht entsprechend markiert wird.
 
@@ -54,4 +54,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

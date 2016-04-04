@@ -58,7 +58,7 @@ Beachten Sie, dass die Azure-Diagnose nicht von Web-Apps verwendet wird. Entspre
 Fortgeschrittenere Themen finden Sie in folgenden Artikeln:
 - [Verwenden der Azure-Diagnose mit Application Insights für Cloud Services](./application-insights/app-insights-cloudservices.md)
 - [Verfolgen des Ablaufs einer Cloud Services-Anwendung mit der Azure-Diagnose](./cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md)
-- [Verwenden von PowerShell zum Einrichten der Diagnose für Cloud Services](./virtual-machines/virtual-machines-extensions-diagnostics-windows-powershell.md)
+- [Verwenden von PowerShell zum Einrichten der Diagnose für Cloud Services](./virtual-machines/virtual-machines-windows-ps-extensions-diagnostics.md)
 
 
 ## Virtual Machines mit der Azure-Diagnose
@@ -66,8 +66,8 @@ Fortgeschrittenere Themen finden Sie in folgenden Artikeln:
 - [Einrichten der Azure-Diagnose auf einem virtuellen Azure-Computer](./virtual-machines-dotnet-diagnostics.md)
 
 Fortgeschrittenere Themen finden Sie in folgenden Artikeln:
-- [Verwenden von PowerShell zum Einrichten der Diagnose für Azure Virtual Machines](./virtual-machines/virtual-machines-extensions-diagnostics-windows-powershell.md)
-- [Erstellen eines virtuellen Windows-Computers mit Überwachung und Diagnose mithilfe von Azure-Ressourcen-Manager-Vorlagen](./virtual-machines/virtual-machines-extensions-diagnostics-windows-template.md)
+- [Verwenden von PowerShell zum Einrichten der Diagnose für Azure Virtual Machines](./virtual-machines/virtual-machines-windows-ps-extensions-diagnostics.md)
+- [Erstellen eines virtuellen Windows-Computers mit Überwachung und Diagnose mithilfe von Azure-Ressourcen-Manager-Vorlagen](./virtual-machines/virtual-machines-windows-extensions-diagnostics-template.md)
 
 ## Service Fabric mit der Azure-Diagnose
 Erste Schritte finden Sie unter [Überwachen einer Service Fabric-Anwendung](./service-fabric/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md). Viele weitere Artikel zur Service Fabric-Diagnose stehen in der Navigationsstruktur auf der linken Seite zur Verfügung, nachdem Sie diesen Artikel aufgerufen haben.
@@ -79,4 +79,4 @@ Erste Schritte finden Sie unter [Überwachen einer Service Fabric-Anwendung](./s
 - Erlernen Sie das [Weiterleiten von Azure-Diagnoseinformationen an Application Insights](./azure-diagnostics-configure-applicationinsights.md)
 - Wenn bei der Diagnose Probleme mit dem Starten oder dem Finden von Daten in Azure Storage-Tabellen auftreten, finden Sie weitere Informationen unter [Problembehandlung bei Azure-Diagnose](./azure-diagnostics-troubleshooting.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

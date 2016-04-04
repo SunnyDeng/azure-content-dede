@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 # Traffic Manager-Überwachung
@@ -51,7 +51,7 @@ Der Überwachungsstatus von Profilen in der folgenden Tabelle ist das Ergebnis d
 |Deaktiviert|&lt;any&gt; oder ein Profil ohne definierte Endpunkte.|Deaktiviert|Endpunkte werden nicht überwacht.|
 |Aktiviert|Der Status mindestens eines Endpunkts lautet "Heruntergestuft".|Heruntergestuft|Das ist eine Kennzeichnung, die Kundenaktion erforderlich macht.|
 |Aktiviert|Der Status mindestens eines Endpunkts lautet "Online". Keine Endpunkte sind "Heruntergestuft".|Online|Der Dienst akzeptiert Datenverkehr, und es ist keine Kundenaktion erforderlich.|
-|Aktiviert|Der Status mindestens eines Endpunkts lautet "CheckingEndpoint". Es sind keine Endpunkte "Online" oder "Heruntergestuft".|CheckingEndpoints|Übergangsstatus. Dies tritt i. d. R. auf, wenn ein Profil gerade aktiviert wurde und die Endpunkt-Integrität getestet wird.|
+|Aktiviert|Der Status mindestens eines Endpunkts lautet "CheckingEndpoint". Es sind keine Endpunkte "Online" oder "Heruntergestuft".|CheckingEndpoints|Übergangsstatus. Dies tritt i. d. R. auf, wenn ein Profil gerade aktiviert wurde und die Endpunkt-Integrität getestet wird.|
 |Aktiviert|Der Status aller im Profil definierten Endpunkte ist "Deaktiviert" oder "Beendet" oder im Profil wurden keine Endpunkte definiert.|Inaktiv|Es sind keine Endpunkte aktiv, das Profil ist jedoch weiterhin aktiviert.|
 
 ## Funktionsweise der Überwachung
@@ -70,20 +70,20 @@ Ein beispielhafter zeitlicher Ablauf zur Veranschaulichung der Überwachung mit 
 
 ![Ablauf der Traffic Manager-Überwachung](./media/traffic-manager-monitoring/IC697947.jpg)
 
-**Abbildung 1** – Beispiel für den Ablauf der Überwachung. Die Zahlen im Diagramm entsprechen der nummerierten Erklärung unten.
+**Abbildung 1** – Beispiel für den Ablauf der Überwachung. Die Zahlen im Diagramm entsprechen der nummerierten Erklärung unten.
 
 1. **GET** – Das Traffic Manager-Überwachungssystem führt einen GET-Befehl für den Pfad und die Datei aus, die Sie in den Überwachungseinstellungen angegeben haben.
 2. **200 OK** – Das Überwachungssystem erwartet eine HTTP 200 OK-Nachricht innerhalb von zehn Sekunden. Wenn es diese Meldung empfängt, wird davon ausgegangen, dass der Cloud-Dienst verfügbar ist. 
 
->[AZURE.NOTE]Traffic Manager geht davon aus, dass nur ein Endpunkt online ist, wenn die Antwortnachricht "200 OK" lautet. Wenn nicht "200 OK" als Antwort empfangen wird, wird davon ausgegangen, dass der Endpunkt nicht verfügbar ist. Der Vorgang wird dann als Überprüfungsfehler gewertet. Weitere Informationen zur Behandlung von Fehler bei Überprüfungen finden Sie unter [Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md).
+>[AZURE.NOTE] Traffic Manager geht davon aus, dass nur ein Endpunkt online ist, wenn die Antwortnachricht "200 OK" lautet. Wenn nicht "200 OK" als Antwort empfangen wird, wird davon ausgegangen, dass der Endpunkt nicht verfügbar ist. Der Vorgang wird dann als Überprüfungsfehler gewertet. Weitere Informationen zur Behandlung von Fehler bei Überprüfungen finden Sie unter [Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md).
 
-3. **30 Sekunden zwischen Überprüfungen** – Diese Überprüfung wird alle 30 Sekunden ausgeführt.
+3. **30 Sekunden zwischen Überprüfungen** – Diese Überprüfung wird alle 30 Sekunden ausgeführt.
 4. **Clouddienst nicht verfügbar** – Der Clouddienst ist nicht verfügbar. Traffic Manager kann den Status erst bei der nächsten Überwachung ermitteln.
-5. **Zugriffsversuche auf die Überwachungsdatei (4 Versuche)** – Das Überwachungssystem führt einen GET-Befehl durch, empfängt jedoch nicht innerhalb von maximal zehn Sekunden eine Antwort. Es werden dann drei weitere Versuche in Intervallen von 30 Sekunden durchgeführt. Dies bedeutet, dass es höchstens 1,5 Minuten dauert, bis das Überwachungssystem erkennt, wann ein Dienst nicht mehr verfügbar ist. Wenn einer der Versuche erfolgreich ist, wird die Anzahl der Versuche zurückgesetzt. Auch wenn dies nicht explizit im Diagramm dargestellt wird gilt: Wenn die 200 OK-Meldung mehr als zehn Sekunden nach dem GET-Befehl empfangen wird, wertet das Überwachungssystem dies als eine fehlgeschlagene Überprüfung.
+5. **Zugriffsversuche auf die Überwachungsdatei (4 Versuche)** – Das Überwachungssystem führt einen GET-Befehl durch, empfängt jedoch nicht innerhalb von maximal zehn Sekunden eine Antwort. Es werden dann drei weitere Versuche in Intervallen von 30 Sekunden durchgeführt. Dies bedeutet, dass es höchstens 1,5 Minuten dauert, bis das Überwachungssystem erkennt, wann ein Dienst nicht mehr verfügbar ist. Wenn einer der Versuche erfolgreich ist, wird die Anzahl der Versuche zurückgesetzt. Auch wenn dies nicht explizit im Diagramm dargestellt wird gilt: Wenn die 200 OK-Meldung mehr als zehn Sekunden nach dem GET-Befehl empfangen wird, wertet das Überwachungssystem dies als eine fehlgeschlagene Überprüfung.
 6. **Markiert heruntergestuft** – Nach dem vierten aufeinanderfolgenden Fehler kennzeichnet das Überwachungssystem den nicht verfügbaren Clouddienst als "Heruntergestuft". 
 
-7. **Datenverkehr zum Clouddienst verringert** – Es wird möglicherweise weiterhin Datenverkehr an den nicht verfügbaren Clouddienst weitergeleitet. Bei den Clients tritt dann ein Fehler auf, da der Dienst nicht verfügbar ist. Clients und sekundäre DNS-Server speichern den DNS-Eintrag für die IP-Adresse des nicht verfügbaren Cloud-Diensts zwischen. Daher lösen sie auch weiterhin den DNS-Namen der Unternehmensdomäne in die IP-Adresse des Diensts auf. Darüber hinaus geben sekundäre DNS-Server möglicherweise weiterhin die DNS-Informationen des nicht verfügbaren Diensts weiter. Wenn die Clients und sekundären DNS-Server aktualisiert werden, verringert sich der Datenverkehr an die IP-Adresse des nicht verfügbaren Diensts. Das Überwachungssystem führt weiterhin alle 30 Sekunden Überprüfungen durch. In diesem Beispiel antwortet der Dienst nicht und bleibt weiterhin nicht verfügbar.
-8. **Datenverkehr zum Clouddienst beendet** – Nach dieser Zeit sollten die meisten DNS-Server und -Clients aktualisiert und der Datenverkehr zum nicht verfügbaren Dienst beendet werden. Die maximale Zeit vor der vollständigen Beendigung des Datenverkehrs hängt von der Gültigkeitsdauer (TTL) ab. Die DNS-Standardgültigkeitsdauer ist 300 Sekunden (fünf Minuten). Gemäß diesem Wert verwenden Clients den Dienst nach fünf Minuten nicht mehr. Das Überwachungssystem führt weiterhin alle 30 Sekunden eine Überprüfung durch, auch wenn der Cloud-Dienst nicht reagiert.
+7. **Datenverkehr zum Clouddienst verringert** – Es wird möglicherweise weiterhin Datenverkehr an den nicht verfügbaren Clouddienst weitergeleitet. Bei den Clients tritt dann ein Fehler auf, da der Dienst nicht verfügbar ist. Clients und sekundäre DNS-Server speichern den DNS-Eintrag für die IP-Adresse des nicht verfügbaren Cloud-Diensts zwischen. Daher lösen sie auch weiterhin den DNS-Namen der Unternehmensdomäne in die IP-Adresse des Diensts auf. Darüber hinaus geben sekundäre DNS-Server möglicherweise weiterhin die DNS-Informationen des nicht verfügbaren Diensts weiter. Wenn die Clients und sekundären DNS-Server aktualisiert werden, verringert sich der Datenverkehr an die IP-Adresse des nicht verfügbaren Diensts. Das Überwachungssystem führt weiterhin alle 30 Sekunden Überprüfungen durch. In diesem Beispiel antwortet der Dienst nicht und bleibt weiterhin nicht verfügbar.
+8. **Datenverkehr zum Clouddienst beendet** – Nach dieser Zeit sollten die meisten DNS-Server und -Clients aktualisiert und der Datenverkehr zum nicht verfügbaren Dienst beendet werden. Die maximale Zeit vor der vollständigen Beendigung des Datenverkehrs hängt von der Gültigkeitsdauer (TTL) ab. Die DNS-Standardgültigkeitsdauer ist 300 Sekunden (fünf Minuten). Gemäß diesem Wert verwenden Clients den Dienst nach fünf Minuten nicht mehr. Das Überwachungssystem führt weiterhin alle 30 Sekunden eine Überprüfung durch, auch wenn der Cloud-Dienst nicht reagiert.
 9. **Cloud-Dienst ist wieder online und empfängt Datenverkehr** – Der Dienst ist wieder verfügbar, aber Traffic Manager kennt den Status erst nach der nächsten Überprüfung durch das Überwachungssystem.
 10. **Datenverkehr zum Dienst wiederhergestellt** – Traffic Manager sendet einen GET-Befehl und empfängt eine 200 OK-Meldung in weniger als zehn Sekunden. Anschließend wird wieder der DNS-Name des Cloud-Diensts an DNS-Server ausgeben, sobald diese Aktualisierungen anfordern. Damit wird auch der Datenverkehr an den Dienst wieder aufgenommen.
 
@@ -115,4 +115,4 @@ Die folgende Tabelle zeigt das Verhalten der Traffic Manager-Überwachung bei de
 [Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md)
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

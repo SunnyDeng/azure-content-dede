@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Privileged Identity Management: Ausführen einer Sicherheitsüberprüfung"
+   pageTitle="Ausführen einer Sicherheitsüberprüfung | Microsoft Azure"
    description="Erfahren Sie, wie Sie mit der Erweiterung Azure Privileged Identity Management privilegierten Identitäten Rollen hinzufügen."
    services="active-directory"
    documentationCenter=""
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/21/2016"
+   ms.date="03/17/2016"
    ms.author="kgremban"/>
 
-# Azure Privileged Identity Management: Ausführen einer Sicherheitsüberprüfung
+# Azure AD Privileged Identity Management: Ausführen einer Sicherheitsüberprüfung
 
 
 Nachdem eine [Sicherheitsüberprüfung gestartet wurde](active-directory-privileged-identity-management-how-to-start-security-review.md), lässt sich privilegierter Zugriff sehr einfach überprüfen.
@@ -60,4 +60,4 @@ Sie können eine Überprüfung exportieren, um sie in Excel oder in einem andere
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="02/10/2016"
+   ms.date="03/16/2016"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem Office 365-Connector und das Hinzufügen zur Logik-App
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemavorschauversion (Stand: 01.12.2014) für Logik-Apps. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Office 365 Outlook-API](../connectors/connectors-create-api-office365-outlook.md) oder [Office 365-Benutzer-API](../connectors/connectors-create-api-office365-users.md).
 
 Stellen Sie eine Verbindung mit Ihrem Office 365-Konto her, um E-Mails zu senden und zu empfangen und um Kalender und Kontakt zu verwalten. Sie können verschiedene Aktionen wie z. B. das Senden und Empfangen von E-Mails, das Erstellen und Löschen von Ereignissen in Ihrem Kalender sowie das Erstellen, Aktualisieren und Löschen von Kontakten durchführen.
 
@@ -131,4 +131,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [20]: ./media/app-service-logic-connector-office365/20_Office365_Send_Configured.png
 [21]: ./media/app-service-logic-connector-office365/21-create-new-o365-api-app.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

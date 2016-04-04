@@ -36,7 +36,7 @@ Wenn Sie Ihren eigenen Cluster einrichten, müssen Sie diese verschiedenen Ausfa
 
  Zur Laufzeit sieht sich der Service Fabric-Cluster-Ressourcen-Manager die Fehlerdomänen im Cluster an und versucht, die Replikate für einen bestimmten Dienst so zu verteilen, dass sie sich jeweils in separaten Fehlerdomänen befinden. Mit diesem Prozess wird sichergestellt, dass die Verfügbarkeit des Diensts bei einem Ausfall einer Fehlerdomäne nicht gefährdet wird.
 
- Für den Cluster-Ressourcen-Manager von Service Fabric ist nicht wirklich wichtig, wie viele Ebenen die Hierarchie umfasst. Da er jedoch versucht, sicherzustellen, dass sich der Verlust eines Teils der Hierarchie nicht auf den Cluster oder die darauf aufgeführten Dienste auswirkt, wird im Allgemeinen empfohlen, auf jeder Fehlerdomänenebene die gleiche Anzahl von Computern bereitzustellen. Dadurch wird verhindert, dass ein Teil der Hierarchie am Ende des Tages mehr Dienste enthält als andere Teile.
+ Für den Cluster-Ressourcen-Manager von Service Fabric ist nicht wirklich wichtig, wie viele Ebenen die Hierarchie umfasst. Da er jedoch versucht, sicherzustellen, dass sich der Verlust eines Teils der Hierarchie nicht auf den Cluster oder die darin ausgeführten Dienste auswirkt, wird im Allgemeinen empfohlen, auf jeder Fehlerdomänenebene die gleiche Anzahl von Computern bereitzustellen. Dadurch wird verhindert, dass ein Teil der Hierarchie am Ende des Tages mehr Dienste enthält als andere Teile.
 
  Wenn der Cluster mit einer unausgeglichenen „Struktur“ der Fehlerdomäne konfiguriert wird, erschwert dies dem Ressourcen-Manager die Ermittlung der optimalen Replikatzuweisung. Das bedeutet, dass der Verlust einer bestimmten Domäne eine zu große Auswirkung auf die Verfügbarkeit des Clusters hat – der Ressourcen-Manager schwankt zwischen der effizienten Verwendung der Computer in dieser intensiv genutzten Domäne und der Platzierung der Dienste, sodass der Ausfall der Domäne keine Probleme verursacht.
 
@@ -262,4 +262,4 @@ LoadMetricInformation     :
 [Image6]: ./media/service-fabric-cluster-resource-manager-cluster-description/cluster-placement-constraints-node-properties.png
 [Image7]: ./media/service-fabric-cluster-resource-manager-cluster-description/cluster-nodes-and-capacity.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

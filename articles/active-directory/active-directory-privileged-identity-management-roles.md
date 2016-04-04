@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Privileged Identity Management: Rollen"
+   pageTitle="Rollen in PIM | Microsoft Azure"
    description="Erfahren Sie, welche Rollen mit der Erweiterung Azure Privileged Identity Management für privilegierte Identitäten verwendet werden."
    services="active-directory"
    documentationCenter=""
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/21/2016"
+   ms.date="03/17/2016"
    ms.author="kgremban"/>
 
-# Azure Privileged Identity Management: Rollen
+# Azure AD Privileged Identity Management: Rollen
 
 <!-- **PLACEHOLDER: Need description of how this works. Azure PIM uses roles from MSODS objects.**-->
 
@@ -57,4 +57,4 @@ Weitere Informationen zu den Rollen aus Office 365, Exchange Online, SharePoint 
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

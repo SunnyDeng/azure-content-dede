@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Privileged Identity Management: Ändern oder Anzeigen der Standardeinstellungen für eine Rolle"
+   pageTitle="Ändern oder Anzeigen der Standardeinstellungen für eine Rolle | Microsoft Azure"
    description="Erfahren Sie, wie Sie mit der Erweiterung Azure Active Directory Privileged Identity Management die Standardeinstellungen für privilegierte Identitäten ändern."
    services="active-directory"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="03/10/2016"
+   ms.date="03/17/2016"
    ms.author="kgremban"/>
 
 # Azure AD Privileged Identity Management: Ändern oder Anzeigen der Standardaktivierungseinstellungen für eine Rolle
@@ -52,4 +52,4 @@ Weitere Informationen zum Verwenden von MFA mit PIM finden Sie unter [Erfordern 
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

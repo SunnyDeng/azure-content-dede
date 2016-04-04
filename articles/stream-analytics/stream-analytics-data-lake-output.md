@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="03/10/2016"
+	ms.date="03/18/2016"
 	ms.author="jeffstok"
 />
 
@@ -27,7 +27,7 @@ Stream Analytics-Aufträge unterstützen mehrere Ausgabemethoden, darunter auch 
 
 ## Autorisieren eines Data Lake-Speicherkontos
 
-1.  Wenn Data Lake-Speicher als Ausgabe im Azure-Verwaltungsportal ausgewählt ist, werden Sie aufgefordert, die Verwendung Ihres vorhandenen Data Lake-Speichers zu autorisieren, oder über das Azure-Vorschauportal Zugriff auf die Data Lake-Speicher-Vorschau anzufordern.
+1.  Wenn Data Lake-Speicher als Ausgabe im Azure-Verwaltungsportal ausgewählt ist, werden Sie aufgefordert, die Verwendung Ihres vorhandenen Data Lake-Speichers zu autorisieren oder über das klassische Azure-Portal Zugriff auf die Data Lake-Speicher-Vorschau anzufordern.
 
     ![](media/stream-analytics-data-lake-output/stream-analytics-data-lake-output-authorization.jpg)
 
@@ -92,4 +92,4 @@ Um dieses Problem zu beheben, halten Sie den laufenden Auftrag an, und wechseln 
 
 ![](media/stream-analytics-data-lake-output/stream-analytics-data-lake-output-renew-authorization.jpg)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,210 +1,207 @@
-When you create a VM, restart stopped (deallocated) VMs, or resize a VM, Microsoft Azure allocates compute resources to your subscription. You may occasionally receive errors when performing these operations -- even before you reach the Azure subscription limits. This article explains the causes of some of the common allocation failures and suggests possible remediation. The information may also be useful when you plan the deployment of your services.
+Wenn Sie einen virtuellen Computer erstellen, beendete virtuelle Computer (zuordnungsaufgehobene) neu starten oder die Größe eines virtuellen Computers ändern, weist Microsoft Azure Ihrem Abonnement Compute-Ressourcen zu. Unter Umständen erhalten Sie beim Ausführen dieser Schritte auch dann gelegentlich Fehler, wenn Sie die Grenzwerte des Azure-Abonnements noch nicht erreicht haben. In diesem Artikel werden die Ursachen einiger häufig auftretender Zuordnungsfehler erläutert und mögliche Abhilfemaßnahmen vorgeschlagen. Diese Informationen können auch hilfreich sein, wenn Sie die Bereitstellung Ihrer Dienste planen.
 
-The "General troubleshooting steps" section lists steps to address common issues. The "Detailed troubleshooting steps" section provides resolution steps by specific error message. Before you get started, here is some background information to understand how allocation works and why allocation failure happens.
+Im Abschnitt „Allgemeine Schritte zur Problembehandlung“ finden Sie Schritte für häufig auftretende Probleme. Der Abschnitt „Ausführliche Problembehandlungsschritte“ enthält Lösungsschritte für spezifische Fehlermeldungen. Bevor Sie beginnen, lesen Sie die Hintergrundinformationen zur Funktionsweise der Zuordnung und zu den Ursachen von Zuordnungsfehlern.
 
-If your Azure issue is not addressed in this article, visit the [Azure forums on MSDN and Stack Overflow](https://azure.microsoft.com/support/forums/). You can post your issue on these forums or to @AzureSupport on Twitter. Also, you can file an Azure support request by selecting **Get support** on the [Azure support](https://azure.microsoft.com/support/options/) site.
-## Background information
-### How allocation works
-The servers in Azure datacenters are partitioned into clusters. Normally, an allocation request is attempted in multiple clusters, but it's possible that certain constraints from the allocation request force the Azure platform to attempt the request in only one cluster. In this article, we'll refer to this as "pinned to a cluster." Diagram 1 below illustrates the case of a normal allocation that is attempted in multiple clusters. Diagram 2 illustrates the case of an allocation that's pinned to Cluster 2 because that's where the existing Cloud Service CS_1 or availability set is hosted.
-![Allocation Diagram](./media/virtual-machines-common-allocation-failure/Allocation1.png)
+Suchen Sie in den Azure-Foren bei [MSDN und Stack Overflow](https://azure.microsoft.com/support/forums/), falls Sie ihr Azure-Problem mit diesem Artikel nicht beheben konnten. Sie können Ihr Problem in diesen Foren veröffentlichen oder auf Twitter an den @AzureSupport senden. Darüber hinaus können Sie eine Azure-Supportanfrage stellen, indem Sie auf der [Website des Azure-Supports](https://azure.microsoft.com/support/options/) die Option **Support erhalten** auswählen.
+## Hintergrundinformationen
+### Funktionsweise der Zuordnung
+Für die Server in Azure-Rechenzentren wird eine Partitionierung in Cluster vorgenommen. Normalerweise wird versucht, eine Zuordnungsanforderung in mehreren Clustern durchzuführen. Es ist aber möglich, dass bestimmte Einschränkungen der Zuordnungsanforderung die Azure-Plattform zwingen, die Anforderung nur in einen Cluster zu versuchen. In diesem Artikel wird dies als „verknüpft mit einem Cluster“ bezeichnet. Das unten stehende Diagramm 1 zeigt den Fall einer normalen Zuordnung, die in mehreren Clustern versucht wird. Diagramm 2 zeigt den Fall einer mit dem Cluster 2 verknüpften Zuordnung, da dort der vorhandene Clouddienst „CS\_1“ oder die Verfügbarkeitsgruppe gehostet wird. ![Zuordnungsdiagramm](./media/virtual-machines-common-allocation-failure/Allocation1.png)
 
-### Why allocation failures happen
-When an allocation request is pinned to a cluster, there's a higher chance of failing to find free resources since the available resource pool is smaller. Furthermore, if your allocation request is pinned to a cluster but the type of resource you requested is not supported by that cluster, your request will fail even if the cluster has free resources. Diagram 3 below illustrates the case where a pinned allocation fails because the only candidate cluster does not have free resources. Diagram 4 illustrates the case where a pinned allocation fails because the only candidate cluster does not support the requested VM size, even though the cluster has free resources.
+### Gründe für Zuordnungsfehler
+Wenn eine Zuordnungsanforderung mit einem Cluster verknüpft ist, ist die Wahrscheinlichkeit höher, dass keine freien Ressourcen gefunden werden, da der verfügbare Ressourcenpool kleiner ist. Falls Ihre Zuordnungsanforderung mit einem Cluster verknüpft ist, der von Ihnen angeforderte Ressourcentyp für diesen Cluster aber nicht unterstützt wird, schlägt die Anforderung auch dann fehl, wenn der Cluster über eine freie Ressource verfügt. In Diagramm 3 unten ist der Fall dargestellt, in dem eine verknüpfte Zuordnung fehlschlägt, da der einzige Kandidatencluster keine freien Ressourcen aufweist. In Diagramm 4 ist der Fall dargestellt, in dem eine verknüpfte Zuordnung fehlschlägt, weil der einzige Kandidatencluster die angeforderte Größe des virtuellen Computers nicht unterstützt, obwohl der Cluster über freie Ressourcen verfügt.
 
-![Pinned Allocation Failure](./media/virtual-machines-common-allocation-failure/Allocation2.png)
+![Verknüpfte Zuordnung, Fehler](./media/virtual-machines-common-allocation-failure/Allocation2.png)
 
-## General troubleshooting steps
-### Troubleshoot common allocation failures in the classic deployment model
+## Allgemeine Schritte zur Problembehandlung
+### Problembehandlung bei häufigen Zuordnungsfehlern im klassischen Bereitstellungsmodell
 
-These steps can help resolve many allocation failures in virtual machines:
+Mit diesen Schritten können Sie viele Zuordnungsfehler virtueller Computer beheben:
 
-- Resize the VM to a different VM size.<br>
-	Click **Browse all** > **Virtual machines (classic)** > your virtual machine > **Settings** > **Size**. For detailed steps, see [Resize the virtual machine](https://msdn.microsoft.com/library/dn168976.aspx).
+- Ändern Sie die Größe des virtuellen Computers.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > [Ihr virtueller Computer] > **Einstellungen** > **Größe**. Ausführliche Schritte finden Sie unter [Ändern der Größe des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
 
-- Delete all VMs from the cloud service and re-create VMs.<br>
-	Click **Browse all** > **Virtual machines (classic)** > your virtual machine > **Delete**. Then, click **New** > **Compute** > [virtual machine image].
+- Löschen Sie alle virtuellen Computer aus dem Clouddienst, und erstellen Sie die virtuellen Computer neu.<br> Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > [Ihr virtueller Computer] > **Löschen**. Klicken Sie auf **Neu** > **Compute** > [Virtuelles Computerimage].
 
-### Troubleshoot common allocation failures in the Azure Resource Manager deployment model
+### Problembehandlung bei häufigen Zuordnungsfehler im Azure-Ressourcen-Manager-Bereitstellungsmodell
 
-These steps can help resolve many allocation failures in virtual machines:
+Mit diesen Schritten können Sie viele Zuordnungsfehler virtueller Computer beheben:
 
-- Stop (deallocate) all VMs in the same availability set, then restart each one.<br>
-	To stop: Click **Resource groups** > your resource group > **Resources** > your availability set > **Virtual Machines** > your virtual machine > **Stop**.
+- Beenden Sie alle virtuellen Computer einer Verfügbarkeitsgruppe (Aufhebung der Zuordnung), und starten Sie die einzelnen virtuellen Computer dann neu.<br> Zum Beenden: Klicken Sie auf **Ressourcengruppen** > [Ihre Ressourcengruppe] > **Ressourcen** > [Ihre Verfügbarkeitsgruppe] > **Virtual Machines** > [Ihr virtueller Computer] > **Beenden**.
 
-	After all VMs stop, select the first VM and click **Start**.
+	Wählen Sie nach dem Beenden aller virtuellen Computer den ersten virtuellen Computer aus, und klicken Sie auf **Starten**.
 
-## Detailed troubleshooting steps
-### Troubleshoot specific allocation failure scenarios in the classic deployment model
-Here are common allocation scenarios that cause an allocation request to be pinned. We'll dive into each scenario later in this article.
+## Ausführliche Problembehandlungsschritte
+### Problembehandlung bei spezifischen Zuordnungsfehlerszenarien im klassischen Bereitstellungsmodell
+Dies sind häufig vorkommende Zuordnungsszenarien, die bewirken, dass eine Zuordnungsanforderung „verknüpft“ wird. Die einzelnen Szenarien werden weiter unten in diesem Artikel genauer erläutert.
 
-- Resize a VM or add VMs or role instances to an existing cloud service
-- Restart partially stopped (deallocated) VMs
-- Restart fully stopped (deallocated) VMs
-- Staging/production deployments (platform as a service only)
-- Affinity group (VM/service proximity)
-- Affinity-group-based virtual network
+- Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer oder Rolleninstanzen in einem vorhandenen Clouddienst
+- Neustart teilweise beendeter (zuordnungsaufgehobener) virtueller Computer
+- Neustart vollständig beendeter (zuordnungsaufgehobener) virtueller Computer
+- Staging/Produktionsbereitstellungen (nur Platform-as-a-Service)
+- Affinitätsgruppe (Nähe von virtuellem Computer und Dienst)
+- Auf Affinitätsgruppe basierendes virtuelles Netzwerk
 
-When you receive an allocation error, see if any of the scenarios described apply to your error. Use the allocation error returned by the Azure platform to identify the corresponding scenario. If your request is pinned, remove some of the pinning constraints to open your request to more clusters, thereby increasing the chance of allocation success.
+Wenn Sie einen Zuordnungsfehler erhalten, überprüfen Sie, ob eines der beschriebenen Szenarien für Ihren Fall zutrifft. Verwenden Sie den von der Azure-Plattform zurückgegebenen Zuordnungsfehler, um das entsprechende Szenario zu identifizieren. Falls Ihre Anforderung verknüpft ist, versuchen Sie, einige Verknüpfungseinschränkungen zu beseitigen. Dadurch öffnen Sie Ihre Anforderung für mehr Cluster und erhöhen damit die Chancen für eine erfolgreiche Zuordnung.
 
-In general, as long as the error does not indicate "the requested VM size is not supported," you can always retry at a later time, as enough resources may have been freed in the cluster to accommodate your request. If the problem is that the requested VM size is not supported, try a different VM size. Otherwise, the only option is to remove the pinning constraint.
+Solange für den Fehler nicht „Die angeforderte Größe des virtuellen Computers wird nicht unterstützt“ angegeben wird, können Sie den Vorgang immer zu einem späteren Zeitpunkt wiederholen. Eventuell wurden bis dahin im Cluster genügend Ressourcen für die Verarbeitung Ihrer Anforderung freigegeben. Falls die angeforderte Größe des virtuellen Computers nicht unterstützt wird, versuchen Sie es mit einer anderen Größe. Andernfalls können Sie nur noch die Verknüpfungseinschränkung entfernen.
 
-Two common failure scenarios are related to affinity groups. In the past, an affinity group was used to provide close proximity to VMs/service instances, or it was used to enable the creation of a virtual network. With the introduction of regional virtual networks, affinity groups are no longer required to create a virtual network. With the reduction of network latency in Azure infrastructure, the recommendation to use affinity groups for VM/service proximity has changed.
+Zwei häufig auftretende Fehlerszenarien hängen mit der Affinitätsgruppe zusammen. In der Vergangenheit wurde die Affinitätsgruppe verwendet, um Nähe zu virtuellen Computern oder Dienstinstanzen zu schaffen oder um die Erstellung eines Virtual Network zu ermöglichen. Seit der Einführung von regionalen virtuellen Netzwerks werden Affinitätsgruppen zum Erstellen eines virtuellen Netzwerks nicht mehr benötigt. Mit der Reduzierung der Netzwerklatenz in der Azure-Infrastruktur hat sich die Empfehlung, Affinitätsgruppen zur Herstellung von Nähe zwischen virtuellen Computern und Diensten zu verwenden, geändert.
 
-Diagram 5 below presents the taxonomy of the (pinned) allocation scenarios.
-![Pinned Allocation Taxonomy](./media/virtual-machines-common-allocation-failure/Allocation3.png)
+In Diagramm 5 unten ist die Taxonomie der Zuordnungsszenarios (mit Verknüpfung) dargestellt. ![Verknüpfte Zuordnung, Taxonomie](./media/virtual-machines-common-allocation-failure/Allocation3.png)
 
-> [AZURE.NOTE] The error listed in each allocation scenario is a short form. Refer to the [Error string lookup](#Error string lookup) for detailed error strings.
+> [AZURE.NOTE] Der Fehler wird in den einzelnen Zuordnungsszenarien in Kurzform aufgelistet. Details zu den Fehlerzeichenfolgen finden Sie unter [Error string lookup](#Error string lookup) (Fehlerzeichenfolgen zum Nachschlagen).
 
-#### Allocation scenario: Resize a VM or add VMs or role instances to an existing cloud service
-**Error**
+#### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer oder Rolleninstanzen zu einem vorhandenen Clouddienst
+**Fehler**
 
-Upgrade_VMSizeNotSupported or GeneralError
+Upgrade\_VMSizeNotSupported oder GeneralError
 
-**Cause of cluster pinning**
+**Ursache der Verknüpfung mit dem Cluster**
 
-A request to resize a VM or add a VM or a role instance to an existing cloud service has to be attempted at the original cluster that hosts the existing cloud service. Creating a new cloud service allows the Azure platform to find another cluster that has free resources or supports the VM size that you requested.
+Die Anforderung, die Größe eines virtuellen Computers zu ändern oder einen virtuellen Computer oder eine Rolleninstanz zu einem vorhandenen Clouddienst hinzuzufügen, muss für den Originalcluster, der den vorhandenen Clouddienst hostet, versucht werden. Die Erstellung eines neuen Clouddiensts ermöglicht der Azure-Plattform, einen anderen Cluster zu finden, der über freie Ressourcen verfügt oder die von Ihnen angeforderte Größe des virtuellen Computers unterstützt.
 
-**Workaround**
+**Problemumgehung**
 
-If the error is Upgrade_VMSizeNotSupported*, try a different VM size. If using a different VM size is not an option, but if it's acceptable to use a different virtual IP address (VIP), create a new cloud service to host the new VM and add the new cloud service to the regional virtual network where the existing VMs are running. If your existing cloud service does not use a regional virtual network, you can still create a new virtual network for the new cloud service, and then connect your [existing virtual network to the new virtual network](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). See more about [regional virtual networks](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
+Wenn der Fehler „Upgrade\_VMSizeNotSupported*“ lautet, versuchen Sie es mit einer anderen Größe des virtuellen Computers. Wenn das Verwenden einer anderen Größe des virtuellen Computers keine Option ist, dafür aber die Verwendung einer anderen virtuellen IP-Adresse (VIP), erstellen Sie einen neuen Clouddienst zum Hosten des neuen virtuellen Computers. Fügen Sie den neuen Clouddienst dem regionalen virtuellen Netzwerken hinzu, auf dem die vorhandenen virtuellen Computer ausgeführt werden. Falls Ihr vorhandener Clouddienst kein regionales virtuelles Netzwerk verwendet, können Sie trotzdem ein neues virtuelles Netzwerk für den neuen Clouddienst erstellen und dann [das vorhandene virtuelle Netzwerk mit dem neuen virtuellen Netzwerk verbinden](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zu regionalen virtuellen Netzwerken finden Sie [hier](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
 
-If the error is GeneralError*, it's likely that the type of resource (such as a particular VM size) is supported by the cluster, but the cluster does not have free resources at the moment. Similar to the above scenario, add the desired compute resource through creating a new cloud service (note that the new cloud service has to use a different VIP) and use a regional virtual network to connect your cloud services.
+Wenn der Fehler „GeneralError*“ lautet, wird der Typ der Ressource (z. B. eine bestimmte Größe des virtuellen Computers) vom Cluster wahrscheinlich unterstützt, allerdings verfügt der Cluster derzeit nicht über freie Ressourcen. Fügen Sie, ähnlich wie oben, die gewünschten Compute-Ressourcen hinzu, indem Sie einen neuen Clouddiensts erstellen (beachten Sie, dass der neue Clouddienst eine andere VIP verwenden muss) und verwenden Sie das regionale Virtual Network zum Verbinden Ihrer Clouddienste.
 
-#### Allocation scenario: Restart partially stopped (deallocated) VMs
+#### Zuordnungsszenario: Neustarten teilweise beendeter (zuordnungsaufgehobener) virtueller Computer
 
-**Error**
+**Fehler**
 
 GeneralError*
 
-**Cause of cluster pinning**
+**Ursache der Verknüpfung mit dem Cluster**
 
-Partial deallocation means that you stopped (deallocated) one or more, but not all, VMs in a cloud service. When you stop (deallocate) a VM, the associated resources are released. Restarting that stopped (deallocated) VM is therefore a new allocation request. Restarting VMs in a partially deallocated cloud service is equivalent to adding VMs to an existing cloud service. The allocation request has to be attempted at the original cluster that hosts the existing cloud service. Creating a different cloud service allows the Azure platform to find another cluster that has free resource or supports the VM size that you requested.
+Die Teilaufhebung der Zuordnung bedeutet, dass Sie mindestens einen, aber nicht alle virtuellen Computer innerhalb eines Clouddiensts beendet haben (Aufhebung der Zuordnung). Wenn Sie einen virtuellen Computer beenden (Aufhebung der Zuordnung), werden die zugeordneten Ressourcen freigegeben. Das Neustarten dieses beendeten (zuordnungsaufgehobenen) virtuellen Computers ist daher gleichbedeutend einer neue Zuordnungsanforderung. Das Neustarten virtueller Computer in einem Clouddienst, in dem die Zuordnung teilweise aufgehoben wurde, entspricht dem Hinzufügen von virtuellen Computern in vorhandene Clouddienste. Die Anforderung muss für den Originalcluster versucht werden, der den vorhandenen Clouddienst hostet. Die Erstellung eines neuen Clouddiensts ermöglicht der Azure-Plattform einen anderen Cluster zu finden, der über freie Ressourcen verfügt oder die von Ihnen angeforderte Größe des virtuellen Computers unterstützt.
 
-**Workaround**
+**Problemumgehung**
 
-If it's acceptable to use a different VIP, delete the stopped (deallocated) VMs (but keep the associated disks) and add the VMs back through a different cloud service. Use a regional virtual network to connect your cloud services:
-- If your existing cloud service uses a regional virtual network, simply add the new cloud service to the same virtual network.
-- If your existing cloud service does not use a regional virtual network, create a new virtual network for the new cloud service, and then [connect your existing virtual network to the new virtual network](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). See more about [regional virtual networks](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
+Falls die Verwendung einer anderen VIP akzeptabel ist, löschen Sie die beendeten (zuordnungsaufgehobenen) virtuellen Computer (aber behalten Sie die zugeordneten Datenträger) und fügen Sie die virtuellen Computer über einen anderen Clouddienst wieder hinzu. Verwenden Sie ein regionales virtuelles Netzwerk, um die Verbindung für Ihre Clouddienste herzustellen:
+- Wenn Ihr vorhandener Clouddienst das regionale virtuelle Netzwerk nutzt, fügen Sie den neuen Clouddienst einfach dem gleichen virtuellen Netzwerk hinzu.
+- Falls Ihr vorhandener Clouddienst kein regionales virtuelles Netzwerk verwendet, können Sie ein neues virtuelles Netzwerk für den neuen Clouddienst erstellen und dann [das vorhandene virtuelle Netzwerk mit dem neuen virtuellen Netzwerk verbinden](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zu regionalen virtuellen Netzwerken finden Sie [hier](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
 
-#### Allocation scenario: Restart fully stopped (deallocated) VMs
-**Error**
-
-GeneralError*
-
-**Cause of cluster pinning**
-
-Full deallocation means that you stopped (deallocated) all VMs from a cloud service. The allocation requests to restart these VMs have to be attempted at the original cluster that hosts the cloud service. Creating a new cloud service allows the Azure platform to find another cluster that has free resources or supports the VM size that you requested.
-
-**Workaround**
-
-If it's acceptable to use a different VIP, delete the original stopped (deallocated) VMs (but keep the associated disks) and delete the corresponding cloud service (the associated compute resources were already released when you stopped (deallocated) the VMs). Create a new cloud service to add the VMs back.
-
-#### Allocation scenario: Staging/production deployments (platform as a service only)
-**Error**
-
-New_General* or New_VMSizeNotSupported*
-
-**Cause of cluster pinning**
-
-The staging deployment and the production deployment of a cloud service are hosted in the same cluster. When you add the second deployment, the corresponding allocation request will be attempted in the same cluster that hosts the first deployment.
-
-**Workaround**
-
-Delete the first deployment and the original cloud service and redeploy the cloud service. This action may land the first deployment in a cluster that has enough free resources to fit both deployments or in a cluster that supports the VM sizes that you requested.
-
-#### Allocation scenario: Affinity group (VM/service proximity)
-**Error**
-
-New_General* or New_VMSizeNotSupported*
-
-**Cause of cluster pinning**
-
-Any compute resource assigned to an affinity group is tied to one cluster. New compute resource requests in that affinity group are attempted in the same cluster where the existing resources are hosted. This is true whether the new resources are created through a new cloud service or through an existing cloud service.
-
-**Workaround**
-
-If an affinity group is not necessary, do not use an affinity group, or group your compute resources into multiple affinity groups.
-
-#### Allocation scenario: Affinity-group-based virtual network
-**Error**
-
-New_General* or New_VMSizeNotSupported*
-
-**Cause of cluster pinning**
-
-Before regional virtual networks were introduced, you were required to associate a virtual network with an affinity group. As a result, compute resources placed into an affinity group are bound by the same constraints as described in the "Allocation scenario: Affinity group (VM/service proximity)" section above. The compute resources are tied to one cluster.
-
-**Workaround**
-
-If you do not need an affinity group, create a new regional virtual network for the new resources you're adding, and then [connect your existing virtual network to the new virtual network](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). See more about [regional virtual networks](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
-
-Alternatively, you can [migrate your affinity-group-based virtual network to a regional virtual network](https://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/), and then add the desired resources again.
-
-### Troubleshoot specific allocation failure scenarios in the Azure Resource Manager deployment model
-Here are common allocation scenarios that cause an allocation request to be pinned. We'll dive into each scenario later in this article.
-
-- Resize a VM or add VMs or role instances to an existing cloud service
-- Restart partially stopped (deallocated) VMs
-- Restart fully stopped (deallocated) VMs
-
-When you receive an allocation error, see if any of the scenarios described apply to your error. Use the allocation error returned by the Azure platform to identify the corresponding scenario. If your request is pinned to an existing cluster, remove some of the pinning constraints to open your request to more clusters, thereby increasing the chance of allocation success.
-
-In general, as long as the error does not indicate "the requested VM size is not supported," you can always retry at a later time, as enough resources may have been freed in the cluster to accommodate your request. If the problem is that the requested VM size is not supported, see below for workarounds.
-
-#### Allocation scenario: Resize a VM or add VMs to an existing availability set
-**Error**
-
-Upgrade_VMSizeNotSupported* or GeneralError*
-
-**Cause of cluster pinning**
-
-A request to resize a VM or add a VM to an existing availability set has to be attempted at the original cluster that hosts the existing availability set. Creating a new availability set allows the Azure platform to find another cluster that has free resources or supports the VM size that you requested.
-
-**Workaround**
-
-If the error is Upgrade_VMSizeNotSupported*, try a different VM size. If using a different VM size is not an option, stop all VMs in the availability set. You can then change the size of the virtual machine that will allocate the VM to a cluster that supports the desired VM size.
-
-If the error is GeneralError*, it's likely that the type of resource (such as a particular VM size) is supported by the cluster, but the cluster does not have free resources at the moment. If the VM can be part of a different availability set, create a new VM in a different availability set (in the same region). This new VM can then be added to the same virtual network.  
-
-#### Allocation scenario: Restart partially stopped (deallocated) VMs
-**Error**
+#### Zuordnungsszenario: Neustarten vollständig beendeter (zuordnungsaufgehobener) virtueller Computer
+**Fehler**
 
 GeneralError*
 
-**Cause of cluster pinning**
+**Ursache der Verknüpfung mit dem Cluster**
 
-Partial deallocation means that you stopped (deallocated) one or more, but not all, VMs in an availability set. When you stop (deallocate) a VM, the associated resources are released. Restarting that stopped (deallocated) VM is therefore a new allocation request. Restarting VMs in a partially deallocated availability set is equivalent to adding VMs to an existing availability set. The allocation request has to be attempted at the original cluster that hosts the existing availability set.
+Die vollständige Aufhebung der Zuordnung bedeutet, dass Sie alle virtuellen Computer für einen Clouddienst beendet (zuordnungsaufgehoben) haben. Die Zuordnungsanforderungen, den virtuellen Computer neu zu starten, müssen für den Originalcluster, der den vorhandenen Clouddienst hostet, versucht werden. Die Erstellung eines neuen Clouddiensts ermöglicht der Azure-Plattform, einen anderen Cluster zu finden, der über freie Ressourcen verfügt oder die von Ihnen angeforderte Größe des virtuellen Computers unterstützt.
 
-**Workaround**
+**Problemumgehung**
 
-Stop all VMs in the availability set before restarting the first one. This will ensure that a new allocation attempt is run and that a new cluster can be selected that has available capacity.
+Falls die Verwendung einer anderen VIP akzeptabel ist, löschen Sie die ursprünglichen, beendeten (zuordnungsaufgehobenen) virtuellen Computer (aber behalten Sie die zugeordneten Datenträger) und löschen Sie den entsprechenden Clouddienst (die zugeordneten Compute-Ressourcen wurden bereits freigegeben, als Sie die (zuordnungsaufgehoben) virtuellen Computer beendet haben). Erstellen Sie einen neuen Clouddienst, um die virtuellen Computer wieder hinzuzufügen.
 
-#### Allocation scenario: Restart fully stopped (deallocated)
-**Error**
+#### Zuordnungsszenario: Staging-/Produktionsbereitstellungen (nur Platform-as-a-Service)
+**Fehler**
+
+New\_General* oder New\_VMSizeNotSupported*
+
+**Ursache der Verknüpfung mit dem Cluster**
+
+Die Stagingbereitstellung und Produktionsbereitstellung eines Clouddiensts werden im selben Cluster gehostet. Wenn Sie die zweite Bereitstellung hinzufügen, wird versucht, die entsprechende Zuordnungsanforderung im demselben Cluster durchzuführen, von dem die erste Bereitstellung gehostet wird.
+
+**Problemumgehung**
+
+Löschen Sie die erste Bereitstellung und den ursprünglichen Clouddienst und stellen Sie den Clouddienst erneut bereit. Bei dieser Aktion kann die erste Bereitstellung in einem Cluster enden, der über genügend freie Ressourcen zur Aufnahme beider Bereitstellungen verfügt, oder in einem Cluster, der die von Ihnen angeforderten Größen des virtuellen Computers unterstützt.
+
+#### Zuordnungsszenario: Affinitätsgruppe (Nähe von virtuellem Computer und Dienst)
+**Fehler**
+
+New\_General* oder New\_VMSizeNotSupported*
+
+**Ursache der Verknüpfung mit dem Cluster**
+
+Jede Compute-Ressource, die einer Affinitätsgruppe zugewiesen ist, ist an ein Cluster gebunden. Es wird versucht, neue Anforderungen von Compute-Ressourcen in dieser Affinitätsgruppe im selben Cluster durchzuführen, in dem die vorhandenen Ressourcen gehostet werden. Dies gilt unabhängig davon, ob die neuen Ressourcen über einen neuen Clouddienst oder einen vorhandenen Clouddienst erstellt werden.
+
+**Problemumgehung**
+
+Falls dies nicht erforderlich ist, verwenden Sie keine Affinitätsgruppe oder gruppieren Sie Ihre Compute-Ressourcen in mehrere Affinitätsgruppen.
+
+#### Zuordnungsszenario: auf Affinitätsgruppen basierendes virtuelles Netzwerk
+**Fehler**
+
+New\_General* oder New\_VMSizeNotSupported*
+
+**Ursache der Verknüpfung mit dem Cluster**
+
+Bevor regionale virtuelle Netzwerke eingeführt wurden, mussten Sie einem Virtual Network eine Affinitätsgruppe zuordnen. Daher gelten für Compute-Ressourcen, die in die Affinitätsgruppe eingefügt werden, die gleichen Einschränkungen wie oben im Abschnitt „Zuordnungsszenario: Affinitätsgruppe (Nähe von virtuellem Computer und Dienst)“ beschrieben. Die Compute-Ressourcen sind an ein Cluster gebunden.
+
+**Problemumgehung**
+
+Falls Sie keine Affinitätsgruppe benötigen, erstellen Sie ein neues regionales virtuelles Netzwerk für die neuen Ressourcen, die Sie hinzufügen, und [verbinden Sie Ihr vorhandenes virtuelles Netzwerk mit dem neuen virtuellen Netzwerk](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zu regionalen virtuellen Netzwerken finden Sie [hier](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
+
+Alternativ dazu können Sie [Ihr auf der Affinitätsgruppe basierendes virtuelles Netzwerk zu einem regionalen virtuellen Netzwerk migrieren](https://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/) und dann die gewünschten Ressourcen wieder hinzufügen.
+
+### Problembehandlung für spezifische Zuordnungsfehlerszenarios im Azure-Ressourcen-Manager-Bereitstellungsmodell
+Dies sind häufig vorkommende Zuordnungsszenarien, die bewirken, dass eine Zuordnungsanforderung „verknüpft“ wird. Die einzelnen Szenarien werden weiter unten in diesem Artikel genauer erläutert.
+
+- Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer oder Rolleninstanzen in einem vorhandenen Clouddienst
+- Neustart teilweise beendeter (zuordnungsaufgehobener) virtueller Computer
+- Neustart vollständig beendeter (zuordnungsaufgehobener) virtueller Computer
+
+Wenn Sie einen Zuordnungsfehler erhalten, überprüfen Sie, ob eines der beschriebenen Szenarien für Ihren Fall zutrifft. Verwenden Sie den von der Azure-Plattform zurückgegebenen Zuordnungsfehler, um das entsprechende Szenario zu identifizieren. Falls Ihre Anforderung mit einem vorhandenen Cluster verknüpft ist, beseitigen Sie einige der Verknüpfungseinschränkungen. Dadurch öffnen Sie Ihre Anforderung für mehr Cluster und erhöhen die Chancen für eine erfolgreiche Zuordnung.
+
+Solange für den Fehler nicht „Die angeforderte Größe des virtuellen Computers wird nicht unterstützt“ angegeben wird, können Sie den Vorgang immer zu einem späteren Zeitpunkt wiederholen. Eventuell wurden bis dahin im Cluster genügend Ressourcen für die Verarbeitung Ihrer Anforderung freigegeben. Für den Fall, dass die angeforderte Größe des virtuellen Computers nicht unterstützt wird, sind unten Problemumgehungen angegeben.
+
+#### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer zu einer vorhandenen Verfügbarkeitsgruppe
+**Fehler**
+
+Upgrade\_VMSizeNotSupported* oder GeneralError*
+
+**Ursache der Verknüpfung mit dem Cluster**
+
+Die Anforderung, die Größe eines virtuellen Computers zu ändern oder einen virtuellen Computer zu einer vorhandenen Verfügbarkeitsgruppe hinzuzufügen, muss für den Originalcluster, der die vorhandenen Verfügbarkeitsgruppe hostet, versucht werden. Die Erstellung einer neuen Verfügbarkeitsgruppe ermöglicht der Azure-Plattform, einen anderen Cluster zu finden, der über freie Ressourcen verfügt oder die von Ihnen angeforderte Größe des virtuellen Computers unterstützt.
+
+**Problemumgehung**
+
+Wenn der Fehler „Upgrade\_VMSizeNotSupported*“ lautet, versuchen Sie es mit einer anderen Größe des virtuellen Computers. Falls die Verwendung einer anderen Größe des virtuellen Computers keine Option ist, beenden Sie alle virtuellen Computer der Verfügbarkeitsgruppe. Sie können dann die Größe desjenigen virtuellen Computers ändern, der den virtuellen Computer einem Cluster zuordnet, der die gewünschte Größe für den virtuellen Computer unterstützt.
+
+Wenn der Fehler „GeneralError*“ lautet, wird der Typ der Ressource (z. B. eine bestimmte Größe des virtuellen Computers) vom Cluster wahrscheinlich unterstützt, allerdings verfügt der Cluster derzeit nicht über freie Ressourcen. Falls der virtuelle Computer Teil einer anderen Verfügbarkeitsgruppe sein kann, erstellen Sie einen neuen virtuellen Computer in einer anderen Verfügbarkeitsgruppe (in derselben Region). Dieser neue virtuelle Computer kann dann demselben virtuellen Netzwerk hinzugefügt werden.
+
+#### Zuordnungsszenario: Neustarten teilweise beendeter (zuordnungsaufgehobener) virtueller Computer
+**Fehler**
 
 GeneralError*
 
-**Cause of cluster pinning**
+**Ursache der Verknüpfung mit dem Cluster**
 
-Full deallocation means that you stopped (deallocated) all VMs in an availability set. The allocation request to restart these VMs will target all clusters that support the desired size.
+Die Teilaufhebung der Zuordnung bedeutet, dass Sie mindestens einen, aber nicht alle virtuellen Computer innerhalb einer Verfügbarkeitsgruppe beendet (zuordnungsaufgehoben) haben. Wenn Sie einen virtuellen Computer beenden (Aufhebung der Zuordnung), werden die zugeordneten Ressourcen freigegeben. Das Neustarten dieses beendeten (zuordnungsaufgehobenen) virtuellen Computers ist daher gleichbedeutend einer neue Zuordnungsanforderung. Das Neustarten virtueller Computer in einer Verfügbarkeitsgruppe, in der die Zuordnung teilweise aufgehoben wurde, entspricht dem Hinzufügen von virtuellen Computern in vorhandene Verfügbarkeitsgruppen. Die Zuordnungsanforderung muss für den Originalcluster, der die vorhandenen Verfügbarkeitsgruppe hostet, versucht werden.
 
-**Workaround**
+**Problemumgehung**
 
-Select a new VM size to allocate. If this does not work, please try again later.
+Beenden Sie alle virtuellen Computer der Verfügbarkeitsgruppe bevor Sie den ersten neu starten. Dadurch wird sichergestellt, dass ein neuer Zuordnungsversuch ausgeführt wird und ein neuer Cluster ausgewählt werden kann, der verfügbare Kapazität aufweist.
 
-## Error string lookup
-**New_VMSizeNotSupported***
+#### Zuordnungsszenario: Neustarten vollständig beendeter (zuordnungsaufgehobener) virtueller Computer
+**Fehler**
 
-"The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region."
+GeneralError*
 
-**New_General***
+**Ursache der Verknüpfung mit dem Cluster**
 
-"Allocation failed; unable to satisfy constraints in request. The requested new service deployment is bound to an affinity group, or it targets a virtual network, or there is an existing deployment under this hosted service. Any of these conditions constrains the new deployment to specific Azure resources. Please retry later or try reducing the VM size or number of role instances. Alternatively, if possible, remove the aforementioned constraints or try deploying to a different region."
+Die vollständige Aufhebung der Zuordnung bedeutet, dass Sie alle virtuellen Computer für eine Verfügbarkeitsgruppe beendet (zuordnungsaufgehoben) haben. Die Zuordnungsanforderung zum Neustarten dieser virtuellen Computer gilt für alle Cluster, welche die gewünschte Größe unterstützen.
 
-**Upgrade_VMSizeNotSupported***
+**Problemumgehung**
 
-"Unable to upgrade the deployment. The requested VM size XXX may not be available in the resources supporting the existing deployment. Please try again later, try with a different VM size or smaller number of role instances, or create a deployment under an empty hosted service with a new affinity group or no affinity group binding."
+Wählen Sie eine neue Größe des virtuellen Computers für die Zuordnung aus. Wenn das nicht funktioniert, versuchen Sie es bitte später erneut.
+
+## Fehlerzeichenfolgen
+**New\_VMSizeNotSupported***
+
+„Die für diese Bereitstellung erforderliche VM-Größe (oder Kombination aus VM-Größen) kann aufgrund von Einschränkungen bei der Bereitstellungsanforderung nicht bereitgestellt werden. Lockern Sie, wenn möglich, die Einschränkungen, wie etwa die Bindungen des virtuellen Netzwerks, die Bereitstellung in einem gehosteten Dienst ohne weitere Bereitstellung darin und in einer anderen Affinitätsgruppe oder ohne Affinitätsgruppe, oder testen Sie die Bereitstellung in einer anderen Region.“
+
+**New\_General***
+
+„Fehler bei der Zuordnung. Einschränkungen in der Anforderung konnten nicht erfüllt werden. Die angeforderte neue Dienstbereitstellung ist an eine Affinitätsgruppe gebunden, auf ein virtuelles Netzwerk ausgerichtet, oder unter diesem gehosteten Dienst befindet sich eine vorhandene Bereitstellung. Alle diese Bedingungen beschränken die neue Bereitstellung auf bestimmte Azure-Ressourcen. Wiederholen Sie den Vorgang später. Reduzieren Sie die VM-Größe oder die Anzahl der Rolleninstanzen. Sie können, wenn möglich, auch die zuvor erwähnten Einschränkungen entfernen oder den virtuellen Computer in einer anderen Region bereitstellen.“
+
+**Upgrade\_VMSizeNotSupported***
+
+„Die Bereitstellung konnte nicht upgegradet werden. Die angeforderte VM-Größe von XXX ist möglicherweise in den Ressourcen, die die vorhandene Bereitstellung unterstützen, nicht verfügbar. Versuchen Sie es später erneut, verwenden Sie eine andere VM-Größe oder weniger Rolleninstanzen, oder erstellen Sie eine Bereitstellung unter einem leeren gehosteten Dienst mit einer neuen Affinitätsgruppe oder ohne Affinitätsgruppenbindung.“
 
 **GeneralError***
 
-"The server encountered an internal error. Please retry the request." Or "Failed to produce an allocation for the service."
+„Auf dem Server ist ein interner Fehler aufgetreten. Versuchen Sie die Anforderung erneut.“ Oder „Für den Dienst konnte keine Zuordnung erstellt werden.“
+
+<!---HONumber=AcomDC_0323_2016-->

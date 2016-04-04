@@ -54,12 +54,12 @@ Microsoft Open Technologies Inc.|Oracle-Datenbank 12c Enterprise Edition unter W
 Microsoft Open Technologies Inc.|Oracle Database 11g R2 und WebLogic Server 11g Standard Edition unter Windows Server 2008 R2|Oracle-Datenbank http://www.oracle.com/database 11g R2 Standard Edition (11.2.0.4.0) ist eine erschwingliche, umfassende Datenmanagement-Lösung, die sich ideal für mittelständische Unternehmen eignet. Oracle-WebLogic...|Windows|128 GB
 Microsoft Open Technologies Inc.|Oracle Database 11g R2 und WebLogic Server 11g Enterprise Edition auf Windows Server 2008 R2|Oracle-Datenbank http://www.oracle.com/database 11g R2 Enterprise Edition (11.2.0.4.0) bietet umfassende Funktionen für eine einfache Verwaltung der anspruchsvollsten Transaktionsverarbeitung, Business Intel...|Windows|128 GB
 Microsoft Open Technologies Inc.|Oracle Database 11g R2 Standard Edition unter Windows Server 2008 R2|Oracle-Datenbank http://www.oracle.com/database 11g R2 Standard Edition (11.2.0.4.0) ist eine erschwingliche, umfassende Datenmanagement-Lösung, die sich ideal für mittelständische Unternehmen eignet. Mindestempfehlung...|Windows|128 GB
-Microsoft SQL Server-Gruppe|SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A3 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
+Microsoft SQL Server-Gruppe|SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A3 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
 Microsoft SQL Server-Gruppe|SQL Server 2012 SP2 Enterprise unter Windows Server 2012|Dieses Image enthält die Vollversion von SQL Server. Einige SQL Server-Komponenten erfordern eine zusätzliche Einrichtung und Konfiguration vor der Verwendung. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A3 oder höher.|Windows|127 GB
-Microsoft SQL Server-Gruppe|SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A3 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
-Microsoft SQL Server-Gruppe|SQL Server 2014 RTM-Standard unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A2 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
-Microsoft SQL Server-Gruppe|SQL Server 2012 SP2 Standard unter Windows Server 2012|Einige SQL Server-Komponenten erfordern eine zusätzliche Einrichtung und Konfiguration vor der Verwendung. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A2 oder höher. Dieses Image wurde für Azure vorkonfiguriert ...|Windows|127 GB
-Microsoft SQL Server-Gruppe|SQL Server 2014 RTM-Standard unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A2 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
+Microsoft SQL Server-Gruppe|SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A3 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
+Microsoft SQL Server-Gruppe|SQL Server 2014 RTM-Standard unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A2 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
+Microsoft SQL Server-Gruppe|SQL Server 2012 SP2 Standard unter Windows Server 2012|Einige SQL Server-Komponenten erfordern eine zusätzliche Einrichtung und Konfiguration vor der Verwendung. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A2 oder höher. Dieses Image wurde für Azure vorkonfiguriert ...|Windows|127 GB
+Microsoft SQL Server-Gruppe|SQL Server 2014 RTM-Standard unter Windows Server 2012 R2|Dieses Image enthält die Vollversion von SQL Server. Wir empfehlen die Verwendung eines virtuellen Rechners der Größe A2 oder höher. Dieses Image wurde für Azure vorkonfiguriert, einschließlich der Aktivierung des CEIP, das ...|Windows|127 GB
 Microsoft Windows Server-Gruppe|Windows Server 2012 R2 Datacenter, Juni 2014|Als Kernstück der Vision von Microsoft Cloud OS überträgt Windows Server 2012 R2 die Erfahrung von Microsoft in Bezug auf globale Clouddienste in Ihre Infrastruktur. Er bietet Leistung für Unternehmen...|Windows|128 GB
 Microsoft Windows Server-Gruppe|Windows Server 2012 Datacenter, Juni 2014|Windows Server 2012 nutzt die Erfahrungen von Microsoft in Bezug auf das Erstellen und Betreiben von öffentlichen Clouds, um eine dynamische, hochverfügbare Serverplattform zu bieten. Er bietet eine skalierbare, dynamische und mehrinstanzfähige Anwendung...|Windows|128 GB
 Microsoft Windows Server-Gruppe|Windows Server 2008 R2 SP1, Juni 2014|Windows Server 2008 R2 ist ein Mehrzweck-Server, der entwickelt wurde, um die Zuverlässigkeit und Flexibilität Ihres Servers oder einer privaten Cloudinfrastruktur zu verbessern und der Ihnen dabei hilft, Zeit zu sparen und Kosten zu reduzieren. Er bietet...|Windows|128 GB
@@ -93,15 +93,15 @@ Die folgenden Ressourcen bieten nähere Informationen zur Bereitstellung über d
 
 ###Weitere Ressourcen: 
 
-- [Bereitstellen eines virtuellen Windows-Rechners](../virtual-machines/virtual-machines-windows-tutorial.md)
+- [Bereitstellen eines virtuellen Windows-Rechners](virtual-machines/virtual-machines-windows-hero-tutorial.md)
 
-- [Bereitstellen eines virtuellen Linux-Rechners](../virtual-machines/virtual-machines-linux-tutorial.md)
+- [Bereitstellen eines virtuellen Linux-Rechners](virtual-machines/virtual-machines-linux-cli-create.md)
 
 - [Virtuelle Computer – häufig gestellte Fragen](http://msdn.microsoft.com/library/azure/dn683781.aspx)
 
-- [Erstellen und Hochladen Ihrer eigenen VHD](../virtual-machines-create-upload-vhd-windows-server/)
+- [Erstellen und Hochladen Ihrer eigenen VHD](virtual-machines-create-upload-vhd-windows-server/)
 
-- [Aufzeichnen eines Linux-VM-Image](../virtual-machines/virtual-machines-linux-capture-image.md)
+- [Aufzeichnen eines Linux-VM-Image](virtual-machines/virtual-machines-linux-classic-capture-image.md)
 
 <!--- **<A href="/azure-government-service-description">Azure Government Service Descriptions</a>**-->
 
@@ -114,8 +114,8 @@ Die folgenden Ressourcen bieten nähere Informationen zur Bereitstellung über d
 [2]: ./media/azure-government-overview/azure-gov-overview.jpg
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines/virtual-machines-windows-tutorial.md
+[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines/virtual-machines-windows-hero-tutorial.md
 [Link 2 to another azure.microsoft.com documentation topic]: app-service-web/web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

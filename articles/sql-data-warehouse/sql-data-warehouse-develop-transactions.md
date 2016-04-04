@@ -23,6 +23,33 @@ Wie zu erwarten unterstützt SQL Data Warehouse alle Transaktionseigenschaften. 
 ## Transaktionsisolationsstufen
 SQL Data Warehouse implementiert ACID-Transaktionen. Die Isolation der Transaktionsunterstützung ist jedoch beschränkt auf `READ UNCOMMITTED` und kann nicht geändert werden. Sie können eine Reihe von Codemethoden implementieren, um fehlerhafte Datenlesevorgänge zu verhindern, wenn dies ein Problem für Sie darstellt. Die am häufigsten verwendeten Methoden nutzen sowohl CTAS als auch Wechsel von Partitionstabellen (oftmals gleitendes Fenstermuster genannt), um zu verhindern, dass Benutzer Daten abrufen, die noch vorbereitet werden. Sichten, die die Daten vorab filtern, sind auch ein beliebter Ansatz.
 
+## Transaktionsgröße
+Eine einzelne Transaktion zur Datenänderung ist in Bezug auf die Größe beschränkt. Der Grenzwert wird heute „pro Verteilung“ angewendet. Zum Ermitteln der Gesamtsumme müssen wir daher den Grenzwert mit der Verteilungsanzahl multiplizieren. Um eine Annäherung für die maximale Zeilenanzahl in der Transaktion zu erhalten, teilen Sie die Verteilungsobergrenze durch die Gesamtgröße jeder Spalte. Bei Spalten mit variabler Länge können Sie erwägen, anstelle der maximalen Größe eine durchschnittliche Spaltenlänge zu verwenden.
+
+Für die Tabelle unten gelten die folgenden Annahmen:
+* Gleichmäßige Verteilung der Daten 
+* Durchschnittliche Zeilenlänge beträgt 250 Byte
+
+| DWU | Obergrenze pro Verteilung (GB) | Anzahl der Verteilungen | Max. Transaktionsgröße (GB) | Zeilenanzahl pro Verteilung | Max. Zeilenzahl pro Transaktion |
+| ------ | -------------------------- | ----------------------- | -------------------------- | ----------------------- | ------------------------ |
+| DW100 | 1 | 60 | 60 | 4\.000.000 | 240\.000.000 |
+| DW200 | 1,5 | 60 | 90 | 6\.000.000 | 360\.000.000 |
+| DW300 | 2,25 | 60 | 135 | 9\.000.000 | 540\.000.000 |
+| DW400 | 3 | 60 | 180 | 12\.000.000 | 720\.000.000 |
+| DW500 | 3,75 | 60 | 225 | 15\.000.000 | 900\.000.000 |
+| DW600 | 4,5 | 60 | 270 | 18\.000.000 | 1\.080.000.000 |
+| DW1000 | 7,5 | 60 | 450 | 30\.000.000 | 1\.800.000.000 |
+| DW1200 | 9 | 60 | 540 | 36\.000.000 | 2\.160.000.000 |
+| DW1500 | 11,25 | 60 | 675 | 45\.000.000 | 2\.700.000.000 |
+| DW2000 | 15 | 60 | 900 | 60\.000.000 | 3\.600.000.000 |
+
+Die Obergrenze für die Transaktionsgröße wird pro Transaktion oder Vorgang angewendet. Sie wird nicht übergreifend für alle gleichzeitigen Transaktionen angewendet. Daher ist es für jede Transaktion zulässig, diese Menge an Daten in das Protokoll zu schreiben.
+
+Informationen zum Optimieren und Reduzieren der Datenmenge, die in das Protokoll geschrieben wird, finden Sie im Artikel [Bewährte Methoden für Transaktionen][].
+
+> [AZURE.WARNING] Die maximale Transaktionsgröße kann nur für Tabellen mit HASH- oder ROUND\_ROBIN-Verteilung erreicht werden, bei denen die Daten gleichmäßig verteilt werden. Wenn bei der Transaktion Daten auf verzerrte Weise in die Verteilungen geschrieben werden, wird die Obergrenze wahrscheinlich vor der maximalen Transaktionsgröße erreicht.
+<!--REPLICATED_TABLE-->
+
 ## Transaktionsstatus
 SQL Data Warehouse verwendet die XACT\_STATE()-Funktion, um eine fehlgeschlagene Transaktion mit dem Wert "-2" zu melden. Dies bedeutet, dass die Transaktion fehlgeschlagen und nur für den Rollback markiert ist.
 
@@ -107,9 +134,10 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Article references-->
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
+[Bewährte Methoden für Transaktionen]: sql-data-warehouse-develop-best-practices-transactions.md
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

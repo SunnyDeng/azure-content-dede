@@ -18,14 +18,14 @@
 
 # Einrichten eines virtuellen Azure SQL Server-Computers als IPython Notebook-Server für die erweiterte Analyse
 
-In diesem Thema wird das Bereitstellen und Konfigurieren eines virtuellen SQL Server-Computers als Teil einer cloudbasierten Data Science-Umgebung beschrieben. Der virtuelle Windows-Computer wird mit Unterstützung von Tools wie IPython Notebook, Azure-Speicher-Explorer und AzCopy sowie anderer Hilfsprogramme, die für Data Science-Projekte hilfreich sind, konfiguriert. Azure-Speicher-Explorer und AzCopy stellen z. B. hilfreiche Möglichkeiten zum Hochladen von Daten von Ihrem lokalen Computer in den Azure-Blob-Speicher oder das Herunterladen aus dem Blob-Speicher auf Ihren lokalen Computer bereit.
+In diesem Thema wird das Bereitstellen und Konfigurieren eines virtuellen SQL Server-Computers als Teil einer cloudbasierten Data Science-Umgebung beschrieben. Der virtuelle Windows-Computer wird mit Unterstützung von Tools wie IPython Notebook, Azure-Speicher-Explorer und AzCopy sowie anderer Hilfsprogramme, die für Data Science-Projekte hilfreich sind, konfiguriert. Azure-Speicher-Explorer und AzCopy stellen z. B. hilfreiche Möglichkeiten zum Hochladen von Daten von Ihrem lokalen Computer in den Azure-Blob-Speicher oder das Herunterladen aus dem Blob-Speicher auf Ihren lokalen Computer bereit.
 
 In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu finden, die Microsoft SQL Server enthalten. Wählen Sie ein VM-Image mit SQL Server aus, das Ihren Datenanforderungen entspricht. Folgende Images werden empfohlen:
 
-- SQL Server 2012 SP2 Enterprise für kleine bis mittlere Datenvolumen
-- SQL Server 2012 SP2 Enterprise Optimized for DataWarehousing Workloads für große bis sehr große Datenvolumen
+- SQL Server 2012 SP2 Enterprise für kleine bis mittlere Datenvolumen
+- SQL Server 2012 SP2 Enterprise Optimized for DataWarehousing Workloads für große bis sehr große Datenvolumen
 
- > [AZURE.NOTE] Das SQL Server 2012 SP2 Enterprise-Image **enthält keinen Datenträger**. Sie müssen einen oder mehrere virtuelle Festplatten zum Speichern von Daten hinzufügen und/oder anfügen. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
+ > [AZURE.NOTE] Das SQL Server 2012 SP2 Enterprise-Image **enthält keinen Datenträger**. Sie müssen einen oder mehrere virtuelle Festplatten zum Speichern von Daten hinzufügen und/oder anfügen. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
 
 
 ##<a name="Provision"></a>Verbinden mit dem klassischen Azure-Portal und Bereitstellen eines virtuellen Computers mit SQL Server
@@ -104,7 +104,7 @@ Zum Konfigurieren der neuen SQL Server-VM als IPython Notebook-Server und zum In
     	@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString(%script%))"
 
 - Geben Sie, wenn Sie dazu aufgefordert werden, ein Kennwort Ihrer Wahl für den IPython Notebook-Server ein.
-- Das Anpassungsskript automatisiert mehrere Nachinstallationsprozeduren, z. B.:
+- Das Anpassungsskript automatisiert mehrere Nachinstallationsprozeduren, z. B.:
 	+ Installation und Einrichtung des IPython Notebook-Servers
 	+ Öffnen der TCP-Ports in der Windows-Firewall für die zuvor erstellten Endpunkte:
 	+ Für die SQL Server-Remotekonnektivität
@@ -117,11 +117,11 @@ Zum Konfigurieren der neuen SQL Server-VM als IPython Notebook-Server und zum In
 
 ##<a name="Optional"></a>Anfügen eines Datenträgers
 
-Wenn Ihr VM-Image keine Datenträger enthält, d. h. keine anderen Datenträger als die Laufwerke C (Datenträger für das Betriebssystem) und D (temporärer Datenträger), müssen Sie mindestens einen Datenträger zum Speichern der Daten hinzufügen. Das VM-Image für SQL Server 2012 SP2 Enterprise Optimized für DataWarehousing Workloads ist bereits mit zusätzlichen Datenträgern für die Daten- und Protokolldateien von SQL Server vorkonfiguriert.
+Wenn Ihr VM-Image keine Datenträger enthält, d. h. keine anderen Datenträger als die Laufwerke C (Datenträger für das Betriebssystem) und D (temporärer Datenträger), müssen Sie mindestens einen Datenträger zum Speichern der Daten hinzufügen. Das VM-Image für SQL Server 2012 SP2 Enterprise Optimized für DataWarehousing Workloads ist bereits mit zusätzlichen Datenträgern für die Daten- und Protokolldateien von SQL Server vorkonfiguriert.
 
- > [AZURE.NOTE] Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
+ > [AZURE.NOTE] Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
 
-Um zusätzliche Datenträger anzufügen, führen Sie die Schritte unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md) durch:
+Um zusätzliche Datenträger anzufügen, führen Sie die Schritte unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](virtual-machines-windows-classic-attach-disk.md) durch:
 
 1. Anfügen leerer Datenträger an den in den vorherigen Schritten bereitgestellten virtuellen Computer
 2. Initialisieren der neuen Datenträger auf dem virtuellen Computer
@@ -298,4 +298,4 @@ Die nächsten Schritte des Datenanalyseprozesses sind unter [Leitfaden: Erweiter
 [15]: ./media/machine-learning-data-science-setup-sql-server-virtual-machine/vmshutdown.png
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

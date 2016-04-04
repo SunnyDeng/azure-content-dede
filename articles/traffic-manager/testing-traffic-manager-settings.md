@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/01/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 # Testen der Traffic Manager-Einstellungen
@@ -33,14 +33,16 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
 
 2\. Geben Sie `ipconfig /flushdns` ein, um den DNS-Auflösungscache zu löschen.
 
-3\. Geben Sie `nslookup <your Traffic Manager domain name>` ein. Der folgende Befehl überprüft beispielsweise den Domänennamen mit dem Präfix *myapp.contoso* Nslookup myapp.contoso.trafficmanager.net. Das Ergebnis sieht in der Regel wie folgt aus: – Der DNS-Name und die IP-Adresse des DNS-Servers, auf den zugegriffen wird, um diesen Traffic Manager-Domänennamen aufzulösen. – Der Traffic Manager-Domänennamen, die Sie in der Befehlszeile nach "Nslookup" und die IP-Adresse in der Traffic Manager-Domäne aufgelöst wird eingegeben. Die zweite IP-Adresse ist für die Überprüfung wichtig. Es sollte eine öffentliche virtuelle IP-Adresse (VIP) Adresse für eines der Cloud-Dienste oder Websites in Traffic Manager-Profil, das Sie testen übereinstimmen.
+3\. Geben Sie `nslookup <your Traffic Manager domain name>` ein. Mit dem folgenden Befehl wird beispielsweise ein Domänenname mit dem Präfix *myapp.contoso* überprüft: nslookup myapp.contoso.trafficmanager.net. Das Ergebnis sieht in der Regel wie folgt aus:
+- Der DNS-Name und die IP-Adresse des DNS-Servers, auf den zugegriffen wird, um diesen Traffic Manager-Domänennamen aufzulösen.
+- Den Traffic Manager-Domänennamen, die Sie in der Befehlszeile nach "Nslookup" und die IP-Adresse in der Traffic Manager-Domäne aufgelöst wird eingegeben. Die zweite IP-Adresse ist für die Überprüfung wichtig. Es sollte eine öffentliche virtuelle IP-Adresse (VIP) Adresse für eines der Cloud-Dienste oder Websites in Traffic Manager-Profil, das Sie testen übereinstimmen.
 
 ## Testen von Lastenausgleichsmethoden
 
 
 ### So testen Sie die Lastenausgleichsmethode "Failover"
 
-1\. Alle Endpunkte müssen ausgeführt werden. 2. Verwenden Sie einen einzelnen Client. 3. Fordern Sie die DNS-Auflösung für den Namen Ihrer Unternehmensdomäne mithilfe des Tools Nslookup.exe oder eines ähnlichen Hilfsprogramms an. 4. Stellen Sie sicher, dass die aufgelöste IP-Adresse, die Sie abrufen, zum primären Endpunkt gehört. 5. Fahren Sie den primären Endpunkt herunter bzw. entfernen Sie die Überwachungsdatei, sodass Traffic Manager davon ausgeht, dass der Dienst nicht in Betrieb ist. 6. Warten Sie den Zeitraum der im Traffic Manager-Profile angebenen DNS-Gültigkeitsdauer zuzüglich weiterer zwei Minuten ab. Wenn Ihre DNS-Gültigkeitsdauer z. B. 300 Sekunden (5 Minuten) beträgt, müssen Sie 7 Minuten warten. 7. eeren Sie den DNS-Clientcache, und fordern Sie die DNS-Auflösung an. In Windows können Sie den DNS-Cache mit dem Befehl "ipconfig /flushdns" leeren, den Sie an einer Eingabeaufforderung oder einer Windows PowerShell-Eingabeaufforderung aufrufen. 8. Stellen Sie sicher, dass die abgerufene IP-Adresse zum sekundären Endpunkt gehört. 9. Wiederholen Sie diesen Vorgang, indem Sie den sekundären Endpunkt beenden, dann den tertiären Endpunkt usw. In jedem dieser Fälle muss sichergestellt werden, dass von der DNS-Auflösung die IP-Adresse des nächsten Endpunkts in der Liste zurückgegeben wird. Wenn alle Endpunkte nicht betriebsbereit sind, sollte erneut die IP-Adresse des primären Endpunkts abgerufen werden.
+1\. Alle Endpunkte müssen ausgeführt werden. 2. Verwenden Sie einen einzelnen Client. 3. Fordern Sie die DNS-Auflösung für den Namen Ihrer Unternehmensdomäne mithilfe des Tools Nslookup.exe oder eines ähnlichen Hilfsprogramms an. 4. Stellen Sie sicher, dass die aufgelöste IP-Adresse, die Sie abrufen, zum primären Endpunkt gehört. 5. Fahren Sie den primären Endpunkt herunter bzw. entfernen Sie die Überwachungsdatei, sodass Traffic Manager davon ausgeht, dass der Dienst nicht in Betrieb ist. 6. Warten Sie den Zeitraum der im Traffic Manager-Profile angebenen DNS-Gültigkeitsdauer zuzüglich weiterer zwei Minuten ab. Wenn Ihre DNS-Gültigkeitsdauer z. B. 300 Sekunden (5 Minuten) beträgt, müssen Sie 7 Minuten warten. 7. eeren Sie den DNS-Clientcache, und fordern Sie die DNS-Auflösung an. In Windows können Sie den DNS-Cache mit dem Befehl "ipconfig /flushdns" leeren, den Sie an einer Eingabeaufforderung oder einer Windows PowerShell-Eingabeaufforderung aufrufen. 8. Stellen Sie sicher, dass die abgerufene IP-Adresse zum sekundären Endpunkt gehört. 9. Wiederholen Sie diesen Vorgang, indem Sie den sekundären Endpunkt beenden, dann den tertiären Endpunkt usw. In jedem dieser Fälle muss sichergestellt werden, dass von der DNS-Auflösung die IP-Adresse des nächsten Endpunkts in der Liste zurückgegeben wird. Wenn alle Endpunkte nicht betriebsbereit sind, sollte erneut die IP-Adresse des primären Endpunkts abgerufen werden.
 
 ### So testen Sie die Lastenausgleichsmethode "Roundrobin"
 
@@ -54,7 +56,7 @@ Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit ei
 
 ## Nächste Schritte
 
-[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](../about-traffic-manager-balancing-methods.md) [Traffic Manager](../traffic-manager.md)
+[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-routing-methods.md) [Traffic Manager](traffic-manager-overview.md)
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

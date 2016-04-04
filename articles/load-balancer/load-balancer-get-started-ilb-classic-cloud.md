@@ -1,7 +1,7 @@
 <properties 
    pageTitle="Erfahren Sie, wie Sie einen internen Lastenausgleich für Clouddienste im klassischen Bereitstellungsmodell erstellen | Microsoft Azure"
    description="Hier erfahren Sie, wie Sie mithilfe von PowerShell einen internen Lastenausgleich im klassischen Bereitstellungsmodell erstellen."
-   services="load-balancer-ilb"
+   services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
    manager="carolz"
@@ -34,7 +34,7 @@ Die Konfiguration des internen Lastenausgleichs muss während der Erstellung der
 
 >[AZURE.IMPORTANT] Voraussetzung für die Ausführung der folgenden Schritte ist, dass Sie bereits ein virtuelles Netzwerk für die Cloudbereitstellung erstellt haben. Zum Erstellen des internen Lastenausgleichs benötigen Sie den Namen des virtuellen Netzwerks und den Subnetznamen.
 
-### Schritt 1
+### Schritt 1
 
 Öffnen Sie die Dienstkonfigurationsdatei (CSCFG) für Ihre Cloudbereitstellung in Visual Studio, und fügen Sie den folgenden Abschnitt hinzu, um den internen Lastausgleich unter dem letzten "`</Role>`"-Element für die Netzwerkkonfiguration zu erstellen.
 
@@ -50,7 +50,7 @@ Die Konfiguration des internen Lastenausgleichs muss während der Erstellung der
 	</NetworkConfiguration>
 
 
-Wir fügen nun die Werte für die Netzwerkkonfigurationsdatei hinzu, um den Vorgang zu veranschaulichen. Im Beispiel wird davon ausgegangen, dass Sie ein Subnetz mit dem Namen „test\_vnet“ und einem 10.0.0.0/24-Subnetz erstellt haben, das „test\_subnet“ heißt und die statische IP 10.0.0.4 aufweist. Der Load Balancer hat den Namen testLB.
+Wir fügen nun die Werte für die Netzwerkkonfigurationsdatei hinzu, um den Vorgang zu veranschaulichen. Im Beispiel wird davon ausgegangen, dass Sie ein Subnetz mit dem Namen „test\_vnet“ und einem 10.0.0.0/24-Subnetz erstellt haben, das „test\_subnet“ heißt und die statische IP 10.0.0.4 aufweist. Der Load Balancer hat den Namen testLB.
 
 	<NetworkConfiguration>
 	  <LoadBalancers>
@@ -62,7 +62,7 @@ Wir fügen nun die Werte für die Netzwerkkonfigurationsdatei hinzu, um den Vorg
 
 Weitere Informationen zum Lastenausgleichsschema finden Sie unter [Hinzufügen eines Lastenausgleichs](https://msdn.microsoft.com/library/azure/dn722411.aspx).
 
-### Schritt 2
+### Schritt 2
 
 
 Ändern Sie die Dienstdefinitionsdatei (CSDEF), um Endpunkte zum internen Lastenausgleich hinzuzufügen. Zum Zeitpunkt der Erstellung einer Rolleninstanz fügt die Dienstdefinitionsdatei die Rolleninstanzen zum internen Lastenausgleich hinzu.
@@ -82,7 +82,7 @@ Als Nächstes fügen wir der Dienstdefinitionsdatei die Werte hinzu, indem wir d
 	  </Endpoints>
 	</WorkerRole>
 
-Der Lastenausgleich für den Netzwerkdatenverkehr erfolgt für eingehende Anforderungen mit dem Lastenausgleichsmodul "testLB" über Port 80. Die Workerrolleninstanzen werden ebenfalls über Port 80 gesendet.
+Der Lastenausgleich für den Netzwerkdatenverkehr erfolgt für eingehende Anforderungen mit dem Lastenausgleichsmodul "testLB" über Port 80. Die Workerrolleninstanzen werden ebenfalls über Port 80 gesendet.
 
 
 ## Nächste Schritte
@@ -91,4 +91,4 @@ Der Lastenausgleich für den Netzwerkdatenverkehr erfolgt für eingehende Anford
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

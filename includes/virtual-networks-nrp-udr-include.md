@@ -1,5 +1,5 @@
 ## Routentabellen
-Routentabelle enthalten Routen, die den Datenfluss in Ihrer Azure-Infrastruktur bestimmen. Sie können benutzerdefinierte Routen nutzen, um den gesamten Datenverkehr aus einem bestimmten Subnetz zu einem virtuellen Gerät zu leiten, z. B. einer Firewall oder einem System zum Erkennen von Netzwerkangriffen. Sie können Subnetzen eine Routentabelle zuordnen.
+Routentabelle enthalten Routen, die den Datenfluss in Ihrer Azure-Infrastruktur bestimmen. Sie können benutzerdefinierte Routen nutzen, um den gesamten Datenverkehr aus einem bestimmten Subnetz zu einem virtuellen Gerät zu leiten, z. B. einer Firewall oder einem System zum Erkennen von Netzwerkangriffen. Sie können Subnetzen eine Routentabelle zuordnen.
 
 Routentabellen haben die folgenden Eigenschaften:
 
@@ -54,8 +54,8 @@ Beispielroutentabelle im JSON-Format:
 
 ### Zusätzliche Ressourcen
 
-- Weitere Informationen zu [benutzerdefinierten Routen](virtual-networks-udr-overview.md).
+- Weitere Informationen zu [benutzerdefinierten Routen](../articles/virtual-network/virtual-networks-udr-overview.md).
 - Weitere Informationen zu Routentabellen finden Sie in der [Referenzdokumentation zur REST-API](https://msdn.microsoft.com/library/azure/mt502549.aspx).
 - Weitere Informationen zu benutzerdefinierten Routen finden Sie in der [Referenzdokumentation zur REST-API](https://msdn.microsoft.com/library/azure/mt502539.aspx).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0323_2016-->

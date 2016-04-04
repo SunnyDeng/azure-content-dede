@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/26/2016"
+   ms.date="03/23/2016"
    ms.author="oanapl"/>
 
 # Verwenden von Systemintegritätsberichten für die Problembehandlung
@@ -24,7 +24,7 @@ Für Azure Service Fabric-Komponenten werden für alle Entitäten im Cluster sta
 
 Die Systemintegritätsberichte sorgen für Transparenz in Bezug auf die Cluster- und Anwendungsfunktionen und weisen auf Probleme mit der Integrität hin. Für Anwendungen und Dienste wird mit den Systemintegritätsberichten überprüft, ob Entitäten implementiert sind und sich aus Sicht von Service Fabric richtig verhalten. Die Berichte umfassen keine Integritätsüberwachung der Geschäftslogik des Diensts und keine Erkennung von hängenden Prozessen. Benutzerdienste können die Integritätsdaten um spezielle Informationen zu ihrer Logik erweitern.
 
-> [AZURE.NOTE] Watchdog-Integritätsberichte werden erst angezeigt, *nachdem* die Systemkomponenten eine Entität erstellt haben. Wenn eine Entität gelöscht wird, werden vom Integritätsspeicher automatisch alle dazugehörigen Integritätsberichte gelöscht. Das gleiche gilt, wenn eine neue Instanz der Entität erstellt wird (z. B. eine neue Dienstreplikatinstanz). Alle Berichte, die der alten Instanz zugeordnet sind, werden gelöscht und im Speicher bereinigt.
+> [AZURE.NOTE] Watchdog-Integritätsberichte werden erst angezeigt, *nachdem* die Systemkomponenten eine Entität erstellt haben. Wenn eine Entität gelöscht wird, werden vom Integritätsspeicher automatisch alle dazugehörigen Integritätsberichte gelöscht. Das gleiche gilt, wenn eine neue Instanz der Entität erstellt wird (z. B. eine neue Dienstreplikatinstanz). Alle Berichte, die der alten Instanz zugeordnet sind, werden gelöscht und im Speicher bereinigt.
 
 Die Systemkomponentenberichte werden über die Quelle identifiziert, die mit dem Präfix „**System.**“ beginnt. Watchdogs können nicht das gleiche Präfix für ihre Quellen verwenden, da Berichte mit ungültigen Parametern abgelehnt werden. Wir sehen uns nun einige Systemberichte an, um zu verstehen, wodurch sie ausgelöst werden und wie mögliche Probleme behoben werden, die damit verbunden sind.
 
@@ -43,13 +43,13 @@ Im Bericht wird das Global Lease-Timeout als Gültigkeitsdauer (Time to Live, TT
 - **Nächste Schritte**: Untersuchen Sie, warum die Nachbarschaft verloren geht (überprüfen Sie beispielsweise die Kommunikation zwischen Clusterknoten).
 
 ## Knoten-Systemintegritätsberichte
-**System.FM** steht für den Failover-Manager-Dienst und ist die Autorität, mit der die Informationen zu Clusterknoten verwaltet werden. Jeder Knoten sollte über einen Bericht von System.FM verfügen, in dem der Zustand angegeben wird. Die Knotenentitäten werden entfernt, wenn der Knoten deaktiviert wird.
+**System.FM** steht für den Failover-Manager-Dienst und ist die Autorität, mit der die Informationen zu Clusterknoten verwaltet werden. Jeder Knoten sollte über einen Bericht von System.FM verfügen, in dem der Zustand angegeben wird. Die Knotenentitäten werden entfernt, wenn der Knotenstatus entfernt wird (erfahren Sie mehr unter [RemoveNodeStateAsync](https://msdn.microsoft.com/library/azure/mt161348.aspx)).
 
 ### Knoten heraufgefahren/heruntergefahren
 System.FM meldet „OK“, wenn der Knoten dem Ring beitritt (betriebsbereit). Ein Fehler wird gemeldet, wenn der Knoten den Ring verlässt (nicht betriebsbereit, entweder aufgrund eines Upgrades oder eines Fehlers). Die vom Integritätsspeicher erstellte Integritätshierarchie wird für bereitgestellte Entitäten in Korrelation mit System.FM-Knotenberichten aktiv. Ein Knoten wird als virtuelles übergeordnetes Element aller bereitgestellten Entitäten angesehen. Die bereitgestellten Entitäten auf diesem Knoten werden nicht über Abfragen verfügbar gemacht, wenn der Knoten inaktiv ist oder keinen Bericht gesendet hat oder wenn der Knoten über eine andere Instanz als die Instanz verfügt, die den Entitäten zugeordnet ist. Wenn System.FM meldet, dass der Knoten inaktiv ist oder neu gestartet wurde (neue Instanz), werden im Integritätsspeicher automatisch die bereitgestellten Entitäten bereinigt, die nur auf dem inaktiven Knoten oder der vorherigen Instanz des Knoten vorhanden sein können.
 
 - **SourceId**: System.FM
-- **Eigenschaft**: State (Zustand)
+- **Property**: State
 - **Nächste Schritte**: Wenn der Knoten aufgrund eines Upgrades inaktiv ist, sollte er nach Abschluss des Upgrades wieder hochfahren. In diesem Fall sollte als Integritätsstatus wieder „OK“ gemeldet werden. Falls der Knoten nicht hochfährt oder ein Fehler auftritt, muss das Problem genauer untersucht werden.
 
 Das folgende Beispiel zeigt das System.FM-Ereignis mit dem Integritätsstaus „OK“ für einen aktiven Knoten:
@@ -79,30 +79,30 @@ HealthEvents          :
 **System.FabricNode** gibt eine Warnung aus, wenn vom Knoten verwendete Zertifikate kurz vor dem Ablauf stehen. Es gibt drei Zertifikate pro Knoten: **Certificate\_cluster**, **Certificate\_server** und **Certificate\_default\_client**. Wenn das Ablaufdatum noch mindestens zwei Wochen entfernt ist, lautet der Berichtsintegritätsstatus „OK“. Wenn der Ablauf in weniger als zwei Wochen erfolgt, wird als Berichtstyp eine Warnung erstellt. Die Gültigkeitsdauer (TTL) dieser Ereignisse ist unendlich. Sie werden entfernt, wenn ein Knoten den Cluster verlässt.
 
 - **SourceId**: System.FabricNode
-- **Eigenschaft**: Beginnt mit **Certificate** (Zertifikat) und enthält weitere Informationen zum Zertifikatstyp.
+- **Property**: Beginnt mit **Certificate** und enthält weitere Informationen zum Zertifikatstyp
 - **Nächste Schritte**: Aktualisieren Sie die Zertifikate, wenn sie in Kürze ablaufen.
 
 ### Verletzung der Ladekapazität
 Der Service Fabric Load Balancer gibt eine Warnung aus, wenn eine Verletzung einer Knotenkapazität erkannt wird.
 
  - **SourceId**: System.PLB
- - **Eigenschaft**: Beginnt mit **Capacity** (Kapazität).
+ - **Property**: Beginnt mit **Capacity**
  - **Nächste Schritte**: Überprüfen Sie die bereitgestellten Metriken, und zeigen Sie die aktuelle Kapazität auf dem Knoten an.
 
 ## Systemintegritätsberichte für Anwendungen
-**System.CM** steht für den Cluster-Manager-Dienst und ist die Autorität, mit der die Informationen zu einer Anwendung verwaltet werden.
+**System.CM** steht für den Cluster-Manager-Dienst und ist die Autorität, die die Informationen zu einer Anwendung verwaltet.
 
 ### Zustand
 System.CM gibt die Meldung „OK“ aus, wenn die Anwendung erstellt oder aktualisiert wurde. Der Integritätsspeicher wird informiert, wenn die Anwendung gelöscht wurde, damit sie aus dem Speicher entfernt werden kann.
 
 - **SourceId**: System.CM
-- **Eigenschaft**: State (Zustand)
-- **Nächste Schritte**: Wenn die Anwendung erstellt wurde, sollte sie den Cluster-Manager-Integritätsbericht enthalten. Überprüfen Sie andernfalls den Zustand der Anwendung, indem Sie eine Abfrage ausgeben (z. B. PowerShell-Cmdlet **Get-ServiceFabricApplication -ApplicationName *applicationName***).
+- **Property**: State
+- **Nächste Schritte**: Wenn die Anwendung erstellt wurde, sollte sie den Cluster-Manager-Integritätsbericht enthalten. Überprüfen Sie andernfalls den Zustand der Anwendung, indem Sie eine Abfrage durchführen (z.B. das PowerShell-Cmdlet **Get-ServiceFabricApplication -ApplicationName *applicationName***).
 
-Unten ist das State-Ereignis für die Anwendung **fabric:/WordCount** dargestellt.
+Im Folgenden wird das Statusereignis für die Anwendung **fabric:/WordCount** dargestellt:
 
 ```powershell
-PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount -ServicesHealthStateFilter ([System.Fabric.Health.HealthStateFilter]::None) -DeployedApplicationsHealthStateFilter ([System.Fabric.Health.HealthStateFilter]::None)
+PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount -ServicesFilter None -DeployedApplicationsFilter None
 
 ApplicationName                 : fabric:/WordCount
 AggregatedHealthState           : Ok
@@ -123,15 +123,15 @@ HealthEvents                    :
 ```
 
 ## Dienst-Systemintegritätsberichte
-**System.FM** steht für den Failover-Manager-Dienst und ist die Autorität, mit der die Informationen zu Diensten verwaltet werden.
+**System.FM** steht für den Failover-Manager-Dienst und ist die Autorität, die die Informationen zu Diensten verwaltet.
 
 ### Zustand
 System.FM gibt die Meldung „OK“ aus, wenn der Dienst erstellt wurde. Die Entität wird aus dem Integritätsspeicher gelöscht, wenn der Dienst gelöscht wurde.
 
 - **SourceId**: System.FM
-- **Eigenschaft**: State (Zustand)
+- **Property**: State
 
-Unten ist das State-Ereignis für den Dienst **fabric:/WordCount/WordCountService** dargestellt:
+Im Folgenden ist das Statusereignis für den Dienst **fabric:/WordCount/WordCountService** dargestellt:
 
 ```powershell
 PS C:\> Get-ServiceFabricServiceHealth fabric:/WordCount/WordCountService
@@ -157,14 +157,83 @@ HealthEvents          :
 ```
 
 ### Verletzung aufgrund von nicht platzierten Replikaten
-**System.PLB** meldet eine Warnung, wenn keine Platzierung für Dienstreplikate gefunden werden kann. Der Bericht wird entfernt, wenn er abgelaufen ist.
+**System.PLB** meldet eine Warnung, wenn keine Platzierung für ein oder mehrere Dienstreplikate gefunden werden kann. Der Bericht wird entfernt, wenn er abgelaufen ist.
 
 - **SourceId**: System.FM
-- **Eigenschaft**: State (Zustand)
+- **Property**: State
 - **Nächste Schritte**: Überprüfen Sie die Diensteinschränkungen und den aktuellen Zustand der Platzierung.
 
+Das folgende Beispiel zeigt einen Verstoß für einen Dienst, der mit sieben Zielreplikaten in einem Cluster mit fünf Knoten konfiguriert ist:
+
+```xml
+PS C:\> Get-ServiceFabricServiceHealth fabric:/WordCount/WordCountService
+
+
+ServiceName           : fabric:/WordCount/WordCountService
+AggregatedHealthState : Warning
+UnhealthyEvaluations  : 
+                        Unhealthy event: SourceId='System.PLB', 
+                        Property='ServiceReplicaUnplacedHealth_Secondary_a1f83a35-d6bf-4d39-b90d-28d15f39599b', HealthState='Warning', 
+                        ConsiderWarningAsError=false.
+                        
+PartitionHealthStates : 
+                        PartitionId           : a1f83a35-d6bf-4d39-b90d-28d15f39599b
+                        AggregatedHealthState : Warning
+                        
+HealthEvents          : 
+                        SourceId              : System.FM
+                        Property              : State
+                        HealthState           : Ok
+                        SequenceNumber        : 10
+                        SentAt                : 3/22/2016 7:56:53 PM
+                        ReceivedAt            : 3/22/2016 7:57:18 PM
+                        TTL                   : Infinite
+                        Description           : Service has been created.
+                        RemoveWhenExpired     : False
+                        IsExpired             : False
+                        Transitions           : Error->Ok = 3/22/2016 7:57:18 PM, LastWarning = 1/1/0001 12:00:00 AM
+                        
+                        SourceId              : System.PLB
+                        Property              : ServiceReplicaUnplacedHealth_Secondary_a1f83a35-d6bf-4d39-b90d-28d15f39599b
+                        HealthState           : Warning
+                        SequenceNumber        : 131032232425505477
+                        SentAt                : 3/23/2016 4:14:02 PM
+                        ReceivedAt            : 3/23/2016 4:14:03 PM
+                        TTL                   : 00:01:05
+                        Description           : The Load Balancer was unable to find a placement for one or more of the Service's Replicas:
+                        fabric:/WordCount/WordCountService Secondary Partition a1f83a35-d6bf-4d39-b90d-28d15f39599b could not be placed, possibly, 
+                        due to the following constraints and properties:  
+                        Placement Constraint: N/A
+                        Depended Service: N/A
+                        
+                        Constraint Elimination Sequence:
+                        ReplicaExclusionStatic eliminated 4 possible node(s) for placement -- 1/5 node(s) remain.
+                        ReplicaExclusionDynamic eliminated 1 possible node(s) for placement -- 0/5 node(s) remain.
+                        
+                        Nodes Eliminated By Constraints:
+                        
+                        ReplicaExclusionStatic:
+                        FaultDomain:fd:/0 NodeName:_Node_0 NodeType:NodeType0 UpgradeDomain:0 UpgradeDomain: ud:/0 Deactivation Intent/Status: 
+                        None/None
+                        FaultDomain:fd:/1 NodeName:_Node_1 NodeType:NodeType1 UpgradeDomain:1 UpgradeDomain: ud:/1 Deactivation Intent/Status: 
+                        None/None
+                        FaultDomain:fd:/3 NodeName:_Node_3 NodeType:NodeType3 UpgradeDomain:3 UpgradeDomain: ud:/3 Deactivation Intent/Status: 
+                        None/None
+                        FaultDomain:fd:/4 NodeName:_Node_4 NodeType:NodeType4 UpgradeDomain:4 UpgradeDomain: ud:/4 Deactivation Intent/Status: 
+                        None/None
+                        
+                        ReplicaExclusionDynamic:
+                        FaultDomain:fd:/2 NodeName:_Node_2 NodeType:NodeType2 UpgradeDomain:2 UpgradeDomain: ud:/2 Deactivation Intent/Status: 
+                        None/None
+                        
+                        
+                        RemoveWhenExpired     : True
+                        IsExpired             : False
+                        Transitions           : Error->Warning = 3/22/2016 7:57:48 PM, LastOk = 1/1/0001 12:00:00 AM
+```
+
 ## Systemintegritätsberichte für Partitionen
-**System.FM** steht für den Failover-Manager-Dienst und ist die Autorität, mit der die Informationen zu den Dienstpartitionen verwaltet werden.
+**System.FM** steht für den Failover-Manager-Dienst und ist die Autorität, die die Informationen zu den Dienstpartitionen verwaltet.
 
 ### Zustand
 System.FM gibt die Meldung „OK“ aus, wenn die Partition erstellt wurde und fehlerfrei ist. Die Entität wird aus dem Integritätsspeicher gelöscht, wenn die Partition gelöscht wird.
@@ -174,8 +243,8 @@ Wenn die Replikatanzahl der Partition unterhalb des Mindestwerts liegt, wird ein
 Andere wichtige Ereignisse sind unter anderem eine Warnung, wenn die Neukonfiguration länger als erwartet dauert und wenn die Erstellung länger als erwartet dauert. Die erwarteten Zeiträume für die Erstellung und Neukonfiguration sind basierend auf Dienstszenarien konfigurierbar. Wenn ein Dienst beispielsweise über Zustandsdaten im Terabytebereich verfügt, wie etwa SQL-Datenbank, dauert die Erstellung länger als bei einem Dienst mit einer geringeren Menge an Zustandsdaten.
 
 - **SourceId**: System.FM
-- **Eigenschaft**: State (Zustand)
-- **Nächste Schritte**: Wenn der Integritätsstatus nicht „OK“ lautet, ist es möglich, dass einige Replikate für primäre oder sekundäre Elemente nicht richtig erstellt, geöffnet oder heraufgestuft wurden. Häufig ist die Hauptursache ein Dienstfehler bei der Implementierung zum Öffnen oder Ändern von Rollen.
+- **Property**: State
+- **Nächste Schritte**: Wenn der Integritätsstatus nicht „OK“ lautet, ist es möglich, dass einige Replikate nicht richtig erstellt, geöffnet oder auf primäre oder sekundäre Elemente heraufgestuft wurden. Häufig ist die Hauptursache ein Dienstfehler bei der Implementierung zum Öffnen oder Ändern von Rollen.
 
 Das folgende Beispiel zeigt eine fehlerfreie Partition:
 
@@ -198,10 +267,10 @@ HealthEvents          :
                         Transitions           : ->Ok = 4/24/2015 6:33:31 PM
 ```
 
-Das folgende Beispiel zeigt die Integrität einer Partition, für die die Zielreplikatanzahl nicht erreicht wird. Anschließend rufen Sie die Partitionsbeschreibung ab, in der ihre Konfiguration angegeben ist: **MinReplicaSetSize** ist „2“ und **TargetReplicaSetSize** ist „7“. Geben Sie anschließend die Anzahl der Knoten im Cluster an: fünf. In diesem Fall können zwei Replikate also nicht platziert werden.
+Das folgende Beispiel zeigt die Integrität einer Partition, für die die Zielreplikatanzahl nicht erreicht wird. Anschließend rufen Sie die Partitionsbeschreibung ab, in der ihre Konfiguration angegeben ist: **MinReplicaSetSize** entspricht zwei und **TargetReplicaSetSize** entspricht sieben. Geben Sie anschließend die Anzahl der Knoten im Cluster an: fünf. In diesem Fall können zwei Replikate also nicht platziert werden.
 
 ```powershell
-PS C:\> Get-ServiceFabricPartition fabric:/WordCount/WordCountService | Get-ServiceFabricPartitionHealth -ReplicasHealthStateFilter ([System.Fabric.Health.HealthStateFilter]::None)
+PS C:\> Get-ServiceFabricPartition fabric:/WordCount/WordCountService | Get-ServiceFabricPartitionHealth -ReplicasFilter None
 
 PartitionId           : 875a1caa-d79f-43bd-ac9d-43ee89a9891c
 AggregatedHealthState : Warning
@@ -245,7 +314,7 @@ PS C:\> @(Get-ServiceFabricNode).Count
 **System.PLB** gibt eine Warnung aus, wenn eine Verletzung der Replikateinschränkung erkannt wird und Replikate der Partition nicht platziert werden können.
 
 - **SourceId**: System.PLB
-- **Eigenschaft**: Beginnt mit **ReplicaConstraintViolation**.
+- **Property**: Beginnt mit **ReplicaConstraintViolation**
 
 ## Systemintegritätsberichte für Replikate
 **System.RA** steht für die Reconfiguration Agent-Komponente und ist die Autorität für den Replikatzustand.
@@ -254,7 +323,7 @@ PS C:\> @(Get-ServiceFabricNode).Count
 **System.RA** gibt die Meldung „OK“ aus, wenn das Replikat erstellt wurde.
 
 - **SourceId**: System.RA
-- **Eigenschaft**: State (Zustand)
+- **Property**: State
 
 Das folgende Beispiel zeigt ein fehlerfreies Replikat:
 
@@ -280,18 +349,18 @@ HealthEvents          :
 ### Öffnungszustand des Replikats
 Die Beschreibung dieses Integritätsberichts enthält den Startzeitpunkt (koordinierte Weltzeit), zu dem der API-Aufruf erfolgt ist.
 
-**System.RA** gibt eine Warnung aus, wenn das Öffnen des Replikats länger als der konfigurierte Zeitraum dauert (Standardwert: 30 Minuten). Wenn die API sich auf die Dienstverfügbarkeit auswirkt, wird der Bericht deutlich schneller ausgegeben (konfigurierbares Intervall, Standardwert: 30 Sekunden). Dieser Zeitraum enthält auch die Zeit für das Öffnen des Replikators und des Diensts. Die Eigenschaft ändert sich in „OK“, wenn das Öffnen abgeschlossen ist.
+**System.RA** gibt eine Warnung aus, wenn das Öffnen des Replikats länger als der konfigurierte Zeitraum dauert (Standardwert: 30 Minuten). Wenn die API sich auf die Dienstverfügbarkeit auswirkt, wird der Bericht deutlich schneller ausgegeben (konfigurierbares Intervall, Standardwert: 30 Sekunden). Dieser Zeitraum enthält auch die Zeit für das Öffnen des Replikators und des Diensts. Die Eigenschaft ändert sich in „OK“, wenn das Öffnen abgeschlossen ist.
 
 - **SourceId**: System.RA
-- **Eigenschaft**: **ReplicaOpenStatus**
-- **Nächste Schritte**: Wenn der Integritätsstatus nicht „OK“ lautet, sollten Sie überprüfen, warum das Öffnen des Replikats länger als erwartet dauert.
+- **Property**: **ReplicaOpenStatus**
+- **Nächste Schritte**: Wenn der Integritätsstatus nicht „OK“ lautet, sollten Sie untersuchen, warum das Öffnen des Replikats länger dauert als erwartet.
 
 ### Langsamer Dienst-API-Aufruf
-**System.RAP** und **System.Replicator** geben eine Warnung aus, wenn ein Aufruf des Benutzerdienstcodes länger als in der Konfiguration angegeben dauert. Die Warnung wird gelöscht, wenn der Aufruf abgeschlossen ist.
+**System.RAP** und **System.Replicator** geben eine Warnung aus, wenn ein Aufruf des Benutzerdienstcodes länger dauert als in der Konfiguration angegeben. Die Warnung wird gelöscht, wenn der Aufruf abgeschlossen ist.
 
 - **SourceId**: System.RAP oder System.Replicator
-- **Eigenschaft**: Name der langsamen API. Die Beschreibung liefert weitere Details dazu, wie lange die API bereits aussteht.
-- **Nächste Schritte**: Untersuchen Sie, warum der Aufruf länger als erwartet dauert.
+- **Property**: Name der langsamen API Die Beschreibung liefert weitere Details dazu, wie lange die API bereits aussteht.
+- **Nächste Schritte**: Untersuchen Sie, warum der Aufruf länger dauert als erwartet.
 
 Im folgenden Beispiel sind eine Partition mit Quorumverlust sowie die Schritte zur Ermittlung der Ursache zu sehen. Eines der Replikate weist den Integritätsstatus „Warning“ auf, sodass Sie über die Integrität informiert sind. Es wird angezeigt, dass der Dienstvorgang länger als erwartet dauert. Das Ereignis wird von System.RAP gemeldet. Wenn Sie diese Informationen erhalten haben, besteht der nächste Schritt darin, sich den Dienstcode anzusehen und ihn zu untersuchen. Für diesen Fall löst die **RunAsync**-Implementierung des zustandsbehafteten Diensts einen Ausnahmefehler aus. Beachten Sie, dass für die Replikate ein Recycling durchgeführt wird. Unter Umständen sehen Sie also keine Replikate mit dem Zustand „Warning“. Sie können den Integritätsstatus erneut abrufen und die Replikat-ID auf Unterschiede überprüfen. In bestimmten Fällen kann das aufschlussreich sein.
 
@@ -389,9 +458,9 @@ HealthEvents          :
 
 Wenn Sie die fehlerhafte Anwendung mit aktiviertem Debugger starten, wird in den Fenstern mit den Diagnoseereignissen die von RunAsync ausgelöste Ausnahme angezeigt:
 
-![Visual Studio 2015-Diagnoseereignisse: RunAsync-Fehler in „fabric:/HelloWorldStatefulApplication“.][1]
+![Visual Studio 2015-Diagnoseereignisse: RunAsync-Fehler in „fabric:/HelloWorldStatefulApplication“.][1]
 
-Visual Studio 2015-Diagnoseereignisse: RunAsync-Fehler in **fabric:/HelloWorldStatefulApplication**.
+Visual Studio 2015-Diagnoseereignisse: RunAsync-Fehler in **fabric:/HelloWorldStatefulApplication**.
 
 [1]: ./media/service-fabric-understand-and-troubleshoot-with-system-health-reports/servicefabric-health-vs-runasync-exception.png
 
@@ -400,17 +469,17 @@ Visual Studio 2015-Diagnoseereignisse: RunAsync-Fehler in **fabric:/HelloWorldS
 **System.Replicator** gibt eine Warnung aus, wenn die Replikationswarteschlange voll ist. Beim primären Element passiert dies in der Regel, weil sekundäre Replikate beim Bestätigen von Vorgängen sehr langsam sind. Beim sekundären Element geschieht dies gewöhnlich, wenn der Dienst langsam beim Anwenden der Vorgänge ist. Die Warnung wird gelöscht, wenn die Warteschlange nicht mehr voll ist.
 
 - **SourceId**: System.Replicator
-- **Eigenschaft**: **PrimaryReplicationQueueStatus** oder **SecondaryReplicationQueueStatus**, je nach Replikatrolle.
+- **Property**: **PrimaryReplicationQueueStatus** oder **SecondaryReplicationQueueStatus**, je nach Replikatrolle
 
 ## DeployedApplication-Systemintegritätsberichte
-**System.Hosting** ist die Autorität auf bereitgestellten Entitäten.
+**System.Hosting** ist die Autorität für bereitgestellte Entitäten.
 
 ### Aktivierung
 System.Hosting gibt die Meldung „OK“ aus, wenn eine Anwendung auf dem Knoten aktiviert wurde. Andernfalls wird ein Fehler gemeldet.
 
 - **SourceId**: System.Hosting
-- **Eigenschaft**: Activation (Aktivierung), einschließlich Rolloutversion
-- **Nächste Schritte**: Untersuchen Sie, warum die Aktivierung nicht erfolgreich war, falls die Anwendung fehlerhaft ist.
+- **Property**: Activation, einschließlich der Rolloutversion
+- **Nächste Schritte**: Falls die Anwendung fehlerhaft ist, untersuchen Sie, warum die Aktivierung nicht erfolgreich war.
 
 Das folgende Beispiel zeigt eine erfolgreiche Aktivierung:
 
@@ -440,33 +509,33 @@ HealthEvents                       :
 ```
 
 ### Download
-**System.Hosting** gibt einen Fehler aus, wenn das Herunterladen des Anwendungspakets nicht erfolgreich ist.
+**System.Hosting** gibt einen Fehler aus, wenn das Herunterladen des Anwendungspakets nicht erfolgreich war.
 
 - **SourceId**: System.Hosting
-- **Eigenschaft**: **Download:*RolloutVersion***
-- **Nächste Schritte**: Untersuchen Sie, warum das Herunterladen für den Knoten nicht erfolgreich war.
+- **Property**: **Download:*RolloutVersion***
+- **Nächste Schritte**: Untersuchen Sie, warum das Herunterladen auf dem Knoten nicht erfolgreich war.
 
 ## DeployedServicePackage-Systemintegritätsberichte
-**System.Hosting** ist die Autorität auf bereitgestellten Entitäten.
+**System.Hosting** ist die Autorität für bereitgestellte Entitäten.
 
 ### Aktivierung des Dienstpakets
 System.Hosting gibt die Meldung „OK“ aus, wenn die Aktivierung des Dienstpakets auf dem Knoten erfolgreich ist. Andernfalls wird ein Fehler gemeldet.
 
 - **SourceId**: System.Hosting
-- **Eigenschaft**: Activation (Aktivierung)
+- **Property**: Activation
 - **Nächste Schritte**: Untersuchen Sie, warum die Aktivierung nicht erfolgreich war.
 
 ### Aktivierung des Codepakets
-**System.Hosting** gibt die Meldung „OK“ für jedes Codepaket aus, wenn die Aktivierung erfolgreich ist. Wenn die Aktivierung nicht erfolgreich ist, wird gemäß Konfiguration eine Warnung ausgegeben. Wenn **CodePackage** nicht aktiviert werden kann oder mit einem Fehler beendet wird, der über den konfigurierten Wert unter **CodePackageHealthErrorThreshold** hinausgeht, gibt Hosting einen Fehler aus. Wenn ein Dienstpaket mehrere Codepakete enthält, wird jeweils ein eigener Aktivierungsbericht erstellt.
+**System.Hosting** gibt die Meldung „OK“ für jedes Codepaket aus, wenn die Aktivierung erfolgreich ist. Wenn die Aktivierung nicht erfolgreich ist, wird gemäß Konfiguration eine Warnung ausgegeben. Wenn **CodePackage** nicht aktiviert werden kann oder mit einem Fehler beendet wird, der über den unter **CodePackageHealthErrorThreshold** konfigurierten Wert hinausgeht, gibt Hosting einen Fehler aus. Wenn ein Dienstpaket mehrere Codepakete enthält, wird jeweils ein eigener Aktivierungsbericht erstellt.
 
 - **SourceId**: System.Hosting
-- **Eigenschaft**: Verwendet das Präfix **CodePackageActivation** und enthält den Namen des Codepakets und den Einstiegspunkt im Format **CodePackageActivation:*CodePackageName*:*SetupEntryPoint/EntryPoint*** (z. B. **CodePackageActivation:Code:SetupEntryPoint**).
+- **Property**: Verwendet das Präfix **CodePackageActivation** und enthält den Namen des Codepakets und den Einstiegspunkt im Format **CodePackageActivation:*CodePackageName*:*SetupEntryPoint/EntryPoint*** (z.B. **CodePackageActivation:Code:SetupEntryPoint**)
 
 ### Diensttypregistrierung
 **System.Hosting** gibt die Meldung „OK“ aus, wenn das Registrieren des Diensttyps erfolgreich war. Ein Fehler wird gemeldet, wenn die Registrierung nicht in der vorgegebenen Zeit erfolgt ist (gemäß Konfiguration mit **ServiceTypeRegistrationTimeout**). Die Registrierung des Diensttyps wird für den Knoten aufgehoben, weil die Laufzeit geschlossen wurde. In diesem Fall gibt Hosting eine Warnung aus.
 
 - **SourceId**: System.Hosting
-- **Eigenschaft**: Verwendet das Präfix **ServiceTypeRegistration** und enthält den Diensttypnamen (z. B. **ServiceTypeRegistration:FileStoreServiceType**).
+- **Property**: Verwendet das Präfix **ServiceTypeRegistration** und enthält den Diensttypnamen (z.B. **ServiceTypeRegistration:FileStoreServiceType**)
 
 Das folgende Beispiel zeigt ein fehlerfreies bereitgestelltes Dienstpaket:
 
@@ -517,18 +586,18 @@ HealthEvents          :
 ```
 
 ### Download
-**System.Hosting** gibt einen Fehler aus, wenn das Herunterladen des Dienstpakets nicht erfolgreich ist.
+**System.Hosting** gibt einen Fehler aus, wenn das Herunterladen des Dienstpakets nicht erfolgreich war.
 
 - **SourceId**: System.Hosting
-- **Eigenschaft**: **Download:*RolloutVersion***
-- **Nächste Schritte**: Untersuchen Sie, warum das Herunterladen für den Knoten nicht erfolgreich war.
+- **Property**: **Download:*RolloutVersion***
+- **Nächste Schritte**: Untersuchen Sie, warum das Herunterladen auf dem Knoten nicht erfolgreich war.
 
 ### Upgradeüberprüfung
-**System.Hosting** gibt einen Fehler aus, wenn die Überprüfung während des Upgrades nicht erfolgreich ist oder wenn das Upgrade auf dem Knoten zu einem Fehler führt.
+**System.Hosting** gibt einen Fehler aus, wenn die Validierung während des Upgrades nicht erfolgreich war oder wenn das Upgrade auf dem Knoten zu einem Fehler führt.
 
 - **SourceId**: System.Hosting
-- **Eigenschaft**: Verwendet das Präfix **FabricUpgradeValidation** und enthält die Upgradeversion.
-- **Beschreibung**: Zeigt auf den aufgetretenen Fehler.
+- **Property**: Verwendet das Präfix **FabricUpgradeValidation** und enthält die Upgradeversion
+- **Description**: Zeigt den aufgetretenen Fehler an
 
 ## Nächste Schritte
 [Anzeigen von Service Fabric-Integritätsberichten](service-fabric-view-entities-aggregated-health.md)
@@ -537,4 +606,4 @@ HealthEvents          :
 
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

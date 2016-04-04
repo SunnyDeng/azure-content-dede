@@ -1,80 +1,80 @@
 
 
-This article shows you how to deploy an Azure Virtual Machine Scale Set using a Visual Studio Resource Group Deployment.
+In diesem Artikel erfahren Sie, wie eine Azure-VM-Skalierungsgruppe über eine Visual Studio-Ressourcengruppenbereitstellung bereitgestellt wird.
 
 
-[Azure Virtual Machine Scale Sets](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/) are an Azure Compute resource to deploy and manage a collection of similar virtual machines with easily integrated options for auto-scale and load balancing. You can provision and deploy VM Scale Sets using [Azure Resource Manager (ARM) Templates](https://github.com/Azure/azure-quickstart-templates). ARM Templates can be deployed using Azure CLI, PowerShell, REST and also directly from Visual Studio. Visual Studio provides a set of example Templates which can be deployed as part of an Azure Resource Group Deployment project.
+[Azure-VM-Skalierungsgruppen](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/) sind eine Azure Compute-Ressource zur Bereitstellung und Verwaltung einer Auflistung ähnlicher virtueller Computer mit einfach integrierten Optionen für automatische Skalierung und Lastenausgleich. Sie können VM-Skalierungsgruppen über [ARM-Vorlagen (Azure-Ressourcen-Manager)](https://github.com/Azure/azure-quickstart-templates) bereitstellen. ARM-Vorlagen können mithilfe der Azure-Befehlszeilenschnittstelle, mit PowerShell, REST und auch direkt über Visual Studio bereitgestellt werden. Visual Studio bietet eine Reihe von Beispielvorlagen, die als Teil eines Azure-Projekts zur Ressourcengruppenbereitstellung bereitgestellt werden können.
 
-Azure Resource Group deployments are a way to group together and publish a set of related Azure resources in a single deployment operation. You can learn more about them here: [Creating and deploying Azure resource groups through Visual Studio](../vs-azure-tools-resource-groups-deployment-projects-create-deploy/).
+Azure-Ressourcengruppenbereitstellungen bieten eine Möglichkeit, mehrere zusammengehörige Azure-Ressourcen in einem einzelnen Bereitstellungsvorgang zusammenzufassen und zu veröffentlichen. Informationen dazu finden Sie hier: [Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio](../vs-azure-tools-resource-groups-deployment-projects-create-deploy/)
 
-## Pre-requisites
+## Voraussetzungen
 
-To get started deploying VM Scale Sets in Visual Studio you need the following:
+Um mit der Bereitstellung von VM-Skalierungsgruppen in Visual Studio zu beginnen, benötigen Sie Folgendes:
 
-- Visual Studio 2013 or 2015
-- Azure SDK 2.7 or 2.8
+- Visual Studio 2013 oder 2015
+- Azure SDK 2.7 oder 2.8
 
-Note: These instructions assume you are using Visual Studio 2015 with [Azure SDK 2.8](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/).
+Hinweis: In diesen Anweisungen wird davon ausgegangen, dass Sie Visual Studio 2015 mit [Azure SDK 2.8](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/) verwenden.
 
-## Creating a Project
+## Erstellen eines Projekts
 
-1. Create a new project in Visual Studio 2015 by choosing **File | New | Project**.
+1. Erstellen Sie ein neues Projekt in Visual Studio 2015 durch Auswählen von **Datei | Neu | Projekt**.
 
-	![File New][file_new]
+	![Datei - Neu][file_new]
 
-2. Under **Visual C# | Cloud**, choose **Azure Resource Manager** to create a project for deploying an ARM Template.
+2. Wählen Sie unter **Visual C# | Cloud** die Option **Azure-Ressourcen-Manager** aus, um ein Projekt zur Bereitstellung einer ARM-Vorlage zu erstellen.
 
-	![Create Project][create_project]
+	![Projekt erstellen][create_project]
 
-3.  From the list of Templates, select either the Linux or Windows Virtual Machine Scale Set Template.
+3.  Wählen Sie aus der Liste der Vorlagen die VM-Skalierungsgruppenvorlage für Linux oder Windows aus.
 
-	![Select Template][select_Template]
+	![Vorlage auswählen][select_Template]
 
-4. Once your project is created you’ll see PowerShell deployment scripts, an Azure Resource Manager Template, and a parameter file for the Virtual Machine Scale Set.
+4. Nachdem das Projekt erstellt wurde, werden PowerShell-Bereitstellungsskripts, eine Azure-Ressourcen-Manager-Vorlage und eine Parameterdatei für die VM-Skalierungsgruppe angezeigt.
 
-	![Solution Explorer][solution_explorer]
+	![Projektmappen-Explorer][solution_explorer]
 
-## Customize your project
+## Anpassen Ihres Projekts
 
-Now you can edit the Template to customize it for your application's needs, such as adding VM extension properties or editing load balancing rules. By default the VM Scale Set Templates are configured to deploy the AzureDiagnostics extension which makes it easy to add autoscale rules. It also deploys a load balancer with a public IP address, configured with inbound NAT rules which let you connect to the VM instances with SSH (Linux) or RDP (Windows) – the front end port range starts at 50000, which means in the case of Linux, if you SSH to port 50000 of the public IP address (or domain name) you will be routed to port 22 of the first VM in the Scale Set. Connecting to port 50001 will be routed to port 22 of the second VM and so on.
+Jetzt können Sie die Vorlage an die Anforderungen Ihrer Anwendung anpassen, beispielsweise VM-Erweiterungseigenschaften hinzufügen oder Lastenausgleichsregeln bearbeiten. Die VM-Skalierungsgruppenvorlagen sind standardmäßig so konfiguriert, dass die AzureDiagnostics-Erweiterung bereitgestellt wird. Auf diese Weise können ganz einfach Regeln zur automatischen Skalierung hinzugefügt werden. Zudem wird ein Lastenausgleichsmodul mit einer öffentlichen IP-Adresse bereitgestellt, das mit eingehenden NAT-Regeln konfiguriert ist, die Ihnen eine Verbindung der VM-Instanzen mit SSH (Linux) oder RDP (Windows) erlauben. Der Front-End-Portbereich beginnt bei 50000, wodurch Sie im Fall von Linux bei einer Verbindung per SSH mit Port 50000 der öffentlichen IP-Adresse (oder des Domänennamens) an Port 22 des ersten virtuellen Computers in der Skalierungsgruppe weitergeleitet werden. Durch Herstellen einer Verbindung mit Port 50001 werden Sie an Port 22 des zweiten virtuellen Computers weitergeleitet usw.
 
- A good way to edit your Templates with Visual Studio is to use the JSON Outline to organize the parameters, variables and resources. With an understanding of the schema Visual Studio can point out errors in your Template before you deploy it.
+ Eine gute Möglichkeit zum Bearbeiten Ihrer Vorlagen mit Visual Studio besteht darin, die JSON-Gliederung zum Organisieren der Parameter, Variablen und Ressourcen einzusetzen. Mit Kenntnis des Schemas kann Visual Studio Fehler in der Vorlage aufzeigen, bevor Sie sie bereitstellen.
 
-![JSON Explorer][json_explorer]
+![JSON-Explorer][json_explorer]
 
-## Deploy the project
+## Bereitstellen des Projekts
 
-6. Deploy the ARM Template to Azure to create the VM Scale Set resource. Right click on the project node, choose **Deploy | New Deployment**.
+6. Stellen Sie die ARM-Vorlage in Azure bereit, um die VM-Skalierungsgruppenressource zu erstellen. Klicken Sie mit der rechten Maustaste auf den Projektknoten, und wählen Sie **Bereitstellen | Neue Bereitstellung** aus.
 
-	![Deploy Template][5deploy_Template]
+	![Vorlage bereitstellen][5deploy_Template]
 
-7. Select your subscription in the “Deploy to Resource Group” dialog.
+7. Wählen Sie Ihr Abonnement im Dialogfeld „Für Ressourcengruppe bereitstellen“.
 
-	![Deploy Template][6deploy_Template]
+	![Vorlage bereitstellen][6deploy_Template]
 
-8. From here you can also create a new Azure Resource Group to deploy your Template to.
+8. Von hier aus können Sie auch eine neue Azure-Ressourcengruppe zum Bereitstellen Ihrer Vorlage erstellen.
 
-	![New Resource Group][new_resource]
+	![Neue Ressourcengruppe][new_resource]
 
-9. Next select the **Edit Parameters** button to enter parameters which will be passed to your Template, Certain values such as the username and password for the OS are required to create the deployment.
+9. Wählen Sie als Nächstes die Schaltfläche **Parameter bearbeiten**, um Parameter einzugeben, die an die Vorlage übergeben werden. Bestimmte Werte, wie der Benutzername und das Kennwort für das Betriebssystem, sind zum Erstellen der Bereitstellung erforderlich.
 
-	![Edit Parameters][edit_parameters]
+	![Parameter bearbeiten][edit_parameters]
 
-10. Now click **Deploy**. The **Output** window will show the deployment progress. Note that the the action is executing the **Deploy-AzureResourceGroup.ps1** script.
+10. Klicken Sie jetzt auf **Bereitstellen**. Das Fenster **Ausgabe** zeigt den Fortschritt der Bereitstellung. Beachten Sie, dass bei der Aktion das Skript **Deploy-AzureResourceGroup.ps1** ausgeführt wird.
 
-	![Output Window][output_window]
+	![Ausgabefenster][output_window]
 
-## Exploring your VM Scale Set
+## Untersuchen der VM-Skalierungsgruppe
 
-Once the deployment completes, you can view the new VM Scale Set in the Visual Studio **Cloud Explorer** (refresh the list). Cloud Explorer lets you manage Azure resources in Visual Studio while developing applications. You can also view your VM Scale Set in the Azure Portal and Azure Resource Explorer.
+Nachdem die Bereitstellung abgeschlossen ist, sehen Sie die neue VM-Skalierungsgruppe im **Cloud-Explorer** von Visual Studio (aktualisieren Sie die Liste). Mit dem Cloud-Explorer können Sie Azure-Ressourcen in Visual Studio verwalten und gleichzeitig Anwendungen entwickeln. Sie können außerdem Ihre VM-Skalierungsgruppe im Azure-Portal und im Azure-Ressourcen-Explorer anzeigen.
 
-![Cloud Explorer][cloud_explorer]
+![Cloud-Explorer][cloud_explorer]
 
- The portal provides the best way to visually manage your Azure infrastructure with a web browser, while Azure Resource Explorer provides an easy way to explorer and debug Azure resources, giving a window into the “instance view” and also showing PowerShell commands for the resources you are looking at. While VM Scale Sets are in preview, the Resource Explorer will show the most detail for your VM Scale Sets.
+ Das Portal bietet die beste Möglichkeit, Ihre Azure-Infrastruktur mit einem Webbrowser visuell zu verwalten, während der Azure-Ressourcen-Explorer eine einfache Möglichkeit zum Untersuchen und Debuggen von Azure-Ressourcen bietet. Er bietet Einblicke in die „Instanzsicht“ und führt PowerShell-Befehle für die Ressourcen auf, die Sie gerade anzeigen. Während sich VM-Skalierungsgruppen in der Vorschau befinden, zeigt der Ressourcen-Explorer die meisten Details für Ihre VM-Skalierungsgruppen an.
 
-## Next steps
+## Nächste Schritte
 
-Once you’ve successfully deployed VM Scale Sets through Visual Studio you can further customize your project to suit your application requirements. For example setting up autoscale by adding an Insights resource, adding infrastructure to your Template like standalone VMs, or deploying applications using the custom script extension. A good source of example Templates can be found in the [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates) GitHub repository (search for "vmss").
+Nachdem Sie VM-Skalierungsgruppen erfolgreich über Visual Studio bereitgestellt haben, können Sie Ihr Projekt den Anforderungen der Anwendung entsprechend weiter anpassen. Beispielsweise können Sie die automatische Skalierung einrichten, indem Sie eine Insights-Ressource hinzufügen, Ihrer Vorlage eine Infrastruktur wie z. B. eigenständige VMs hinzufügen oder Anwendungen über die benutzerdefinierte Skripterweiterung bereitstellen. Eine gute Quelle für Beispielvorlagen ist das GitHub-Repository für [Azure-Schnellstartvorlagen](https://github.com/Azure/azure-quickstart-templates) (suchen Sie nach „vmss“).
 
 [file_new]: ./media/virtual-machines-common-scale-sets-visual-studio/1-FileNew.png
 [create_project]: ./media/virtual-machines-common-scale-sets-visual-studio/2-CreateProject.png
@@ -87,3 +87,5 @@ Once you’ve successfully deployed VM Scale Sets through Visual Studio you can 
 [edit_parameters]: ./media/virtual-machines-common-scale-sets-visual-studio/8-EditParameter.png
 [output_window]: ./media/virtual-machines-common-scale-sets-visual-studio/9-Output.png
 [cloud_explorer]: ./media/virtual-machines-common-scale-sets-visual-studio/12-CloudExplorer.png
+
+<!---HONumber=AcomDC_0323_2016-->

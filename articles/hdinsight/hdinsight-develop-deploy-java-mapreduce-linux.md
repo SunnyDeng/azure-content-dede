@@ -39,7 +39,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariablen festgelegt werden. Sie sollten dennoch prüfen, ob die Variablen vorhanden sind und korrekte Werte für Ihr System enthalten.
 
-* **JAVA\_HOME** – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für ein OS X-, Unix- oder Linux-System sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert so ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA\_HOME** – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für ein OS X-, Unix- oder Linux-System sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert so ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** – sollte die folgenden Pfade enthalten:
 
@@ -59,9 +59,9 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 	Daraufhin wird ein neues Unterverzeichnis mit dem im __artifactID__-Parameter (**wordcountjava** in diesem Beispiel) angegebenen Namen im aktuellen Verzeichnis erstellt. Dieses Verzeichnis enthält die folgenden Elemente:
 
-	* __pom.xml__ – Das [Projektobjektmodell (POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), das die Informationen und Konfigurationsdetails für das Erstellen des Projekts enthält.
+	* __pom.xml__ – Das [Projektobjektmodell (POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), das die Informationen und Konfigurationsdetails für das Erstellen des Projekts enthält.
 
-	* __src__ – Das Verzeichnis, das das __main\\java\\org\\apache\\hadoop\\examples__-Verzeichnis enthält, in dem Sie die Anwendung erstellen werden.
+	* __src__ – Das Verzeichnis, das das __main\\java\\org\\apache\\hadoop\\examples__-Verzeichnis enthält, in dem Sie die Anwendung erstellen werden.
 
 3. Löschen Sie die Datei __src\\test\\java\\org\\apache\\hadoop\\examples\\apptest.java__, da diese in diesem Beispiel nicht verwendet wird.
 
@@ -280,10 +280,6 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](https://az
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
 [hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-
-
-
 [hdinsight-upload-data]: hdinsight-upload-data.md
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
 [hdinsight-use-hive]: hdinsight-use-hive.md
@@ -292,4 +288,4 @@ Weitere Informationen finden Sie außerdem im [Java Developer Center](https://az
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

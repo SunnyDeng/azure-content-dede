@@ -1,23 +1,25 @@
-### VPN type for the Resource Manager deployment model
+### VPN-Typ für das Resource Manager-Bereitstellungsmodell
 
-|      | **Route-based**    | **Policy-based** |
+| | **Routenbasiert** | **Richtlinienbasiert** |
 |-----------------------------------|--------------------|------------------|
-| **Site-to-Site**                  | yes                | yes              |
-| **VNet-to-VNet**                  | yes                | no               |
-| **Multi-Site**                    | yes                | no               |
-| **S2S and ExpressRoute coexist**  | not yet available  | no               |
-| **Point-to-Site**                 | yes                | no               |
-| **Classic to Resource Manager**   | yes                | no               |
+| **Standort-zu-Standort** | Ja | Ja |
+| **VNet-zu-VNet** | Ja | no |
+| **Multi-Site** | Ja | no |
+| **Gemeinsame Verwendung von S2S und ExpressRoute** | noch nicht verfügbar | no |
+| **Punkt-zu-Standort** | Ja | no |
+| **Von klassisch zum Ressourcen-Manager** | Ja | no |
 
 
-### VPN type for the classic deployment model
+### VPN-Typ für das klassische Bereitstellungsmodell
 
 
-|       | **Dynamic**        | **Static**   |
+| | **Dynamisch** | **Statisch** |
 |---------------------------------------------|--------------------|--------------|
-| **Site-to-Site**                            | yes                | yes          |
-| **VNet-to-VNet**                            | yes                | no           |
-| **Multi-Site**                              | yes                | no           |
-| **S2S and ExpressRoute coexist**            | yes                | no           |
-| **Point-to-Site**                           | yes                | no           |
-| **Classic to Resource Manager**             | yes                | no           |
+| **Standort-zu-Standort** | Ja | Ja |
+| **VNet-zu-VNet** | Ja | no |
+| **Multi-Site** | Ja | no |
+| **Gemeinsame Verwendung von S2S und ExpressRoute** | Ja | no |
+| **Punkt-zu-Standort** | Ja | no |
+| **Von klassisch zum Ressourcen-Manager** | Ja | no |
+
+<!---HONumber=AcomDC_0323_2016-->

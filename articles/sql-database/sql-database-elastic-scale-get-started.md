@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/02/2016" 
+	ms.date="03/22/2016" 
 	ms.author="ddove;sidneyh"/>
 
 # Erste Schritte mit Tools für elastische Datenbanken
@@ -35,7 +35,7 @@ Die Beispielanwendung unter **Elastische Datenbank mit Azure SQL – Erste Schri
     ![Neues Projekt > Online][2]
 3. Klicken Sie anschließend unter **Beispiele** auf **Visual C#**.
 
-    ![Auf Visual C# klicken][3]
+    ![Auf Visual C# klicken][3]
 4. Geben Sie in das Suchfeld **elastische Datenbank** ein, um nach dem Beispiel zu suchen. Der Titel **Tools für elastische Datenbanken für Azure SQL – Erste Schritte** wird angezeigt.
 
     ![Suchfeld][1]
@@ -68,14 +68,14 @@ Herzlichen Glückwunsch! Sie haben Ihre erste Sharding-Anwendung mit den Tools f
 
 Die Tools für elastische Datenbanken sind kostenlos. Durch Tools für elastische Datenbanken entstehen keine zusätzlichen Gebühren zu den Kosten der Azure-Nutzung.
 
-Die Beispielanwendung erstellt z. B. neue Datenbanken. Die Kosten richten sich nach der Azure SQL DB-Datenbankedition, die Sie wählen, sowie nach der Azure-Nutzung Ihrer Anwendung.
+Die Beispielanwendung erstellt z. B. neue Datenbanken. Die Kosten richten sich nach der Azure SQL DB-Datenbankedition, die Sie wählen, sowie nach der Azure-Nutzung Ihrer Anwendung.
 
 Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](https://azure.microsoft.com/pricing/details/sql-database/).
 
 ## Nächste Schritte
 Weitere Informationen zu den Tools für elastische Datenbanken finden Sie unter:
 
-* [Dokumentationsübersicht zu Tools für elastische Datenbanken](../learning-paths/sql-database-elastic-scale.md) 
+* [Dokumentationsübersicht zu Tools für elastische Datenbanken](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale/) 
 -    Codebeispiele: 
     -    [Elastische Datenbank mit Azure SQL – Erste Schritte](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE)
     -    [Elastische Datenbank mit Azure SQL – Integration in Entity Framework](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)
@@ -98,4 +98,4 @@ Weitere Informationen zu den Tools für elastische Datenbanken finden Sie unter:
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -22,4 +22,4 @@ In diesem Schritt erstellen Sie manuell den Verfügbarkeitsgruppenlistener im Fa
 	>[AZURE.NOTE] Kann der Listener später durch eine in Konflikt stehende IP-Adresse, die von DHCP ausgewählt wird, nicht online geschaltet werden, können Sie im Eigenschaftenfenster eine gültige statische IP-Adresse konfigurieren.
 
 1. Ändern Sie im gleichen Eigenschaftenfenster **IP-Adresse** den Wert für **IP-Adressname**. Dieser IP-Adressname wird in der Variablen **$IPResourceName** des PowerShell-Skripts verwendet. Wiederholen Sie diesen Schritt für jede IP-Ressource, wenn die Lösung mehrere Azure-VNets umfasst.
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=Oct15_HO3-->

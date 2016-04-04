@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="03/16/2016"
 	ms.author="tobiast"/>
 
 
@@ -34,11 +34,11 @@
 
 Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
-## Schritt 1: Abrufen der Verbindungszeichenfolge
+## Schritt 1: Abrufen der Verbindungszeichenfolge
 
 [AZURE.INCLUDE [sql-database-include-connection-string-dotnet-20-portalshots](../../includes/sql-database-include-connection-string-dotnet-20-portalshots.md)]
 
-## Schritt 2: Verbinden
+## Schritt 2: Verbinden
 
 Die [System.Data.SqlClient.SqlConnection-Klasse](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx) wird zum Herstellen von Verbindungen mit SQL-Datenbanken verwendet.
 
@@ -58,7 +58,7 @@ class Sample
 }
 ```
 
-## Schritt 3: Ausführen einer Abfrage
+## Schritt 3: Ausführen einer Abfrage
 
 Mit der [System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx)-Klasse und der [SqlDataReader](https://msdn.microsoft.com/library/system.data.sqlclient.sqldatareader.aspx)-Klasse können Sie ein Resultset aus einer Abfrage an eine SQL-Datenbank abrufen. Beachten Sie, dass "System.Data.SqlClient" auch das Abrufen von Daten in ein Offline-[System.Data.DataSet](https://msdn.microsoft.com/library/system.data.dataset.aspx) unterstützt.
 
@@ -98,7 +98,7 @@ class Sample
 
 ```  
 
-## Schritt 4: Einfügen einer Zeile
+## Schritt 4: Einfügen einer Zeile
 
 In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
 
@@ -133,4 +133,4 @@ class Sample
 }
 ```
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0323_2016-->

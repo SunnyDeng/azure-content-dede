@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/10/2015"
+   ms.date="03/23/2016"
    ms.author="yuridio"/>
 
 #Erste Schritte mit Microsoft Azure-Sicherheit
@@ -33,9 +33,9 @@ In diesem allgemeinen Artikel zur Sicherheit von Azure werden folgende Themen be
 
 Das Steuern des Zugriffs auf die IT-Infrastruktur, Daten und Anwendungen ist von größter Bedeutung. In Microsoft Azure werden diese Funktionen von Diensten wie Azure Active Directory und Azure Storage sowie durch die Unterstützung für zahlreiche Standards und APIs bereitgestellt.
 
-[Azure Active Directory](active-directory-whatis.md) (Azure AD) ist ein Identitätsrepository und Modul, das Authentifizierung, Autorisierung und Zugriffssteuerung für die Benutzer, Gruppen und Objekte einer Organisation bietet. Azure AD stellt Entwicklern außerdem eine effektive Methode zur Verfügung, um die Identitätsverwaltung in ihre Anwendungen zu integrieren. Standardprotokolle wie [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0), [WS-Federation](https://msdn.microsoft.com/library/bb498017.aspx) und [OpenID Connect](http://openid.net/connect/) ermöglichen die Anmeldung an vielerlei Plattformen wie .NET, Java, Node.js und PHP.
+[Azure Active Directory](./active-directory/active-directory-whatis.md) (Azure AD) ist ein Identitätsrepository und Modul, das Authentifizierung, Autorisierung und Zugriffssteuerung für die Benutzer, Gruppen und Objekte einer Organisation bietet. Azure AD stellt Entwicklern außerdem eine effektive Methode zur Verfügung, um die Identitätsverwaltung in ihre Anwendungen zu integrieren. Standardprotokolle wie [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0), [WS-Federation](https://msdn.microsoft.com/library/bb498017.aspx) und [OpenID Connect](http://openid.net/connect/) ermöglichen die Anmeldung an vielerlei Plattformen wie .NET, Java, Node.js und PHP.
 
-Die REST-basierte Diagramm-API ermöglicht Entwicklern von jeder Plattform aus das Lesen und Schreiben im Verzeichnis. Durch die Unterstützung für [OAuth 2.0](http://oauth.net/2/) können Entwickler mobile und Webanwendungen, die in Web-APIs von Microsoft und Drittanbietern integriert sind, und eigene sichere Web-APIs erstellen. Open Source Client-Bibliotheken sind für .Net, Windows Store, iOS und Android verfügbar, weitere Bibliotheken werden aktuell entwickelt.
+Die REST-basierte Diagramm-API ermöglicht Entwicklern von jeder Plattform aus das Lesen und Schreiben im Verzeichnis. Durch die Unterstützung für [OAuth 2.0](http://oauth.net/2/) können Entwickler mobile und Webanwendungen, die in Web-APIs von Microsoft und Drittanbietern integriert sind, und eigene sichere Web-APIs erstellen. Open Source Client-Bibliotheken sind für .Net, Windows Store, iOS und Android verfügbar, weitere Bibliotheken werden aktuell entwickelt.
 
 ### Umsetzung der Identitäts- und Zugriffsverwaltung in Azure
 
@@ -45,11 +45,11 @@ Im Folgenden sind einige weitere Möglichkeiten zur Identitäts- und Zugriffsver
 
 -   Azure AD ermöglicht [SSO](https://azure.microsoft.com/documentation/videos/overview-of-single-sign-on/) für SaaS-Anwendungen, unabhängig davon, wo sie gehostet werden. Einige Anwendungen bilden einen Verbund mit Azure AD, andere verwenden Kennwort-SSO. Verbundanwendungen können auch die Benutzerbereitstellung und Kennworttresore unterstützen.
 
--   Zugriff auf Daten in [Azure Storage](https://azure.microsoft.com/services/storage/) wird über die Authentifizierung gesteuert. Jedes Storage-Konto verfügt über einen Primärschlüssel ([Speicherkontoschlüssel](https://msdn.microsoft.com/library/azure/ee460785.aspx)) und einen sekundären geheimen Schlüssel (die [Shared Access Signature](storage-dotnet-shared-access-signature-part-1.md) oder SAS).
+-   Zugriff auf Daten in [Azure Storage](https://azure.microsoft.com/services/storage/) wird über die Authentifizierung gesteuert. Jedes Speicherkonto verfügt über einen Primärschlüssel ([Speicherkontoschlüssel](https://msdn.microsoft.com/library/azure/ee460785.aspx)) und einen sekundären geheimen Schlüssel (Shared Access Signature, SAS).
 
--   Azure AD bietet Identity-as-a-Service durch Verbund (mit den [Active Directory-Verbunddiensten](fundamentals-identity.md), Synchronisierung und Replikation mit lokalen Verzeichnissen.
+-   Azure AD bietet Identity-as-a-Service durch Verbund (mit den [Active Directory-Verbunddiensten](./active-directory/fundamentals-identity.md), Synchronisierung und Replikation mit lokalen Verzeichnissen.
 
--   [Azure Multi-Factor Authentication (MFA)](multi-factor-authentication.md) ist der Dienst zur mehrstufigen Authentifizierung, der Benutzer zur Verifizierung der Anmeldung über eine mobile App, einen Telefonanruf oder eine Textnachricht auffordert. Er kann mit Azure AD verwendet werden, um lokale Ressourcen mit dem Azure MFA-Server zu sichern, sowie für benutzerdefinierte Anwendungen und Verzeichnisse, die das SDK verwenden.
+-   [Azure Multi-Factor Authentication (MFA)](./multi-factor-authentication/multi-factor-authentication.md) ist der Dienst zur mehrstufigen Authentifizierung, der Benutzer zur Verifizierung der Anmeldung über eine mobile App, einen Telefonanruf oder eine Textnachricht auffordert. Er kann mit Azure AD verwendet werden, um lokale Ressourcen mit dem Azure MFA-Server zu sichern, sowie für benutzerdefinierte Anwendungen und Verzeichnisse, die das SDK verwenden.
 
 -   Mit [Azure AD-Domänendiensten](https://azure.microsoft.com/services/active-directory-ds/) können Sie virtuelle Azure-Computer in eine Domäne einbinden, ohne Domänencontroller bereitstellen zu müssen. Benutzer können sich bei diesen virtuellen Computern mithilfe ihrer Active Directory-Unternehmensanmeldeinformationen anmelden und in die Domäne eingebundene virtuelle Computer anhand von Gruppenrichtlinien verwalten, um Sicherheitsbaselines für alle virtuellen Azure-Computer durchzusetzen.
 
@@ -65,7 +65,7 @@ Darüber hinaus bietet Azure mehrere Funktionen zum Schutz von Daten während de
 
 ### Azure-Verschlüsselungstechniken
 
-Mit der [Azure AD-Berichterstellung](active-directory-reporting-audit-events.md) können Sie Details zum Administratorzugriff auf Ihre Abonnementumgebung sammeln. Sie haben die Möglichkeit zum Konfigurieren der [BitLocker-Laufwerkverschlüsselung](https://technet.microsoft.com/library/cc732774.aspx) auf virtuellen Festplatten mit vertraulichen Informationen in Azure.
+Mit der [Azure AD-Berichterstellung](./active-directory/active-directory-reporting-audit-events.md) können Sie Details zum Administratorzugriff auf Ihre Abonnementumgebung sammeln. Sie haben die Möglichkeit zum Konfigurieren der [BitLocker-Laufwerkverschlüsselung](https://technet.microsoft.com/library/cc732774.aspx) auf virtuellen Festplatten mit vertraulichen Informationen in Azure.
 
 Weitere Möglichkeiten zum Schutz Ihrer Daten in Azure:
 
@@ -113,7 +113,7 @@ Azure implementiert die [Netzwerkzugriffssteuerung](https://azure.microsoft.com/
 
 Die Netzwerkadressenübersetzung wird zum Trennen des internen Netzwerkdatenverkehrs vom externen Datenverkehr eingesetzt. Der interne Datenverkehr kann nicht extern geroutet werden. [Virtuelle IP-Adressen](http://blogs.msdn.com/b/cloud_solution_architect/archive/2014/11/08/vips-dips-and-pips-in-microsoft-azure.aspx), die extern geroutet werden können, werden in [interne dynamische IP-Adressen](http://blogs.msdn.com/b/cloud_solution_architect/archive/2014/11/08/vips-dips-and-pips-in-microsoft-azure.aspx) übersetzt, die nur innerhalb von Azure geroutet werden können.
 
-Externer Datenverkehr an virtuelle Azure-Computer wird auf Routern, Lastenausgleichsmodulen und Schicht 3-Switches über die Zugriffssteuerungslisten (ACLs) durch eine Firewall geleitet. Nur bestimmte bekannte Protokolle sind zulässig. ACLs begrenzen den Datenverkehr von virtuellen Gastcomputern an andere VLANs, die zur Verwaltung verwendet werden. Darüber hinaus wird der Datenverkehr sowohl auf der Sicherungsschicht als auch auf der Vermittlungsschicht über IP-Filter auf dem Hostbetriebssystem weiter begrenzt.
+Externer Datenverkehr an virtuelle Azure-Computer wird auf Routern, Lastenausgleichsmodulen und Schicht 3-Switches über die Zugriffssteuerungslisten (ACLs) durch eine Firewall geleitet. Nur bestimmte bekannte Protokolle sind zulässig. ACLs begrenzen den Datenverkehr von virtuellen Gastcomputern an andere VLANs, die zur Verwaltung verwendet werden. Darüber hinaus wird der Datenverkehr sowohl auf der Sicherungsschicht als auch auf der Vermittlungsschicht über IP-Filter auf dem Hostbetriebssystem weiter begrenzt.
 
 ### Implementierung der Isolation in Azure
 
@@ -151,15 +151,15 @@ Sie können Ihre virtuellen Computer in [Azure Virtual Networks](https://azure.m
 
 Die folgenden Azure Virtual Network-Technologien können Sie einsetzen, um die Kommunikation in Ihrem Azure Virtual Network zu sichern:
 
--   [**Netzwerksicherheitsgruppen**](virtual-networks-nsg.md). Mit einer NSG können Sie eingehenden Datenverkehr für Instanzen virtueller Computer in Ihrem virtuellen Netzwerk steuern. Eine NSG enthält Regeln zur Zugriffssteuerung, die den Datenverkehr auf Grundlage der Richtung des Datenverkehrs, des Protokolls, der Quelladresse und des Quellports, und der Zieladresse und des Zielports zulässt oder verweigert.
+-   [**Netzwerksicherheitsgruppen**](./virtual-network/virtual-networks-nsg.md). Mit einer NSG können Sie eingehenden Datenverkehr für Instanzen virtueller Computer in Ihrem virtuellen Netzwerk steuern. Eine NSG enthält Regeln zur Zugriffssteuerung, die den Datenverkehr auf Grundlage der Richtung des Datenverkehrs, des Protokolls, der Quelladresse und des Quellports, und der Zieladresse und des Zielports zulässt oder verweigert.
 
--   [**Benutzerdefiniertes Routing**](virtual-networks-udr-overview.md). Sie können das Routing von Paketen über ein virtuelles Gerät steuern, indem Sie benutzerdefinierte Routen erstellen, die festlegen, dass der nächste Hop für in ein bestimmtes Subnetz gesendete Pakete an Ihr virtuelles Netzwerksicherheitsgerät erfolgen soll.
+-   [**Benutzerdefiniertes Routing**](./virtual-network/virtual-networks-udr-overview.md). Sie können das Routing von Paketen über ein virtuelles Gerät steuern, indem Sie benutzerdefinierte Routen erstellen, die festlegen, dass der nächste Hop für in ein bestimmtes Subnetz gesendete Pakete an Ihr virtuelles Netzwerksicherheitsgerät erfolgen soll.
 
--   [**IP-Weiterleitung**](virtual-networks-udr-overview.md). Ein virtuelles Netzwerksicherheitsgerät muss eingehenden Datenverkehr empfangen können, der nicht an das Gerät selbst adressiert ist. Damit ein virtueller Computer an andere Ziele gerichteten Datenverkehr empfangen kann, aktivieren Sie für den virtuellen Computer die IP-Weiterleitung.
+-   [**IP-Weiterleitung**](./virtual-network/virtual-networks-udr-overview.md). Ein virtuelles Netzwerksicherheitsgerät muss eingehenden Datenverkehr empfangen können, der nicht an das Gerät selbst adressiert ist. Damit ein virtueller Computer an andere Ziele gerichteten Datenverkehr empfangen kann, aktivieren Sie für den virtuellen Computer die IP-Weiterleitung.
 
--   [**Tunnelerzwingung**](vpn-gateway-about-forced-tunneling.md). Über die Tunnelerzwingung können Sie die Umleitung des gesamten Internetdatenverkehrs, der von Ihren virtuellen Computern in einem Azure Virtual Network generiert wird, an Ihren lokalen Standort "erzwingen". Sie verwenden dazu einen Standort-zu-Standort-VPN-Tunnel für die Kontrolle und Überwachung.
+-   [**Tunnelerzwingung**](./vpn-gateway/vpn-gateway-about-forced-tunneling.md). Über die Tunnelerzwingung können Sie die Umleitung des gesamten Internetdatenverkehrs, der von Ihren virtuellen Computern in einem Azure Virtual Network generiert wird, an Ihren lokalen Standort "erzwingen". Sie verwenden dazu einen Standort-zu-Standort-VPN-Tunnel für die Kontrolle und Überwachung.
 
--   [**Endpunkt**-ACLs](virtual-machines-set-up-endpoints.md). Sie können steuern, welchen Computern eingehende Verbindungen aus dem Internet an einen virtuellen Computer in Ihrem Azure Virtual Network gestattet werden, indem Sie Endpunkt-ACLs definieren.
+-   [**Endpunkt**-ACLs](./virtual-machines/virtual-machines-windows-classic-setup-endpoints.md). Sie können steuern, welchen Computern eingehende Verbindungen aus dem Internet an einen virtuellen Computer in Ihrem Azure Virtual Network gestattet werden, indem Sie Endpunkt-ACLs definieren.
 
 -   [**Partnerlösungen zur Netzwerksicherheit**](https://azure.microsoft.com/marketplace/). Es gibt eine Reihe von Partnerlösungen zur Netzwerksicherheit, auf die Sie über den Azure Marketplace zugreifen können.
 
@@ -177,21 +177,21 @@ Wenn Azure die Daten eines Kunden im Zuge des normalen Betriebs oder bei einem N
 
 -   **Speicherfirewall (FW)**: Die Firewall im Speicher-Front-End filtert den Datenverkehr, sodass er nur die Ports 80/443 und andere benötigte Hilfsprogrammports passieren kann. Die Firewall im Speicher-Back-End beschränkt die Kommunikation auf Datenverkehr von den Speicher-Front-End-Servern.
 
--   **Gateway von Virtual Network**: [Azure Virtual Network-Gateways](virtual-networks-configure-vnet-to-vnet-connection.md) dienen als standortübergreifende Gateways, die Ihre Workloads in Azure Virtual Network mit Ihren lokalen Standorten verbinden. Die Verbindung mit lokalen Standorten muss über [IPSec-Standort-zu-Standort-VPN-Tunnel](vpn-gateway-create-site-to-site-rm-powershell.md) oder über [ExpressRoute](expressroute-introduction.md)-Schaltkreise erfolgen. Für IPsec/IKE-VPN-Tunnel führen die Gateways IKE-Handshakes durch und richten die IPsec-S2S-VPN-Tunnel zwischen den Virtual Networks und lokalen Standorten ein. Virtual Network-Gateways beenden außerdem [Punkt-zu-Standort-VPNs](vpn-gateway-point-to-site-create.md).
+-   **Gateway von Virtual Network**: [Azure Virtual Network-Gateways](./vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md) dienen als standortübergreifende Gateways, die Ihre Workloads in Azure Virtual Network mit Ihren lokalen Standorten verbinden. Die Verbindung mit lokalen Standorten muss über [IPSec-Standort-zu-Standort-VPN-Tunnel](./vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md) oder über [ExpressRoute](./expressroute/expressroute-introduction.md)-Schaltkreise erfolgen. Für IPsec/IKE-VPN-Tunnel führen die Gateways IKE-Handshakes durch und richten die IPsec-S2S-VPN-Tunnel zwischen den Virtual Networks und lokalen Standorten ein. Virtual Network-Gateways beenden außerdem [Punkt-zu-Standort-VPNs](./vpn-gateway/vpn-gateway-point-to-site-create.md).
 
 ##Sicherer Remotezugriff
 
 In der Cloud gespeicherte Daten müssen ausreichende Schutzvorrichtungen aktiviert haben, um Exploits zu verhindern und bei der Übertragung die Vertraulichkeit und Integrität zu wahren. Dies schließt die Netzwerksteuerfunktionen ein, die mit den richtlinienbasierten, überprüfbaren Mechanismen zur Identitäts- und Zugriffsverwaltung einer Organisation einhergehen.
 
-Die integrierte Kryptografietechnologie ermöglicht Ihnen das Verschlüsseln der Kommunikation innerhalb von und zwischen Bereitstellungen, zwischen Azure-Regionen und von Azure zu lokalen Datencentern. Der Administratorzugriff auf virtuelle Computer über [Remotedesktopsitzungen](virtual-machines-log-on-windows-server.md), [Remote-Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) und das [Azure-Verwaltungsportal](https://azure.microsoft.com/overview/preview-portal/) wird immer verschlüsselt.
+Die integrierte Kryptografietechnologie ermöglicht Ihnen das Verschlüsseln der Kommunikation innerhalb von und zwischen Bereitstellungen, zwischen Azure-Regionen und von Azure zu lokalen Datencentern. Der Administratorzugriff auf virtuelle Computer über [Remotedesktopsitzungen](./virtual-machines/virtual-machines-windows-classic-connect-logon.md), [Remote-Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) und das Azure-Verwaltungsportal wird immer verschlüsselt.
 
-Um Ihr lokales Datencenter sicher auf die Cloud zu erweitern, bietet Azure sowohl [Standort-zu-Standort-VPN](vpn-gateway-create-site-to-site-rm-powershell.md) als auch [Punkt-zu-Standort-VPN](vpn-gateway-point-to-site-create.md) sowie dedizierte Verknüpfungen über [ExpressRoute](expressroute-introduction.md) (Verbindungen mit Azure Virtual Networks über VPN sind verschlüsselt).
+Um Ihr lokales Datencenter sicher auf die Cloud zu erweitern, bietet Azure sowohl [Standort-zu-Standort-VPN](./vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md) als auch [Punkt-zu-Standort-VPN](./vpn-gateway/vpn-gateway-point-to-site-create.md) sowie dedizierte Verknüpfungen über [ExpressRoute](./expressroute/expressroute-introduction.md) (Verbindungen mit Azure Virtual Networks über VPN sind verschlüsselt).
 
 ### Implementierung des sicheren Remotezugriffs in Azure
 
 Für Verbindungen mit dem Azure-Portal sind immer eine Authentifizierung und SSL/TLS erforderlich. Sie können Verwaltungszertifikate konfigurieren, um eine sichere Verwaltung zu ermöglichen. Sichere Protokolle nach Industriestandard, wie z. B. [SSTP](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) und [IPsec](https://en.wikipedia.org/wiki/IPsec), werden vollständig unterstützt.
 
-[Azure ExpressRoute](expressroute-introduction.md) ermöglicht Ihnen das Herstellen privater Verbindungen zwischen Azure-Datencentern und einer Infrastruktur, die sich bei Ihnen vor Ort oder in einer Kollokationsumgebung befindet. ExpressRoute-Verbindungen verlaufen nicht über das öffentliche Internet. Sie bieten mehr Zuverlässigkeit, schnellere Geschwindigkeiten, geringere Wartezeiten und größere Sicherheit als normale internetbasierte Links. In einigen Fällen können durch die Verwendung von ExpressRoute-Verbindungen zum Übertragen von Daten zwischen lokalen Standorten und Azure auch drastische Kosteneinsparungen erzielt werden.
+[Azure ExpressRoute](./expressroute/expressroute-introduction.md) ermöglicht Ihnen das Herstellen privater Verbindungen zwischen Azure-Datencentern und einer Infrastruktur, die sich bei Ihnen vor Ort oder in einer Kollokationsumgebung befindet. ExpressRoute-Verbindungen verlaufen nicht über das öffentliche Internet. Sie bieten mehr Zuverlässigkeit, schnellere Geschwindigkeiten, geringere Wartezeiten und größere Sicherheit als normale internetbasierte Links. In einigen Fällen können durch die Verwendung von ExpressRoute-Verbindungen zum Übertragen von Daten zwischen lokalen Standorten und Azure auch drastische Kosteneinsparungen erzielt werden.
 
 ##Protokollierung und Überwachung
 
@@ -241,4 +241,4 @@ Azure verfügt über Sicherheitskontrollen, um die Bedrohungsabwehr zu implement
 
 [Active Directory-Blog](http://blogs.technet.com/b/ad/)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

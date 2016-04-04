@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="php"
 	ms.topic="article"
-	ms.date="12/17/2015"
+	ms.date="03/18/2016"
 	ms.author="meetb"/>
 
 
@@ -34,15 +34,18 @@ In diesem Thema wird veranschaulicht, wie Sie von einer in PHP geschriebenen Cli
 Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
 
-## Schritt 1: Abrufen der Verbindungsdetails
+## Schritt 1: Abrufen der Verbindungsdetails
 
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
-## Schritt 2: Herstellen der Verbindung und Abfragen
+## Schritt 2: Herstellen der Verbindung und Abfragen
 
 Das Demoprogramm wurde so entworfen, dass ein vorübergehender Fehler beim Herstellen einer Verbindung zu einer Wiederholung führt. Ein vorübergehender Fehler während des Abfragebefehls bewirkt jedoch, dass das Programm die Verbindung verwirft und eine neue Verbindung herstellt, bevor der Abfragebefehl wiederholt wird. Microsoft spricht keinerlei Empfehlung für oder gegen diese Entwurfsentscheidung aus. Das Demoprogramm soll lediglich die Entwurfsflexibilität veranschaulichen, die Ihnen zur Verfügung steht.
 
-<br>Die Länge dieses Codebeispiel ist größtenteils auf die Catch-Exception-Logik zurückzuführen. Eine kürzere Version der Datei „Program.cs“ finden Sie [hier](sql-database-develop-php-simple-windows.md). <br>Die Main-Methode befindet sich in der Datei "Program.cs". Die Aufrufreihenfolge lautet wie folgt: * Main calls ConnectAndQuery. * ConnectAndQuery calls EstablishConnection. * EstablishConnection calls IssueQueryCommand.
+<br>Die Länge dieses Codebeispiel ist größtenteils auf die Catch-Exception-Logik zurückzuführen. Eine kürzere Version der Datei „Program.cs“ finden Sie [hier](sql-database-develop-php-simple-windows.md). <br>Die Main-Methode befindet sich in der Datei "Program.cs". Die Aufrufreihenfolge lautet wie folgt:
+* Main calls ConnectAndQuery.
+* ConnectAndQuery calls EstablishConnection.
+* EstablishConnection calls IssueQueryCommand.
 
 Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und das Verbindungsobjekt und gibt ein Resultset zurück, das mithilfe von [sqlsrv\_fetch\_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php) durchlaufen werden kann.
 
@@ -134,6 +137,6 @@ Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Fu
 
 ## Nächste Schritte
 
-Weitere Informationen über die Installation und Verwendung von PHP finden Sie unter [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx) (Zugreifen auf SQL Server-Datenbanken mit PHP, in englischer Sprache).
+Weitere Informationen über die Installation und Verwendung von PHP finden Sie unter [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx) (Zugreifen auf SQL Server-Datenbanken mit PHP, in englischer Sprache).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0323_2016-->

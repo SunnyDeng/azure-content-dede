@@ -47,7 +47,7 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 
 Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](https://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-## Phase 1: Einrichten der Hybridcloudumgebung
+## Phase 1: Einrichten der Hybridcloudumgebung
 
 Folgen Sie den Anweisungen im Thema [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md). Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
 
@@ -55,9 +55,9 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_1.png)
 
-> [AZURE.NOTE] Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
+> [AZURE.NOTE] Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
 
-## Phase 2: Konfigurieren der Testversion von Office 365 Fast Track
+## Phase 2: Konfigurieren der Testversion von Office 365 Fast Track
 
 Um Ihre Testversion von Office 365 Fast Track zu starten, benötigen Sie einen fiktiven Firmennamen und ein Microsoft-Konto. Wir empfehlen Ihnen, dass Sie eine Variante des Unternehmensnamens Contoso für den Namen Ihres Unternehmens verwenden. Das ist ein fiktives Unternehmen, das in Microsoft-Beispielinhalten verwendet wird, wobei dies aber nicht unbedingt erforderlich ist.
 
@@ -71,7 +71,7 @@ Melden Sie sich als Nächstes für eine neue Office 365 Enterprise E3-Testversio
 
 Wenn Sie zur Eingabe Ihrer **geschäftlichen E-Mail-Adresse** aufgefordert werden, geben Sie Ihr neues Microsoft-Konto an.
 
-Wenn Sie zum Erstellen einer ID aufgefordert werden, geben Sie den Namen eines anfänglichen Office 365-Kontos, den fiktiven Firmennamen und ein Kennwort ein. Notieren Sie die zurückgegebene E-Mail-Adresse (z. B. user123@contoso123.onmicrosoft.com), und bewahren Sie sie mit dem Kennwort sicher auf. Sie benötigen diese Informationen, um die Azure AD Connect-Konfiguration in Phase 3 abzuschließen.
+Wenn Sie zum Erstellen einer ID aufgefordert werden, geben Sie den Namen eines anfänglichen Office 365-Kontos, den fiktiven Firmennamen und ein Kennwort ein. Notieren Sie die zurückgegebene E-Mail-Adresse (z. B. user123@contoso123.onmicrosoft.com), und bewahren Sie sie mit dem Kennwort sicher auf. Sie benötigen diese Informationen, um die Azure AD Connect-Konfiguration in Phase 3 abzuschließen.
 
 Danach wird die Hauptseite des Office 365-Portals angezeigt. Klicken Sie im oberen Menüband auf **Admin**, und klicken Sie dann auf **Office 365**. Die Office 365 Admin Center-Seite angezeigt wird. Lassen Sie auf dieser Seite auf "client1" geöffnet.
 
@@ -118,8 +118,8 @@ Aktivieren Sie als Nächstes Verzeichnissynchronisierung für Ihre Office 365 Fa
 
 1.	Klicken Sie auf CLIENT1 auf der Seite **Office 365 Admin Center** im linken Bereich auf **Benutzer**, und klicken Sie dann auf **Aktive Benutzer**.
 2.	Klicken Sie unter **Active Directory-Synchronisierung** auf **Einrichten**.
-3.	Klicken Sie auf der Seite "Active Directory-Synchronisierung einrichten und verwalten" unter Schritt 3 auf **Aktivieren**.
-4.	Wenn **Möchten Sie die Active Directory-Synchronisierung aktivieren?** angezeigt wird, klicken Sie auf **Aktivieren**. Danach wird **Active Directory-Synchronisierung ist aktiviert** in Schritt 3 angezeigt.
+3.	Klicken Sie auf der Seite "Active Directory-Synchronisierung einrichten und verwalten" unter Schritt 3 auf **Aktivieren**.
+4.	Wenn **Möchten Sie die Active Directory-Synchronisierung aktivieren?** angezeigt wird, klicken Sie auf **Aktivieren**. Danach wird **Active Directory-Synchronisierung ist aktiviert** in Schritt 3 angezeigt.
 5.	Lassen Sie die Seite **Active Directory-Synchronisierung einrichten und verwalten** auf CLIENT1 geöffnet.
 
 Als Nächstes melden Sie sich mit dem Konto CORP\\User1 auf DC1, und öffnen Sie eine auf Windows PowerShell-Eingabeaufforderung. Führen Sie diese Befehle nacheinander zum Erstellen einer neuen Organisationseinheit namens "Contoso\_users", und fügen Sie zwei neue Benutzerkonten für Marci Kaufman und Lynda Meyer.
@@ -144,7 +144,7 @@ Installieren und konfigurieren Sie als Nächstes das Azure AD Connect-Tool auf D
 
 Als Nächstes stellen Sie sicher, dass die Benutzerkonten in der CORP-Domäne zu Office 365 synchronisiert werden. Beachten Sie, dass es möglicherweise ein paar Minuten dauert, bis die Synchronisierung erfolgt.
 
-Klicken Sie auf CLIENT1 auf der Seite **Active Directory-Synchronisierung einrichten und verwalten** auf den Link **Benutzer** in Schritt 6 auf der Seite. Wenn die Verzeichnissynchronisierung erfolgreich war, sollte etwa wie folgt angezeigt werden.
+Klicken Sie auf CLIENT1 auf der Seite **Active Directory-Synchronisierung einrichten und verwalten** auf den Link **Benutzer** in Schritt 6 auf der Seite. Wenn die Verzeichnissynchronisierung erfolgreich war, sollte etwa wie folgt angezeigt werden.
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_4.png)
 
@@ -154,12 +154,12 @@ Führen Sie dann die Office 365-Kennwortsynchronisierung mit dem Active Director
 
 1.	Wählen Sie auf CLIENT1 auf der Seite **Aktive Benutzer** das Konto **Lynda Meyer** aus.
 2.	Klicken Sie in den Eigenschaften des Kontos "Lynda Meyer" unter **Zugewiesene Lizenz** auf **Bearbeiten**.
-3.	Wählen Sie auf der Registerkarte **Lizenz zuweisen** einen Standort unter **Benutzerstandort einstellen** aus (z. B. Vereinigte Staaten).
+3.	Wählen Sie auf der Registerkarte **Lizenz zuweisen** einen Standort unter **Benutzerstandort einstellen** aus (z. B. Vereinigte Staaten).
 4.	Wählen Sie **Microsoft Office 365 (Plan E3)** aus, und klicken Sie dann auf **Speichern**.
 5.	Schließen Sie Internet Explorer.
 6.	Führen Sie Internet Explorer aus, und wechseln Sie zu ****http://portal.microsoftonline.com**.
 7.	Melden Sie sich mit den Office 365-Anmeldeinformationen von Lynda Meyer an. Der Benutzername lautet dann "lyndam@<*Ihr fiktiver Name*>.onmicrosoft.com". Das Kennwort ist das Kennwort für das Lynda Dressler Active Directory-Benutzerkonto.
-8.	Nach der erfolgreichen Anmeldung sehen Sie die Hauptseite des Office 365-Portals mit **Heute machen wir einen Unterschied**.
+8.	Nach der erfolgreichen Anmeldung sehen Sie die Hauptseite des Office 365-Portals mit **Heute machen wir einen Unterschied**.
 
 Die aktuelle Konfiguration sieht folgendermaßen aus.
 
@@ -181,8 +181,8 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
 [Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
 
-[Testumgebungen für Azure-Hybridclouds](../virtual-machines/virtual-machines-hybrid-cloud-test-environments.md)
+[Testumgebungen für Azure-Hybridclouds](../virtual-machines/virtual-machines-windows-classic-hybrid-test-env.md)
 
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
+[Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-linux-infrastructure-service-guidelines.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

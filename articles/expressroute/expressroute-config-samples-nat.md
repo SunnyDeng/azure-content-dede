@@ -17,9 +17,9 @@
 
 # Beispiele für die Routerkonfiguration zum Einrichten und Verwalten von NAT (Network Address Translation, Netzwerkadressübersetzung)
 
-Diese Seite enthält NAT-Konfigurationsbeispiele für Router der Reihen Cisco ASA und Juniper MX. Diese Beispiele dienen nur als Leitfaden und müssen nicht wie angegeben verwendet werden. Sie können mit Ihrem Anbieter an der Ausarbeitung geeigneter Konfigurationen für Ihr Netzwerk zusammenarbeiten.
+Diese Seite enthält NAT-Konfigurationsbeispiele für Router der Serien Cisco ASA und Juniper SRX. Diese Beispiele dienen nur als Leitfaden und müssen nicht wie angegeben verwendet werden. Sie können mit Ihrem Anbieter an der Ausarbeitung geeigneter Konfigurationen für Ihr Netzwerk zusammenarbeiten.
 
->[AZURE.IMPORTANT]Die Beispiele auf dieser Seite sind ausschließlich als Leitfaden konzipiert. Sie müssen mit dem Vertriebsteam/Technikteam Ihres Anbieters und Ihrem Netzwerkteam zusammenarbeiten, um für Ihre Anforderungen geeignete Konfigurationen zu bestimmen. Microsoft bietet keine Unterstützung bei Problemen im Zusammenhang mit Konfigurationen, die auf dieser Seite aufgeführt sind. Sie müssen sich bei Problemen an den Gerätehersteller wenden.
+>[AZURE.IMPORTANT] Die Beispiele auf dieser Seite sind ausschließlich als Leitfaden konzipiert. Sie müssen mit dem Vertriebsteam/Technikteam Ihres Anbieters und Ihrem Netzwerkteam zusammenarbeiten, um für Ihre Anforderungen geeignete Konfigurationen zu bestimmen. Microsoft bietet keine Unterstützung bei Problemen im Zusammenhang mit Konfigurationen, die auf dieser Seite aufgeführt sind. Sie müssen sich bei Problemen an den Gerätehersteller wenden.
 
 Die nachstehenden Beispiele für die Routerkonfiguration gelten für Azure Public- und Microsoft-Peerings. Sie dürfen NAT nicht für privates Azure-Peering konfigurieren. Unter [ExpressRoute-Peerings](expressroute-circuit-peerings.md) und [NAT-Anforderungen für ExpressRoute](expressroute-nat.md) finden Sie weitere Details.
 
@@ -78,7 +78,7 @@ NAT-Befehle:
 	nat (inside,outside) source dynamic MSFT-PAT-Networks pat-pool outbound-PAT destination static Customer-Network Customer-Network
 
 
-## Router der Juniper MX-Serie 
+## Router der Juniper SRX-Serie 
 
 ### 1\. Erstellen redundanter Ethernet-Schnittstellen für den Cluster
 
@@ -317,6 +317,6 @@ Beispielen finden Sie auf der Seite [Beispiele für Routingkonfiguration](expres
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
+Weitere Informationen finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0323_2016-->

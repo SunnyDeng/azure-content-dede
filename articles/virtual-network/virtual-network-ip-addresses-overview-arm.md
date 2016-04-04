@@ -54,15 +54,15 @@ Statische öffentliche IP-Adressen werden häufig in den folgenden Szenarien ver
 >[AZURE.NOTE] Die Liste mit den IP-Adressbereichen, aus denen den Azure-Ressourcen öffentliche IP-Adressen (dynamisch/statisch) zugewiesen werden, finden Sie unter [IP-Bereiche des Azure-Datencenters](https://www.microsoft.com/download/details.aspx?id=41653).
 
 ### DNS-Hostnamensauflösung
-Sie können eine DNS-Domänennamensbezeichnung für eine öffentliche IP-Ressource angeben. Dadurch erstellen Sie für *Domänennamensbezeichnung*.*Standort*.cloudapp.azure.com eine Zuordnung zur öffentlichen IP-Adresse in den von Azure verwalteten DNS-Servern. Wenn Sie z. B. eine öffentliche IP-Ressource mit **contoso** als *Domänennamensbezeichung* am Azure-*Standort* **USA, Westen** erstellen, wird der vollqualifizierte Domänenname (FQDN) **contoso.westus.cloudapp.azure.com** in die öffentliche IP-Adresse der Ressource aufgelöst. Mit diesem FQDN können Sie einen benutzerdefinierten CNAME-Domäneneintrag mit Verweis auf die öffentliche IP-Adresse in Azure erstellen.
+Sie können eine DNS-Domänennamensbezeichnung für eine öffentliche IP-Ressource angeben. Dadurch erstellen Sie für *Domänennamensbezeichnung*.*Standort*.cloudapp.azure.com eine Zuordnung zur öffentlichen IP-Adresse in den von Azure verwalteten DNS-Servern. Wenn Sie z. B. eine öffentliche IP-Ressource mit **contoso** als *Domänennamensbezeichung* am Azure-*Standort* **USA, Westen** erstellen, wird der vollqualifizierte Domänenname (FQDN) **contoso.westus.cloudapp.azure.com** in die öffentliche IP-Adresse der Ressource aufgelöst. Mit diesem FQDN können Sie einen benutzerdefinierten CNAME-Domäneneintrag mit Verweis auf die öffentliche IP-Adresse in Azure erstellen.
 
 >[AZURE.IMPORTANT] Jede erstellte Domänennamensbezeichnung muss innerhalb des Azure-Standorts eindeutig sein.
 
 ### VMs
-Sie können eine öffentliche IP-Adresse einem [virtuellen Computer](virtual-machines-about.md) (VM, Virtual Machine) zuordnen, indem Sie sie dessen **Netzwerkschnittstellenkarte** (NIC, Network Interface Card) zuordnen. Bei einem virtuellen Computer mit mehreren Netzwerkschnittstellenkarten (NICs) können Sie die IP-Adresse nur der *primären* NIC zuweisen. Sie können einem virtuellen Computer (VM) eine dynamische oder eine statische öffentliche IP-Adresse zuweisen.
+Sie können eine öffentliche IP-Adresse einem [virtuellen Computer](../virtual-machines/virtual-machines-linux-about.md) (VM, Virtual Machine) zuordnen, indem Sie sie dessen **Netzwerkschnittstellenkarte** (NIC, Network Interface Card) zuordnen. Bei einem virtuellen Computer mit mehreren Netzwerkschnittstellenkarten (NICs) können Sie die IP-Adresse nur der *primären* NIC zuweisen. Sie können einem virtuellen Computer (VM) eine dynamische oder eine statische öffentliche IP-Adresse zuweisen.
 
 ### Load Balancer mit Internetzugriff
-Sie können eine öffentliche IP-Adresse einem [Azure Load Balancer](load-balancer-overview.md) zuordnen, indem Sie sie der **Front-End**-Konfiguration des Load Balancers zuweisen. Diese öffentliche IP-Adresse fungiert als virtuelle IP-Adresse (VIP) mit Lastenausgleich. Sie können einem Load Balancer-Front-End eine dynamische oder eine statische öffentliche IP-Adresse zuweisen. Sie können einem Load Balancer-Front-End auch mehrere öffentliche IP-Adressen zuweisen. Dadurch werden Szenarien mit [mehreren VIPs](load-balancer-multivip.md) ermöglicht, wie sie z. B. in mehrinstanzenfähigen Umgebungen mit SSL-basierten Websites benötigt werden.
+Sie können eine öffentliche IP-Adresse einem [Azure Load Balancer](load-balancer-overview.md) zuordnen, indem Sie sie der **Front-End**-Konfiguration des Load Balancers zuweisen. Diese öffentliche IP-Adresse fungiert als virtuelle IP-Adresse (VIP) mit Lastenausgleich. Sie können einem Load Balancer-Front-End eine dynamische oder eine statische öffentliche IP-Adresse zuweisen. Sie können einem Load Balancer-Front-End auch mehrere öffentliche IP-Adressen zuweisen. Dadurch werden Szenarien mit [mehreren VIPs](load-balancer-multivip.md) ermöglicht, wie sie z. B. in mehrinstanzenfähigen Umgebungen mit SSL-basierten Websites benötigt werden.
 
 ### VPN-Gateways
 Über [Azure VPN Gateway](vpn-gateway-about-vpngateways.md) wird eine Verbindung zwischen einem Azure Virtual Network (VNet) und anderen Azure-VNets oder lokalen Netzwerken hergestellt. Sie müssen der **IP-Konfiguration** dieses Gateways eine öffentliche IP-Adresse zuweisen, um eine Kommunikation mit dem Remotenetzwerk zu ermöglichen. Derzeit können Sie einem VPN-Gateway nur eine dynamische öffentliche IP-Adresse zuweisen.
@@ -103,7 +103,7 @@ Statische private IP-Adressen werden häufig für Folgendes verwendet:
 - Ressourcen, auf die von anderen Apps oder Ressourcen über eine IP-Adresse zugegriffen wird.
 
 ### VMs
-Eine private IP-Adresse wird der **Netzwerkschnittstellenkarte** (NIC) eines [virtuellen Computers](virtual-machines-about.md) (VM, Virtual Machine) zugewiesen. Bei einem virtuellen Computer (VM) mit mehreren Netzwerkschnittstellenkarten (NICs) wird jeder NIC eine private IP-Adresse zugewiesen. Für eine NIC können Sie als Zuordnungsmethode entweder „dynamisch“ oder „statisch“ angeben.
+Eine private IP-Adresse wird der **Netzwerkschnittstellenkarte** (NIC) eines [virtuellen Computers](../virtual-machines/virtual-machines-linux-about.md) (VM, Virtual Machine) zugewiesen. Bei einem virtuellen Computer (VM) mit mehreren Netzwerkschnittstellenkarten (NICs) wird jeder NIC eine private IP-Adresse zugewiesen. Für eine NIC können Sie als Zuordnungsmethode entweder „dynamisch“ oder „statisch“ angeben.
 
 #### Interne DNS-Hostnamensauflösung (für VMs)
 Alle Azure-VMs werden standardmäßig mit [von Azure verwalteten DNS-Servern](virtual-networks-name-resolution-for-vms-and-role-instances.md#azure-provided-name-resolution) konfiguriert, sofern nicht explizit benutzerdefinierte DNS-Server konfiguriert werden. Diese DNS-Server stellen die interne Namensauflösung für VMs im gleichen VNet bereit.
@@ -137,4 +137,4 @@ In den meisten Fällen sind öffentliche IP-Adressen kostenlos. Es wird eine Sch
 - Erfahren Sie, wie Sie [einen virtuellen Computer mit einer statischen öffentlichen IP-Adresse mithilfe einer Vorlage bereitstellen](virtual-network-deploy-static-pip-arm-template.md).
 - [Bereitstellen eines virtuellen Computers mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-arm-pportal.md) mithilfe des Azure-Portals.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

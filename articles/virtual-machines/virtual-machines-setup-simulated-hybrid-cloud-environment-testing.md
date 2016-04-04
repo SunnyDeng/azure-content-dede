@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Simulierte Hybrid Cloud-Testumgebung | Microsoft Azure" 
 	description="Erstellen Sie eine simulierte Hybrid Cloud-Umgebung für Tests durch IT-Spezialisten oder für Entwicklungstests, indem Sie zwei virtuelle Azure-Netzwerke und eine VNet-zu-VNet-Verbindung verwenden." 
-	services="virtual-network" 
+	services="virtual-machines-windows" 
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
 	manager="timlt" 
@@ -9,7 +9,7 @@
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
+	ms.service="virtual-machines-windows" 
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
@@ -48,13 +48,13 @@ Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich unter [Azu
 
 >[AZURE.NOTE] Für virtuelle Computer und virtuelle Netzwerkgateways in Azure fallen laufende Kosten an, wenn sie ausgeführt werden. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Ein Azure-VPN-Gateway wird als Gruppe von zwei virtuellen Computern in Azure implementiert. Erstellen Sie zum Verringern der Kosten die Testumgebung, und führen Sie die erforderlichen Tests und Demonstrationen möglichst schnell aus.
 
-## Phase 1: Konfigurieren des virtuellen Netzwerks "TestLab"
+## Phase 1: Konfigurieren des virtuellen Netzwerks "TestLab"
 
-Erstellen Sie gemäß den Anweisungen zur [Testumgebung für die Basiskonfiguration](virtual-machines-base-configuration-test-environment-resource-manager.md) die Computer "DC1", "APP1" und "CLIENT1" in einem virtuellen Azure-Netzwerk mit dem Namen "TestLab".
+Erstellen Sie gemäß den Anweisungen zur [Testumgebung für die Basiskonfiguration](virtual-machines-windows-test-config-env.md) die Computer "DC1", "APP1" und "CLIENT1" in einem virtuellen Azure-Netzwerk mit dem Namen "TestLab".
 
 Starten Sie als Nächstes eine Azure PowerShell-Eingabeaufforderung.
 
-> [AZURE.NOTE] Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter „Azure PowerShell 1.0“.
+> [AZURE.NOTE] Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter „Azure PowerShell 1.0“.
 
 Melden Sie sich in Ihrem Konto an.
 
@@ -88,7 +88,7 @@ Erstellen Sie im nächsten Schritt Ihr Gateway.
 	$gwipconfig=New-AzureRmVirtualNetworkGatewayIpConfig -Name TestLab_GWConfig -SubnetId $subnet.Id -PublicIpAddressId $gwpip.Id 
 	New-AzureRmVirtualNetworkGateway -Name TestLab_GW -ResourceGroupName $rgName -Location $locName -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
-Bedenken Sie, dass die Erstellung neuer Gateways 20 Minuten oder mehr in Anspruch nehmen kann.
+Bedenken Sie, dass die Erstellung neuer Gateways 20 Minuten oder mehr in Anspruch nehmen kann.
 
 Stellen Sie im Azure-Portal auf Ihrem lokalen Computer eine Verbindung mit DC1 her. Verwenden Sie dafür die Anmeldeinformationen für CORP\\User1. Führen Sie die folgenden Befehle von einer Windows PowerShell-Eingabeaufforderung aus, um die CORP-Domäne so zu konfigurieren, dass Computer und Benutzer ihren lokalen Domänencontroller zur Authentifizierung verwenden.
 
@@ -101,7 +101,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_1.png)
  
-## Phase 2: Erstellen des virtuellen Netzwerks "TestVNET"
+## Phase 2: Erstellen des virtuellen Netzwerks "TestVNET"
 
 Zunächst erstellen Sie das virtuelle Netzwerk „TestVNET“ und schützen es mit einer Netzwerksicherheitsgruppe.
 
@@ -129,9 +129,9 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_2.png)
  
-##Phase 3: Erstellen der VNet-zu-VNet-Verbindung
+##Phase 3: Erstellen der VNet-zu-VNet-Verbindung
 
-Besorgen Sie sich zunächst einen zufällig generierten vorinstallierten Schlüssel mit 32 Zeichen und starker Kryptografie vom Netzwerk- oder Systemadministrator. Verwenden Sie wahlweise die Informationen im [Artikel zum Erstellen einer zufälligen Zeichenfolge für einen vorinstallierten IPsec-Schlüssel](http://social.technet.microsoft.com/wiki/contents/articles/32330.create-a-random-string-for-an-ipsec-preshared-key.aspx), um einen vorinstallierten Schlüssel abzurufen.
+Besorgen Sie sich zunächst einen zufällig generierten vorinstallierten Schlüssel mit 32 Zeichen und starker Kryptografie vom Netzwerk- oder Systemadministrator. Verwenden Sie wahlweise die Informationen im [Artikel zum Erstellen einer zufälligen Zeichenfolge für einen vorinstallierten IPsec-Schlüssel](http://social.technet.microsoft.com/wiki/contents/articles/32330.create-a-random-string-for-an-ipsec-preshared-key.aspx), um einen vorinstallierten Schlüssel abzurufen.
 
 Verwenden Sie im nächsten Schritt diese Befehle, um die Site-to-Site-VPN-Verbindung zu erstellen. Dies kann einige Zeit in Anspruch nehmen.
 
@@ -213,6 +213,6 @@ Die simulierte Hybrid Cloud-Umgebung kann jetzt zum Testen verwendet werden.
 
 ## Nächste Schritte
 
-- [Fügen Sie einen neuen virtuellen Computer](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md) dem TestVNET-Subnetz hinzu, beispielsweise ein Subnetz unter Microsoft SQL Server.
+- Sie können dem TestVNET-Subnetz [einen neuen virtuellen Computer hinzufügen](virtual-machines-windows-create-powershell.md), beispielsweise einen Computer unter Microsoft SQL Server.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

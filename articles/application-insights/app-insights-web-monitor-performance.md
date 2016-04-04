@@ -29,7 +29,7 @@ Auf Clientseite kann Application Insights Telemetriedaten von Webseiten und eine
 
 ## <a name="setup"></a>Einrichten der Leistungsüberwachung
 
-Falls Sie Application Insights Ihrem Projekt noch nicht hinzugefügt haben (d. h., wenn es nicht über ApplicationInsights.config verfügt), gehen Sie nach einer der folgenden Methoden vor, um zu beginnen:
+Falls Sie Application Insights Ihrem Projekt noch nicht hinzugefügt haben (d. h., wenn es nicht über ApplicationInsights.config verfügt), gehen Sie nach einer der folgenden Methoden vor, um zu beginnen:
 
 * [ASP.NET-Web-Apps](app-insights-asp-net.md)
  * [Ausnahmeüberwachung hinzufügen](app-insights-asp-net-exceptions.md)
@@ -53,7 +53,7 @@ Klicken Sie auf ein Diagramm, um die anzuzeigenden Metriken auszuwählen, oder f
 
 ![Auf Graph klicken, um Metrik auszuwählen](./media/app-insights-web-monitor-performance/appinsights-61perfchoices.png)
 
-> [AZURE.NOTE]**Deaktivieren Sie alle Metriken**, um die insgesamt verfügbare Auswahl anzuzeigen. Die Metriken werden in Gruppen unterteilt. Wenn ein Mitglied einer Gruppe ausgewählt wird, werden nur die weiteren Mitglieder dieser Gruppe angezeigt.
+> [AZURE.NOTE] **Deaktivieren Sie alle Metriken**, um die insgesamt verfügbare Auswahl anzuzeigen. Die Metriken werden in Gruppen unterteilt. Wenn ein Mitglied einer Gruppe ausgewählt wird, werden nur die weiteren Mitglieder dieser Gruppe angezeigt.
 
 
 ## <a name="metrics"></a>Was bedeutet was? Leistungskacheln und Berichte
@@ -111,6 +111,8 @@ Wenn Sie eine Metrik auswählen, werden alle anderen deaktiviert, die nicht im s
 ## Systemleistungsindikatoren
 
 Einige der Metriken, aus denen Sie auswählen können, sind [Leistungsindikatoren](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters). Windows bietet eine Vielzahl solcher Indikatoren, und Sie können auch eigene definieren.
+
+(Für in Azure gehostete Anwendungen [senden Sie Azure-Diagnosedaten an Application Insights](app-insights-azure-diagnostics.md).)
 
 Dieses Beispiel zeigt die Leistungsindikatoren, die standardmäßig verfügbar sind. Wir haben für jeden Leistungsindikator [ein eigenes Diagramm hinzugefügt](app-insights-metrics-explorer.md#editing-charts-and-grids) und das Diagramm benannt, indem wir es [als Favorit gespeichert](app-insights-metrics-explorer.md#editing-charts-and-grids) haben:
 
@@ -175,13 +177,13 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
 ## <a name="next"></a>Nächste Schritte
 
-[Webtests][availability] – Lassen Sie in regelmäßigen Abständen aus aller Welt Webanforderungen zu Ihrer Anwendung senden.
+[Webtests][availability] – Lassen Sie in regelmäßigen Abständen aus aller Welt Webanforderungen zu Ihrer Anwendung senden.
 
-[Diagnostische Spuren protokollieren und suchen][diagnostic] – Fügen Sie Trace-Aufrufe ein, und durchsuchen Sie die Ergebnisse, um Probleme zu lokalisieren.
+[Diagnostische Spuren protokollieren und suchen][diagnostic] – Fügen Sie Trace-Aufrufe ein, und durchsuchen Sie die Ergebnisse, um Probleme zu lokalisieren.
 
-[Nutzungsnachverfolgung][usage] – Erfahren Sie, wie Ihre Anwendung genutzt wird.
+[Nutzungsnachverfolgung][usage] – Erfahren Sie, wie Ihre Anwendung genutzt wird.
 
-[Problembehandlung][qna] – sowie Fragen und Antworten
+[Problembehandlung][qna] – sowie Fragen und Antworten
 
 ## Video
 
@@ -199,4 +201,4 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0323_2016-->

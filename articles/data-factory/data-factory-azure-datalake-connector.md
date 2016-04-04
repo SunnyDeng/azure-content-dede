@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/25/2016"
+	ms.date="03/21/2016"
 	ms.author="spelluru"/>
 
 # Verschieben von Daten in und aus Azure Data Lake-Speicher mithilfe von Azure Data Factory
@@ -58,7 +58,7 @@ Im Beispiel werden zu einer Zeitreihe gehörende Daten aus Azure Blob Storage st
 	    "properties": {
 	        "type": "AzureDataLakeStore",
 	        "typeProperties": {
-	            "dataLakeUri": "https://<accountname>.azuredatalakestore.net/webhdfs/v1",
+	            "dataLakeStoreUri": "https://<accountname>.azuredatalakestore.net/webhdfs/v1",
 				"sessionId": "<session ID>",
 	            "authorization": "<authorization URL>"
 	        }
@@ -69,7 +69,7 @@ Im Beispiel werden zu einer Zeitreihe gehörende Daten aus Azure Blob Storage st
 Das folgende Verfahren enthält Schritte zum Erstellen eines mit Azure Data Lake-Speicher verknüpften Diensts mit dem Data Factory-Editor.
 
 1. Klicken Sie auf der Befehlsleiste auf **Neuer Datenspeicher**, und wählen Sie **Azure Data Lake-Speicher** aus.
-2. Geben Sie im JSON-Editor für die **datalakeUri**-Eigenschaft den URI für die Data Lake-Instanz ein.
+2. Geben Sie im JSON-Editor für die **dataLakeStoreUri**-Eigenschaft den URI für die Data Lake-Instanz ein.
 3. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Autorisieren**. Ein Popupfenster wird angezeigt.
 
 	![Schaltfläche „Autorisieren“](./media/data-factory-azure-data-lake-connector/authorize-button.png)
@@ -235,7 +235,7 @@ Im Beispiel werden zu einer Zeitreihe gehörende Daten aus einem Azure Data Lake
 	    "properties": {
 	        "type": "AzureDataLakeStore",
 	        "typeProperties": {
-	            "dataLakeUri": "https://<accountname>.azuredatalakestore.net/webhdfs/v1",
+	            "dataLakeStoreUri": "https://<accountname>.azuredatalakestore.net/webhdfs/v1",
 				"sessionId": "<session ID>",
 	            "authorization": "<authorization URL>"
 	        }
@@ -405,7 +405,7 @@ Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-
 | Eigenschaft | Beschreibung | Erforderlich |
 | :-------- | :----------- | :-------- |
 | type | Die type-Eigenschaft muss auf **AzureDataLakeStore** festgelegt sein. | Ja |
-| dataLakeUri | Geben Sie Informationen zum Azure Data Lake-Speicherkonto an. Der URI hat das folgende Format: https://<Azure Data Lake account name>.azuredatalakestore.net/webhdfs/v1. | Ja |
+| dataLakeStoreUri | Geben Sie Informationen zum Azure Data Lake-Speicherkonto an. Der URI hat das folgende Format: https://<Azure Data Lake account name>.azuredatalakestore.net/webhdfs/v1. | Ja |
 | authorization | Klicken Sie im **Data Factory-Editor** auf die Schaltfläche **Autorisieren**, und geben Sie Ihre Anmeldeinformationen ein, wodurch die automatisch generierte Autorisierungs-URL dieser Eigenschaft zugewiesen wird. | Ja |
 | sessionId | OAuth-Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID ist eindeutig und darf nur einmal verwendet werden. Sie wird automatisch generiert, wenn Sie den Data Factory-Editor verwenden. | Ja |  
 | accountName | Data Lake-Kontoname | Nein |
@@ -608,4 +608,4 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

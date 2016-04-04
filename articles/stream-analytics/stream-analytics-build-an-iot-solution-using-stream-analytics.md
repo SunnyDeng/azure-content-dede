@@ -15,7 +15,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="02/18/2016" 
+	ms.date="03/21/2016" 
 	ms.author="jeffstok"
 />
 
@@ -535,4 +535,4 @@ Beachten Sie, dass Ressourcen anhand des Namens identifiziert werden. Stellen Si
 
 ![](media/stream-analytics-build-an-iot-solution-using-stream-analytics/image57.png)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

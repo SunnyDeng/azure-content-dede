@@ -68,12 +68,14 @@ Beispiel-NSG im JSON-Format:
 	}
 
 ### Standardsicherheitsregeln
-Standardsicherheitsregeln weisen dieselben Eigenschaften wie Sicherheitsregeln auf. Ihr Zweck besteht darin, die grundlegende Konnektivität zwischen Ressourcen zu ermöglichen, die zu NSGs gehören. Machen Sie sich mit den [Standardsicherheitsregeln](./virtual-networks-nsg.md#Default-Rules) vertraut.
+Standardsicherheitsregeln weisen dieselben Eigenschaften wie Sicherheitsregeln auf. Ihr Zweck besteht darin, die grundlegende Konnektivität zwischen Ressourcen zu ermöglichen, die zu NSGs gehören. Machen Sie sich mit den [Standardsicherheitsregeln](../articles/virtual-network/virtual-networks-nsg.md#Default-Rules) vertraut.
 
 ### Zusätzliche Ressourcen
 
-- Weitere Informationen zu [NSGs](virtual-networks-nsg.md).
+- Weitere Informationen zu [NSGs](../articles/virtual-network/virtual-networks-nsg.md).
 - Weitere Informationen zu NSGs finden Sie in der [Referenzdokumentation zur REST-API](https://msdn.microsoft.com/library/azure/mt163615.aspx).
 - Weitere Informationen zu Sicherheitsregeln finden Sie in der [Referenzdokumentation zur REST-API](https://msdn.microsoft.com/library/azure/mt163580.aspx).
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_0323_2016-->
+
+<!---HONumber=AcomDC_0323_2016-->

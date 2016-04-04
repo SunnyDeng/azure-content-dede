@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 # Verwalten von DNS-Servern, die von einem virtuellen Netzwerk (VNet) verwendet werden
 
 Sie können die Liste der in einem VNet verwendeten DNS-Server im Verwaltungsportal oder mithilfe der Netzwerkkonfigurationsdatei verwalten. Sie können bis zu 12 DNS-Server für jedes VNet hinzufügen. Beim Angeben von DNS-Servern müssen Sie darauf achten, dass Sie sie in der richtigen Reihenfolge für Ihre Umgebung auflisten. DNS-Serverlisten werden nicht per Roundrobin verarbeitet. Die DNS-Server werden in der Reihenfolge verwendet, in der sie angegeben sind. Wenn der erste DNS-Server in der Liste erreicht werden kann, verwendet der Client diesen DNS-Server unabhängig davon, ob der DNS-Server ordnungsgemäß funktioniert. Um die Reihenfolge der DNS-Server für das virtuelle Netzwerk zu ändern, entfernen Sie die DNS-Server aus der Liste, und fügen Sie sie in der gewünschten Reihenfolge wieder hinzu.
 
->[AZURE.WARNING]Nach dem Aktualisieren der DNS-Liste müssen Sie die virtuellen Computer in Ihrem virtuellen Netzwerk neu starten, damit sie die neuen DNS-Servereinstellungen verwenden. Virtuelle Computer verwenden bis zu ihrem Neustart weiter die aktuelle Konfiguration.
+>[AZURE.WARNING] Nach dem Aktualisieren der DNS-Liste müssen Sie die virtuellen Computer in Ihrem virtuellen Netzwerk neu starten, damit sie die neuen DNS-Servereinstellungen verwenden. Virtuelle Computer verwenden bis zu ihrem Neustart weiter die aktuelle Konfiguration.
 
 ## Bearbeiten einer DNS-Serverliste für ein virtuelles Netzwerk im Verwaltungsportal
 
@@ -65,4 +65,4 @@ Um eine DNS-Serverliste mithilfe einer Netzwerkkonfigurationsdatei zu bearbeiten
 
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

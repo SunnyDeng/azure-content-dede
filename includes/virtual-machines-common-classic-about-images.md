@@ -1,40 +1,42 @@
 
 
-Images are used in Azure to provide a new virtual machine with an operating system. An image might also have one or more data disks. Images are available from several sources:
+Images werden in Azure verwendet, um einen neuen virtuellen Computer mit einem Betriebssystem bereitzustellen. Ein Image kann auch über einen oder mehrere Datenträger verfügen. Images sind aus verschiedenen Quellen verfügbar:
 
--	Azure offers images in the [Marketplace](https://azure.microsoft.com/gallery/virtual-machines/). You’ll find recent versions of Windows Server and distributions of the Linux operating system. Some images also contain applications, such as SQL Server. MSDN Benefit and MSDN Pay-as-You-Go subscribers have access to additional images.
--	The open source community offers images through [VM Depot](http://vmdepot.msopentech.com/List/Index).
--	You also can store and use your own images in Azure, by either capturing an existing Azure virtual machine for use as an image or uploading an image.
+-	Azure bietet Images im [Marketplace](https://azure.microsoft.com/gallery/virtual-machines/) an. Hier finden Sie aktuelle Versionen von Windows Server und Distributionen des Linux-Betriebssystems. Einige Images enthalten außerdem Clientanwendungen wie SQL Server. Abonnenten von MSDN Benefit und MSDN Pay-as-You-Go haben Zugriff auf weitere Images.
+-	Die Open-Source-Community bietet Images im [VM Depot](http://vmdepot.msopentech.com/List/Index) an.
+-	Sie können auch eigene Images in Azure speichern und nutzen, indem Sie entweder einen vorhandenen virtuellen Azure-Computer als Image erfassen oder ein Image hochladen.
 
-## About VM images and OS images
+## Informationen zu VM- und Betriebssystem-Images
 
-Two types of images can be used in Azure: *VM image* and *OS image*. A VM image includes an operating system and all disks attached to a virtual machine when the image is created. This is the newer type of image. Before VM images were introduced, an image in Azure could have only a generalized operating system and no additional disks. A VM image that contains only a generalized operating system is basically the same as the original type of image, the OS image.
+Zwei Typen von Images können in Azure verwendet werden: *VM-Images* und *Betriebssystem-Images*. Ein VM-Image enthält ein Betriebssystem und alle Datenträger, die an einen virtuellen Computer angefügt sind, wenn das Image erstellt wird. Dies ist der neuere Typ von Image. Bevor VM-Images eingeführt wurden, konnte ein Image in Azure nur ein allgemeines Betriebssystem ohne zusätzliche Datenträger enthalten. Ein VM-Image, das nur ein verallgemeinertes Betriebssystem enthält, entspricht im Grunde dem ursprünglichen Typ von Image, dem Betriebssystem-Image.
 
-You can create your own images, based on a virtual machine in Azure, or a virtual machine running elsewhere that you copy and upload. If you want to use an image to create more than one virtual machine, you’ll need to prepare it for use as an image by generalizing it. To create a Windows Server image, run the Sysprep command on the server to generalize it before you upload the .vhd file. For details about Sysprep, see [How to Use Sysprep: An Introduction](http://go.microsoft.com/fwlink/p/?LinkId=392030). To create a Linux image, depending on the software distribution, you’ll need to run a set of commands that are specific to the distribution, as well as run the Azure Linux Agent.
+Sie können basierend auf einem virtuellen Computer in Azure oder einem an anderer Stelle ausgeführten virtuellen Computer eigene Images erstellen, die Sie kopieren und hochladen. Wenn Sie ein Image verwenden möchten, um mehrere virtuelle Computer zu erstellen, müssen Sie es vor der Verwendung als Image durch eine Verallgemeinerung vorbereiten. Um ein Windows Server-Image zu erstellen, führen Sie den Befehl "Sysprep" auf dem Server aus, um es vor dem Hochladen der VHD-Datei zu verallgemeinern. Weitere Informationen zu Sysprep finden Sie unter [How to Use Sysprep: An Introduction](http://go.microsoft.com/fwlink/p/?LinkId=392030) (in englischer Sprache). Zum Erstellen eines Linux-Images müssen Sie je nach Softwaredistribution eine Reihe von Befehlen, die für die Distribution spezifisch sind, und zudem den Azure Linux-Agent ausführen.
 
-## Working with images
+## Arbeiten mit Images
 
-You can use the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows or Azure PowerShell module to manage the images available to your Azure subscription. You also can use the Azure classic portal for some image tasks, but the command line gives you more options.
+Die Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows oder das Azure PowerShell-Modul dienen zum Verwalten der Images, die in Ihrem Azure-Abonnement zur Verfügung stehen. Sie können für einige Aufgaben für Images auch das klassische Azure-Portal nutzen, doch die Befehlszeile bieten Ihnen mehr Optionen.
 
-For information about using these tools with Resource Manager deployments, see [Navigating and Selecting Azure Virtual Machine images with PowerShell and the Azure CLI](virtual-machines-linux-cli-ps-findimage.md).
+Informationen zur Verwendung dieser Tools mit Ressourcen-Manager-Bereitstellungen finden Sie unter [Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](virtual-machines-linux-cli-ps-findimage.md).
 
-For examples of using the tools in a classic deployment:
+Beispiele der Verwendung der Tools in einer klassischen Bereitstellung:
 
-- For CLI, see "Commands to manage your Azure virtual machine images" in [Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management](virtual-machines-command-line-tools.md)
-- For Azure PowerShell, see the following list of commands. For an example of finding an image to create a VM, see "Step 3: Determine the ImageFamily" in [Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines](virtual-machines-windows-classic-create-powershell.md)
+- Informationen zur Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md).
+- Die folgende Liste enthält Azure PowerShell-Befehle. Ein Beispiel für das Auffinden eines Images zum Erstellen eines virtuellen Computers finden Sie unter „Schritt 3: Ermitteln der ImageFamily“ in [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-windows-classic-create-powershell.md).
 
--	**Get all images**:`Get-AzureVMImage`returns a list of all the images available in your current subscription: your images as well as those provided by Azure or partners. This means you might get a large list. The next examples show how to get a shorter list.
--	**Get image families**:`Get-AzureVMImage | select ImageFamily` gets a list of image families by showing strings **ImageFamily** property.
--	**Get all images in a specific family**: `Get-AzureVMImage | Where-Object {$_.ImageFamily -eq $family}`
--	**Find VM Images**: `Get-AzureVMImage | where {(gm –InputObject $_ -Name DataDiskConfigurations) -ne $null} | Select -Property Label, ImageName` this works by filtering the DataDiskConfiguration property, which only applies to VM Images. This example also filters the output to only the label and image name.
--	**Save a generalized image**: `Save-AzureVMImage –ServiceName "myServiceName" –Name "MyVMtoCapture" –OSState "Generalized" –ImageName "MyVmImage" –ImageLabel "This is my generalized image"`
--	**Save a specialized image**: `Save-AzureVMImage –ServiceName "mySvc2" –Name "MyVMToCapture2" –ImageName "myFirstVMImageSP" –OSState "Specialized" -Verbose`
->[Azure.Tip] The OSState parameter is required if you want to create a VM image, which includes data disks as well as the operating system disk. If you don’t use the parameter, the cmdlet creates an OS image. The value of the parameter indicates whether the image is generalized or specialized, based on whether the operating system disk has been prepared for reuse.
--	**Delete an image**: `Remove-AzureVMImage –ImageName "MyOldVmImage"`
+-	**Alle Images abrufen**: `Get-AzureVMImage` gibt eine Liste aller Images in Ihrem aktuellen Abonnement zurück, und zwar sowohl Ihre Images als auch von Azure oder Partnern bereitgestellte Images. Dies bedeutet, dass die Liste umfangreich sein kann. Die nächsten Beispiele zeigen, wie eine kürzere Liste abgerufen wird.
+-	**Image-Familien abrufen**: `Get-AzureVMImage | select ImageFamily` ruft eine Liste der Image-Familien ab, indem Zeichenfolgen mit der **ImageFamily**-Eigenschaft angezeigt werden.
+-	**Alle Images in einer bestimmten Familie abrufen**: `Get-AzureVMImage | Where-Object {$_.ImageFamily -eq $family}`
+-	**VM-Images suchen**: `Get-AzureVMImage | where {(gm –InputObject $_ -Name DataDiskConfigurations) -ne $null} | Select -Property Label, ImageName`. Hierbei erfolgt eine Filterung nach der „DataDiskConfiguration“-Eigenschaft, die nur für VM-Images gilt. Bei diesem Beispiel wird die Ausgabe auch nur nach der Bezeichnung und dem Namen des Images gefiltert.
+-	**Ein verallgemeinertes Image speichern**: `Save-AzureVMImage –ServiceName "myServiceName" –Name "MyVMtoCapture" –OSState "Generalized" –ImageName "MyVmImage" –ImageLabel "This is my generalized image"`
+-	**Ein spezialisiertes Image speichern**: `Save-AzureVMImage –ServiceName "mySvc2" –Name "MyVMToCapture2" –ImageName "myFirstVMImageSP" –OSState "Specialized" -Verbose`
+>[Azure.Tip] Der "OSState"-Parameter ist erforderlich, wenn Sie ein VM-Image erstellen möchten, das neben dem Betriebssystem-Datenträger auch andere Datenträger enthält. Wenn Sie den Parameter nicht verwenden, erstellt das Cmdlet ein Betriebssystem-Image. Der Wert des Parameters gibt an, ob das Image verallgemeinert oder spezialisiert ist, was davon abhängt, ob der Betriebssystem-Datenträger auf die erneute Verwendung vorbereitet wurde.
+-	**Ein Image löschen**: `Remove-AzureVMImage –ImageName "MyOldVmImage"`
 
 
-## Additional resources
+## Zusätzliche Ressourcen
 
-[Different Ways to Create a Linux Virtual Machine](virtual-machines-linux-creation-choices.md)
+[Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-creation-choices.md)
 
-[Different ways to create a Windows virtual machine](virtual-machines-windows-creation-choices.md)
+[Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-creation-choices.md)
+
+<!---HONumber=AcomDC_0323_2016-->

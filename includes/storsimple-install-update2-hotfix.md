@@ -1,33 +1,33 @@
-<!--author=alkohli last changed: 01/26/16-->
+<!--author=alkohli last changed: 03/17/16-->
 
 #### So laden Sie Hotfixes herunter
 
 Führen Sie die folgenden Schritte aus, um das Softwareupdate aus dem Microsoft Update-Katalog herunterzuladen.
 
-1. Starten Sie Internet Explorer, und navigieren Sie zu [http://catalog.update.microsoft.com/v7/site/Home.aspx](http://catalog.update.microsoft.com/v7/site/Home.aspx).
+1. Starten Sie Internet Explorer, und navigieren Sie zu [http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).
 
-2. Wenn Sie Erstbenutzer sind, werden Sie aufgefordert, den Microsoft Update-Katalog zu installieren. Klicken Sie auf **Installieren**.
-    
-   	![Katalog installieren](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)
+2. Falls Sie den Microsoft Update-Katalog zum ersten Mal auf diesem Computer verwenden, klicken Sie auf **Installieren**, wenn Sie zum Installieren des Add-Ons für den Microsoft Update-Katalog aufgefordert werden. ![Katalog installieren](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)
 
-3. Ein Katalogsuchbildschirm wird angezeigt. Geben Sie im Suchfeld **3121901** ein, und klicken Sie auf **Suchen**.
+3. Geben Sie im Suchfeld des Microsoft Update-Katalogs die KB-Nummer des Hotfixes ein, den Sie herunterladen möchten (beispielsweise **3121901**), und klicken Sie anschließend auf **Suchen**.
+
+    Die Hotfix-Auflistung wird angezeigt, z.B. das **kumulative Softwarepaket-Update 2.0 für die StorSimple 8000-Serie**.
 
     ![Katalog durchsuchen](./media/storsimple-install-update2-hotfix/HCS_SearchCatalog1-include.png)
 
-4. Das **kumulative Softwarepaket-Update 2.0 für die StorSimple 8000-Serie** wird angezeigt. Klicken Sie auf **Hinzufügen**. Das Update wird dem Warenkorb hinzugefügt.
+4. Klicken Sie auf **Hinzufügen**. Das Update wird dem Warenkorb hinzugefügt.
+
+5. Suchen Sie nach weiteren Hotfixes aus der obigen Tabelle (**3121900**, **3080728**, **3090322** und **3121899**), und fügen Sie sie jeweils dem Warenkorb hinzu.
 
 5. Klicken Sie auf **Warenkorb anzeigen**.
- 
-6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder **navigieren** Sie zu einem lokalen Speicherort, in dem der Download abgelegt werden soll. Das Update wird in einen Ordner (gleicher Name wie das Update) am ausgewählten Speicherort heruntergeladen. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
-       
-	> [AZURE.NOTE] 
-	> 
-	> - Außerdem müssen Sie das **LSI-Treiberupdate** (SAS-Controllerupdate 2.0 für StorSimple 8000-Serie – KB3121900), **Storport-Update** (Hotfix für Windows Server 2012 R2 x64 Edition – KB3080728), **Spaceport-Update** (Hotfix für Windows Server 2012 R2 x64 Edition – KB3090322) und **Datenträger-Firmwareupdate** (Kumulatives Datenträger-Firmwareupdate 2.0 für StorSimple 8000-Serie – KB3121899) herunterladen und in denselben freigegebenen Ordner kopieren.
-	> - Der Hotfix muss von beiden Controllern zum Erkennen von möglichen Fehlermeldungen vom Peercontroller aus zugänglich sein.
+
+6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder klicken Sie auf **Durchsuchen**, und navigieren Sie zum gewünschten lokalen Speicherort für den Download. Die Updates werden heruntergeladen und am angegebenen Speicherort in einem nach dem Update benannten Unterordner gespeichert. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
+
+>   [AZURE.NOTE]
+Der Zugriff auf die Hotfixes muss über beide Controller möglich sein, um die Erkennung von Fehlermeldungen des Peercontrollers zu ermöglichen.
 
 #### So installieren und überprüfen Sie Hotfixes für den normalen Modus
 
-Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normalen Hotfixes aus.
+Führen Sie zum Installieren und Überprüfen der Hotfixes für den normalen Modus die folgenden Schritte aus. Falls Sie sie bereits über das Azure-Portal installiert haben, fahren Sie mit [Installieren und Überprüfen von Wartungsmodus-Hotfixes](#to-install-and-verify-maintenance-mode-hotfixes) fort.
 
 1. Greifen Sie zum Installieren der Hotfixes über die serielle Konsole Ihres StorSimple-Geräts auf die Windows PowerShell-Benutzeroberfläche zu. Ausführliche Anweisungen dazu finden Sie unter [Verwenden von PuTTy zum Herstellen einer Verbindung mit der seriellen Konsole](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console). Drücken Sie bei der Eingabeaufforderung die **Eingabetaste**.
 
@@ -46,16 +46,16 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
         ````
         Controller0>Start-HcsHotfix -Path \\10.100.100.100\share
         \hcsmdssoftwareupdate.exe -Credential contoso\John
-      
+
         Confirm
 
         This operation starts the hotfix installation and could reboot one or
-        both of the controllers. If the device is serving I/Os, these will not 
+        both of the controllers. If the device is serving I/Os, these will not
         be disrupted. Are you sure you want to continue?
         [Y] Yes [N] No [?] Help (default is "Y"): Y
 
         ````
- 
+
 6. Geben Sie **Y** ein, um die Hotfixinstallation zu bestätigen.
 
 7. Überwachen Sie das Update mithilfe des `Get-HcsUpdateStatus`-Cmdlets.
@@ -68,9 +68,9 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
         LastHotfixTimestamp : 12/21/2015 10:36:13 PM
         LastUpdateTimestamp : 12/21/2015 10:35:25 PM
         Controller0Events   :
-        Controller1Events   : 
+        Controller1Events   :
         ````
- 
+
      Die folgende Beispielausgabe zeigt an, dass das Update abgeschlossen ist. Der Parameter `RunInProgress` ist `False`, wenn das Update abgeschlossen ist.
 
         ````
@@ -83,11 +83,10 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
         Controller1Events   :
 
         ````
-		
 
 	> [AZURE.NOTE] In manchen Fällen gibt das Cmdlet `False` zurück, wenn das Update noch ausgeführt wird. Um sicherzustellen, dass das Update abgeschlossen ist, warten Sie einige Minuten, führen Sie diesen Befehl erneut aus, und überprüfen Sie, ob `RunInProgress` gleich `False` ist. Wenn dies der Fall ist, wurde das Hotfix abgeschlossen.
-	
-8. Wiederholen Sie nach Abschluss des Softwareupdates die Schritte 3 bis 5, um den SaaS-Agent und den MDS-Agent zu installieren und zu überwachen. Stellen Sie vor dem Ausführen von `all-cismdsagentupdatebundle_f98e62f4d56c79e2a6644d027af7a2393a93827a.exe` sicher, dass `all-hcsmdssoftwareupdate_0b438ddf0d5b686aada2378b754fac8c7f2160e9.exe` installiert ist.
+
+8. Wiederholen Sie nach Abschluss des Softwareupdates die Schritte 3 bis 5, um den SaaS-Agent und den MDS-Agent zu installieren und zu überwachen. Stellen Sie vor dem Ausführen von `all-cismdsagentupdatebundle_f98e62f4d56c79e2a6644d027af7a2393a93827a.exe` sicher, dass `all-hcsmdssoftwareupdate_0b438ddf0d5b686aada2378b754fac8c7f2160e9.exe` installiert ist.
 
 9. Überprüfen Sie die Systemsoftwareversionen. Geben Sie Folgendes ein:
 
@@ -97,26 +96,26 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
 
     - HcsSoftwareVersion: 6.3.9600.17673
     - CisAgentVersion: 1.0.9150.0
-    - MdsAgentVersion: 30.0.4698.13 
-    
+    - MdsAgentVersion: 30.0.4698.13
+
 	Wenn die Versionsnummern nach dem Anwenden des Updates nicht geändert werden, bedeutet dies, dass der Hotfix nicht angewendet werden konnte. Sollte dies der Fall sein, wenden Sie sich an den [Microsoft Support](storsimple-contact-microsoft-support.md), um weitere Unterstützung zu erhalten.
-    
-9. Wiederholen Sie die Schritte 3 bis 5, um die verbleibenden normalen Hotfixes zu installieren und zu überwachen:
 
-	- Den LSI-Treiber mit KB3121900
-	- Den Storport-Fix mit KB3080728
-	- Den Spaceport-Fix mit KB3090322
+9. Wiederholen Sie die Schritte 3 bis 5, um die verbleibenden Hotfixes für den normalen Modus zu installieren.
 
-#### So installieren und überprüfen Sie den Hotfix für den Wartungsmodus
+	- LSI-Treiber – KB3121900
+	- Storport-Update – KB3080728
+	- Spaceport-Update – KB3090322
 
-Verwenden Sie KB3121899, um die Datenträger-Firmwareupdates zu installieren. Es handelt sich dabei um beeinträchtigende Updates, die ca. 30 Minuten dauern. Sie können diese während eines geplanten Wartungsfensters durch Herstellen einer Verbindung mit der seriellen Konsole des Geräts installieren.
+#### So installieren und überprüfen Sie Wartungsmodus-Hotfixes
 
-Beachten Sie, dass Sie diese Updates nicht installieren müssen, wenn Ihre Datenträger-Firmware bereits auf dem neuesten Stand ist. Führen Sie das `Get-HcsUpdateAvailability`-Cmdlet über die serielle Konsole des Geräts aus. Sie werden benachrichtigt, wenn Updates verfügbar sind und ob diese Updates mit Unterbrechungen (Wartungsmodus-Updates) oder ohne Unterbrechungen (regelmäßige Updates) installiert werden können.
- 
+Verwenden Sie KB3121899, um die Datenträger-Firmwareupdates zu installieren. Es handelt sich dabei um beeinträchtigende Updates, die ca. 30 Minuten dauern. Sie können diese während eines geplanten Wartungsfensters durch Herstellen einer Verbindung mit der seriellen Konsole des Geräts installieren.
+
+Beachten Sie, dass Sie diese Updates nicht installieren müssen, wenn Ihre Datenträger-Firmware bereits auf dem neuesten Stand ist. Führen Sie das `Get-HcsUpdateAvailability`-Cmdlet über die serielle Gerätekonsole aus, um zu überprüfen, ob Updates verfügbar sind und ob die Updates beeinträchtigend (Wartungsmodus) oder nicht beeinträchtigend (normaler Modus) sind.
+
 Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu installieren.
 
-1. Versetzen Sie das Gerät in den Wartungsmodus. Beachten Sie, dass Sie kein Windows PowerShell-Remoting verwenden sollten, wenn Sie für ein Gerät im Wartungsmodus eine Verbindung herstellen. Sie müssen dieses Cmdlet auf dem Gerätecontroller ausführen, wenn eine Verbindung über die serielle Konsole des Geräts besteht. Geben Sie Folgendes ein:
-		
+1. Versetzen Sie das Gerät in den Wartungsmodus. Beachten Sie, dass Sie kein Windows PowerShell-Remoting verwenden sollten, wenn Sie für ein Gerät im Wartungsmodus eine Verbindung herstellen. Führen Sie dieses Cmdlet stattdessen auf dem Gerätecontroller aus, wenn eine Verbindung über die serielle Konsole des Geräts besteht. Geben Sie Folgendes ein:
+
 	`Enter-HcsMaintenanceMode`
 
 	Nachfolgend sehen Sie eine Beispielausgabe.
@@ -142,7 +141,7 @@ Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu install
 		[4] Change language
 		Please enter your choice>
 
-	Beide Controller werden neu gestartet. Nach Abschluss des Neustarts befinden sich beide Controller im Wartungsmodus.
+	Daraufhin werden beide Controller im Wartungsmodus gestartet.
 
 3. Geben Sie Folgendes ein, um das Datenträger-Firmwareupdate zu installieren:
 
@@ -157,20 +156,18 @@ Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu install
 		This operation starts a hotfix installation and could reboot one or both of the controllers. By installing new updates you agree to, and accept any additional terms associated with, the new functionality listed in the release notes (https://go.microsoft.com/fwLink/?LinkID=613790). Are you sure you want to continue?
 		[Y] Yes [N] No (Default is "Y"): Y
 		WARNING: Installation is currently in progress. This operation can take several minutes to complete.
-	
 
 1.  Überwachen Sie den Installationsstatus mit dem Befehl `Get-HcsUpdateStatus`. Das Update ist abgeschlossen, wenn `RunInProgress` in `False` geändert wird.
- 
-2.  Nachdem die Installation abgeschlossen ist, wird der Controller, auf dem der Hotfix für den Wartungsmodus installiert wurde, neu gestartet. Verwenden Sie für die Anmeldung Option 1 mit Vollzugriff, und überprüfen Sie die Firmwareversion des Datenträgers. Geben Sie Folgendes ein:
-	
+
+2.  Nachdem die Installation abgeschlossen ist, wird der Controller, auf dem der Hotfix für den Wartungsmodus installiert wurde, neu gestartet. Verwenden Sie für die Anmeldung Option 1 mit Vollzugriff, und überprüfen Sie die Firmwareversion des Datenträgers. Geben Sie Folgendes ein:
+
 	`Get-HcsFirmwareVersion`
-  
+
 	Die erwarteten Datenträger-Firmwareversionen lauten:
 
 	`XMGG, XGEG, KZ50, F6C2, VR08`
 
 	Nachfolgend sehen Sie eine Beispielausgabe.
-
 
         -----------------------MAINTENANCE MODE------------------------
     	Microsoft Azure StorSimple Appliance Model 8100
@@ -179,10 +176,9 @@ Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu install
     	Copyright (C) 2014 Microsoft Corporation. All rights reserved.
     	You are connected to Controller1
     	---------------------------------------------------------------
-    	
+
     	Controller1>Get-HcsFirmwareVersion
-    	
-    	
+
     	Controller0 : TalladegaFirmware
     	  ActiveBIOS:0.45.0006
     	  BackupBIOS:0.45.0008
@@ -210,7 +206,7 @@ Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu install
     	  PCM2Firmware:1.00|1.05
     	  PCM2VPDStructure:0x05
     	  PCM2VPDCRC:0x41BEF99C
-    	
+
     	  DisksFirmware
     	  SEAGATE:ST400FM0073:XGEG
     	  SEAGATE:ST400FM0073:XGEG
@@ -225,18 +221,10 @@ Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu install
     	  SEAGATE:ST4000NM0023:XMGG
     	  SEAGATE:ST4000NM0023:XMGG
 
-	 Führen Sie den Befehl `Get-HcsFirmwareVersion` auf dem zweiten Controller aus, um zu überprüfen, ob die Softwareversion aktualisiert wurde. Anschließend können Sie den Wartungsmodus beenden. Geben Sie den folgenden Befehl für jeden Gerätecontroller ein:
+	 Führen Sie den Befehl `Get-HcsFirmwareVersion` auf dem zweiten Controller aus, um zu überprüfen, ob die Softwareversion aktualisiert wurde. Anschließend können Sie den Wartungsmodus beenden. Geben Sie hierzu den folgenden Befehl für jeden Gerätecontroller ein:
 
     `Exit-HcsMaintenanceMode`
-     
-1. Die Controller werden neu gestartet, wenn Sie den Wartungsmodus beenden. Nachdem die Firmwareupdates für Datenträger erfolgreich installiert wurden und das Gerät den Wartungsmodus verlassen hat, kehren Sie zum klassischen Azure-Portal zurück. Updates im Wartungsmodus werden im Portal nicht aktualisiert, bis 24 Stunden vergangen sind.
 
+1. Beim Beenden des Wartungsmodus werden die Controller neu gestartet. Nachdem die Firmwareupdates für Datenträger erfolgreich installiert wurden und das Gerät den Wartungsmodus verlassen hat, kehren Sie zum klassischen Azure-Portal zurück. Beachten Sie, dass es bis zu 24 Stunden dauern kann, bis die Installation der Wartungsmodus-Updates im Portal angezeigt wird.
 
-
-
-
-
- 
- 
-
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

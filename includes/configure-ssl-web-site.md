@@ -20,7 +20,7 @@ Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötig
 <a name="bkmk_getcert"></a>
 ## 1\. Beziehen eines SSL-Zertifikats
 
-Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen, wie z. B. **contoso.com**, **www.contoso.com** und **mail.contoso.com**, sichern müssen, erhalten Sie ein [Platzhalterzertifikat](http://en.wikipedia.org/wiki/Wildcard_certificate) oder ein [Zertifikat mit einem alternativen Antragstellernamen](http://en.wikipedia.org/wiki/SubjectAltName) (SubjectAltName).
+Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen, wie z. B. **contoso.com**, **www.contoso.com** und **mail.contoso.com**, sichern müssen, erhalten Sie ein [Platzhalterzertifikat](http://en.wikipedia.org/wiki/Wildcard_certificate) oder ein [Zertifikat mit einem alternativen Antragstellernamen](http://en.wikipedia.org/wiki/SubjectAltName) (SubjectAltName).
 
 Mit App Service verwendete SSL-Zertifikate müssen von einer [Zertifizierungsstelle](http://en.wikipedia.org/wiki/Certificate_authority) (CA) signiert werden. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate ausstellt. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
@@ -44,7 +44,11 @@ Um ein SSL-Zertifikat für die Verwendung mit Azure App Service zu erhalten, mü
 >
 > Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure App Service zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
 
-Eventuell müssen Sie auch **[Zwischenzertifikate](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)** (auch Kettenzertifikate genannt) anfordern, wenn diese von Ihrer Zertifizierungsstelle verwendet werden. Zwischenzertifikate gelten als sicherer als 'nicht verkettete Zertifikate', sodass sie von Zertifizierungsstellen üblicherweise verwendet werden. Zwischenzertifikate werden auf der Website der Zertifizierungsstelle häufig als separater Download bereitgestellt. In diesem Artikel wird dargestellt, wie Sie sicherstellen können, dass Zwischenzertifikate mit dem Zertifikat zusammengeführt werden, das zu Ihren Apps hochgeladen wurde.
+Eventuell müssen Sie auch **[Zwischenzertifikate](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)** (auch Kettenzertifikate genannt) anfordern, wenn diese von Ihrer Zertifizierungsstelle verwendet werden. Zwischenzertifikate gelten als sicherer als 'nicht verkettete Zertifikate', sodass sie von Zertifizierungsstellen üblicherweise verwendet werden. Zwischenzertifikate werden auf der Website der Zertifizierungsstelle häufig als separater Download bereitgestellt. In den Schritten dieses Artikels wird dargestellt, wie Sie sicherstellen können, dass Zwischenzertifikate mit dem Zertifikat zusammengeführt werden, das für Ihre Apps hochgeladen wurde.
+
+> [AZURE.NOTE]
+>
+> Falls von Ihrer Zertifizierungsstelle Zwischenzertifikate verwendet werden, müssen diese jeweils zusammen mit dem Zertifikat installiert werden, das für Ihre Domäne ausgegeben wird. Wenn keine Zwischenzertifikate installiert werden, kann dies für einige Clients zu Interoperabilitätsproblemen führen, die schwer zu reproduzieren sind.
 
 <a name="bkmk_certreq"></a>
 ### Beziehen eines Zertifikats mit Certreq.exe (nur Windows)
@@ -76,7 +80,7 @@ Certreq.exe ist ein Windows-Dienstprogramm zum Erstellen von Zertifikatanforderu
 
 		certreq -new \path\to\myrequest.txt \path\to\create\myrequest.csr
 
-	Geben Sie den Pfad zu der in Schritt 1 erstellten Datei **myrequest.txt** an sowie den Pfad, der beim Erstellen der Datei **myrequest.csr** verwendet werden soll.
+	Geben Sie den Pfad zu der in Schritt 1 erstellten Datei **myrequest.txt** an sowie den Pfad, der beim Erstellen der Datei **myrequest.csr** verwendet werden soll.
 
 5. Senden Sie die Datei **myrequest.csr** an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Dazu müssen Sie die Datei eventuell hochladen oder im Editor öffnen und den Inhalt direkt in ein Webformular eingeben.
 
@@ -512,7 +516,7 @@ Um die automatisch generierte Datei von der App abzurufen und zu ändern, führe
 
 	* **Node.js und Python Django**
 
-		Die Datei „web.config“, die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen **&lt;rewrite>**-Abschnitt mit **&lt;rule>**-Einträgen, die für die ordnungsgemäße Funktion der Website benötigt werden. Um für die App die Verwendung von HTTPS zu erzwingen, fügen Sie die **&lt;rule>** aus dem Beispiel als ersten Eintrag im **&lt;rules>**-Abschnitt hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
+		Die Datei „web.config“, die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen **&lt;rewrite>**-Abschnitt mit **&lt;rule>**-Einträgen, die für die richtige Funktionsweise der Website benötigt werden. Um für die App die Verwendung von HTTPS zu erzwingen, fügen Sie die **&lt;rule>** aus dem Beispiel als ersten Eintrag im **&lt;rules>**-Abschnitt hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
 
 	* **Java**
 
@@ -534,8 +538,7 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 >[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, bevor Sie sich für ein Azure-Konto registrieren, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine temporäre Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 [customdomain]: ../articles/app-service-web/web-sites-custom-domain-name.md
 [iiscsr]: http://technet.microsoft.com/library/cc732906(WS.10).aspx
@@ -561,4 +564,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!-----HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

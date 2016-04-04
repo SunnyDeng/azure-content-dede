@@ -21,7 +21,7 @@
 
 Dieses Feature funktioniert mit Java- und ASP.NET-Web-Apps, die in der Cloud oder auf Ihren eigenen Servern gehostet werden. Es funktioniert auch mit allen Apps, die Daten zur Anforderungstelemetrie generieren, z. B. mit einer Workerrolle, mit der [TrackRequest()](app-insights-api-custom-events-metrics.md#track-request) aufgerufen wird.
 
-Nach dem Einrichten von [Application Insights für Ihr Projekt](app-insights-get-started.md), und sofern Ihre App eine bestimmte Mindestmenge von Telemetriedaten generiert, benötigt die proaktive Diagnose 24 Stunden, um das normale Verhalten Ihrer App zu verstehen, bevor sie eingeschaltet wird und Warnungen senden kann.
+Nach dem Einrichten von [Application Insights für Ihr Projekt](app-insights-get-started.md), und sofern Ihre App eine bestimmte Mindestmenge von Telemetriedaten generiert, benötigt die proaktive NRT-Diagnose 24 Stunden, um das normale Verhalten Ihrer App zu verstehen, bevor sie eingeschaltet wird und Warnungen senden kann.
 
 Hier sehen Sie eine Beispielwarnung:
 
@@ -41,7 +41,7 @@ Normale [Metrikwarnungen](app-insights-alerts.md) informieren Sie, dass möglich
 
 Bei der proaktiven NRT-Diagnose (Near Real Time) werden die von Ihrer App erhaltenen Telemetriedaten und insbesondere die Rate von Anforderungsfehlern überwacht. Diese Metrik zählt die Anzahl der Anforderungen, für die die `Successful request`-Eigenschaft FALSE ist. Standardmäßig ist diese `Successful request== (resultCode < 400)` (es sei denn, Sie haben den benutzerdefinierten Code geschrieben, um Ihre eigenen [TrackRequest](app-insights-api-custom-events-metrics.md#track-request)-Aufrufe zu [filtern](app-insights-api-filtering-sampling.md#filtering) oder zu erstellen).
 
-Die Leistung Ihrer App weist ein typisches Verhaltensmuster auf. Einige Anforderungen sind anfälliger für Fehler als andere, und die gesamte Fehlerrate kann mit zunehmender Auslastung steigen. Bei der proaktiven NRT-Diagnose (Near Real Time) werden diese Anomalien mithilfe von maschinellem Lernen ermittelt.
+Die Leistung Ihrer App weist ein typisches Verhaltensmuster auf. Einige Anforderungen sind anfälliger für Fehler als andere, und die gesamte Fehlerrate kann mit zunehmender Auslastung steigen. Bei der proaktiven NRT-Diagnose werden diese Anomalien mithilfe von maschinellem Lernen ermittelt.
 
 Wenn Telemetriedaten aus Ihrer Web-App in Application Insights eingehen, vergleicht die proaktive NRT-Diagnose das aktuelle Verhalten mit den Mustern der letzten Tage. Wenn ein ungewöhnlicher Anstieg der Fehlerrate im Vergleich zur vorherigen Leistung beobachtet wird, wird eine Analyse ausgelöst.
 
@@ -138,4 +138,4 @@ Die proaktive NRT-Diagnose ergänzt andere ähnliche, aber doch verschiedene Fea
 
 *Wir sind sehr an Ihrer Meinung interessiert. Bitte senden Sie Ihr Feedback an:* [ainrtpd@microsoft.com](mailto:ainrtpd@microsoft.com).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

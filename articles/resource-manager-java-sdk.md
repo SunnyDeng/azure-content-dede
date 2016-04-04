@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="03/10/2016"
+   ms.date="03/16/2016"
    ms.author="navale;tomfitz;"/>
    
 # Azure Resource Manager SDK für Java
@@ -77,11 +77,14 @@ Hierfür wird Version 0.9.1 des Hilfsprogrammpakets verwendet.
 Die Authentifizierung für ARM wird per Azure Active Directory (AD) durchgeführt. Zum Herstellen einer Verbindung mit einer API müssen Sie sich zuerst gegenüber Azure AD authentifizieren, um ein Authentifizierungstoken zu erhalten, das Sie für jede Anforderung übergeben können. Um dieses Token zu erhalten, müssen Sie zuerst eine so genannte Azure AD-Anwendung und einen Dienstprinzipal erstellen, der für die Anmeldung verwendet wird. Eine Schritt-für-Schritt-Anleitung finden Sie unter [Erstellen einer Azure AD-Anwendung und eines Dienstprinzipals](./resource-group-create-service-principal-portal.md).
 
 Nach dem Erstellen des Dienstprinzipals sollten Sie über Folgendes verfügen:
+
 * Client-ID (GUID)
 * Geheimer Clientschlüssel (Zeichenfolge)
-* Mandanten-ID (GUID) oder Domänenname (Zeichenfolge) Mit diesen Werten können Sie ein Active Directory-Zugriffstoken abrufen, das eine Stunde lang gültig ist.
+* Mandanten-ID (GUID) oder Domänenname (Zeichenfolge)
 
-Das Java SDK enthält die AuthHelper-Hilfsklasse, mit der das Zugriffstoken erstellt wird, wenn die Client-ID, der geheime Schlüssel und die Mandanten-ID vorliegen. Im folgenden Beispiel wird in der [ServicePrincipalExample](https://github.com/Azure/azure-sdk-for-java/blob/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/authentication/ServicePrincipalExample.java)-Klasse die AuthHelper-Methode *getAccessTokenFromServicePrincipalCredentials* verwendet, um das Zugriffstoken abzurufen:
+Mit diesen Werten können Sie ein Active Directory-Zugriffstoken abrufen, das eine Stunde lang gültig ist.
+
+Das Java SDK enthält die AuthHelper-Hilfsklasse, mit der das Zugriffstoken erstellt wird, wenn die Client-ID, der geheime Schlüssel und die Mandanten-ID vorliegen. Im folgenden Beispiel wird in der Klasse [ServicePrincipalExample](https://github.com/Azure/azure-sdk-for-java/blob/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/authentication/ServicePrincipalExample.java) die AuthHelper-Methode *getAccessTokenFromServicePrincipalCredentials* verwendet, um das Zugriffstoken abzurufen:
 
 ```java
 public static Configuration createConfiguration() throws Exception {
@@ -135,7 +138,7 @@ public static void main(String[] args) throws Exception {
 ```
 
 ## Bereitstellen einer Vorlage
-Die [ResourceHelper](https://github.com/Azure/azure-sdk-for-java/blob/master/resource-management/azure-mgmt-utility/src/main/java/com/microsoft/azure/utility/ResourceHelper.java)-Klasse wurde erstellt, um den Prozess der Bereitstellung einer ARM-Vorlage mit dem Java SDK zu vereinfachen.
+Die Klasse [ResourceHelper](https://github.com/Azure/azure-sdk-for-java/blob/master/resource-management/azure-mgmt-utility/src/main/java/com/microsoft/azure/utility/ResourceHelper.java) wurde erstellt, um den Prozess der Bereitstellung einer ARM-Vorlage mit dem Java SDK zu vereinfachen.
 
 ```java
 // create a new resource group
@@ -155,10 +158,51 @@ DeploymentExtended deployment = ResourceHelper.createTemplateDeploymentFromURI(
         "1.0.0.0",
         parameters);
 ```
+## Aufführen aller virtuellen Computer
+Sie müssen nicht die Hilfsklassen nutzen (obwohl das die Sache vereinfacht), sondern können stattdessen direkt die Dienstklassen für die einzelnen Ressourcenanbieter verwenden. In diesem Beispiel führen wir einige der Ressourcen unter dem authentifizierten Abonnement auf. Für jede Ressourcengruppe sollen die virtuellen Computer und die zugeordneten IPs gesucht werden.
+
+```java
+// authenticate and get access token
+Configuration config = createConfiguration();
+ResourceManagementClient resourceManagementClient = ResourceManagementService.create(config);
+ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);
+NetworkResourceProviderClient networkResourceProviderClient = NetworkResourceProviderService.create(config);
+
+// list all resource groups     
+ArrayList<ResourceGroupExtended> resourceGroups = resourceManagementClient.getResourceGroupsOperations().list(null).getResourceGroups();
+for (ResourceGroupExtended resourcesGroup : resourceGroups) {
+   String rgName = resourcesGroup.getName();
+   System.out.println("Resource Group: " + rgName);
+   
+   // list all virtual machines
+   ArrayList<VirtualMachine> vms = computeManagementClient.getVirtualMachinesOperations().list(rgName).getVirtualMachines();
+   for (VirtualMachine vm : vms) {
+      System.out.println("    VM: " + vm.getName());
+      // list all nics
+      ArrayList<NetworkInterfaceReference> nics = vm.getNetworkProfile().getNetworkInterfaces();
+      for (NetworkInterfaceReference nicReference : nics) {
+         String[] nicURI = nicReference.getReferenceUri().split("/");
+         NetworkInterface nic = networkResourceProviderClient.getNetworkInterfacesOperations().get(rgName, nicURI[nicURI.length - 1]).getNetworkInterface();
+         System.out.println("        NIC: " + nic.getName());
+         System.out.println("        Is primary: " + nic.isPrimary());
+         ArrayList<NetworkInterfaceIpConfiguration> ips = nic.getIpConfigurations();
+
+         // find public ip address
+         for (NetworkInterfaceIpConfiguration ipConfiguration : ips) {
+               System.out.println("        Private IP address: " + ipConfiguration.getPrivateIpAddress());
+               String[] pipID = ipConfiguration.getPublicIpAddress().getId().split("/");
+               PublicIpAddress pip = networkResourceProviderClient.getPublicIpAddressesOperations().get(rgName, pipID[pipID.length - 1]).getPublicIpAddress();
+               System.out.println("        Public IP address: " + pip.getIpAddress());
+         }
+      }
+}  
+```
 
 Weitere Beispiele finden Sie in den Beispielpaketen unter [templatedeployments](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/templatedeployments).
 
 ## Weitere nützliche Informationen und Hilfe
-Dokumentation zum Azure-SDK für Java: [Java docs](http://azure.github.io/azure-sdk-for-java/) (Java-Dokumente) Falls Sie Fehler im SDK finden, bitten wir Sie, unter [Issues](https://github.com/Azure/azure-sdk-for-java/issues) (Probleme) einen Eintrag vorzunehmen oder unter [Stack Overflow for Azure Java SDK](http://stackoverflow.com/questions/tagged/azure-java-sdk) (Stack Overflow für Azure Java-SDK) nachzuschlagen.
+Dokumentation für das Azure-SDK für Java: [Java-Dokumente](http://azure.github.io/azure-sdk-for-java/)
 
-<!---HONumber=AcomDC_0316_2016-->
+Sollten Sie im SDK auf Fehler stoßen, bitten wir Sie, [hier](https://github.com/Azure/azure-sdk-for-java/issues) einen Eintrag zu erstellen oder bei [Stack Overflow für Azure Java SDK](http://stackoverflow.com/questions/tagged/azure-java-sdk) nachzuschlagen.
+
+<!---HONumber=AcomDC_0323_2016-->

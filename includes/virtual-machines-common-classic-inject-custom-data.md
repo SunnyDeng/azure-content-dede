@@ -1,19 +1,19 @@
 
 
 
-This topic describes how to:
+In diesem Thema wird Folgendes beschrieben:
 
-- Inject data into an Azure virtual machine when it is being provisioned.
+- Das Einfügen von Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird.
 
-- Retrieve it for both Windows and Linux.
+- Das Abrufen des virtuellen Computers für Windows und Linux.
 
-- Use special tools available on some systems to detect and handle custom data automatically.
+- Verwenden von speziellen Tools, die auf einigen Systemen zum automatischen Ermitteln und Verarbeiten benutzerdefinierter Daten verfügbar sind.
 
-> [AZURE.NOTE] This article describes how custom data can be injected by using a VM created with the Azure Service Management API. To see how to use the Azure Resource Management API, see [the example template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
+> [AZURE.NOTE] Dieser Artikel beschreibt, wie benutzerdefinierte Daten mithilfe eines virtuellen Computers, der mit der Azure-Dienstverwaltungs-API erstellt wurde, injiziert werden können. Informationen zur Verwendung der Azure-Dienstverwaltungs-API finden Sie in [der Beispielvorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
 
-## Injecting custom data into your Azure virtual machine
+## Einfügen benutzerdefinierter Daten in einem virtuellen Azure-Computer
 
-This feature is currently supported only in the [Azure Command-Line Interface](https://github.com/Azure/azure-xplat-cli). Although you may use any of the options for the `azure vm create` command, the following demonstrates one very basic approach.
+Dieses Feature wird derzeit nur in der [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-xplat-cli) unterstützt. Sie können für den Befehl `azure vm create` jede der Optionen verwenden. Der folgende Ansatz ist sehr allgemein gehalten.
 
 ```
     PASSWORD='AcceptablePassword -- more than 8 chars, a cap, a num, a special'
@@ -24,37 +24,39 @@ This feature is currently supported only in the [Azure Command-Line Interface](h
 ```
 
 
-## Using custom data in the virtual machine
+## Verwenden von benutzerdefinierten Daten im virtuellen Computer
 
-+ If your Azure virtual machine is a Windows-based virtual machine, then the custom data file is saved to `%SYSTEMDRIVE%\AzureData\CustomData.bin`. Although it was base64-encoded to transfer from the local computer to the new virtual machine, it is automatically decoded and can be opened or used immediately.
++ Wenn es sich bei Ihrem virtuellen Azure-Computer um einen virtuellen Windows-Computer handelt, wird die benutzerdefinierte Datendatei unter `%SYSTEMDRIVE%\AzureData\CustomData.bin` gespeichert. Auch wenn sie für die Übertragung vom lokalen Computer zum neuen virtuellen Computer base64-codiert war, wird sie automatisch decodiert und kann sofort geöffnet oder verwendet werden.
 
-   > [AZURE.NOTE] If the file exists, it is overwritten. The security on the directory is set to **System:Full Control** and **Administrators:Full Control**.
+   > [AZURE.NOTE] Wenn die Datei vorhanden ist, wird sie überschrieben. Die Sicherheit im Verzeichnis ist auf **System:Full Control** und **Administrators:Full Control** festgelegt.
 
-+ If your Azure virtual machine is a Linux-based virtual machine, then the custom data file will be located in the following two places. The data will be base64-encoded, so you will need to decode the data first.
++ Wenn es sich bei Ihrem virtuellen Azure-Computer um einen virtuellen Linux-Computer handelt, befindet sich die benutzerdefinierte Datendatei an den folgenden zwei Orten. Die Daten sind jedoch base64-codiert, sodass Sie sie zunächst decodieren müssen.
 
-    + At `/var/lib/waagent/ovf-env.xml`
-    + At `/var/lib/waagent/CustomData`
+    + Unter `/var/lib/waagent/ovf-env.xml`
+    + Unter `/var/lib/waagent/CustomData`
 
 
 
-## Cloud-init on Azure
+## Cloud-Init in Azure
 
-If your Azure virtual machine is from an Ubuntu or CoreOS image, then you can use CustomData to send a cloud-config to cloud-init. Or if your custom data file is a script, then cloud-init can simply execute it.
+Wenn Ihr virtueller Azure-Computer von einem Ubuntu- oder CoreOS-Image erstellt wurde, können Sie eine cloud-config-Datei an Cloud-Init senden. Wenn Ihre benutzerdefinierte Datendatei ein Skript ist, kann dieses einfach von Cloud-Init ausgeführt werden.
 
-### Ubuntu Cloud Images
+### Ubuntu-Cloud-Images
 
-In most Azure Linux images, you would edit "/etc/waagent.conf" to configure the temporary resource disk and swap file. See [Azure Linux Agent user guide](virtual-machines-linux-agent-user-guide.md) for more information.
+In den meisten Azure Linux-Images bearbeiten Sie "/ /etc/waagent.conf", um den temporären Ressourcendatenträger und die Auslagerungsdatei zu konfigurieren. Weitere Informationen erhalten Sie im [Benutzerhandbuch für Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md).
 
-However, on the Ubuntu Cloud Images, you must use cloud-init to configure the resource disk (that is, the "ephemeral" disk) and swap partition. See the following page on the Ubuntu wiki for more details: [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
+Bei Ubuntu-Cloud-Images muss zum Konfigurieren des Ressourcendatenträgers (auch als "kurzlebiger" Datenträger bezeichnet) und der Swap-Partition jedoch Cloud-Init verwendet werden. Weitere Details finden Sie auf der folgenden Seite im Ubuntu-Wiki: [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
 
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## Next steps: Using cloud-init
+## Nächste Schritte: Verwenden von Cloud-Init
 
-For further information, see the [cloud-init documentation for Ubuntu](https://help.ubuntu.com/community/CloudInit).
+Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](https://help.ubuntu.com/community/CloudInit) (cloud-init-Dokumentation für Ubuntu) (in englischer Sprache).
 
 <!--Link references-->
-[Add Role Service Management REST API Reference](http://msdn.microsoft.com/library/azure/jj157186.aspx)
+[REST-API-Referenz zur Dienstverwaltung mit "Add Role"](http://msdn.microsoft.com/library/azure/jj157186.aspx)
 
-[Azure Command-line Interface](https://github.com/Azure/azure-xplat-cli)
+[Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-xplat-cli)
+
+<!---HONumber=AcomDC_0323_2016-->

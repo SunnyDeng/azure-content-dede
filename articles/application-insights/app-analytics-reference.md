@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Referenzmaterial für die Anwendungsanalyse" 
-	description="Reguläre Ausdrücke in der Anwendungsanalyse, dem leistungsfähigen Suchtool für Application Insights." 
+	pageTitle="Referenzmaterial für Analytics in Application Insights" 
+	description="Reguläre Ausdrücke in Analytics, dem leistungsfähigen Suchtool von Application Insights." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -12,13 +12,12 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/01/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
-# Referenzmaterial
+# Application Insights: Referenzmaterial zu Analytics
 
-[Anwendungsanalyse](app-analytics.md) ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Abfragesprache CSL der Anwendungsanalyse beschrieben.
-
+[Analytics](app-analytics.md) ist die leistungsfähige Suchfunktion von [Application Insights](app-insights-overview.md). Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben.
 
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
@@ -48,7 +47,7 @@ Außerdem wird die von PCRE, PERL und VIM akzeptierte Syntax aufgeführt.
 |\\P{Greek} |Negierte Unicode-Zeichenklasse 
 |Zusammensetzungen: | 
 |xy |x, gefolgt von y 
-|x|y |x oder y (bevorzugt x) 
+|x&#124;y |x oder y (bevorzugt x) 
 | 
 |Wiederholungen: | 
 | |null oder mehr x, mehr bevorzugt 
@@ -86,7 +85,7 @@ Außerdem wird die von PCRE, PERL und VIM akzeptierte Syntax aufgeführt.
 |(?flags) |Flags in aktueller Gruppe festlegen; ohne Erfassung 
 |(?flags:re) |Flags während re festlegen; ohne Erfassung 
 |(?#text) |Kommentar (NICHT UNTERSTÜTZT) 
-|(?|x|y|z) |Rücksetzung der Verzweigungsnummerierung (NICHT UNTERSTÜTZT) 
+|(?&#124;x&#124;y&#124;z) |Rücksetzung der Verzweigungsnummerierung (NICHT UNTERSTÜTZT) 
 |(?>re) |possessive Übereinstimmung von re (NICHT UNTERSTÜTZT) 
 |re@> |possessive Übereinstimmung von re (NICHT UNTERSTÜTZT) VIM 
 |%(re) |Gruppe ohne Erfassung (NICHT UNTERSTÜTZT) VIM 
@@ -198,7 +197,7 @@ Außerdem wird die von PCRE, PERL und VIM akzeptierte Syntax aufgeführt.
 |[[:blank:]] |Leerzeichen (== [\\t ]) 
 |[[:cntrl:]] |Steuerung (== [\\x00-\\x1F\\x7F]) 
 |[[:digit:]] |Ziffern (== [0-9]) 
-|[[:graph:]] |grafisch (== [!-~] == [A-Za-z0-9!"#$%&'()*+,-./:;<=>?@[\\]^\_`{|}~]) 
+|[[:graph:]] |grafisch (== [!-~] == [A-Za-z0-9!"#$%&'()*+,-./:;<=>?@[\]^\_`{&#124;}~]) 
 |[[:lower:]] |lower case (== [a-z]) 
 |[[:print:]] |printable (== [ -~] == [ [:graph:]]) 
 |[[:punct:]] |punctuation (== [!-/:-@[-`{-~]) 
@@ -393,7 +392,7 @@ Außerdem wird die von PCRE, PERL und VIM akzeptierte Syntax aufgeführt.
 |(?&name) |rekursiver Aufruf der benannten Gruppe (NICHT UNTERSTÜTZT) 
 |(?P=name) |benannter Rückbezug (NICHT UNTERSTÜTZT) 
 |(?P>name) |rekursiver Aufruf der benannten Gruppe (NICHT UNTERSTÜTZT) 
-|(?(cond)true|false) |konditionale Verzweigung (NICHT UNTERSTÜTZT) 
+|(?(cond)true&#124;false) |konditionale Verzweigung (NICHT UNTERSTÜTZT) 
 |(?(cond)true) |konditionale Verzweigung (NICHT UNTERSTÜTZT) 
 |(*ACCEPT) |regexps mehr wie Prolog machen (NICHT UNTERSTÜTZT) 
 |(*COMMIT) |(NICHT UNTERSTÜTZT) 
@@ -416,4 +415,4 @@ Außerdem wird die von PCRE, PERL und VIM akzeptierte Syntax aufgeführt.
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!----HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

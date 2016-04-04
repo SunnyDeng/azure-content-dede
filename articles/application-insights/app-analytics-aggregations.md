@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Die summarize-Anweisung und Aggregationsfunktionen in der Application Insights-Analyse" 
-	description="Referenz für Aggregationsfunktionen und die summarize-Anweisung in der Application Insights-Analyse, dem leistungsfähigen Suchtool für Application Insights." 
+	pageTitle="„summarize“ und Aggregation in Analytics in Application Insights" 
+	description="Referenz für Aggregationsfunktionen und die summarize-Anweisung in Analytics, dem leistungsfähigen Suchtool von Application Insights." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -12,13 +12,13 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/06/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
 
-# Aggregation in Application Insights-Analyse
+# Aggregation in Analytics
 
-[Application Insights-Analyse](app-analytics.md) ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Abfragesprache AIQL von Application Insights-Analyse beschrieben.
+[Analytics](app-analytics.md) ist die leistungsfähige Suchfunktion von [Application Insights](app-insights-overview.md). Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben.
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
 
@@ -52,7 +52,7 @@ Erzeugt eine Tabelle, die den Inhalt der Eingabetabelle aggregiert.
 * *Aggregation:* Ein Aufruf einer Aggregationsfunktion, wie z. B. `count()` oder `avg()`, mit Spaltennamen als Argumente. Eine Liste der Aggregationsfunktionen finden Sie nachfolgend.
 * *GroupExpression:* Ein Ausdruck für die Spalten, der einen Satz von unterschiedlichen Werten bereitstellt. Normalerweise handelt es sich entweder um einen Spaltennamen, der bereits einen eingeschränkten Satz von Werten bereitstellt, oder um `bin()` mit einer numerischen Spalte oder Zeitspalte als Argument. 
 
-Wenn Sie einen numerischen Ausdruck oder Zeitausdruck ohne `bin()` bereitstellen, wendet die AI-Analyse ihn automatisch mit einem Intervall von `1h` für Uhrzeiten oder von `1.0` für Zahlen an.
+Wenn Sie einen numerischen Ausdruck oder Zeitausdruck ohne `bin()` bereitstellen, wendet Analytics ihn automatisch mit einem Intervall von `1h` für Uhrzeiten oder von `1.0` für Zahlen an.
 
 Wenn Sie keine *GroupExpression* angeben, wird die gesamte Tabelle in einer einzelnen Ausgabezeile zusammengefasst.
 
@@ -307,7 +307,7 @@ Die Syntax des zurückgegebenen Schemas lautet folgendermaßen:
     Union-type ::= '[' Type* ']';
     Primitive-type ::= "int" | "string" | ...;
 
-Sie entsprechen einer Teilmenge der TypeScript-Typanmerkungen, die als dynamischer AIQL-Wert codiert sind. In TypeScript würde das Beispielschema folgendermaßen lauten:
+Sie entsprechen einer Teilmenge der TypeScript-Typanmerkungen, die als dynamischer Wert codiert sind. In TypeScript würde das Beispielschema folgendermaßen lauten:
 
     var someobject: 
     { 
@@ -463,4 +463,4 @@ Gibt die Summe von *Expr* für die Gruppe zurück.
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

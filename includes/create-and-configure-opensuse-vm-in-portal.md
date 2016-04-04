@@ -12,16 +12,16 @@
 
 5. Gehen Sie auf der ersten Seite für die **Konfiguration des virtuellen Computers** wie folgt vor:
 
-	- Weisen Sie unter **Name des virtuellen Computers** einen Namen zu, z. B. "testlinuxvm". Der Name muss zwischen 3 und 15 Zeichen enthalten, er darf nur aus Buchstaben, Zahlen und Bindestrichen bestehen und muss mit einem Buchstaben beginnen und mit einem Buchstaben oder einer Zahl enden.
+	- Weisen Sie unter **Name des virtuellen Computers** einen Namen zu, z. B. "testlinuxvm". Der Name muss zwischen 3 und 15 Zeichen enthalten, er darf nur aus Buchstaben, Zahlen und Bindestrichen bestehen und muss mit einem Buchstaben beginnen und mit einem Buchstaben oder einer Zahl enden.
 
-	- Überprüfen Sie den **Tarif**, und wählen Sie eine **Größe** aus. Die Ebene bestimmt, zwischen welchen Größen Sie wählen können. Die Größe wirkt sich auf seine Betriebskosten sowie auf die Konfigurationsoptionen, wie die Anzahl der Datenträger, die Sie anschließen können, aus. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](../articles/virtual-machines-size-specs.md).
+	- Überprüfen Sie den **Tarif**, und wählen Sie eine **Größe** aus. Die Ebene bestimmt, zwischen welchen Größen Sie wählen können. Die Größe wirkt sich auf seine Betriebskosten sowie auf die Konfigurationsoptionen, wie die Anzahl der Datenträger, die Sie anschließen können, aus. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](../articles/virtual-machines-linux-sizes.md).
 	- Geben Sie einen **neuen Benutzernamen** ein, oder übernehmen Sie den Standardnamen **azureuser**. Dieser Name wird der Sudoer-Listendatei hinzugefügt.
 	- Wählen Sie aus, welche Art der **Authentifizierung** verwendet werden soll. Hinweise zu allgemeinen Kennwortrichtlinien finden Sie unter [Sichere Kennwörter](http://msdn.microsoft.com/library/ms161962.aspx).
 
 6. Gehen Sie auf der Seite für die **Konfiguration des virtuellen Computers** wie folgt vor:
 
 	- Verwenden Sie die Standardeinstellung **Einen neuen Clouddienst erstellen**.
-	- Geben Sie im Feld **DNS-Name** einen gültigen DNS-Namen ein, der als Teil der Adresse verwendet wird, z. B. "testlinuxvm".
+	- Geben Sie im Feld **DNS-Name** einen gültigen DNS-Namen ein, der als Teil der Adresse verwendet wird, z. B. "testlinuxvm".
 	- Wählen Sie im Feld **Region/Affinity Group/Virtual Network** eine Region aus, in der dieses virtuelle Image gehostet wird.
 	- Behalten Sie unter **Endpunkte** den SSH-Endpunkt bei. Sie können nun weitere Endpunkte hinzufügen oder nach dem Erstellen des virtuellen Computers vorhandene Endpunkte hinzufügen, ändern oder löschen.
 
@@ -45,7 +45,7 @@ In Abhängigkeit von dem Betriebssystem auf dem Computer, über den Sie eine Ver
 
 	Speichern Sie **putty.exe** in einem Verzeichnis auf dem Computer. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zu dem betreffenden Verzeichnis, und führen Sie **putty.exe** aus.
 
-	Geben Sie den Hostnamen ein, z. B. "testlinuxvm.cloudapp.net", und geben Sie dann für **Port** den Wert 22 ein.
+	Geben Sie den Hostnamen ein, z. B. "testlinuxvm.cloudapp.net", und geben Sie dann für **Port** den Wert 22 ein.
 
 	![PuTTY-Bildschirm][Image6]
 
@@ -65,4 +65,4 @@ In Abhängigkeit von dem Betriebssystem auf dem Computer, über den Sie eine Ver
 
 [Image6]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->
