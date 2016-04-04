@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/11/2016"
+	ms.date="03/16/2016"
 	ms.author="rajram"/>
 
 # Erste Schritte mit dem FTP-Connector und das Hinzufügen zur Logik-App
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [FTP-API](../connectors/create-api-ftp.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [FTP-API](../connectors/connectors-create-api-ftp.md).
 
 Sie stellen eine Verbindung mit einem FTP-Server her, um Daten oder Dateien zu verschieben. Wichtige Funktionen des FTP-Connectors:
 
@@ -31,7 +31,9 @@ Sie stellen eine Verbindung mit einem FTP-Server her, um Daten oder Dateien zu v
 Sie können den FTP-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ## Erstellen eines neuen FTP-Connectors
-Um einen neuen FTP-Connector zu erstellen, befolgen Sie die unten aufgeführten Schritte. – Starten Sie das Azure-Portal. – Öffnen Sie den Azure Marketplace über "+Neu" (unten auf der Seite) -> "Web + Mobil" -> "Azure Marketplace": ![Starten von Azure Marketplace][1]
+Um einen neuen FTP-Connector zu erstellen, führen Sie die unten aufgeführten Schritte aus.
+- Starten Sie das Azure-Portal.
+- Öffnen Sie den Azure Marketplace über „+Neu“ (unten auf der Seite) > „Web + Mobil“ > „Azure Marketplace“: ![Starten von Azure Marketplace][1]
 
 - Klicken Sie auf die API-Apps.
 - Suchen Sie nach "FTP", und wählen Sie "FTP-Connector": ![Auswählen des FTP-Connectors][2]
@@ -75,11 +77,17 @@ Der FTP-Connector hat einen Trigger – "Datei verfügbar (Lesen dann Löschen)"
 
 Klicken Sie auf den Trigger "Datei verfügbar (Lesen dann Löschen)": ![Grundlegende Eingaben – FTP-Trigger][7]
 
-Anhand der Eingaben können Sie einen bestimmten Ordnerpfad konfigurieren, der mit einer geplanten Häufigkeit abgefragt wird. Die grundlegenden Eingaben sind: – Häufigkeit – Gibt die Häufigkeit der FTP-Umfrage an- – Intervall – Gibt das Intervall für die geplante Häufigkeit an. – Ordnerpfad – Gibt den Ordnerpfad auf dem FTP-Server an. – Dateityp – Gibt an, ob es sich um eine Text- oder um eine Binärdatei handelt.
+Anhand der Eingaben können Sie einen bestimmten Ordnerpfad konfigurieren, der mit einer geplanten Häufigkeit abgefragt wird. Grundlegende Eingaben sind:
+- Häufigkeit – Gibt die Häufigkeit der FTP-Abfrage an.
+- Intervall - Gibt das Intervall für die geplante Häufigkeit an.
+- Ordnerpfad – Gibt den Ordnerpfad auf dem FTP-Server an.
+- Dateityp – Gibt an, ob es sich um Text- oder Binärdateien handelt.
 
 Durch Klicken auf die Ellipsen "..." werden die erweiterten Eingaben angezeigt: ![Grundlegende Eingaben – FTP-Trigger][8]
 
-Die erweiterten Eingaben beinhalten: – Dateimaske – Gibt die Dateimaske während der Umfrage an. – Dateimaske ausschließen – Gibt die Dateimasken an, die bei der Umfrage ausgeschlossen werden sollen.
+Zu erweiterten Eingaben zählen:
+- Dateimaske – Gibt die Dateimaske während des Abrufens an.
+- Dateimaske ausschließen – Gibt die Dateimasken an, die während des Abrufens ausgeschlossen werden sollen.
 
 Stellen Sie die Eingaben bereit, und klicken Sie auf das Häkchen, um die Eingabekonfiguration abzuschließen: ![Grundlegende Eingaben – FTP-Trigger][9]
 
@@ -162,4 +170,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [13]: ./media/app-service-logic-connector-ftp/ConfiguredUploadFile.PNG
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

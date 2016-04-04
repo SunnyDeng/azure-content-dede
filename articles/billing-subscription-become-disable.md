@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/08/2015"
+	ms.date="03/08/2016"
 	ms.author="genli"/>
 
 # Was kann ich tun, wenn mein Abonnement deaktiviert wird?
@@ -43,4 +43,4 @@ Wenn Sie nicht auf das Portal zugreifen können, können Sie auch über die Azur
 
 Weitere Informationen finden Sie unter [Erstellen eines Supporttickets bei Problemen mit Azure-Abrechnungen und -Abonnements](billing-how-to-create-billing-support-ticket.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

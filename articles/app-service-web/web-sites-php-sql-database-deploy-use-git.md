@@ -3,9 +3,9 @@
 	description="In diesem Lernprogramm wird gezeigt, wie Sie eine PHP-Web-App erstellen, die Daten in einer Azure SQL-Datenbank speichert, und wie Sie die Git-Bereitstellung in Azure App Service verwenden." 
 	services="app-service\web, sql-database" 
 	documentationCenter="php" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor=""/>
 
 <tags 
 	ms.service="app-service-web" 
@@ -14,7 +14,7 @@
 	ms.devlang="PHP" 
 	ms.topic="article" 
 	ms.date="02/09/2016" 
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 # Erstellen einer PHP-SQL-Web-App und Bereitstellen in Azure App Service mit Git
 
@@ -131,7 +131,7 @@ Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und aus
 		echo "<h3>Table created.</h3>";
 		?>
 
-	Die Werte für <code>$user</code> und <code>$pwd</code> müssen durch den lokalen SQL Server-Benutzernamen und das dazugehörige Kennwort ersetzt werden.
+	Die Werte für <code>$user</code> und <code>$pwd</code> müssen durch den lokalen SQL Server-Benutzernamen und das dazugehörige Kennwort ersetzt werden.
 
 4. Geben Sie in einer Terminalsitzung im Stammverzeichnis der Anwendung den folgenden Befehl ein:
 
@@ -298,4 +298,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

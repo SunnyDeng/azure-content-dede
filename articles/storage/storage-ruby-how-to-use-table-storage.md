@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie den Azure-Tabellenspeicher in Azure verwenden. Die Codebeispiele verwenden die Ruby-API."
 	services="storage"
 	documentationCenter="ruby"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="tysonn"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -14,7 +14,7 @@
 	ms.devlang="ruby"
 	ms.topic="article"
 	ms.date="02/17/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 
 # Verwenden des Azure-Tabellenspeichers mit Ruby
@@ -31,7 +31,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tab
 
 ## Erstellen einer Ruby-Anwendung
 
-Anweisungen zum Erstellen einer Ruby-Anwendung finden Sie unter [Ruby on Rails-Webanwendung auf einer Azure-VM](../virtual-machines/virtual-machines-ruby-rails-web-app-linux.md).
+Anweisungen zum Erstellen einer Ruby-Anwendung finden Sie unter [Ruby on Rails Web application on an Azure VM](../virtual-machines/virtual-machines-ruby-rails-linux-classic-web-app.md) (Ruby on Rails-Webanwendung auf virtuellen Azure-Computern).
 
 ## Konfigurieren der Anwendung für den Zugriff auf Storage
 
@@ -163,4 +163,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

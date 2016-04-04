@@ -2,7 +2,7 @@
 	pageTitle="Verwenden von Logik-App-Features | Microsoft Azure" 
 	description="Erfahren Sie, wie die erweiterten Features von Logik-Apps verwendet werden." 
 	authors="stepsic-microsoft-com" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" 
 	services="app-service\logic" 
 	documentationCenter=""/>
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/23/2016"
+	ms.date="03/11/2016"
 	ms.author="stepsic"/>
 	
 # Verwenden von Logik-App-Features
@@ -30,9 +30,9 @@ Bevor Sie dieses Thema durchgehen, sollten Sie die Schritte unter [Erstellen ein
 
 Die folgenden Dokumente könnten hilfreich sein:
 
-- [Verwaltungs- und Laufzeit-REST-APIs](https://msdn.microsoft.com/library/azure/dn948513.aspx): hier wird auch erklärt, wie Logik-Apps direkt aufgerufen werden.
-- [Sprachreferenz](https://msdn.microsoft.com/library/azure/dn948512.aspx): eine umfassende Liste aller Funktionen und Ausdrücke, die unterstützt werden.
-- [Trigger- und Aktionstypen](https://msdn.microsoft.com/library/azure/dn948511.aspx): die verschiedenen Arten von Aktionen und die dazugehörigen Eingaben.
+- [Verwaltungs- und Laufzeit-REST-APIs](https://msdn.microsoft.com/library/azure/mt643787.aspx): hier wird auch erklärt, wie Logik-Apps direkt aufgerufen werden.
+- [Sprachreferenz](https://msdn.microsoft.com/library/azure/mt643789.aspx): eine umfassende Liste aller Funktionen und Ausdrücke, die unterstützt werden.
+- [Trigger- und Aktionstypen](https://msdn.microsoft.com/library/azure/mt643939.aspx): die verschiedenen Arten von Aktionen und die dazugehörigen Eingaben.
 - [Übersicht über App Service](../app-service/app-service-value-prop-what-is.md): Beschreibung, welche Komponenten für das Erstellen welcher Lösung ausgewählt werden.
 
 ## Hinzufügen von bedingter Logik
@@ -41,11 +41,11 @@ Wenngleich der ursprüngliche Datenfluss funktioniert, gibt es einige Bereiche, 
 
 
 ### Bedingt
-Diese Logik-App könnte dazu führen, dass Sie sehr viele E-Mail-Nachrichten erhalten. In den folgenden Schritten wird zusätzliche Logik hinzugefügt, um sicherzustellen, dass Sie nur eine E-Mail-Nachricht erhalten, wenn der Tweet von einer Person mit einer bestimmten Anzahl von Followern stammt.
+Diese Logik-App könnte dazu führen, dass Sie sehr viele E-Mail-Nachrichten erhalten. In den folgenden Schritten wird Logik hinzugefügt, um sicherzustellen, dass Sie nur eine E-Mail-Nachricht erhalten, wenn der Tweet von einer Person mit einer bestimmten Anzahl von Followern stammt.
 
-1. Klicken Sie auf das Pluszeichen, und suchen Sie die Aktion *Get User* für Twitter.
+1. Klicken Sie auf das Pluszeichen, und suchen Sie die Aktion *Benutzer abrufen* für Twitter.
 
-2. Übergeben Sie das Feld **Tweeted by** aus dem Trigger, um Informationen zum Twitter-Benutzer abzurufen.
+2. Übergeben Sie das Feld **Getweetet von** aus dem Trigger, um Informationen zum Twitter-Benutzer abzurufen.
 
 	![Get user](./media/app-service-logic-use-logic-app-features/getuser.png)
 
@@ -89,7 +89,7 @@ Der folgende Code aktualisiert die vorhandene Logik-App so, dass Parameter für 
     
 2. Scrollen Sie zur `twitterconnector`-Aktion, suchen Sie den Abfragewert, und ersetzen Sie ihn durch `#@{parameters('topic')}`. Außerdem können Sie die **Concat**-Funktion verwenden, um zwei oder mehr Zeichenfolgen zu verknüpfen, z. B. ist `@concat('#',parameters('topic'))` identisch mit der oben genannten.
  
-Parameter sind eine gute Möglichkeit, Werte auszuwählen, die Sie wahrscheinlich häufig ändern. Sie sind besonders nützlich, wenn Sie Parameter in verschiedenen Umgebungen überschreiben müssen. Weitere Informationen zum Überschreiben von Parametern auf Grundlage der Umgebung finden Sie in unserer [REST-API-Dokumentation](http://msdn.microsoft.com/library/mt643788(Azure.100).aspx).
+Parameter sind eine gute Möglichkeit, Werte auszuwählen, die Sie wahrscheinlich häufig ändern. Sie sind besonders nützlich, wenn Sie Parameter in verschiedenen Umgebungen überschreiben müssen. Weitere Informationen zum Überschreiben von Parametern auf Grundlage der Umgebung finden Sie in unserer [REST-API-Dokumentation](https://msdn.microsoft.com/library/mt643787.aspx).
 
 Wenn Sie nun auf **Speichern** klicken, werden Ihnen stündlich alle neuen Tweets mit mehr als 5 Retweets in einen Ordner namens **tweets** in Ihrer Dropbox übermittelt.
 
@@ -107,4 +107,4 @@ Dienste können einen Logik-App-Endpunkt zum Starten eines Workflows aufrufen. W
 <!-- Shared links -->
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

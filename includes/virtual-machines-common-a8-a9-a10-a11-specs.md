@@ -1,64 +1,61 @@
 
 
-This article provides background information and considerations for using the Azure A8, A9, A10, and A11 instances, also known as *compute-intensive* instances. Key features of these instances include:
+Dieser Artikel enthält Hintergrundinformationen und Überlegungen zur Verwendung der Azure-Instanzen A8 und A9, A10 und A11, auch bekannt als *rechenintensive* Instanzen. Die wichtigsten Merkmale dieser Instanzen lauten wie folgt:
 
-* **High-performance hardware** – The Azure datacenter hardware that runs these instances is designed and optimized for compute-intensive and network-intensive applications, including high-performance computing (HPC) cluster applications, modeling, and simulations.
+* **Hochleistungshardware**: Die Azure-Rechenzentrumshardware, auf der diese Instanzen ausgeführt werden, wurde für rechenintensive Anwendungen mit hoher Netzwerkauslastung konzipiert und optimiert. Hierzu zählen beispielsweise High Performance Computing (HPC)-Clusteranwendungen, Modellierung und Simulationen.
 
-* **RDMA network connection for MPI applications** – Set up the A8 and A9 instances to communicate with other A8 and A9 instances over a low-latency, high-throughput network in Azure that is based on remote direct memory access (RDMA) technology. This feature can boost the performance of certain Linux and Windows Message Passing Interface (MPI) applications .
+* **RDMA-Netzwerkverbindung für MPI-Anwendungen**: Richten Sie die A8- und A9-Instanzen so ein, dass sie über ein Azure-Netzwerk mit niedriger Latenz und hohem Durchsatz, das auf RDMA-Technologie (Remote Direct Memory Access) basiert, mit anderen A8- und A9-Instanzen kommunizieren können. Dieses Feature kann die Leistung von bestimmten Linux- und Windows-MPI-Anwendungen (Message Passing Interface) steigern.
 
-* **Support for HPC clusters** – Deploy cluster management and job scheduling software on the A8, A9, A10, and A11 instances in Azure to create a stand-alone HPC cluster or to add capacity to an on-premises cluster.
+* **Unterstützung für HPC-Cluster**: Stellen Sie in den A8-, A9-, A10- und A11-Instanzen in Azure Clusterverwaltungs- und Auftragsplanungssoftware bereit, um einen eigenständigen HPC-Cluster zu erstellen oder die Kapazität eines lokalen Clusters zu erweitern.
 
->[AZURE.NOTE]A10 and A11 instances have the same performance optimizations and specifications as the A8 and A9 instances. However, they do not include access to the RDMA network in Azure. They are designed for HPC applications that do not require constant and low-latency communication between nodes, also known as parametric or embarrassingly parallel applications.
+>[AZURE.NOTE]Die A10- und A11-Instanzen verfügen über die gleichen Leistungsoptimierungen und Spezifikationen wie die A8- und A9-Instanzen. Allerdings bieten sie keinen Zugriff auf das RDMA-Netzwerk in Azure. Sie wurden für HPC-Anwendungen entworfen, die keine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern und auch als parametrische oder hochgradig parallele Anwendungen bezeichnet werden.
 
 
-## Specs
+## Spezifikationen
 
-### CPU and memory
+### CPU und Arbeitsspeicher
 
-The Azure A8, A9, A10, and A11 compute-intensive instances feature high-speed, multicore CPUs and large amounts of memory, as shown in the following table.
+Die rechenintensiven Azure-Instanzen A8 und A9, A10 und A11 verfügen über schnelle Mehrkern-CPUs und große Mengen an Arbeitsspeicher, wie in der folgenden Tabelle dargestellt.
 
-Size | CPU | Memory
+Größe | CPU | Arbeitsspeicher
 ------------- | ----------- | ----------------
-A8 and A10 | Intel Xeon E5-2670<br/>8 cores @ 2.6 GHz | DDR3-1600 MHz<br/>56 GB
-A9 and A11 | Intel Xeon E5-2670<br/>16 cores @ 2.6 GHz | DDR3-1600 MHz<br/>112 GB
+A8 und A10 | Intel Xeon E5-2670<br/>8 Kerne, 2,6 GHz | DDR3-1600 MHz<br/>56 GB
+A9 und A11 | Intel Xeon E5-2670<br/>16 Kerne, 2,6 GHz | DDR3-1600 MHz<br/>112 GB
 
 
->[AZURE.NOTE]Additional processor details, including supported instruction set extensions, are at the Intel.com website. For VM storage capacities and disk details, see [Sizes for virtual machines](virtual-machines-linux-sizes.md).
+>[AZURE.NOTE]Weitere Prozessordetails sowie die unterstützten Befehlssatzerweiterungen finden Sie auf der Website „Intel.com“. Informationen zu Speicherkapazitäten virtueller Computer und Details zu den Datenträgern finden Sie unter [Größen für virtuelle Computer](virtual-machines-linux-sizes.md).
 
-### Network adapters
+### Netzwerkadapter
 
-A8 and A9 instances have two network adapters, which connect to the following two back-end Azure networks.
+Die A8- und A9-Instanzen besitzen zwei Netzwerkadapter, die mit den beiden folgenden Azure-Back-End-Netzwerken verbunden sind:
 
 
-Network | Description
+Netzwerk | Beschreibung
 -------- | -----------
-10-Gbps Ethernet | Connects to Azure services (such as Azure Storage and Azure Virtual Network) and to the Internet.
-32-Gbps back end, RDMA capable | Enables low-latency, high-throughput application communication between instances within a single cloud service or availability set. Reserved for MPI traffic only.
+Ethernet mit 10 GBit/s | Verbindung mit Azure-Diensten (z. B. Azure Storage und Azure Virtual Network) und mit dem Internet
+Back-End mit 32 GBit/s, RDMA-fähig | Ermöglicht Anwendungskommunikation mit geringer Latenz und hohem Durchsatz zwischen Instanzen in einem einzelnen Clouddienst oder in einer einzelnen Verfügbarkeitsgruppe Für MPI-Verkehr reserviert.
 
 
->[AZURE.IMPORTANT]See [Access to the RDMA network](#access-the-rdma-network) in this article for additional requirements for MPI applications to access the RDMA netowrk.
+>[AZURE.IMPORTANT]Informationen zu zusätzlichen Anforderungen von MPI-Anwendungen beim Zugriff auf das RDMA-Netzwerk finden Sie in diesem Artikel unter [Zugreifen auf das RDMA-Netzwerk](#access-the-rdma-network).
 
-A10 and A11 instances have a single, 10-Gbps Ethernet network adapter that connects to Azure services and the Internet.
+A10- und A11-Instanzen besitzen einen einzelnen 10-GBit/s-Ethernet-Netzwerkadapter, der mit den Azure-Diensten und dem Internet verbunden ist.
 
-## Deployment considerations
+## Überlegungen zur Bereitstellung
 
-* **Azure account** – If you want to deploy more than a small number of compute-intensive instances, consider a pay-as-you-go subscription or other purchase options. You can also use your MSDN subscription. See [Azure benefit for MSDN subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). If you're using an [Azure free account](https://azure.microsoft.com/pricing/free-trial/), you can use only a limited number of Azure compute cores.
+* **Azure-Konto**: Wenn Sie eine größere Anzahl von rechenintensiven Instanzen bereitstellen möchten, sollten Sie ein nutzungsbasiertes Abonnement oder andere Kaufoptionen in Erwägung ziehen. Sie können auch Ihr MSDN-Abonnement verwenden. Weitere Informationen finden Sie unter [Azure-Vorteile für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Bei Verwendung eines [kostenlosen Azure-Kontos](https://azure.microsoft.com/pricing/free-trial/) können Sie nur eine begrenzte Anzahl von Azure-Compute-Kernen nutzen.
 
-* **Cores quota** – You might need to increase the cores quota in your Azure subscription from the default of 20 cores per subscription (if you use the classic deployment model) or 20 cores per region (if you use the Azure Resource Manager deployment model). To request a quota increase, open a support ticket at no charge as shown in [Understanding Azure limits and increases](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/).
+* **Kernkontingent**: Unter Umständen müssen Sie das Kontingent an CPU-Kernen in Ihrem Azure-Abonnement erhöhen. Standardmäßig stehen 20 Kerne pro Abonnement (im klassischen Bereitstellungsmodell) oder 20 Kerne pro Region (im Azure Resource Manager-Bereitstellungsmodell) zur Verfügung. Zum Anfordern einer Kontingenterhöhung erstellen Sie ein kostenloses Supportticket, wie in [Grundlegendes zu Azure-Einschränkungen und -Steigerungen](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) beschrieben.
 
-    >[AZURE.NOTE]Azure quotas are credit limits, not capacity guarantees. You are charged only for cores that you use.
+    >[AZURE.NOTE]Azure-Kontingente sind Angebotsbeschränkungen, keine Kapazitätsgarantien. Nur verwendete Kerne werden auch in Rechnung gestellt.
 
-* **Virtual network** – An Azure [virtual network](https://azure.microsoft.com/documentation/services/virtual-network/) is not required to use the compute-intensive instances. However, you may need at least a cloud-based Azure virtual network for many IaaS scenarios, or a site-to-site connection if you need to access on-premises resources such as an application license server. You will need to create a new virtual network to deploy the instances. Adding an A8, A9, A10, or A11 VM to a virtual network in an affinity group is not supported.
+* **Virtuelles Netzwerk**: Ein [virtuelles Azure-Netzwerk](https://azure.microsoft.com/documentation/services/virtual-network/) ist nicht erforderlich, um die rechenintensiven Instanzen zu verwenden. Sie benötigen möglicherweise jedoch für viele IaaS-Szenarios mindestens ein cloudbasiertes virtuelles Azure-Netzwerk oder für den Zugriff auf lokale Ressourcen, z. B. einen Anwendungslizenzserver, eine Site-to-Site-Verbindung. Sie müssen ein neues virtuelles Netzwerk erstellen, um die Instanzen bereitzustellen. Das Hinzufügen von A8-, A9-, A10- oder A11-VMs zu einem virtuellen Netzwerk in einer Affinitätsgruppe wird nicht unterstützt.
 
-* **Cloud service or availability set** – To connect through the RDMA network, the A8 and A9 instances must be deployed in the same cloud service (if you use the classic deployment model) or the same availability set (if you use the Azure Resource Manager deployment model).
+* **Clouddienst oder Verfügbarkeitsgruppe**: Um eine Verbindung über das RDMA-Netzwerk herzustellen, müssen die A8- und A9-Instanzen im gleichen Clouddienst (klassisches Bereitstellungsmodell) oder in der gleichen Verfügbarkeitsgruppe (Azure Resource Manager-Bereitstellungsmodell) bereitgestellt werden.
 
-* **Pricing** - The A8–A11 VM sizes are available only in the Standard pricing tier.
+* **Preise**: Die VM-Größen A8 bis A11 sind nur im Tarif „Standard“ verfügbar.
 
-* **Resizing** – You can't resize an instance of size other than A8–A11 to one of the compute-intensive instance sizes (A8-11), and you can’t resize a compute-intensive instance to a non-compute-intensive size. This is because of the specialized hardware and the performance optimizations that are specific to compute-intensive instances.
+* **Größenänderung** – Sie können einer rechenintensiven Instanz (A8-A11) nur die Größe A8 bis A11 zuweisen, und Sie können eine rechenintensive Instanz nicht in eine nicht rechenintensive Instanz ändern. Dies liegt an der speziellen Hardware und den Leistungsoptimierungen, die für rechenintensive Instanzen typisch sind.
 
-* **RDMA network address space** - The RDMA network in Azure reserves the address space 172.16.0.0/12. If you plan to run MPI applications on A8 and A9 instances in an Azure virtual network, make sure that the virtual network address space does not overlap the RDMA network.
+* **RDMA-Netzwerkadressbereich**: Für das RDMA-Netzwerk in Azure wird der Adressbereich 172.16.0.0/12 reserviert. Wenn Sie beabsichtigen, MPI-Anwendungen auf A8- und A9-Instanzen in einem virtuellen Azure-Netzwerk auszuführen, stellen Sie sicher, dass der Adressbereich des virtuellen Netzwerks sich nicht mit dem RDMA-Netzwerk überschneidet.
 
-
-
-
-
+<!---HONumber=AcomDC_0323_2016-->

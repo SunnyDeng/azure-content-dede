@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Erstellen eines LAMP-Stapels mit Azure | Microsoft Azure"
 	description="Erfahren Sie, wie Sie einen LAMP-Stapel mit Microsoft Azure mithilfe von virtuellen Azure-Computern erstellen, auf denen Linux ausgeführt wird."
-	services="virtual-machines"
+	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="NingKuang"
 	manager="timlt"
@@ -9,7 +9,7 @@
 	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-linux"
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
@@ -38,10 +38,10 @@ Wenn Sie bereits einen virtuellen Computer verwenden und nur Informationen zu de
 
 Sie können auch vorkonfigurierte LAMP-Images aus dem Azure Marketplace bereitstellen. Das folgende 10-minütige Video enthält eine Einführung zur Bereitstellung vorgefertigter LAMP-Images aus dem Azure Marketplace: [LAMP-Stapel auf Azure-VMs](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman).
 
-##Phase 1: Erstellen eines Image
+##Phase 1: Erstellen eines Image
 In dieser Phase erstellen Sie einen virtuellen Computer mit einem Linux-Image in Azure.
 
-###Schritt 1: Generieren eines SSH-Authentifizierungsschlüssels
+###Schritt 1: Generieren eines SSH-Authentifizierungsschlüssels
 SSH ist ein wichtiges Tool für Systemadministratoren. Es ist jedoch aus Sicherheitsgründen nicht immer ratsam, ein Kennwort zu verwenden, das eine Person festgelegt hat. Mithilfe eines starken SSH-Schlüssels können Sie den Remotezugriff geöffnet lassen, ohne sich Gedanken über Kennwörter machen zu müssen. Die Methode besteht aus Authentifizierung mit asymmetrischer Kryptografie. Der private Schlüssel des Benutzers ist der Schlüssel, der die Authentifizierung vornimmt. Sie können sogar das Konto des Benutzers sperren, um Kennwortauthentifizierung vollständig zu untersagen.
 
 Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel zu generieren.
@@ -53,12 +53,12 @@ Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel 
 -	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei mit dem Namen **publicKey.pem**. Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
 -	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei mit dem Namen **privateKey.ppk**.
 
-###Schritt 2: Erstellen des Images im Azure-Portal
+###Schritt 2: Erstellen des Images im Azure-Portal
 Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf der Taskleiste auf **Neu** und erstellen Sie ein Image anhand dieser Anleitungen. Wählen Sie dabei das Linux-Image basierend auf Ihren Anforderungen aus. Dieses Beispiel verwendet das Ubuntu-Image 14.04.
 
 ![][3]
 
-Geben Sie unter **Hostname** den Namen für die URL ein, die Sie und die Internetclients für den Zugriff auf diesen virtuellen Computer verwenden. Definieren Sie den letzten Teil des DNS-Namens (z. B. „LAMPDemo“) und Azure generiert die URL als *lampdemo.cloudapp.net*.
+Geben Sie unter **Hostname** den Namen für die URL ein, die Sie und die Internetclients für den Zugriff auf diesen virtuellen Computer verwenden. Definieren Sie den letzten Teil des DNS-Namens (z. B. „LAMPDemo“) und Azure generiert die URL als *lampdemo.cloudapp.net*.
 
 Wählen Sie für **Benutzername** einen Namen aus, den Sie später für die Anmeldung am virtuellen Computer verwenden.
 
@@ -71,7 +71,7 @@ Konfigurieren Sie weitere Einstellungen wie erforderlich, und klicken Sie dann a
 ##Phase 2: Vorbereiten des virtuellen Computers für den LAMP-Stapel
 In dieser Phase konfigurieren Sie einen Endpunkt für Webdatenverkehr und stellen dann eine Verbindung mit dem neuen virtuellen Computer her.
 
-###Schritt 1: Öffnen des HTTP-Ports, um Webzugriff zu erlauben
+###Schritt 1: Öffnen des HTTP-Ports, um Webzugriff zu erlauben
 Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem öffentlichen und einem privaten Port. Der private Port ist der Port, an dem der Dienst auf dem virtuellen Computer lauscht. Der öffentliche Port ist der Port, an dem der Azure-Clouddienst extern auf internetbasierten Datenverkehr lauscht. In einigen Fällen handelt es sich um die gleiche Portnummer.
 
 TCP-Port 80 ist die Standardportnummer, an der Apache lauscht. Wenn Sie diesen Port mit einem Azure-Endpunkt öffnen, können Sie und andere Internetclients auf den Apache-Webserver zugreifen.
@@ -99,10 +99,10 @@ Klicken Sie auf **OK** , um den Endpunkt Ihrem virtuellen Computer hinzuzufügen
 
 
 
-###Schritt 2: Herstellen einer Verbindung mit dem Image, das Sie erstellt haben
+###Schritt 2: Herstellen einer Verbindung mit dem Image, das Sie erstellt haben
 Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihrem neuen virtuellen Computer auswählen. In diesem Beispiel wird Putty verwendet.
 
-Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Portal ab. Klicken Sie auf **Durchsuchen -> Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
+Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Portal ab. Klicken Sie auf **Durchsuchen -> Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
 
 Rufen Sie die Portnummer für SSH-Verbindungen aus dem Feld **SSH** ab. Beispiel:
 
@@ -114,7 +114,7 @@ Klicken Sie nach dem Download auf die ausführbare Datei "PUTTY.EXE". Konfigurie
 
 ![][9]
 
-Klicken Sie im linken Bereich auf **Verbindung -> SSH -> Authentifizierung**. Klicken Sie dann auf **Durchsuchen**, um den Speicherort der Datei **privateKey.ppk** anzugeben, die den von puttygen in Phase 1: "Erstellen eines Image" generierten privaten Schlüssel enthält. Beispiel:
+Klicken Sie im linken Bereich auf **Verbindung -> SSH -> Authentifizierung**. Klicken Sie dann auf **Durchsuchen**, um den Speicherort der Datei **privateKey.ppk** anzugeben, die den von puttygen in Phase 1: "Erstellen eines Image" generierten privaten Schlüssel enthält. Beispiel:
 
 ![][10]
 
@@ -127,7 +127,7 @@ Daraufhin sollte Folgendes angezeigt werden.
 
 ![][12]
 
-Geben Sie den Benutzernamen ein, den Sie beim Erstellen des virtuellen Computers in Phase 1: "Erstellen eines Image" angegeben haben: Folgendes sollte angezeigt werden:
+Geben Sie den Benutzernamen ein, den Sie beim Erstellen des virtuellen Computers in Phase 1: "Erstellen eines Image" angegeben haben: Folgendes sollte angezeigt werden:
 
 ![][13]
 
@@ -351,7 +351,8 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 		sudo chmod g+w /var/www/html/                 # grant write permission to group lampappgroup
 
 	>[AZURE.NOTE] Möglicherweise müssen Sie sich erneut anmelden, wenn Sie eine Datei in "/var/www/html/" ändern möchten.
--	Verwenden Sie zum Herstellen einer Verbindung mit dem DNS-Namen Ihres virtuellen Computers (z. B. "lampdemo.cloudapp.net") einen beliebigen SFTP-Client (z. B. FileZilla), und navigieren Sie dann zu "/**var/www/html**", um Ihre Website zu veröffentlichen. ![][18]
+-	Verwenden Sie zum Herstellen einer Verbindung mit dem DNS-Namen Ihres virtuellen Computers (z. B. "lampdemo.cloudapp.net") einen beliebigen SFTP-Client (z. B. FileZilla), und navigieren Sie dann zu "/**var/www/html**", um Ihre Website zu veröffentlichen. 
+![][18]
 
 
 
@@ -361,7 +362,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 
 -	**Symptom** Apache wird ausgeführt, die Apache-Standardseite wird jedoch nicht in Ihrem Browser angezeigt.
 -	**Mögliche Ursache**
-	1.	Der Apache-Überwachungsport ist nicht identisch mit dem privaten Port des Endpunkts des virtuellen Computers für Webdatenverkehr.</br> Überprüfen Sie die Endpunkteinstellungen des öffentlichen und des privaten Ports, und stellen Sie sicher, dass der private Port mit dem Apache-Lauschport identisch ist. Informationen zum Konfigurieren von Endpunkten für den virtuellen Computer finden Sie unter Phase 1: "Erstellen eines Image".</br> Öffnen Sie zum Ermitteln des Lauschports von Apache "/etc/httpd/conf/httpd.conf" (Red Hat-Version) oder "/etc/apache2/ports.conf" (Debian-Version). Suchen Sie nach der Zeichenfolge "Listen". Der Standardport ist 80.
+	1.	Der Apache-Überwachungsport ist nicht identisch mit dem privaten Port des Endpunkts des virtuellen Computers für Webdatenverkehr.</br> Überprüfen Sie die Endpunkteinstellungen des öffentlichen und des privaten Ports, und stellen Sie sicher, dass der private Port mit dem Apache-Lauschport identisch ist. Informationen zum Konfigurieren von Endpunkten für den virtuellen Computer finden Sie unter Phase 1: "Erstellen eines Image".</br> Öffnen Sie zum Ermitteln des Lauschports von Apache "/etc/httpd/conf/httpd.conf" (Red Hat-Version) oder "/etc/apache2/ports.conf" (Debian-Version). Suchen Sie nach der Zeichenfolge "Listen". Der Standardport ist 80.
 
 	2.	Die Firewall hat den Überwachungsport von Apache deaktiviert.</br> Wenn Sie die Apache-Standardseite vom lokalen Host aus sehen können, besteht das Problem wahrscheinlich darin, dass der Port, an dem Apache lauscht, durch die Firewall blockiert ist. Sie können das Tool w3m verwenden, um die Webseite zu durchsuchen. Mit den folgenden Befehle installieren Sie w3m und navigieren zur Apache-Standardseite:
 
@@ -378,7 +379,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 
 		Beachten Sie, dass die zweite Zeile nur für HTTPS-Datenverkehr erforderlich ist.
 
-		Stellen Sie sicher, dass sich diese Zeilen über allen Zeilen befinden, die den Zugriff ggf. global einschränken, z. B. über den Folgenden:
+		Stellen Sie sicher, dass sich diese Zeilen über allen Zeilen befinden, die den Zugriff ggf. global einschränken, z. B. über den Folgenden:
 
 			-A INPUT -j REJECT --reject-with icmp-host-prohibited  
 
@@ -390,7 +391,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 
 ###Berechtigung verweigert beim Hochladen Ihrer Projektdateien in "/var/www/html/"  
 
--	**Symptom** Wenn Sie einen beliebigen SFTP-Client (z. B. FileZilla) zum Herstellen einer Verbindung mit Ihrem virtuellen Computer verwenden und zu "/var/www/html" navigieren, um Ihre Website zu veröffentlichen, erhalten Sie eine Fehlermeldung ähnlich der folgenden Meldung:  
+-	**Symptom** Wenn Sie einen beliebigen SFTP-Client (z. B. FileZilla) zum Herstellen einer Verbindung mit Ihrem virtuellen Computer verwenden und zu "/var/www/html" navigieren, um Ihre Website zu veröffentlichen, erhalten Sie eine Fehlermeldung ähnlich der folgenden Meldung:  
 
 		status:	Listing directory /var/www/html
 		Command:	put "C:\Users\liang\Desktop\info.php" "info.php"
@@ -456,4 +457,6 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
 
-<!---HONumber=AcomDC_0128_2016-->
+<!----HONumber=AcomDC_0323_2016-->
+
+<!---HONumber=AcomDC_0323_2016-->

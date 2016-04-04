@@ -31,7 +31,7 @@ Dadurch bietet Azure Scheduler ein hohes Maß an Flexibilität für verschiedens
 -	Bildverarbeitung (etwa zur regelmäßigen Komprimierung der hochgeladenen Bilder des aktuellen Tages mittels Cloud-Computing an jedem Wochentag außerhalb der Spitzenzeiten)
 
 
-Dieser Artikel enthält Beispielaufträge, die Sie mit Azure Scheduler erstellen können. Hier finden Sie auch die JSON-Daten zur Beschreibung der einzelnen Zeitpläne. Bei Verwendung der [Scheduler-REST-API](https://msdn.microsoft.com/library/azure/dn528946.aspx) können Sie diese JSON-Daten zum [Erstellen eines Azure Scheduler-Auftrags](https://msdn.microsoft.com/library/azure/dn528937.aspx) verwenden.
+Dieser Artikel enthält Beispielaufträge, die Sie mit Azure Scheduler erstellen können. Hier finden Sie auch die JSON-Daten zur Beschreibung der einzelnen Zeitpläne. Bei Verwendung der [Scheduler-REST-API](https://msdn.microsoft.com/library/mt629143.aspx) können Sie diese JSON-Daten zum [Erstellen eines Azure Scheduler-Auftrags](https://msdn.microsoft.com/library/mt629145.aspx) verwenden.
 
 ## Unterstützte Szenarien
 
@@ -52,7 +52,7 @@ Datums-/Uhrzeitangaben in Azure Scheduler-Aufträgen entsprechen der [ISO-8601-S
 
 ## Erstellen von Zeitplänen mithilfe von JSON und REST-API
 
-Gehen Sie wie folgt vor, um einen einfachen Zeitplan mit den JSON-Beispielen in diesem Artikel und der Azure Scheduler-REST-API zu erstellen: [Erstellen Sie einen Clouddienst](https://msdn.microsoft.com/library/azure/dn528943.aspx), [erstellen Sie eine Auftragssammlung](https://msdn.microsoft.com/library/azure/dn528940.aspx), und [erstellen Sie anschließend einen Auftrag](https://msdn.microsoft.com/library/azure/dn528937.aspx). Bei der Auftragserstellung können Sie mithilfe von JSON den Zeitplan und die Wiederholung angeben, wie im folgenden Auszug zu sehen:
+Zum Erstellen eines einfachen Zeitplans mithilfe der [Azure Scheduler-REST-API](https://msdn.microsoft.com/library/mt629143) müssen Sie zunächst [Ihr Abonnement bei einem Ressourcenanbieter registrieren](https://msdn.microsoft.com/library/azure/dn790548.aspx) (der Anbietername für Scheduler lautet _Microsoft.Scheduler_), dann [eine Auftragssammlung erstellen](https://msdn.microsoft.com/library/mt629159.aspx) und schließlich [einen Auftrag erstellen](https://msdn.microsoft.com/library/mt629145.aspx). Bei der Auftragserstellung können Sie mithilfe von JSON den Zeitplan und die Wiederholung angeben, wie im folgenden Auszug zu sehen:
 
 	{
 	    "startTime": "2012-08-04T00:00Z", // optional
@@ -197,4 +197,4 @@ Bei den folgenden Zeitplänen wird jeweils davon ausgegangen, dass _interval_ au
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

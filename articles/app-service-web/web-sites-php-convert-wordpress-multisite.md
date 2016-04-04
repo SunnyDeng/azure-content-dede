@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie eine vorhandene WordPress-Web-App, die über die Galerie in Azure erstellt wurde, in eine WordPress Multisite konvertieren." 
 	services="app-service\web" 
 	documentationCenter="php" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags 
 	ms.service="app-service-web" 
@@ -14,7 +14,7 @@
 	ms.devlang="PHP" 
 	ms.topic="article" 
 	ms.date="01/12/2016" 
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 
 
@@ -153,4 +153,4 @@ Azure-Web-Apps ermöglichen Ihnen, eine unbegrenzte Anzahl von Domänen zu einer
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

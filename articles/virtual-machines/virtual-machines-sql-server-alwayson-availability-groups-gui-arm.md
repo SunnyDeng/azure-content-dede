@@ -1,14 +1,14 @@
 <properties
 	pageTitle="Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen im Azure-Ressourcen-Manager | Microsoft Azure"
 	description="Erstellen Sie eine AlwaysOn-Verfügbarkeitsgruppe mit Azure-VMs im Azure-Ressourcen-Manager-Modus. In diesem Tutorial wird die Benutzeroberfläche in erster Linie zum automatischen Erstellen der gesamten Lösung verwendet."
-	services="virtual-machines"
+	services="virtual-machines-windows"
 	documentationCenter="na"
 	authors="MikeRayMSFT"
 	manager="jeffreyg"
 	editor="monicar"
 	tags="azure-resource-manager" />
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-windows"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
@@ -19,9 +19,9 @@
 # Konfigurieren einer AlwaysOn-Verfügbarkeitsgruppe auf Azure-Ressourcen-Manager-VMs (GUI).
 
 > [AZURE.SELECTOR]
-- [Portal - Resource Manager](virtual-machines-sql-server-alwayson-availability-groups-gui-arm.md)
-- [Portal - Classic](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
-- [PowerShell - Classic](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
+- [Portal – Resource Manager](virtual-machines-sql-server-alwayson-availability-groups-gui-arm.md)
+- [Portal – klassisch](virtual-machines-windows-classic-portal-sql-availability.md)
+- [PowerShell – klassisch](virtual-machines-windows-classic-ps-sql-availability.md)
 
 <br/>
 
@@ -52,13 +52,13 @@ Alle Ressourcen in dieser Lösung gehören zu einer einzigen Ressourcengruppe.
 
 In diesem Tutorial wird Folgendes vorausgesetzt:
 
-- Sie besitzen bereits ein Azure-Abonnement. Falls Sie keines besitzen, können Sie sich für eine [kostenlose Testversion registrieren](http://azure.microsoft.com/pricing/free-trial/).
+- Sie besitzen bereits ein Azure-Abonnement. Falls Sie keines besitzen, können Sie sich für ein [kostenloses Testkonto registrieren](http://azure.microsoft.com/pricing/free-trial/).
 
-- Sie wissen bereits, wie ein virtueller SQL Server-Computer mithilfe der GUI aus dem virtuellen Computerkatalog bereitgestellt wird. Weitere Informationen finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
+- Sie wissen bereits, wie ein virtueller SQL Server-Computer mithilfe der GUI aus dem virtuellen Computerkatalog bereitgestellt wird. Weitere Informationen finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-windows-classic-portal-sql.md).
 
 - Sie verfügen bereits über solide Kenntnisse über AlwaysOn-Verfügbarkeitsgruppen. Weitere Informationen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppen (SQL Server)](http://msdn.microsoft.com/library/hh510230.aspx).
 
->[AZURE.NOTE] Wenn Sie an der Verwendung von AlwaysOn-Verfügbarkeitsgruppen mit SharePoint interessiert sind, finden Sie Informationen hierzu unter [Konfigurieren von SQL Server 2012 AlwaysOn-Verfügbarkeitsgruppen für SharePoint 2013](http://technet.microsoft.com/library/jj715261.aspx).
+>[AZURE.NOTE] Wenn Sie an der Verwendung von AlwaysOn-Verfügbarkeitsgruppen mit SharePoint interessiert sind, finden Sie Informationen hierzu unter [Konfigurieren von SQL Server 2012 AlwaysOn-Verfügbarkeitsgruppen für SharePoint 2013](http://technet.microsoft.com/library/jj715261.aspx).
 
 In diesem Tutorial verwenden Sie das Azure-Portal zu folgenden Zwecken:
 
@@ -114,7 +114,7 @@ Diese Azure-Katalog-Vorlage erstellt eine neue Domäne mit neuen Domänencontrol
 
 - **SQL Server-Subnetzname** ist der Name eines Teils des virtuellen Netzwerks, der die SQL Server-Instanzen und den Dateifreigabenzeugen hostet. Verwenden Sie für dieses Tutorial **subnet-2**. Dieses Subnetz verwendet das Adresspräfix **10.0.1.0/26**.
 
-Weitere Informationen zu virtuellen Netzwerken finden Sie unter [Virtuelle Netzwerke im Überblick](virtual-networks-overview.md).
+Weitere Informationen zu virtuellen Netzwerken finden Sie unter [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md).
 
 Die **Domänen- und Netzwerkeinstellungen** sollten wie folgt aussehen:
 
@@ -144,7 +144,7 @@ Bei Bedarf können Sie diese Werte ändern. Verwenden Sie für dieses Tutorial d
 
 Wählen Sie bei **Größe des virtuellen Computers, Einstellungen des Speichers** eine SQL Server-VM-Größe, und überprüfen Sie die anderen Einstellungen.
 
-- **SQL Server-VM-Größe** ist die Größe des virtuellen Azure-Computers für beide SQL Server-Instanzen. Wählen Sie eine angemessene VM-Größe für Ihre Workload. Wenn Sie diese Umgebung für das Tutorial erstellen, verwenden Sie **DS2**. Wählen Sie für Produktionsworkloads eine VM-Größe, die die Workload unterstützen kann. Viele Produktionsworkloads benötigen **DS4** oder größer. Die Vorlage erstellt zwei virtuelle Computer dieser Größe und installiert auf jedem SQL Server. Weitere Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
+- **SQL Server-VM-Größe** ist die Größe des virtuellen Azure-Computers für beide SQL Server-Instanzen. Wählen Sie eine angemessene VM-Größe für Ihre Workload. Wenn Sie diese Umgebung für das Tutorial erstellen, verwenden Sie **DS2**. Wählen Sie für Produktionsworkloads eine VM-Größe, die die Workload unterstützen kann. Viele Produktionsworkloads benötigen **DS4** oder größer. Die Vorlage erstellt zwei virtuelle Computer dieser Größe und installiert auf jedem SQL Server. Weitere Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-linux-sizes.md).
 
 >[AZURE.NOTE]Azure installiert die Enterprise Edition von SQL Server. Die Kosten hängen von der Edition und der Größe des virtuellen Computers ab. Ausführliche Informationen zu aktuellen Kosten finden Sie unter [Virtual Machines – Preise](http://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
 
@@ -174,9 +174,9 @@ Verwenden Sie für dieses Tutorial **Allgemeine Workload**.
 
 ####Ein Hinweis zum Speicher
 
-Weitere Optimierungen hängen von der Größe der SQL Server-Datenträger ab. Für jedes Terabyte des Datenträgers fügt Azure 1 TB Storage Premium (SSD) hinzu. Wenn ein Server 2 TB oder mehr benötigt, erstellt die Vorlage einen Speicherpool auf jeder SQL-Server-Instanz. Ein Speicherpool ist eine Form der Speichervirtualisierung, bei der mehrere Datenträger konfiguriert werden, um höhere Kapazität, Stabilität und Leistung bereitzustellen. Die Vorlage erstellt dann einen Speicherplatz im Speicherpool und stellt diesen gegenüber dem Betriebssystem als einen einzelnen Datenspeicher dar. Die Vorlage bestimmt diesen Datenträger als Datenträger für SQL Server-Daten. Die Vorlage optimiert den Speicherpool für SQL Server mit den folgenden Einstellungen:
+Weitere Optimierungen hängen von der Größe der SQL Server-Datenträger ab. Für jedes Terabyte des Datenträgers fügt Azure 1 TB Storage Premium (SSD) hinzu. Wenn ein Server 2 TB oder mehr benötigt, erstellt die Vorlage einen Speicherpool auf jeder SQL-Server-Instanz. Ein Speicherpool ist eine Form der Speichervirtualisierung, bei der mehrere Datenträger konfiguriert werden, um höhere Kapazität, Stabilität und Leistung bereitzustellen. Die Vorlage erstellt dann einen Speicherplatz im Speicherpool und stellt diesen gegenüber dem Betriebssystem als einen einzelnen Datenspeicher dar. Die Vorlage bestimmt diesen Datenträger als Datenträger für SQL Server-Daten. Die Vorlage optimiert den Speicherpool für SQL Server mit den folgenden Einstellungen:
 
-- Die Stripesetgröße ist die Interleaveeinstellung für den virtuellen Datenträger. Für Transaktionsworkloads beträgt die Einstellung 64 KB. Für Data Warehousing-Workloads beträgt die Einstellung 256 KB. 
+- Die Stripesetgröße ist die Interleaveeinstellung für den virtuellen Datenträger. Für Transaktionsworkloads beträgt die Einstellung 64 KB. Für Data Warehousing-Workloads beträgt die Einstellung 256 KB. 
 
 - Resilienz ist einfach (keine Resilienz).
 
@@ -190,7 +190,7 @@ Weitere Informationen zu Speicherplatz und Speicherpools finden Sie unter:
 
 - [Windows Server-Sicherung und -Speicherpools](http://technet.microsoft.com/library/dn390929.aspx)
 
-Weitere Informationen zu optimalen Verfahren zur SQL Server-Konfiguration finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md).
+Weitere Informationen zu optimalen Verfahren zur SQL Server-Konfiguration finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-windows-classic-sql-perf.md).
 
 
 ###SQL Server-Einstellungen
@@ -260,4 +260,4 @@ Sie sind jetzt mit dem primären Domänencontroller verbunden. Gehen Sie folgend
 
 Sie sind jetzt über eine RDP-Verbindung mit der SQL Server-Instanz verbunden. Sie können jetzt das SQL Server-Management Studio öffnen, eine Verbindung mit der Standardinstanz von SQL Server herstellen und sicherstellen, dass die AlwaysOn-Verfügbarkeitsgruppe konfiguriert ist.
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

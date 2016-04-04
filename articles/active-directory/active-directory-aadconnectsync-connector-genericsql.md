@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="03/08/2016"
+   ms.date="03/16/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den generischen SQL-Connector
@@ -22,7 +22,7 @@ Dieser Artikel beschreibt den generischen SQL-Connector. Der Artikel bezieht sic
 
 - Microsoft Identity Manager 2016 (MIM2016)
 - Forefront Identity Manager 2010 R2 (FIM2010R2)
-    -   Mindestens Hotfix 4.1.3461.0 ([KB2870703](https://support.microsoft.com/kb/2870703)) erforderlich.
+    -   Mindestens Hotfix 4.1.3671.0 ([KB3092178](https://support.microsoft.com/kb/3092178)) erforderlich.
 
 Der Connector steht für MIM2016 und FIM2010R2 im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=717495) zum Download bereit.
 
@@ -297,4 +297,4 @@ Bei Verwendung der Option „SQL-Abfrage“ werden drei verschiedene Abfragen f�
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

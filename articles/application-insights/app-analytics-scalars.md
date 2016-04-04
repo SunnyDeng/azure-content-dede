@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Skalare Ausdrücke in der Application Insights-Analyse" 
-	description="Zahlen, Zeichenfolgen, dynamische Ausdrücke und Typen in der Application Insights-Analyse, dem leistungsfähigen Suchtool für Application Insights." 
+	pageTitle="Skalare Ausdrücke in Analytics in Application Insights" 
+	description="Zahlen, Zeichenfolgen, dynamische Ausdrücke und Typen in Analytics, dem leistungsfähigen Suchtool von Application Insights." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -12,15 +12,15 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/05/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
 
  
-# Skalare Ausdrücke in der Application Insights-Analyse
+# Skalare Ausdrücke in Analytics
 
 
-[Application Insights-Analyse](app-analytics.md) ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Abfragesprache AIQL der Application Insights-Analyse beschrieben.
+[Analytics](app-analytics.md) ist die leistungsfähige Suchfunktion von [Application Insights](app-insights-overview.md). Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben.
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
 
@@ -36,7 +36,7 @@
 
 
 
-„Skalar“ bezieht sich auf Werte wie Zahlen oder Zeichenfolgen, die eine einzelne Zelle in einer AIQL-Tabelle einnehmen können. Skalare Ausdrücke werden aus skalaren Funktionen und Operatoren erstellt und als skalare Werte ausgewertet. `sqrt(score)/100 > target+2` ist ein skalarer Ausdruck.
+„Skalar“ bezieht sich auf Werte wie Zahlen oder Zeichenfolgen, die eine einzelne Zelle in einer Tabelle einnehmen können. Skalare Ausdrücke werden aus skalaren Funktionen und Operatoren erstellt und als skalare Werte ausgewertet. `sqrt(score)/100 > target+2` ist ein skalarer Ausdruck.
 
 „Skalar“ umfasst auch Arrays und zusammengesetzte Objekte, die ebenfalls in einer einzelnen Datenbankzelle gespeichert werden können.
 
@@ -241,17 +241,17 @@ Beachten Sie, dass es andere Möglichkeiten gibt, diesen Effekt zu erreichen:
 || |
 |---|-------------|
 | + | Hinzufügen |
-| - | Subtrahieren |
-| * | Multiplizieren |
-| / | Dividieren |
-| % | Modulo |
-||
-|`<` |Kleiner
-|`<=`|Kleiner oder gleich
-|`>` |Größer
-|`>=`|Größer oder gleich
-|`<>`|Ungleich
-|`!=`|Ungleich 
+| - | Subtrahieren | 
+| * | Multiplizieren | 
+| / | Dividieren | 
+| % | Modulo | 
+|| 
+|`<` |Kleiner 
+|`<=`|Kleiner oder gleich 
+|`>` |Größer 
+|`>=`|Größer oder gleich 
+|`<>`|Ungleich 
+|`!=`|Ungleich
 
 
 
@@ -558,7 +558,7 @@ Es wird ein umgekehrter Schrägstrich (`\`) verwendet, um Zeichen wie z. B. `\t`
 
 ### Verborgene Zeichenfolgenliterale
 
-Verborgene Zeichenfolgenliterale sind Zeichenfolgen, die die AI-Analyse bei der Ausgabe der Zeichenfolge ausblendet (z. B. bei der Ablaufverfolgung). Beim Ausblenden werden alle verborgenen Zeichen durch ein Start (`*`)-Zeichen ersetzt.
+Verborgene Zeichenfolgenliterale sind Zeichenfolgen, die Analytics bei der Ausgabe der Zeichenfolge ausblendet (etwa bei der Ablaufverfolgung). Beim Ausblenden werden alle verborgenen Zeichen durch ein Start (`*`)-Zeichen ersetzt.
 
 Stellen Sie zum Erstellen eines verborgenen Zeichenfolgenliterals `h` oder „H“ voran. Beispiel:
 
@@ -862,7 +862,7 @@ Hier ist das Ergebnis einer Abfrage für eine Application Insights-Ausnahme. Der
         line = details[0].parsedStack[0].line,
         stackdepth = arraylength(details[0].parsedStack)
 
-* Verwenden Sie jedoch `arraylength` und andere AIQL-Funktionen (nicht „.length“!)
+* Verwenden Sie jedoch `arraylength` und andere Analytics-Funktionen (nicht „.length“!).
 
 **Umwandlung** In einigen Fällen ist es erforderlich, ein Element umzuwandeln, das Sie aus einem Objekt extrahieren, da der Typ variieren kann. `summarize...to` benötigt beispielsweise einen bestimmten Typ:
 
@@ -1082,7 +1082,7 @@ Für das folgende Beispiel gilt, wenn `context_custom_metrics` eine `string` ist
 {"duration":{"value":118.0,"count":5.0,"min":100.0,"max":150.0,"stdDev":0.0,"sampledValue":118.0,"sum":118.0}}
 ```
 
-dann ruft das folgende AIQL-Fragment den Wert des `duration`-Slots im Objekt ab und daraus zwei Slots, `duration.value` und `duration.min` (bzw. `118.0` und `110.0`).
+dann ruft das folgende Fragment zunächst den Wert des `duration`-Slots im Objekt und anschließend zwei Slots daraus ab: `duration.value` und `duration.min` (bzw. `118.0` und `110.0`).
 
 ```AIQL
 T
@@ -1153,4 +1153,4 @@ Beachten Sie, dass „[0]“ auf das Vorhandensein eines Arrays hinweist, aber n
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Privileged Identity Management: Verwenden des Überwachungsprotokolls"
+   pageTitle="Verwenden des Überwachungsprotokolls | Microsoft Azure"
    description="Erfahren Sie, wie Sie in der Erweiterung Azure Privileged Identity Management das Überwachungsprotokoll verwenden."
    services="active-directory"
    documentationCenter=""
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/21/2016"
+   ms.date="03/17/2016"
    ms.author="kgremban"/>
 
-# Azure Privileged Identity Management: Verwenden des Überwachungsprotokolls
+# Azure AD Privileged Identity Management: Verwenden des Überwachungsprotokolls
 
 Im Privileged Identity Management (PIM)-Überwachungsprotokoll werden alle Benutzerzuweisungen und Aktivierungen in einem angegebenen Zeitraum angezeigt.
 
@@ -56,4 +56,4 @@ Wenn Sie alle Filter für das Überwachungsprotokoll festgelegt haben, klicken S
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -4,7 +4,7 @@
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
    ms.service="load-balancer"
@@ -12,11 +12,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/09/2015"
+   ms.date="03/22/2016"
    ms.author="joaoma" />
 
 
-# Was ist der Azure Load Balancer?
+# Übersicht über Azure Load Balancer
 
 Der Azure Load Balancer bietet hohe Verfügbarkeit und Netzwerkleistung für Ihre Anwendungen. Es handelt sich um einen Lastenausgleich des Layer-4-Typs (TCP, UDP), der eingehenden Datenverkehr zwischen funktionierenden Dienstinstanzen in Clouddiensten oder auf virtuelle Computer verteilt, die in einem Lastenausgleich definiert wurden.
 
@@ -73,7 +73,7 @@ Die folgende Grafik veranschaulicht eine Hash-basierte Verteilung:
 
 Mit dem Azure Load Balancer steuern Sie, wie die eingehende Kommunikation verwaltet wird. Diese Kommunikation kann Datenverkehr umfassen, der von Internethosts oder virtuellen Computern in anderen Clouddiensten oder virtuellen Netzwerken initialisiert wird. Diese Steuerung wird durch einen Endpunkt (auch als Eingabeendpunkt bezeichnet) abgebildet.
 
-Ein Endpunkt mit einem öffentlichen Port überwacht Datenverkehr und leitet diesen an einen internen Port. Sie können dieselben Ports einem internen oder externen Endpunkt zuordnen oder einen anderen Port verwenden. Beispiel: Sie können einen Webserver konfigurieren, der an Port 81 lauscht, während Port 80 dem öffentlichen Endpunkt zugeordnet ist. Die Erstellung eines öffentlichen Endpunkts löst die Erstellung einer Azure Load Balancer-Instanz aus.
+Ein Endpunkt mit einem öffentlichen Port überwacht Datenverkehr und leitet diesen an einen internen Port. Sie können dieselben Ports einem internen oder externen Endpunkt zuordnen oder einen anderen Port verwenden. Beispiel: Sie können einen Webserver konfigurieren, der an Port 81 lauscht, während Port 80 dem öffentlichen Endpunkt zugeordnet ist. Die Erstellung eines öffentlichen Endpunkts löst die Erstellung einer Azure Load Balancer-Instanz aus.
 
 Die Standardnutzung und -konfiguration von Endpunkten auf einem virtuellen Computer, der über das Azure-Portal erstellt wurde, sind auf das RDP- (Remotedesktopprotokoll) und Windows PowerShell-Sitzungsdatenverkehr ausgerichtet. Über diese Endpunkte können Sie den virtuellen Computer remote über das Internet verwalten.
 
@@ -88,9 +88,9 @@ Der Azure Load Balancer bietet die Möglichkeit, die Integrität der verschieden
 
 Drei Testarten werden unterstützt:
 
-- Gast-Agent-Test (nur PaaS-VMs). Der Azure Load Balancer nutzt den Gast-Agent auf dem virtuellen Computer. Er lauscht und antwortet nur dann mit dem HTTP-OK-Code 200, wenn die Instanz sich im Zustand „Bereit“ befindet (d. h. nicht in einem Zustand wie „Beschäftigt“, „Wiederverwendung“ oder „Wird beendet“). Wenn der Gast-Agent nicht mit dem HTTP-OK-Code 200 antwortet, kennzeichnet der Azure Load Balancer die Instanz als nicht reagierend und sendet keinen weiteren Datenverkehr an diese Instanz. Der Load Balancer pingt die Instanz weiterhin. Wenn der Gast-Agent mit dem HTTP-Code 200 antwortet, sendet der Load Balancer wieder Datenverkehr an diese Instanz. Wenn Sie eine Webrolle verwenden, wird Ihr Websitecode in der Regel in „w3wp.exe“ ausgeführt. Dieses Programm wird nicht von der Azure-Fabric oder vom Gast-Agent überwacht. Das bedeutet, dass Fehler in „w3wp.exe“ (z. B. HTTP 500-Antworten) nicht an den Gast-Agent gemeldet werden und der Load Balancer nicht erkennen kann, dass diese Instanz aus der Rotation entfernt werden soll.
+- Gast-Agent-Test (nur PaaS-VMs). Der Azure Load Balancer nutzt den Gast-Agent auf dem virtuellen Computer. Er lauscht und antwortet nur dann mit dem HTTP-OK-Code 200, wenn die Instanz sich im Zustand „Bereit“ befindet (d. h. nicht in einem Zustand wie „Beschäftigt“, „Wiederverwendung“ oder „Wird beendet“). Wenn der Gast-Agent nicht mit dem HTTP-OK-Code 200 antwortet, kennzeichnet der Azure Load Balancer die Instanz als nicht reagierend und sendet keinen weiteren Datenverkehr an diese Instanz. Der Load Balancer pingt die Instanz weiterhin. Wenn der Gast-Agent mit dem HTTP-Code 200 antwortet, sendet der Load Balancer wieder Datenverkehr an diese Instanz. Wenn Sie eine Webrolle verwenden, wird Ihr Websitecode in der Regel in „w3wp.exe“ ausgeführt. Dieses Programm wird nicht von der Azure-Fabric oder vom Gast-Agent überwacht. Das bedeutet, dass Fehler in „w3wp.exe“ (z. B. HTTP 500-Antworten) nicht an den Gast-Agent gemeldet werden und der Load Balancer nicht erkennen kann, dass diese Instanz aus der Rotation entfernt werden soll.
 
-- Benutzerdefinierter HTTP-Test. Der benutzerdefinierte Load Balancer-Test setzt den (Gast-Agent-) Standardtest außer Kraft. Sie können damit Ihre eigene Logik zum Ermitteln der Integrität der Rolleninstanz erstellen. Der Load Balancer testet regelmäßig Ihren Endpunkt (standardmäßig alle 15 Sekunden). Die Instanz wird als rotierend betrachtet, wenn sie innerhalb des Zeitlimits (standardmäßig 31 Sekunden) mit einem TCP-ACK oder HTTP-Code 200 reagiert. Dies kann für die Implementierung Ihrer eigenen Logik zum Entfernen von Instanzen aus der Load Balancer-Rotation nützlich sein. Beispielsweise können Sie die Instanz so konfigurieren, dass sie einen anderen Status als 200 zurückgibt, wenn die Instanz bei über 90 % CPU-Auslastung liegt. Für Webrollen, die „w3wp.exe“ verwenden, wird die Website außerdem automatisch überwacht, da Fehler im Websitecode einen anderen Status als 200 an den Load Balancer-Test zurückgeben.
+- Benutzerdefinierter HTTP-Test. Der benutzerdefinierte Load Balancer-Test setzt den (Gast-Agent-) Standardtest außer Kraft. Sie können damit Ihre eigene Logik zum Ermitteln der Integrität der Rolleninstanz erstellen. Der Load Balancer testet regelmäßig Ihren Endpunkt (standardmäßig alle 15 Sekunden). Die Instanz wird als rotierend betrachtet, wenn sie innerhalb des Zeitlimits (standardmäßig 31 Sekunden) mit einem TCP-ACK oder HTTP-Code 200 reagiert. Dies kann für die Implementierung Ihrer eigenen Logik zum Entfernen von Instanzen aus der Load Balancer-Rotation nützlich sein. Beispielsweise können Sie die Instanz so konfigurieren, dass sie einen anderen Status als 200 zurückgibt, wenn die Instanz bei über 90 % CPU-Auslastung liegt. Für Webrollen, die „w3wp.exe“ verwenden, wird die Website außerdem automatisch überwacht, da Fehler im Websitecode einen anderen Status als 200 an den Load Balancer-Test zurückgeben.
 
 - Benutzerdefinierter TCP-Test. TCP-Tests basieren auf der erfolgreichen Herstellung von TCP-Sitzungen an einem definierten Testport.
 
@@ -110,7 +110,7 @@ Die Azure Load Balancer-Konfiguration unterstützt vollständige Cone-NAT für U
 
 >[AZURE.NOTE] Für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wird, wird auch ein ausgehender Port vom Azure Load Balancer zugeordnet. Dem externen Host wird eingehender Datenverkehr als einer virtuellen IP (VIP) zugewiesener Port angezeigt. Wenn für Ihre Szenarien eine große Anzahl von ausgehenden Verbindungen benötigt wird, empfehlen wir, dass die VMs öffentliche IP-Adressen auf Instanzebene verwenden, damit sie eine dedizierte ausgehende IP-Adresse für SNAT aufweisen. Dies reduziert das Risiko von Portauslastung.
 >
->Die maximale Anzahl von Ports, die für VIPs oder öffentliche IPs auf Instanzebene (PIPs) verwendet werden können, beträgt 64.000. Dies ist eine standardmäßige Einschränkung für TCP.
+>Die maximale Anzahl von Ports, die für VIPs oder öffentliche IPs auf Instanzebene (PIPs) verwendet werden können, beträgt 64.000. Dies ist eine standardmäßige Einschränkung für TCP.
 
 
 **Unterstützung für mehrere IP-Adressen mit Lastenausgleich für virtuelle Computer**
@@ -121,6 +121,7 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 
 Der Azure-Ressourcen-Manager ist das neue Verwaltungsframework für Dienste in Azure. Der Azure Load Balancer kann jetzt mithilfe von APIs und Tools im Ressourcen-Manager verwaltet werden. Weitere Informationen zum Ressourcen-Manager finden Sie unter [IaaS ist jetzt noch einfacher mit Azure-Ressourcen-Manager](https://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/).
 
+[AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../../includes/load-balancer-compare-tm-ag-lb-include.md)]
 
 ## Nächste Schritte
 
@@ -128,6 +129,6 @@ Der Azure-Ressourcen-Manager ist das neue Verwaltungsframework für Dienste in A
 
 [Interner Lastenausgleich (Übersicht)](load-balancer-internal-overview.md)
 
-[Erste Schritte zum Erstellen eines Lastenausgleichs für den Internetzugriff](load-balancer-internet-getstarted.md)
+[Erste Schritte zum Erstellen eines Lastenausgleichs für den Internetzugriff](load-balancer-get-started-internet-arm-ps.md)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

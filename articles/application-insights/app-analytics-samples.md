@@ -12,13 +12,13 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/01/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
 
-# Beispiele für die Application Insights-Analyse
+# Analytics-Beispiele für Application Insights
 
-[Application Insights-Analyse](app-analytics.md) ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Abfragesprache AIQL von Application Insights-Analyse beschrieben. Es gibt auch eine [Einführung in die Sprache](app-analytics-tour.md), die sich für die ersten Schritte empfiehlt.
+[Analytics](app-analytics.md) ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben. Es gibt auch eine [Einführung in die Sprache](app-analytics-tour.md), die sich für die ersten Schritte empfiehlt.
 
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
@@ -29,7 +29,7 @@ Es stehen einige Tipps zur Verfügung, damit die Abfrage schneller ausgeführt w
 
 FÜHREN SIE FOLGENDES AUS:
 
--	Verwenden Sie zunächst Zeitfilter. Application Insights-Analyse ist perfekt für die Nutzung von Zeitfiltern optimiert.
+-	Verwenden Sie zunächst Zeitfilter. Die Application Insights-Analyse ist perfekt für die Nutzung von Zeitfiltern optimiert.
 -	Fügen Sie Filter an den Anfang der Abfrage (direkt nach den Zeitfiltern) ein, die voraussichtlich den größten Teil der Daten herausfiltern.
 -	Stellen Sie sicher, dass die meisten der Filter am Anfang der Abfrage angezeigt werden (bevor Sie „extend“ verwenden). 
 -	Verwenden Sie bei der Suche nach vollständigen Token das Schlüsselwort „has“ anstelle von „contains“. „has“ ist leistungsfähiger, da bei dieser Suche nicht nach untergeordneten Zeichenfolgen gesucht wird.
@@ -104,7 +104,7 @@ Events
 
 Das Join ordnet jede Startzeit mit allen Endzeiten von der gleichen Client-IP-Adresse zu. Daher entfernen wir zunächst Übereinstimmungen mit früheren Endzeiten.
 
-Stellen Sie dann eine Gruppe nach Startzeit und IP-Adresse zusammen, um eine Gruppe für jede Sitzung zu erhalten. Sie müssen eine `bin`-Funktion für den StartTime-Parameter angeben. Anderenfalls verwendet die AI-Analyse automatisch 1-Stunden-Behälter, die mit einigen Startzeiten mit den falschen Endzeiten übereinstimmen.
+Stellen Sie dann eine Gruppe nach Startzeit und IP-Adresse zusammen, um eine Gruppe für jede Sitzung zu erhalten. Sie müssen eine `bin`-Funktion für den StartTime-Parameter angeben. Anderenfalls verwendet Analytics automatisch 1-Stunden-Behälter, die mit einigen Startzeiten mit den falschen Endzeiten übereinstimmen.
 
 `argmin` wählt die Zeile mit der kürzesten Dauer in jeder Gruppe, und der `*`-Parameter durchläuft alle anderen Spalten, wobei an jeden Spaltennamen das Präfix „min\_“ angehängt wird.
 
@@ -264,7 +264,7 @@ Dies kann als Balkendiagramm oder Zeitdiagramm dargestellt werden.
 
 ## Join-Varianten
 
-Die genaue Variante des Join-Operators wird mit dem kind-Schlüsselwort angegeben. Ab sofort unterstützt die AI-Analyse sechs Varianten des Join-Operators: innerer Join mit linksseitiger Deduplizierung (Standard), standardmäßiger innerer Join, linker äußerer, rechter äußerer, vollständig äußerer und linker Anti-Join.
+Die genaue Variante des Join-Operators wird mit dem kind-Schlüsselwort angegeben. Ab sofort unterstützt Analytics sechs Varianten des Join-Operators: innerer Join mit linksseitiger Deduplizierung (Standard), standardmäßiger innerer Join, linker äußerer, rechter äußerer, vollständig äußerer und linker Anti-Join.
  
 Standardmäßige Join-Variante (ohne angegebenes „kind“). Erläutern Sie den Join-Vorgang anhand von zwei Beispieltabellen:
  
@@ -310,7 +310,7 @@ Das Ergebnis des Joins wäre:
 
 (Beachten Sie, dass die Schlüssel „a“ und „d“ nicht in der Ausgabe angezeigt werden, da es keine übereinstimmenden Schlüssel links und rechts gab.)
  
-(Bislang handelte es sich hierbei um die erste Implementierung des Joins, die von der ersten Version der AI-Analyse unterstützt wurde. Dies empfiehlt sich in üblichen Protokoll-/Ablaufverfolgungsanalyse-Szenarien, in denen wir zwei Ereignisse (die beiden einigen Filterkriterien entsprechen) unter der gleichen Korrelations-ID korrelieren möchten und alle Vorkommnisse des gesuchten Phänomens zurückbekommen möchten, wobei mehrere Vorkommnisse der zugehörigen Ablaufverfolgungsdatensätze ignoriert werden.)
+(Bislang handelte es sich hierbei um die erste Implementierung des Joins, die von der ersten Version von Analytics unterstützt wurde. Dies empfiehlt sich in üblichen Protokoll-/Ablaufverfolgungsanalyse-Szenarien, in denen wir zwei Ereignisse (die beiden einigen Filterkriterien entsprechen) unter der gleichen Korrelations-ID korrelieren möchten und alle Vorkommnisse des gesuchten Phänomens zurückbekommen möchten, wobei mehrere Vorkommnisse der zugehörigen Ablaufverfolgungsdatensätze ignoriert werden.)
  
 ### Innerer Join (kind=inner) 
 
@@ -437,4 +437,4 @@ JobHistory
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

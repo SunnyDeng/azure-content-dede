@@ -118,4 +118,4 @@ Viele Architekturen umfassen eine Web-API, die eine andere Downstream-Web-API au
 
 Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als [Im-Auftrag-von-Vorgang](active-directory-v2-protocols.md#oauth2-on-behalf-of-flow). Der Im-Auftrag-von-Vorgang ist im v2.0-Endpunkt derzeit jedoch noch nicht implementiert. Um sich die Funktionsweise dieses Vorgangs im allgemein verfügbaren Azure AD-Dienst anzusehen, wechseln Sie zum [Im-Auftrag-von-Codebeispiel auf GitHub](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

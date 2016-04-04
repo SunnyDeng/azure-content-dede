@@ -13,14 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/17/2016"
+   ms.date="03/21/2016"
    ms.author="tomfitz"/>
 
-# Bereitstellen einer Ressourcengruppe mit einer Azure Resource Manager-Vorlage
+# Bereitstellen von Ressourcen mit einer Azure Resource Manager-Vorlage
 
 In diesem Thema wird erläutert, wie Ihre Anwendung mit Azure Resource Manager-Vorlagen in Azure bereitgestellt wird. Es wird gezeigt, wie Sie Ihre Ressourcen mithilfe von Azure PowerShell, der Azure-Befehlszeilenschnittstelle, der REST-API oder des Azure-Portals bereitstellen können.
-
-Eine Einführung in den Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](./resource-group-overview.md). Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 
 Wenn Sie eine Anwendungsdefinition mit einer Vorlage bereitstellen, können Sie Parameterwerte angeben, um anzupassen, wie die Ressourcen erstellt werden. Sie geben Werte für diese Parameter entweder inline oder in einer Parameterdatei an.
 
@@ -32,37 +30,34 @@ Standardmäßig behandelt Ressourcen-Manager Bereitstellungen als inkrementelle 
 - Ressourcen **hinzufügen**, die in der Vorlage angegeben, jedoch nicht in der Ressourcengruppe vorhanden sind. 
 - **das erneute Bereitstellen von Ressourcen unterlassen**, die in der Ressourcengruppe gemäß der in der Vorlage definierten Bedingung vorhanden sind.
 
-Über Azure PowerShell oder die REST-API können Sie eine vollständige Aktualisierung für die Ressourcengruppe angeben. Über die Azure-Befehlszeilenschnittstelle (CLI) sind derzeit keine vollständigen Bereitstellungen möglich. Bei der vollständigen Bereitstellung kann Ressourcen-Manager Folgendes:
+Bei der vollständigen Bereitstellung kann Ressourcen-Manager Folgendes:
 
 - Ressourcen **löschen**, die in der Ressourcengruppe vorhanden, aber nicht in der Vorlage angegeben sind.
 - Ressourcen **hinzufügen**, die in der Vorlage angegeben, jedoch nicht in der Ressourcengruppe vorhanden sind. 
 - **das erneute Bereitstellen von Ressourcen unterlassen**, die in der Ressourcengruppe gemäß der in der Vorlage definierten Bedingung vorhanden sind.
  
-Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Beispielen unten für PowerShell und der REST-API gezeigt.
+Sie geben den Bereitstellungstyp über die Eigenschaft **Mode** an, wie in den Beispielen unten gezeigt.
 
 ## Bereitstellen mit PowerShell
 
-[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
-
-
 1. Melden Sie sich bei Ihrem Azure-Konto an. Nach der Eingabe Ihrer Anmeldeinformationen gibt der Befehl die Informationen zu Ihrem Konto zurück.
 
-    Azure PowerShell 1.0:
+        PS C:\> Login-AzureRmAccount
 
-         PS C:\> Login-AzureRmAccount
-
-         Evironment : AzureCloud
-         Account    : someone@example.com
-         ...
+        Evironment : AzureCloud
+        Account    : someone@example.com
+        ...
 
 
 2. Wenn Sie über mehrere Abonnements verfügen, geben Sie mit dem Befehl **Select-AzureRmSubscription** die Abonnement-ID ein, die Sie für die Bereitstellung verwenden möchten.
 
         PS C:\> Select-AzureRmSubscription -SubscriptionID <YourSubscriptionId>
 
-3. Wenn noch keine Ressourcengruppe vorhanden ist, erstellen Sie eine neue Ressourcengruppe mit dem Befehl **New-AzureRmResourceGroup**. Geben Sie den Namen der Ressourcengruppe und des gewünschten Speicherorts ein. Es wird eine Zusammenfassung der neuen Ressourcengruppe zurückgegeben.
+3. Wenn noch keine Ressourcengruppe vorhanden ist, erstellen Sie eine neue Ressourcengruppe mit dem Befehl **New-AzureRmResourceGroup**. Geben Sie den Namen der Ressourcengruppe und des gewünschten Speicherorts ein.
 
         PS C:\> New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "West US"
+   
+     Es wird eine Zusammenfassung der neuen Ressourcengruppe zurückgegeben.
    
         ResourceGroupName : ExampleResourceGroup
         Location          : westus
@@ -74,7 +69,11 @@ Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Be
                     *
         ResourceId        : /subscriptions/######/resourceGroups/ExampleResourceGroup
 
-5. Führen Sie zum Erstellen einer neuen Bereitstellung für die Ressourcengruppe den Befehl **New-AzureRmResourceGroupDeployment** aus, und geben Sie die erforderlichen Parameter ein. Die Parameter enthalten den Namen der Bereitstellung, den Namen der Ressourcengruppe, den Pfad oder die URL der erstellten Vorlage und alle anderen für Ihr Szenario erforderlichen Parameter. Wenn der **Mode**-Parameter nicht angegeben wird, bedeutet dies, dass der Standardwert **Incremental** verwendet wird.
+4. Überprüfen Sie die Bereitstellung vor der Ausführung durch Ausführen des Cmdlets **Test-AzureRmResourceGroupDeployment**. Geben Sie die Parameter beim Testen der Bereitstellung genau so an wie beim Ausführen der Bereitstellung (wie im nächsten Schritt zu sehen).
+
+        PS C:\> Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> -myParameterName "parameterValue"
+
+5. Führen Sie zum Erstellen einer neuen Bereitstellung für die Ressourcengruppe den Befehl **New-AzureRmResourceGroupDeployment** aus, und geben Sie die erforderlichen Parameter ein. Die Parameter enthalten den Namen der Bereitstellung, den Namen der Ressourcengruppe, den Pfad oder die URL der erstellten Vorlage und alle anderen für Ihr Szenario erforderlichen Parameter. Ohne Angabe des Parameters **Mode** wird der Standardwert **Incremental** verwendet.
    
      Sie haben die folgenden Möglichkeiten zum Angeben der Parameterwerte:
    
@@ -93,22 +92,22 @@ Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Be
 
      Wenn die Ressourcengruppe bereitgestellt wurde, wird eine Zusammenfassung der Bereitstellung angezeigt.
 
-          DeploymentName    : ExampleDeployment
-          ResourceGroupName : ExampleResourceGroup
-          ProvisioningState : Succeeded
-          Timestamp         : 4/14/2015 7:00:27 PM
-          Mode              : Incremental
-          ...
+        DeploymentName    : ExampleDeployment
+        ResourceGroupName : ExampleResourceGroup
+        ProvisioningState : Succeeded
+        Timestamp         : 4/14/2015 7:00:27 PM
+        Mode              : Incremental
+        ...
 
      Legen Sie zum Ausführen einer vollständigen Bereitstellung **Mode** auf **Complete** fest. Beachten Sie, dass Sie dazu aufgefordert werden, zu bestätigen, dass Sie den „Complete“-Modus verwenden möchten, was das Löschen von Ressourcen umfassen kann.
 
-          PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -Mode Complete -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> 
-          Confirm
-          Are you sure you want to use the complete deployment mode? Resources in the resource group 'ExampleResourceGroup' which are not
-          included in the template will be deleted.
-          [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
+        PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -Mode Complete -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> 
+        Confirm
+        Are you sure you want to use the complete deployment mode? Resources in the resource group 'ExampleResourceGroup' which are not
+        included in the template will be deleted.
+        [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 
-     Wenn die Vorlage einen Parameter mit einem Namen enthält, der einem Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. der Parameter **ResourceGroupName** in Ihrer Vorlage, der dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) entspricht), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
+     Enthält die Vorlage einen Parameter mit einem Namen, der einem der Parameter im Befehl zum Bereitstellen der Vorlage entspricht (z. B. einen Parameter namens **ResourceGroupName** in der Vorlage, der mit dem Parameter **ResourceGroupName** im Cmdlet [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) identisch ist), werden Sie aufgefordert, einen Wert für einen Parameter mit dem Postfix **FromTemplate** anzugeben (z. B. **ResourceGroupNameFromTemplate**). Im Allgemeinen sollten Sie diese Verwirrung vermeiden, indem Sie Parametern nicht dieselben Namen wie Parametern für Bereitstellungsvorgänge geben.
 
 6. Abrufen von Informationen über Fehler bei der Bereitstellung.
 
@@ -122,7 +121,7 @@ Hierbei handelt es sich um ein Video, in dem die Verwendung von Ressourcen-Manag
 [AZURE.VIDEO deploy-an-application-with-azure-resource-manager-template]
 
 
-## Bereitstellen mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
+## Bereitstellen über die Azure-Befehlszeilenschnittstelle
 
 Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht mit dem Ressourcen-Manager verwendet haben, finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](xplat-cli-azure-resource-manager.md) weitere Informationen.
 
@@ -159,73 +158,82 @@ Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht mit dem Ressourcen-Mana
         data:
         info:    group create command OK
 
+5. Überprüfen Sie die Bereitstellung vor der Ausführung durch Ausführen des Befehls **azure group template validate**. Geben Sie die Parameter beim Testen der Bereitstellung genau so an wie beim Ausführen der Bereitstellung (wie im nächsten Schritt zu sehen).
+
+        azure group template vaildate -f <PathToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup
+
 5. Führen Sie zum Erstellen einer neuen Bereitstellung für die Ressourcengruppe den folgenden Befehl aus, und geben Sie die erforderlichen Parameter ein. Die Parameter enthalten den Namen der Bereitstellung, den Namen der Ressourcengruppe, den Pfad oder die URL der erstellten Vorlage und alle anderen für Ihr Szenario erforderlichen Parameter.
    
      Sie haben die folgenden Möglichkeiten zum Angeben der Parameterwerte:
 
      - Verwenden Sie Inlineparameter und eine lokale Vorlage. Jeder Parameter weist das Format `"ParameterName": { "value": "ParameterValue" }` auf. Das folgende Beispiel zeigt die Parameter mit Escapezeichen.
 
-             azure group deployment create -f <PathToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
+            azure group deployment create -f <PathToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
 
      - Verwenden Sie Inlineparameter und einen Link zu einer Vorlage.
 
-             azure group deployment create --template-uri <LinkToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
+            azure group deployment create --template-uri <LinkToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
 
      - Verwenden Sie eine Parameterdatei. Informationen über die Vorlagendatei finden Sie unter [Parameterdatei](./#parameter-file).
     
-             azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
+            azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
 
      Wenn die Ressourcengruppe bereitgestellt wurde, wird eine Zusammenfassung der Bereitstellung angezeigt.
   
-           info:    Executing command group deployment create
-           + Initializing template configurations and parameters
-           + Creating a deployment
-           ...
-           info:    group deployment create command OK
+        info:    Executing command group deployment create
+        + Initializing template configurations and parameters
+        + Creating a deployment
+        ...
+        info:    group deployment create command OK
 
+     Legen Sie zum Ausführen einer vollständigen Bereitstellung **Mode** auf **Complete** fest.
+
+        azure group deployment create --mode Complete -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
 
 6. Abrufen von Informationen über die aktuelle Bereitstellung.
 
-         azure group log show -l ExampleResourceGroup
+        azure group log show -l ExampleResourceGroup
 
 7. Abrufen detaillierter Informationen über Fehler bei der Bereitstellung.
       
-         azure group log show -l -v ExampleResourceGroup
+        azure group log show -l -v ExampleResourceGroup
 
 ## Bereitstellen mit der REST-API
 1. Legen Sie [allgemeine Parameter und Header](https://msdn.microsoft.com/library/azure/8d088ecc-26eb-42e9-8acc-fe929ed33563#bk_common) fest, einschließlich Authentifizierungstoken.
 2. Erstellen Sie eine neue Ressourcengruppe, wenn noch keine vorhanden ist. Geben Sie Ihre Abonnement-ID, den Namen der neuen Ressourcengruppe und den Speicherort für Ihre Lösung an. Weitere Informationen finden Sie unter [Erstellen einer Ressourcengruppe](https://msdn.microsoft.com/library/azure/dn790525.aspx).
 
-         PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2015-01-01
-           <common headers>
-           {
-             "location": "West US",
-             "tags": {
+        PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2015-01-01
+          <common headers>
+          {
+            "location": "West US",
+            "tags": {
                "tagname1": "tagvalue1"
-             }
-           }
+            }
+          }
    
+3. Überprüfen Sie die Bereitstellung vor der Ausführung durch Ausführen des Vorgangs unter [Überprüfen einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790547.aspx). Geben Sie die Parameter beim Testen der Bereitstellung genau so an wie beim Ausführen der Bereitstellung (wie im nächsten Schritt zu sehen).
+
 3. Erstellen einer neuen Ressourcengruppenbereitstellung Geben Sie Ihre Abonnement-ID, den Namen der bereitzustellenden Ressourcengruppe, den Namen der Bereitstellung und den Speicherort der Vorlage an. Informationen über die Vorlagendatei finden Sie unter [Parameterdatei](./#parameter-file). Weitere Informationen über die REST-API zum Erstellen einer Ressourcengruppe finden Sie unter [Erstellen einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790564.aspx). Beachten Sie, dass **Mode** auf **Incremental** festgelegt ist. Legen Sie zum Ausführen einer vollständigen Bereitstellung **Mode** auf **Complete** fest.
     
-         PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
-            <common headers>
-            {
-              "properties": {
-                "templateLink": {
-                  "uri": "http://mystorageaccount.blob.core.windows.net/templates/template.json",
-                  "contentVersion": "1.0.0.0",
-                },
-                "mode": "Incremental",
-                "parametersLink": {
-                  "uri": "http://mystorageaccount.blob.core.windows.net/templates/parameters.json",
-                  "contentVersion": "1.0.0.0",
-                }
+        PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
+          <common headers>
+          {
+            "properties": {
+              "templateLink": {
+                "uri": "http://mystorageaccount.blob.core.windows.net/templates/template.json",
+                "contentVersion": "1.0.0.0",
+              },
+              "mode": "Incremental",
+              "parametersLink": {
+                "uri": "http://mystorageaccount.blob.core.windows.net/templates/parameters.json",
+                "contentVersion": "1.0.0.0",
               }
             }
+          }
    
 4. Rufen Sie den Status der Vorlagenbereitstellung ab. Weitere Informationen finden Sie unter [Abrufen von Informationen zu einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790565.aspx).
 
-         GET https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
+          GET https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
            <common headers>
 
 ## Bereitstellen mit Visual Studio 2013
@@ -240,7 +248,7 @@ Wissen Sie was? Jede Anwendung, die Sie über das [Portal](https://portal.azure.
 
 ![Neu](./media/resource-group-template-deploy/new.png)
 
-Weitere Informationen zum Verwenden des Portals mit dem Azure-Ressourcen-Manager finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md).
+Alle Bereitstellungen über das Portal werden vor der Ausführung automatisch überprüft. Weitere Informationen zum Verwenden des Portals mit dem Azure-Ressourcen-Manager finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md).
 
 
 ## Parameterdatei
@@ -276,7 +284,7 @@ Die Parameterdatei darf nicht größer als 64 KB sein.
 Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Erstellen von Vorlagen](../resource-group-authoring-templates/#parameters). Ausführliche Informationen zum KeyVault-Verweis zum Übergeben sicherer Werte finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
 
 ## Nächste Schritte
-- Ein Beispiel für die Bereitstellung von Ressourcen über die .NET-Clientbibliothek finden Sie unter [Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](./virtual-machines/arm-template-deployment.md).
+- Ein Beispiel für die Bereitstellung von Ressourcen über die .NET-Clientbibliothek finden Sie unter [Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](virtual-machines/virtual-machines-windows-csharp-template.md).
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Informationen zum Bereitstellen der Lösung in andere Umgebungen finden Sie unter [Entwicklungs- und Testumgebungen in Microsoft Azure](solution-dev-test-environments.md).
 - Informationen zu den Abschnitten der Azure-Ressourcen-Manager-Vorlage finden Sie unter [Erstellen von Vorlagen](resource-group-authoring-templates.md).
@@ -284,4 +292,4 @@ Informationen zum Definieren von Parametern in der Vorlage finden Sie unter [Ers
 
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

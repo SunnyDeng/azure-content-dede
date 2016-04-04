@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="03/08/2016"
+   ms.date="03/21/2016"
    ms.author="jgao"/>
 
 # Erstellen Windows-basierter Hadoop-Cluster in HDInsight über das Azure-Portal
@@ -142,4 +142,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zum Erstellen von HDInsight-C
 * [Programmgesteuerte Übermittlung von Hadoop-Jobs](hdinsight-submit-hadoop-jobs-programmatically.md) – Erfahren Sie, wie Sie Aufträge programmgesteuert an HDInsight übermitteln können.
 * [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md)
 
-<!----HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

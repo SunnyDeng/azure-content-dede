@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="12/07/2015"
+	ms.date="03/17/2016"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen zur entsprechenden Mobile Apps-Version dieses Themas finden Sie unter [Hinzufügen von Pushbenachrichtigungen zur Xamarin.Android-App](../app-service-mobile/app-service-mobile-xamarin-android-get-started-push.md).
 
 ##Übersicht
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services Pushbenachrichtigungen an eine Xamarin.Android-App senden. In diesem Lernprogramm fügen Sie mithilfe des Google Cloud Messaging (GCM)-Diensts Pushbenachrichtigungen zum Projekt [Erste Schritte mit Mobile Services] hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
@@ -45,7 +45,7 @@ Sie haben die Komponenten [Xamarin.Android] und [Azure Mobile Services] bereits 
 
 ##<a id="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts zum Senden von Benachrichtigungen
 
->[AZURE.TIP]Die folgenden Schritte veranschaulichen die Vorgehensweise beim Aktualisieren des Skripts, das für den Einfügevorgang in der TodoItem-Tabelle im klassischen Azure-Portal registriert ist. Der Zugriff und die Bearbeitung dieses Mobile Service-Skripts ist auch direkt in Visual Studio am Azure-Knoten im Server-Explorer möglich.
+>[AZURE.TIP] Die folgenden Schritte veranschaulichen die Vorgehensweise beim Aktualisieren des Skripts, das für den Einfügevorgang in der TodoItem-Tabelle im klassischen Azure-Portal registriert ist. Der Zugriff und die Bearbeitung dieses Mobile Service-Skripts ist auch direkt in Visual Studio am Azure-Knoten im Server-Explorer möglich.
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
@@ -72,11 +72,11 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 * [Erste Schritte mit der Authentifizierung](mobile-services-android-get-started-users.md) <br/>Informationen zur Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen mithilfe von mobilen Diensten.
 
-* [Was sind Notification Hubs?](../notification-hubs-overview.md) <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
+* [Was sind Notification Hubs?](../notification-hubs/notification-hubs-overview.md) <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
 
 * [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630) </br>Hier finden Sie die Anleitungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen.
 
-* [Verwenden der .NET-Clientbibliothek für Mobile Services](mobile-services-windows-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit Xamarin C#-Code.
+* [Verwenden der .NET-Clientbibliothek für Mobile Services](mobile-services-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit Xamarin C#-Code.
 
 * [Mobile Services: Serverskriptreferenz](mobile-services-how-to-use-server-scripts.md) <br/>Erfahren Sie mehr über das Implementieren von Geschäftslogik in Ihren mobilen Dienst.
 
@@ -87,4 +87,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services]: http://components.xamarin.com/view/azure-mobile-services/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

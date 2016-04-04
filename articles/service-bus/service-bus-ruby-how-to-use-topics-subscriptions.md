@@ -63,7 +63,7 @@ Sie können diesen Wert auch ermitteln, indem Sie sich beim [klassischen Azure-P
 
 ## Erstellen einer Ruby-Anwendung
 
-Anweisungen finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](../virtual-machines/virtual-machines-ruby-rails-web-app-linux.md).
+Anweisungen finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](../virtual-machines/virtual-machines-linux-classic-ruby-rails-web-app.md).
 
 ## Konfigurieren Ihrer Anwendung für die Verwendung von Service Bus
 
@@ -238,4 +238,4 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Themen vertraut sind, finden S
 [klassische Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

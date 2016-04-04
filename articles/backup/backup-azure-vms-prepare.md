@@ -41,7 +41,7 @@ Wenn Sie wissen, dass diese Bedingungen in Ihrer Umgebung bereits erfüllt sind,
 - Regionsübergreifende Sicherungs- und Wiederherstellungsvorgänge werden nicht unterstützt.
 - Die Sicherung von virtuellen Computern mithilfe des Azure Backup-Diensts wird in allen öffentlichen Azure-Regionen unterstützt (Informationen hierzu finden Sie in der [Liste der Azure-Regionen](https://azure.microsoft.com/regions/#services)). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur für bestimmte Betriebssystemversionen unterstützt:
-  - **Linux**: Die [Liste der von Azure unterstützten Verteilungen](../virtual-machines/virtual-machines-linux-endorsed-distributions.md) finden Sie hier. Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
+  - **Linux**: Die [Liste der von Azure unterstützten Verteilungen](../virtual-machines/virtual-machines-linux-endorsed-distros.md) finden Sie hier. Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
   - **Windows Server**: Versionen, die älter als Windows Server 2008 R2 sind, werden nicht unterstützt.
 	- Das Wiederherstellen eines virtuellen Domänencontrollercomputers, der Teil einer Konfiguration mit mehreren Domänencontrollern ist, wird nur über PowerShell unterstützt. Weitere Informationen hierzu finden Sie unter [Wiederherstellen von Multi-DC-Domänencontrollern](backup-azure-restore-vms.md#restoring-domain-controller-vms).
 	- Das Wiederherstellen virtueller Computer mit den folgenden besonderen Netzwerkkonfigurationen wird nur über PowerShell unterstützt. Virtuelle Computer, die mit dem Wiederherstellungsworkflow der Benutzeroberfläche erstellt werden, weisen diese Netzwerkkonfigurationen nach dem Abschluss des Wiederherstellungsvorgangs nicht auf. Weitere Informationen finden Sie unter [Wiederherstellen von VMs mit speziellen Netzwerkkonfigurationen](backup-azure-restore-vms.md#restoring-vms-with-special-netwrok-configurations).
@@ -208,4 +208,4 @@ Ihre Umgebung ist jetzt für das Sichern Ihres virtuellen Computers vorbereitet.
 - [Planen der Sicherungsinfrastruktur für virtuelle Computer](backup-azure-vms-introduction.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

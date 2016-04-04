@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/11/2016"
+	ms.date="03/16/2016"
 	ms.author="rajram"/>
 
 # Erste Schritte mit dem Slack-Connector und das Hinzufügen zur Logik-App
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Slack-API](../connectors/create-api-slack.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Slack-API](../connectors/connectors-create-api-slack.md).
 
 Sie können eine Verbindung mit Slack-Kanälen herstellen und Nachrichten an Ihr Team senden. Connectors können in Logik-Apps als Teil eines "Workflows" zum Erledigen verschiedener Aufgaben verwendet werden. Wenn Sie den Slack-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarien mithilfe anderer Connectors umsetzen. Beispielsweise können Sie den [Facebook-Connector](app-service-logic-connector-facebook.md) in Ihrem Workflow zum Übermitteln einer Nachricht an Ihren Slack-Kanal verwenden.
 
@@ -60,13 +60,11 @@ Nachdem der Slack-Connector erstellt wurde, können Sie ihn als Aktion Ihrer Log
 ![][5]
 ![][6]
 	
-5.	Jetzt können den Slack-Connector im Workflow verwenden. Die Aktion "Nachricht veröffentlichen" ist verfügbar:
-
+5.	Jetzt können den Slack-Connector im Workflow verwenden. Die Aktion "Nachricht veröffentlichen" ist verfügbar: 
 ![][7]
 
 
-Sehen wir uns die Benutzeroberfläche von "Nachricht veröffentlichen" an. Sie können diese Aktion zum Veröffentlichen einer Nachricht über einen beliebigen Slack-Kanal verwenden:
- 
+Sehen wir uns die Benutzeroberfläche von "Nachricht veröffentlichen" an. Sie können diese Aktion zum Veröffentlichen einer Nachricht über einen beliebigen Slack-Kanal verwenden: 
 ![][8]
 
 Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht veröffentlichen" wie folgt:
@@ -103,4 +101,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [8]: ./media/app-service-logic-connector-slack/img8.PNG
 [9]: ./media/app-service-logic-connector-slack/img9.PNG
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

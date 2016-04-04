@@ -57,7 +57,7 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 
 - [Einrichten von Azure PowerShell](marketplace-publishing-powershell-setup.md)
 - [Erstellen eines lokalen VM-Images](marketplace-publishing-vm-image-creation-on-premise.md)
-- [Erstellen eines virtuellen Computers unter Windows im Azure-Vorschauportal](../virtual-machines-windows-tutorial/)
+- [Erstellen eines virtuellen Computers unter Windows im Azure-Vorschauportal](../virtual-machines-windows-hero-tutorial/)
 
 **Datendienste**
 
@@ -82,4 +82,4 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 [link-pushprod]: marketplace-publishing-push-to-production.md
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

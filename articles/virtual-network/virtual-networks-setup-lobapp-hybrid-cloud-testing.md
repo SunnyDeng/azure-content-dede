@@ -48,7 +48,7 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 
 Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](https://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-## Phase 1: Einrichten der Hybridcloudumgebung
+## Phase 1: Einrichten der Hybridcloudumgebung
 
 Folgen Sie den Anweisungen im Thema [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md). Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
 
@@ -56,9 +56,9 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_1.png)
 
-> [AZURE.NOTE] Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
+> [AZURE.NOTE] Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
  
-## Phase 2: Konfigurieren des SQL Server-Computers (SQL1)
+## Phase 2: Konfigurieren des SQL Server-Computers (SQL1)
 
 Starten Sie ggf. den Computer DC2 über das Azure-Verwaltungsportal.
 
@@ -136,7 +136,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_2.png)
  
-## Phase 3: Konfigurieren den Branchenservers (LOB1)
+## Phase 3: Konfigurieren den Branchenservers (LOB1)
 
 Führen Sie als Erstes auf dem lokalen Computer die folgenden Befehlen in der Azure PowerShell-Eingabeaufforderung aus, um einen virtuellen Azure-Computer für LOB1 zu erstellen.
 
@@ -182,6 +182,6 @@ Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB
 
 ## Nächste Schritte
 
-- Richten Sie die [Produktionsumgebung](../virtual-machines/virtual-machines-workload-high-availability-LOB-application-overview.md) ein.
+- Richten Sie die [Produktionsumgebung](../virtual-machines/virtual-machines-windows-lob-overview.md) ein.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

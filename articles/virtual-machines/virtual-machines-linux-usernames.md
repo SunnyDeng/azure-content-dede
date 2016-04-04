@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Auswählen von Benutzernamen für Linux | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Benutzernamen für einen virtuellen Linux-Computer in Azure auswählen." 
-	services="virtual-machines" 
+	services="virtual-machines-linux" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
@@ -9,7 +9,7 @@
 	tags="azure-service-management,azure-resource-manager" />
 
 <tags 
-	ms.service="virtual-machines" 
+	ms.service="virtual-machines-linux" 
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
@@ -27,9 +27,9 @@ Beim Bereitstellen eines virtuellen Linux-Computers in Azure müssen Sie den Nam
 
 In den meisten Fällen ist dieser Benutzer im Basisimage nicht vorhanden und wird während des Bereitstellungsprozesses erstellt. Wenn der Benutzer im VM-Basisimage vorhanden ist, konfiguriert der Azure Linux Agent in einigen Fällen einfach das Kennwort (und/oder den SSH-Schlüssel) für diesen Benutzer auf der Grundlage der Informationen, die Sie beim Erstellen der VM festgelegt haben.
 
-**Allerdings** definiert Linux einen Satz von Benutzernamen, die nicht verwendet werden sollten. Der Bereitstellungsprozess **schlägt fehl**, wenn Sie versuchen, einen virtuellen Linux-Computer mithilfe eines vorhandenen Systembenutzers bereitzustellen, der als Benutzer mit einer UID zwischen 0 und 99 definiert ist. Ein typisches Beispiel ist der Benutzer `root`, der die UID 0 hat.
+**Allerdings** definiert Linux einen Satz von Benutzernamen, die nicht verwendet werden sollten. Der Bereitstellungsprozess **schlägt fehl**, wenn Sie versuchen, einen virtuellen Linux-Computer mithilfe eines vorhandenen Systembenutzers bereitzustellen, der als Benutzer mit einer UID zwischen 0 und 99 definiert ist. Ein typisches Beispiel ist der Benutzer `root`, der die UID 0 hat.
 
- - Siehe auch: [Linux-Standardbasis – Benutzer-ID-Bereiche](http://refspecs.linuxfoundation.org/LSB_4.1.0/LSB-Core-generic/LSB-Core-generic/uidrange.html)
+ - Siehe auch: [Linux-Standardbasis – Benutzer-ID-Bereiche](http://refspecs.linuxfoundation.org/LSB_4.1.0/LSB-Core-generic/LSB-Core-generic/uidrange.html)
 
 Folgende Benutzernamen sollten Sie bei der Bereitstellung eines virtuellen Linux-Computers vermeiden. Von der Verwendung dieser Benutzernamen **wird abgeraten**, da der Bereitstellungsprozess für einen virtuellen Computer ansonsten fehlschlagen kann.
 
@@ -251,4 +251,4 @@ Folgende Benutzernamen sollten Sie bei der Bereitstellung eines virtuellen Linux
 
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0323_2016-->

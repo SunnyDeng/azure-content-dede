@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Eine Einführung in die Application Insights-Analyse" 
-	description="Kurze Beispiele für alle Hauptabfragen in der Application Insights-Analyse, dem leistungsfähigen Suchtool für Application Insights." 
+	pageTitle="Einführung in Analytics in Application Insights" 
+	description="Kurze Beispiele für alle Hauptabfragen in Analytics, dem leistungsfähigen Suchtool für Application Insights." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -12,15 +12,15 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/07/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
 
  
-# Eine Einführung in die Application Insights-Analyse
+# Einführung in Analytics in Application Insights
 
 
-Application Insights-Analyse ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie.
+[Analytics](app-analytics.md) ist die leistungsfähige Suchfunktion von [Application Insights](app-insights-overview.md). Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben.
 
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
@@ -29,7 +29,7 @@ Sehen Sie sich zu Beginn einige grundlegende Abfragen im Detail an.
 
 ## Verbinden mit Ihren Application Insights-Daten
 
-Öffnen Sie die Analyse über das [Blatt „Übersicht“](app-insights-dashboards.md) Ihrer App in Application Insights:
+Öffnen Sie Analytics über das [Blatt „Übersicht“](app-insights-dashboards.md) Ihrer App in Application Insights:
 
 ![Öffnen Sie unter „portal.azure.com“ die Application Insights-Ressource, und wählen Sie „Analytics“.](./media/app-analytics/001.png)
 
@@ -52,7 +52,7 @@ Das Ergebnis lautet wie folgt:
 	
 [`Count`](app-analytics-aggregations.md#count) ist einer von vielen [Abfrageoperatoren](app-analytics-queries.md), die wir in einer Pipe anordnen können, wobei die Daten in mehreren Phasen gefiltert, umgeformt und verbunden werden.
 	
-## [Take](app-analytics-aggregations.md#take): n Zeilen anzeigen
+## [Take](app-analytics-aggregations.md#take): Anzeigen von n Zeilen
 
 
 Betrachten Sie einige Daten: Was sehen Sie in 5 Beispielzeilen?
@@ -77,7 +77,7 @@ Erweitern Sie ein Element, um die Details anzuzeigen:
 
 ## [Top](app-analytics-aggregations.md#top) und [sort](app-analytics-aggregations.md#sort)
 
-`take` ist hilfreich, um schnell eine Stichprobe aus dem Resultset abzurufen, es werden jedoch Zeilen aus der Tabelle in unbestimmter Reihenfolge angezeigt. Verwenden Sie für eine sortierte Ansicht `top` (für eine Stichprobe) oder `sort` (für die gesamte Tabelle).
+`take` ist hilfreich, um schnell eine Stichprobe abzurufen. Es werden jedoch Zeilen aus der Tabelle in unbestimmter Reihenfolge angezeigt. Verwenden Sie für eine sortierte Ansicht `top` (für eine Stichprobe) oder `sort` (für die gesamte Tabelle).
 
 Zeigen Sie die ersten n Zeilen, sortiert nach einer bestimmten Spalte an:
 
@@ -86,12 +86,12 @@ Zeigen Sie die ersten n Zeilen, sortiert nach einer bestimmten Spalte an:
 	requests | top 10 by timestamp desc 
 ```
 
-* *Syntax:* Die meisten Operatoren besitzen Schlüsselwortparameter wie z. B. `by`.
-* `desc` = absteigende Reihenfolge, `asc` = aufsteigende Reihenfolge.
+* *Syntax:* Die meisten Operatoren besitzen Schlüsselwortparameter wie z.B. `by`.
+* `desc` = absteigende Reihenfolge, `asc` = aufsteigende Reihenfolge
 
 ![](./media/app-analytics-tour/260.png)
 
-`top...` ist eine leistungsstärkere Methode als `sort ... | take...`. Wir hätten auch Folgendes schreiben können:
+`top...` ist eine leistungsstärkere Methode, um `sort ... | take...` auszudrücken. Wir hätten auch Folgendes schreiben können:
 
 ```AIQL
 
@@ -103,7 +103,7 @@ Das Ergebnis wäre identisch, würde jedoch etwas langsamer ausgeführt. (Sie k�
 Die Spaltenüberschriften in der Tabellenansicht können auch zum Sortieren der Ergebnisse auf dem Bildschirm verwendet werden. Wenn Sie jedoch `take` oder `top` verwendet haben, um nur einen Teil einer Tabelle abzurufen, ordnen Sie nur die Reihenfolge der abgerufenen Datensätze neu.
 
 
-## [Project](app-analytics-aggregations.md#project): Spalten auswählen, umbenennen und berechnen
+## [Project](app-analytics-aggregations.md#project): Auswählen, Umbenennen und Berechnen von Spalten
 
 Verwenden Sie [`project`](app-analytics-aggregations.md#project), um nur die gewünschten Spalten auszuwählen:
 
@@ -133,14 +133,14 @@ Sie können auch Spalten umbenennen und neue definieren:
 Im skalaren Ausdruck:
 
 * `%` ist der übliche Modulo-Operator. 
-* `1d` (die Ziffer Eins, gefolgt von einem „d“) ist ein Zeitraumliteral für einen Tag. Hier sind einige weitere Zeitraumliterale: `12h`, `30m`, `10s`, `0.01s`.
-* `floor` (Alias `bin`) rundet einen Wert auf das nächste Vielfache des von Ihnen angegebenen Basiswerts ab. `floor(aTime, 1s)` rundet demnach eine Zeit auf die nächstgelegene Sekunde ab.
+* `1d` (die Ziffer Eins, gefolgt von einem „d“) ist ein Zeitraumliteral für einen Tag. Dies sind einige weitere Zeitraumliterale: `12h`, `30m`, `10s`, `0.01s`.
+* `floor` (Alias `bin`) rundet einen Wert auf das nächste Vielfache des von Ihnen angegebenen Basiswerts ab. `floor(aTime, 1s)` rundet demnach eine Zeit auf die nächstniedrigere Sekunde ab.
 
-[Ausdrücke](app-analytics-scalars.md) können alle üblichen Operatoren (`+`, `-`, ...) enthalten, zudem gibt es zahlreiche nützliche Funktionen.
+[Ausdrücke](app-analytics-scalars.md) können alle üblichen Operatoren (`+`, `-`, ...) enthalten. Zudem gibt es zahlreiche nützliche Funktionen.
 
-## [Extend](app-analytics-aggregations.md#extend): Spalten berechnen
+## [Extend](app-analytics-aggregations.md#extend): Berechnen von Spalten
 
-Wenn Sie neue Spalten zu den vorhandenen hinzufügen möchten, verwenden Sie [`extend`](app-analytics-aggregations.md#extend):
+Wenn Sie nur neue Spalten zu den vorhandenen hinzufügen möchten, verwenden Sie [`extend`](app-analytics-aggregations.md#extend):
 
 ```AIQL
 
@@ -151,7 +151,7 @@ Wenn Sie neue Spalten zu den vorhandenen hinzufügen möchten, verwenden Sie [`e
 
 [`extend`](app-analytics-aggregations.md#extend) ist weniger ausführlich als die Nutzung von [`project`](app-analytics-aggregations.md#project), wenn Sie alle vorhandenen Spalten beibehalten möchten.
 
-## [Summarize](app-analytics-aggregations.md#summarize): Gruppen von Zeilen aggregieren
+## [Summarize](app-analytics-aggregations.md#summarize): Aggregieren von Zeilengruppen
 
 In einem Beispiel für eine Tabelle können Sie die Felder sehen, in denen die verschiedenen Telemetriedaten gemeldet werden. `exception | take 20` zeigt beispielsweise schnell, dass Ausnahmemeldungen in einem Feld namens `outerExceptionType` gemeldet werden.
 
@@ -165,7 +165,7 @@ Aber statt die einzelnen Instanzen durchzuarbeiten, fragen Sie sich vielmehr, wi
 
 ![](./media/app-analytics-tour/210.png)
 
-`Summarize` gruppiert Zeilen mit den gleichen Werten in den Feldern, die in der `by`-Klausel genannt wurden, was eine einzelne Ergebniszeile für jede Gruppe ergibt. In diesem Fall also gibt es eine Zeile für jeden Ausnahmetyp. Die Aggregatfunktion `count()` zählt die Zeilen in jeder Gruppe, wodurch eine Spalte im Ergebnis bereitgestellt wird.
+`Summarize` gruppiert Zeilen mit den gleichen Werten in den Feldern, die in der `by`-Klausel genannt wurden, was eine einzelne Ergebniszeile für jede Gruppe ergibt. In diesem Fall also gibt es eine Zeile für jeden Ausnahmetyp. Die Aggregationsfunktion `count()` zählt die Zeilen in jeder Gruppe, wodurch eine Spalte im Ergebnis bereitgestellt wird.
 
 
 Es gibt verschiedene [Aggregationsfunktionen](app-analytics-aggregations.md), und Sie können mehrere gleichzeitig in einem summarize-Operator verwenden, um mehrere berechnete Spalten zu erstellen.
@@ -181,7 +181,7 @@ Listen Sie z. B. die HTTP-Anforderungen auf, für die diese Ausnahmen auftreten.
 
 ![](./media/app-analytics-tour/220.png)
 
-Die Aggregatfunktion `makeset()` erstellt einen Satz aller angegebenen Werte in jeder Gruppe. In diesem Beispiel gibt es nur einen Vorgang, der zu jeder Ausnahme führt.
+Die Aggregationsfunktion `makeset()` erstellt einen Satz aller angegebenen Werte in jeder Gruppe. In diesem Beispiel gibt es nur einen Vorgang, der zu jeder Ausnahme führt.
 
 
 Das Ergebnis von „summarize“ verfügt über Folgendes:
@@ -205,7 +205,7 @@ Sie können Skalarwerte (Numerisch, Zeit oder Intervall) in der by-Klausel verwe
 
 ![](./media/app-analytics-tour/225.png)
 
-`bin` reduziert alle Zeitstempel auf Intervalle von 1 Tag. Es handelt sich um ein Alias von `floor`, eine Funktion, die in den meisten Sprachen bekannt ist. Jeder Wert wird auf das nächste Vielfache des angegebenen Modulus reduziert, damit `summarize` Gruppen von einer sinnvollen Größe Zeilen zuweisen kann. (Ohne dies gäbe es eine Ergebniszeile für jeden eigenständigen Bruchteil einer Sekunde, in der die Daten keinesfalls zusammengefasst werden würden.)
+`bin` reduziert alle Zeitstempel auf Intervalle von 1 Tag. Es handelt sich um ein Alias von `floor`, eine Funktion, die in den meisten Sprachen bekannt ist. Jeder Wert wird auf das nächste Vielfache des angegebenen Rundungswerts reduziert, damit `summarize` die Zeilen den Gruppen von geeigneter Größe zuweisen kann. (Ohne dies gäbe es eine Ergebniszeile für jeden eigenständigen Bruchteil einer Sekunde, in der die Daten keinesfalls zusammengefasst werden würden.)
 
 Es gibt jedoch noch eine bessere Ansicht als die hier gezeigte Tabelle. Betrachten Sie die Ergebnisse in der Diagrammansicht mit vertikalem Balken:
 
@@ -234,7 +234,7 @@ Der `where`-Operator akzeptiert einen booleschen Ausdruck. Dazu einige wichtige 
 
  * `and`, `or`: Boolesche Operatoren
  * `==`, `<>`: gleich und ungleich
- * `=~`, `!=`: Zeichenfolge ohne Beachtung der Groß-/Kleinschreibung gleich und ungleich Es gibt viele weitere Zeichenfolgenvergleichsoperatoren.
+ * `=~`, `!=`: Zeichenfolge ohne Beachtung der Groß-/Kleinschreibung, gleich und ungleich. Es gibt viele weitere Zeichenfolgenvergleichsoperatoren.
 
 Erfahren Sie mehr über [skalare Ausdrücke](app-analytics-scalars.md).
 
@@ -407,7 +407,7 @@ Um eine separate Aufstellung für jedes Land zu erhalten, müssen Sie die Spalte
 
 Wir haben Zugriff auf mehrere Tabellen, einschließlich der Anforderungen und Ausnahmen.
 
-Um Ausnahmen im Hinblick auf eine Anforderung zu suchen, die eine Fehlerantwort zurückgegeben hat, können wir die Tabellen anhand der `session_Id` verknüpfen:
+Um Ausnahmen im Hinblick auf eine Anforderung zu suchen, die eine Fehlerantwort zurückgegeben hat, können wir die Tabellen anhand von `session_Id` verknüpfen:
 
 ```AIQL
 
@@ -418,11 +418,11 @@ Um Ausnahmen im Hinblick auf eine Anforderung zu suchen, die eine Fehlerantwort 
 ```
 
 
-Es ist üblich, `project` zu verwenden, um nur die Spalten auszuwählen, die wir vor dem Ausführen der Verknüpfung benötigen. In den gleichen Klauseln benennen wir die Zeitstempelspalte um.
+Es ist üblich, `project` zu verwenden, um vor dem Verknüpfen nur die Spalten auszuwählen, die wir benötigen. In den gleichen Klauseln benennen wir die Zeitstempelspalte um.
 
 
 
-## [Let](app-analytics-aggregations.md#let): Ergebnis einer Variablen zuweisen
+## [Let](app-analytics-aggregations.md#let): Einer Variable ein Ergebnis zuweisen
 
 Verwenden Sie [let](./app-analytics-syntax.md#let-statements), um die einzelnen Teile des vorherigen Ausdrucks auszusortieren. Die Ergebnisse sind wie folgt unverändert:
 
@@ -436,9 +436,9 @@ Verwenden Sie [let](./app-analytics-syntax.md#let-statements), um die einzelnen 
     | take 30
 ```
 
-> Tipp: Fügen Sie im AI-Analyse-Client keine Leerzeilen zwischen diesen Teilen ein. Stellen Sie sicher, dass Sie alles ausführen.
+> Tipp: Fügen Sie im Analytics-Client keine Leerzeilen zwischen diesen Teilen ein. Stellen Sie sicher, dass Sie alles ausführen.
 
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Privileged Identity Management: Konfigurieren von Sicherheitswarnungen"
+   pageTitle="Konfigurieren von Sicherheitswarnungen | Microsoft Azure"
    description="Erfahren Sie, wie Sie Sicherheitswarnungen für die Erweiterung Azure Privileged Identity Management konfigurieren."
    services="active-directory"
    documentationCenter=""
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="01/21/2016"
+   ms.date="03/17/2016"
    ms.author="kgremban"/>
 
-# Azure Privileged Identity Management: Konfigurieren von Sicherheitswarnungen
+# Azure AD Privileged Identity Management: Konfigurieren von Sicherheitswarnungen
 
 ## Übersicht über Sicherheitswarnungen
 Azure Privileged Identity Management (PIM) bietet die folgenden konfigurierbaren Warnungen. Sicherheitswarnungen können im Abschnitt „Warnungen“ des PIM-Dashboards angezeigt werden.
@@ -59,4 +59,4 @@ Diese Warnung weist zwei Einstellungen auf, die die Warnung auslösen können. "
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

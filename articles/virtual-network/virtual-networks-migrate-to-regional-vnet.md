@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 # Migrieren von Affinitätsgruppen zu einem regionalen virtuellen Netzwerk (VNet)
@@ -27,17 +27,17 @@ Darüber hinaus raten wir grundsätzlich von der Verwendung von Affinitätsgrupp
 
 Verwenden Sie bei der Erstellung neuer VNets ab sofort die Option *Region*. Diese Option steht im Verwaltungsportal zur Verfügung. In der Netzwerkkonfigurationsdatei wird die Option dagegen als *Location* angezeigt.
 
->[AZURE.IMPORTANT]Die Erstellung eines virtuellen Netzwerks mit Zuordnung zu einer Affinitätsgruppe ist zwar weiterhin technisch möglich, aber nicht mehr notwendig. Viele neue Features wie etwa Netzwerksicherheitsgruppen stehen nur bei Verwendung eines regionalen VNets und nicht bei Verwendung virtueller Netzwerke mit Affinitätsgruppenzuordnung zur Verfügung.
+>[AZURE.IMPORTANT] Die Erstellung eines virtuellen Netzwerks mit Zuordnung zu einer Affinitätsgruppe ist zwar weiterhin technisch möglich, aber nicht mehr notwendig. Viele neue Features wie etwa Netzwerksicherheitsgruppen stehen nur bei Verwendung eines regionalen VNets und nicht bei Verwendung virtueller Netzwerke mit Affinitätsgruppenzuordnung zur Verfügung.
 
 ### Informationen zu VNets mit bestehender Affinitätsgruppenzuordnung
 
 Für VNets mit bestehender Affinitätsgruppenzuordnung ist die Migration zu regionalen VNets möglich. Gehen Sie folgendermaßen vor, um zu einem regionalen VNet zu migrieren:
 
-1. Exportieren Sie die Netzwerkkonfigurationsdatei. Dafür können Sie entweder PowerShell oder das Verwaltungsportal verwenden. Informationen zur Verwendung des Verwaltungsportals finden Sie unter [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](../virtual-networks-using-network-configuration-file/).
+1. Exportieren Sie die Netzwerkkonfigurationsdatei. Dafür können Sie entweder PowerShell oder das Verwaltungsportal verwenden. Informationen zur Verwendung des Verwaltungsportals finden Sie unter [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md).
 
 1. Bearbeiten Sie die Netzwerkkonfigurationsdatei, und ersetzen Sie dabei die alten Werte durch die neuen Werte.
 
-	> [AZURE.NOTE]Geben Sie für **Location** die Region an, die Sie auch für die Affinitätsgruppe angegeben haben, die Ihrem VNet zugeordnet ist. Ist Ihr VNet also beispielsweise einer Affinitätsgruppe im Westen der USA zugeordnet, müssen Sie bei der Migration als Ort ebenfalls den Westen der USA angeben.
+	> [AZURE.NOTE] Geben Sie für **Location** die Region an, die Sie auch für die Affinitätsgruppe angegeben haben, die Ihrem VNet zugeordnet ist. Ist Ihr VNet also beispielsweise einer Affinitätsgruppe im Westen der USA zugeordnet, müssen Sie bei der Migration als Ort ebenfalls den Westen der USA angeben.
 	
 	Bearbeiten Sie die folgenden Zeilen Ihrer Netzwerkkonfigurationsdatei, und ersetzen Sie dabei die Werte durch Ihre eigenen Werte:
 
@@ -45,9 +45,9 @@ Für VNets mit bestehender Affinitätsgruppenzuordnung ist die Migration zu regi
 
 	**Neuer Wert:** \<VirtualNetworkSitename="VNetUSWest" Location="West US"\>
 
-1. Speichern Sie die Änderungen, und [importieren](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
+1. Speichern Sie die Änderungen, und [importieren](virtual-networks-using-network-configuration-file.md) Sie die Netzwerkkonfiguration in Azure.
 
->[AZURE.INFO]Bei dieser Migration kommt es zu keinerlei Ausfallzeiten für Ihre Dienste.
+>[AZURE.INFO] Bei dieser Migration kommt es zu keinerlei Ausfallzeiten für Ihre Dienste.
 
 ## Affinitätsgruppen und virtuelle Computer
 
@@ -66,4 +66,4 @@ Virtuelle Computer, die sich derzeit in einer Affinitätsgruppe befinden, müsse
 Die Bereitstellung eines virtuellen Computers erfolgt in einer einzelnen Skalierungseinheit. Affinitätsgruppen können zwar den Satz verfügbarer VM-Größen für eine neue VM-Bereitstellung einschränken, alle vorhandenen und bereits bereitgestellten virtuellen Computer sind jedoch bereits auf den Satz von VM-Größen beschränkt, der in der entsprechenden Skalierungseinheit verfügbar ist. Daher hat das Entfernen eines virtuellen Computers aus der Affinitätsgruppe keinerlei Auswirkungen.
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

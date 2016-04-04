@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 # Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell
 
-Sie können mit Azure PowerShell oder im Verwaltungsportal Netzwerk-Zugriffssteuerungslisten (Access Control Lists, ACLs) für Endpunkte erstellen und verwalten. In diesem Thema finden Sie Verfahren für häufige Aufgaben in Zusammenhang mit ACLs, die Sie mit PowerShell durchführen können. Die Liste der Azure PowerShell-Cmdlets, finden Sie unter [Azure-Verwaltungs-Cmdlets](http://go.microsoft.com/fwlink/?LinkId=317721). Weitere Informationen zu ACLs finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-networks-acl). Informationen zum Verwalten der ACLs mithilfe des Verwaltungsportals finden Sie unter [Einrichten von Endpunkten für einen virtuelle Computer](../virtual-machines-set-up-endpoints/).
+Sie können mit Azure PowerShell oder im Verwaltungsportal Netzwerk-Zugriffssteuerungslisten (Access Control Lists, ACLs) für Endpunkte erstellen und verwalten. In diesem Thema finden Sie Verfahren für häufige Aufgaben in Zusammenhang mit ACLs, die Sie mit PowerShell durchführen können. Die Liste der Azure PowerShell-Cmdlets, finden Sie unter [Azure-Verwaltungs-Cmdlets](http://go.microsoft.com/fwlink/?LinkId=317721). Weitere Informationen zu ACLs finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](virtual-networks-acl.md). Informationen zum Verwalten der ACLs mithilfe des Verwaltungsportals finden Sie unter [Einrichten von Endpunkten für einen virtuelle Computer](../virtual-machines/virtual-machines-set-up-endpoints.md).
 
 ## Verwalten von Netzwerk-ACLs mithilfe von Azure PowerShell
 
@@ -36,7 +36,7 @@ Das folgende Beispiel veranschaulicht eine Möglichkeit zum Erstellen einer neue
 
 		$acl1 = New-AzureAclConfig
 
-1. Legen Sie eine Regel fest, die den Zugriff von einem Remotesubnetz zulässt. Im folgenden Beispiel legen Sie die Regel *100* fest (diese hat Priorität vor der Regel 200 und höher), um dem Remotesubnetz *10.0.0.0/8* den Zugriff auf den Endpunkt des virtuellen Computers zu ermöglichen. Ersetzen Sie die Werte durch Ihre eigenen Konfigurationswerte. Der Name „SharePoint ACL config“ sollte durch den Anzeigenamen ersetzt werden, den Sie für diese Regel verwenden möchten.
+1. Legen Sie eine Regel fest, die den Zugriff von einem Remotesubnetz zulässt. Im folgenden Beispiel legen Sie die Regel *100* fest (diese hat Priorität vor der Regel 200 und höher), um dem Remotesubnetz *10.0.0.0/8* den Zugriff auf den Endpunkt des virtuellen Computers zu ermöglichen. Ersetzen Sie die Werte durch Ihre eigenen Konfigurationswerte. Der Name „SharePoint ACL config“ sollte durch den Anzeigenamen ersetzt werden, den Sie für diese Regel verwenden möchten.
 
 		Set-AzureAclConfig –AddRule –ACL $acl1 –Order 100 `
 			–Action permit –RemoteSubnet "10.0.0.0/8" `
@@ -91,10 +91,8 @@ In bestimmten Szenarien ist es erforderlich, ein Netzwerk-ACL-Objekt aus einem E
 		| Remove-AzureAclConfig –EndpointName "web" `
 		| Update-AzureVM
 
-## Weitere Informationen
+## Nächste Schritte
 
-[Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](../virtual-networks-acl)
+[Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](virtual-networks-acl.md)
 
-[Einrichten der Kommunikation mit einem virtuellen Computer](http://go.microsoft.com/fwlink/?LinkId=303938)
-
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

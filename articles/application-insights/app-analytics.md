@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Application Analytics - das leistungsfähige Suchtool für Application Insights" 
-	description="Übersicht über Application Analytics, dem leistungsfähigen Suchtool für Application Insights." 
+	pageTitle="Analytics, das leistungsfähige Suchtool von Application Insights" 
+	description="Übersicht über Analytics, das leistungsfähige Diagnosesuchtool von Application Insights." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -12,21 +12,21 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/11/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
 
 
 
-# Application Insights Analyse: Überblick über die Abfragesprache
+# Analytics in Application Insights
 
 
-[Application Insights-Analyse](app-analytics.md) ist ein leistungsfähiges Abfragemodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Abfragesprache von Application Insights, AIQL, beschrieben.
+[Analytics](app-analytics.md) ist die leistungsfähige Suchfunktion von [Application Insights](app-insights-overview.md). Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben.
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
 
  
-Eine übliche AIQL-Abfrage ist eine *Quelle*-Tabelle, gefolgt von einer Reihe von *Operatoren*, die durch `|` getrennt sind.
+Eine übliche Abfrage ist eine *Quelle*-Tabelle, gefolgt von einer Reihe von *Operatoren*, die durch `|` getrennt sind.
 
 Finden wir also heraus, zu welcher Tageszeit die Einwohner von Hyderabad unsere Web-App testen. Und während wir damit beschäftigt sind, sehen wir, welche Ergebniscodes an ihre HTTP-Anfragen zurückgegeben werden.
 
@@ -79,4 +79,4 @@ Die Sprache verfügt über viele attraktive Features:
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

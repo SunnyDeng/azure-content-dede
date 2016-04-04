@@ -1,4 +1,4 @@
-<properties pageTitle="Application Insights für C++-Apps" description="Analysieren der Nutzung und Leistung Ihrer C++-App mit Application Insights." services="application-insights" documentationCenter="cpp" authors="crystk" manager="douge""/>
+<properties pageTitle="Analytics für Windows Store-C++-Apps" description="Analysieren der Nutzung und Leistung Ihrer C++-Windows Store-App." services="application-insights" documentationCenter="cpp" authors="alancameronwills" manager="douge""/>
 
 <tags 
     ms.service="application-insights" 
@@ -6,138 +6,28 @@
     ms.tgt_pltfrm="universal" 
     ms.devlang="na" 
     ms.topic="article" 
-	ms.date="11/17/2015" 
-    ms.author="crystk"/>
+	ms.date="03/17/2016" 
+    ms.author="awills"/>
 
-# Application Insights für C++-Apps
+# Analytics für C++-Windows Store-Apps
 
-Mit Visual Studio Application Insights können Sie Ihre mobile Anwendung auf Nutzung, Ereignisse und Abstürze überwachen.
+Microsoft bietet zwei DevOps-Lösungen für Geräte: [HockeyApp](http://hockeyapp.net/) für Clientgeräte und [Application Insights](app-insights-overview.md) für die Serverseite und Clientwebseiten.
 
-## Anforderungen
+[HockeyApp](http://hockeyapp.net/) ist unsere mobile DevOps-Lösung für das Erstellen von Apps auf iOS-, OS X-, Android- und Windows-Geräten sowie für plattformübergreifende Apps, die auf Xamarin, Cordova und Unity basieren. Mit dieser Lösung können Sie Builds an Betatester verteilen, Daten sammeln und Benutzerfeedback erhalten. Sie ist in Visual Studio Team Services integriert und ermöglicht einfache Bereitstellungen von Builds und die Integration von Arbeitsaufgaben.
 
-Sie benötigen Folgendes:
+Wechseln Sie zu:
 
-* Ein Abonnement für [Microsoft Azure](http://azure.com). Sie melden sich mit einem Microsoft-Konto an, das Sie möglicherweise für Windows, XBox Live oder andere Microsoft-Clouddienste verwenden.
-* Visual Studio 2015 oder höher.
-* Universelle Windows 10-Anwendung
+* [HockeyApp](http://support.hockeyapp.net/kb)
+* [HockeyApp-Blog](http://hockeyapp.net/blog/)
+* Nehmen Sie an [Hockeyapp Preseason](http://hockeyapp.net/preseason/) teil, um frühe Veröffentlichungen zu erhalten.
 
-## Erstellen einer Application Insights-Ressource
+Wenn Ihre App serverseitige Komponenten hat, verwenden Sie [Application Insights](app-insights-overview.md) zum Überwachen der Webserverseite der App in [ASP.NET](app-insights-asp-net.md) oder [J2EE](app-insights-java-get-started.md).
 
-Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie die Windows Store- oder die Windows Phone-Option.
+Sie können auch [Application Insights für Windows-Desktop-Apps](app-insights-windows-desktop.md) verwenden.
 
-![Wählen Sie "Neu", "Entwicklerdienste", "Application Insights".](./media/app-insights-windows-cpp/01-universal.png)
-
-Auf dem nun geöffneten Blatt werden die Leistungs- und Nutzungsdaten über Ihre App angezeigt. Um bei der nächsten Anmeldung bei Azure dorthin zu gelangen, sollten Sie eine Kachel auf dem Startbildschirm anlegen. Klicken Sie alternativ auf "Durchsuchen", um das Blatt zu finden.
-
-####  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
-
-Der Schlüssel identifiziert die Ressource, den Sie bald im SDK installieren können, um die Daten an die Ressource zu leiten.
-
-![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C.](./media/app-insights-windows-cpp/02-props-asp.png)
-
-## <a name="sdk"></a> Installieren des SDK in Ihrer Anwendung
+> [AZURE.NOTE] Am 15. Juni 2016 wird die Anzeige von Daten in Application Insights für iOS-, Android-, Windows Store- und Windows Phone-Apps beendet.
 
 
-1. Bearbeiten Sie die NuGet-Pakete Ihres Desktop-App-Projekts in Visual Studio.
+[Weitere Informationen zu dieser Änderung](https://azure.microsoft.com/blog/transitioning-mobile-apps-from-application-insights-to-hockeyapp/)
 
-    ![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten".](./media/app-insights-windows-cpp/03-nuget.png)
-
-2. Installieren Sie das Application Insights SDK für C++-Apps.
-
-    ![Aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach "Application Insights".](./media/app-insights-windows-cpp/04-nuget.png)
-
-3. Gehen Sie in den Projekteinstellungen für Veröffentlichung und Debugging folgendermaßen vor:
-  - Fügen Sie "$(SolutionDir)packages\\ApplicationInsights-CPP.1.0.0-Beta\\src\\inc" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Includeverzeichnisse
-  - Fügen Sie "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\AppInsights\_Win10-UAP" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Bibliotheksverzeichnisse
-
-4. Fügen Sie "ApplicationInsights.winmd" aus "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\ApplicationInsights" als Verweis auf Ihr Projekt hinzu.
-5. Fügen Sie "AppInsights\_Win10-UAP.dll" aus "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\AppInsights\_Win10-UAP" hinzu. Wechseln Sie zu den Eigenschaften und legen Sie die Inhalte auf JA fest. Damit wird die DLL in Ihr Buildverzeichnis kopiert.
-
-
-#### So aktualisieren Sie das SDK auf zukünftige Versionen
-
-Bei [Veröffentlichung eines neuen SDK](https://github.com/Microsoft/ApplicationInsights-CPP/releases):
-
-* Wählen Sie im NuGet-Paket-Manager das installierte SDK und dann die Aktion "Upgrade" aus.
-* Wiederholen Sie die Installationsschritte mit der neuen Versionsnummer.
-
-## Verwenden des SDK
-
-Initialisieren Sie das SDK, und beginnen Sie mit der Nachverfolgung der Telemetrie.
-
-1. In App.xaml.h: 
-  - Fügen Sie Folgendes hinzu: `ApplicationInsights::CX::SessionTracking^ m_session;`
-2. In App.xaml.cpp:
-  - Fügen Sie Folgendes hinzu: `using namespace ApplicationInsights::CX;`
-
-  - In App:App()
-	
-     `// this will do automatic session tracking and automatic page view collection` `m_session = ref new ApplicationInsights::CX::SessionTracking();`
-
-  - Wenn Sie den Stammframe erstellt haben (üblicherweise am Ende von App::OnLaunched), initialisieren Sie "m\_session":
-	
-    ```
-    String^ iKey = L"<YOUR INSTRUMENTATION KEY>";
-    m_session->Initialize(this, rootFrame, iKey);
-	```
-
-3. Um die Nachverfolgung an anderer Stelle in der Anwendung zu nutzen, können Sie eine Instanz des Telemetrieclients deklarieren.
-
-
-```
-
-    using namespace ApplicationInsights::CX;
-    TelemetryClient^ tc = ref new TelemetryClient(L"<YOUR INSTRUMENTATION KEY>");
-	tc->TrackTrace(L"This is my first trace");
-    tc->TrackEvent(L"I'M ON PAGE 1");
-    tc->TrackMetric(L"Test Metric", 5.03);
-```
-
-
-## <a name="run"></a> Ausführen des Projekts
-
-Führen Sie die Anwendung aus, um Telemetriedaten zu generieren. Sie können sie entweder im Debugmodus auf dem Entwicklungscomputer ausführen, oder Sie können sie veröffentlichen und von Benutzern ausführen lassen.
-
-## Anzeigen Ihrer Daten in Application Insights
-
-Kehren Sie zu http://portal.azure.com zurück, und navigieren Sie zur Application Insights-Ressource.
-
-Klicken Sie auf "Suchen", um [Diagnosesuche][diagnostic] zu öffnen. Dort werden die ersten Ereignisse angezeigt. Wenn nichts angezeigt wird, warten Sie eine oder zwei Minuten, und klicken Sie auf "Aktualisieren".
-
-![Klicken Sie auf "Diagnosesuche".](./media/app-insights-windows-cpp/21-search.png)
-
-Während Ihre App verwendet wird, werden die Daten auf dem Blatt "Übersicht" angezeigt.
-
-![Blatt "Übersicht"](./media/app-insights-windows-cpp/22-oview.png)
-
-Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Beispiel zu Abstürzen:
-
-![Klicken Sie auf das Absturzdiagramm.](./media/app-insights-windows-cpp/23-crashes.png)
-
-
-## <a name="usage"></a>Nächste Schritte
-
-[Nachverfolgen der Nutzung Ihrer App][track]
-
-[Verwenden der API zum Senden von benutzerdefinierten Ereignissen und Metriken][api]
-
-[Diagnosesuche][diagnostic]
-
-[Metrik-Explorer][metrics]
-
-[Problembehandlung][qna]
-
-
-
-<!--Link references-->
-
-[api]: app-insights-api-custom-events-metrics.md
-[diagnostic]: app-insights-diagnostic-search.md
-[metrics]: app-insights-metrics-explorer.md
-[portal]: http://portal.azure.com/
-[qna]: app-insights-troubleshoot-faq.md
-[track]: app-insights-api-custom-events-metrics.md
-
- 
-
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

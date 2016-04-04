@@ -120,7 +120,7 @@ Diese Schritte setzen voraus, dass Sie einen Schlüsseltresor mit einem geheimen
 
         PS C:\> $secret = Get-AzureKeyVaultSecret -VaultName examplevault -Name appPassword
         
-2. Rufen Sie Ihre Active Directory-Anwendung ab. Beim Anmelden verwenden Sie die Anwendungs-ID.
+2. Rufen Sie Ihre Active Directory-Anwendung ab. Beim Anmelden benötigen Sie die Anwendungs-ID.
 
         PS C:\> $azureAdApplication = Get-AzureRmADApplication -IdentifierUri "https://www.contoso.org/example"
 
@@ -231,7 +231,7 @@ Sie haben eine Active Directory-Anwendung und einen Dienstprinzipal für diese A
 <a id="provide-certificate-through-automated-powershell-script" />
 ### Bereitstellen eines Zertifikats über automatisiertes PowerShell-Skript
 
-1. Rufen Sie Ihre Active Directory-Anwendung ab. Beim Anmelden verwenden Sie die Anwendungs-ID.
+1. Rufen Sie Ihre Active Directory-Anwendung ab. Beim Anmelden benötigen Sie die Anwendungs-ID.
 
         PS C:\> $azureAdApplication = Get-AzureRmADApplication -IdentifierUri "https://www.contoso.org/example"
         
@@ -517,4 +517,4 @@ Weitere Informationen zur Verwendung von Zertifikaten und der Azure-Befehlszeile
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

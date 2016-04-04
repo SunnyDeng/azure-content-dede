@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Erstellen der Kopie einer Azure SQL-Datenbank mithilfe von Transact-SQL" 
+    pageTitle="Kopieren einer Azure SQL-Datenbank mithilfe von Transact-SQL | Microsoft Azure" 
     description="Erstellen der Kopie einer Azure SQL-Datenbank mithilfe von Transact-SQL" 
 	services="sql-database"
 	documentationCenter=""
@@ -10,21 +10,21 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="02/23/2016"
+	ms.date="03/21/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"/>
 
 
-# Erstellen der Kopie einer Azure SQL-Datenbank mithilfe von Transact-SQL
+# Kopieren einer Azure SQL-Datenbank mithilfe von Transact-SQL
 
 **Einzeldatenbank**
 
 > [AZURE.SELECTOR]
-- [Azure Portal](sql-database-copy.md)
+- [Azure-Portal](sql-database-copy.md)
 - [PowerShell](sql-database-copy-powershell.md)
-- [SQL](sql-database-copy-transact-sql.md)
+- [T-SQL](sql-database-copy-transact-sql.md)
 
 
 
@@ -103,4 +103,4 @@ Mit diesem Befehl wird „Database1“ auf „Server1“ in eine neue Datenbank 
 - [Warnungen zur Notfallwiederherstellung](sql-database-disaster-recovery-drills.md)
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Operatoren und Abfragen in der Application Insights-Analyse" 
-	description="Referenz für die Operatoren, die für Abfragen in der Application Insights-Analyse, dem leistungsfähigen Suchtool für Application Insights, verwendet werden." 
+	pageTitle="Analytics-Operatoren und -Abfragen in Application Insights" 
+	description="Referenz für die Operatoren, die für Abfragen in Analytics, dem leistungsfähigen Suchtool von Application Insights, verwendet werden." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -12,15 +12,15 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/07/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
 
 
-# Abfragesyntax in der Application Insights-Analyse
+# Abfragen in Analytics
 
 
-[Application Insights-Analyse](app-analytics.md) ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Abfragesprache AIQL der Application Insights-Analyse beschrieben.
+[Analytics](app-analytics.md) ist die leistungsfähige Suchfunktion von [Application Insights](app-insights-overview.md). Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben.
 
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
@@ -611,7 +611,7 @@ Eine Tabelle, die zeigt, wie viele Elemente in jedem Intervall  [0,10.0], [10.0,
 * *Aggregation:* Ein Aufruf einer [Aggregationsfunktion](app-analytics-aggregations.md) wie z. B. `count()` oder `avg()` mit Spaltennamen als Argumente. Siehe die [Liste der Aggregationsfunktionen](app-analytics-aggregations.md).
 * *GroupExpression:* Ein Ausdruck für die Spalten, der einen Satz von unterschiedlichen Werten bereitstellt. Normalerweise handelt es sich entweder um einen Spaltennamen, der bereits einen eingeschränkten Satz von Werten bereitstellt, oder um `bin()` mit einer numerischen Spalte oder Zeitspalte als Argument. 
 
-Wenn Sie einen numerischen Ausdruck oder Zeitausdruck ohne `bin()` bereitstellen, wendet die AI-Analyse ihn automatisch mit einem Intervall von `1h` für Uhrzeiten oder von `1.0` für Zahlen an.
+Wenn Sie einen numerischen Ausdruck oder Zeitausdruck ohne `bin()` bereitstellen, wendet Analytics ihn automatisch mit einem Intervall von `1h` für Uhrzeiten oder von `1.0` für Zahlen an.
 
 Wenn Sie keine *GroupExpression* angeben, wird die gesamte Tabelle in einer einzelnen Ausgabezeile zusammengefasst.
 
@@ -766,4 +766,4 @@ Beachten Sie, dass wir den Vergleich zwischen zwei Spalten an das Ende stellen, 
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

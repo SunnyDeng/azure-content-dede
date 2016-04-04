@@ -31,7 +31,7 @@ Sie haben mehrere Möglichkeiten:
 
 * [In einer Azure-VM ausgeführter MySQL-Cluster](https://github.com/azure/azure-quickstart-templates/tree/master/mysql-replication)
 
-* [In einer Azure-VM ausgeführte MySQL-Einzelinstanz](virtual-machines/virtual-machines-mysql-windows-server-2008r2.md)
+* [In einer Azure-VM ausgeführte MySQL-Einzelinstanz](virtual-machines/virtual-machines-windows-classic-mysql-2008r2.md)
 
 ClearDB ist ein MySQL-Hostingdienst für die Verwaltung Ihrer MySQL-Infrastruktur. Wenn Sie Ihren MySQL-Cluster oder Ihre Datenbank auf einem virtuellen Azure-Computer ausführen, müssen Sie den MySQL-Server einrichten und mit Patches auf dem neuesten Stand halten.
 
@@ -55,7 +55,7 @@ Die Standardoption Datenbanken ist Titan zum Preis von 3,50 $. Während der Date
 
 ## Ich führe MySQL auf meiner eigenen Azure-VM aus. Kann ich meine Azure-Web-App mit meiner Datenbank verbinden?
 
-Ja. Solange Ihrer Azure-VM Remotezugriff auf Ihre Web-App gewährt wird, können Sie Ihre Web-App mit Ihrer Datenbank verbinden. Weitere Informationen finden Sie unter [Installieren von MySQL auf einem virtuellen Computer](../virtual-machines/virtual-machines-mysql-windows-server-2008r2.md).
+Ja. Solange Ihrer Azure-VM Remotezugriff auf Ihre Web-App gewährt wird, können Sie Ihre Web-App mit Ihrer Datenbank verbinden. Weitere Informationen finden Sie unter [Installieren von MySQL auf einem virtuellen Computer](virtual-machines/virtual-machines-windows-classic-mysql-2008r2.md).
 
 ## In welchen Ländern werden ClearDB Premium MySQL-Cluster unterstützt?
 
@@ -106,7 +106,7 @@ Für vorhandene ClearDB-Datenbanken wird die Kreditkarte genutzt, die den besteh
 * Ändern Sie Ihre Anwendung so, dass die neue Datenbank verwendet wird.
 * Löschen Sie Ihre alte ClearDB-Datenbank.
 
-Beim Erstellen einer neuen Web-App mit MySQL (ClearDB) oder einer neuen MySQL-Datenbank (ClearDB) bestimmt das gewählte Abonnement, wie Sie für den Dienst zahlen. Beachten Sie, dass wir bei einem EA-Abonnement den Erwerb von Diensten von Drittanbietern wie ClearDB im Azure-Portal nicht blockieren. EA-Abonnements werden außerhalb der Zahlungsverpflichtung abgerechnet, wobei die Rechnungsstellung vierteljährlich und nachträglich erfolgt. EA-Kunden müssen eine Zahlungsmethode, z. B. Kreditkarte, für alle im Marketplace erworbenen Dienste von Drittanbietern festlegen.
+Beim Erstellen einer neuen Web-App mit MySQL (ClearDB) oder einer neuen MySQL-Datenbank (ClearDB) bestimmt das gewählte Abonnement, wie Sie für den Dienst zahlen. Beachten Sie, dass wir bei einem EA-Abonnement den Erwerb von Diensten von Drittanbietern wie ClearDB im Azure-Portal nicht blockieren. EA-Abonnements werden außerhalb der Zahlungsverpflichtung abgerechnet, wobei die Rechnungsstellung vierteljährlich und nachträglich erfolgt. EA-Kunden müssen eine Zahlungsmethode, z. B. Kreditkarte, für alle im Marketplace erworbenen Dienste von Drittanbietern festlegen.
 
 ## Wo kann ich die Kosten für ClearDB-Ressourcen in einem EA-Abonnement finden?
 
@@ -124,4 +124,4 @@ Wenden Sie sich an den [Support für EA-Kunden](http://aka.ms/AzureEntSupport), 
 
 [Azure Marketplace – häufig gestellte Fragen](/marketplace/faq/)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

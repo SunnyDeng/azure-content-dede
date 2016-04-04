@@ -66,7 +66,7 @@ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type
 
 **Generieren des Zugriffstokens mit PowerShell:**
 
-```powersell
+```powershell
 Invoke-RestMethod -Uri https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/token?api-version=1.0 -Method Post
  -Body @{"grant_type" = "client_credentials"; "resource" = "https://management.core.windows.net/"; "client_id" = "<application id>"; "client_secret" = "<password you selected for authentication>" }
 ```
@@ -240,4 +240,4 @@ Content-Type: application/json
 
 Die relativ lange JSON-Antwort auf diese Anforderung wurde weggelassen, um die Lesbarkeit dieser Dokumentation zu verbessern. Die Antwort enthält Informationen zu der Bereitstellung mit Vorlage, die Sie eben erstellt haben.
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

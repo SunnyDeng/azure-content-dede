@@ -127,7 +127,7 @@ Unsere SLA für Verfügbarkeit gilt für Kundenanwendungen, für die mindestens 
 
 **Geplante Wartung (klassisches Portal)**: Bei Konfigurationen mit einzelnen und mehreren Instanzen informiert Azure im Voraus per E-Mail über geplante Wartungsarbeiten (bei Einzelinstanzen erfolgt die Benachrichtigung eine Woche im Voraus, bei mehreren Instanzen 48 Stunden im Voraus). Diese E-Mail wird an die E-Mail-Konten des Kontoadministrators, Dienstadministrators und Co-Administrators gesendet, die im Abonnement angegeben sind.
 
-**HINWEIS:** Weitere Informationen zu virtuellen Computern finden Sie im Artikel [Geplante Wartung für virtuelle Azure-Computer](./virtual-machines/virtual-machines-planned-maintenance.md).
+**HINWEIS:** Weitere Informationen zu virtuellen Computern finden Sie im Artikel [Geplante Wartung für virtuelle Azure-Computer](virtual-machines/virtual-machines-linux-planned-maintenance.md).
 
 **Nicht geplante Wartung:** Im Falle einer nicht geplanten Dienstunterbrechung auf der Azure Platform werden Statusinformationen auf unserem [Dienstdashboard](http://status.azure.com/) bereitgestellt, darüber hinaus werden Kunden im [klassischen Azure-Portal](https://manage.windowsazure.com/) benachrichtigt.
 
@@ -217,7 +217,10 @@ Zum Anzeigen und Bearbeiten der Azure-Kontoinformationen müssen Sie sich beim A
 2.	Klicken Sie auf der Seite „Abonnements“ auf das Abonnement, für das Sie die Zahlungsmethode aktualisieren möchten.
 3.	Wechseln Sie zur Zusammenfassungsseite für Ihr **Abonnement**, und klicken Sie auf „Zahlungsmethode ändern“. Das Tool **Zahlungsmethode ändern** wird in einem separaten Fenster geöffnet.
 
-**HINWEIS**: Sie können auch über das klassische Microsoft Azure-Portal auf das Kontocenter zugreifen. Klicken Sie dazu auf Ihren Kontonamen und anschließend auf „Meine Rechnung anzeigen“. 4. Klicken Sie auf der Seite **Zahlungsmethode auswählen** auf die Dropdownliste, wählen Sie die zu aktualisierende Zahlungsmethode aus, und klicken Sie auf **Bearbeiten**. 5. Überprüfen Sie auf der Seite mit den Details, ob Sie den richtigen Kreditkartentyp und die richtige Kreditkartennummer ausgewählt haben. 6. Nehmen Sie die erforderlichen Änderungen an den Karteninformationen vor, und klicken Sie auf **Weiter**.
+**HINWEIS**: Sie können auch über das klassische Microsoft Azure-Portal auf das Kontocenter zugreifen. Klicken Sie dazu auf Ihren Kontonamen und anschließend auf „Meine Rechnung anzeigen“.
+4.	Klicken Sie auf der Seite **Zahlungsmethode auswählen** auf die Dropdownliste, wählen Sie die zu aktualisierende Zahlungsmethode aus, und klicken Sie auf **Bearbeiten**.
+5.	Überprüfen Sie auf der Seite mit den Details, ob Sie den richtigen Kreditkartentyp und die richtige Kreditkartennummer ausgewählt haben.
+6.	Nehmen Sie die erforderlichen Änderungen an den Karteninformationen vor, und klicken Sie auf **Weiter**.
 
 Weitere Informationen finden Sie im Artikel [Ändern der für die Zahlung eines Azure-Abonnements verwendeten Kreditkarte](billing-how-to-change-credit-card.md).
 
@@ -241,7 +244,7 @@ Kunden mit unserem Sonderangebot für Mitglieder (z. B. MSDN) haben die Möglich
 
 ### Kann der Betrag des Ausgabenlimits angepasst werden?
 
-Für die erste Version dieses Features gilt, dass das Ausgabenlimit auf $ 0 festgelegt ist und nicht angepasst werden kann. Das Feature wurde entwickelt, um Kunden, die sich für eine kostenlose Testversion oder ein MSDN-, MPN- oder BizSpark-Angebot registrieren, die Nutzung von Azure zu ermöglichen, ohne dass diese Nutzung in Rechnung gestellt wird. Weitere Informationen finden Sie unter „Ändern des Azure-Ausgabenlimits“(https://azure.microsoft.com/pricing/spending-limits/).
+Für die erste Version dieses Features gilt, dass das Ausgabenlimit auf $ 0 festgelegt ist und nicht angepasst werden kann. Das Feature wurde entwickelt, um Kunden, die sich für eine kostenlose Testversion oder ein MSDN-, MPN- oder BizSpark-Angebot registrieren, die Nutzung von Azure zu ermöglichen, ohne dass diese Nutzung in Rechnung gestellt wird. Weitere Informationen finden Sie unter „Ändern des Azure-Ausgabenlimits“(https://azure.microsoft.com/pricing/spending-limits/)).
 
 ### In welchen Ländern und Regionen ist Microsoft Azure im Handel erhältlich, und in welchen Währungen kann Azure erworben werden?
 
@@ -255,4 +258,4 @@ Ja.
 
 Derzeit ist nicht geplant, Azure oder SQL-Datenbank über einen Lizenzvertrag für Microsoft-Dienstanbieter anzubieten.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

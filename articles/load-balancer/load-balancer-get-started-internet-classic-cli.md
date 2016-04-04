@@ -32,7 +32,7 @@
 
 In diesem Handbuch erfahren Sie, wie Sie auf der Grundlage des oben beschriebenen Szenarios einen Internet-Load Balancer erstellen.
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../../articles/xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
 
 2. Führen Sie den Befehl **azure config mode** aus, um in den klassischen Modus zu wechseln, wie unten dargestellt.
 
@@ -45,10 +45,10 @@ In diesem Handbuch erfahren Sie, wie Sie auf der Grundlage des oben beschriebene
 
 ## Erstellen eines Endpunkts und einer Load Balancer-Gruppe 
 
-Das Szenario setzt voraus, dass die virtuellen Computer „web1“ und „web2“ erstellt wurden. In diesem Leitfaden wird eine Load Balancer-Gruppe erstellt, die Port 80 als öffentlichen Port und Port 80 als lokalen Port verwendet. An Port 80 wird zudem ein Testport konfiguriert und als Load Balancer-Gruppe „lbset“ bezeichnet.
+Das Szenario setzt voraus, dass die virtuellen Computer „web1“ und „web2“ erstellt wurden. In diesem Leitfaden wird eine Load Balancer-Gruppe erstellt, die Port 80 als öffentlichen Port und Port 80 als lokalen Port verwendet. An Port 80 wird zudem ein Testport konfiguriert und als Load Balancer-Gruppe „lbset“ bezeichnet.
 
 
-### Schritt 1 
+### Schritt 1 
 
 Erstellen des ersten Endpunkts und einer Load Balancer-Gruppe für den virtuellen Computer „web1“ mithilfe von `azure network vm endpoint create`.
 
@@ -58,13 +58,13 @@ Verwendete Parameter:
 
 **-k** - Port des lokalen virtuellen Computers<br> **-o** - Protokoll<BR> **-t** -Testport<BR> **-b** - Load Balancer-Name<BR>
  
-## Schritt 2 
+## Schritt 2 
 
 Hinzufügen eines zweiten virtuellen Computers namens „web2“ zur Load Balancer-Gruppe
 
 	azure vm endpoint create web2 80 -k 80 -o tcp -t 80 -b lbset
 
-## Schritt 3 
+## Schritt 3 
 
 Überprüfen der Load Balancer-Konfiguration mithilfe von `azure vm show`.
 
@@ -135,7 +135,7 @@ Sie müssen den der Load Balancer-Gruppe zugeordneten Endpunkt vom virtuellen Co
 
 ## Nächste Schritte
 
-[Erste Schritte zum Konfigurieren des internen Lastenausgleichs](load-balancer-internal-getstarted.md)
+[Erste Schritte zum Konfigurieren des internen Lastenausgleichs](load-balancer-get-started-ilb-arm-ps.md)
 
 [Konfigurieren eines Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
 
@@ -143,4 +143,4 @@ Sie müssen den der Load Balancer-Gruppe zugeordneten Endpunkt vom virtuellen Co
 
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

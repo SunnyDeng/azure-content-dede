@@ -1,6 +1,7 @@
-[Get started using these devices](https://azure.microsoft.com/develop/iot/get-started/) or visit our GitHub [repository](https://github.com/Azure/azure-iot-sdks) and search on device docs per language.
+[Verbinden Sie Ihr Gerät mit Azure IoT Hub](https://azure.microsoft.com/develop/iot/get-started/), oder besuchen Sie unser GitHub-[Repository](https://github.com/Azure/azure-iot-sdks) (in englischer Sprache), und durchsuchen Sie die Gerätedokumentation nach Sprache.
 
-## Next steps
+## Nächste Schritte
 
-Learn more about developing solutions using [Certified for IoT devices](http://azure.com/iotdev).
+Erfahren Sie mehr zum Entwickeln von Lösungen mit [für IoT zertifizierten Geräten](http://azure.com/iotdev).
 
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Installieren des LAMP-Stapels auf einem virtuellen Linux-Computer | Microsoft Azure"
 	description="Erfahren Sie, wie Sie den LAMP-Stack auf einem virtuellen Linux-Computer in Azure verwenden."
-	services="virtual-machines"
+	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="szarkos"
 	manager="timlt"
@@ -9,7 +9,7 @@
 	tags=“azure-service-management,azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-linux"
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
@@ -105,7 +105,7 @@ Einrichten
 
 		- CentOS und Oracle: `sudo service httpd restart`
 
-	- Apache lauscht standardmäßig an Port 80. Für den Remotezugriff auf den Apache-Server müssen Sie u. U. einen Endpunkt öffnen. Ausführlichere Anweisungen finden Sie in der Dokumentation zur [Konfiguration von Endpunkten](virtual-machines-set-up-endpoints.md).
+	- Apache lauscht standardmäßig an Port 80. Für den Remotezugriff auf den Apache-Server müssen Sie u. U. einen Endpunkt öffnen. Ausführlichere Anweisungen finden Sie in der Dokumentation zur [Konfiguration von Endpunkten](virtual-machines-windows-classic-setup-endpoints.md).
 
 	- Jetzt können Sie überprüfen, ob Apache ausgeführt wird und Inhalte bereitstellt. Wechseln Sie im Browser zu `http://[MYSERVICE].cloudapp.net`, wobei **[MYSERVICE]** dem Namen des Clouddiensts entspricht, in dem sich der virtuelle Computer befindet. Bei einigen Verteilungen kann eine Standardwebseite mit dem Hinweis angezeigt werden, dass der Server ordnungsgemäß arbeitet. Bei anderen kann eine ausführlichere Webseite mit Links zu zusätzlicher Dokumentation und Inhalten zur Konfiguration des Apache-Servers eingeblendet werden.
 
@@ -122,11 +122,11 @@ Einrichten
 
 ##Weitere nützliche Informationen
 
-Angenommen, Sie möchten diese Schritte automatisieren, um Anwendungen für remote virtuelle Linux-Computer bereitzustellen? Sie können dazu die Linux CustomScript-Erweiterung verwenden. Weitere Informationen finden Sie unter [Bereitstellen einer LAMP-App mithilfe der Azure-CustomScript-Erweiterung für Linux](virtual-machines-linux-script-lamp.md).
+Angenommen, Sie möchten diese Schritte automatisieren, um Anwendungen für remote virtuelle Linux-Computer bereitzustellen? Sie können dazu die Linux CustomScript-Erweiterung verwenden. Weitere Informationen finden Sie unter [Bereitstellen einer LAMP-App mithilfe der Azure-CustomScript-Erweiterung für Linux](virtual-machines-linux-classic-lamp-script.md).
 
 Es gibt zahlreiche weitere Ressourcen für die Einrichtung eines LAMP-Stacks in Ubuntu.
 
 - [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0323_2016-->

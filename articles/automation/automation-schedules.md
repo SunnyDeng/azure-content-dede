@@ -1,23 +1,23 @@
-<properties 
+<properties
    pageTitle="Zeitpläne in Azure Automation | Microsoft Azure"
    description="Automation-Zeitpläne werden verwendet, um die automatische Ausführung von Runbooks in Azure Automation zu planen. In diesem Artikel wird beschrieben, wie Zeitpläne erstellt werden."
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="automation"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/27/2016"
+   ms.date="03/18/2016"
    ms.author="bwren" />
 
 # Zeitpläne in Azure Automation
 
-Automation-Zeitpläne werden zur automatischen Ausführung von Runbooks verwendet. Ein Zeitplan kann ein einzelnes Datum und eine einzelne Uhrzeit enthalten, damit das Runbook einmal ausgeführt wird. Es kann sich aber auch um einen wiederholt auszuführenden Zeitplan handeln, mit dem das Runbook mehrmals gestartet wird. Über Runbooks kann üblicherweise nicht auf Zeitpläne zugegriffen werden.
+Automation-Zeitpläne werden zur automatischen Ausführung von Runbooks verwendet. Ein Zeitplan kann ein einzelnes Datum und eine einzelne Uhrzeit enthalten, damit das Runbook einmal ausgeführt wird. Es kann sich aber auch um einen täglich oder stündlich zu wiederholenden Zeitplan handeln, mit dem das Runbook mehrmals gestartet wird. Über Runbooks kann üblicherweise nicht auf Zeitpläne zugegriffen werden.
 
 >[AZURE.NOTE]  Zeitpläne unterstützen derzeit keine Azure Automation DSC-Konfigurationen.
 
@@ -60,12 +60,11 @@ Das Cmdlet [New-AzureAutomationSchedule](http://msdn.microsoft.com/library/dn690
 	$scheduleName = "My Daily Schedule"
 	$startTime = (Get-Date).Date.AddDays(1).AddHours(12)
 	$expiryTime = $startTime.AddYears(1)
-	
+
 	New-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –StartTime $startTime –ExpiryTime $expiryTime –DayInterval 1
 
 
 ## Siehe auch
 - [Planen eines Runbooks in Azure Automation](automation-scheduling-a-runbook.md)
- 
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

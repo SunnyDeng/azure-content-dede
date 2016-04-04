@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="02/11/2016"
+   ms.date="03/16/2016"
    ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem SalesForce-Connector und das Hinzufügen zur Logik-App
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Salesforce-API](../connectors/create-api-salesforce.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Salesforce-API](../connectors/connectors-create-api-salesforce.md).
 
 Stellen Sie eine Verbindung mit SalesForce her, und erstellen und ändern Sie Entitäten wie Konten, Leads usw. Im Folgenden werden die typischen Integrationsszenarios aufgeführt, bei denen SalesForce verwendet wird.
 
@@ -108,4 +108,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [14]: ./media/app-service-logic-connector-salesforce/14_Update_Account_Address.png
 [15]: ./media/app-service-logic-connector-salesforce/15_Create_new_salesforce_connector.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

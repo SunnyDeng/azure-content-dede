@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="02/11/2016"
+   ms.date="03/16/2016"
    ms.author="sameerch"/>
 
 
 # Verwenden des Yammer-Connectors in Logik-Apps #
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Yammer-API](../connectors/create-api-yammer.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Yammer-API](../connectors/connectors-create-api-yammer.md).
 
 Stellen Sie eine Verbindung mit Yammer her, um Nachrichten zu veröffentlichen und mit einem Trigger neue Nachrichten abzurufen.
 
@@ -94,4 +94,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [10]: ./media/app-service-logic-connector-yammer/img10.PNG
 [11]: ./media/app-service-logic-connector-yammer/img11.PNG
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

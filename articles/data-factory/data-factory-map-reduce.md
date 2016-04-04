@@ -98,10 +98,10 @@ Mit der HDInsight-Aktivität „MapReduce“ können Sie beliebige MapReduce-JAR
 Unter [Data Factory-Beispiele auf GitHub](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/JSON/MapReduce_Activity_Sample) können Sie ein Beispiel für die Verwendung der HDInsight-Aktivität „MapReduce“ herunterladen.
 
 ## Ausführen des Wortzählungsprogramms
-Die Pipeline in diesem Beispiel führt das Zuordnungs-/Reduzierungsprogramm für die Wortzählung auf Ihrem Azure HDInsight-Cluster aus.
+Die Pipeline in diesem Beispiel führt das Zuordnungs-/Reduzierungsprogramm für die Wortzählung auf Ihrem Azure HDInsight-Cluster aus.
 
 ### Verknüpfte Dienste
-Erstellen Sie zunächst einen verknüpften Dienst, um die vom Azure HDInsight-Cluster verwendete Azure Storage-Instanz mit der Azure Data Factory zu verknüpfen. Denken Sie beim Kopieren und Einfügen des folgenden Codes daran, **account name** (Kontoname) und **account key** (Kontoschlüssel) durch den Namen und Schlüssel Ihrer Azure Storage-Instanz zu ersetzen.
+Erstellen Sie zunächst einen verknüpften Dienst, um die vom Azure HDInsight-Cluster verwendete Azure Storage-Instanz mit der Azure Data Factory zu verknüpfen. Denken Sie beim Kopieren und Einfügen des folgenden Codes daran, **account name** (Kontoname) und **account key** (Kontoschlüssel) durch den Namen und Schlüssel Ihrer Azure Storage-Instanz zu ersetzen.
 
 #### Mit Azure Storage verknüpfter Dienst
 
@@ -116,7 +116,7 @@ Erstellen Sie zunächst einen verknüpften Dienst, um die vom Azure HDInsight-C
 	}
 
 #### Mit Azure HDInsight verknüpfter Dienst
-Erstellen Sie anschließend einen verknüpften Dienst, um Ihren Azure HDInsight-Cluster mit der Azure Data Factory zu verknüpfen. Ersetzen Sie beim Kopieren und Einfügen des folgenden Codes den HDInsight-Clusternamen (**HDInsight cluster name**) durch den Namen des HDInsight-Clusters, und ändern Sie die Werte für Benutzername und Kennwort.
+Erstellen Sie anschließend einen verknüpften Dienst, um Ihren Azure HDInsight-Cluster mit der Azure Data Factory zu verknüpfen. Ersetzen Sie beim Kopieren und Einfügen des folgenden Codes den HDInsight-Clusternamen (**HDInsight cluster name**) durch den Namen des HDInsight-Clusters, und ändern Sie die Werte für Benutzername und Kennwort.
 
 	{
 	    "name": "HDInsightLinkedService",
@@ -213,11 +213,11 @@ linkedServiceName | Bezieht sich auf den mit HDInsight verknüpften Dienst, den 
 
 
 [adfgetstarted]: data-factory-get-started.md
-[adfgetstartedmonitoring]: data-factory-get-started.md#MonitorDataSetsAndPipeline
+[adfgetstartedmonitoring]: data-factory-get-started.md#monitor-pipelines
 [adftutorial]: data-factory-tutorial.md
 
 [Developer Reference]: http://go.microsoft.com/fwlink/?LinkId=516908
 [Azure Classic Portal]: http://portal.azure.com
  
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

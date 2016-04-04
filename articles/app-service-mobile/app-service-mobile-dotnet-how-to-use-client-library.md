@@ -470,7 +470,7 @@ Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie 
 
 In einem Serverfluss verwaltet Azure App Service den OAuth 2.0-Authentifizierungsfluss, indem die Anmeldungsseite des ausgewählten Anbieters angezeigt und nach der erfolgreichen Anmeldung beim Identitätsanbieter ein App Service-Authentifizierungstoken generiert wird. Die [LoginAsync-Methode] gibt einen [MobileServiceUser] zurück, der wiederum sowohl die [UserId] des authentifizierten Benutzers als auch das [MobileServiceAuthenticationToken] in Form eines JSON-Webtokens (JWT) enthält. Dieses Token kann zwischen gespeichert und wiederverwendet werden, bis es abläuft. Weitere Informationen finden Sie unter [Zwischenspeichern des Authentifizierungstokens](#caching).
 
-###Clientfluss
+###<a name="client-flow"></a>Clientfluss
 
 Ihre Anwendung kann den Identitätsanbieter auch unabhängig kontaktieren und das zurückgegebene Token zur Authentifizierung dem App Service vorlegen. Mit diesem Clientfluss können Sie die einmalige Anmeldung für Ihre Benutzer implementieren oder zusätzliche Benutzerdaten vom Identitätsanbieter abrufen.
 
@@ -597,21 +597,21 @@ Für Windows Phone-Apps können Sie die Daten mithilfe der [ProtectedData]-Klass
 
 ### <a name="adal"></a>Authentifizieren von Benutzern mit der Active Directory-Authentifizierungsbibliothek
 
-Nutzen Sie die Active Directory-Authentifizierungsbibliothek (Active Directory Authentication Library, ADAL), um Benutzer mithilfe von Azure Active Directory bei Ihrer Anwendung anzumelden. Dies wird aufgrund der eher nativen UX-Benutzererfahrung und der Möglichkeit, zusätzliche Anpassungen vorzunehmen, den `loginAsync()`-Methoden häufig vorgezogen.
+Nutzen Sie die Active Directory-Authentifizierungsbibliothek (Active Directory Authentication Library, ADAL), um Benutzer mithilfe von Azure Active Directory bei Ihrer Anwendung anzumelden. Dies wird aufgrund der besseren Bedienbarkeit und der Möglichkeit, zusätzliche Anpassungen vorzunehmen, den Methoden vom Typ `loginAsync()` häufig vorgezogen.
 
-1. Konfigurieren Sie Ihr Mobile App-Back-End für die AAD-Anmeldung, indem Sie die im Tutorial [So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung] beschriebenen Schritte ausführen. Schließen Sie auch den optionalen Schritt zur Registrierung einer nativen Clientanwendung ab.
+1. Konfigurieren Sie Ihr Mobile App-Back-End für die AAD-Anmeldung, indem Sie die im Tutorial [Gewusst wie: Konfigurieren von App Service für die Active Directory-Anmeldung] beschriebenen Schritte ausführen. Schließen Sie auch den optionalen Schritt zur Registrierung einer nativen Clientanwendung ab.
 
 2. Öffnen Sie Ihr Projekt in Visual Studio oder Xamarin Studio, und fügen Sie einen Verweis auf das NuGet-Paket `Microsoft.IdentityModel.CLients.ActiveDirectory` hinzu. Nehmen Sie in die Suche auch Vorabversionen auf.
 
 3. Fügen Sie auf Grundlage der verwendeten Plattform den unten stehenden Code zu Ihrer Anwendung hinzu. Nehmen Sie dabei die folgenden Änderungen vor:
 
-* Ersetzen Sie **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, unter dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/contoso.onmicrosoft.com entsprechen. Sie können diesen Wert auf der Registerkarte „Domäne“ in Ihrer Azure Active Directory-Instanz im [klassischen Azure-Portal] kopieren.
+* Ersetzen Sie **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, unter dem Sie Ihre Anwendung bereitgestellt haben. Verwenden Sie dabei folgendes Format: https://login.windows.net/contoso.onmicrosoft.com. Sie können diesen Wert auf der Registerkarte „Domäne“ in Ihrer Azure Active Directory-Instanz im [klassischen Azure-Portal] kopieren.
 
-* Ersetzen Sie **INSERT-RESOURCE-ID-HERE** durch die Client-ID für Ihr Mobile App-Back-End. Sie finden diese im Portal auf der Registerkarte **Erweitert** unter **Azure Active Directory-Einstellungen**.
+* Ersetzen Sie **INSERT-RESOURCE-ID-HERE** durch die Client-ID für Ihr Mobile App-Back-End. Diese finden Sie im Portal auf der Registerkarte **Erweitert** unter **Azure Active Directory-Einstellungen**.
 
 * Ersetzen Sie **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der nativen Clientanwendung kopiert haben.
 
-* Ersetzen Sie **INSERT-REDIRECT-URI-HERE** durch den Endpunkt _/.auth/login/done_ Ihrer Website mithilfe des HTTPS-Schemas. Dieser Wert sollte etwa so aussehen: _https://contoso.azurewebsites.net/.auth/login/done_.
+* Ersetzen Sie **INSERT-REDIRECT-URI-HERE** durch den Endpunkt _/.auth/login/done_ Ihrer Website, und verwenden Sie dabei das HTTPS-Schema. Dieser Wert sollte etwa so aussehen: __https://contoso.azurewebsites.net/.auth/login/done_.
 
 Der für jede Plattform erforderliche Code:
 
@@ -708,7 +708,7 @@ Die folgenden Themen behandeln Pushbenachrichtigungen:
 * [Abrufen einer Windows Store-Paket-SID](#package-sid)
 * [Registrieren von Pushvorlagen zum Senden plattformübergreifender Benachrichtigungen](#register-xplat)
 
-###<a name="register-for-push"></a>Registrieren für Pushbenachrichtigungen
+###<a name="register-for-push"></a>Gewusst wie: Registrieren für Pushbenachrichtigungen
 
 Mit dem Mobile Apps-Client können Sie die App für Pushbenachrichtigungen mit Azure Notification Hubs registrieren. Wenn Sie sich registrieren, erhalten Sie ein Handle, das vom plattformspezifischen Pushbenachrichtigungsdienst bezogen wird. Diesen Wert müssen Sie zusammen mit allen übrigen Tags beim Registrieren angeben. Der folgende Code registriert Ihre Windows-App für Pushbenachrichtigungen mit dem Windows-Benachrichtigungsdienst (Windows Notification Service, WNS):
 
@@ -723,7 +723,7 @@ Mit dem Mobile Apps-Client können Sie die App für Pushbenachrichtigungen mit A
 
 Zu einer Pushbenachrichtigung an den WNS BENÖTIGEN Sie eine Windows Store-Paket-SID (siehe unten). Beachten Sie, dass in diesem Beispiel zwei Tags in der Registrierung enthalten sind. Weitere Informationen zu Windows-Apps, z. B. zum Registrieren für Vorlagenregistrierungen, finden Sie unter [Hinzufügen von Pushbenachrichtigungen zu Ihrer App].
 
-Beachten Sie, dass die Anforderung von Tags vom Client nicht unterstützt wird. Tag-Anforderungen werden automatisch aus der Registrierung gelöscht. Wenn Sie Ihr Gerät mit Tags registrieren möchten, erstellen Sie eine benutzerdefinierte API, die die Notification Hubs-API verwendet, um die Registrierung in Ihrem Namen auszuführen. [Rufen Sie die benutzerdefinierte API](#customapi) statt der `RegisterNativeAsync()`-Methode auf.
+Beachten Sie, dass die Anforderung von Tags vom Client nicht unterstützt wird. Tag-Anforderungen werden automatisch aus der Registrierung gelöscht. Wenn Sie Ihr Gerät mit Tags registrieren möchten, erstellen Sie eine benutzerdefinierte API, die die Notification Hubs-API verwendet, um die Registrierung in Ihrem Namen auszuführen. Rufen Sie anstelle der Methode `RegisterNativeAsync()` die [benutzerdefinierte API](#customapi) auf.
 
 ###<a name="package-sid"></a>Abrufen einer Windows Store-Paket-SID
 
@@ -746,7 +746,7 @@ Xamarin-Apps erfordern zusätzlichen Code zum Registrieren einer App unter iOS o
 
 ###<a name="register-xplat"></a>Gewusst wie: Registrieren von Pushvorlagen zum Senden plattformübergreifender Benachrichtigungen
 
-Um Vorlagen zu registrieren, verwenden Sie die `RegisterAsync()`-Methode mit den Vorlagen wie folgt:
+Verwenden Sie die Methode `RegisterAsync()` wie folgt, um Vorlagen zu registrieren:
 
         JObject templates = myTemplates();
         MobileService.GetPush().RegisterAsync(channel.Uri, templates);
@@ -780,7 +780,7 @@ Die **RegisterAsync()**-Methode akzeptiert auch sekundäre Kacheln:
 
 Beachten Sie, dass aus Sicherheitsgründen alle Tags entfernt werden. Informationen zum Hinzufügen von Tags zu Installationen bzw. Vorlagen innerhalb von Installationen finden Sie unter [Arbeiten Sie mit dem Back-End-Server-SDK für Azure Mobile Apps].
 
-Zum Senden von Benachrichtigungen, die diese registrierten Vorlagen verwenden, informieren Sie sich über die [Notification Hubs-APIs].
+Informationen zum Senden von Benachrichtigungen unter Verwendung dieser registrierten Vorlagen finden Sie unter [Notification Hubs-APIs].
 
 ##<a name="misc"></a>Verschiedene Themen
 
@@ -803,7 +803,7 @@ Tritt ein Fehler im Back-End auf, löst das Client-SDK eine `MobileServiceInvali
 		}
 	}
 
-Ein weiteres Beispiel für den Umgang mit Fehlerbedingungen finden Sie im [Mobile Apps-Dateienbeispiel] – das [LoggingHandler]-Beispiel zeigt einen Handler zum Delegieren von Protokollierungen (siehe unten), mit dem die Anforderungen protokolliert werden können, die an das Back-End gestellt werden. Dies bietet eine einfachere Möglichkeit zum Debuggen von Xamarin-Anwendung, als sich auf Fiddler zu verlassen.
+Ein weiteres Beispiel für den Umgang mit Fehlerbedingungen finden Sie im [Mobile Apps-Dateienbeispiel] – das Beispiel für [LoggingHandler] zeigt einen Handler zum Delegieren von Protokollierungen (siehe unten), mit dem die an das Back-End gerichteten Anforderungen protokolliert werden können. Dies bietet eine einfachere Möglichkeit zum Debuggen von Xamarin-Anwendung, als sich auf Fiddler zu verlassen.
 
 ###<a name="headers"></a>Gewusst wie: Anpassen der Anforderungsheader
 
@@ -860,7 +860,7 @@ Um Ihr spezielles App-Szenario zu unterstützen, müssen Sie unter Umständen di
 [Synchronisierung von Offlinedaten in Azure Mobile Apps]: app-service-mobile-offline-data-sync.md
 [Hinzufügen von Pushbenachrichtigungen zu Ihrer App]: app-service-mobile-windows-store-dotnet-get-started-push.md
 [Registrieren Ihrer App für die Verwendung einer Microsoft-Kontoanmeldung]: app-service-mobile-how-to-configure-microsoft-authentication.md
-[So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung]: app-service-mobile-how-to-configure-active-directory-authentication.md
+[Gewusst wie: Konfigurieren von App Service für die Active Directory-Anmeldung]: app-service-mobile-how-to-configure-active-directory-authentication.md
 
 <!-- Microsoft URLs. -->
 [.NET-Client-Referenz für Azure Mobile Apps]: https://msdn.microsoft.com/de-DE/library/azure/mt419521(v=azure.10).aspx
@@ -911,5 +911,4 @@ Um Ihr spezielles App-Szenario zu unterstützen, müssen Sie unter Umständen di
 [SymbolSource]: http://www.symbolsource.org/
 [SymbolSource-Anweisungen]: http://www.symbolsource.org/Public/Wiki/Using
 
-<!---HONumber=AcomDC_0316_2016-->
-
+<!---HONumber=AcomDC_0323_2016-->

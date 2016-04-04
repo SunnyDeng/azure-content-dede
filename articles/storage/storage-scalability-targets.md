@@ -40,7 +40,8 @@ Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen 
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../../includes/azure-storage-limits-vm-disks.md)]
 
-Weitere Informationen finden Sie unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md).
+
+Weitere Informationen finden Sie unter [Größen virtueller Computer](../virtual-machines/virtual-machines-linux-sizes.md).
 
 ### Standardspeicherkonten
 
@@ -85,4 +86,4 @@ Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit
 - [Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage](storage-performance-checklist.md)
 - [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency (in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

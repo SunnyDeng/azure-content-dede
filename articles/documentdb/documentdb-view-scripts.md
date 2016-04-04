@@ -117,4 +117,4 @@ Im Artikel [DocumentDB-serverseitige Programmierung: gespeicherte Prozeduren, Da
 
 Der [Lernpfad](https://azure.microsoft.com/documentation/learning-paths/documentdb/) ist auch ein nützlicher Anhaltspunkt, um mehr über DocumentDB zu erfahren.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

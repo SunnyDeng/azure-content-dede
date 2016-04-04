@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/21/2016" 
+	ms.date="03/17/2016" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – häufig gestellte Fragen
@@ -220,10 +220,31 @@ Sie können alle aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit Au
 
 -	Wenn Sie über einen Standard- oder Premium-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Azure-Portal.
 -	Sie können auch die Redis-Befehlszeilentools verwenden. Führen Sie hierzu die folgenden Schritte aus:
-	-	Laden Sie die [Redis-Befehlszeilentools](https://github.com/MSOpenTech/redis/releases/download/win-2.8.19.1/redis-2.8.19.zip) herunter.
+	-	Laden Sie die [Redis-Befehlszeilentools](https://github.com/MSOpenTech/redis/releases/) herunter.
 	-	Stellen Sie über `redis-cli.exe` eine Verbindung mit dem Cache her. Übergeben Sie den Cacheendpunkt mithilfe des Schalters "-h" und dem Schlüssel mit Verwendung von "-a", wie im folgenden Beispiel gezeigt.
 		-	`redis-cli -h <your cache name>.redis.cache.windows.net -a <key>`
 	-	Beachten Sie, dass die Redis-Befehlszeilentools nicht mit dem SSL-Port funktionieren, aber Sie können ein Hilfsprogramm wie `stunnel` verwenden, um eine sichere Verbindung zwischen den Tools und dem SSL-Port herzustellen. Anweisungen hierzu finden Sie im Blogbeitrag [Announcing ASP.NET Session State Provider for Redis Preview Release](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
+
+<a name="cache-emulator"></a>
+## Gibt es einen lokalen Emulator für Azure Redis Cache?
+
+Für Azure Redis Cache ist kein lokaler Emulator verfügbar. Sie können jedoch die MSOpenTech-Version von „redis-server.exe“ über die [Redis-Befehlszeilentools](https://github.com/MSOpenTech/redis/releases/) auf dem lokalen Computer ausführen und eine Verbindung herstellen, um ein ähnliches Verhalten wie bei einem lokalen Cache-Emulator zu erhalten. Dies wird im folgenden Beispiel gezeigt.
+
+	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
+	{
+		// Connect to a locally running instance of Redis to simulate a local cache emulator experience.
+	    return ConnectionMultiplexer.Connect("127.0.0.1");
+	});
+	
+	public static ConnectionMultiplexer Connection
+	{
+	    get
+	    {
+	        return lazyConnection.Value;
+	    }
+	}
+
+Optional können Sie eine Datei vom Typ [redis.conf](http://redis.io/topics/config) konfigurieren, um bei Bedarf eine bessere Abstimmung mit den [standardmäßigen Cacheeinstellungen](cache-configure.md#default-redis-server-configuration) für Ihren Online-Azure Redis Cache zu erreichen.
 
 <a name="cache-common-patterns"></a>
 ## Welche gängigen Cachemuster gibt es, und was muss berücksichtigt werden?
@@ -282,4 +303,4 @@ In-Role Cache wird am 30. November 2016 außer Betrieb gesetzt.
 
 [Konfigurationseinstellung „minIoThreads“]: https://msdn.microsoft.com/library/vstudio/7w2sway1(v=vs.100).aspx
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

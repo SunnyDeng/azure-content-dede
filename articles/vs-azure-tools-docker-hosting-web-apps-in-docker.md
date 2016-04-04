@@ -19,13 +19,13 @@
 
 [Docker](https://www.docker.com/whatisdocker/) ist ein einfaches Containermodul, in gewisser Weise mit einem virtuellen Computer vergleichbar, das Sie zum Hosten von Anwendungen und Diensten verwenden können. Visual Studio unterstützt Docker für Ubuntu, CoreOS und Windows.
 
-Dieses Beispiel zeigt, wie Sie die Erweiterung **Visual Studio 2015-Tools für Docker** zum Veröffentlichen einer ASP.NET 5-App auf einem virtuellen Ubuntu Linux-Computer (wird hier als Docker-Host bezeichnet) in Azure verwenden können. Auf die gleiche Weise ist auch eine Veröffentlichung in einem Windows-Container möglich.
+Dieses Beispiel zeigt, wie Sie die Erweiterung **Visual Studio 2015-Tools für Docker** zum Veröffentlichen einer ASP.NET 5-App auf einem virtuellen Ubuntu Linux-Computer (wird hier als Docker-Host bezeichnet) in Azure verwenden können. Auf die gleiche Weise ist auch eine Veröffentlichung in einem Windows-Container möglich.
 
 Nach dem Veröffentlichen Ihrer App auf einem Docker-Host können Sie mit den Docker-Befehlszeilentools mit dem Container interagieren, in dem Ihre App veröffentlicht wurde.
 
 ## Erstellen und Veröffentlichen eines neuen Docker-Containers
 
-Im folgenden Abschnitt erstellen Sie ein neues ASP.NET 5-Webanwendungsprojekt und einen Containerhost. Dann erstellen Sie das Web-App-Projekt in einem Docker-Container und führen es aus. Laden Sie zuerst die [Visual Studio 2015-Tools für Docker](https://aka.ms/DockerToolsForVS) herunter, und installieren Sie sie.
+Im folgenden Abschnitt erstellen Sie ein neues ASP.NET 5-Webanwendungsprojekt und einen Containerhost. Dann erstellen Sie das Web-App-Projekt in einem Docker-Container und führen es aus. Laden Sie zuerst die [Visual Studio 2015-Tools für Docker](https://aka.ms/DockerToolsForVS) herunter, und installieren Sie sie.
 
 ### Hinzufügen eines ASP.NET 5-Webanwendungsprojekts
 
@@ -50,7 +50,7 @@ Nachdem Sie das Projekt erstellt – oder ein vorhandenes Projekt geöffnet habe
 
 1. Wählen Sie Im Abschnitt **Veröffentlichungsziel auswählen** im Dialogfeld **Web veröffentlichen** die Option **Docker-Container**.
 
-    Wenn die Option „Docker-Container“ nicht angezeigt wird, stellen Sie sicher, dass Sie die Visual Studio 2015-Tools für Docker installiert und im vorherigen Abschnitt eine ASP.NET 5-Websitevorlage ausgewählt haben.
+    Wenn die Option „Docker-Container“ nicht angezeigt wird, stellen Sie sicher, dass Sie die Visual Studio 2015-Tools für Docker installiert und im vorherigen Abschnitt eine ASP.NET 5-Websitevorlage ausgewählt haben.
 
     ![][1]
 
@@ -107,7 +107,7 @@ Nachdem Sie das Projekt erstellt – oder ein vorhandenes Projekt geöffnet habe
 
 1. Tippen Sie auf der Registerkarte **Verbindung** im Dialogfeld **Web veröffentlichen** auf das Feld **Verbindung prüfen**, um sicherzustellen, dass der Docker-Host bereit ist. Wenn die Verbindung in Ordnung ist, tippen Sie auf die Schaltfläche **Veröffentlichen**, um die Web-App zu veröffentlichen.
 
-    Wenn Sie zum ersten Mal eine App auf einem Docker-Host veröffentlichen, erfordert es Zeit, Basisimages herunterzuladen, auf die in der Docker-Datei verwiesen wird (z. B. **VON** *Imagename*).
+    Wenn Sie zum ersten Mal eine App auf einem Docker-Host veröffentlichen, erfordert es Zeit, Basisimages herunterzuladen, auf die in der Docker-Datei verwiesen wird (z. B. **VON** *Imagename*).
 
     Beachten Sie, dass die Docker-Datei für das Betriebssystem spezifisch ist. Wenn Sie eine erneute Veröffentlichung in einem anderen Betriebssystem durchführen möchten, müssen Sie die Docker-Datei umbenennen, damit Visual Studio eine neue Standarddatei basierend auf dem Zielbetriebssystem erstellen kann. Beispiel: Wenn Sie zuerst in einem Linux-Container und später in Windows veröffentlichen möchten, sollten Sie die Docker-Datei mit einem aussagekräftigen, eindeutigen Namen wie DockerLinux umbenennen. Wenn Sie dann die Veröffentlichung in Windows erneut durchführen, erstellt Visual Studio die Docker-Standarddatei für Windows neu. Bei einer späteren erneuten Veröffentlichung einer der beiden Versionen wählen Sie einfach die entsprechende Docker-Datei für das Betriebssystem aus.
 
@@ -168,7 +168,7 @@ Das folgende Verfahren gilt für die Kommunikation mit einem Docker-Host, der in
 
 Da Sie jetzt über einen Docker-Host verfügen, können Sie Docker-Befehle an ihn ausgeben. Weitere Informationen zu Docker finden Sie in der [Docker-Dokumentation](https://docs.docker.com/) und im [Docker-Onlinetutorial](https://www.docker.com/tryit/) (in englischer Sprache).
 
-Informationen zur Verwendung der Docker VM-Erweiterung für Linux in Azure finden Sie unter [Die Docker-Erweiterung für virtuelle Linux-Computer in Azure](/virtual-machines/virtual-machines-docker-vm-extension.md).
+Informationen zur Verwendung der Docker VM-Erweiterung für Linux in Azure finden Sie unter [Die Docker-Erweiterung für virtuelle Linux-Computer in Azure](virtual-machines/virtual-machines-linux-dockerextension.md).
 
 Informationen zu Problemen bei der Verwendung von Docker in Visual Studio finden Sie unter [Problembehandlung von Docker-Clientfehlern unter Windows mithilfe von Visual Studio](vs-azure-tools-docker-troubleshooting-docker-errors.md).
 
@@ -182,4 +182,4 @@ Informationen zu Problemen bei der Verwendung von Docker in Visual Studio finden
 [7]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796685.png
 [8]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796686.png
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

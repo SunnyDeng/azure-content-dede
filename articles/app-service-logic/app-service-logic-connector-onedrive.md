@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/11/2016"
+	ms.date="03/16/2016"
 	ms.author="rajram"/>
 
 # Erste Schritte mit dem OneDrive-Connector und das Hinzufügen zur Logik-App
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [OneDrive-API](../connectors/create-api-onedrive.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [OneDrive-API](../connectors/connectors-create-api-onedrive.md).
 
 Stellen Sie eine Verbindung mit dem OneDrive her, um Dateien hochzuladen, herunterzuladen und zu löschen. Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den OneDrive-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
@@ -29,12 +29,12 @@ Zur Verwendung des OneDrive-Connectors müssen Sie zunächst eine Instanz der On
 3.	Konfigurieren Sie den OneDrive-Connector wie folgt:
 
 	![][1]
-	– **Name** – Geben Sie einen Namen für den OneDrive-Connector an
-	– **App Service-Plan** – Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen 
-	– **Tarif** – Wählen Sie einen Tarif für den Connector aus 
-	– **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll 
-	– **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll 
-	– **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
+	- **Name** – Geben Sie einen Namen für den OneDrive-Connector ein.
+	- **App Service-Plan** - Wählen oder erstellen Sie einen App Service-Plan.
+	- **Tarif** – Wählen Sie einen Tarif für den Connector.
+	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
+	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
+	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
 
 4. Klicken Sie auf "Erstellen". Ein neuer OneDrive-Connector wird erstellt.
 5. Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des OneDrive-Connectors erstellen.
@@ -99,4 +99,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [OneDrive Connector (in englischer Sprache)]: https://msdn.microsoft.com/library/dn974227.aspx
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

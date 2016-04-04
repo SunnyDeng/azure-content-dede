@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/29/2015"
+	ms.date="03/22/2016"
 	ms.author="jgao"/>
 
 
@@ -37,9 +37,9 @@ Azure HDInsight-Cluster werden in der Regel bereitgestellt, um MapReduce-Aufträ
 
 In Azure-BLOB-Speichercontainern werden Daten als Schlüssel-Wert-Paare gespeichert, und es gibt keine Verzeichnishierarchie. Allerdings kann im Schlüsselnamen das Zeichen '/' verwendet werden, damit es so aussieht, als wäre eine Datei in einer Verzeichnisstruktur gespeichert. HDInsight betrachtet diese Schlüsselnamen, als wären es tatsächliche Verzeichnisse.
 
-Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Das Verzeichnis 'input' existiert zwar nicht, wegen des Zeichens '/' im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad.
+Der Schlüssel eines Blobs kann z. B. *input/log1.txt* heißen. Das Verzeichnis 'input' existiert zwar nicht, wegen des Zeichens '/' im Schlüsselnamen sieht es jedoch so aus, als gäbe es einen Dateipfad.
 
-Daher werden in den Azure Explorer-Tools möglicherweise einige Dateien mit 0 Byte angezeigt. Diese Dateien dienen zwei Zwecken:
+Daher werden in den Azure Explorer-Tools möglicherweise einige Dateien mit 0 Byte angezeigt. Diese Dateien dienen zwei Zwecken:
 
 - Bei leeren Ordnern markieren sie das Vorhandensein der Ordner. Azure-BLOB-Speicher erkennt, dass es bei Vorhandensein eines Blobs mit dem Namen "foo/bar" einen Ordner namens **foo** gibt. Soll es jedoch einen leeren Ordner namens **foo** geben, kann dieser nur mit der speziellen 0-Byte-Datei bezeichnet werden.
 
@@ -109,18 +109,12 @@ Azure PowerShell ist eine Skriptumgebung, mit der Sie die Bereitstellung und Ver
 1. Öffnen Sie die Azure PowerShell-Konsole entsprechend den Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 2. Legen Sie die Werte der ersten fünf Variablen im folgenden Skript fest:
 
-		$subscriptionName = "<AzureSubscriptionName>"
 		$resourceGroupName = "<AzureResourceGroupName>"
 		$storageAccountName = "<StorageAccountName>"
 		$containerName = "<ContainerName>"
 
 		$fileName ="<LocalFileName>"
 		$blobName = "<BlobName>"
-
-		Switch-AzureMode -Name AzureResourceManager
-
-		Add-AzureAccount
-		Select-AzureSubscription $subscriptionName
 
 		# Get the storage account key
 		$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.Key1 }
@@ -132,7 +126,7 @@ Azure PowerShell ist eine Skriptumgebung, mit der Sie die Bereitstellung und Ver
 
 3. Fügen Sie das Skript in die Azure PowerShell-Konsole ein, um es auszuführen und die Datei zu kopieren.
 
-PowerShell-Skripts, die für die Verwendung mit HDInsight erstellt wurden, finden Sie z. B. unter [HDInsight-Tools](https://github.com/blackmist/hdinsight-tools).
+PowerShell-Skripts, die für die Verwendung mit HDInsight erstellt wurden, finden Sie z. B. unter [HDInsight-Tools](https://github.com/blackmist/hdinsight-tools).
 
 ###<a id="azcopy"></a>AzCopy
 
@@ -218,7 +212,7 @@ Informationen finden Sie unter [Bereitstellen von Azure-BLOB-Speicher als lokale
 
 Der Azure Data Factory-Dienst ist ein vollständig verwalteter Dienst für das Kombinieren von Verarbeitungs-, Speicher- und Verschiebungsdienste für Daten in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines.
 
-Mit Azure Data Factory können Daten in den Azure-Blob-Speicher verschoben oder Datenpipelines erstellt werden, die HDInsight-Funktionen, z. B. Hive und Pig, direkt verwenden.
+Mit Azure Data Factory können Daten in den Azure-Blob-Speicher verschoben oder Datenpipelines erstellt werden, die HDInsight-Funktionen, z. B. Hive und Pig, direkt verwenden.
 
 Weitere Informationen finden Sie in der [Dokumentation zu Azure Data Factory](https://azure.microsoft.com/documentation/services/data-factory/).
 
@@ -284,4 +278,4 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lesen Sie in den folge
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -26,24 +26,24 @@ Um die Wirksamkeitsdaten der Marketingkampagne aus dem Azure-BLOB auf einen loka
 
 ## Voraussetzungen
 
-Sie **müssen** die exemplarische Vorgehensweise im [Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][datafactorytutorial] durchführen, bevor Sie die exemplarische Vorgehensweise in diesem Artikel befolgen.
+Sie **müssen** die exemplarische Vorgehensweise im [Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory](data-factory-tutorial.md) durchführen, bevor Sie die exemplarische Vorgehensweise in diesem Artikel befolgen.
 
 **(Empfohlen)** Beschäftigen Sie sich mit der exemplarischen Vorgehensweise im Artikel [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][useonpremisesdatasources], um eine exemplarische Vorgehensweise zum Erstellen einer Pipeline zum Verschieben von Daten von einem lokalen SQL Server zu einem Azure-Blobspeicher zu erhalten.
 
 
 In dieser exemplarischen Vorgehensweise führen Sie die folgenden Schritte aus:
 
-1. [Schritt 1: Erstellen eines Datenverwaltungsgateways](#OnPremStep1). Das Datenverwaltungsgateway ist ein Client-Agent, der Zugriff auf lokale Datenquellen in Ihrer Organisation aus der Cloud bietet. Das Gateway ermöglicht die Übertragung von Daten zwischen einem lokalen SQL Server und Azure-Datenspeichern.	
+1. [Erstellen eines Datenverwaltungsgateways](#create-data-management-gateway). Das Datenverwaltungsgateway ist ein Client-Agent, der Zugriff auf lokale Datenquellen in Ihrer Organisation aus der Cloud bietet. Das Gateway ermöglicht die Übertragung von Daten zwischen einem lokalen SQL Server und Azure-Datenspeichern.	
 
 	Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert haben und dieses auch bei Azure Data Factory registrieren, bevor Sie eine lokale SQL Server-Datenbank als verknüpften Dienst für eine Azure Data Factory hinzufügen.
 
-2. [Schritt 2: Erstellen eines verknüpften Diensts für den lokalen SQL Server](#OnPremStep2). In diesem Schritt erstellen Sie zuerst eine Datenbank und eine Tabelle auf dem lokalen SQL Server-Computer und dann den verknüpften Dienst: **OnPremSqlLinkedService**.
-3. [Schritt 3: Erstellen der Tabelle und der Pipeline](#OnPremStep3). In diesem Schritt erstellen Sie die Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** und die Pipeline **EgressDataToOnPremPipeline**. 
+2. [Erstellen eines verknüpften Diensts für die lokale SQL Server-Instanz](#create-sql-server-linked-service). In diesem Schritt erstellen Sie zuerst eine Datenbank und eine Tabelle auf dem lokalen SQL Server-Computer und dann den verknüpften Dienst: **OnPremSqlLinkedService**.
+3. [Erstellen eines Datasets und einer Pipeline](#create-dataset-and-pipeline). In diesem Schritt erstellen Sie die Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** und die Pipeline **EgressDataToOnPremPipeline**. 
 
-4. [Schritt 4: Überwachen der Pipeline und Anzeigen des Ergebnisses](#OnPremStep4). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des Azure-Portals.
+4. [Überwachen der Pipeline und Anzeigen des Ergebnisses](#monitor-pipeline). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des Azure-Portals.
 
 
-## <a name="OnPremStep1"></a> Schritt 1: Erstellen eines Datenverwaltungsgateways
+## Erstellen eines Datenverwaltungsgateways
 
 Das Datenverwaltungsgateway ist ein Client-Agent, der Zugriff auf lokale Datenquellen in Ihrer Organisation aus der Cloud bietet. Das Gateway ermöglicht die Übertragung von Daten zwischen einem lokalen SQL Server und Azure-Datenspeichern.
   
@@ -64,7 +64,7 @@ Wenn Sie ein vorhandenes Datengateway haben, das Sie verwenden können, überspr
 
 9. Klicken Sie auf **OK**, um das Blatt **Konfigurieren** zu schließen, und erneut auf **OK**, um das Blatt **Erstellen** zu schließen. Warten Sie, bis sich der Status von **MyGateway** auf dem Blatt **Verknüpfte Dienste** in **GUT** ändert. Sie können auch das Tool **Datenverwaltungsgateway-Konfigurations-Manager (Vorschau)** starten, um zu sich zu vergewissern, dass der Name des Gateways mit dem Namen im Portal übereinstimmt und dass der **Status** **Registriert** lautet. Sie müssen möglicherweise das Fenster "Verknüpfte Dienste" schließen und erneut öffnen, um den aktuellen Status anzuzeigen. Es kann ein paar Minuten dauern, bis der Bildschirm mit dem aktuellen Status aktualisiert wird.
 
-## <a name="OnPremStep2"></a> Schritt 2: Erstellen eines verknüpften Diensts für den lokalen SQL Server
+## Erstellen eines mit SQL Server verknüpften Diensts
 
 In diesem Schritt erstellen Sie zuerst die erforderliche Datenbank und Tabelle auf dem lokalen SQL Server-Computer und dann den verknüpften Dienst.
 
@@ -107,11 +107,14 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 		2.	Entfernen Sie die letzten beiden Zeilen. (Die JSON-Eigenschaften **username** und **password** sind nur erforderlich, wenn Sie die Windows-Authentifizierung verwenden.) 
 		3.	Entfernen Sie **, (Komma)** am Ende der Zeile **gatewayName**.
 
-		**Bei Verwendung der Windows-Authentifizierung:** 1. Legen Sie in **connectionString** den Wert für **Integrierte Sicherheit** auf **True** fest. Entfernen Sie "**User ID=<username>;Password=<password>;**" aus "connectionString". 2. Geben Sie für die Eigenschaft **username** den Namen des Benutzers an, der auf die Datenbank zugreifen kann. 3. Geben Sie **password** für das Benutzerkonto an.   
+		**Bei Verwendung der Windows-Authentifizierung:**
+		1. Legen Sie in **connectionString** den Wert für **Integrierte Sicherheit** auf **True** fest. Entfernen Sie "**User ID=<username>;Password=<password>;**" aus "connectionString". 
+		2. Geben Sie für die Eigenschaft **username** den Namen des Benutzers an, der auf die Datenbank zugreifen kann. 
+		3. Geben Sie **password** für das Benutzerkonto an.   
 	4. Geben Sie den Namen des Gateways (**MyGateway**) für die gatewayName-Eigenschaft an. 		  	 
 3.	Klicken Sie in der Symbolleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen. 
 
-## <a name="OnPremStep3"></a> Schritt 3: Erstellen der Tabelle und der Pipeline
+## Erstellen eines Datasets und einer Pipeline
 
 ### Erstellen der lokalen logischen Tabelle
 
@@ -134,9 +137,9 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
  
 3. Klicken Sie in der Symbolleiste auf **Bereitstellen**, um die Pipeline bereitzustellen. Vergewissern Sie sich, dass die Nachricht **PIPELINE ERFOLGREICH ERSTELLT** in der Titelleiste des Editors angezeigt wird.
 	
-## <a name="OnPremStep4"></a> Schritt 4: Überwachen der Pipeline und Anzeigen des Ergebnisses
+## Überwachen der Pipeline
 
-Jetzt können Sie dieselben Schritte verwenden, die im Abschnitt **Überwachen von Pipelines und Datenslices** im [Hauptlernprogramm][datafactorytutorial] aufgeführt sind, um die neue Pipeline und die Datenslices für die neue lokale ADF-Tabelle zu überwachen.
+Jetzt können Sie dieselben Schritte verwenden, die im Abschnitt **Überwachen von Pipelines** im [Haupttutorial](data-factory-tutorial.md#monitor-pipelines) aufgeführt sind, um die neue Pipeline und die Datenslices für die neue lokale ADF-Tabelle zu überwachen.
  
 Wenn Sie sehen, dass sich der Status eines Slice der Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** in "Bereit" ändert, bedeutet das, dass die Pipeline die Ausführung für den Slice abgeschlossen hat. Um die Ergebnisse anzuzeigen, fragen Sie die Tabelle **MarketingCampaignEffectiveness** in der **MarketingCampaigns**-Datenbank in Ihrem SQL Server ab.
  
@@ -148,7 +151,6 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 [troubleshoot]: data-factory-troubleshoot.md
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
 
-[datafactorytutorial]: data-factory-tutorial.md
 [adfgetstarted]: data-factory-get-started.md
 [adfintroduction]: data-factory-introduction.md
 [useonpremisesdatasources]: data-factory-move-data-between-onprem-and-cloud.md
@@ -169,4 +171,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

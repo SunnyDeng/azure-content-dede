@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="11/24/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma"/>
 
 # Verwalten von DNS-Zonen mithilfe der PowerShell
 
 > [AZURE.SELECTOR]
-- [Azure CLI](dns-operations-dnszones-cli.md)
+- [Azure-Befehlszeilenschnittstelle](dns-operations-dnszones-cli.md)
 - [PowerShell](dns-operations-dnszones.md)
 
 
@@ -44,7 +44,7 @@ Um eine DNS-Zone abzurufen, verwenden Sie das Cmdlet „Get-AzureRmDnsZone“:
 
 		PS C:\> $zone = Get-AzureRmDnsZone -Name contoso.com –ResourceGroupName MyAzureResourceGroup
 
-Der Vorgang gibt ein DNS-Zonenobjekt zurück, das einer vorhandenen Zone in Azure DNS entspricht. Dieses Objekt enthält Daten über die Zone (z. B. die Anzahl der Datensatzgruppen), jedoch nicht die Datensatzgruppen selbst.
+Der Vorgang gibt ein DNS-Zonenobjekt zurück, das einer vorhandenen Zone in Azure DNS entspricht. Dieses Objekt enthält Daten über die Zone (z. B. die Anzahl der Datensatzgruppen), jedoch nicht die Datensatzgruppen selbst.
 
 ## Auflisten von DNS-Zonen
 
@@ -60,13 +60,13 @@ Dieser Vorgang gibt ein Array von Zonenobjekten zurück.
 
 Verwenden Sie eine der folgenden zwei Möglichkeiten, um die DNS-Zone zu aktualisieren:
 
-### Option 1
+### Option 1
  
 Geben Sie die Zone mithilfe des Zonennamens und der Ressourcengruppe an.
 
 	PS C:\> Set-AzureRmDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup [-Tag $tags]
 
-### Option 2
+### Option 2
 Geben Sie die Zone mithilfe eines $zone-Objekts von „Get-AzureRmDnsZone“ an:
 
 	PS C:\> $zone = Get-AzureRmDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup
@@ -83,7 +83,7 @@ Vor dem Löschen einer DNS-Zone in Azure DNS müssen Sie alle Datensatzgruppen l
 
 Verwenden Sie eine der folgenden zwei Möglichkeiten, um die DNS-Zone zu löschen:
 
-### Option 1
+### Option 1
 
 Geben Sie die Zone mithilfe des Zonennamens und des Ressourcengruppennamens an.
 
@@ -91,14 +91,14 @@ Geben Sie die Zone mithilfe des Zonennamens und des Ressourcengruppennamens an.
 
 Dieser Vorgang hat einen optionalen Switch "-Force", der die Eingabeaufforderung zur Bestätigung des Löschvorgangs der DNS-Zone unterdrückt.
 
-### Option 2
+### Option 2
 
 Geben Sie die Zone mithilfe eines $zone-Objekts von „Get-AzureRmDnsZone“ an:
 
 	PS C:\> $zone = Get-AzureRmDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup
 	PS C:\> Remove-AzureRmDnsZone -Zone $zone [-Force] [-Overwrite]
 
-Der Switch "-Force" ist derselbe wie in Option 1.
+Der Switch "-Force" ist derselbe wie in Option 1.
 
 Wie bei „Set-AzureRmDnsZone“ ermöglicht die Angabe der Zone mithilfe eines $zone-Objekts die Etag-Überprüfung, um sicherzustellen, dass gleichzeitige Änderungen nicht gelöscht werden. <BR> Das optionale Flag "-Overwrite" unterdrückt diese Überprüfungen. Weitere Informationen finden Sie unter [Etags und Tags](dns-getstarted-create-dnszone.md#Etags-and-tags).
 
@@ -113,4 +113,4 @@ Das Zonenobjekt kann auch weitergeleitet werden, anstatt als Parameter übergebe
 
 [Automatisieren von Vorgängen mit dem .NET SDK](dns-sdk.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0323_2016-->

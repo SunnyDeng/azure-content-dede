@@ -33,7 +33,7 @@ Azure bietet verschiedene Hostingmodelle für die Ausführung von Anwendungen. J
 [Erstellen einer Clouddienst-App in .NET](cloud-services-dotnet-get-started.md)<br/> [Erstellen einer Clouddienst-App in Node.js](cloud-services-nodejs-develop-deploy-app.md)<br/> [Erstellen einer Clouddienst-App in PHP](../cloud-services-php-create-web-role.md)<br/> [Erstellen einer Clouddienst-App in Python](../cloud-services-python-ptvs.md)<br/>
 
 [App Service]: ../app-service-web/app-service-web-overview.md
-[Virtual Machines]: ../virtual-machines/virtual-machines-about.md
+[Virtual Machines]: ../virtual-machines/virtual-machines-linux-about.md
 [Cloud Services]: #tellmecs
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

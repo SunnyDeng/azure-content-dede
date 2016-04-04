@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/02/2016"
+   ms.date="03/21/2016"
    ms.author="sngun; v-reagie"/>
 
 # Tipps zur Problembehandlung für häufige Fehler in Azure Automation
@@ -105,7 +105,7 @@ In diesem Artikel werden einige häufige Fehler beschrieben, die bei der Arbeit 
 
 **Tipps zur Problembehandlung:** Sie können dieses Problem wie folgt beheben:
 
-- Überprüfen Sie, ob Sie den Cmdlet-Namen richtig eingegeben haben und ob der Pfad zum Cmdlet korrekt ist.  
+- Überprüfen Sie, ob Sie den Cmdlet-Namen richtig eingegeben haben.  
 
 - Stellen Sie sicher, dass das Cmdlet unter Ihrem Automation-Konto vorhanden ist und dass keine Konflikte bestehen. Überprüfen Sie wie folgt, ob das Cmdlet vorhanden ist: Öffnen Sie ein Runbook im Bearbeitungsmodus, und suchen Sie in der Bibliothek nach dem gewünschten Cmdlet, oder führen Sie **Get-Command ``<CommandName>``** aus. Nachdem Sie überprüft haben, dass das Cmdlet für das Konto verfügbar ist und dass keine Namenskonflikte mit anderen Cmdlets oder Runbooks bestehen, sollten Sie es der Canvas hinzufügen und sicherstellen, dass Sie in Ihrem Runbook einen gültigen Parametersatz verwenden.
 
@@ -206,4 +206,4 @@ Sie haben folgende Möglichkeiten, wenn Sie die oben genannten Schritte zur Prob
 
 - Veröffentlichen Sie Feedback oder Vorschläge zu Features für Azure Automation unter [User Voice](https://feedback.azure.com/forums/34192--general-feedback) (Aussagen von Benutzern).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->
