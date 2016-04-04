@@ -16,7 +16,7 @@
 	ms.date="03/18/2016"
 	ms.author="micurd"/>
 
-# Windows Azure-Speicher-Explorer
+# Microsoft Azure-Speicher-Explorer
 
 Benutzer von Azure Storage möchten häufig dazu in der Lage sein, ihre Daten in einem „Explorer“ anzuzeigen. Hierbei handelt es sich um ein Tool, mit dem die Daten in einem Speicherkonto angezeigt werden.
 
