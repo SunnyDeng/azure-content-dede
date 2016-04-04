@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/10/2015"
+   ms.date="03/22/2016"
    ms.author="yurid"/>
 
 #Best Practices für Softwareupdates in Microsoft Azure IaaS
@@ -63,7 +63,7 @@ Baselines bilden die Grundlage zum Ermitteln und Beheben potenzieller Probleme u
 
 Nachdem Sie eine anfängliche Überprüfung Ihres Unternehmens durchgeführt haben, sollten Sie die hierbei gewonnenen Informationen zum Definieren einer operativen Baseline für die IT-Komponenten innerhalb Ihrer Produktionsumgebung verwenden. Es können verschiedene Baselines erforderlich sein, je nach verwendeten Hardwaretypen und der Software, die in der Produktion bereitgestellt wird.
 
-Beispielsweise ist für Windows Server 2012-Server ein Softwareupdate erforderlich, um ein Aufhängen beim Herunterfahren des Servers zu verhindern. Eine Baseline für diese Server sollte dieses Softwareupdate umfassen.
+Beispielsweise ist für Windows Server 2012-Server ein Softwareupdate erforderlich, um ein Aufhängen beim Herunterfahren des Servers zu verhindern. Eine Baseline für diese Server sollte dieses Softwareupdate umfassen.
 
 In großen Organisationen ist es häufig sinnvoll, die Computer in Assetkategorien zu unterteilen und für jede Kategorie eine Standardbaseline einzuhalten, indem die selben Versionen von Software und Softwareupdates verwendet werden. Sie können diese Assetkategorien anschließend bei der Priorisierung einer Softwareupdateverteilung nutzen.
 
@@ -99,7 +99,7 @@ Für Azure IaaS stehen folgende Sicherungsoptionen zur Verfügung:
 
 -   [Azure IaaS workload protection using Data Protection Manager (in englischer Sprache)](https://azure.microsoft.com/blog/2014/09/08/azure-iaas-workload-protection-using-data-protection-manager/)
 
--   [Sichern von virtuellen Azure-Computern](../backup/backup-azure-vms.md)
+-   [Sichern von virtuellen Azure-Computern](./backup/backup-azure-vms.md)
 
 ### Überwachung
 
@@ -119,4 +119,4 @@ Zusätzlich zu den allgemeinen Überlegungen, die in diesem Artikel vorgestellt 
 
 Verwenden Sie die in diesem Artikel beschriebenen Richtlinien, um die optimalen Optionen für Softwareupdates für virtuelle Computer in Azure IaaS zu ermitteln. Es gibt viele Ähnlichkeiten zwischen den Best Practices für Softwareupdates in einem traditionellen Datencenter und in Azure IaaS. Deshalb wird empfohlen, dass Sie Azure-VMs in Ihre aktuellen Richtlinien für Softwareupdates einbeziehen und die relevanten Best Practices aus diesem Artikel in Ihren allgemeinen Softwareupdateprozess einbinden.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

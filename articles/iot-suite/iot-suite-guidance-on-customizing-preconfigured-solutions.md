@@ -81,12 +81,14 @@ Darüber hinaus stellt Azure IoT ein [C-SDK-Beispiel](https://github.com/Azure/a
 
 Die [Azure IoT-SDKs](https://github.com/Azure/azure-iot-sdks) bieten Bibliotheken zum Verbinden zahlreicher Gerätetypen (Sprachen und Betriebssysteme) mit IoT-Lösungen.
 
-## Nächste Schritte
+## Feedback
 
-Haben Sie Anpassungsvorschläge für dieses Dokument? Fügen Sie Vorschläge für neue Funktionen im [Benutzerforum](https://feedback.azure.com/forums/321918-azure-iot) hinzu, kommentieren Sie diesen Artikel weiter unten, oder senden Sie uns eine E-Mail an iotsolhelp@microsoft.com.
+Haben Sie Anpassungsvorschläge für dieses Dokument? Fügen Sie Vorschläge für neue Funktionen im [Benutzerforum](https://feedback.azure.com/forums/321918-azure-iot) hinzu, oder kommentieren Sie diesen Artikel weiter unten.
+
+## Nächste Schritte
 
 Weitere Informationen zu IoT-Geräten finden Sie auf der [Azure IoT-Entwicklerwebsite](https://azure.microsoft.com/develop/iot/), die entsprechende Links und Dokumente enthält.
 
 [IoT-Geräte-SDK]: https://azure.microsoft.com/documentation/articles/iot-hub-sdks-summary/
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

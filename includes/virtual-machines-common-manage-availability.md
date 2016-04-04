@@ -1,50 +1,52 @@
-## Understand planned vs. unplanned maintenance
-There are two types of Microsoft Azure platform events that can affect the availability of your virtual machines: planned maintenance and unplanned maintenance.
+## Verstehen geplanter und nicht geplanter Wartung
+Es gibt zwei Arten von Microsoft Azure Platform-Ereignissen, die sich auf die Verfügbarkeit von virtuellen Computern auswirken können: geplante und ungeplante Wartung.
 
-- **Planned maintenance events** are periodic updates made by Microsoft to the underlying Azure platform to improve overall reliability, performance, and security of the platform infrastructure that your virtual machines run on. The majority of these updates are performed without any impact upon your virtual machines or cloud services. However, there are instances where these updates require a reboot of your virtual machine to apply the required updates to the platform infrastructure.
+- **Geplante Wartungsereignisse** sind regelmäßige Updates, die von Microsoft für die zugrunde liegende Azure-Plattform ausgeführt werden können, um die gesamte Verfügbarkeit, Leistung und Sicherheit der Plattforminfrastruktur, unter der die virtuellen Computer ausgeführt werden, zu verbessern. Die Mehrheit dieser Updates wird ohne Auswirkungen auf die virtuellen Computer oder Cloud-Dienste ausgeführt. Es gibt jedoch Instanzen, bei denen diese Updates einen Neustart des virtuellen Computers erfordern, um die erforderlichen Updates auf die Plattforminfrastruktur anzuwenden.
 
-- **Unplanned maintenance events** occur when the hardware or physical infrastructure underlying your virtual machine has faulted in some way. This may include local network failures, local disk failures, or other rack level failures. When such a failure is detected, the Azure platform will automatically migrate your virtual machine from the unhealthy physical machine hosting your virtual machine to a healthy physical machine. Such events are rare, but may also cause your virtual machine to reboot.
+- **Ungeplante Wartungsereignisse** treten auf, wenn die Hardware oder physische Infrastruktur, die dem virtuellen Computer zugrunde liegt, einen Ausfall verursacht. Diese können Ausfälle des lokalen Netzwerks, Datenträgers oder andere Fehler auf Rackebene umfassen. Wenn ein solcher Fehler festgestellt wird, migriert die Azure-Plattform Ihren virtuellen Computer automatisch vom fehlerhaften physischen Computer, der den virtuellen Computer hostet, zu einem fehlerfreien physischen Computer. Diese Ereignisse treten selten auf, verursachen jedoch u. U. den Neustart des virtuellen Computers.
 
-## Follow best practices when you design your application for high availability
-To reduce the impact of downtime due to one or more of these events, we recommend the following high availability best practices for your virtual machines:
+## Bewährte Methoden für die Entwicklung hoch verfügbarer Anwendungen
+Um die Downtime aufgrund eines oder mehrerer dieser Ereignisse zu verringern, sollten Sie die folgenden bewährten Methoden befolgen, um die hohe Verfügbarkeit virtueller Computer zu gewährleisten:
 
-* [Configure multiple virtual machines in an Availability Set for redundancy]
-* [Configure each application tier into separate Availability Sets]
-* [Combine the Load Balancer with Availability Sets]
-* [Avoid single instance virtual machines in Availability Sets]
+* [Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz]
+* [Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen]
+* [Kombinieren des Lastenausgleichs mit Verfügbarkeitsgruppen]
+* [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]
 
-### Configure multiple virtual machines in an Availability Set for redundancy
-To provide redundancy to your application, we recommend that you group two or more virtual machines in an Availability Set. This configuration ensures that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA. For more information about service level agreements, see the “Cloud Services, virtual machines, and Virtual Network” section in [Service Level Agreements](https://azure.microsoft.com/support/legal/sla/).
+### Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz
+Um Redundanz für Ihre Anwendung zu gewährleisten, empfehlen wir die Gruppierung von zwei oder mehreren virtuellen Computern in einer Verfügbarkeitsgruppe. Durch diese Konfiguration wird sichergestellt, dass während eines geplanten oder ungeplanten Wartungsereignisses mindestens ein virtueller Computer verfügbar ist und die von der Azure-SLA zugesicherte Verfügbarkeit von 99,95 % eingehalten wird. Weitere Informationen zu Vereinbarungen zum Servicelevel finden Sie im Abschnitt „Clouddienste, virtuelle Computer und das virtuelle Netzwerk“ unter [Vereinbarungen zum Servicelevel (SLAs)](https://azure.microsoft.com/support/legal/sla/).
 
-Each virtual machine in your Availability Set is assigned an Update Domain (UD) and a Fault Domain (FD) by the underlying Azure platform. For a given Availability Set, five non-user-configurable UDs are assigned to indicate groups of virtual machines and underlying physical hardware that can be rebooted at the same time. When more than five virtual machines are configured within a single Availability Set, the sixth virtual machine will be placed into the same UD as the first virtual machine, the seventh in the same UD as the second virtual machine, and so on. The order of UDs being rebooted may not proceed sequentially during planned maintenance, but only one UD will be rebooted at a time.
+Jeder virtuelle Computer im Verfügbarkeitssatz wird einer Aktualisierungs- (Update Domain, UD) und Ausfalldomäne (Fault Domain, FD) der zugrunde liegenden Azure-Plattform zugewiesen. Einer bestimmten Verfügbarkeitsgruppe werden dabei fünf nicht vom Benutzer konfigurierbare Aktualisierungsdomänen zugeordnet, um Gruppen virtueller Computer und die zugehörige physische Hardware zu kennzeichnen, die gleichzeitig neu gestartet werden kann. Wenn innerhalb einer Verfügbarkeitsgruppe mehr als fünf virtuelle Computer konfiguriert sind, wird der sechste virtuelle Computer in derselben Aktualisierungsdomäne gespeichert wie der erste virtuelle Computer, der siebte in derselben Aktualisierungsdomäne wie der zweite virtuelle Computer usw. Während einer geplanten Wartung werden die Aktualisierungsdomänen möglicherweise nicht sequenziell neu gestartet. Es wird aber jeweils nur eine Aktualisierungsdomäne neu gestartet.
 
-FDs define the group of virtual machines that share a common power source and network switch. By default, the virtual machines configured within your Availability Set are separated across two FDs. While placing your virtual machines into an Availability Set does not protect your application from operating system or application-specific failures, it does limit the impact of potential physical hardware failures, network outages, or power interruptions.
-
-<!--Image reference-->
-   ![UD FD configuration](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)
-
->[AZURE.NOTE] For instructions, see [How to Configure an Availability Set for virtual machines] [].
-
-### Configure each application tier into separate Availability Sets
-If the virtual machines in your Availability Set are all nearly identical and serve the same purpose for your application, we recommend that you configure an Availability Set for each tier of your application.  If you place two different tiers in the same Availability Set, all virtual machines in the same application tier can be rebooted at once. By configuring at least two virtual machines in an Availability Set for each tier, you guarantee that at least one virtual machine in each tier will be available.
-
-For example, you could put all the virtual machines in the front-end of your application running IIS, Apache, Nginx, etc., in a single Availability Set. Make sure that only front-end virtual machines are placed in the same Availability Set. Similarly, make sure that only data-tier virtual machines are placed in their own Availability Set, like your replicated SQL Server virtual machines or your MySQL virtual machines.
+Durch Fehlerdomänen wird die Gruppe der virtuellen Computer definiert, die eine Stromquelle und einen Netzwerkswitch gemeinsam nutzen. Die innerhalb der Verfügbarkeitsgruppe konfigurierten virtuellen Computer werden standardmäßig auf zwei separate Fehlerdomänen verteilt. Auch wenn Verfügbarkeitsgruppen Ihre Anwendung nicht gänzlich vor Fehlern des Betriebssystems oder der Anwendung selbst schützen können, verringern sie doch die Auswirkungen potenzieller physischer Hardwarefehler, Netzwerkausfälle oder Stromunterbrechungen.
 
 <!--Image reference-->
-   ![Application tiers](./media/virtual-machines-common-manage-availability/application-tiers.png)
+   ![Konfigurieren von Aktualisierungs-/Fehlerdomänen](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)
+
+>[AZURE.NOTE] Anweisungen finden Sie unter [Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer][].
+
+### Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen
+Wenn die virtuellen Computer in der Verfügbarkeitsgruppe alle fast identisch sind und die Anwendung auf die gleiche Weise unterstützen, wird empfohlen, für jede einzelne Anwendungsebene eine Verfügbarkeitsgruppe zu konfigurieren. Wenn Sie eine Verfügbarkeitsgruppe mit zwei verschiedenen Ebenen anlegen, können alle virtuellen Computer derselben Anwendungsebene zur gleichen Zeit neu gestartet werden. Indem Sie mindestens zwei virtuelle Computer in einer Verfügbarkeitsgruppe für jede Ebene konfigurieren, gewährleisten Sie, dass mindestens ein virtueller Computer pro Ebene verfügbar ist.
+
+Beispielsweise können Sie alle VMs aus dem Front-End der Anwendung, auf denen IIS, Apache, Nginx usw. ausgeführt wird, einer einzelnen Verfügbarkeitsgruppe zuordnen. Stellen Sie sicher, dass derselben Verfügbarkeitsgruppe nur virtuelle Front-End-Computer zugeordnet werden. Stellen Sie analog dazu sicher, dass virtuelle Computer der Datenebene ihre eigene Verfügbarkeitsgruppe haben. Dazu gehören beispielsweise virtuelle SQL Server-Computer oder virtuelle MySQL-Computer.
+
+<!--Image reference-->
+   ![Anwendungsebenen](./media/virtual-machines-common-manage-availability/application-tiers.png)
 
 
-### Combine the Load Balancer with Availability Sets
-Combine the Azure Load Balancer with an Availability Set to get the most application resiliency. The Azure Load Balancer distributes traffic between multiple virtual machines. For our Standard tier virtual machines, the Azure Load Balancer is included. Note that not all virtual machine tiers include the Azure Load Balancer. For more information about load balancing your virtual machines, read [Load Balancing virtual machines](virtual-machines-linux-load-balance.md).
+### Kombinieren des Lastenausgleichs mit Verfügbarkeitsgruppen
+Kombinieren Sie den Azure-Lastenausgleich mit einer Verfügbarkeitsgruppe, um höchste Anwendungsresilienz zu erzielen. Der Azure-Lastenausgleich verteilt den Datenverkehr auf mehrere virtuelle Computer. In die virtuellen Computer der Standardebene ist der Azure-Lastenausgleich bereits integriert. Der Azure-Load Balancer ist jedoch nicht auf allen Ebenen des virtuellen Computers verfügbar. Weitere Informationen zum Lastenausgleich zwischen virtuellen Computern finden Sie unter [Lastenausgleich zwischen virtuellen Computern](virtual-machines-linux-load-balance.md).
 
-If the load balancer is not configured to balance traffic across multiple virtual machines, then any planned maintenance event will affect the only traffic-serving virtual machine, causing an outage to your application tier. Placing multiple virtual machines of the same tier under the same load balancer and Availability Set enables traffic to be continuously served by at least one instance.
+Wenn der Lastenausgleich nicht für die gleichmäßige Verteilung des Datenverkehrs auf mehrere virtuelle Computer konfiguriert ist, wirkt sich ein geplantes Wartungsereignis schließlich auf den einzigen virtuellen Computer, der den Datenverkehr aufrecht erhält, aus und führt zu einem Ausfall der Anwendungsebene. Werden dagegen mehrere virtuelle Computer derselben Ebene demselben Lastenausgleich und derselben Verfügbarkeitsgruppe zugeordnet, wird der Datenverkehr kontinuierlich von mindestens einer Instanz aufrechterhalten.
 
-### Avoid single instance virtual machines in Availability Sets
-Avoid leaving a single instance virtual machine in an Availability Set by itself. Virtual machines in this configuration do not qualify for a SLA guarantee and will face downtime during Azure planned maintenance events. Please note, single virtual machine instance within an Availability Set, will also receive advanced email notification in multi-instance virtual machines planned maintenance notification. 
+### Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen
+Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine einer Verfügbarkeitsgruppe zuzuordnen. Virtuelle Computer in dieser Konfiguration erfüllen nicht die zugesicherte SLA und sind während geplanter Azure-Wartungsereignisse nicht verfügbar. Beachten Sie, dass einzelne virtuelle Computerinstanzen innerhalb einer Verfügbarkeitsgruppe auch eine erweiterte E-Mail-Benachrichtigung im Rahmen der Benachrichtigung zur geplanten Wartung virtueller Computer mit mehreren Instanzen erhalten.
 
 <!-- Link references -->
-[Configure multiple virtual machines in an Availability Set for redundancy]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
-[Configure each application tier into separate Availability Sets]: #configure-each-application-tier-into-separate-availability-sets
-[Combine the Load Balancer with Availability Sets]: #combine-the-load-balancer-with-availability-sets
-[Avoid single instance virtual machines in Availability Sets]: #avoid-single-instance-virtual-machines-in-availability-sets
-[How to Configure An Availability Set for virtual machines]: virtual-machines-windows-classic-configure-availability.md
+[Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
+[Konfigurieren einzelner Anwendungsebenen in separaten Verfügbarkeitsgruppen]: #configure-each-application-tier-into-separate-availability-sets
+[Kombinieren des Lastenausgleichs mit Verfügbarkeitsgruppen]: #combine-the-load-balancer-with-availability-sets
+[Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]: #avoid-single-instance-virtual-machines-in-availability-sets
+[Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer]: virtual-machines-windows-classic-configure-availability.md
+
+<!---HONumber=AcomDC_0323_2016-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/08/2016"
+   ms.date="03/18/2016"
    ms.author="larryfr"/>
 
 # Verwenden von MapReduce mit Hadoop in HDInsight über SSH
@@ -23,7 +23,7 @@
 
 In diesem Artikel erfahren Sie, wie Sie mit Secure Shell (SSH) eine Verbindung mit einem Hadoop-Cluster in HDInsight herstellen und dann MapReduce-Aufträge mithilfe von Hadoop-Befehlen übermitteln.
 
-> [AZURE.NOTE]Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, Ihnen HDInsight jedoch neu ist, finden Sie weitere Informationen unter [Tipps zu Linux-basiertem HDInsight](hdinsight-hadoop-linux-information.md).
+> [AZURE.NOTE] Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, Ihnen HDInsight jedoch neu ist, finden Sie weitere Informationen unter [Tipps zu Linux-basiertem HDInsight](hdinsight-hadoop-linux-information.md).
 
 ##<a id="prereq"></a>Voraussetzungen
 
@@ -31,11 +31,11 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 * Einen Linux-basierten HDInsight-Cluster (Hadoop in HDInsight)
 
-* Einen SSH-Client Die Betriebssysteme Linux, Unix und Mac sollten über einen SSH-Client verfügen. Windows-Benutzer müssen einen Client herunterladen, z. B [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+* Einen SSH-Client Die Betriebssysteme Linux, Unix und Mac sollten über einen SSH-Client verfügen. Windows-Benutzer müssen einen Client herunterladen, z. B [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
 ##<a id="ssh"></a>Verbinden mit SSH
 
-Stellen Sie mithilfe des SSH-Befehls eine Verbindung zum vollqualifizierten Domänennamen (FQDN) des HDInsight-Clusters her. Der FQDN entspricht dem Namen, den Sie dem Cluster zugewiesen haben, gefolgt von **.azurehdinsight.net**. Mithilfe des Folgenden wird z. B. eine Verbindung zu einem Cluster namens **myhdinsight** hergestellt:
+Stellen Sie mithilfe des SSH-Befehls eine Verbindung zum vollqualifizierten Domänennamen (FQDN) des HDInsight-Clusters her. Der FQDN entspricht dem Namen, den Sie dem Cluster zugewiesen haben, gefolgt von **.azurehdinsight.net**. Mithilfe des Folgenden wird z. B. eine Verbindung zu einem Cluster namens **myhdinsight** hergestellt:
 
 	ssh admin@myhdinsight-ssh.azurehdinsight.net
 
@@ -61,7 +61,7 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SS
 
 	Dadurch wird die Klasse **wordcount** gestartet, die in der Datei **hadoop-mapreduce-examples.jar** enthalten ist. Als Eingabe wird das Dokument ****wasb://example/data/gutenberg/davinci.txt** verwendet, und die Ausgabe wird unter ****wasb:///example/data/WordCountOutput** gespeichert.
 
-	> [AZURE.NOTE]Weitere Informationen über diesen MapReduce-Auftrag und die Beispieldaten finden Sie unter [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md).
+	> [AZURE.NOTE] Weitere Informationen über diesen MapReduce-Auftrag und die Beispieldaten finden Sie unter [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md).
 
 2. Der Auftrag gibt während der Verarbeitung Details aus und gibt ähnliche Informationen wie die folgenden zurück, wenn der Auftrag abgeschlossen ist:
 
@@ -76,7 +76,7 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SS
 
 	Daraufhin sollten zwei Dateien angezeigt werden: **\_SUCCESS** und **part-r-00000**. Die Datei **part-r-00000** enthält die Ausgabe für diesen Auftrag.
 
-	> [AZURE.NOTE]Einige MapReduce-Aufträge teilen die Ergebnisse möglicherweise auf mehrere **part-r-#####**-Dateien auf. Verwenden Sie in diesem Fall das Suffix "#####", um die Reihenfolge der Dateien anzugeben.
+	> [AZURE.NOTE] Einige MapReduce-Aufträge teilen die Ergebnisse möglicherweise auf mehrere **part-r-#####**-Dateien auf. Verwenden Sie in diesem Fall das Suffix "#####", um die Reihenfolge der Dateien anzugeben.
 
 4. Verwenden Sie den folgenden Befehl, um die Ausgabe anzuzeigen:
 
@@ -108,4 +108,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -293,4 +293,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 	In Azure können Sie Webanwendungen in App Service-Web-Apps (wie in diesem Lernprogramm gezeigt), in Cloud Services oder in Virtual Machines ausführen. Weitere Informationen finden Sie unter [Azure Web-Apps, Cloud Services und Virtual Machines im Vergleich](/manage/services/web-sites/choose-web-app-service/).
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->

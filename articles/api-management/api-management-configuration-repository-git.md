@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/14/2016" 
+	ms.date="03/21/2016" 
 	ms.author="sdanie"/>
 
 
@@ -117,7 +117,7 @@ Verwenden Sie das verschlüsselte Kennwort zusammen mit Ihrem Benutzernamen und 
 
 	git clone https://username:url encoded password@bugbashdev4.scm.azure-api.net/
 
-Sobald das Repository geklont wurde, können Sie es anzeigen und in Ihrem lokalen Dateisystem verwenden. Weitere Informationen finden Sie unter [Referenz der Datei- und Ordnerstruktur des lokalen Git-Repositorys](#file-and-folder-structure-overview-of-local-git-repository).
+Sobald das Repository geklont wurde, können Sie es anzeigen und in Ihrem lokalen Dateisystem verwenden. Weitere Informationen finden Sie unter [Referenz der Datei- und Ordnerstruktur des lokalen Git-Repositorys](#file-and-folder-structure-reference-of-local-git-repository).
 
 ## So aktualisieren Sie Ihr lokales Repository mit der aktuellen Dienstinstanzkonfiguration
 
@@ -279,6 +279,9 @@ Informationen zu anderen Möglichkeiten für die Verwaltung Ihrer Dienstinstanz 
 -	Verwalten der Dienstinstanz mit der REST-API
 	-	[REST-API-Referenz zu API Management](https://msdn.microsoft.com/library/azure/dn776326.aspx)
 
+## Überblicksvideo ansehen
+
+> [AZURE.VIDEO configuration-over-git]
 
 [api-management-enable-git]: ./media/api-management-configuration-repository-git/api-management-enable-git.png
 [api-management-git-enabled]: ./media/api-management-configuration-repository-git/api-management-git-enabled.png
@@ -294,4 +297,4 @@ Informationen zu anderen Möglichkeiten für die Verwaltung Ihrer Dienstinstanz 
 [api-management-delegation-settings]: ./media/api-management-configuration-repository-git/api-management-delegation-settings.png
 [api-management-git-icon-enable]: ./media/api-management-configuration-repository-git/api-management-git-icon-enable.png
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

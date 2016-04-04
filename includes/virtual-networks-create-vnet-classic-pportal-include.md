@@ -11,7 +11,7 @@ Führen Sie zum Erstellen eines klassischen VNet basierend auf dem oben beschrie
 
 	![Blatt "Adressraum"](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure2.png)
 
-4. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine Ressourcengruppe aus, zu der Sie das VNet hinzufügen möchten, oder klicken Sie auf **Neue Ressourcengruppe erstellen**, um das VNet zu einer neuen Ressourcengruppe hinzuzufügen. Die folgende Abbildung zeigt die Ressourcengruppeneinstellungen für eine neue Ressourcengruppe mit dem Namen **TestRG**. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
+4. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine Ressourcengruppe aus, zu der Sie das VNet hinzufügen möchten, oder klicken Sie auf **Neue Ressourcengruppe erstellen**, um das VNet zu einer neuen Ressourcengruppe hinzuzufügen. Die folgende Abbildung zeigt die Ressourcengruppeneinstellungen für eine neue Ressourcengruppe mit dem Namen **TestRG**. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../articles/virtual-network/resource-group-overview.md/#resource-groups).
 
 	![Blatt "Ressourcengruppe erstellen"](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure3.png)
 
@@ -35,4 +35,4 @@ Führen Sie zum Erstellen eines klassischen VNet basierend auf dem oben beschrie
 
 	![Erstellen eines VNET im Azure-Portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure7.gif)
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0323_2016-->

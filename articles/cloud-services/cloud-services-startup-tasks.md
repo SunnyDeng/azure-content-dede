@@ -12,7 +12,7 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="12/07/2015" 
+ms.date="03/21/2016" 
 ms.author="adegeo"/>
 
 
@@ -21,7 +21,7 @@ ms.author="adegeo"/>
 
 Mit Startaufgaben können Sie Vorgänge ausführen, bevor eine Rolle gestartet wird. Zu den Vorgängen, die Sie vielleicht ausführen möchten, gehören das Installieren von Komponenten, das Registrieren von COM-Komponenten, das Festlegen von Registrierungsschlüsseln und das Starten eines lang andauernden Prozesses.
 
->[AZURE.NOTE]Startaufgaben gelten nicht für virtuelle Computer, sondern nur für Web- und Workerrollen von Clouddiensten.
+>[AZURE.NOTE] Startaufgaben gelten nicht für virtuelle Computer, sondern nur für Web- und Workerrollen von Clouddiensten.
 
 ## Funktionsweise von Startaufgaben
 
@@ -46,7 +46,7 @@ Im Folgenden werden die Schritte beim Starten einer Rolle in Azure aufgeführt:
     - Die mit **simple** gekennzeichneten Aufgaben werden synchron, nacheinander ausgeführt.
     - Die **background**- und **foreground**-Aufgaben werden asynchron, parallel zur Startaufgabe gestartet.  
        
-    > [AZURE.WARNING]IIS ist während der Startaufgabephase des Startprozesses möglicherweise nicht vollständig konfiguriert, sodass rollenspezifische Daten möglicherweise nicht verfügbar sind. Startaufgaben, die rollenspezifische Daten erfordern, sollten [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.OnStart](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) verwenden.
+    > [AZURE.WARNING] IIS ist während der Startaufgabephase des Startprozesses möglicherweise nicht vollständig konfiguriert, sodass rollenspezifische Daten möglicherweise nicht verfügbar sind. Startaufgaben, die rollenspezifische Daten erfordern, sollten [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.OnStart](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) verwenden.
 
 3. Der Rollenhostprozess wird gestartet, und die Website in IIS erstellt.
 
@@ -82,7 +82,7 @@ ECHO The current version is %MyVersionNumber% >> "%TEMP%\StartupLog.txt" 2>&1
 EXIT /B 0
 ```
 
-> [AZURE.NOTE]In Visual Studio sollte die Eigenschaft **In Ausgabeverzeichnis kopieren** für die Startbatchdatei auf **Immer kopieren** festgelegt werden, damit die Startbatchdatei ordnungsgemäß in Azure für das Projekt bereitgestellt wird (**approot\\bin** für Webrollen und **approot** für Workerrollen).
+> [AZURE.NOTE] In Visual Studio sollte die Eigenschaft **In Ausgabeverzeichnis kopieren** für die Startbatchdatei auf **Immer kopieren** festgelegt werden, damit die Startbatchdatei ordnungsgemäß in Azure für das Projekt bereitgestellt wird (**approot\\bin** für Webrollen und **approot** für Workerrollen).
 
 ## Beschreibung der Aufgabenattribute
 
@@ -101,13 +101,13 @@ Im Folgenden werden die Attribute des **Task**-Elements in der Datei [ServiceDef
 
 - **elevated** Die Startaufgabe wird mit Administratorrechten ausgeführt. Dadurch können Startaufgaben Programme installieren, IIS-Konfigurationsänderungen oder Registrierungsänderungen durchführen, ohne die Berechtigungsstufe der Rolle selbst zu erhöhen.
 
-> [AZURE.NOTE]Die Berechtigungsstufe einer Startaufgabe muss nicht mit derjenigen der Rolle selbst identisch sein.
+> [AZURE.NOTE] Die Berechtigungsstufe einer Startaufgabe muss nicht mit derjenigen der Rolle selbst identisch sein.
 
 **taskType** – Legt fest, wie eine Startaufgabe ausgeführt wird.
 
 - **simple** – Die Aufgaben werden synchron und nacheinander in der Reihenfolge ausgeführt, in der sie in der Datei [ServiceDefinition.csdef] aufgeführt werden. Wenn eine **simple**-Startaufgabe mit dem **errorlevel** Null (0) beendet wird, wird die nächste **simple**-Startaufgabe ausgeführt. Wenn keine weiteren **simple**-Startaufgaben ausgeführt werden sollen, wird die Rolle selbst gestartet.   
 
-    > [AZURE.NOTE]Wenn die **simple**-Aufgabe mit einem von Null abweichenden **errorlevel** beendet wird, wird die Instanz blockiert. Nachfolgende **simple**-Startaufgaben sowie die Rolle selbst werden nicht gestartet.
+    > [AZURE.NOTE] Wenn die **simple**-Aufgabe mit einem von Null abweichenden **errorlevel** beendet wird, wird die Instanz blockiert. Nachfolgende **simple**-Startaufgaben sowie die Rolle selbst werden nicht gestartet.
 
     Um sicherzustellen, dass die Batchdatei mit dem **errorlevel** Null (0) beendet wird, führen Sie den Befehl `EXIT /B 0` am Ende des Batchdateiprozesses aus.
 
@@ -123,7 +123,7 @@ Es gibt zwei Arten von Umgebungsvariablen für Startaufgaben: statische Umgebung
 
 Statische Umgebungsvariablen verwenden das **value** -Attribut des [Variable]-Elements. Im obigen Beispiel wird die Umgebungsvariable **MyVersionNumber** erstellt, die den statischen Wert "**1.0.0.0**" erhält. Ein weiteres Beispiel wäre das Erstellen einer **StagingOrProduction**-Umgebungsvariable, die Sie manuell auf die Werte "**staging**" oder "**production**" setzen können, um anhand des Werts der **StagingOrProduction**-Umgebungsvariablen verschiedene Startvorgänge auszuführen.
 
-Umgebungsvariablen, die auf Mitgliedern der RoleEnvironment-Klasse basieren, verwenden nicht das **value**-Attribut des [Variable]-Elements. Stattdessen wird das untergeordnete [RoleInstanceValue]-Element mit dem entsprechenden **xPath**-Attributwert verwendet, um eine Umgebungsvariable basierend auf einem bestimmten Mitglied der [RoleEnvironment]-Klasse zu erstellen. Werte für das **xPath**-Attribut zum Zugriff auf verschiedene [RoleEnvironment]-Werte finden Sie in [XPath-Werte in Azure](https://msdn.microsoft.com/library/azure/hh404006.aspx).
+Umgebungsvariablen, die auf Mitgliedern der RoleEnvironment-Klasse basieren, verwenden nicht das **value**-Attribut des [Variable]-Elements. Stattdessen wird das untergeordnete [RoleInstanceValue]-Element mit dem entsprechenden **xPath**-Attributwert verwendet, um eine Umgebungsvariable basierend auf einem bestimmten Mitglied der [RoleEnvironment]-Klasse zu erstellen. Werte für das **XPath**-Attribut zum Zugriff auf verschiedene [RoleEnvironment]-Werte finden Sie [hier](cloud-services-role-config-xpath.md).
 
 
 
@@ -163,4 +163,4 @@ Erfahren Sie, wie Sie einige [allgemeine Startaufgaben](cloud-services-startup-t
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Microsoft Azure-Ressourcen mithilfe des Azure Ressourcen-Manager-Modus verwalten."
-	services="virtual-machines,virtual-network,mobile-services,cloud-services"
+	pageTitle="Befehle der Azure-Befehlszeilenschnittstelle im Resource Manager-Modus | Microsoft Azure"
+	description="Befehle der Azure-Befehlszeilenschnittstelle (CLI) zum Verwalten von Ressourcen im Resource Manager-Bereitstellungsmodell"
+	services="virtual-machines-linux,virtual-machines-windows,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
@@ -14,43 +14,36 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/18/2015"
+	ms.date="03/07/2016"
 	ms.author="danlep"/>
 
-# Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
+# Azure-CLI-Befehle im Azure Resource Manager-Modus (ARM-Modus)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines/virtual-machines-command-line-tools.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](../virtual-machines-command-line-tools.md).
 
-In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können viele dieser Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs, mit Azure PowerShell und über das Azure-Portal ausführen.
+Dieser Artikel enthält Informationen zur Syntax und zu den Optionen für Befehle der Azure-Befehlszeilenschnittstelle (Azure CLI), die Sie für gewöhnlich zum Erstellen und Verwalten von Azure-Ressourcen im Azure Resource Manager-Bereitstellungsmodell verwenden. Sie können auf diese Befehle zugreifen, indem Sie die Befehlszeilenschnittstelle im ARM-Modus ausführen. Dies ist keine vollständige Referenz, und für Ihre CLI-Version gelten unter Umständen etwas andere Befehle oder Parameter.
 
-Azure-Ressourcen-Manager ermöglicht Ihnen, eine Gruppe von Ressourcen – virtuelle Computer, Websites, Datenbanken usw. – als einzelne bereitstellbare Einheit zu erstellen. Sie können dann alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. Für die Bereitstellung beschreiben Sie die Gruppenressourcen in einer JSON-Vorlage, die Sie dann für unterschiedliche Umgebungen, wie z. B. Test, Staging und Produktion, verwenden können.
+Zunächst müssen Sie die [Azure-Befehlszeilenschnittstelle installieren](xplat-cli-install.md) und [eine Verbindung mit Ihrem Azure-Abonnement herstellen](xplat-cli-connect.md) (entweder mit einem Geschäfts- oder Schulkonto oder mit einer Microsoft-Kontoidentität).
 
-## Inhalt dieses Artikels
+Geben Sie zum Anzeigen der aktuellen Befehlssyntax und Optionen in der Befehlszeile im Ressourcen-Manager-Modus `azure help` oder der Hilfe für einen bestimmten Befehl `azure help [command]` ein. In der Dokumentation finden Sie auch CLI-Beispiele zum Erstellen und Verwalten bestimmter Azure-Dienste.
 
-Dieser Artikel enthält die Syntax und Optionen für häufig verwendete Azure CLI-Befehle für das Ressourcen-Manager-Bereitstellungsmodell. Er bietet keine vollständige Referenz, und Ihre CLI-Version weist möglicherweise einige andere Befehle oder Parameter auf. Geben Sie zum Anzeigen der aktuellen Befehlssyntax und Optionen in der Befehlszeile im Ressourcen-Manager-Modus `azure help` oder der Hilfe für einen bestimmten Befehl `azure help [command]` ein. In der Dokumentation finden Sie auch CLI-Beispiele zum Erstellen und Verwalten bestimmter Azure-Dienste.
+Optionale Parameter sind in eckigen Klammern angegeben (Beispiel: `[parameter]`). Alle anderen Parameter müssen angegeben werden.
 
-Optionale Parameter werden in eckigen Klammern angezeigt (z. B. [Parameter]). Alle anderen Parameter müssen angegeben werden.
+Neben den hier dokumentierten befehlsspezifischen optionalen Parametern gibt es drei weitere optionale Parameter für die Anzeige detaillierter Ausgaben wie z. B. Anforderungsoptionen und Statuscodes. Der Parameter `-v` liefert eine ausführliche Ausgabe. Bei Verwendung des Parameters `-vv` fällt die Ausgabe sogar noch ausführlicher aus. Mit der Option `--json` erfolgt die Ausgabe im JSON-Rohformat.
 
-Neben den hier dokumentierten befehlsspezifischen optionalen Parametern gibt es drei weitere optionale Parameter für die Anzeige detaillierter Ausgaben wie z. B. Anforderungsoptionen und Statuscodes. Der Parameter -v bietet ausführliche Ausgaben, und der Parameter -vv bietet noch detailliertere ausführliche Ausgaben. Mit der Option --json erfolgt die Ausgabe im reinen JSON-Format. Die Nutzung mit dem "--json"-Switch ist sehr häufig und ein wichtiger Teil für das Abrufen und Verstehen von Ergebnissen von Azure-CLI-Vorgängen, die Ressourceninformationen, Status und Protokolle zurückgeben, und auch für das Verwenden von Vorlagen. Sie können JSON-Parser-Tools installieren, z. B. **jq** oder **jsawk** oder Ihre bevorzugte Sprachbibliothek verwenden.
+## Festlegen des Resource Manager-Modus
+
+Verwenden Sie den folgenden Befehl, um die Resource Manager-Befehle der Azure-Befehlszeilenschnittstelle zu aktivieren:
+
+	azure config mode arm
+
+>[AZURE.NOTE] Der Azure-Ressourcen-Manager-Modus und der Azure-Dienstverwaltungsmodus schließen sich gegenseitig aus. Das heißt, dass Ressourcen, die in einem Modus erstellt wurden, nicht im anderen Modus verwaltet werden können.
 
 ## Imperative und deklarative Ansätze
 
 Wie beim [Azure Service Management-Modus](../virtual-machines-command-line-tools.md) bietet der Ressourcen-Manager-Modus der Azure-Befehlszeilenschnittstelle Ihnen Befehle, mit denen Sie Ressourcen über die Befehlszeile imperativ erstellen können. Wenn Sie beispielsweise `azure group create <groupname> <location>` eingeben, fordern Sie Azure auf, eine Ressourcengruppe zu erstellen, und mit `azure group deployment create <resourcegroup> <deploymentname>` weisen Sie Azure an, eine Bereitstellung einer beliebigen Anzahl von Elementen zu erstellen, die in einer Gruppe abgelegt werden sollen. Da jede Art von Ressource über imperative Befehle verfügt, können Sie sie miteinander verbinden, um recht komplexe Bereitstellungen zu erstellen.
 
 Der Einsatz von Ressourcengruppen-_Vorlagen_, die eine Ressource beschreiben, ist jedoch ein deklarativer Ansatz, der sehr viel wirksamer ist und der es Ihnen ermöglicht, komplexe Bereitstellungen einer (fast) beliebigen Anzahl von Ressourcen für (nahezu) jeden Zweck zu automatisieren. Wenn Sie Vorlagen verwenden, ist der einzige imperative Befehl die Bereitstellung. Eine allgemeine Übersicht über Vorlagen, Ressourcen und Ressourcengruppen finden Sie unter [Übersicht über Azure-Ressourcengruppe](../resource-group-overview.md).
-
-##Nutzungsanforderungen
-
-Die Einrichtungsanforderungen für die Verwendung des Ressourcen-Manager-Modus mit der Azure-Befehlszeilenschnittstelle sind wie folgt:
-
-- ein Azure-Konto ([hier erhalten Sie eine kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/))
-- [Installation der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
-
-
-Sobald Sie über ein Konto verfügen, und die Azure-Befehlszeilenschnittstelle installiert haben, müssen Sie
-
-- mit einem Geschäfts- oder Schul-Konto oder einer Microsoft-Kontoidentität [die Azure-Befehlszeilenschnittstelle konfigurieren](../xplat-cli-connect.md)
-- durch Eingabe von `azure config mode arm` in den Ressourcen-Manager-Modus wechseln
 
 
 ## Azure-Konto: Verwalten Ihrer Kontoinformationen
@@ -1095,7 +1088,7 @@ Erstellen Sie Lastenausgleichsregeln.
 
 Sie können eine Lastenausgleichsregel erstellen, indem Sie den Front-End-Endpunkt für den Lastenausgleich konfigurieren, sowie den Back-End-Adresspoolbereich, der den eingehenden Netzwerkverkehr empfängt. Einstellungen umfassen auch die Ports für den Front-End-IP-Endpunkt und Ports für den Back-End-Adresspoolbereich.
 
-Im folgenden Beispiel wird veranschaulicht, wie Sie eine Lastenausgleichsregel erstellen, in der ein Front-End-Endpunkt zur Überwachung von Port 80 TCP festgelegt wird und die den Netzwerkverkehr zum Lastenausgleich an Port 8080 für den Back-End-Adresspoolbereich sendet.
+Im folgenden Beispiel wird veranschaulicht, wie Sie eine Lastenausgleichsregel erstellen, in der ein Front-End-Endpunkt zur Überwachung von Port 80 TCP festgelegt wird und die den Netzwerkverkehr zum Lastenausgleich an Port 8080 für den Back-End-Adresspoolbereich sendet.
 
 	azure network lb rule create -g myresourcegroup -l mylb -n mylbrule -p tcp -f 80 -b 8080 -i 10
 
@@ -1879,4 +1872,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

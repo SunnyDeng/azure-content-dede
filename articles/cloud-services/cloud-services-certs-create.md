@@ -19,7 +19,7 @@
 # Übersicht über Zertifikate für Azure Cloud Services
 Zertifikate werden in Azure für Clouddienste verwendet ([Dienstzertifikate](#what-are-service-certificates)), und sie werden für die Authentifizierung mit der Verwaltungs-API genutzt ([Verwaltungszertifikate](#what-are-management-certificates), wenn das klassische Azure-Portal und nicht Azure-Ressourcen-Manager verwendet wird). Dieses Thema bietet eine allgemeine Übersicht über beide Zertifikattypen sowie über deren [Erstellung](#create) und [Bereitstellung](#deploy) in Azure.
 
-Die in Azure verwendeten Zertifikate sind X.509 v3-Zertifikate und können von einem anderen vertrauenswürdigen Zertifikat signiert werden oder selbstsigniert sein. Ein selbstsigniertes Zertifikat wird vom eigenen Ersteller signiert und ist daher standardmäßig nicht vertrauenswürdig. Die meisten Browser können dies ignorieren. Nur Sie selbst sollten beim Entwickeln und Testen Ihrer Clouddienste selbstsignierte Zertifikate verwenden.
+Die in Azure verwendeten Zertifikate sind X.509 v3-Zertifikate und können von einem anderen vertrauenswürdigen Zertifikat signiert werden oder selbstsigniert sein. Ein selbstsigniertes Zertifikat wird vom eigenen Ersteller signiert und ist daher standardmäßig nicht vertrauenswürdig. Die meisten Browser können dies ignorieren. Nur Sie selbst sollten beim Entwickeln und Testen Ihrer Clouddienste selbstsignierte Zertifikate verwenden.
 
 Die in Azure verwendeten Zertifikate können einen privaten oder einen öffentlichen Schlüssel enthalten. Zertifikate verfügen über einen Fingerabdruck, durch den sie eindeutig identifiziert werden. Mithilfe dieses Fingerabdrucks wird in der Azure-[Konfigurationsdatei](cloud-services-configure-ssl-certificate.md) ermittelt, welches Zertifikat ein Clouddienst verwenden soll.
 
@@ -31,14 +31,14 @@ Sie können Dienstzertifikate entweder über das klassische Arzure-Portal oder m
 Dienstzertifikate können gesondert von Ihren Diensten sowie von verschiedenen Personen verwaltet werden. Beispielsweise kann ein Entwickler ein Dienstpaket hochladen, das auf ein Zertifikat verweist, das ein IT-Manager zuvor in Azure hochgeladen hat. Ein IT-Manager kann dieses Zertifikat verwalten und erneuern und die Konfiguration des Diensts ändern, ohne ein neues Dienstpaket hochladen zu müssen. Dies ist möglich, da der logische Name für das Zertifikat und sein Speichername und Speicherort in der Dienstdefinitionsdatei angegeben sind, während der Zertifikatfingerabdruck in der Dienstkonfigurationsdatei angegeben ist. Um das Zertifikat zu aktualisieren, muss lediglich ein neues Zertifikat hochgeladen und der Fingerabdruckwert in der Dienstkonfigurationsdatei geändert werden.
 
 ## Was sind Verwaltungszertifikate?
-Mit Verwaltungszertifikaten können Sie eine Authentifizierung mit der Dienstverwaltungs-API durchführen, die vom klassischen Azure bereitgestellt wird. Diese Zertifikate werden in vielen Programmen und Tools (z. B. Visual Studio oder Azure SDK) zum Automatisieren der Konfiguration und Bereitstellung verschiedener Azure-Dienste verwendet. Diese stehen eigentlich nicht in Zusammenhang mit Clouddiensten.
+Mit Verwaltungszertifikaten können Sie eine Authentifizierung mit der Dienstverwaltungs-API durchführen, die vom klassischen Azure bereitgestellt wird. Diese Zertifikate werden in vielen Programmen und Tools (z. B. Visual Studio oder Azure SDK) zum Automatisieren der Konfiguration und Bereitstellung verschiedener Azure-Dienste verwendet. Diese stehen eigentlich nicht in Zusammenhang mit Clouddiensten.
 
 >[AZURE.WARNING] Vorsicht ist geboten! Alle Personen, die die Authentifizierung mit diesen Zertifikaten durchführen, können das zugeordnete Abonnement verwalten.
 
 ### Einschränkungen
-Es sind maximal 100 Verwaltungszertifikate pro Abonnement möglich. Ebenso sind maximal 100 Verwaltungszertifikate für alle Abonnements unter der Benutzer-ID eines bestimmten Dienstadministrators zulässig. Wenn über die Benutzer-ID für den Kontoadministrator bereits 100 Verwaltungszertifikate hinzugefügt wurden und weitere Zertifikate benötigt werden, können Sie einen Co-Administrator festlegen, um die zusätzlichen Zertifikate hinzuzufügen.
+Es sind maximal 100 Verwaltungszertifikate pro Abonnement möglich. Ebenso sind maximal 100 Verwaltungszertifikate für alle Abonnements unter der Benutzer-ID eines bestimmten Dienstadministrators zulässig. Wenn über die Benutzer-ID für den Kontoadministrator bereits 100 Verwaltungszertifikate hinzugefügt wurden und weitere Zertifikate benötigt werden, können Sie einen Co-Administrator festlegen, um die zusätzlichen Zertifikate hinzuzufügen.
 
-Prüfen Sie vor dem Hinzufügen von mehr als 100 Zertifikaten, ob Sie stattdessen nicht ein vorhandenes Zertifikat wiederverwenden können. Durch die Verwendung von Co-Administratoren kann sich Ihr Zertifikatverwaltungsprozess unnötigerweise verkomplizieren.
+Prüfen Sie vor dem Hinzufügen von mehr als 100 Zertifikaten, ob Sie stattdessen nicht ein vorhandenes Zertifikat wiederverwenden können. Durch die Verwendung von Co-Administratoren kann sich Ihr Zertifikatverwaltungsprozess unnötigerweise verkomplizieren.
 
 
 <a name="create"></a>
@@ -70,7 +70,7 @@ Im Internet wird auf vielen Seiten erläutert, wie mit IIS Zertifikate erstellt 
 Auch mit Java können Sie [ein Zertifikat erstellen](../app-service-web/java-create-azure-website-using-java-sdk.md#create-a-certificate).
 
 ### Linux
-In [diesem](../virtual-machines/virtual-machines-linux-use-ssh-key.md) Artikel wird beschrieben, wie Zertifikate mit SSH erstellt werden.
+In [diesem](../virtual-machines/virtual-machines-linux-ssh-from-linux.md) Artikel wird beschrieben, wie Zertifikate mit SSH erstellt werden.
 
 ## Nächste Schritte
 
@@ -80,4 +80,4 @@ Hochladen des [Verwaltungs-API-Zertifikats](../azure-api-management-certs.md) in
 
 >[AZURE.NOTE] Im Azure-Portal erfolgt der Zugriff auf die API nicht über Verwaltungszertifikate, sondern über Benutzerkonten.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

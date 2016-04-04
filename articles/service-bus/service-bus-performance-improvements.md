@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Bewährte Methoden zur Verbesserung der Leistung mit Service Bus | Microsoft Azure"
-   description="Beschreibt, wie Azure Service Bus verwendet wird, um die Leistung zu optimieren, wenn Brokernachrichten ausgetauscht werden."
-   services="service-bus"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="tysonn" /> 
+    pageTitle="Bewährte Methoden zur Verbesserung der Leistung mit Service Bus | Microsoft Azure"
+    description="Beschreibt, wie Azure Service Bus verwendet wird, um die Leistung zu optimieren, wenn Brokernachrichten ausgetauscht werden."
+    services="service-bus"
+    documentationCenter="na"
+    authors="sethmanheim"
+    manager="timlt"
+    editor="" /> 
 <tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="12/28/2015"
-   ms.author="sethm" />
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="03/16/2016"
+    ms.author="sethm" />
 
 # Bewährte Methoden für Leistungsoptimierungen mithilfe von Service Bus-Brokermessaging
 
@@ -31,7 +31,7 @@ Sofern es nicht anders angegeben ist, wird für alle Inhalte in diesem Thema das
 
 ## Wiederverwenden von Factorys und Clients
 
-Service Bus-Clientobjekte wie [QueueClient][] oder [MessageSender][] werden durch ein [MessagingFactory][]-Objekt erstellt, das die interne Verwaltung von Verbindungen ermöglicht. Sie sollten Messagingfactorys oder Warteschlangen-, Themen- und Abonnementclients nicht schließen, nachdem Sie eine Nachricht gesendet haben, und dann erneut erstellen, wenn Sie die nächste Nachricht senden. Durch Schließen einer Messagingfactory wird die Verbindung mit dem Service Bus-Dienst gelöscht, und eine neue Verbindung wird beim erneuten Erstellen der Factory hergestellt. Das Herstellen einer Verbindung ist ein aufwändiger Vorgang, den Sie vermeiden können, indem Sie eine Factory und die Clientobjekte für mehrere Vorgänge verwenden.
+Service Bus-Clientobjekte wie [QueueClient][] oder [MessageSender][] werden durch ein [MessagingFactory][]-Objekt erstellt, das die interne Verwaltung von Verbindungen ermöglicht. Sie sollten Messagingfactorys oder Warteschlangen-, Themen- und Abonnementclients nicht schließen, nachdem Sie eine Nachricht gesendet haben, und dann erneut erstellen, wenn Sie die nächste Nachricht senden. Durch Schließen einer Messagingfactory wird die Verbindung mit dem Service Bus-Dienst gelöscht, und eine neue Verbindung wird beim erneuten Erstellen der Factory hergestellt. Das Herstellen einer Verbindung ist ein aufwändiger Vorgang, den Sie vermeiden können, indem Sie eine Factory und die Clientobjekte für mehrere Vorgänge verwenden. Sie können das [QueueClient][]-Objekt auf sichere Weise zum Senden von Nachrichten von gleichzeitigen asynchronen Vorgängen und mehreren Threads verwenden.
 
 ## Parallele Vorgänge
 
@@ -116,7 +116,7 @@ Der Speicherzugriff als Batch wirkt sich nicht auf die Anzahl der abrechenbaren 
 
 ## Vorabrufe
 
-Vorabrufe ermöglichen dem Warteschlangen- oder Abonnementclient weitere Nachrichten aus dem Dienst zu laden, wenn er einen Empfangsvorgang ausführt. Der Client speichert diese Nachrichten in einem lokalen Cache. Die Größe des Caches wird anhand der Eigenschaften [QueueClient.PrefetchCount][] und [SubscriptionClient.PrefetchCount][] bestimmt. Jeder Client, der Vorabrufe ermöglicht, verwaltet seinen eigenen Cache. Ein Cache wird nicht für andere Clients freigegeben. Wenn der Client einen Empfangsvorgang initiiert und sein Cache leer ist, überträgt der Dienst ein Nachrichtenbatch. Die Größe des Batches entspricht der Größe des Caches oder 256 KB (dem jeweils kleinerem Wert). Wenn der Client einen Empfangsvorgang initiiert und der Cache eine Nachricht enthält, wird die Nachricht aus dem Cache abgerufen.
+Vorabrufe ermöglichen dem Warteschlangen- oder Abonnementclient weitere Nachrichten aus dem Dienst zu laden, wenn er einen Empfangsvorgang ausführt. Der Client speichert diese Nachrichten in einem lokalen Cache. Die Größe des Caches wird anhand der Eigenschaften [QueueClient.PrefetchCount][] und [SubscriptionClient.PrefetchCount][] bestimmt. Jeder Client, der Vorabrufe ermöglicht, verwaltet seinen eigenen Cache. Ein Cache wird nicht für andere Clients freigegeben. Wenn der Client einen Empfangsvorgang initiiert und sein Cache leer ist, überträgt der Dienst ein Nachrichtenbatch. Die Größe des Batches entspricht der Größe des Caches oder 256 KB (dem jeweils kleinerem Wert). Wenn der Client einen Empfangsvorgang initiiert und der Cache eine Nachricht enthält, wird die Nachricht aus dem Cache abgerufen.
 
 Wenn eine Nachricht vorab abgerufen wird, sperrt der Dienst die vorab abgerufene Nachricht. Auf diese Weise kann die vorab abgerufene Nachricht nicht von einem anderen Empfänger empfangen werden. Wenn der Empfänger die Nachricht nicht abschließen kann, bevor die Sperre abläuft, wird die Nachricht für andere Empfänger verfügbar gemacht. Die vorab abgerufene Kopie der Nachricht verbleibt im Cache. Der Empfänger, der die abgelaufene Kopie aus dem Cache verarbeitet, empfängt eine Ausnahme, wenn er versucht, diese Nachricht abzuschließen. Standardmäßig läuft die Nachrichtensperrre nach 60 Sekunden ab. Dieser Wert kann auf 5 Minuten erhöht werden. Um die Nutzung abgelaufener Nachrichten zu verhindern, sollten die Cachegröße immer kleiner als die Anzahl der Nachrichten sein, die von einem Client innerhalb des Sperrintervalls genutzt werden können.
 
@@ -130,7 +130,7 @@ Der Vorabruf wirkt sich nicht auf die Anzahl der abrechenbaren Messagingvorgäng
 
 ## Express-Warteschlangen und -Themen
 
-Express-Entitäten ermöglichen Szenarien mit hohem Durchsatz und reduzierter Latenz. Wenn bei Express-Entitäten eine Nachricht an eine Warteschlange oder ein Thema gesendet wird, wird sie nicht sofort im Messagingspeicher gespeichert. Stattdessen wird die Nachricht im Arbeitsspeicher zwischengespeichert. Wenn eine Nachricht mehr als ein paar Sekunden in der Warteschlange bleibt, wird sie automatisch in einen stabilen Speicher geschrieben und so vor Datenverlusten aufgrund eines Ausfalls geschützt. Das Schreiben der Nachricht in einen Speichercache erhöht den Durchsatz und verringert die Latenz, da zu dem Zeitpunkt, zu dem die Nachricht gesendet wird, kein Zugriff auf den stabilen Speicher erfolgt. Nachrichten, die innerhalb weniger Sekunden genutzt werden, werden nicht in den Messagingspeicher geschrieben. Das folgende Beispiel erstellt ein Express-Thema.
+Express-Entitäten ermöglichen Szenarien mit hohem Durchsatz und reduzierter Latenz. Wenn bei Express-Entitäten eine Nachricht an eine Warteschlange oder ein Thema gesendet wird, wird sie nicht sofort im Messagingspeicher gespeichert. Stattdessen wird sie im Arbeitsspeicher zwischengespeichert. Wenn eine Nachricht mehr als ein paar Sekunden in der Warteschlange bleibt, wird sie automatisch in einen stabilen Speicher geschrieben und so vor Datenverlusten aufgrund eines Ausfalls geschützt. Das Schreiben der Nachricht in einen Speichercache erhöht den Durchsatz und verringert die Latenz, da zu dem Zeitpunkt, zu dem die Nachricht gesendet wird, kein Zugriff auf den stabilen Speicher erfolgt. Nachrichten, die innerhalb weniger Sekunden genutzt werden, werden nicht in den Messagingspeicher geschrieben. Das folgende Beispiel erstellt ein Express-Thema.
 
 ```
 TopicDescription td = new TopicDescription(TopicName);
@@ -211,7 +211,7 @@ Gehen Sie wie folgt vor, um den Durchsatz zu maximieren:
 
 -   Verwenden Sie asynchrone Vorgänge, um die clientseitige Batchverarbeitung zu nutzen.
 
--   Verwenden Sie das standardmäßige Batchintervall von 20 ms, um die Anzahl der Service Bus-Clientprotokollübertragungen zu verringern.
+-   Verwenden Sie das standardmäßige Batchintervall von 20 ms, um die Anzahl der Service Bus-Clientprotokollübertragungen zu verringern.
 
 -   Lassen Sie den Speicherzugriff als Batch aktiviert. Dies erhöht die Gesamtrate, mit der Nachrichten in die Warteschlange oder in das Thema geschrieben werden können.
 
@@ -249,7 +249,7 @@ Gehen Sie wie folgt vor, um den Durchsatz zu maximieren:
 
 -   Verwenden Sie asynchrone Vorgänge, um die clientseitige Batchverarbeitung zu nutzen.
 
--   Verwenden Sie das standardmäßige Batchintervall von 20 ms, um die Anzahl der Service Bus-Clientprotokollübertragungen zu verringern.
+-   Verwenden Sie das standardmäßige Batchintervall von 20 ms, um die Anzahl der Service Bus-Clientprotokollübertragungen zu verringern.
 
 -   Lassen Sie den Speicherzugriff als Batch aktiviert. Dies erhöht die Gesamtrate, mit der Nachrichten in das Thema geschrieben werden können.
 
@@ -267,7 +267,7 @@ Gehen Sie wie folgt vor, um den Durchsatz zu maximieren:
 
 -   Verwenden Sie asynchrone Vorgänge, um die clientseitige Batchverarbeitung zu nutzen.
 
--   Verwenden Sie das standardmäßige Batchintervall von 20 ms, um die Anzahl der Service Bus-Clientprotokollübertragungen zu verringern.
+-   Verwenden Sie das standardmäßige Batchintervall von 20 ms, um die Anzahl der Service Bus-Clientprotokollübertragungen zu verringern.
 
 -   Lassen Sie den Speicherzugriff als Batch aktiviert. Dies erhöht die Gesamtrate, mit der Nachrichten in das Thema geschrieben werden können.
 
@@ -291,4 +291,4 @@ Weitere Informationen zum Optimieren der Service Bus-Leistung finden Sie unter [
   [Partitionierte Messagingentitäten]: service-bus-partitioning.md
   
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -14,26 +14,26 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="02/04/2016" 
+	ms.date="03/18/2016" 
 	ms.author="jeffstok"/>
 
 # Grundlegendes zur Stream Analytics-Auftragsüberwachung und zum Überwachen von Abfragen
 
 ## Einführung: die Seite „Überwachen“
 
-Im Azure-Verwaltungsportal und im Azure-Vorschauportal werden wichtige Leistungsmetriken angezeigt, die zum Überwachen der Leistung Ihrer Abfragen und Aufträge und für die Problembehandlung verwendet werden können.
+Im Azure-Verwaltungsportal und im Azure-Portal werden wichtige Leistungsmetriken angezeigt, die zum Überwachen der Leistung Ihrer Abfragen und Aufträge sowie für die Problembehandlung verwendet werden können.
 
-Klicken Sie im Azure-Verwaltungsportal auf die Registerkarte **Überwachen** eines ausgeführten Stream Analytics-Auftrags, um diese Metriken anzuzeigen. Für die Leistungsmetriken, die auf der Seite „Überwachen“ angezeigt werden, tritt eine Verzögerung von höchstens 1 Minute auf.
+Klicken Sie im Azure-Verwaltungsportal auf die Registerkarte **Überwachen** eines ausgeführten Stream Analytics-Auftrags, um diese Metriken anzuzeigen. Für die Leistungsmetriken, die auf der Seite „Überwachen“ angezeigt werden, tritt eine Verzögerung von höchstens 1 Minute auf.
 
   ![Auftragsüberwachungs-Dashboard](./media/stream-analytics-monitoring/01-stream-analytics-monitoring.png)
 
-Navigieren Sie im Azure-Vorschauportal zum Stream Analytics-Auftrag, dessen Metriken Sie interessieren, und zeigen Sie den Abschnitt **Überwachung** an.
+Navigieren Sie im Azure-Portal zum Stream Analytics-Auftrag, dessen Metriken Sie interessieren, und zeigen Sie den Abschnitt **Überwachung** an.
 
-  ![Azure-Vorschauportal, Auftragsüberwachungs-Dashboard](./media/stream-analytics-monitoring/06-stream-analytics-monitoring.png)
+  ![Azure-Portal – Auftragsüberwachungs-Dashboard](./media/stream-analytics-monitoring/06-stream-analytics-monitoring.png)
 
 Beim erstmaligen Erstellen eines Stream Analytics-Auftrags in einer Region müssen Sie "Diagnose" für diese Region konfigurieren. Zu diesem Zweck klicken Sie auf eine beliebige Stelle im Abschnitt **Überwachung**, und das Blatt **Diagnose** wird angezeigt. Hier können Sie die Diagnose aktivieren und ein Speicherkonto für Überwachungsdaten angeben.
 
-  ![Azure-Vorschauportal, Abfragediagnose konfigurieren](./media/stream-analytics-monitoring/07-stream-analytics-monitoring.png)
+  ![Azure-Portal – Konfigurieren der Abfragediagnose](./media/stream-analytics-monitoring/07-stream-analytics-monitoring.png)
 
 ## Verfügbare Metriken für Stream Analytics
 
@@ -51,13 +51,13 @@ Beim erstmaligen Erstellen eines Stream Analytics-Auftrags in einer Region müss
 
 ## Anpassen der Überwachung im Azure-Verwaltungsportal ##
 
-Bis zu 6 Metriken können in einem Diagramm angezeigt werden.
+Bis zu 6 Metriken können in einem Diagramm angezeigt werden.
 
 Wählen Sie Relativ oder Absolut im oberen Bereich des Diagramms, um zwischen relativen (nur endgültiger Wert für jede Metrik) und absoluten Werten (Y-Achse wird angezeigt) umzuschalten.
 
   ![Abfrageüberwachung relativ und absolut](./media/stream-analytics-monitoring/02-stream-analytics-monitoring.png)
 
-Metriken können im Überwachungsdiagramm in Aggregationen von 1 Stunde, 12 Stunden, 24 Stunden oder 7 Tagen angezeigt werden.
+Metriken können im Überwachungsdiagramm in Aggregationen von 1 Stunde, 12 Stunden, 24 Stunden oder 7 Tagen angezeigt werden.
 
 Wählen Sie 1 Stunde, 24 Stunden oder 7 Tage im oberen Bereich des Diagramms aus, um das Zeitintervall für das Metrikendiagramm zu ändern.
 
@@ -65,15 +65,15 @@ Wählen Sie 1 Stunde, 24 Stunden oder 7 Tage im oberen Bereich des Diagramms aus
 
 Sie können Regeln festlegen, dass Sie per E-Mail benachrichtigt werden, falls für den Auftrag ein bestimmter Schwellenwert überschritten wird.
 
-## Anpassen der Überwachung im Azure-Vorschauportal ##
+## Anpassen der Überwachung im Azure-Portal ##
 
-Sie können den Diagrammtyp, die angezeigten Metriken und den Uhrzeitbereich in den Einstellungen unter "Diagramm bearbeiten" anpassen. Ausführliche Informationen finden Sie unter [Anpassen der Überwachung](./azure-portal/insights-how-to-customize-monitoring.md).
+Sie können den Diagrammtyp, die angezeigten Metriken und den Uhrzeitbereich in den Einstellungen unter "Diagramm bearbeiten" anpassen. Ausführliche Informationen finden Sie unter [Anpassen der Überwachung](../azure-portal/insights-how-to-customize-monitoring.md).
 
-  ![Azure-Vorschauportal, Zeitskala für die Abfrageüberwachung](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)
+  ![Azure-Portal, Zeitskala für die Abfrageüberwachung](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)
 
 ## Auftragsstatus
 
-Der Status von Stream Analytics-Aufträgen kann im Azure-Portal in der Liste mit den Aufträgen angezeigt werden. Sie können die Auftragsliste einblenden, indem Sie im Azure-Portal auf das Stream Analytics-Symbol klicken.
+Der Status von Stream Analytics-Aufträgen kann im klassischen Azure-Portal in der Liste mit den Aufträgen angezeigt werden. Sie können die Auftragsliste einblenden, indem Sie im klassischen Azure-Portal auf das Stream Analytics-Symbol klicken.
 
 | Status | Definition |
 |--------|------------|
@@ -82,7 +82,7 @@ Der Status von Stream Analytics-Aufträgen kann im Azure-Portal in der Liste mit
 | Wird ausgeführt | Der Auftrag ist zugewiesen, verarbeitet Eingaben oder wartet auf die Verarbeitung von Eingaben. Wenn ein Auftrag den Status "Wird ausgeführt" aufweist, ohne eine Ausgabe zu erzeugen, ist es wahrscheinlich, dass das Zeitfenster für die Verarbeitung groß oder die Abfragelogik kompliziert ist. Ein weiterer Grund ist möglicherweise, dass derzeit keine Daten an den Auftrag gesendet werden. |
 | Wird beendet | Ein Benutzer hat auf „Auftrag beenden“ geklickt, und der Auftrag wird beendet. |
 | Beendet | Der Auftrag wurde beendet. |
-| Heruntergestuft | Dieser Status gibt an, dass für einen Stream Analytics-Auftrag vorübergehende Fehler aufgetreten sind (z. B. Eingabe/Ausgabe-Fehler, Verarbeitungsfehler, Konvertierungsfehler usw.). Der Auftrag wird weiterhin ausgeführt, aber es werden viele Fehler generiert. Der Kunde muss sich um diesen Auftrag kümmern und kann die Vorgangsprotokolle für die Fehler anzeigen. |
+| Heruntergestuft | Dieser Status gibt an, dass für einen Stream Analytics-Auftrag vorübergehende Fehler aufgetreten sind (z. B. Eingabe/Ausgabe-Fehler, Verarbeitungsfehler, Konvertierungsfehler usw.). Der Auftrag wird weiterhin ausgeführt, aber es werden viele Fehler generiert. Der Kunde muss sich um diesen Auftrag kümmern und kann die Vorgangsprotokolle für die Fehler anzeigen. |
 | Fehler | Dies bedeutet, dass der Auftrag aufgrund von Fehlern fehlgeschlagen ist und die Verarbeitung beendet wurde. Der Kunde muss in den Vorgangsprotokollen nachsehen, um die Fehler zu beheben. |
 | Wird gelöscht | Gibt an, dass der Auftrag gelöscht wird. |
 
@@ -107,4 +107,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

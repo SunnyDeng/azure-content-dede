@@ -20,11 +20,11 @@
 
 Wenn Sie Verlaufsdaten in einer separaten Tabelle speichern, können Sie Stretch-Datenbank so konfigurieren, dass die gesamte Tabelle migriert wird. Wenn die Tabelle alte und aktuelle Daten enthält, können Sie anderenfalls ein Filterprädikat zum Auswählen der zu migrierenden Zeilen angeben. Das Filterprädikat muss eine Inline-Tabellenwertfunktion aufrufen. In diesem Thema wird beschrieben, wie Sie eine Inline-Tabellenwertfunktion zum Auswählen von zu migrierenden Zeilen schreiben.
 
-In CTP 3.1 bis RC0 steht die Option zum Angeben eines Prädikats nicht im Assistent zum Aktivieren einer Datenbank für Stretch zur Verfügung. Sie müssen eine ALTER TABLE-Anweisung verwenden, um Stretch-Datenbank mit dieser Option zu konfigurieren. Weitere Informationen finden Sie unter [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx).
+In CTP 3.1 bis RC1 steht die Option zum Angeben eines Prädikats nicht im Assistent zum Aktivieren einer Datenbank für Stretch zur Verfügung. Sie müssen eine ALTER TABLE-Anweisung verwenden, um Stretch-Datenbank mit dieser Option zu konfigurieren. Weitere Informationen finden Sie unter [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx).
 
 Wenn Sie kein Filterprädikat angeben, wird die gesamte Tabelle migriert.
 
-> [WICHTIG!] Wenn Sie ein Filterprädikat mit schlechter Leistung angeben, erbringt womöglich auch die Datenmigration nicht die gewünschte Leistung. Stretch-Datenbank wendet das Filterprädikat mithilfe des CROSS APPLY-Operators auf die Tabelle an.
+    > If you provide a filter predicate that performs poorly, data migration also performs poorly. Stretch Database applies the filter predicate to the table by using the CROSS APPLY operator.
 
 ## Grundlegende Anforderungen für die Inline-Tabellenwertfunktion
 Die für eine Stretch-Datenbank-Filterfunktion erforderliche Inline-Tabellenwertfunktion sieht wie das folgende Beispiel aus.
@@ -70,7 +70,7 @@ Eine primitive Bedingung kann einen der folgenden Vergleiche ausführen.
 
 -   Vergleichen Sie einen Funktionsparameter mit einem konstanten Ausdruck. Beispiel: `@column1 < 1000`.
 
-    Im Folgenden sehen Sie ein Beispiel, in dem geprüft wird, ob der Wert einer *date*-Spalte &lt; 1\\/1\\/2016 ist.
+    Im Folgenden sehen Sie ein Beispiel, in dem geprüft wird, ob der Wert einer *date*-Spalte &lt; 1/1/2016. ist.
 
     ```tsql
     CREATE FUNCTION dbo.fn_stretchpredicate(@column1 datetime)
@@ -410,4 +410,4 @@ Sie können die Inline-Tabellenwertfunktionen nicht verwerfen, solange eine Tabe
 
 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

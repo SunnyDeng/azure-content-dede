@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="02/16/2016"
+	ms.date="03/18/2016"
 	ms.author="jeffstok"/>
 
 # Skalieren von Azure Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Streamingdatenverarbeitung
@@ -27,9 +27,9 @@ Eine Stream Analytics-Auftragsdefinition umfasst Eingaben, Abfrage und Ausgabe. 
 Für einen Auftrag wird mindestens eine Eingabequelle für Datenstreaming benötigt. Die Datenstrom-Eingabequelle kann entweder ein Azure Service Bus Event Hub oder ein Azure-BLOB-Speicher sein. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md) und [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md).
 
 ## Konfigurieren von Streamingeinheiten
-Streamingeinheiten (Streaming Units, SUs) sind eine abstrakte Repräsentation für die Ressourcen und Leistung, die zum Ausführen eines Azure Stream Analytics-Auftrags benötigt werden. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s.
+Streamingeinheiten (Streaming Units, SUs) sind eine abstrakte Repräsentation für die Ressourcen und Leistung, die zum Ausführen eines Azure Stream Analytics-Auftrags benötigt werden. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s.
 
-Die benötigte SU-Anzahl für ein bestimmtes Projekt hängt von der für die Partitionskonfiguration für die Eingaben und die für den Auftrag definierte Abfrage ab. Über das Azure-Portal können Sie für einen Auftrag bis zu Ihrem Kontingent Streamingeinheiten einrichten. Für jedes Azure-Abonnement hat standardmäßig höchstens 50 Streaming-Einheiten für alle Analytics-Aufträge in einer bestimmten Region. Wenn Sie die Streaming-Einheiten für Ihr Abonnement erhöhen möchten, wenden Sie sich an den [Microsoft Support](http://support.microsoft.com).
+Die benötigte SU-Anzahl für ein bestimmtes Projekt hängt von der für die Partitionskonfiguration für die Eingaben und die für den Auftrag definierte Abfrage ab. Über das klassische Azure-Portal können Sie für einen Auftrag bis zu Ihrem Kontingent Streamingeinheiten einrichten. Für jedes Azure-Abonnement hat standardmäßig höchstens 50 Streaming-Einheiten für alle Analytics-Aufträge in einer bestimmten Region. Wenn Sie die Streaming-Einheiten für Ihr Abonnement erhöhen möchten, wenden Sie sich an den [Microsoft Support](http://support.microsoft.com).
 
 Die Anzahl an Streaming-Einheiten, die ein Auftrag verwenden kann, hängt von der Partitionskonfiguration der Eingaben und der für den Auftrag definierten Abfrage ab. Beachten Sie außerdem, dass ein gültiger Wert für die Streamingeinheiten verwendet werden muss. Die gültigen Werte beginnen bei 1, 3, 6 und dann weiter in Schritten von 6, wie unten dargestellt.
 
@@ -99,9 +99,9 @@ Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Event Hub mit 32 Partitionen
 In diesem Fall spielt es keine Rolle, was die Abfrage beinhaltet, weil die Anzahl von Eingabepartitionen ungleich der Anzahl von Ausgabepartitionen ist.
 
 ### Keine Verwendung von Event Hubs oder Blobs als Ausgabe
-Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Power BI
+Eingabe: Event Hubs mit 8 Partitionen. Ausgabe: Power BI
 
-Bei der Power BI-Ausgabe wird derzeit keine Partitionierung unterstützt.
+Bei der Power BI-Ausgabe wird derzeit keine Partitionierung unterstützt.
 
 ### Mehrschrittige Abfrage mit unterschiedlichen Werten für „Partition By“
 Eingabe: Event Hub mit 8 Partitionen. Ausgabe: Event Hub mit 8 Partitionen
@@ -205,15 +205,15 @@ Mit der folgenden Abfrage wird die Anzahl der Fahrzeuge berechnet, die innerhalb
 	FROM Input1
 	GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
 
-Um weitere Streaming-Einheiten für die Abfrage zu verwenden, müssen sowohl die Datenstromeingabe als auch die Abfrage partitioniert werden. Da die Datenstrompartition auf "3" festgelegt ist, kann die folgende geänderte Abfrage auf bis zu 18 Streaming-Einheiten skaliert werden:
+Um weitere Streaming-Einheiten für die Abfrage zu verwenden, müssen sowohl die Datenstromeingabe als auch die Abfrage partitioniert werden. Da die Datenstrompartition auf "3" festgelegt ist, kann die folgende geänderte Abfrage auf bis zu 18 Streaming-Einheiten skaliert werden:
 
 	SELECT COUNT(*) AS Count, TollBoothId
 	FROM Input1 Partition By PartitionId
 	GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
 
-Wenn eine Abfrage partitioniert ist, werden die Eingabeereignisse verarbeitet und in separaten Partitionsgruppen aggregiert. Zudem werden für die einzelnen Gruppen Ausgabeereignisse generiert. Das Partitionieren kann unerwartete Ergebnisse erbringen, wenn der Partitionsschlüssel in der Datenstromeingabe nicht das Feld **Group-by** ist. Beispielsweise ist das Feld **TollBoothId** in der vorherigen Beispielabfrage nicht der Partitionsschlüssel von Input1. Die Daten aus der Mautstation 1 können auf mehrere Partitionen verteilt werden.
+Wenn eine Abfrage partitioniert ist, werden die Eingabeereignisse verarbeitet und in separaten Partitionsgruppen aggregiert. Zudem werden für die einzelnen Gruppen Ausgabeereignisse generiert. Das Partitionieren kann unerwartete Ergebnisse erbringen, wenn der Partitionsschlüssel in der Datenstromeingabe nicht das Feld **Group-by** ist. Beispielsweise ist das Feld **TollBoothId** in der vorherigen Beispielabfrage nicht der Partitionsschlüssel von Input1. Die Daten aus der Mautstation 1 können auf mehrere Partitionen verteilt werden.
 
-Jede Input1-Partition wird separat von Stream Analytics verarbeitet, und es werden mehrere Datensätze für die Anzahl der passierenden Autos für dieselbe Mautstation im selben rollierenden Fenster erstellt. Für den Fall, dass der Eingabepartitionsschlüssel nicht geändert werden kann, kann dieses Problem durch Hinzufügen eines zusätzlichen, nicht partitionierten Schritts behoben werden, z. B.:
+Jede Input1-Partition wird separat von Stream Analytics verarbeitet, und es werden mehrere Datensätze für die Anzahl der passierenden Autos für dieselbe Mautstation im selben rollierenden Fenster erstellt. Für den Fall, dass der Eingabepartitionsschlüssel nicht geändert werden kann, kann dieses Problem durch Hinzufügen eines zusätzlichen, nicht partitionierten Schritts behoben werden, z. B.:
 
 	WITH Step1 AS (
 		SELECT COUNT(*) AS Count, TollBoothId
@@ -241,9 +241,9 @@ Diese Abfrage kann auf bis zu 24 Streaming-Einheiten skaliert werden.
 
 ![Azure Stream Analytics Skalieren von Streamingeinheiten][img.stream.analytics.streaming.units.scale]
 
-Im Azure-Vorschauportal können Sie unter „Einstellungen“ auf die Skalierungseinstellungen zugreifen:
+Im Azure-Portal können Sie unter „Einstellungen“ auf die Skalierungseinstellungen zugreifen:
 
-![Auftragskonfiguration in Stream Analytics im Azure-Vorschauportal][img.stream.analytics.preview.portal.settings.scale]
+![Auftragskonfiguration in Stream Analytics im Azure-Portal][img.stream.analytics.preview.portal.settings.scale]
 
 ## Überwachen der Auftragsleistung
 
@@ -271,7 +271,7 @@ Abfrage: "Warnung senden, wenn das Licht ausgeschaltet wird"
 	 WHERE
 		lght< 0.05 GROUP BY TumblingWindow(second, 1)
 
-Messen des Durchsatzes: Beim Durchsatz handelt es sich in diesem Kontext um die Menge der von Stream Analytics in einem festen Zeitraum (10 Minuten) verarbeiteten Eingabedaten. Um einen optimalen Verarbeitungsdurchsatz für die Eingabedaten zu erzielen, müssen sowohl die Datenstromeingabe als auch die Abfrage partitioniert werden. Zudem enthält die Abfrage **COUNT()**, um zu messen, wie viele Eingabeereignisse verarbeitet wurden. Um sicherzustellen, dass der Auftrag nicht einfach auf eingehende Eingabeereignisse wartet, wurde jede Partition der Eingabe-Event Hubs vorab mit ausreichend Eingabedaten (ca. 300 MB) geladen.
+Messen des Durchsatzes: Beim Durchsatz handelt es sich in diesem Kontext um die Menge der von Stream Analytics in einem festen Zeitraum (10 Minuten) verarbeiteten Eingabedaten. Um einen optimalen Verarbeitungsdurchsatz für die Eingabedaten zu erzielen, müssen sowohl die Datenstromeingabe als auch die Abfrage partitioniert werden. Zudem enthält die Abfrage **COUNT()**, um zu messen, wie viele Eingabeereignisse verarbeitet wurden. Um sicherzustellen, dass der Auftrag nicht einfach auf eingehende Eingabeereignisse wartet, wurde jede Partition der Eingabe-Event Hubs vorab mit ausreichend Eingabedaten (ca. 300 MB) geladen.
 
 Im Folgenden finden Sie die Ergebnisse mit einer wachsenden Anzahl an Streaming-Einheiten sowie der entsprechenden Partitionsmenge in den Event Hubs.
 
@@ -351,4 +351,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

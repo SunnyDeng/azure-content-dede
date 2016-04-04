@@ -65,6 +65,8 @@ In der aktuellen Vorversion von SQL Server 2016 sind Tabellen mit den folgenden 
 
 -   Fremdschlüsseleinschränkungen, die auf die Tabelle verweisen
 
+    Auf die Tabelle, für die die Stretch-Datenbank nicht aktiviert werden kann, wird mit einer Fremdschlüsseleinschränkung verwiesen. In unter- und übergeordneten Beziehungen (beispielsweise Aufträge und Auftragsdetails) ist dies die übergeordnete Tabelle (Aufträge).
+
 **Indexe**
 -   Volltextindizes
 
@@ -99,4 +101,4 @@ In der aktuellen Vorversion von SQL Server 2016 haben Stretch-fähige Tabellen d
 
 [Aktivieren von Stretch-Datenbank für eine Tabelle](sql-server-stretch-database-enable-table.md)
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

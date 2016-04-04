@@ -164,10 +164,10 @@ Vergewissern Sie sich vor dem Ändern des VPN-Typs des Gateways, dass Ihr VPN-Ge
 
 Weitere Informationen zu den standortübergreifenden Verbindungen für virtuelle Netzwerke finden Sie unter [Informationen zu sicheren, standortübergreifenden virtuellen Netzwerkverbindungen](vpn-gateway-cross-premises-options.md).
 
-Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
+Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-windows-classic-createportal.md).
 
 Wenn Sie eine Punkt-zu-Standort-VPN-Verbindung konfigurieren möchten, helfen Ihnen die Informationen unter [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung](vpn-gateway-point-to-site-create.md).
 
  
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

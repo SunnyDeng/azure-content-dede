@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/08/2016"
+   ms.date="03/18/2016"
    ms.author="larryfr"/>
 
 #Verwalten von HDInsight-Clustern mithilfe der Ambari-REST-API
@@ -23,7 +23,7 @@
 
 Apache Ambari vereinfacht die Verwaltung und Überwachung von Hadoop-Clustern durch die Bereitstellung einer benutzerfreundlichen Webbenutzeroberfläche und REST-API. Ambari ist in Linux-basierten HDInsight-Clustern enthalten und wird verwendet, um den Cluster zu überwachen und Konfigurationsänderungen vorzunehmen. Dieses Dokument vermittelt Ihnen die Grundlagen für das Arbeiten mit der Ambari-REST-API. Hierzu führen Sie allgemeine Aufgaben aus, z. B. das Suchen des vollqualifizierten Domänennamens der Clusterknoten oder das Suchen des vom Cluster verwendeten Standardspeicherkontos.
 
-> [AZURE.NOTE]Die Informationen in diesem Artikel gelten nur für Linux-basierte HDInsight-Cluster. Für Windows-basierte HDInsight-Cluster ist nur ein Teil der Überwachungsfunktionen über die Ambari-REST-API verfügbar. Weitere Informationen finden Sie unter [Überwachen von Hadoop in HDInsight mit der Ambari-API](hdinsight-monitor-use-ambari-api.md).
+> [AZURE.NOTE] Die Informationen in diesem Artikel gelten nur für Linux-basierte HDInsight-Cluster. Für Windows-basierte HDInsight-Cluster ist nur ein Teil der Überwachungsfunktionen über die Ambari-REST-API verfügbar. Weitere Informationen finden Sie unter [Überwachen von Hadoop in HDInsight mit der Ambari-API](hdinsight-monitor-use-ambari-api.md).
 
 ##Voraussetzungen
 
@@ -32,7 +32,7 @@ Apache Ambari vereinfacht die Verwaltung und Überwachung von Hadoop-Clustern du
 
 ##<a id="whatis"></a>Was ist Ambari?
 
-<a href="http://ambari.apache.org" target="_blank">Apache Ambari</a> vereinfacht die Hadoop-Verwaltung durch die Bereitstellung einer benutzerfreundlichen Webbenutzeroberfläche, die zum Bereitstellen, Verwalten und Überwachen von Hadoop-Clustern verwendet werden kann. Entwickler können diese Funktionen mithilfe der <a href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md" target="_blank">Ambari-REST-APIs</a> in ihre Anwendungen integrieren.
+[Apache Ambari](http://ambari.apache.org) vereinfacht die Hadoop-Verwaltung durch die Bereitstellung einer benutzerfreundlichen Webbenutzeroberfläche, die zum Bereitstellen, Verwalten und Überwachen von Hadoop-Clustern verwendet werden kann. Entwickler können diese Funktionen mithilfe der [Ambari-REST-APIs](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md) in ihre Anwendungen integrieren.
 
 Ambari wird standardmäßig mit Linux-basierten Clustern bereitgestellt.
 
@@ -40,7 +40,7 @@ Ambari wird standardmäßig mit Linux-basierten Clustern bereitgestellt.
 
 Der Basis-URI für die Ambari REST-API in HDInsight lautet https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME, wobei __CLUSTERNAME__ der Name des Clusters ist.
 
-> [AZURE.IMPORTANT]Zum Herstellen einer Verbindung mit Ambari in HDInsight ist HTTPS erforderlich. Sie müssen sich bei Ambari auch mit dem Administratorkontonamen (standardmäßig __Admin__) und dem Kennwort authentifizieren, die Sie bei der Erstellung des Clusters angegeben haben.
+> [AZURE.IMPORTANT] Zum Herstellen einer Verbindung mit Ambari in HDInsight ist HTTPS erforderlich. Sie müssen sich bei Ambari auch mit dem Administratorkontonamen (standardmäßig __Admin__) und dem Kennwort authentifizieren, die Sie bei der Erstellung des Clusters angegeben haben.
 
 Im folgenden Beispiel wird cURL zum Ausführen einer GET-Anforderung für die REST-API verwendet:
 
@@ -65,13 +65,13 @@ Wenn Sie diesen Befehl ausführen und __PASSWORD__ durch das Administratorkennwo
         "Host/host_status/UNKNOWN" : 0,
         "Host/host_status/ALERT" : 0
 
-Da es sich um JSON handelt, ist es in der Regel einfacher, zum Abrufen der Daten einen JSON-Parser zu verwenden. Wenn Sie z. B. die Anzahl der Warnungen (im Element __"Host/host\_status/ALERT"__) abrufen möchten, können Sie mit der folgenden Anweisung direkt auf den Wert zugreifen:
+Da es sich um JSON handelt, ist es in der Regel einfacher, zum Abrufen der Daten einen JSON-Parser zu verwenden. Wenn Sie z. B. die Anzahl der Warnungen (im Element __"Host/host\_status/ALERT"__) abrufen möchten, können Sie mit der folgenden Anweisung direkt auf den Wert zugreifen:
 
     curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME" | jq '.Clusters.health_report."Host/host_status/ALERT"'
     
 Hiermit wird das JSON-Dokument abgerufen und dann die Ausgabe an jq übergeben. `'.Clusters.health_report."Host/host_status/ALERT"'` gibt das Element im JSON-Dokument an, das Sie abrufen möchten.
 
-> [AZURE.NOTE]Das Element __Host\_status/Host/Warnung__ ist in Anführungszeichen eingeschlossen, um anzugeben, dass "/" Teil des Elementnamens ist. Weitere Informationen zur Verwendung von jq finden Sie auf der [jq-Website](https://stedolan.github.io/jq/).
+> [AZURE.NOTE] Das Element __Host\_status/Host/Warnung__ ist in Anführungszeichen eingeschlossen, um anzugeben, dass "/" Teil des Elementnamens ist. Weitere Informationen zur Verwendung von jq finden Sie auf der [jq-Website](https://stedolan.github.io/jq/).
 
 ##Beispiel: Abrufen des FQDN von Clusterknoten
 
@@ -83,7 +83,7 @@ Bei der Arbeit mit HDInsight müssen Sie möglicherweise den vollqualifizierten 
 
 Beachten Sie, dass jede dieser Anweisungen nach dem gleichen Muster erfolgt: Abrufen einer Komponente, von der bekannt ist, dass sie auf diesen Knoten ausgeführt wird, und dann Abrufen der `host_name`-Elemente, die den FQDN für diese Knoten enthalten.
 
-Das `host_components`-Element des Rückgabedokuments enthält mehrere Elemente. Durch Verwendung von `.host_components[]` und Angabe eines Pfads im Element werden die einzelnen Elemente durchlaufen und der Wert aus dem jeweiligen Pfad abgerufen. Wenn Sie nur einen Wert, z. B. den ersten FQDN-Eintrag, erhalten möchten, können Sie die Elemente als Auflistung zurückgeben und dann einen bestimmten Eintrag auswählen:
+Das `host_components`-Element des Rückgabedokuments enthält mehrere Elemente. Durch Verwendung von `.host_components[]` und Angabe eines Pfads im Element werden die einzelnen Elemente durchlaufen und der Wert aus dem jeweiligen Pfad abgerufen. Wenn Sie nur einen Wert, z. B. den ersten FQDN-Eintrag, erhalten möchten, können Sie die Elemente als Auflistung zurückgeben und dann einen bestimmten Eintrag auswählen:
 
     jq '[.host_components[].HostRoles.host_name][0]'
 
@@ -97,7 +97,7 @@ Mit der folgenden Anweisung wird der WASB-URI des Clusterstandardspeichers abger
 
     curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["fs.defaultFS"] | select(. != null)'
     
-> [AZURE.NOTE]Hierdurch wird die erste auf den Server angewendete Konfiguration (`service_config_version=1`) zurückgegeben, die diese Information enthält. Wenn Sie einen Wert abrufen, der nach der Erstellung des Clusters geändert wurde, müssen Sie möglicherweise die Konfigurationsversionen auflisten und die letzte Version abrufen.
+> [AZURE.NOTE] Hierdurch wird die erste auf den Server angewendete Konfiguration (`service_config_version=1`) zurückgegeben, die diese Information enthält. Wenn Sie einen Wert abrufen, der nach der Erstellung des Clusters geändert wurde, müssen Sie möglicherweise die Konfigurationsversionen auflisten und die letzte Version abrufen.
 
 Dadurch wird ein ähnlicher Wert wie der folgende zurückgegeben, wobei __CONTAINER__ der Standardcontainer und __ACCOUNTNAME__ der Name des Azure-Speicherkontos ist:
 
@@ -111,7 +111,7 @@ Sie können dann diese Information mit der [Azure-Befehlszeilenschnittstelle](..
     
     Hierdurch wird der Ressourcengruppenname für das Konto zurückgegeben.
     
-    > [AZURE.NOTE]Wenn von diesem Befehl nichts zurückgegeben wird, müssen Sie die Azure-Befehlszeilenschnittstelle eventuell in den Azure-Ressourcen-Manager-Modus ändern und den Befehl erneut ausführen. Wechseln Sie mit dem folgenden Befehl in den Azure-Ressourcen-Manager-Modus:
+    > [AZURE.NOTE] Wenn von diesem Befehl nichts zurückgegeben wird, müssen Sie die Azure-Befehlszeilenschnittstelle eventuell in den Azure-Ressourcen-Manager-Modus ändern und den Befehl erneut ausführen. Wechseln Sie mit dem folgenden Befehl in den Azure-Ressourcen-Manager-Modus:
     >
     > `azure config mode arm`
     
@@ -133,6 +133,6 @@ Sie können dann diese Information mit der [Azure-Befehlszeilenschnittstelle](..
 
 Eine vollständige Referenz der REST-API finden Sie unter [Referenz zur Ambari-API V1](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
-> [AZURE.NOTE]Einige Ambari-Funktionen sind deaktiviert, da sie vom HDInsight-Clouddienst verwaltet werden, z. B. Hinzufügen oder Entfernen von Hosts im Cluster oder Hinzufügen neuer Dienste.
+> [AZURE.NOTE] Einige Ambari-Funktionen sind deaktiviert, da sie vom HDInsight-Clouddienst verwaltet werden, z. B. Hinzufügen oder Entfernen von Hosts im Cluster oder Hinzufügen neuer Dienste.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0323_2016-->

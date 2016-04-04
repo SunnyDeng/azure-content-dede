@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="03/04/2016" 
+	ms.date="03/22/2016" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – Beispiele 
@@ -41,9 +41,7 @@ Weitere Informationen finden Sie in der [StackExchange.Redis](https://github.com
 
 [Verwenden von Azure Redis Cache mit Python](cache-python-get-started.md) zeigt die ersten Schritte mit Azure Redis Cache mit Python und dem [redis-py](https://github.com/andymccurdy/redis-py)-Client.
 
-Das [PHP-Beispiel](https://msdn.microsoft.com/library/azure/dn690470.aspx#PHPExample) zeigt die ersten Schritte mit Azure Redis Cache mit PHP und dem [predis](https://github.com/nrk/predis)-Client.
-
-[Arbeiten mit .NET-Objekten im Cache](https://msdn.microsoft.com/library/azure/dn690521.aspx#Objects) zeigt Ihnen eine Möglichkeit zum Serialisieren von .NET-Objekten, um sie aus einer Azure Redis Cache-Instanz zu lesen und darin zu schreiben.
+[Arbeiten mit .NET-Objekten im Cache](cache-dotnet-how-to-use-azure-redis-cache.md#work-with-net-objects-in-the-cache) zeigt Ihnen eine Möglichkeit zum Serialisieren von .NET-Objekten, um sie aus einer Azure Redis Cache-Instanz zu lesen und darin zu schreiben.
 
 ## Verwenden von Redis Cache als horizontal hochskalierbare Backplane für ASP.NET SignalR
 
@@ -76,4 +74,4 @@ Das Beispiel [Retwis](https://github.com/SyntaxC4-MSFT/retwis) ist die Hello-Wor
 
 Das Beispiel [Bandbreitenüberwachung](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor) ermöglicht die Überwachung der auf dem Client genutzten Bandbreite. Um die Bandbreite zu messen, führen Sie das Beispiel auf dem Cacheclientcomputer aus, rufen Sie den Cache auf, und beobachten Sie die durch das Beispiel gemeldete Bandbreite.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

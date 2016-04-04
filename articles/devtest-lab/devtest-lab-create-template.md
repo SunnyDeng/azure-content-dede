@@ -1,6 +1,6 @@
-<properties
-	pageTitle="Erstellen eines benutzerdefinierten Images für ein DevTest Lab aus einer VHD-Datei | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein benutzerdefiniertes Image aus einer VHD-Datei erstellen, das zum Erstellen von VMs in einem DevTest Lab verwendet werden kann."
+    <properties
+	pageTitle="Create a DevTest Lab custom image from a VHD file | Microsoft Azure"
+	description="Learn how to create a custom image from a VHD file, which can then be used to create VMs in a DevTest Lab"
 	services="devtest-lab,virtual-machines"
 	documentationCenter="na"
 	authors="tomarcher"
@@ -78,4 +78,4 @@ Um ein neues benutzerdefiniertes Image hinzuzufügen, benötigen Sie Zugriff auf
 
 Nachdem Sie ein benutzerdefiniertes Image zum Erstellen eines virtuellen Computers hinzugefügt haben, besteht der nächste Schritt darin, [Ihrem DevTest Lab einen virtuellen Computer hinzuzufügen](./devtest-lab-add-vm-with-artifacts.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -333,7 +333,7 @@ Sie können sich die gesamte Überwachung und den Diagnoseprozess als eine Pipel
 
 ![](media/best-practices-monitoring/Pipeline.png)
 
-_Abbildung 1: Die Phasen in der Überwachungs- und Diagnosepipeline_
+_Abbildung 1: Die Phasen in der Überwachungs- und Diagnosepipeline_
 
 Abbildung 1 zeigt, wie die Daten für die Überwachung und Diagnose aus einer Vielzahl von Datenquellen stammen können. Die Instrumentations-/Auflistungsphase betrifft die Instrumentation. Es wird bestimmt, welche Daten erfasst werden, wie das geschieht und in welchem Format, damit sie leicht überprüft werden können. Die Analyse-/Diagnosephase verwendet die Rohdaten, um sinnvolle Informationen zu generieren, der zur Ermittlung des Systemzustands verwendet werden können. Diese Informationen können Entscheidungen über mögliche Aktionen unterstützen, und die Ergebnisse können in die Instrumentations-/Auflistungsphase zurückgeführt werden. Die Visualisierungs-/Warnphase stellt eine nützliche Ansicht des Systemstatus dar. Mit einer Reihe von Dashboards kann sie Informationen nahezu in Echtzeit anzeigen und kann Berichte, Diagramme und Graphiken generieren, um eine historische Ansicht der Daten bereitzustellen, mit denen langfristige Trends erkannt werden können. Wenn Informationen anzeigen, dass ein KPI wahrscheinlich zulässige Begrenzungen überschreitet, kann in dieser Phase eine Warnung an einen Operator ausgelöst werden. In einigen Fällen kann eine Warnung auch verwendet werden, um einen automatisierten Prozess auszulösen, der Korrekturmaßnahmen wie die automatische Skalierung ergreift.
 
@@ -440,7 +440,7 @@ Die Datensammlung erfolgt häufig durch die Implementierung eines Erfassungsdien
 
 ![](media/best-practices-monitoring/TelemetryService.png)
 
-_Abbildung 2: Erfassen von Instrumentationsdaten_
+_Abbildung 2: Erfassen von Instrumentationsdaten_
 
 Bitte beachten Sie, dass dies eine vereinfachte Ansicht ist. Der Erfassungsdienst ist nicht unbedingt ein einzelner Prozess und umfasst möglicherweise viele Bestandteile, die auf verschiedenen Computern ausgeführt werden, wie in den folgenden Abschnitten beschrieben. Wenn die Analyse von einigen Telemetriedaten darüber hinaus schnell ausgeführt werden muss (heiße Analyse, wie im Abschnitt [Unterstützung von heißer, warmer und kalter Analyse](#supporting-hot-warm-and-cold-analysis) weiter unten in diesem Dokument beschrieben), können lokale Komponenten außerhalb des Erfassungsdienstes die Analyseaufgaben sofort durchführen. Abbildung 2 zeigt diese Situation für ausgewählte Ereignisse. Nach der analytischen Verarbeitung können die Ergebnisse direkt an das Visualisierungs- und Warnsubsystem gesendet werden. Daten zur warmen oder kalten Analyse werden im Speicher gehalten, während sie auf die Verarbeitung warten.
 
@@ -470,7 +470,7 @@ Ein Ansatz zum Implementieren des Pullmodells ist die Verwendung von Überwachun
 
 ![](media/best-practices-monitoring/PullModel.png)
 
-_Abbildung 3: Verwenden eines Überwachungs-Agents zum Abrufen von Informationen und Schreiben in einen freigegebenen Speicher_
+_Abbildung 3: Verwenden eines Überwachungs-Agents zum Abrufen von Informationen und Schreiben in einen freigegebenen Speicher_
 
 > [AZURE.NOTE] Überwachungsagents sind ideal dazu geeignet, Instrumentationsdaten zu erfassen, die naturgemäß aus einer Datenquelle abgerufen werden, z. B. Informationen aus SQL Server Management Views oder die Länge einer Azure Service Bus-Warteschlange.
 
@@ -481,7 +481,7 @@ Um diese Probleme zu beheben, können Sie Warteschlangen implementieren. Abbildu
 
 ![](media/best-practices-monitoring/BufferedQueue.png)
 
-_Abbildung 4. Mithilfe einer Warteschlange Instrumentationsdaten puffern_
+_Abbildung 4. Mithilfe einer Warteschlange Instrumentationsdaten puffern_
 
 Der lokale Datensammlungsdienst kann Daten direkt nach Empfang zu einer Warteschlange hinzufügen. Die Warteschlange fungiert als Puffer und der Dienst, der in den Speicher schreibt, kann Daten in seinem eigenen Tempo abrufen und schreiben. Standardmäßig arbeitet eine Warteschlange auf der Basis von First-In-First-Out, aber Sie können Nachrichten priorisieren, um den Weg durch die Warteschlange zu beschleunigen, wenn sie Daten enthalten, die schneller verarbeitet werden müssen. Weitere Informationen finden Sie unter [Prioritätswarteschlange](https://msdn.microsoft.com/library/dn589794.aspx). Alternativ können Sie verschiedene Kanäle (z. B. Service Bus-Themen) verwenden, um Daten an verschiedene Ziele zu leiten, abhängig von der Form der erforderlichen analytischen Verarbeitung.
 
@@ -493,14 +493,14 @@ Die vom Datensammlungsdienst aus einer einzelnen Instanz einer Anwendung abgeruf
 
 ![](media/best-practices-monitoring/Consolidation.png)
 
-_Abbildung 5: Verwenden eines separaten Dienstes zum Konsolidieren und Bereinigen von Instrumentationsdaten_
+_Abbildung 5: Verwenden eines separaten Dienstes zum Konsolidieren und Bereinigen von Instrumentationsdaten_
 
 ### Speichern von Instrumentationsdaten
 Die vorherigen Diskussionen haben auf eher simple Weise dargestellt, wie Instrumentationsdaten gespeichert werden. In der Realität kann es sinnvoll sein, die verschiedenen Arten von Informationen mithilfe von Technologien zu speichern, die am besten für die Art der Verwendung geeignet sind. Azure-Blob- und Tabellenspeicher haben beispielsweise einige Ähnlichkeiten, was den Zugriff darauf angeht, sind jedoch im Hinblick auf Vorgänge eingeschränkt, die Sie damit ausführen können. Außerdem ist die Granularität der enthaltenen Daten ganz unterschiedlich. Wenn Sie weitere analytische Vorgänge durchführen müssen oder Volltext-Suchfunktionen für die Daten erforderlich sind, ist möglicherweise die Nutzung von Datenspeicherung besser geeignet, die für bestimmte Typen von Abfragen und Datenzugriff optimierte Funktionen bietet. Beispielsweise könnten Daten von Leistungsindikatoren in einer SQL-Datenbank gespeichert werden, um eine Ad-hoc-Analyse zu ermöglichen; Ablaufverfolgungsprotokolle werden möglicherweise besser in Azure DocumentDB gespeichert; Sicherheitsinformationen könnten in HDFS geschrieben werden; Informationen, die eine die Volltextsuche erfordern, könnten mit Elastic Search gespeichert werden (mithilfe der umfassenden Indexierung werden Suchvorgänge zusätzlich beschleunigt). Sie können einen zusätzlichen Dienst implementieren, der die Daten in regelmäßigen Abständen aus dem freigegebenen Speicher abruft, sie partitioniert und gemäß ihrem Zweck filtert, und sie anschließend in einen entsprechenden Satz von Datenspeichern schreibt, wie in Abbildung 6 dargestellt. Ein alternativer Ansatz ist die Berücksichtigung dieser Funktionalität bei der Konsolidierung und der Bereinigung, sodass die Daten direkt beim Abrufen in diese Speicher geschrieben werden, anstatt sie in einem freigegebenen Zwischenspeicherbereich zu speichern. Jeder Ansatz hat Vor- und Nachteile. Das Implementieren eines separaten Partitionierungsdiensts verringert die Belastung auf den Konsolidierungs- und Bereinigungsdienst und ermöglicht, dass mindestens einige der partitionierten Daten neu generiert werden, falls erforderlich (abhängig davon, wie viele Daten im freigegebenen Speicher beibehalten werden). Allerdings werden zusätzliche Ressourcen belegt und es kommt möglicherweise zu einer Verzögerung zwischen den Instrumentationsdaten, die von jeder Anwendungsinstanz empfangen werden, und den Daten, die in verwertbare Informationen umgewandelt werden.
 
 ![](media/best-practices-monitoring/DataStorage.png)
 
-_Abbildung 6: Partitionierung von Daten anhand analytischer Anforderungen und Speicheranforderungen_
+_Abbildung 6: Partitionierung von Daten anhand analytischer Anforderungen und Speicheranforderungen_
 
 Die gleichen Instrumentationsdaten können für mehrere Zwecke erforderlich sein. Z. B. können Leistungsindikatoren dazu verwendet werden, um eine historische Ansicht der Systemleistung zu liefern, aber diese Informationen können möglicherweise auch mit anderen Verwendungsdaten kombiniert werden, um Abrechnungsinformationen für Kunden zu generieren. In diesen Situationen können möglicherweise dieselben Daten an mehrere Ziele gesendet werden, z. B. eine Dokumentendatenbank, die als langfristiger Speicher zum Speichern von Rechnungsinformationen dient, und einen mehrdimensionalen Speicher für die Verarbeitung komplexer Leistungsanalysen.
 
@@ -607,8 +607,8 @@ In vielen Fällen können Berichte in Batchprozessen nach einem bestimmten Zeitp
 - Die Seite [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](cloud-services-dotnet-diagnostics.md) auf der Microsoft-Website.
 - Die Seiten [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/), und [HDInsight](https://azure.microsoft.com/services/hdinsight/) auf der Microsoft-Website.
 - Die Seite [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md) auf der Microsoft-Website.
-- Der Artikel [SQL Server Business Intelligence auf virtuellen Azure-Computern](./virtual-machines/virtual-machines-sql-server-business-intelligence.md) auf der Microsoft-Website.
+- Der Artikel [SQL Server Business Intelligence auf virtuellen Azure-Computern](./virtual-machines/virtual-machines-windows-classic-ps-sql-bi.md) auf der Microsoft-Website.
 - Die Seiten [Empfangen von Warnbenachrichtigungen](insights-receive-alert-notifications.md) und [Nachverfolgen der Dienstintegrität](insights-service-health.md) auf der Microsoft-Website.
 - Die Seite [Application Insights](app-insights-get-started.md) auf der Microsoft-Website.
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

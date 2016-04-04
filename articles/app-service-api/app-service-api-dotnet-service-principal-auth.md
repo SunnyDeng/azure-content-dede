@@ -365,7 +365,7 @@ Nehmen Sie die folgenden Änderungen am Projekt TodoListDataAPI vor.
 
 	c. Suchen Sie nach der objectid für den Dienstprinzipal der Anwendung TodoListAPI, und speichern Sie sie an einem Ort, von dem Sie sie später kopieren können.
 
-7. Navigieren Sie im Azure-Portal zum Blatt „Web-App“ für die Web-App, für die Sie das Projekt ToDoListAngular bereitgestellt haben.
+7. Navigieren Sie im Azure-Portal zum Blatt „API-App“ der API-App, in der Sie das Projekt „ToDoListDataAPI“ bereitgestellt haben.
 
 9. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
 
@@ -417,4 +417,4 @@ Weitere Informationen zu Azure Active Directory finden Sie in den folgenden Ress
 
 Informationen zu anderen Möglichkeiten der Bereitstellung von Visual Studio-Projekten für API-Apps mit Visual Studio oder durch die [Automatisierung der Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) über ein [Quellcodeverwaltungssystem](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) finden Sie unter[ Gewusst wie: Bereitstellen einer Azure App Service-App](../app-service-web/web-sites-deploy.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

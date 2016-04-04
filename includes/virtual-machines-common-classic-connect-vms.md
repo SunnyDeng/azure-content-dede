@@ -1,47 +1,49 @@
 
 
 
-Virtual machines created with the classic deployment model are always placed in a cloud service. The cloud service acts as a container and provides a unique public DNS name, a public IP address, and a set of endpoints to access the virtual machine over the Internet. The cloud service can be in a virtual network, but that's not a requirement.
+Virtuelle Computer, die mit dem klassischen Bereitstellungsmodell erstellt werden, befinden sich immer in einem Clouddienst. Der Clouddienst fungiert als Container und stellt einen eindeutigen öffentlichen DNS-Namen, eine öffentliche IP-Adresse und einen Satz von Endpunkten bereit, damit auf den virtuellen Computer über das Internet zugegriffen werden kann. Der Clouddienst kann sich in einem virtuellen Netzwerk befinden, was jedoch nicht zwingend erforderlich ist.
 
-If a cloud service isn't in a virtual network, it's called a *standalone* cloud service. The virtual machines in a standalone cloud service can only communicate with other virtual machines by using the other virtual machines’ public DNS names, and the traffic travels over the Internet. If a cloud service is in a virtual network, the virtual machines in that cloud service can communicate with all other virtual machines in the virtual network without sending any traffic over the Internet.
+Befindet sich ein Clouddienst nicht in einem virtuellen Netzwerk, handelt es sich um einen *eigenständigen* Clouddienst. Die virtuellen Computer in einem eigenständigen Clouddienst können mit anderen virtuellen Computern nur über deren öffentliche DNS-Namen kommunizieren. Dieser Datenverkehr läuft über das Internet. Wenn ein Clouddienst mit einem virtuellen Netzwerk verbunden ist, können die virtuellen Computer in diesem Clouddienst mit allen anderen virtuellen Computern in dem virtuellen Netzwerk kommunizieren, ohne dass Daten über das Internet gesendet werden.
 
-If you place your virtual machines in the same standalone cloud service, you can still use load balancing and availability sets. For details, see [Load balancing virtual machines](load-balance-virtual-machines.md) and [Manage the availability of virtual machines](virtual-machines-windows-manage-availability.md). However, you can't organize the virtual machines on subnets or connect a standalone cloud service to your on-premises network. Here's an example:
+Wenn Sie Ihre virtuellen Computer im gleichen eigenständigen Clouddienst platzieren, können Sie Lastenausgleich und Verfügbarkeitsgruppen immer noch nutzen. Weitere Informationen finden Sie unter [Lastenausgleich virtueller Computer](load-balance-virtual-machines.md) und [Verwalten der Verfügbarkeit virtueller Computer](virtual-machines-windows-manage-availability.md). Sie können die virtuellen Computer jedoch nicht in Subnetzen organisieren oder einen eigenständigen Clouddienst mit Ihrem lokalen Netzwerk verbinden. Hier sehen Sie ein Beispiel:
 
-![Virtual machines in a standalone cloud service](./media/virtual-machines-common-classic-connect-vms/CloudServiceExample.png)
+![Virtuelle Computer in einem eigenständigen Clouddienst](./media/virtual-machines-common-classic-connect-vms/CloudServiceExample.png)
 
-If you place your virtual machines in a virtual network, you can decide how many cloud services you want to use for load balancing and availability sets. Additionally, you can organize the virtual machines on subnets in the same way as your on-premises network and connect the virtual network to your on-premises network. Here's an example:
+Wenn Sie Ihre virtuellen Computer in einem virtuellen Netzwerk platzieren, können Sie entscheiden, wie viele Clouddienste Sie verwenden möchten, um Lastenausgleich und Verfügbarkeitsgruppen zu nutzen. Darüber hinaus können Sie die virtuellen Computer in Subnetzen auf die gleiche Weise organisieren wie Ihr lokales Netzwerk und das virtuelle Netzwerk mit Ihrem lokalen Netzwerk verbinden. Hier sehen Sie ein Beispiel:
 
-![Virtual machines in a virtual network](./media/virtual-machines-common-classic-connect-vms/VirtualNetworkExample.png)
+![Virtuelle Computer in einem virtuellen Netzwerk](./media/virtual-machines-common-classic-connect-vms/VirtualNetworkExample.png)
 
-Virtual networks are the recommended way to connect virtual machines in Azure. The best practice is to configure each tier of your application in a separate cloud service. However, you may need to combine some virtual machines from different application tiers into the same cloud service to remain within the maximum of 200 cloud services per subscription. To review this and other limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](azure-subscription-service-limits.md).
+Virtuelle Netzwerke sind das empfohlene Verfahren zum Verbinden virtueller Computern in Azure. Die bewährte Methode ist es, jede Ebene der Anwendung in einem separaten Clouddienst zu konfigurieren. Möglicherweise müssen Sie jedoch einige virtuelle Computer aus verschiedenen Anwendungsebenen im gleichen Clouddienst kombinieren, um die Höchstzahl von 200 Clouddiensten pro Abonnement nicht zu überschreiten. Diese und andere Einschränkungen finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits.md).
 
-## Connect VMs in a virtual network
+## Virtuelle Computer in einem virtuellen Netzwerk verbinden
 
-To connect virtual machines in a virtual network:
+So verbinden Sie virtuelle Computer in einem virtuellen Netzwerk:
 
-1.	Create the virtual network in the [Azure portal](virtual-networks-create-vnet-classic-pportal.md).
-2.	Create the set of cloud services for your deployment to reflect your design for availability sets and load balancing. In the Azure classic portal, click **New > Compute > Cloud Service > Custom Create** for each cloud service.
-3.	To create each new virtual machine, click **New > Compute > Virtual Machine > From Gallery**. Choose the correct cloud service and virtual network for the VM. If the cloud service is already joined to a virtual network, its name will already be selected for you.
+1.	Erstellen Sie das virtuelle Netzwerk im [Azure-Portal](virtual-networks-create-vnet-classic-pportal.md).
+2.	Erstellen Sie die Gruppe von Clouddiensten für Ihre Bereitstellung entsprechend Ihrem Entwurf für Verfügbarkeitsgruppen und Lastenausgleich. Klicken Sie im klassischen Azur-Portal für jeden Clouddienst auf **Neu > Compute > Cloud-Dienst > Benutzerdefiniert erstellen**.
+3.	Klicken Sie zum Erstellen der einzelnen neuen virtuellen Computer auf **Neu > Compute > Virtueller Computer > Aus Katalog**. Wählen Sie den richtigen Clouddienst und das richtige virtuelle Netzwerk für den virtuellen Computer aus. Wurde der Clouddienst bereits mit einem virtuellen Netzwerk verbunden, ist der Name dieses Diensts bereits für Sie ausgewählt.
 
-![Selecting a cloud service for a virtual machine](./media/virtual-machines-common-classic-connect-vms/VMConfig1.png)
+![Auswählen eines Clouddiensts für einen virtuellen Computer](./media/virtual-machines-common-classic-connect-vms/VMConfig1.png)
 
-## Connect VMs in a standalone cloud service
+## Virtuelle Computer in einem eigenständigen Clouddienst verbinden
 
-To connect virtual machines in a standalone cloud service:
+So verbinden Sie virtuelle Computer in einem eigenständigen Clouddienst:
 
-1.	Create the cloud service in the [Azure classic portal](http://manage.windowsazure.com). Click **New > Compute > Cloud Service > Custom Create**. Or, you can create the cloud service for your deployment when you create your first virtual machine.
+1.	Erstellen Sie den Clouddienst im [klassischen Azure-Portal](http://manage.windowsazure.com). Klicken Sie auf **Neu > Compute > Clouddienst > Benutzerdefiniert erstellen**. Alternativ können Sie beim Erstellen des ersten virtuellen Computers den Clouddienst für Ihre Bereitstellung erstellen.
 
-2.	When you create the virtual machines, choose the name of cloud service created in the previous step.
+2.	Wählen Sie beim Erstellen der virtuellen Computer den Namen des im vorherigen Schritts erstellten Clouddiensts aus.
 
-	![Add a virtual machine to an existing cloud service](./media/virtual-machines-common-classic-connect-vms/Connect-VM-to-CS.png)
+	![Hinzufügen eines virtuellen Computers zu einem vorhandenen Clouddienst](./media/virtual-machines-common-classic-connect-vms/Connect-VM-to-CS.png)
 
-##Resources
-[Load balancing virtual machines](load-balance-virtual-machines.md)
+##Ressourcen
+[Lastenausgleich virtueller Computer](load-balance-virtual-machines.md)
 
-[Manage the availability of virtual machines](virtual-machines-windows-manage-availability.md)
+[Verwalten der Verfügbarkeit virtueller Computer](virtual-machines-windows-manage-availability.md)
 
-After you create a virtual machine, it's a good idea to add a data disk so your services and workloads have a location to store data. See one of the following:
+Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen Datenträger hinzuzufügen, damit ein Speicherort für die Daten der Dienste und Arbeitsauslastungen verfügbar ist. Weitere Informationen finden Sie unter einer der folgenden Optionen:
 
-[How to Attach a Data Disk to a Linux Virtual Machine](virtual-machines-linux-classic-attach-disk.md)
+[Vorgehensweise: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](virtual-machines-linux-classic-attach-disk.md)
 
-[How to Attach a Data Disk to a Windows Virtual Machine](virtual-machines-windows-classic-attach-disk.md)
+[Anfügen eines Datenträgers an einen virtuellen Windows-Computer](virtual-machines-windows-classic-attach-disk.md)
+
+<!---HONumber=AcomDC_0323_2016-->

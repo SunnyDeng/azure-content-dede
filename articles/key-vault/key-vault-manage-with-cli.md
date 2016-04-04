@@ -35,7 +35,7 @@ Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der A
 Für dieses Tutorial benötigen Sie Folgendes:
 
 - Ein Abonnement für Microsoft Azure. Wenn Sie kein Abonnement haben, können Sie sich für eine [kostenlose Testversion](../../../pricing/free-trial) registrieren.
-- Plattformübergreifende Azure-Befehlszeilenschnittstelle Version 0.9.1 oder aktueller. Informationen zum Installieren der aktuellen Version und Verbindungsaufbau mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+- Plattformübergreifende Azure-Befehlszeilenschnittstelle Version 0.9.1 oder aktueller. Informationen zum Installieren der aktuellen Version und Verbindungsaufbau mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 - Eine Anwendung, die zur Verwendung des Schlüssels oder Kennworts konfiguriert wird, den bzw. das Sie in diesem Lernprogramm erstellen. Eine Beispielanwendung erhalten Sie im [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=45343). Anweisungen finden Sie in der zugehörigen Readme-Datei.
 
 ## Hilfestellung für die plattformübergreifende Azure-Befehlszeilenschnittstelle
@@ -54,8 +54,8 @@ Wenn Sie sich nicht ganz sicher sind, welche Parameter für einen Befehl angegeb
 
 Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit Azure-Ressourcen-Manager in der plattformübergreifenden Azure-Befehlszeilenschnittstelle vertraut zu machen:
 
-- [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli-install.md)
-- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md)
+- [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
+- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md)
 
 
 ## Verbindungsherstellung mit Ihren Abonnements
@@ -89,7 +89,7 @@ Geben Sie Folgendes ein, um das zu verwendende Abonnement anzugeben:
 
     azure account set <subscription name>
 
-Weitere Informationen über die Konfiguration der plattformübergreifenden Azure-Befehlszeilenschnittstellen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+Weitere Informationen über die Konfiguration der plattformübergreifenden Azure-Befehlszeilenschnittstellen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 
 ## Wechseln zum Azure-Ressourcen-Manager
@@ -256,4 +256,4 @@ Hier ist ein Beispiel, wie ein bestimmten geheimer Schlüssel entfernt werden ka
 
 Eine Referenz zur Programmierung finden Sie im [Entwicklerhandbuch für den Azure-Schlüsseltresor](key-vault-developers-guide.md).
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -16,11 +16,11 @@ Verwenden Sie VNets für Folgendes:
 
 - Unterstützung von Hybrid Cloud-Szenarios
 									
-	VNets bieten flexible Möglichkeiten, verschiedene Hybrid Cloud-Szenarios zu unterstützen. Sie können cloudbasierte Anwendungen auf sichere Weise mit beliebigen lokalen Systemen wie z. B. Mainframes oder Unix-Systemen verbinden.
+	VNets bieten flexible Möglichkeiten, verschiedene Hybrid Cloud-Szenarios zu unterstützen. Sie können cloudbasierte Anwendungen auf sichere Weise mit beliebigen lokalen Systemen wie z. B. Mainframes oder Unix-Systemen verbinden.
 
 ### Wie finde ich heraus, ob ich ein virtuelles Netzwerk benötige?
 
-Auf der Webseite [Virtuelle Netzwerke – Übersicht](virtual-networks-overview.md) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
+Auf der Webseite [Virtuelle Netzwerke – Übersicht](../articles/virtual-network/virtual-networks-overview.md) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
 
 ### Wie fange ich an?
 
@@ -28,7 +28,7 @@ Auf der Webseite [Dokumentation zu virtuellen Netzwerken](https://azure.microsof
 
 ### Welche Dienste können in VNets genutzt werden?
 
-VNets können mit einer Vielzahl unterschiedlicher Azure-Dienste, z. B. Cloud Services (PaaS), Virtual Machines und Web-Apps, verwendet werden. Es gibt jedoch auch einige Dienste, die in einem VNet nicht unterstützt werden. Überprüfen Sie den spezifischen Dienst, den Sie verwenden möchten, und vergewissern Sie sich, ob er kompatibel ist.
+VNets können mit einer Vielzahl unterschiedlicher Azure-Dienste, z. B. Cloud Services (PaaS), Virtual Machines und Web-Apps, verwendet werden. Es gibt jedoch auch einige Dienste, die in einem VNet nicht unterstützt werden. Überprüfen Sie den spezifischen Dienst, den Sie verwenden möchten, und vergewissern Sie sich, ob er kompatibel ist.
 
 ### Können VNets ohne standortübergreifende Konnektivität verwendet werden?
 
@@ -40,9 +40,13 @@ Ja. Ein VNet kann auch ohne Standort-zu-Standort-Konnektivität genutzt werden. 
 
 Sie können die folgenden Tools zum Erstellen oder Konfigurieren eines virtuellen Netzwerks verwenden:
 
-- Sie können das Verwaltungsportal verwenden. Siehe [Verwalten der Eigenschaften eines virtuellen Netzwerks (VNet)](virtual-networks-settings.md).
+- Azure-Portal (für klassische VNets und Resource Manager-VNets).
 
-- Sie können eine Netzwerkkonfigurationsdatei (NETCFG-Datei) verwenden. Siehe [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md).
+- Eine Netzwerkkonfigurationsdatei (NETCFG-Datei, nur für klassische VNets). Siehe [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](../articles/virtual-network/virtual-networks-using-network-configuration-file.md).
+
+- PowerShell (für klassische VNets und Resource Manager-VNets)
+
+- Azure-Befehlszeilenschnittstelle (für klassische VNets und Resource Manager-VNets)
 
 ### Welche Adressbereiche kann ich in meinen VNets verwenden?
 
@@ -50,7 +54,7 @@ Sie können öffentliche IP-Adressbereiche und alle in [RFC 1918](http://tools.i
 
 ### Können öffentliche IP-Adressen in VNets verwendet werden?
 
-Ja. Weitere Informationen zu öffentlichen IP-Adressbereichen finden Sie unter [Öffentlicher IP-Adressraum in einem virtuellen Netzwerk (VNet)](virtual-networks-public-ip-within-vnet.md). Beachten Sie, dass auf Ihre öffentlichen IPs nicht direkt über das Internet zugegriffen werden kann.
+Ja. Weitere Informationen zu öffentlichen IP-Adressbereichen finden Sie unter [Öffentlicher IP-Adressraum in einem virtuellen Netzwerk (VNet)](../articles/virtual-network/virtual-networks-public-ip-within-vnet.md). Beachten Sie, dass auf Ihre öffentlichen IPs nicht direkt über das Internet zugegriffen werden kann.
 
 ### Ist die Anzahl der Subnetze im virtuellen Netzwerk begrenzt?
 
@@ -70,7 +74,7 @@ Nein. VNets sind Layer-3-Overlays. Layer-2-Semantik wird in Azure nicht unterst�
 
 ### Können benutzerdefinierte Routingrichtlinien für VNets und Subnetze angegeben werden?
 
-Ja. Sie können benutzerdefinierte Routen (UDR) verwenden. Weitere Informationen zu UDR finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](virtual-networks-udr-overview.md).
+Ja. Sie können benutzerdefinierte Routen (UDR) verwenden. Weitere Informationen zu UDR finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](../articles/virtual-network/virtual-networks-udr-overview.md).
 
 ### Unterstützen VNets Multicasting oder Broadcasting?
 
@@ -118,13 +122,13 @@ Nein. Ein VNet ist auf eine Region beschränkt.
 
 ### Kann ein VNet mit einem anderen VNet in Azure verbunden werden?
 
-Ja. Sie können VNet-zu-VNet-Kommunikation mithilfe der REST-APIs oder Windows PowerShell erstellen. Siehe [Konfigurieren einer VNet-zu-VNet-Verbindung](virtual-networks-configure-vnet-to-vnet-connection.md).
+Ja. Sie können VNet-zu-VNet-Kommunikation mithilfe der REST-APIs oder Windows PowerShell erstellen.
 
 ## Namensauflösung (DNS)
 
 ### Welche DNS-Optionen sind für VNets verfügbar?
 
-Eine Übersicht über die verfügbaren DNS-Optionen finden Sie in der Entscheidungstabelle auf der Seite [Namensauflösung für virtuelle Computer und Rolleninstanzen](virtual-networks-name-resolution-for-vms-and-role-instances.md).
+Eine Übersicht über die verfügbaren DNS-Optionen finden Sie in der Entscheidungstabelle auf der Seite [Namensauflösung für virtuelle Computer und Rolleninstanzen](../articles/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 ### Können DNS-Server für ein VNet angegeben werden?
 
@@ -132,7 +136,7 @@ Ja. Sie haben die Möglichkeit, IP-Adressen von DNS-Servern in den Einstellungen
 
 ### Wie viele DNS-Server können angegeben werden?
 
-Sie können bis zu 12 DNS-Server angeben.
+Sie können bis zu 12 DNS-Server angeben.
 
 ### Können DNS-Server geändert werden, nachdem das Netzwerk erstellt wurde?
 
@@ -143,7 +147,7 @@ Ja. Sie können die Liste der DNS-Server für das VNet jederzeit ändern. Wenn S
 
 Der von Azure bereitgestellte DNS-Dienst ist ein von Microsoft angebotener mehrinstanzenfähiger DNS-Dienst. In Azure werden alle Ihre virtuellen Computer und Rolleninstanzen in diesem Dienst registriert. Dieser Dienst stellt die Namensauflösung nach dem Hostnamen für virtuelle Computer und Rolleninstanzen, die im gleichen Clouddienst enthalten sind, und nach dem FQDN für virtuelle Computer und Rolleninstanzen im gleichen VNet zur Verfügung.
 
-> [AZURE.NOTE] Die mandantenübergreifende Namensauflösung mithilfe des von Azure bereitgestellten DNS-Diensts ist derzeit auf die ersten 100 Clouddienste im virtuellen Netzwerk beschränkt. Diese Einschränkung gilt nicht, wenn Sie einen eigenen DNS-Server verwenden.
+> [AZURE.NOTE] Die mandantenübergreifende Namensauflösung mithilfe des von Azure bereitgestellten DNS-Diensts ist derzeit auf die ersten 100 Clouddienste im virtuellen Netzwerk beschränkt. Diese Einschränkung gilt nicht, wenn Sie einen eigenen DNS-Server verwenden.
 
 ### Können DNS-Einstellungen für einzelne virtuelle Computer und Dienste überschrieben werden?
 
@@ -171,11 +175,11 @@ Ja. Sie können alle von Azure unterstützten Linux-Distributionen bereitstellen
 
 ### Welche IP-Adresse wird meinem virtuellen Computer zugewiesen?
 
-- **Interne IP-Adresse:** Wenn Sie einen virtuellen Computer in einem VNet bereitstellen, erhält der virtuelle Computer immer eine interne IP-Adresse aus einem Pool interner IP-Adressen, den Sie angeben. Virtuelle Computer kommunizieren im VNet mithilfe interner IP-Adressen. In Azure wird eine dynamische interne IP-Adresse zugewiesen, Sie können jedoch eine statische Adresse für Ihren virtuellen Computer anfordern. Weitere Informationen zu statischen internen IP-Adressen finden Sie unter [Festlegen einer statischen internen IP-Adresse](virtual-networks-reserved-private-ip.md).
+- **Interne IP-Adresse:** Wenn Sie einen virtuellen Computer in einem VNet bereitstellen, erhält der virtuelle Computer immer eine interne IP-Adresse aus einem Pool interner IP-Adressen, den Sie angeben. Virtuelle Computer kommunizieren im VNet mithilfe interner IP-Adressen. In Azure wird eine dynamische interne IP-Adresse zugewiesen, Sie können jedoch eine statische Adresse für Ihren virtuellen Computer anfordern. Weitere Informationen zu statischen internen IP-Adressen finden Sie unter [Festlegen einer statischen internen IP-Adresse](../articles/virtual-network/virtual-networks-reserved-private-ip.md).
 
-- **VIP:** Ihrem virtuellen Computer wird auch eine VIP-Adresse zugewiesen. Eine VIP-Adresse wird dem virtuellen Computer jedoch niemals direkt zugewiesen. Eine VIP-Adresse ist eine öffentliche IP-Adresse, die dem Clouddienst zugewiesen werden kann. Sie können optional eine VIP-Adresse für Ihren Clouddienst reservieren. Siehe [Reservierte öffentliche IP-Adresse](virtual-networks-reserved-public-ip.md).
+- **VIP:** Ihrem virtuellen Computer wird auch eine VIP-Adresse zugewiesen. Eine VIP-Adresse wird dem virtuellen Computer jedoch niemals direkt zugewiesen. Eine VIP-Adresse ist eine öffentliche IP-Adresse, die dem Clouddienst zugewiesen werden kann. Sie können optional eine VIP-Adresse für Ihren Clouddienst reservieren.
 
-- **ILPIP:** Sie können außerdem eine öffentliche IP-Adresse auf Instanzebene (ILPIP) konfigurieren. ILPIPs sind dem virtuellen Computer direkt zugeordnet und nicht dem Clouddienst. Weitere Informationen zu ILPIPs finden Sie unter [Übersicht über die öffentliche IP auf Instanzebene](virtual-networks-instance-level-public-ip.md).
+- **ILPIP:** Sie können außerdem eine öffentliche IP-Adresse auf Instanzebene (ILPIP) konfigurieren. ILPIPs sind dem virtuellen Computer direkt zugeordnet und nicht dem Clouddienst. Weitere Informationen zu ILPIPs finden Sie unter [Übersicht über die öffentliche IP auf Instanzebene](../articles/virtual-network/virtual-networks-instance-level-public-ip.md).
 
 ### Kann ich eine interne IP-Adresse für einen virtuellen Computer reservieren, den ich zu einem späteren Zeitpunkt erstelle?
 
@@ -197,7 +201,7 @@ Nichts. Die IP-Adressen (sowohl die öffentliche VIP-Adresse als auch die intern
 
 ### Können virtuelle Computer ohne erneute Bereitstellung zwischen Subnetzen in einem VNet verschoben werden?
 
-Ja. Weitere Informationen finden Sie [hier](virtual-networks-move-vm-role-to-subnet.md).
+Ja. Weitere Informationen finden Sie [hier](../articles/virtual-network/virtual-networks-move-vm-role-to-subnet.md).
 
 ### Kann eine statische MAC-Adresse für einen virtuellen Computer konfiguriert werden?
 
@@ -222,13 +226,13 @@ Sie können innerhalb von VNets ausschließlich Compute Services verwenden. Comp
 Ja. Sie können Web-Apps in einem VNet mit ASE (App Service Environment, App Service-Umgebung) bereitstellen. Web-Apps können außerdem eine sichere Verbindung herstellen und auf Ressourcen im Azure-VNet zugreifen, wenn Sie für Ihr VNet „Punkt-zu-Site“ konfiguriert haben. Weitere Informationen finden Sie unter den folgenden Links:
 
 
-- [Erstellen von Web-Apps in einer App Service-Umgebung](app-service-web-how-to-create-a-web-app-in-an-ase.md)
+- [Erstellen von Web-Apps in einer App Service-Umgebung](../articles/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase.md)
 
 - [Web Apps Virtual Network Integration (in englischer Sprache)](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
 
 - [Using VNet Integration and Hybrid Connections with Web Apps (in englischer Sprache)](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
-- [Integrieren einer Web-App in einem Azure Virtual Network](web-sites-integrate-with-vnet.md)
+- [Integrieren einer Web-App in einem Azure Virtual Network](../articles/app-service-web/web-sites-integrate-with-vnet.md)
 
 ### Können Clouddienste mit Web- und Workerrollen (PaaS) in einem VNet bereitgestellt werden?
 
@@ -266,4 +270,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

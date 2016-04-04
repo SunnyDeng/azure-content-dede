@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="02/11/2016"
+	ms.date="03/16/2016"
 	ms.author="donnam"/>
 
 # Verwendung der Offlinedatensynchronisierung in Mobile Services
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 &nbsp;
 
-
-[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> Informationen zur entsprechenden Mobile Apps-Version dieses Themas finden Sie unter [Aktivieren der Offlinesynchronisierung für Ihre mobile Xamarin.Android-App](../app-service-mobile/app-service-mobile-xamarin-android-get-started-offline-data.md).
 
 In diesem Thema werden die Offlinesynchronisierungsfunktionen von Azure Mobile Services in der TodoList-Schnellstart-App erläutert. Die Offlinesynchronisierung ermöglicht Ihnen die einfache Erstellung von Apps, die auch dann verwendet werden können, wenn der Benutzer keinen Netzwerkzugriff hat.
 
@@ -176,4 +176,4 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
 [klassischen Azure-Portal]: https://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

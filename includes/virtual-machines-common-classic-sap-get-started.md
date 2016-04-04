@@ -1,64 +1,62 @@
-Cloud Computing is a widely used term which is gaining more and more importance within the IT industry, from small companies up to large and multinational corporations. Microsoft Azure is the Cloud Services Platform from Microsoft which offers a wide spectrum of new possibilities. Now customers are able to rapidly provision and de-provision applications as Cloud-Services, so they are not limited to technical or budgeting restrictions. Instead of investing time and budget into hardware infrastructure, companies can focus on the application, business processes and its benefits for customers and users.
+Cloud Computing ist ein häufig verwendeter Begriff, der in der IT-Branche mehr und mehr an Bedeutung gewinnt – in kleinen Unternehmen ebenso wie in großen und multinationalen Konzernen. Microsoft Azure ist die Plattform für Clouddienste von Microsoft, die ein umfangreiches Spektrum an neuen Möglichkeiten bietet. Nun können Kunden Anwendungen schnell als Clouddienste bereitstellen bzw. die Bereitstellung aufheben und sind nicht mehr durch technische oder budgetbezogene Aspekte eingeschränkt. Anstatt Zeit und Geld in die Hardwareinfrastruktur zu investieren, können sich Unternehmen auf die Anwendung, Geschäftsprozesse und ihre Vorteile für Kunden und Benutzer konzentrieren.
 
-With Microsoft Azure Virtual Machine Services, Microsoft offers a comprehensive Infrastructure as a Service (IaaS) platform. SAP NetWeaver based applications are supported on Azure Virtual Machines (IaaS). The whitepapers below  describe how to plan and implement SAP NetWeaver based applications within Microsoft Azure as the platform of choice.
+Mit den Microsoft Azure Virtual Machines-Diensten bietet Microsoft eine umfassende IaaS-Plattform (Infrastructure-as-a-Service). Auf SAP NetWeaver basierende Anwendungen werden auf Azure Virtual Machines (IaaS) unterstützt. Die folgende Whitepaper beschreiben, wie auf SAP NetWeaver basierende Anwendungen in Microsoft Azure als Plattform der Wahl geplant und implementiert werden.
 
-## Planning and Implementation
+## Planung und Implementierung
 
-Title: SAP NetWeaver on Azure Virtual Machines – Planning and Implementation Guide
+Titel: SAP NetWeaver in Azure Virtual Machines – Planungs- und Implementierungshandbuch
 
-Summary: This is the paper to start with if you are thinking about running SAP NetWeaver in Azure Virtual Machines. This planning and implementation guide will help you evaluate whether an existing or planned SAP NetWeaver-based system can be deployed to an Azure Virtual Machines environment. It covers multiple SAP NetWeaver deployment scenarios, and includes SAP configurations that are specific to Azure. The paper lists and describes all the necessary configuration information you’ll need on the SAP/Azure side to run a hybrid SAP landscape. Measures you can take to ensure high availability of SAP NetWeaver-based systems on IaaS are also covered.
+Zusammenfassung: Mit diesem Whitepaper sollten Sie beginnen, wenn Sie planen, SAP NetWeaver in Azure Virtual Machines zu verwenden. Mithilfe dieses Planungs- und Implementierungshandbuchs können Sie bewerten, ob ein vorhandenes oder geplantes SAP NetWeaver-basiertes System in einer Azure Virtual Machines-Umgebung bereitgestellt werden kann. Es beschreibt mehrere SAP NetWeaver-Bereitstellungsszenarien und enthält SAP-Konfigurationen, die nur für Azure gelten. Im Whitepaper werden alle erforderlichen Konfigurationsinformationen aufgelistet und beschrieben, die Sie in SAP bzw. Azure benötigen, um eine hybride SAP-Umgebung auszuführen. Zudem werden Maßnahmen erläutert, die Sie ergreifen können, um eine hohe Verfügbarkeit von SAP NetWeaver-basierten Systemen auf IaaS sicherzustellen.
 
-Updated: August 2015
+Aktualisierung: August 2015
 
-[Download this guide now](http://go.microsoft.com/fwlink/?LinkId=397963)
-## Deployment
-Title: SAP NetWeaver on Azure Virtual Machines – Deployment Guide
+[Dieses Handbuch jetzt herunterladen](http://go.microsoft.com/fwlink/?LinkId=397963)
+## Bereitstellung
+Titel: SAP NetWeaver auf Azure Virtual Machines – Bereitstellungshandbuch
 
-Summary: This document provides procedural guidance for deploying SAP NetWeaver software to virtual machines in Azure. This paper focuses on three specific deployment scenarios, with an emphasis on enabling the Azure Monitoring Extensions for SAP, including troubleshooting recommendations for the Azure Monitoring Extensions for SAP. This paper assumes that you’ve read the planning and implementation guide.
+Zusammenfassung: Dieses Dokument enthält Schrittanleitungen für die Bereitstellung von SAP NetWeaver-Software auf virtuellen Computern in Azure. Schwerpunkt dieses Dokuments sind drei Bereitstellungsszenarien. Das Hauptaugenmerk liegt dabei auf der Aktivierung der Azure-Überwachungserweiterungen für SAP, einschließlich der Empfehlungen zur Problembehandlung für die Azure-Überwachungserweiterungen für SAP. Dieses Dokument setzt voraus, dass Sie das Planungs- und Implementierungshandbuch gelesen haben.
 
-Updated: September 2015
+Aktualisierung: September 2015
 
-[Download this guide now](http://go.microsoft.com/fwlink/?LinkId=397964)
+[Dieses Handbuch jetzt herunterladen](http://go.microsoft.com/fwlink/?LinkId=397964)
 
-## SAP DBMS on Azure
-Title: SAP DBMS in Azure Deployment Guide
+## SAP DBMS in Azure
+Titel: SAP DBMS in Azure – Bereitstellungshandbuch
 
-Summary: This paper covers planning and implementation considerations for the DBMS systems that should run in conjunction with SAP. In the first part, general considerations are listed and presented. The following parts of the paper relate to deployments of different DBMS in Azure that are supported by SAP. Different DBMS presented are SQL Server, SAP ASE, Oracle, SAP MaxDB and IBM DB2 for Linux, Unix and Windows. In those specific parts considerations you have to account for when you are running SAP systems on Azure in conjunction with those DBMS are discussed. Subjects like backup and high availability methods that are supported by the different DBMS on Azure are presented for the usage with SAP applications.
+Zusammenfassung: Dieses Whitepaper behandelt Aspekte der Planung und Implementierung für die DBMS-Systeme, die in Verbindung mit SAP ausgeführt werden sollen. Im ersten Teil werden allgemeine Informationen aufgelistet und vorgestellt. Die weiteren Teile des Dokuments erläutern Bereitstellungen unterschiedlicher DBMS in Azure, die von SAP unterstützt werden. Unterschiedliche DBMS, die vorgestellt werden, sind SQL Server, SAP ASE, Oracle, SAP MaxDB und IBM DB2 für Linus, Unix und Windows. In diesen speziellen Teilen werden Überlegungen erläutert, die Sie berücksichtigen müssen, wenn Sie SAP-Systeme in Azure in Verbindung mit einem dieser DBMS verwenden. Themen wie Methoden für Sicherungen und hohe Verfügbarkeit, die von den unterschiedlichen DBMS in Azure unterstützt werden, werden für die Nutzung mit SAP-Anwendungen vorgestellt.
 
-Updated: December 2015
+Aktualisiert: Dezember 2015
 
-[Download this guide now](http://go.microsoft.com/fwlink/?LinkId=397965)
+[Dieses Handbuch jetzt herunterladen](http://go.microsoft.com/fwlink/?LinkId=397965)
 
-## SAP NetWeaver on Azure
+## SAP NetWeaver in Azure
 
-Title: SAP NetWeaver - Building an Azure based Disaster Recovery Solution
+Titel: SAP NetWeaver – Erstellen einer auf Azure basierenden Lösung für die Notfallwiederherstellung
 
-Summary:This document provides a step-by-step guidance for building an Azure based Disaster Recovery solution for SAP NetWeaver. The solution described assumes that the SAP landscape is running virtualized on-premise based on Hyper-V. In the first part of the document Azure Site Recovery (ASR) services are introduced in its components. The second part of the document describes specifics for SAP NetWeaver based landscapes. Possibilities of using ASR with SAP NetWeaver application instances and SAP Central Services are discussed and described. A focus of the second part is leveraging ASR for SAP Central Services which are protected with windows Server Failover Cluster configurations.
+Zusammenfassung: Dieses Dokument enthält eine Schrittanleitung zum Erstellen einer auf Azure basierenden Lösung für die Notfallwiederherstellung für SAP NetWeaver. Für die beschriebene Lösung wird davon ausgegangen, dass die SAP-Umgebung virtualisiert und lokal basierend auf Hyper-V ausgeführt wird. Im ersten Teil des Dokuments werden die Komponenten von Azure Site Recovery-Diensten (ASR) vorgestellt. Im zweiten Teil des Dokuments geht es um die Besonderheiten SAP NetWeaver-basierter Umgebungen. Hier werden Einsatzmöglichkeiten für ASR mit SAP NetWeaver-Anwendungsinstanzen und SAP Central Services erläutert und beschrieben. Ein Schwerpunkt des zweiten Teils ist die Nutzung von ASR für SAP Central Services, die mit Windows Server-Failoverclusterkonfigurationen geschützt werden.
 
-Updated: September 2015
+Aktualisierung: September 2015
 
-[Download this guide now](http://go.microsoft.com/fwlink/?LinkID=521971)
+[Dieses Handbuch jetzt herunterladen](http://go.microsoft.com/fwlink/?LinkID=521971)
 
-## SAP NetWeaver on Azure - HA
+## SAP NetWeaver in Azure – HA
 
-Title: SAP NetWeaver on Azure - Clustering SAP ASCS/SCS Instances using Windows Server Failover Cluster on Azure with SIOS DataKeeper
+Titel: SAP NetWeaver in Azure – Clustering von SAP ASCS/SCS-Instanzen mithilfe von Windows Server-Failoverclustern in Azure mit SIOS DataKeeper
 
-Summary: 'This document describes how to use SIOS DataKeeper to set up a highly available SAP ASCS/SCS configuration on Azure. SAP protects their single point of failure components like SAP ASCS/SCS or Enqueue Replication Services with Windows Server Failover Cluster configurations that require shared disks. These SAP components are essential for the functionality of a SAP system. Therefore high-availability functionality needs to be put in place to make sure that those components can sustain a failure of a server or a VM as done with Windows Cluster configurations for bare-metal and Hyper-V environments. As of August 2015 Azure on itself cannot provide shared disks that would be required for the Windows based highly available configurations required for these critical SAP components. However with the help of the product DataKeeper by SIOS, Windows Server Failover Cluster configurations as needed for SAP ASCS/SCS can be built on the Azure IaaS platform. This paper describes in a step-to-step approach how to install a Windows Server Failover Cluster configuration with shared disk provided by SIOS Datakeeper in Azure. The paper will explain details in configurations on the Azure, Windows and SAP side which make the high availability configuration work in an optimal manner. The paper complements the SAP Installation Documentation and SAP Notes which represent the primary resources for installations and deployments of SAP software on given platforms.
+Zusammenfassung: In diesem Dokument wird beschrieben, wie SIOS DataKeeper verwendet wird, um eine hoch verfügbare SAP ASCS/SCS-Konfiguration in Azure einzurichten. SAP schützt die Single Point of Failure-Komponenten wie SAP ASCS/SCS oder Enqueue Replication Services mit Windows Server-Failoverclusterkonfigurationen, die freigegebene Datenträger erfordern. Diese SAP-Komponenten sind für die Funktionalität eines SAP-Systems unverzichtbar. Aus diesem Grund müssen Funktionen für hohe Verfügbarkeit eingerichtet sein, um sicherzustellen, dass diese Komponenten einen Ausfall eines Servers oder eines virtuellen Computers tolerieren – z. B. mit Windows-Clusterkonfigurationen für Bare-Metal- und Hyper-V-Umgebungen. Seit August 2015 kann Azure selbst keine freigegebenen Datenträger bereitstellen, die für die Windows-basierten hoch verfügbaren Konfigurationen für diese kritischen SAP-Komponenten erforderlich wären. Jedoch können mit dem Produkt DataKeeper von SIOS auf der Azure IaaS-Plattform Windows Server-Failoverclusterkonfigurationen erstellt werden, wie sie für SAP ASCS/SCS erforderlich sind. Dieses Whitepaper beschreibt die einzelnen Schritte zur Installation einer Windows Server-Failoverclusterkonfiguration mit freigegebenen Datenträgern, die von SIOS Datakeeper in Azure bereitgestellt werden. Im Whitepaper werden Konfigurationsdetails in Azure, Windows und SAP erläutert, die für eine optimale Funktionsweise der hoch verfügbaren Konfiguration sorgen. Das Dokument ergänzt die SAP-Installationsdokumentation und die SAP-Hinweise, die die primäre Ressource für Installationen und Bereitstellungen von SAP-Software auf verschiedenen Plattformen darstellen.
 
-Updated: August 2015
+Aktualisierung: August 2015
 
-[Download this guide now](http://go.microsoft.com/fwlink/?LinkId=613056)
+[Dieses Handbuch jetzt herunterladen](http://go.microsoft.com/fwlink/?LinkId=613056)
 
-## SAP NetWeaver on Azure SUSE Linux Virtual Machines
+## SAP NetWeaver auf virtuellen Azure SUSE-Linux-Computern
 
-Title: Testing SAP NetWeaver on Microsoft Azure SUSE Linux VMs
+Titel: Testen von SAP NetWeaver in Microsoft Azure SUSE-Linux-VMs
 
-Summary: There is no official SAP support for running SAP NetWeaver on Azure Linux VMs at this point in time. Nevertheless customers
-might want to do some testing or might consider to run SAP demo or training systems on Azure Linux VMs as long as there is no need for contacting SAP support. 
-This article should help setting up Azure SUSE Linux VMs for running SAP and gives some basic hints in order to avoid common potential pitfalls.
+Zusammenfassung: Zu diesem Zeitpunkt gibt es keinen offiziellen SAP-Support für das Ausführen von SAP NetWeaver auf virtuellen Azure-Linux-Computern. Dennoch möchten Kunden möglicherweise einige Tests ausführen oder ziehen es in Betracht, die SAP-Demo oder Übungssysteme auf Azure Linux-VMs auszuführen, solange keine Notwendigkeit besteht, mit dem SAP-Support Kontakt aufzunehmen. Dieser Artikel soll beim Einrichten von Azure SUSE-Linux-VMs für die Ausführung von SAP helfen und bietet einige grundlegende Tipps, um häufige potenzielle Stolperfallen zu vermeiden.
 
-Updated: December 2015
+Aktualisiert: Dezember 2015
 
-[This article can be found here](virtual-machines-linux-sap-on-suse-quickstart.md)
+[Diesen Artikel finden Sie hier.](virtual-machines-linux-sap-on-suse-quickstart.md)
 
-
+<!---HONumber=AcomDC_0323_2016-->

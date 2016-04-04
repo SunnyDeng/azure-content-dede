@@ -46,7 +46,7 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 
 Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](https://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-## Phase 1: Einrichten der Hybridcloudumgebung
+## Phase 1: Einrichten der Hybridcloudumgebung
 
 Folgen Sie den Anweisungen im Thema [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md). Da das Vorhandensein des APP1-Servers im Subnetz des Unternehmensnetzwerks in dieser Testumgebung nicht erforderlich ist, können Sie jetzt herunterfahren.
 
@@ -54,9 +54,9 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-setup-sharepoint-hybrid-cloud-testing/CreateSPFarmHybridCloud_1.png)
 
-> [AZURE.NOTE] Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
+> [AZURE.NOTE] Für Phase 1 können Sie auch die simulierte Hybridcloud-Testumgebung einrichten. Im Thema [Einrichten einer simulierten Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) finden Sie entsprechende Anweisungen.
  
-## Phase 2: Konfigurieren des SQL Server-Computers (SQL1)
+## Phase 2: Konfigurieren des SQL Server-Computers (SQL1)
 
 Starten Sie ggf. den Computer DC2 über das Azure-Verwaltungsportal.
 
@@ -147,7 +147,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 ![](./media/virtual-networks-setup-sharepoint-hybrid-cloud-testing/CreateSPFarmHybridCloud_2.png)
 
  
-## Phase 3: Konfigurieren des SharePoint-Servers (SP1)
+## Phase 3: Konfigurieren des SharePoint-Servers (SP1)
 
 Erstellen Sie zunächst in der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer mit den folgenden Befehlen einen virtuellen Azure-Computer für SP1.
 
@@ -197,6 +197,6 @@ Ihre SharePoint-Intranetfarm kann jetzt in einer Hybrid Cloud-Umgebung getestet 
 
 ## Nächste Schritte
 
-- Richten Sie die [Produktionsworkload](../virtual-machines/virtual-machines-workload-intranet-sharepoint-overview.md) ein.
+- Richten Sie die [Produktionsworkload](../virtual-machines/virtual-machines-windows-sp-intranet-overview.md) ein.
 
-<!---HONumber=AcomDC_0204_2016-->
+<!---HONumber=AcomDC_0323_2016-->

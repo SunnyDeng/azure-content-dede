@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="03/17/2016"
    ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode "Roundrobin"
 
-Ein gängiges Muster für das Routing von Datenverkehr besteht darin, eine Reihe identischer Endpunkte (die Clouddienste und Websites umfassen) bereitzustellen und Datenverkehr im Roundrobin-Verfahren an die einzelnen Endpunkte zu senden. Die nachstehende Schritte zeigen, wie Traffic Manager konfiguriert wird, um die entsprechende Methode für das Routing von Datenverkehr zu implementieren. Weitere Informationen zu den verschiedenen Routingmethoden für Datenverkehr finden Sie unter [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md).
+Ein gängiges Muster für das Routing von Datenverkehr besteht darin, eine Reihe identischer Endpunkte (die Clouddienste und Websites umfassen) bereitzustellen und Datenverkehr im Roundrobin-Verfahren an die einzelnen Endpunkte zu senden. Die nachstehende Schritte zeigen, wie Traffic Manager konfiguriert wird, um die entsprechende Methode für das Routing von Datenverkehr zu implementieren. Weitere Informationen zu den verschiedenen Routingmethoden für Datenverkehr finden Sie unter [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-routing-methods.md).
 
->[AZURE.NOTE]Beachten Sie, dass Azure Websites bereits Roundrobin-Lastenausgleichsfunktionen für Websites in einem Datencenter (auch als "Region" bezeichnet) zur Verfügung stellt. Traffic Manager ermöglicht das Angeben von Routingmethoden für Roundrobin-Datenverkehr für Websites in verschiedenen Datencentern.
+>[AZURE.NOTE] Beachten Sie, dass Azure Websites bereits Roundrobin-Lastenausgleichsfunktionen für Websites in einem Datencenter (auch als "Region" bezeichnet) zur Verfügung stellt. Traffic Manager ermöglicht das Angeben von Routingmethoden für Roundrobin-Datenverkehr für Websites in verschiedenen Datencentern.
 
 ## Gleichmäßiges Routing von Datenverkehr (Roundrobin) in einer Gruppe von Endpunkten:
 
@@ -52,4 +52,4 @@ Ein gängiges Muster für das Routing von Datenverkehr besteht darin, eine Reihe
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

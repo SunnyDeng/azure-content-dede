@@ -1,55 +1,53 @@
 
 
-This article shows you how to attach both new and existing disks to a virtual machine through the Azure portal. Before you do this, review these tips:
+In diesem Artikel wird beschrieben, wie Sie über das Azure-Portal neue und vorhandene Datenträger an einen virtuellen Computer anfügen können. Lesen Sie die folgenden Tipps, bevor Sie mit diesem Vorgang fortfahren:
 
-- The size of the virtual machine controls how many data disks you can attach. For details, see [Sizes for virtual machines](virtual-machines-linux-sizes.md).
-- To use Premium storage, you'll need a DS-series or GS-series virtual machine. You can use disks from both Premium and Standard storage accounts with these virtual machines. Premium storage is available in certain regions. For details, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](../storage/storage-premium-storage-preview-portal.md).
-- Disks attached to virtual machines are actually .vhd files in an Azure storage account. For details, see [About disks and VHDs for virtual machines](virtual-machines-linux-about-disks-vhds.md).
-- For a new disk, you don't need to create it first because Azure creates it when you attach it.
-- For an existing disk, the .vhd file must be available in an Azure storage account. You can use a .vhd that's already there, if it's not attached to another virtual machine, or upload your own .vhd file to the storage account.
+- Die Größe des virtuellen Computers bestimmt, wie viele Datenträger Sie anfügen können. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-linux-sizes.md).
+- Für die Verwendung von Premium-Speicher benötigen Sie einen virtuellen Computer der DS- oder GS-Serie. Sie können Datenträger aus Premium- und aus Standard-Speicherkonten für diese virtuellen Computer verwenden. Premium-Speicher ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
+- Bei Datenträgern, die an virtuelle Computer angefügt werden, handelt es sich um VHD-Dateien in einem Azure-Speicherkonto. Weitere Informationen finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-linux-about-disks-vhds.md).
+- Neue Datenträger werden von Azure beim Anfügen automatisch erstellt. Sie müssen den Datenträger also nicht manuell erstellen.
+- Bei einem bereits vorhandenen Datenträger muss die VHD-Datei in einem Azure-Speicherkonto verfügbar sein. Sie können eine bereits vorhandene VHD verwenden, die noch nicht an einen anderen virtuellen Computer angefügt wurde, oder eine eigene VHD-Datei in das Speicherkonto hochladen.
 
-## Find the virtual machine
+## Suchen des virtuellen Computers
 
-1. Sign in to the Azure portal.
+1. Melden Sie sich beim Azure-Portal an.
 
-2. On the Hub menu, click **Virtual Machines**.
+2. Klicken Sie im Hub-Menü auf **Virtuelle Computer**.
 
-3.	Select the virtual machine from the list.
+3.	Wählen Sie den gewünschten virtuellen Computer aus der Liste aus.
 
-4. To the right, under **Essentials**, click **All settings**, and then click **Disks**.
+4. Klicken Sie rechts unter **Zusammenfassung** auf **Alle Einstellungen**, und klicken Sie anschließend auf **Datenträger**.
 
-	![Open disk settings](./media/virtual-machines-common-attach-disk-portal/find-disk-settings.png)
+	![Öffnen der Datenträgereinstellungen](./media/virtual-machines-common-attach-disk-portal/find-disk-settings.png)
 
-Continue by following instructions for attaching either a new disk or an existing disk.
+Folgen Sie den Anweisungen zum Anfügen eines neuen oder eines vorhandenen Datenträgers.
 
-## Option 1: Attach a new disk
+## Option 1: Anfügen eines neuen Datenträgers
 
-1.	On the **Disks** blade, click **Attach new**.
+1.	Klicken Sie auf dem Blatt **Datenträger** auf **Neuen anfügen**.
 
-2.	Review the default settings, update as necessary, and then click **OK**.
+2.	Überprüfen und aktualisieren Sie nach Bedarf die Standardeinstellungen, und klicken Sie anschließend auf **OK**.
 
- 	![Review disk settings](./media/virtual-machines-common-attach-disk-portal/attach-new.png)
+ 	![Überprüfen der Datenträgereinstellungen](./media/virtual-machines-common-attach-disk-portal/attach-new.png)
 
-3.	After Azure creates the disk and attaches it to the virtual machine, the new disk is listed in the virtual machine's disk settings under **Data Disks**.
+3.	Nachdem der Datenträger von Azure erstellt und an den virtuellen Computer angefügt wurde, wird der neue Datenträger in den Datenträgereinstellungen des virtuellen Computers unter **Datenträger** angezeigt.
 
-## Option 2: Attach an existing disk
+## Option 2: Anfügen eines vorhandenen Datenträgers
 
-1.	On the **Disks** blade, click **Attach existing**.
+1.	Klicken Sie auf dem Blatt **Datenträger** auf **Vorhandenen anfügen**.
 
-2.	Under **Attach existing disk**, click **VHD File**.
+2.	Klicken Sie unter **Vorhandenen Datenträger anfügen** auf **VHD-Datei**.
 
-	![Attach existing disk](./media/virtual-machines-common-attach-disk-portal/attach-existing.png)
+	![Anfügen eines vorhandenen Datenträgers](./media/virtual-machines-common-attach-disk-portal/attach-existing.png)
 
-3.	Under **Storage accounts**, select the account and container that holds the .vhd file.
+3.	Wählen Sie unter **Speicherkonten** das Konto und den Container aus, der die VHD-Datei enthält.
 
-	![Find VHD location](./media/virtual-machines-common-attach-disk-portal/find-storage-container.png)
+	![Suchen nach VHD-Dateien](./media/virtual-machines-common-attach-disk-portal/find-storage-container.png)
 
-4.	Select the .vhd file.
+4.	Wählen Sie die VHD-Datei aus.
 
-5.	Under **Attach existing disk**, the file you just selected is listed under **VHD File**. Click **OK**.
+5.	Die ausgewählte Datei wird unter **Vorhandenen Datenträger anfügen** und dort unter **VHD-Datei** angezeigt. Klicken Sie auf **OK**.
 
-6.	After Azure attaches the disk to the virtual machine, it's listed in the virtual machine's disk settings under **Data Disks**.
+6.	Nachdem der Datenträger von Azure an den virtuellen Computer angefügt wurde, wird er in den Datenträgereinstellungen des virtuellen Computers unter **Datenträger** angezeigt.
 
-
-
-
+<!---HONumber=AcomDC_0323_2016-->

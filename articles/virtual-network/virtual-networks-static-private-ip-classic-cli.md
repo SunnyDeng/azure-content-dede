@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/11/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 # Einrichten einer statischen privaten IP-Adresse (klassisch) in der Azure-Befehlszeilenschnittstelle
@@ -30,7 +30,7 @@ Die folgenden Beispielbefehle für die Azure-Befehlszeilenschnittstelle setzen v
 ## Angeben einer statischen privaten IP-Adresse beim Erstellen eines virtuellen Computers
 Erstellen Sie basierend auf dem oben beschriebenen Szenario in einem neuen Clouddienst mit dem Namen *TestService* einen neuen virtuellen Computer mit dem Namen *DNS01*. Gehen Sie dabei wie folgt vor:
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
 1. Führen Sie den Befehl **azure service create** aus, um den Clouddienst zu erstellen.
 
 		azure service create TestService --location uscentral
@@ -111,8 +111,8 @@ Erwartete Ausgabe:
 
 ## Nächste Schritte
 
-- Erfahren Sie mehr über [reservierte öffentliche IP-Adressen](../virtual-networks-reserved-public-ip).
-- Erfahren Sie mehr über [öffentliche IP-Adressen auf Instanzebene (ILPIP)](../virtual-networks-instance-level-public-ip).
+- Erfahren Sie mehr über [reservierte öffentliche IP-Adressen](virtual-networks-reserved-public-ip.md).
+- Erfahren Sie mehr über [öffentliche IP-Adressen auf Instanzebene (ILPIP)](virtual-networks-instance-level-public-ip.md).
 - Lesen Sie die Informationen zu [REST-APIs für reservierte IP-Adressen](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

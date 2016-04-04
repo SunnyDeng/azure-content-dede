@@ -25,9 +25,9 @@ Diese Anleitung enthält Informationen zur Verwendung der [Azure-Befehlszeilensc
 
 Diese Anleitung setzt voraus, dass Sie die grundlegenden Konzepte von Azure-Speicher verstehen. Die Anleitung bietet eine Reihe von Skripts, um die Verwendung der Azure-Befehlszeilenschnittstelle mit Azure-Speicher zu veranschaulichen. Sie müssen die Skriptvariablen auf Basis Ihrer Konfiguration aktualisieren, bevor Sie die jeweiligen Skripts ausführen.
 
-> [AZURE.NOTE] Die Anleitung enthält Beispiele für die Befehle und Skripts der Azure-Befehlszeilenschnittstelle, die im Azure Service Management (ASM)-Modus ausgeführt werden. Befehle der Azure-Befehlszeilenschnittstelle zum Speichern im Azure Resource Management (ARM)-Modus finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Management](../azure-cli-arm-commands.md#azure-storage-commands-to-manage-your-storage-objects).)
+> [AZURE.NOTE] Die Anleitung enthält Beispiele für die Befehle und Skripts der Azure-Befehlszeilenschnittstelle, die im Azure Service Management (ASM)-Modus ausgeführt werden. Befehle der Azure-Befehlszeilenschnittstelle zum Speichern im Azure Resource Management (ARM)-Modus finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Management](../virtual-machines/azure-cli-arm-commands.md#azure-storage-commands-to-manage-your-storage-objects).)
 
-## Erste Schritte mit Azure-Speicher und der Azure-Befehlszeilenschnittstelle in 5 Minuten
+## Erste Schritte mit Azure-Speicher und der Azure-Befehlszeilenschnittstelle in 5 Minuten
 
 Diese Anleitung verwendet für Beispiele Ubuntu, andere Betriebssystemplattformen funktionieren jedoch auf ähnliche Weise.
 
@@ -191,7 +191,7 @@ Im folgenden Beispiel wird eine Datei aus **~/temp/samplefile.txt** in das Verze
 
         azure storage file upload '~/temp/samplefile.txt' myshare myDir
 
-Beachten Sie, dass eine Datei in der Freigabe bis zu 1 TB groß sein kann.
+Beachten Sie, dass eine Datei in der Freigabe bis zu 1 TB groß sein kann.
 
 ### Auflisten der Dateien im Freigabestamm oder Verzeichnis
 
@@ -203,7 +203,7 @@ Beachten Sie, dass der Name des Verzeichnisses für den Auflistungsvorgang optio
 
 ### Kopieren von Dateien
 
-Ab Version 0.9.8 der Azure-CLI können Sie eine Datei in eine andere Datei, eine Datei in ein Blob oder ein Blob in eine Datei kopieren. Im Folgenden wird demonstriert, wie diese Kopiervorgänge mithilfe von CLI-Befehlen ausgeführt werden können. So kopieren Sie eine Datei in das neue Verzeichnis:
+Ab Version 0.9.8 der Azure-CLI können Sie eine Datei in eine andere Datei, eine Datei in ein Blob oder ein Blob in eine Datei kopieren. Im Folgenden wird demonstriert, wie diese Kopiervorgänge mithilfe von CLI-Befehlen ausgeführt werden können. So kopieren Sie eine Datei in das neue Verzeichnis:
 
 	azure storage file copy start --source-share srcshare --source-path srcdir/hello.txt --dest-share destshare --dest-path destdir/hellocopy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
 
@@ -221,4 +221,4 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

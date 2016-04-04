@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="02/11/2016"
+   ms.date="03/16/2016"
    ms.author="rajram"/>
 
 
 # Erste Schritte mit dem Azure Service Bus-Connector und das Hinzufügen zur Logik-App 
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Service Bus-API](../connectors/create-api-servicebus.md).
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview. Um die Schemaversion 2015-08-01-preview aufzurufen, klicken Sie auf [Service Bus-API](../connectors/connectors-create-api-servicebus.md).
 
 Stellen Sie Verbindungen mit Azure Service Bus her, um Nachrichten an Warteschlangen und Themen zu senden und um Nachrichten aus Warteschlangen und Abonnements zu empfangen. Connectors werden als Teil eines "Workflows" in Logik-Apps verwendet.
 
@@ -95,4 +95,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [7]: ./media/app-service-logic-connector-azureservicebus/img7.PNG
 [8]: ./media/app-service-logic-connector-azureservicebus/img8.PNG
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

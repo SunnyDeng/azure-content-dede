@@ -225,7 +225,6 @@ In diesem Hadoop-Lernprogramm haben Sie erfahren, wie ein Hadoop-Cluster unter W
 - [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
 - [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 - [Verwenden von Oozie mit HDInsight][hdinsight-use-oozie]
-- [Entwickeln von C#-Hadoop-Streamingprogrammen für HDInsight][hdinsight-develop-streaming]
 - [Entwickeln von Java MapReduce-Programmen für HDInsight][hdinsight-develop-mapreduce]
 
 
@@ -243,7 +242,6 @@ In diesem Hadoop-Lernprogramm haben Sie erfahren, wie ein Hadoop-Cluster unter W
 [hdinsight-use-oozie]: hdinsight-use-oozie.md
 [hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
 [hdinsight-emulator]: hdinsight-hadoop-emulator-get-started.md
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
 [hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
 [hadoop-hdinsight-intro]: hdinsight-hadoop-introduction.md
 [hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log.md
@@ -285,4 +283,4 @@ In diesem Hadoop-Lernprogramm haben Sie erfahren, wie ein Hadoop-Cluster unter W
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

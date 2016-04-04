@@ -50,8 +50,6 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 be
 
 1. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Vorlage **MVC** und **Web API** aus, und klicken Sie dann auf **Authentifizierung ändern**.
 
-	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
-
 1. Klicken Sie im Dialogfeld **Authentifizierung ändern** auf **Keine Authentifizierung** und dann auf **OK**.
 
 	![Keine Authentifizierung](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/GS13noauth.png)
@@ -60,7 +58,6 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 be
 
 1. Stellen Sie im Dialogfeld **Neues ASP.NET-Projekt** sicher, dass das Kontrollkästchen **Host in the Cloud** aktiviert ist, und klicken Sie auf **OK**.
 
-	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
 
 Wenn Sie sich noch nicht in Azure angemeldet haben, werden Sie dazu aufgefordert.
 
@@ -209,7 +206,6 @@ Mit dem ASP.NET MVC-Gerüstfeature kann automatisch Code generiert werden, der E
 
 6. Wählen Sie als Bezeichnung für den Controller **HomeController**. Wählen Sie **Contact** als Modellklasse. Klicken Sie auf **Neuer Datenkontext** und bestätigen Sie für **Neuer Datenkontexttyp** die Standardeinstellung "ContactManager.Models.ContactManagerContext". Klicken Sie auf **Hinzufügen**.
 
-	![Dialogfeld "Controller" hinzufügen](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr9.PNG)
 
 	In einem Dialogfeld wird die Meldung angezeigt: "Es besteht bereits eine Datei mit der Bezeichnung "HomeController". Möchten Sie sie ersetzen?" Klicken Sie auf **Ja**. Der erstellte HomeController wird mit dem neuen Projekt überschrieben. Der neue HomeController wird für die Kontaktliste verwendet.
 
@@ -814,4 +810,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach beim Tutorial wie auch den dari
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=AcomDC_0302_2016-->
+<!----HONumber=AcomDC_0323_2016-->

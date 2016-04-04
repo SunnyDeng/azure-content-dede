@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie Blob Storage zum Hochladen, Herunterladen, Auflisten und Löschen von Blobinhalten verwenden. Die Beispiele wurden in Ruby geschrieben."
 	services="storage"
 	documentationCenter="ruby"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="tysonn"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -14,7 +14,7 @@
 	ms.devlang="ruby"
 	ms.topic="article"
 	ms.date="02/17/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 
 # Verwenden des Blob-Speichers mit Ruby
@@ -31,7 +31,7 @@ In diesem Leitfaden wird die Durchführung gängiger Szenarien mit Blob Storage 
 
 ## Erstellen einer Ruby-Anwendung
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Ruby on Rails-Webanwendung auf einer Azure-VM](../virtual-machines/virtual-machines-ruby-rails-web-app-linux.md)
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Ruby on Rails Web application on an Azure VM](../virtual-machines/virtual-machines-linux-classic-ruby-rails-web-app.md) (Ruby on Rails-Webanwendung auf virtuellen Azure-Computern).
 
 ## Konfigurieren der Anwendung für den Zugriff auf Storage
 
@@ -155,4 +155,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 - [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

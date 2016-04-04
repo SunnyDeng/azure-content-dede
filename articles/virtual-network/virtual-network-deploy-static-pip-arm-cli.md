@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/15/2015"
+   ms.date="03/15/2016"
    ms.author="telmos" />
 
 # Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse mithilfe der Azure-Befehlszeilenschnittstelle
@@ -64,7 +64,7 @@ Sie können das verwendete Bash-Skript ungekürzt [hier](https://raw.githubuserc
 		pipName="PIPWEB1"
 		dnsName="iaasstoryws1"
 
-## Schritt 2: Erstellen der erforderlichen Ressourcen für Ihre VM
+## Schritt 2: Erstellen der erforderlichen Ressourcen für Ihre VM
 
 Vor dem Erstellen einer virtuellen Maschine benötigen Sie eine Ressourcengruppe, ein VNET, eine öffentliche IP-Adresse und eine Netzwerkschnittstelle für die Verwendung durch die VM.
 
@@ -106,7 +106,7 @@ Vor dem Erstellen einer virtuellen Maschine benötigen Sie eine Ressourcengruppe
 		    --subnet-id $subnetId \
 		    --public-ip-name $pipName
 
->[AZURE.TIP]Der erste Befehl oben verwendet [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) (Artikel in englischer Sprache) und [Zeichenkettenmanipulation](http://tldp.org/LDP/abs/html/string-manipulation.html) (Artikel in englischer Sprache), insbesondere Substringentfernung.
+>[AZURE.TIP] Der erste Befehl oben verwendet [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) (Artikel in englischer Sprache) und [Zeichenkettenmanipulation](http://tldp.org/LDP/abs/html/string-manipulation.html) (Artikel in englischer Sprache), insbesondere Substringentfernung.
 
 5. Erstellen Sie ein Speicherkonto zum Hosten des VM-Betriebssystemlaufwerks.
 
@@ -114,7 +114,7 @@ Vor dem Erstellen einer virtuellen Maschine benötigen Sie eine Ressourcengruppe
 		    --resource-group $rgName \
 		    --location $location --type LRS 
 
-## Schritt 3: Erstellen der VM 
+## Schritt 3: Erstellen der VM 
 
 Nachdem nun alle benötigten Ressourcen vorhanden sind, können Sie eine neue VM erstellen.
 
@@ -227,4 +227,4 @@ Nachdem Sie die erforderlichen Änderungen vorgenommen und sich mit dem Skript v
 		info:    Creating VM "WEB1"
 		info:    vm create command OK
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0323_2016-->

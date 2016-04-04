@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="01/08/2016"
+ms.date="03/18/2016"
 ms.author="larryfr"/>
 
 #Verwenden von DataFu mit Pig für HDInsight
@@ -30,13 +30,13 @@ Bei DataFu handelt es sich um eine Sammlung von Open Source-Bibliotheken für di
 
 ##Installieren von DataFu für Linux-basiertes HDInsight
 
-> [AZURE.NOTE]DataFu ist auf Windows-basierten HDInsight-Clustern vorinstalliert. Überspringen Sie diesen Abschnitt, falls Sie einen Windows-basierten Cluster verwenden.
+> [AZURE.NOTE] DataFu ist auf Windows-basierten HDInsight-Clustern vorinstalliert. Überspringen Sie diesen Abschnitt, falls Sie einen Windows-basierten Cluster verwenden.
 
 DataFu kann aus dem Maven-Repository heruntergeladen und installiert werden. Führen Sie die folgenden Schritte aus, um DataFu dem HDInsight-Cluster hinzuzufügen:
 
 1. Stellen Sie per SSH eine Verbindung mit Ihrem Linux-basierten HDInsight-Cluster her. Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Dokumenten:
 
-    * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, OS X und Unix](hdinsight-hadoop-linux-use-ssh-unix.md)
+    * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, OS X und Unix](hdinsight-hadoop-linux-use-ssh-unix.md)
     * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-unix.md)
     
 2. Verwenden Sie den folgenden Befehl, um die DataFu-JAR-Datei mit dem Hilfsprogramm „wget“ herunterzuladen, oder fügen Sie den Link in Ihren Browser ein, um den Download zu starten.
@@ -47,13 +47,13 @@ DataFu kann aus dem Maven-Repository heruntergeladen und installiert werden. Fü
 
         hdfs dfs -put datafu-1.2.0.jar /example/jars
     
-    > [AZURE.NOTE]Im obigen Beispiel wird die JAR-Datei unter `wasb:///example/jars` gespeichert, da dieses Verzeichnis im Clusterspeicher bereits vorhanden ist. Sie können im HDInsight-Clusterspeicher einen beliebigen Speicherort verwenden.
+    > [AZURE.NOTE] Im obigen Beispiel wird die JAR-Datei unter `wasb:///example/jars` gespeichert, da dieses Verzeichnis im Clusterspeicher bereits vorhanden ist. Sie können im HDInsight-Clusterspeicher einen beliebigen Speicherort verwenden.
 
 ##Verwenden von DataFu mit Pig
 
 Bei den Schritten in diesem Abschnitt wird vorausgesetzt, dass Sie mit der Verwendung von Pig für HDInsight vertraut sind. Es werden nur die Pig Latin-Anweisungen angegeben, nicht die Schritte zur Verwendung mit dem Cluster. Weitere Informationen zum Verwenden von Pig für HDInsight finden Sie unter [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md).
 
-> [AZURE.IMPORTANT]Beim Verwenden von DataFu über Pig in einem Linux-basierten HDInsight-Cluster müssen Sie zuerst die JAR-Datei registrieren, indem Sie die folgende Pig Latin-Anweisung verwenden:
+> [AZURE.IMPORTANT] Beim Verwenden von DataFu über Pig in einem Linux-basierten HDInsight-Cluster müssen Sie zuerst die JAR-Datei registrieren, indem Sie die folgende Pig Latin-Anweisung verwenden:
 >
 > ```register wasb:///example/jars/datafu-1.2.0.jar```
 >
@@ -107,4 +107,4 @@ Weitere Informationen zu DataFu oder Pig finden Sie in den folgenden Dokumenten:
 
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0323_2016-->

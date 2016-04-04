@@ -41,7 +41,7 @@ Azure Automation ist ein verwalteter Dienst in Microsoft Azure, der Ihnen die Au
 
 Eine DSC-Ressource ist ein Codemodul mit speziellen Funktionen, z. B. zur Verwaltung von Netzwerken, Active Directory oder SQL Server. Die Chocolatey DSC-Ressource kann zum Zugreifen auf einen NuGet-Server (unter anderem), Herunterladen von Paketen, Installieren von Paketen usw. verwendet werden. Der [PowerShell-Katalog](http://www.powershellgallery.com/packages?q=dsc+resources&prerelease=&sortOrder=package-title) enthält noch viele weitere DSC-Ressourcen. Diese Module wurden (von Ihnen) auf Ihrem Azure Automation DSC-Pullserver installiert, damit sie für die Konfigurationen verwendet werden können.
 
-ARM-Vorlagen stellen einen deklarativen Weg zum Generieren Ihrer Infrastruktur dar: Netzwerke, Subnetze, Netzwerksicherheit und -routing, Load Balancer, Netzwerkschnittstellenkarten, virtuelle Computer usw. In [diesem Artikel](../resource-manager-deployment-model.md) wird das ARM-Bereitstellungsmodell (deklarativ) mit dem (imperativen) Azure Service Management-Bereitstellungsmodell (ASM oder klassisch) verglichen. Und in [diesem Artikel](../virtual-machines\virtual-machines-azurerm-versus-azuresm.md) geht es um die Bereiche Coreressourcenanbieter, Compute, Speicher und Netzwerk.
+ARM-Vorlagen stellen einen deklarativen Weg zum Generieren Ihrer Infrastruktur dar: Netzwerke, Subnetze, Netzwerksicherheit und -routing, Load Balancer, Netzwerkschnittstellenkarten, virtuelle Computer usw. In [diesem Artikel](../resource-manager-deployment-model.md) wird das ARM-Bereitstellungsmodell (deklarativ) mit dem (imperativen) Azure Service Management-Bereitstellungsmodell (ASM oder klassisch) verglichen. Und in [diesem Artikel](../virtual-machines/virtual-machines-windows-compare-deployment-models.md) geht es um die Bereiche Coreressourcenanbieter, Compute, Speicher und Netzwerk.
 
 Ein wichtiges Feature einer ARM-Vorlage ist die Möglichkeit, bei der Bereitstellung eine VM-Erweiterung auf einem virtuellen Computer zu installieren. Eine VM-Erweiterung verfügt über bestimmte Funktionen, z. B. das Ausführen eines benutzerdefinierten Skripts, Installieren einer Antivirensoftware oder Ausführen eines DSC-Konfigurationsskripts. Es gibt noch viele andere Arten von VM-Erweiterungen.
 
@@ -185,4 +185,4 @@ Den vollständigen Quellcode für dieses Anwendungsbeispiel finden Sie in [diese
 - [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 - [Integrieren von Computern für die Verwaltung durch Azure Automation DSC](automation-dsc-onboarding.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

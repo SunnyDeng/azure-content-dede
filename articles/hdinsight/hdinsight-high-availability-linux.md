@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="01/08/2016"
+	ms.date="03/18/2016"
 	ms.author="larryfr"/>
 
 #Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight
@@ -29,7 +29,7 @@ In einigen Implementierungen von Hadoop hostet ein einzelner Hauptknoten Dienste
 
 HDInsight-Cluster verfügen über einen sekundären Hauptknoten, sodass Masterdienste und -komponenten bei einem Ausfall des primären Knotens weiterhin auf dem sekundären Knoten ausgeführt werden können.
 
-> [AZURE.IMPORTANT] Beide Hauptknoten sind aktiv und werden gleichzeitig innerhalb des Clusters ausgeführt. Einige Dienste (z. B. HDFS oder YARN) sind jeweils nur auf einem Hauptknoten „aktiv“ (und auf dem anderen Hauptknoten im „Standby“). Andere Dienste (z. B. HiveServer2 oder Hive-MetaStore) sind gleichzeitig auf beiden Hauptknoten aktiv.
+> [AZURE.IMPORTANT] Beide Hauptknoten sind aktiv und werden gleichzeitig innerhalb des Clusters ausgeführt. Einige Dienste (z. B. HDFS oder YARN) sind jeweils nur auf einem Hauptknoten „aktiv“ (und auf dem anderen Hauptknoten im „Standby“). Andere Dienste (z. B. HiveServer2 oder Hive-MetaStore) sind gleichzeitig auf beiden Hauptknoten aktiv.
 
 [ZooKeeper](http://zookeeper.apache.org/)-Knoten (ZKs) wählen eine übergeordnete Instanz von Masterdiensten auf Hauptknoten aus und teilen Diensten, Datenknoten (Workerknoten) und Gateways mit, auf welchem Hauptknoten ein Masterdienst aktiv ist.
 
@@ -37,13 +37,13 @@ HDInsight-Cluster verfügen über einen sekundären Hauptknoten, sodass Masterdi
 
 Im Allgemeinen hat die Verwendung mehrerer Hauptknoten keinen Einfluss auf den Clusterzugriff über die öffentlichen Gateways (Ambari Web und REST-APIs). Die Anforderung wird an den aktiven Hauptknoten weitergeleitet und wie erforderlich verarbeitet.
 
-Beim Zugriff auf den Cluster über SSH wird bei Verwendung von Port 22 (Standardport für SSH) eine Verbindung mit „Hauptknoten 0“ hergestellt und bei Verwendung von Port 23 eine Verbindung mit „Hauptknoten 1“.
+Beim Zugriff auf den Cluster über SSH wird bei Verwendung von Port 22 (Standardport für SSH) eine Verbindung mit „Hauptknoten 0“ hergestellt und bei Verwendung von Port 23 eine Verbindung mit „Hauptknoten 1“.
 
 ### Interne vollqualifizierte Domänennamen (FQDN)
 
-Knoten in einem HDInsight-Cluster besitzen eine interne IP-Adresse und einen internen FQDN, auf die nur über den Cluster zugegriffen werden kann (z. B. eine SSH-Sitzung mit dem Hauptknoten oder ein im Cluster ausgeführter Auftrag). Wenn Sie mit dem internen FQDN oder der internen IP-Adresse auf Dienste im Cluster zugreifen, sollten Sie die zu verwendende IP-Adresse oder den FQDN mithilfe von Ambari überprüfen.
+Knoten in einem HDInsight-Cluster besitzen eine interne IP-Adresse und einen internen FQDN, auf die nur über den Cluster zugegriffen werden kann (z. B. eine SSH-Sitzung mit dem Hauptknoten oder ein im Cluster ausgeführter Auftrag). Wenn Sie mit dem internen FQDN oder der internen IP-Adresse auf Dienste im Cluster zugreifen, sollten Sie die zu verwendende IP-Adresse oder den FQDN mithilfe von Ambari überprüfen.
 
-Der Oozie-Dienst kann z. B. nur auf einem Hauptknoten ausgeführt werden, und zur Verwendung des `oozie`-Befehls in einer SSH-Sitzung ist die URL des Diensts erforderlich. Die URL kann mit dem folgenden Befehl aus Ambari abgerufen werden:
+Der Oozie-Dienst kann z. B. nur auf einem Hauptknoten ausgeführt werden, und zur Verwendung des `oozie`-Befehls in einer SSH-Sitzung ist die URL des Diensts erforderlich. Die URL kann mit dem folgenden Befehl aus Ambari abgerufen werden:
 
 	curl -u admin:PASSWORD "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations?type=oozie-site&tag=TOPOLOGY_RESOLVED" | grep oozie.base.url
 
@@ -67,7 +67,7 @@ Sie können den folgenden Befehl verwenden, um den Status eines Diensts über di
 
 * Ersetzen Sie **SERVICENAME** durch den Namen des Diensts, dessen Status Sie überprüfen möchten.
 
-Wenn Sie z. B. den Status des **HDFS**-Diensts in einem Cluster mit dem Namen **mycluster** überprüfen möchten und das Kennwort **password** lautet, würden Sie folgenden Befehl verwenden:
+Wenn Sie z. B. den Status des **HDFS**-Diensts in einem Cluster mit dem Namen **mycluster** überprüfen möchten und das Kennwort **password** lautet, würden Sie folgenden Befehl verwenden:
 
 	curl -u admin:password https://mycluster.azurehdinsight.net/api/v1/clusters/mycluster/services/HDFS?fields=ServiceInfo/state
 
@@ -92,7 +92,7 @@ Falls Sie nicht wissen, welche Dienste auf dem Cluster installiert sind, können
 
 ####Dienstkomponenten
 
-Dienste können Komponenten enthalten, deren Status Sie einzeln überprüfen möchten. HDFS enthält z. B. die NameNode-Komponente. Der Befehl zum Anzeigen von Informationen zu einer Komponente lautet wie folgt:
+Dienste können Komponenten enthalten, deren Status Sie einzeln überprüfen möchten. HDFS enthält z. B. die NameNode-Komponente. Der Befehl zum Anzeigen von Informationen zu einer Komponente lautet wie folgt:
 
 	curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/SERVICE/components/component
 
@@ -122,7 +122,7 @@ Wenn Sie auf den Link für einen der Hauptknoten klicken, werden die auf diesem 
 
 ###SSH
 
-Wenn Sie über SSH mit einem Hauptknoten verbunden sind, sind die Protokolldateien unter **/Var/Log** verfügbar. **/var/log/hadoop-yarn/yarn** enthält z. B. Protokolle für YARN.
+Wenn Sie über SSH mit einem Hauptknoten verbunden sind, sind die Protokolldateien unter **/Var/Log** verfügbar. **/var/log/hadoop-yarn/yarn** enthält z. B. Protokolle für YARN.
 
 Da für jeden Hauptknoten spezifische Protokolleinträge vorhanden sein können, sollten Sie die Protokolle auf beiden Hauptknoten überprüfen.
 
@@ -130,7 +130,7 @@ Da für jeden Hauptknoten spezifische Protokolleinträge vorhanden sein können,
 
 > [AZURE.NOTE] Für den Zugriff auf Protokolldateien über Ambari ist ein SSH-Tunnel erforderlich, da die Websites für die einzelnen Dienste nicht öffentlich im Internet verfügbar sind. Informationen zum Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
-Wählen Sie in der Ambari-Webbenutzeroberfläche den Dienst aus, für den Sie Protokolle anzeigen möchten (z. B. YARN), und wählen Sie dann mithilfe von **Quicklinks** den gewünschten Hauptknoten aus.
+Wählen Sie in der Ambari-Webbenutzeroberfläche den Dienst aus, für den Sie Protokolle anzeigen möchten (z. B. YARN), und wählen Sie dann mithilfe von **Quicklinks** den gewünschten Hauptknoten aus.
 
 ![Verwenden von Quicklinks zum Anzeigen von Protokollen](./media/hdinsight-high-availability-linux/viewlogs.png)
 
@@ -166,4 +166,4 @@ In diesem Dokument haben Sie erfahren, wie Azure HDInsight hohe Verfügbarkeit f
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

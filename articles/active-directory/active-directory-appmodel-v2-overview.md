@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/20/2016"
+	ms.date="03/18/2016"
 	ms.author="dastrock"/>
 
 # Anmelden von Benutzern mit Microsoft-Konto und aus Azure AD bei einer einzelnen Anwendung
@@ -22,16 +22,13 @@ In der Vergangenheit musste ein App-Entwickler, der sowohl Unterstützung für M
 
 Apps, die den v2.0-Endpunkt verwenden, können auch REST-APIs aus [Microsoft Graph](https://graph.microsoft.io) und [Office 365](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) mit beiden Kontotypen nutzen.
 
-> [AZURE.NOTE]
-	Nicht alle Szenarios und Funktionen von Azure Active Directory werden vom v2.0-Endpunkt unterstützt. Lesen Sie die Informationen zu den [Einschränkungen des v2.0-Endpunkts](active-directory-v2-limitations.md), um zu bestimmen, ob Sie den v2.0-Endpunkt verwenden sollten.
-
-
 ## Erste Schritte
-Wählen Sie unten Ihre bevorzugte Plattform aus, um eine App mit unseren Open Source-Bibliotheken und -Frameworks zu erstellen. Alternativ können Sie unsere OAuth 2.0- und OpenID Connect-Protokolldokumentation verwenden, um Protokollmeldungen direkt ohne Verwendung einer Authentifizierungsbibliothek zu senden und zu empfangen. <!-- TODO: Finalize this table  -->
+Wählen Sie unten Ihre bevorzugte Plattform aus, um eine App mit unseren Open Source-Bibliotheken und -Frameworks zu erstellen. Alternativ können Sie unsere OAuth 2.0- und OpenID Connect-Protokolldokumentation verwenden, um Protokollmeldungen direkt ohne Verwendung einer Authentifizierungsbibliothek zu senden und zu empfangen.
+<!-- TODO: Finalize this table  -->
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-v2-quickstart-table.md)]
 
-## Neuerungen	
+## Neuerungen
 Anhand der folgenden konzeptuellen Informationen lässt sich besser verstehen, was mit dem v2.0-Endpunkt möglich ist und was nicht.
 
 - Wenn Sie 2015 während des Vorschauzeitraums des v2.0-Endpunkts eine App erstellt haben, lesen Sie die [Informationen zu den Protokolländerungen](active-directory-v2-preview-oidc-changes.md), die wir erst kürzlich vorgenommen haben.
@@ -49,13 +46,15 @@ Die folgenden Links bieten ausführliche Informationen zur Plattform:
 - [Microsoft App-Registrierungsportal](https://apps.dev.microsoft.com)
 - [Office 365-REST-API-Referenz](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)
 - [Microsoft Graph](https://graph.microsoft.io)
-- Im Folgenden sind die Open Source-Clientbibliotheken und -Beispiele aufgeführt, die mit dem v2.0-Endpunkt getestet wurden. Beachten Sie, dass Funktionen wie z. B. die [dynamische Clientregistrierung mit OpenID Connect](https://openid.net/specs/openid-connect-registration-1_0.html) und Endpunkte zur Tokenüberprüfung noch nicht unterstützt werden und zur Verwendung des v2.0-Endpunkts in der Bibliothek möglicherweise deaktiviert werden müssen.  
+- Im Folgenden sind die Open Source-Clientbibliotheken und -Beispiele aufgeführt, die mit dem v2.0-Endpunkt getestet wurden.
 
   - [Java WSO2 Identity Server](https://docs.wso2.com/display/IS500/Introducing+the+Identity+Server)
   - [Java Gluu Federation](https://github.com/GluuFederation/oxAuth)
   - [Node.Js passport-openidconnect](https://www.npmjs.com/package/passport-openidconnect)
   - [PHP OpenID Connect Basic Client](https://github.com/jumbojett/OpenID-Connect-PHP)
-  - [Android OpenID Connect-Beispiel](https://github.com/learning-layers/android-openid-connect)
+  - [iOS-OAuth2-Client](https://github.com/nxtbgthng/OAuth2Client)
+  - [Android-OAuth2-Client](https://github.com/wuman/android-oauth-client)
+  - [Android-OpenID Connect-Client](https://github.com/kalemontes/OIDCAndroidLib)
 
 <!-- TODO: These articles
 - [ADAL Library Reference]()
@@ -63,4 +62,4 @@ Die folgenden Links bieten ausführliche Informationen zur Plattform:
 - Give us your thoughts on the preview using [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) - we want to hear them!  Use the phrase "AppModelv2:" in the title of your post so we can find it.
 -->
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

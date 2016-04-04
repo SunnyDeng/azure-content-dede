@@ -12,7 +12,7 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="12/07/2015" 
+ms.date="03/21/2016" 
 ms.author="adegeo"/>
 
 # Allgemeine Startaufgaben für Clouddienste
@@ -23,7 +23,7 @@ In [diesem Artikel](cloud-services-startup-tasks.md) erfahren Sie etwas über di
 
 Viele der hier verwendeten Aufgaben verwenden die
 
->[AZURE.NOTE]Startaufgaben gelten nicht für virtuelle Computer, sondern nur für Web- und Workerrollen von Clouddiensten.
+>[AZURE.NOTE] Startaufgaben gelten nicht für virtuelle Computer, sondern nur für Web- und Workerrollen von Clouddiensten.
 
 
 ## Definieren von Umgebungsvariablen vor dem Starten einer Rolle
@@ -60,7 +60,7 @@ Wie Sie Umgebungsvariablen für eine bestimmte Aufgabe benötigen, die nicht von
 </ServiceDefinition>
 ```
 
-Variablen können auch einen [gültigen Azure XPath-Wert](https://msdn.microsoft.com/library/azure/hh404006.aspx) verwenden, um auf etwas für die Bereitstellung zu verweisen. Anstatt das `value`-Attribut zu verwenden, definieren Sie ein untergeordnetes [RoleInstanceValue]-Element.
+Variablen können auch einen [gültigen Azure XPath-Wert](cloud-services-role-config-xpath.md) verwenden, um auf etwas für die Bereitstellung zu verweisen. Anstatt das `value`-Attribut zu verwenden, definieren Sie ein untergeordnetes [RoleInstanceValue]-Element.
 
 ```xml
 <Variable name="PathToStartupStorage">
@@ -143,7 +143,7 @@ In Azure sind tatsächlich zwei Firewalls vorhanden. Die erste Firewall kontroll
 
 Die zweite Firewall kontrolliert Verbindungen zwischen einem virtuellen Computer und den Prozessen innerhalb dieses virtuellen Computers. Dies wird durch das Befehlszeilentool `netsh advfirewall firewall` gesteuert und bildet den Schwerpunkt dieses Artikels.
 
-Azure erstellt Firewallregeln für die in den Rollen gestarteten Prozesse. Wenn Sie beispielsweise einen Dienst oder ein Programm starten, erstellt Azure automatisch die erforderlichen Firewallregeln, die diesem Dienst das Kommunizieren mit dem Internet ermöglichen. Wenn Sie einen Dienst erstellen, der durch einen anderen Prozess außerhalb der Rolle gestartet wird (z. B. ein COM+-Dienst oder ein Programm, das über die Windows-Aufgabenplanung gestartet wird), müssen Sie manuell eine Firewallregel für den Zugriff auf diesen Dienst erstellen. Diese Firewallregeln können unter Verwendung einer Startaufgabe erstellt werden.
+Azure erstellt Firewallregeln für die in den Rollen gestarteten Prozesse. Wenn Sie beispielsweise einen Dienst oder ein Programm starten, erstellt Azure automatisch die erforderlichen Firewallregeln, die diesem Dienst das Kommunizieren mit dem Internet ermöglichen. Wenn Sie einen Dienst erstellen, der durch einen anderen Prozess außerhalb der Rolle gestartet wird (z. B. ein COM+-Dienst oder ein Programm, das über die Windows-Aufgabenplanung gestartet wird), müssen Sie manuell eine Firewallregel für den Zugriff auf diesen Dienst erstellen. Diese Firewallregeln können unter Verwendung einer Startaufgabe erstellt werden.
 
 Eine Startaufgabe, die eine Firewallregel erstellt, muss einen [executionContext][Task] mit der Einstellung **elevated** besitzen. Fügen Sie folgende Startaufgabe der Datei [ServiceDefinition.csdef] hinzu.
 
@@ -158,7 +158,7 @@ Eine Startaufgabe, die eine Firewallregel erstellt, muss einen [executionContext
 </ServiceDefinition>
 ```
 
-Um die Firewallregel hinzuzufügen, müssen Sie die entsprechenden `netsh advfirewall firewall`-Befehle in der Startbatchdatei verwenden. In diesem Beispiel erfordert die Startaufgabe Sicherheit und Verschlüsselung für TCP-Port 80.
+Um die Firewallregel hinzuzufügen, müssen Sie die entsprechenden `netsh advfirewall firewall`-Befehle in der Startbatchdatei verwenden. In diesem Beispiel erfordert die Startaufgabe Sicherheit und Verschlüsselung für TCP-Port 80.
 
     REM   Add a firewall rule in a startup task.
     
@@ -239,7 +239,7 @@ PowerShell führt standardmäßig keine nicht signierten Skripts aus. Wenn Sie d
     EXIT /B %errorlevel%
 
 
-Wenn Sie ein Gastbetriebssystem mit PowerShell 2.0 oder 1.0 verwenden, können Sie die Ausführung von Version 2 erzwingen und bei Nichtverfügbarkeit Version 1 verwenden.
+Wenn Sie ein Gastbetriebssystem mit PowerShell 2.0 oder 1.0 verwenden, können Sie die Ausführung von Version 2 erzwingen und bei Nichtverfügbarkeit Version 1 verwenden.
 
     REM   Attempt to set the execution policy by using PowerShell version 2.0 syntax.
     PowerShell -Version 2.0 -ExecutionPolicy Unrestricted .\startup.ps1 >> "%TEMP%\StartupLog.txt" 2>&1
@@ -397,7 +397,7 @@ Hier sind einige bewährten Methoden, die Sie beim Konfigurieren einer Aufgabe f
 
 ### Protokollieren Sie stets alle Startaktivitäten
 
-Visual Studio bietet keinen Debugger zum schrittweisen Durchlaufen von Batchdateien, daher ist es ratsam, möglichst viele Daten über die Ausführung der Batchdateien zu erhalten. Beim Protokollieren der Ausgabe von Batchdateien können sowohl **stdout** als auch **stderr** wichtige Informationen beim Debuggen und Korrigieren von Batchdateien liefern. Um sowohl **stdout** als auch**stderr** in der Datei "StartupLog.txt" in dem Verzeichnis zu protokollieren, auf das die **%TEMP%**-Umgebungsvariable verweist, fügen Sie den Text `>>  "%TEMP%\\StartupLog.txt" 2>&1` am Ende der Zeilen ein, die Sie protokollieren möchten. So führen Sie z. B. "setup.exe" im **%PathToApp1Install%**-Verzeichnis aus
+Visual Studio bietet keinen Debugger zum schrittweisen Durchlaufen von Batchdateien, daher ist es ratsam, möglichst viele Daten über die Ausführung der Batchdateien zu erhalten. Beim Protokollieren der Ausgabe von Batchdateien können sowohl **stdout** als auch **stderr** wichtige Informationen beim Debuggen und Korrigieren von Batchdateien liefern. Um sowohl **stdout** als auch**stderr** in der Datei "StartupLog.txt" in dem Verzeichnis zu protokollieren, auf das die **%TEMP%**-Umgebungsvariable verweist, fügen Sie den Text `>>  "%TEMP%\\StartupLog.txt" 2>&1` am Ende der Zeilen ein, die Sie protokollieren möchten. So führen Sie z. B. "setup.exe" im **%PathToApp1Install%**-Verzeichnis aus
 
     "%PathToApp1Install%\setup.exe" >> "%TEMP%\StartupLog.txt" 2>&1
 
@@ -503,4 +503,4 @@ Führen Sie das [Erstellen und Bereitstellen](cloud-services-how-to-create-deplo
 [LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0323_2016-->

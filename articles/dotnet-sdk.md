@@ -63,7 +63,7 @@ Mit diesen Anleitungen können Sie mit Azure-Ressourcen arbeiten, vor allem mit 
 
 * [Erstellen, Öffnen und Veröffentlichen von Clouddienstprojekten](cloud-services/cloud-services-dotnet-get-started.md)
 * [Erstellen von Bereitstellungspaketen für Clouddienstprojekte](http://msdn.microsoft.com/library/ff683672.aspx)
-* [Erstellen von virtuellen Azure-Computern während der Erstellung neuer Webprojekte](virtual-machines/virtual-machines-dotnet-create-visual-studio-powershell.md)
+* [Erstellen von virtuellen Azure-Computern während der Erstellung neuer Webprojekte](virtual-machines/virtual-machines-windows-classic-web-app-visual-studio.md)
 * [Erstellen von PowerShell-Skripts während der Erstellung neuer virtueller Computer](http://msdn.microsoft.com/library/dn642480.aspx)
 * [Anzeigen und Verwalten von Einstellungen für Clouddienstprojekte in Projekteigenschaftsfenstern in Visual Studio](http://msdn.microsoft.com/library/ee405486.aspx)
 * Anzeigen und Verwalten von [Clouddiensten](http://msdn.microsoft.com/library/ff683675.aspx), [virtuellen Computern](http://msdn.microsoft.com/library/jj131259.aspx) und [Service Bus](http://msdn.microsoft.com/library/jj149828.aspx) im Server Explorer 
@@ -123,7 +123,7 @@ Sie benötigen möglicherweise einige Elemente für die Entwicklung in Azure, di
 
 * [Projektvorlagen für Azure Mobile Service](mobile-services/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard.md).
 
-	Vorlagen für den mobilen Dienst sind nur in Visual Studio 2013 Update 2 und höher verfügbar. Sie sind nicht in Visual Studio 2012 oder früheren Versionen und auch nicht in Visual Studio 2013 Update 1 verfügbar. Auch dann nicht, wenn Sie das Azure-SDK für .NET installieren.
+	Vorlagen für den mobilen Dienst sind nur in Visual Studio 2013 Update 2 und höher verfügbar. Sie sind nicht in Visual Studio 2012 oder früheren Versionen und auch nicht in Visual Studio 2013 Update 1 verfügbar. Auch dann nicht, wenn Sie das Azure-SDK für .NET installieren.
 
 ##<a id="faq"></a>Häufig gestellte Fragen
 
@@ -180,10 +180,10 @@ Um festzustellen, welche Version aktuell ist, oder um ältere Versionen herunter
 
 ##<a id="resources"></a>Ressourcen
 
-Das aktuelle Azure-SDK für .NET oder Clientbibliotheken können Sie auf der [Azure Download-Seite](/downloads/) herunterladen.
+Das aktuelle Azure-SDK für .NET oder Clientbibliotheken können Sie auf der Azure Download-Seite herunterladen.
 
 Quellcode des Azure-SDK für .NET, einschließlich Clientbibliotheken, finden Sie unter [GitHub.com/Azure](https://github.com/azure/).
 
 Referenzdokumentation für Azure-Clientbibliotheken finden Sie unter [Azure .NET-Referenz](/documentation/api/).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

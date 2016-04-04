@@ -108,7 +108,7 @@ Das folgende Diagramm zeigt einen allgemeinen Datenfluss für die Sammlung von S
 
 ![][1]
 
-Die Azure-Diagnose verschiebt Protokolle aus Cloud Services-Kundenanwendungen und [Azure Virtual Machines](virtual-machines-about.md) in Azure Storage. Basierend auf einem Protokollformat werden einige Daten in Azure-Tabellen und einige in Blobs gespeichert. Daten, die in [Azure Storage](storage-introduction.md) gesammelt werden, können mithilfe der Azure Storage-Clientbibliothek zur Überwachung und Analyse in lokale SIEM-Systeme heruntergeladen werden.
+Die Azure-Diagnose verschiebt Protokolle aus Cloud Services-Kundenanwendungen und [Azure Virtual Machines](virtual-machines/virtual-machines-linux-about.md) in Azure Storage. Basierend auf einem Protokollformat werden einige Daten in Azure-Tabellen und einige in Blobs gespeichert. Daten, die in [Azure Storage](storage-introduction.md) gesammelt werden, können mithilfe der Azure Storage-Clientbibliothek zur Überwachung und Analyse in lokale SIEM-Systeme heruntergeladen werden.
 
 Darüber hinaus kann HDInsight zur weiteren Analyse der Daten in der Cloud verwendet werden. Im Folgenden sehen Sie Beispiele für die Sammlung von Sicherheitsdaten, in denen die Azure-Diagnose verwendet wird.
 
@@ -185,7 +185,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
  ```
 
 ##### Schritt 5: Generieren von Ereignissen
-Zu Demonstrationszwecken erstellen wir einige Anmeldeereignisse und stellen sicher, dass die Daten in Azure Storage übertragen werden. Wie zuvor in Schritt 2 gezeigt, ist die XML-Datei so konfiguriert, dass die Ereignis-ID 4624 (Anmeldung erfolgreich) und die Ereignis-ID 4625 (Anmeldungsfehler) aus dem Kanal **Sicherheit** erfasst werden.
+Zu Demonstrationszwecken erstellen wir einige Anmeldeereignisse und stellen sicher, dass die Daten in Azure Storage übertragen werden. Wie zuvor in Schritt 2 gezeigt, ist die XML-Datei so konfiguriert, dass die Ereignis-ID 4624 (Anmeldung erfolgreich) und die Ereignis-ID 4625 (Anmeldungsfehler) aus dem Kanal **Sicherheit** erfasst werden.
 
  So generieren Sie diese Ereignisse
 
@@ -218,7 +218,7 @@ Zusammen wird durch **PartitionKey** und **RowKey** jede Entität innerhalb eine
 
 - "Timestamp" ist ein Datums-/Uhrzeitwert, der auf dem Server verwaltet wird, um den Zeitpunkt der letzten Änderung eines Elements nachzuverfolgen.
 
->[AZURE.NOTE] Die maximale Zeilengröße in einer Azure Storage-Tabelle ist auf 1 MB beschränkt. Ein Speicherkonto kann bis zu 200 TB Daten aus Blobs, Warteschlangen und Tabellen enthalten, wenn das Konto nach Juni 2012 erstellt wurde. Daher kann die Tabellengröße auf bis zu 200 TB anwachsen, wenn Blobs und Warteschlangen keinen Speicherplatz belegen. Für Konten, die vor Juni 2012 erstellt wurden, gilt ein Grenzwert von 100 TB.
+>[AZURE.NOTE] Die maximale Zeilengröße in einer Azure Storage-Tabelle ist auf 1 MB beschränkt. Ein Speicherkonto kann bis zu 200 TB Daten aus Blobs, Warteschlangen und Tabellen enthalten, wenn das Konto nach Juni 2012 erstellt wurde. Daher kann die Tabellengröße auf bis zu 200 TB anwachsen, wenn Blobs und Warteschlangen keinen Speicherplatz belegen. Für Konten, die vor Juni 2012 erstellt wurden, gilt ein Grenzwert von 100 TB.
 
 Der Speicher-Explorer ermöglicht Ihnen auch das Bearbeiten von Tabellendaten. Doppelklicken Sie auf eine bestimmte Zeile in der Tabellenansicht, um das hier gezeigte Fenster "Entität bearbeiten" zu öffnen:
 
@@ -309,7 +309,7 @@ In diesem Beispiel richten wir eine neue Instanz einer Pipeline zur Sicherheitsp
 
 #### Schritt 1: Erstellen und Bereitstellen eines Clouddiensts (Webrolle)
 
-1.	Starten Sie auf dem Entwicklungscomputer Visual Studio 2013.
+1.	Starten Sie auf dem Entwicklungscomputer Visual Studio 2013.
 2.	Erstellen Sie ein neues Clouddienstprojekt. (Im Beispiel wird "ContosoWebRole" verwendet.)
 3.	Wählen Sie die Webrolle **ASP.NET** aus.
 4.	Wählen Sie das Projekt **MVC** aus.
@@ -507,9 +507,9 @@ Um zu überprüfen, dass der Dienst die aktuelle Diagnosekonfiguration verwendet
 
 #### Schritt 3: Generieren von IIS-Protokollen
 
-1.	Öffnen Sie einen Webbrowser, und navigieren Sie zur Clouddienst-Webrolle (z. B. http://contosowebrole.cloudapp.net/).
+1.	Öffnen Sie einen Webbrowser, und navigieren Sie zur Clouddienst-Webrolle (z. B. http://contosowebrole.cloudapp.net/).
 2.	Navigieren Sie zu den Seiten **Info** und **Kontakt**, um einige Protokollereignisse zu erstellen.
-3.	Navigieren Sie zu einer Seite, die einen Statuscode 500 generiert (z. B. http://contosowebrole.cloudapp.net/Home/StatusCode500). Ein Fehler ähnlich dem folgenden wird angezeigt. Beachten Sie, dass wir in Schritt 1 des Abschnitts "Einrichten einer neuen Instanz einer Pipeline zur Protokollsammlung in einem Clouddienst" Code für **StatusCode500** hinzugefügt haben. ![][16]
+3.	Navigieren Sie zu einer Seite, die einen Statuscode 500 generiert (z. B. http://contosowebrole.cloudapp.net/Home/StatusCode500). Ein Fehler ähnlich dem folgenden wird angezeigt. Beachten Sie, dass wir in Schritt 1 des Abschnitts "Einrichten einer neuen Instanz einer Pipeline zur Protokollsammlung in einem Clouddienst" Code für **StatusCode500** hinzugefügt haben. ![][16]
 4.	Öffnen Sie eine Remotedesktopsitzung mit Ihrer Clouddienstinstanz.
 5.	Öffnen Sie IIS-Manager.
 6.	Die IIS-Protokollierung ist standardmäßig aktiviert und auf das stündliche Generieren von Dateien festgelegt, die alle Felder im W3C-Format enthalten. Klicken Sie auf **Durchsuchen**, und Sie finden mindestens eine Protokolldatei, wie hier gezeigt: ![][17]
@@ -546,7 +546,7 @@ Sie können Blobdaten mithilfe der Azure Storage-Clientbibliothek herunterladen 
 Auf ähnliche Weise können Sie Sicherheitsdaten, die in Azure-Tabellen gespeichert sind, mithilfe der Azure Storage-Clientbibliothek herunterladen. Weitere Informationen über den Zugriff auf Daten, die in Tabellen gespeichert sind, finden Sie unter [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md).
 
 ## Azure Active Directory-Berichte
-Azure Active Directory (Azure AD) umfasst eine Reihe von Sicherheits-, Nutzungs- und Überwachungsprotokollberichten, die einen Einblick in die Integrität und Sicherheit Ihres Azure AD-Mandanten bereitstellen. Azure AD bietet z. B. die Möglichkeit, Benutzeraktivitäten und anomale Oberflächenzugriffe automatisch zu analysieren und die Ergebnisse den Kunden in Berichten zur Verfügung zu stellen.
+Azure Active Directory (Azure AD) umfasst eine Reihe von Sicherheits-, Nutzungs- und Überwachungsprotokollberichten, die einen Einblick in die Integrität und Sicherheit Ihres Azure AD-Mandanten bereitstellen. Azure AD bietet z. B. die Möglichkeit, Benutzeraktivitäten und anomale Oberflächenzugriffe automatisch zu analysieren und die Ergebnisse den Kunden in Berichten zur Verfügung zu stellen.
 
 Diese Berichte sind über das [Azure-Verwaltungsportal](https://manage.windowsazure.com/) unter **Active Directory** > **Verzeichnis** zugänglich. Einige dieser Berichte sind kostenlos, und andere werden als Teil einer Azure AD Premium Edition angeboten. Weitere Informationen zu Azure AD-Berichten finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](http://msdn.microsoft.com/library/azure/dn283934.aspx).
 
@@ -614,4 +614,4 @@ Die folgenden Ressourcen bieten allgemeine Informationen zu Microsoft Azure und 
 [19]: ./media/azure-security-audit-log-management/sec-view-blob-container.png
 [20]: ./media/azure-security-audit-log-management/sec-hdinsight-analysis.png
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

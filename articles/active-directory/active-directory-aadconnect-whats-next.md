@@ -13,11 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/16/2016"
+	ms.date="03/16/2016"
 	ms.author="billmath"/>
 
 # Nächste Schritte und Verwalten von Azure AD Connect
 Anhand der Anweisungen in den folgenden weiterführenden Themen können Sie Azure Active Directory Connect entsprechend den Bedürfnissen und Anforderungen Ihrer Organisation anpassen.
+
+## Hinzufügen weiterer Synchronisierungsadministratoren
+Standardmäßig können nur der Benutzer, der die Installation durchgeführt hat, und die lokalen Administratoren das installierte Synchronisierungsmodul verwalten. Damit weitere Personen auf das Synchronisierungsmodul zugreifen und es verwalten können, suchen Sie auf dem lokalen Server die Gruppe „ADSyncAdmins“, und fügen die Personen dieser Gruppe hinzu.
 
 ## Optionale Konfiguration für den AD FS-Dienst
 Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, indem Sie sich bei den AD FS anmelden und PSH verwenden, um diese Konfiguration vorzunehmen.
@@ -78,4 +81,4 @@ Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die s
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

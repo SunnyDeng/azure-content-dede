@@ -62,7 +62,7 @@ Konfigurieren | Lokal | Azure Virtual Network
  
 Wiederholen Sie die folgenden Schritte, um virtuelle Computer zum Hosten der DC-Rolle nach Bedarf zu erstellen. Sie sollten mindestens zwei virtuelle DC bereitstellen, um Fehlertoleranz und Redundanz zu gewährleisten. Wenn das virtuelle Azure-Netzwerk über mindestens zwei Domänencontroller verfügt, die auf ähnliche Weise konfiguriert sind (d. h. beide sind GCs, führen DNS-Server aus und beide führen keine FSMO-Rolle aus usw.), stellen Sie die virtuellen Computer, auf denen diese DCs ausgeführt werden, in eine Verfügbarkeitsgruppe, um eine verbesserte Fehlertoleranz zu erreichen.
 
-Um die virtuellen Computer mithilfe von Windows PowerShell anstelle der Benutzeroberfläche zu erstellen, lesen Sie [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](../virtual-machines-ps-create-preconfigure-windows-vms.md).
+Um die virtuellen Computer mithilfe von Windows PowerShell anstelle der Benutzeroberfläche zu erstellen, lesen Sie [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](../virtual-machines/virtual-machines-windows-classic-create-powershell.md).
 
 1. Klicken Sie im klassischen Portal auf **Neu** > **Compute** > **Virtueller Computer** > **Aus Katalog**. Verwenden Sie die folgenden Werte, um den Assistenten abzuschließen. Übernehmen Sie den Standardwert für eine Einstellung, sofern kein anderer Wert empfohlen wird oder erforderlich ist.
 
@@ -72,7 +72,7 @@ Um die virtuellen Computer mithilfe von Windows PowerShell anstelle der Benutzer
 	**Konfiguration des virtuellen Computers** | <p>Name des virtuellen Computers: Geben Sie einen Namen mit einer einzelnen Bezeichnung ein (z. B. AzureDC1).</p><p>Neuer Benutzername: Geben Sie den Namen eines Benutzers ein. Dieser Benutzer wird Mitglied der lokalen Administratorgruppe auf dem virtuellen Computer. Sie benötigen diesen Namen, um sich zum ersten Mal bei dem virtuellen Computer anzumelden. Das integrierte Konto mit dem Namen "Administrator" funktioniert nicht.</p><p>Neues Kennwort/Bestätigen: Geben Sie ein Kennwort ein.</p>
 	**Konfiguration des virtuellen Computers** | <p>Clouddienst: Wählen Sie <b>Einen neuen Clouddienst erstellen</b> für den ersten virtuellen Computer aus, und wählen Sie denselben Clouddienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</p><p>DNS-Name des Clouddiensts: Geben Sie einen global eindeutigen Namen an.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</p><p>Speicherkonto: Wählen Sie <b>Ein automatisch generiertes Speicherkonto verwenden</b> für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</p><p>Verfügbarkeitsgruppe: Wählen Sie <b>Verfügbarkeitsgruppe erstellen</b> aus.</p><p>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</p>
 	**Konfiguration des virtuellen Computers** | <p>Wählen Sie <b>VM-Agent installieren</b> und alle anderen erforderlichen Erweiterungen aus.</p>
-2. Fügen Sie an jeden virtuellen Computer, der die DC-Serverrolle ausführt, einen Datenträger an. Der zusätzliche Speicherplatz ist erforderlich, um die AD-Datenbank, Protokolle und SYSVOL zu speichern. Geben Sie eine Größe für den Datenträger (z. B. 10 GB) an, und belassen Sie für **Hostcacheeinstellungen** die Einstellung **Keine**. Weitere Informationen finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../storage-windows-attach-disk.md).
+2. Fügen Sie an jeden virtuellen Computer, der die DC-Serverrolle ausführt, einen Datenträger an. Der zusätzliche Speicherplatz ist erforderlich, um die AD-Datenbank, Protokolle und SYSVOL zu speichern. Geben Sie eine Größe für den Datenträger (z. B. 10 GB) an, und belassen Sie für **Hostcacheeinstellungen** die Einstellung **Keine**. Weitere Informationen finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../virtual-machines/virtual-machines-windows-classic-attach-disk.md).
 3. Nachdem Sie sich erstmals auf dem virtuellen Computer angemeldet haben, öffnen Sie **Server-Manager** > **Datei- und Speicherdienste**, um auf diesem Datenträger ein Volume mit NTFS zu erstellen.
 4. Reservieren Sie eine statische IP-Adresse für virtuelle Computer, auf denen die DC-Rolle ausgeführt wird. Laden Sie zum Reservieren einer statischen IP-Adresse den Microsoft-Webplattform-Installer herunter, [installieren Sie Azure PowerShell](../powershell-install-configure.md), und führen Sie anschließend das Cmdlet "Set-AzureStaticVNetIP" aus. Beispiel:
 
@@ -82,7 +82,7 @@ Weitere Informationen zum Festlegen einer statischen IP-Adresse finden Sie unter
 
 ## Installieren von Windows Server Active Directory
 
-Verwenden Sie dieselbe Routine zum [Installieren von AD DS](https://technet.microsoft.com/library/jj574166.aspx), die Sie lokal verwenden (d. h. Sie können die Benutzeroberfläche, eine Antwortdatei oder Windows PowerShell verwenden). Für die Installation einer neuen Gesamtstruktur brauchen Sie Administratoranmeldeinformationen. Damit die Active Directory-Datenbank, Protokolle und SYSVOL auf dem zusätzlich an den virtuellen Computer angeschlossenen Datenträger gespeichert werden können, müssen Sie den Standardspeicherort vom Betriebssystemlaufwerk auf den zusätzlichen Datenträger verlagern.
+Verwenden Sie dieselbe Routine zum [Installieren von AD DS](https://technet.microsoft.com/library/jj574166.aspx), die Sie lokal verwenden (d. h. Sie können die Benutzeroberfläche, eine Antwortdatei oder Windows PowerShell verwenden). Für die Installation einer neuen Gesamtstruktur brauchen Sie Administratoranmeldeinformationen. Damit die Active Directory-Datenbank, Protokolle und SYSVOL auf dem zusätzlich an den virtuellen Computer angeschlossenen Datenträger gespeichert werden können, müssen Sie den Standardspeicherort vom Betriebssystemlaufwerk auf den zusätzlichen Datenträger verlagern.
 
 Wenn die DC-Installation beendet ist, schließen Sie den virtuellen Computer wieder an und melden sich beim DC an. Denken Sie daran, die Domänenanmeldeinformationen anzugeben.
 
@@ -110,7 +110,7 @@ Wenn die DC-Installation beendet ist, schließen Sie den virtuellen Computer wie
 	**Konfiguration des virtuellen Computers** | <p>Wählen Sie <b>VM-Agent installieren</b> und alle anderen erforderlichen Erweiterungen aus.</p>
 2. Nachdem alle virtuellen Computer bereitgestellt wurden, melden Sie sich an, und stellen eine Verbindung zur Domäne her. Klicken Sie im **Server-Manager** auf **Lokaler Server** > **ARBEITSGRUPPE** > **Ändern…**, wählen Sie dann **Domäne** aus, und geben Sie anschließend den Namen Ihrer lokalen Domäne ein. Geben Sie die Anmeldeinformationen eines Domänenbenutzers ein, und starten Sie den virtuellen Computer neu, um das Beitreten zu der Domäne abzuschließen.
 
-Um die virtuellen Computer mithilfe von Windows PowerShell anstelle der Benutzeroberfläche zu erstellen, lesen Sie [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](../virtual-machines-ps-create-preconfigure-windows-vms.md).
+Um die virtuellen Computer mithilfe von Windows PowerShell anstelle der Benutzeroberfläche zu erstellen, lesen Sie [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](../virtual-machines/virtual-machines-windows-classic-create-powershell.md).
 
 Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Erste Schritte mit Azure Cmdlets](https://msdn.microsoft.com/library/azure/jj554332.aspx) und [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/jj554330.aspx).
 
@@ -138,4 +138,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
  
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

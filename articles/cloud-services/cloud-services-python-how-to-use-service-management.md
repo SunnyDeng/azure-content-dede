@@ -18,7 +18,7 @@
 
 # Verwenden der Dienstverwaltung aus Python
 
-In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Dienstverwaltungsaufgaben aus Python erläutert. Die **ServiceManagementService**-Klasse im [Azure-SDK für Python](../python-how-to-install.md) unterstützt den programmgesteuerten Zugriff auf viele der Dienstverwaltungsfunktionen, die im [klassischen Azure-Portal][management-portal] zur Verfügung stehen (z. B. **Erstellen, Aktualisieren und Löschen von Clouddiensten, Bereitstellungen, Datenverwaltungsdiensten und virtuellen Computern**). Diese Funktionalität kann bei der Erstellung von Anwendungen hilfreich sein, die programmgesteuert auf Dienstverwaltungsfunktionen zugreifen müssen.
+In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Dienstverwaltungsaufgaben aus Python erläutert. Die **ServiceManagementService**-Klasse im [Azure-SDK für Python](../python-how-to-install.md) unterstützt den programmgesteuerten Zugriff auf viele der Dienstverwaltungsfunktionen, die im [klassischen Azure-Portal][management-portal] zur Verfügung stehen (z. B. **Erstellen, Aktualisieren und Löschen von Clouddiensten, Bereitstellungen, Datenverwaltungsdiensten und virtuellen Computern**). Diese Funktionalität kann bei der Erstellung von Anwendungen hilfreich sein, die programmgesteuert auf Dienstverwaltungsfunktionen zugreifen müssen.
 
 > [AZURE.NOTE] Die Dienstverwaltungs-API wird durch die neue Ressourcenverwaltungs-API ersetzt, die derzeit als Vorschauversion verfügbar ist. Weitere Informationen zur Verwendung der neuen Ressourcenverwaltungs-API von Python finden Sie in der [Dokumentation zur Azure-Ressourcenverwaltung](http://azure-sdk-for-python.readthedocs.org/).
 
@@ -401,9 +401,9 @@ Um schließlich den virtuellen Computer mithilfe des erfassten Image zu erstelle
 		role_size='Small',
 		vm_image_name = image_name)
 
-Weitere Informationen zum Erfassen eines virtuellen Linux-Computers finden Sie unter [Erfassen eines virtuellen Linux-Computers](../virtual-machines/virtual-machines-linux-capture-image.md).
+Weitere Informationen zum Erfassen eines virtuellen Linux-Computers finden Sie unter [Erfassen eines virtuellen Linux-Computers](../virtual-machines/virtual-machines-linux-classic-capture-image.md).
 
-Weitere Informationen zum Erfassen eines virtuellen Windows-Computers finden Sie unter [Erfassen eines virtuellen Windows-Computers](../virtual-machines/virtual-machines-capture-image-windows-server.md).
+Weitere Informationen zum Erfassen eines virtuellen Windows-Computers finden Sie unter [Erfassen eines virtuellen Windows-Computers](../virtual-machines/virtual-machines-windows-classic-capture-image.md).
 
 ## <a name="What's Next"> </a>Nächste Schritte
 
@@ -435,4 +435,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
 [Clouddienst]: https://azure.microsoft.com/de-DE/documentation/services/cloud-services/
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

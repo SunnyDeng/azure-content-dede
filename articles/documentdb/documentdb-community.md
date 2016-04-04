@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="02/24/2016"
+  ms.date="03/18/2016"
   ms.author="andrl"/>
 
 # Communityportal
@@ -89,6 +89,12 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 **Communitybeiträge:**
 
+* [**Going Social with DocumentDB**](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/03/15/going-social-with-documentdb/) (Verwenden von DocumentDB für soziale Netzwerke) – *von Matias Quarantaas*
+
+* [**UWP, Azure App Services, and DocumentDB Soup: A photo-sharing app**](https://blogs.windows.com/buildingapps/2016/03/17/uwp-azure-app-services-and-documentdb-soup-a-photo-sharing-app/) (UWP, Azure App Services und DocumentDB: eine App zum Teilen von Fotos) – *von Eric Langland*
+
+* [**Benachrichtigungen über neue oder geänderte DocumentDB-Ressourcen mit Logik-Apps**](documentdb-change-notification.md) – *von Howard Edidin*
+
 * [**Collecting logs into Azure DocumentDB using fluent-plugin-documentdb**](http://unofficialism.info/posts/collecting-logs-into-azure-documentdb-using-fluent-plugin-documentdb/) (Protokollerfassung in Azure DocumentDB mit fluent-plugin-documentdb) – *von Yoichi Kawasaki*
 
 * [**DocumentDB revisited Part 1/2 – The theory**](https://peterintheazuresky.wordpress.com/2016/02/19/documentdb-revisited-part-12-the-theory/) (Erneute Betrachtung von DocumentDB, Teil 1/2 – Theorie) – *von Peter Mannerhult*
@@ -140,9 +146,10 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 ### Aktuelle und bevorstehende Veranstaltungen
 
 | Veranstaltungsname | Referent | Ort | Datum | Hashtag |
-| -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------- | ---------------------- | ------- |
-| [Meetup: CloudTalk](http://www.meetup.com/CloudTalk/events/227963695/) | Andrew Liu | Bellevue, WA | 3\. März 2016 | –
-| SQLBits XV | TBD | Liverpool, Großbritannien | 4\. bis 7. Mai 2016 | [#SQLBits](https://twitter.com/hashtag/SQLBits)
+| -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------- | ------------------------ | ------- |
+| [Build 2016](https://build.microsoft.com/) | John Macintyre, Dharma Shukla | San Francisco, CA | 30 März bis 1. April 2016 | [#MicrosoftBuild](https://twitter.com/hashtag/MicrosoftBuild)
+| [SQLBits XV](https://sqlbits.com/) | Andrew Liu, Aravind Ramachandran | Liverpool, Großbritannien | 4\. bis 7. Mai 2016 | [#SQLBits](https://twitter.com/hashtag/SQLBits)
+| [Meetup: Azure-Benutzergruppe Großbritannien](http://www.meetup.com/UKAzureUserGroup/events/229673468/) | Andrew Liu | London, Großbritannien | 12\. Mai 2016 | – |
 
 *Sprechen Sie auf einer Veranstaltung oder organisieren Sie sie? [Teilen Sie uns mit, ](mailto:askdocdb@microsoft.com)wie wir helfen können!*
 
@@ -150,10 +157,11 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 
 | Veranstaltungsname | Referent | Ort | Datum | Aufzeichnung |
 | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------- | ---------------------- | --------- |
+| [Meetup: CloudTalk](http://www.meetup.com/CloudTalk/events/227963695/) | Kirat Pandya | Bellevue, WA | 3\. März 2016 | – |
 | [Meetup: Azure Austin](http://www.meetup.com/azureaustin/events/228209275/) | Merwan Chinta | Austin, TX | 28\. Januar 2016 | – |
 | [Meetup: msdevmtl](http://www.meetup.com/msdevmtl/events/223839818/) | Vincent-Philippe Lauzon | Montreal (Quebec, Kanada) | 1\. Dezember 2015 | – |
 | [Meetup: SeattleJS](http://www.meetup.com/seattlejs/events/220102664/) | David Makogon | Seattle, WA | 12\. November 2015 | – |
-| [PASS Summit 2015](http://www.sqlpass.org/summit/2015/) | Jeff Renz, Andrew Hoh, Aravind Ramachandran, John Macintyre | Seattle, WA | 27\. bis 30. Oktober 2015 | [Developing Modern Applications on Azure](https://www.youtube.com/watch?v=k5Z24HX-RyQ) (Moderne Anwendungsentwicklung in Azure) |
+| [PASS Summit 2015](http://www.sqlpass.org/summit/2015/) | Jeff Renz, Andrew Hoh, Aravind Ramachandran, John Macintyre | Seattle, WA | 27\. bis 30. Oktober 2015 | [Developing Modern Applications on Azure (Moderne Anwendungsentwicklung in Azure)](https://www.youtube.com/watch?v=k5Z24HX-RyQ) |
 | [CloudDevelop 2015](http://www.clouddevelop.org/) | David Makogon, Ryan Crawcour | Columbus, OH | 23\. Oktober 2015 | – |
 | [SQL Saturday #430 – Sofia 2015](http://www.sqlsaturday.com/430/eventhome.aspx) | Leonard Lobel | Sofia, Bulgarien | 10\. Oktober 2015 | – |
 | [SQL Saturday #429 – Porto 2015](http://www.sqlsaturday.com/429/eventhome.aspx) | Leonard Lobel | Porto, Portugal | 3\. Oktober 2015 | – |
@@ -181,9 +189,11 @@ Sie können über aktuelle DocumentDB-Nachrichten und -Features auf dem Laufende
 ### Videos und Podcasts
 
 | Sendung | Referent | Datum | Episode |
-| ------------------------------------------- | ----------------------- | ------------------ | ------- |
-| Integration User Group | Han Wong | 17\. Februar 2016 | [Analyze and visualize non-relational data with DocumentDB + Power BI](http://www.integrationusergroup.com/analyze-visualize-non-relational-data-documentdb-power-bi/) (Analysieren und Visualisieren von nicht relationalen Daten mit DocumentDB + Power BI) |
-| Kanal 9: Moderne Anwendungen | Tara Shankar Jana | 13\. Dezember 2016 | [Take a modern approach to data in your apps](https://channel9.msdn.com/Series/Modern-Applications/Take-a-modern-approach-to-data-in-your-apps) (Ein moderner Ansatz für Daten in Ihren Apps) |
+| ------------------------------------------- | --------------------------- | ------------------ | ------- |
+| Wired2WinWebinar | Sai Sankar Kunnathukuzhiyil | 9\. März 2016 | [Developing Solutions with Azure DocumentDB (Entwickeln von Lösungen mit Azure DocumentDB)](https://www.youtube.com/watch?v=xKttEwXv_bs)
+| Integration User Group | Han Wong | 17\. Februar 2016 | [Analyze and visualize non-relational data with DocumentDB + Power BI (Analysieren und Visualisieren von nicht relationalen Daten mit DocumentDB + Power BI)](http://www.integrationusergroup.com/analyze-visualize-non-relational-data-documentdb-power-bi/) |
+| The Azure Podcast | Cale Teeter | 14\. Januar 2016 | [Episode 110: Using DocumentDB & Search (Episode 110: Verwenden von DocumentDB und Suche)](http://azpodcast.azurewebsites.net/post/Episode-110-Using-DocumentDB-Search) |
+| Kanal 9: Moderne Anwendungen | Tara Shankar Jana | 13\. Dezember 2016 | [Take a modern approach to data in your apps (Ein moderner Ansatz für Daten in Ihren Apps)](https://channel9.msdn.com/Series/Modern-Applications/Take-a-modern-approach-to-data-in-your-apps) |
 | NinjaTips | Miguel Quintero | 10\. Dezember 2015 | [DocumentDB - Un vistazo general](https://channel9.msdn.com/Series/Ninja-Tips/31-NinjaTips-Desarrollo-DocumentDB-1-Vistazo-general) |
 | Integration User Group | Howard Edidin | 9\. November 2015 | [Azure DocumentDB for Healthcare Integration – Part 2](http://www.integrationusergroup.com/azure-documentdb-for-healthcare-integration-part-2/) |
 | Integration User Group | Howard Edidin | 5\. Oktober 2015 | [Azure DocumentDB for Healthcare Integration](http://www.integrationusergroup.com/?event=azure-documentdb-and-biztalk) |
@@ -284,4 +294,4 @@ DocumentDB-Genies sind wichtige Mitglieder der Community, die sich durch ein bei
 
 Möchten Sie ein DocumentDB-Genie werden? Wenngleich es nicht unbedingt ein bestimmtes Kriterium gibt, das erfüllt sein muss, um ein DocumentDB-Genie zu werden, bewerten wir u. a. den Einfluss der Beiträge des Kandidaten zu Onlineforen wie StackOverflow und MSDN, Wikis, Online-Inhalten, Konferenzen, Benutzergruppen, Podcasts, Websites, Blogs und sozialen Medien sowie Artikeln und Büchern. [Senden uns eine E-Mail](mailto:askdocdb@microsoft.com), um sich selbst oder jemand anderen vorzuschlagen.
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0323_2016-->

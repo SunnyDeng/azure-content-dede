@@ -14,15 +14,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="02/04/2016"
+   ms.date="03/22/2016"
    ms.author="erihur"/>
 
 
 # Informationen zu Ihrer Rechnung für Microsoft Azure
 
-Die Gebühren für Microsoft Azure-Abonnements variieren je nach Preisliste. Einige Tarife, z. B. Visual Studio Enterprise (MPN), umfassen monatliche Guthaben für Abonnenten, die Sie Ihren Anforderungen entsprechend für jeden Azure-Dienst verwenden können.
+Die Gebühren für Microsoft Azure-Abonnements variieren je nach Preisliste. Einige Tarife, z. B. Visual Studio Enterprise (MPN), umfassen monatliche Guthaben für Abonnenten, die Sie Ihren Anforderungen entsprechend für jeden Azure-Dienst verwenden können.
 
-Bitte beachten Sie, dass bis zu 24 Stunden an ruhendem Verbrauch von Ihrem vorherigen in den aktuellen Abrechnungszeitraum übertragen werden können.
+Bitte beachten Sie, dass bis zu 24 Stunden an ruhendem Verbrauch von Ihrem vorherigen in den aktuellen Abrechnungszeitraum übertragen werden können.
 
 Weitere Informationen über Verbrauch und Tarife finden Sie auf der Seite [Microsoft Azure-Kaufoptionen](https://azure.microsoft.com/pricing/purchase-options/).
 
@@ -58,7 +58,7 @@ Anzeigen oder Herunterladen von Rechnungen:
 
 2. Klicken Sie auf das Abonnement, zu dem Sie Details und Informationen zur Verwendung anzeigen möchten.
 
-3. Klicken Sie auf **Abrechnung** – Verlauf.
+3. Klicken Sie auf **Abrechnung** – Verlauf.
 
     ![Zusammenfassung: Verlauf der Rechnungsstellung 1](./media/billing-understand-your-bill/ContentViewaBillforMA1.png)
 
@@ -104,7 +104,7 @@ Der Zeitraum, in dem die Nutzung stattgefunden hat.
 Datum, an dem die Rechnung generiert wurde.
 
 ### Payment Method
-Die Zahlungsart, die für das Konto verwendet wird (d. h. Rechnung oder Kreditkarte).
+Die Zahlungsart, die für das Konto verwendet wird (d. h. Rechnung oder Kreditkarte).
 
 ### Bill to
 Anschrift für Microsoft Azure-Rechnungen.
@@ -155,7 +155,7 @@ Die Seite „Additional Information“ enthält Verweise auf andere Ressourcen z
 ![Zusatzinformationen](./media/billing-understand-your-bill/AdditionalInformation.png)
 
 ### Detailed Usage
-Der Link in der Beschreibung unter „Detailed Usage“ führt Sie zum Azure-Portal „Nutzung und Abrechnung“, in dem Sie den genauen Verbrauch für dieses Abonnement sehen können. Es sind jetzt zwei Versionen zum Herunterladen verfügbar: **CSV-Version 1** enthält die alten Benennungskonventionen und Nutzungsfelder, und **CSV-Version 2** enthält kundenfreundliche Namen für jede Kategorie sowie zusätzliche Felder, damit Sie besser erkennen können, welche Dienste Sie unter Microsoft Azure nutzen.
+Der Link in der Beschreibung unter „Detailed Usage“ führt Sie zum Azure-Portal „Nutzung und Abrechnung“, in dem Sie den genauen Verbrauch für dieses Abonnement sehen können. Es sind jetzt zwei Versionen zum Herunterladen verfügbar: **CSV-Version 1** enthält die alten Benennungskonventionen und Nutzungsfelder, und **CSV-Version 2** enthält kundenfreundliche Namen für jede Kategorie sowie zusätzliche Felder, damit Sie besser erkennen können, welche Dienste Sie unter Microsoft Azure nutzen.
 
 ### Additional Information and Useful Resources
 Dieser Abschnitt enthält Links zu einfachen Fragen in Bezug auf Serverinstanzgrößen, SQL-Datenbank-Gebühren sowie nützliche Links für die Beantwortung weiterer Fragen.
@@ -168,11 +168,11 @@ In diesem Abschnitt finden sich Anweisungen für die Zahlung per Scheck, Überwe
 
 ## Erläuterung der detaillierten Aufstellung der Nutzungsgebühren
 
-Im Rahmen unseres ständigen Bestrebens, Kunden beim einfachen Verwalten der Nutzung von Azure zu unterstützen, haben wir den Download der Nutzungsdatei verbessert. Darin sind die Informationen zur Nutzung und zu den Kosten in Bezug auf die Azure-Dienste enthalten. Der Link zum Herunterladen enthält zwei Versionen der Nutzungsdatei: In **Version 1** wird das bestehende Format verwendet. **Version 2** enthält zusätzliche Informationen und aktualisierte Spaltennamen im Abschnitt mit den täglichen Nutzungsdaten.
+Im Rahmen unseres ständigen Bestrebens, Kunden beim einfachen Verwalten der Nutzung von Azure zu unterstützen, haben wir den Download der Nutzungsdatei verbessert. Darin sind die Informationen zur Nutzung und zu den Kosten in Bezug auf die Azure-Dienste enthalten. Der Link zum Herunterladen enthält zwei Versionen der Nutzungsdatei: In **Version 1** wird das bestehende Format verwendet. **Version 2** enthält zusätzliche Informationen und aktualisierte Spaltennamen im Abschnitt mit den täglichen Nutzungsdaten.
 
 Dies sind die **monatlichen** Gesamtgebühren für ein Abonnement nach Abzug von Gutschriften oder Rabatten. Der Verbrauch für den vergangenen Monat wird Ihnen rückwirkend in Rechnung gestellt. Im oberen Abschnitt der Datei werden die Details zu den Diensten angezeigt, die Ihnen für den Abrechnungszeitraum des vorherigen Monats berechnet werden. In der folgenden Tabelle sind die Namen der Spalten für beide CSV-Versionsdateien aufgeführt.
 
-**Version 1** | **Version 2** | **Beschreibung**|
+**Version 1** | **Version 2** | **Beschreibung**|
 :---------------| :---------------- | --------|
 Billing Period | Billing Period | Der Abrechnungszeitraum, in dem die Ressource verbraucht wurde.
 Name | Meter Category | Gibt den Dienst an, zu dem dieser Verbrauch gehört.
@@ -180,7 +180,7 @@ Typ | Meter Sub-Category | Der Azure-Dienst ist in dieser Spalte ggf. weiter def
 Ressource | Meter Name | Gibt die Maßeinheit für die Ressource an, für die der Verbrauch gemessen wird.
 Region | Meter Region | Gibt den Standort des Rechenzentrums für bestimmte Dienste an, die basierend auf dem Standort des Rechenzentrums berechnet werden.
 SKU | SKU | Gibt den eindeutigen Systembezeichner für jede Azure-Ressource an.
-Unit | Unit | Gibt die Einheit an, in der der Dienst in Rechnung gestellt wird. Beispiele sind GB, Stunden oder 10.000 s.
+Unit | Unit | Gibt die Einheit an, in der der Dienst in Rechnung gestellt wird. Beispiele sind GB, Stunden oder 10.000 s.
 Consumed | Consumed Quantity | Enthält die Menge der Ressource, die während des Abrechnungszeitraums verbraucht wurde.
 Included | Included Quantity | Enthält den Betrag der Ressource, der kostenlos in Ihrem Abrechnungszeitraum enthalten ist.
 Billable | Overage Quantity | Ist die Menge unter „Consumed“ größer als die Menge unter „Included“, zeigt diese Spalte die Differenz an. Dieser Betrag wird Ihnen in Rechnung gestellt. Für nutzungsbasierte Tarife ohne im Tarif enthaltene Menge entspricht der Wert hier dem Wert unter „Consumed“.
@@ -196,8 +196,8 @@ Je nach Nutzung können Tausende von Zeilen an täglichen Nutzungsdaten vorhande
 
  NAME | DOWNLOAD |
  :----------:| :-------: |
- Ausführliche Informationen zur Nutzung, CSV-Version 1| [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Micorosft_Azure_Detailed_Usage_v1.csv)
- Ausführliche Informationen zur Nutzung, CSV-Version 2 | [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Micorosft_Azure_Detailed_Usage_v2.csv)
+ Ausführliche Informationen zur Nutzung, CSV-Version 1| [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Micorosft_Azure_Detailed_Usage_v1.csv)
+ Ausführliche Informationen zur Nutzung, CSV-Version 2 | [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Micorosft_Azure_Detailed_Usage_v2.csv)
 
 
 
@@ -211,7 +211,7 @@ In der CSV-Datei sind die Posten aufgeschlüsselt, um eine Liste mit einer Über
 
 Die folgenden Spalten enthalten Details, die die Gebühren am Anfang des Abrechnungszeitraums beeinflussen.
 
-**Version 1** | **Version 2** | **Beschreibung** |
+**Version 1** | **Version 2** | **Beschreibung** |
 :---------------| :----------------| -----|
 Usage Date | Usage Date | Das Datum, an dem die Ressource ausgegeben wurde.
 Name | Meter Category | Gibt den Dienst an, zu dem dieser Verbrauch gehört.
@@ -219,7 +219,7 @@ Resource GUID | Meter ID | Der Bezeichner der berechneten Messung. Dieser Bezeic
 Typ | Meter Sub-Category | Der Azure-Dienst ist in dieser Spalte ggf. weiter definiert. Die Dienstart kann Auswirkungen auf den Tarif haben.
 Ressource | Meter Name | Gibt die Maßeinheit für die Ressource an, für die der Verbrauch gemessen wird.
 Region | Meter Region | Gibt den Standort des Rechenzentrums für bestimmte Dienste an, die basierend auf dem Standort des Rechenzentrums berechnet werden.
-Unit | Unit | Gibt die Einheit an, in der der Dienst in Rechnung gestellt wird. Beispiele sind GB, Stunden oder 10.000 s.
+Unit | Unit | Gibt die Einheit an, in der der Dienst in Rechnung gestellt wird. Beispiele sind GB, Stunden oder 10.000 s.
 Consumed | Consumed Quantity | Enthält den Betrag der Ressource, die an diesem Tag verbraucht wurde.
 Sub Region | Resource Location | Gibt das Rechenzentrum an, in dem die Ressource ausgeführt wird.
 Service | Consumed Service | Diese Spalte dient der Verfolgung des einzelnen Azure Platform-Diensts, der in der Spalte „Name“ möglicherweise nicht einzeln aufgeführt ist. In der Spalte „Service“ wird angegeben, auf welchen Dienst genau sich die jeweilige Nutzung bezieht.
@@ -230,13 +230,13 @@ Additional Info | Additional Info | Zusätzliche Metadaten, die sich auf den Die
 Service Info 1 | Service Info 1 | Diese Spalte enthält den Namen des Projekts, zu dem der Dienst in Ihrem Abonnement gehört.
 Service Info 2 | Service Info 2 | Dies ist ein Legacyfeld, in dem optionale dienstspezifische Metadaten erfasst werden.
 
-Zusätzlich zu einigen neuen Feldern und Namensänderungen für CSV-Version 2 wird eine standardisierte Formatierung für die Daten in den unten aufgeführten Feldern verwendet:
+Zusätzlich zu einigen neuen Feldern und Namensänderungen für CSV-Version 2 wird eine standardisierte Formatierung für die Daten in den unten aufgeführten Feldern verwendet:
 
 - **Instance ID**: Im Feld „Instance ID“ wird der vom Benutzer festgelegte Bezeichner für den bereitgestellten Dienst angegeben. Derzeit gibt es zwei Formate, in denen die Instanz-ID angegeben wird: Dies ist entweder der Name der Ressource oder die vollqualifizierte Ressourcen-ID. Microsoft Azure-Dienste werden dahingehend umgestellt, dass die Instanz-ID in einem standardisierten vollqualifizierten Ressourcen-ID-Format angegeben wird _**(/subscriptions/<subscription id>/resourcegroups/<resourcegroupname>/providers/<providername>/<resourcename>)**_. Wenn die Dienste auf das neue Format umgestellt werden, wird das Datenfeld „Instance ID“ so geändert, dass nicht mehr nur der Ressourcenname zu sehen ist, sondern die Ressourcen-ID. Die Ressourcen-ID ist das Format, das von der [Azure-Ressourcen-Manager-API](https://msdn.microsoft.com/library/azure/dn790567.aspx) zum Identifizieren von Ressourcen in einem Abonnement verwendet wird.
 
 ![instanceid](./media/billing-understand-your-bill/instanceid.png)
 
-- **Additional Info**: In der Spalte „Additional Info“ in der CSV-Nutzungsdatei werden dienstspezifische Metadaten angegeben. Dies kann beispielsweise ein Imagetyp für einen virtuellen Computer sein. Derzeit werden für einen Dienst dienstspezifische Metadaten in mehreren Spalten angegeben, und zwar in den Feldern „Additional Info“, „Service Info 1“ und „Service Info 2“. Die Microsoft Azure-Dienste sollen vereinheitlicht werden, damit dienstspezifische Metadaten nur noch in der Spalte „Additional Info“ angegeben werden. Hier sehen Sie eine Momentaufnahme des vereinheitlichten Formats:
+- **Additional Info**: In der Spalte „Additional Info“ in der CSV-Nutzungsdatei werden dienstspezifische Metadaten angegeben. Dies kann beispielsweise ein Imagetyp für einen virtuellen Computer sein. Derzeit werden für einen Dienst dienstspezifische Metadaten in mehreren Spalten angegeben, und zwar in den Feldern „Additional Info“, „Service Info 1“ und „Service Info 2“. Die Microsoft Azure-Dienste sollen vereinheitlicht werden, damit dienstspezifische Metadaten nur noch in der Spalte „Additional Info“ angegeben werden. Hier sehen Sie eine Momentaufnahme des vereinheitlichten Formats:
 
 ![additionalinfo\_csv2](./media/billing-understand-your-bill/AdditionaInfo_csv2.png)
 
@@ -250,6 +250,8 @@ Zusätzlich zu einigen neuen Feldern und Namensänderungen für CSV-Version 2 w
 
 ## Weitere Ressourcen
 Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter [Verwalten von Diensten](https://msdn.microsoft.com/library/azure/dn578292.aspx) finden Sie einige sehr hilfreiche Links:
+
+- [Azure-Abrechnung und -Abonnement – Häufig gestellte Fragen](billing-subscription-faq.md)
 
 - [Verwalten der Zahlungsmethode für Azure-Abonnements](https://msdn.microsoft.com/library/azure/dn736054.aspx)
 
@@ -265,4 +267,4 @@ Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter
 
 <!--Image references-->
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

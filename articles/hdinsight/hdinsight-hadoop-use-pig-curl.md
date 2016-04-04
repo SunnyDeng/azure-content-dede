@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/08/2016"
+   ms.date="03/18/2016"
    ms.author="larryfr"/>
 
 #Ausführen von Pig-Aufträgen mit Hadoop in HDInsight mithilfe von Curl
@@ -25,7 +25,7 @@ In diesem Dokument erfahren Sie, wie mithilfe von Curl Pig Latin-Aufträge auf e
 
 Curl wird verwendet, um zu veranschaulichen, wie Sie über unformatierte HTTP-Anforderungen zum Ausführen, Überwachen und Abrufen der Ergebnisse der Pig-Aufträge mit HDInsight interagieren können. Dies funktioniert mithilfe der WebHCat REST-API (ehemals Templeton), die von Ihrem HDInsight-Cluster bereitgestellt wird.
 
-> [AZURE.NOTE]Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, Ihnen HDInsight jedoch neu ist, finden Sie weitere Informationen unter [Tipps zu Linux-basiertem HDInsight](hdinsight-hadoop-linux-information.md).
+> [AZURE.NOTE] Wenn Sie bereits mit der Verwendung von Linux-basierten Hadoop-Servern vertraut sind, Ihnen HDInsight jedoch neu ist, finden Sie weitere Informationen unter [Tipps zu Linux-basiertem HDInsight](hdinsight-hadoop-linux-information.md).
 
 ##<a id="prereq"></a>Voraussetzungen
 
@@ -39,7 +39,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 ##<a id="curl"></a>Ausführen von Pig-Aufträgen mit Curl
 
-> [AZURE.NOTE]Wenn Sie Curl oder eine andere REST-Kommunikation mit WebHCat verwenden, müssen Sie die Anforderungen authentifizieren, indem Sie den Benutzernamen und das Kennwort des Administrators des HDInsight-Clusters bereitstellen. Sie müssen auch den Clusternamen als Teil des URI (Uniform Resource Identifier) verwenden, der zum Senden der Anforderungen an den Server genutzt wird.
+> [AZURE.NOTE] Wenn Sie Curl oder eine andere REST-Kommunikation mit WebHCat verwenden, müssen Sie die Anforderungen authentifizieren, indem Sie den Benutzernamen und das Kennwort des Administrators des HDInsight-Clusters bereitstellen. Sie müssen auch den Clusternamen als Teil des URI (Uniform Resource Identifier) verwenden, der zum Senden der Anforderungen an den Server genutzt wird.
 >
 > Ersetzen Sie für die Befehle in diesem Abschnitt die Option **BENUTZERNAME** zur Authentifizierung im Cluster durch den Benutzer und die Option **KENNWORT** durch das Kennwort für das Benutzerkonto. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres Clusters.
 >
@@ -72,25 +72,25 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
         * **execute**: Die auszuführenden Pig Latin-Anweisungen
         * **statusdir** – Das Verzeichnis, in das die Statusangaben für diesen Auftrag geschrieben werden.
 
-    > [AZURE.NOTE]Beachten Sie, dass die Leerzeichen in Pig Latin-Anweisungen bei Curl durch das Zeichen `+` ersetzt werden.
+    > [AZURE.NOTE] Beachten Sie, dass die Leerzeichen in Pig Latin-Anweisungen bei Curl durch das Zeichen `+` ersetzt werden.
 
     Dieser Befehl sollte eine Auftrags-ID zurückgeben, mit der der Status des Auftrags überprüft werden kann. Beispiel:
 
         {"id":"job_1415651640909_0026"}
 
-3. Verwenden Sie den folgenden Befehl, um den Status des Auftrags zu prüfen. Ersetzen Sie **JOBID** durch den Wert, der im vorherigen Schritt zurückgegeben wurde. Wenn der Rückgabewert z. B. `{"id":"job_1415651640909_0026"}` lautet, ist die **JOBID** `job_1415651640909_0026` .
+3. Verwenden Sie den folgenden Befehl, um den Status des Auftrags zu prüfen. Ersetzen Sie **JOBID** durch den Wert, der im vorherigen Schritt zurückgegeben wurde. Wenn der Rückgabewert z. B. `{"id":"job_1415651640909_0026"}` lautet, ist die **JOBID** `job_1415651640909_0026` .
 
         curl -G -u USERNAME:PASSWORD -d user.name=USERNAME https://CLUSTERNAME.azurehdinsight.net/templeton/v1/jobs/JOBID | jq .status.state
 
 	Wenn der Auftrag abgeschlossen ist, wird der Status **ERFOLGREICH** angezeigt.
 
-    > [AZURE.NOTE]Diese Curl-Anforderung gibt ein JSON-Dokument (JavaScript Object Notation) mit Informationen zum Auftrag zurück, und mithilfe von "jq" wird nur der Statuswert abgerufen.
+    > [AZURE.NOTE] Diese Curl-Anforderung gibt ein JSON-Dokument (JavaScript Object Notation) mit Informationen zum Auftrag zurück, und mithilfe von "jq" wird nur der Statuswert abgerufen.
 
 ##<a id="results"></a>Anzeigen der Ergebnisse
 
 Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure-Blobspeicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei. In diesem Fall ****wasb:///example/pigcurl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/pigcurl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
 
-Sie können diese Dateien mithilfe von [CLI Mac, Linux und Microsoft Azure](../xplat-cli-install.md) auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/pigcurl** auflisten möchten, verwenden Sie den folgenden Befehl:
+Sie können diese Dateien mithilfe von [CLI Mac, Linux und Microsoft Azure](../xplat-cli-install.md) auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/pigcurl** auflisten möchten, verwenden Sie den folgenden Befehl:
 
 	azure storage blob list <container-name> example/pigcurl
 
@@ -98,7 +98,7 @@ Verwenden Sie den folgenden Befehl, um eine Datei herunterzuladen:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE]Sie müssen den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen.
+> [AZURE.NOTE] Sie müssen den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen.
 
 ##<a id="summary"></a>Zusammenfassung
 
@@ -118,4 +118,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0323_2016-->

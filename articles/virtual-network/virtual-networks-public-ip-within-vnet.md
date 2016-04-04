@@ -41,7 +41,7 @@ Es gibt einige IP-Adressbereiche, die nicht zulässig sind:
 
 - 169\.254.0.0/16 (Verbindungslokal)
 
-- 68\.63.129.16/32 (Internes DNS)
+- 168\.63.129.16/32 (Internes DNS)
 
 ## Nächste Schritte
 
@@ -51,4 +51,4 @@ Es gibt einige IP-Adressbereiche, die nicht zulässig sind:
 
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0323_2016-->

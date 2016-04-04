@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="02/11/2016"
+   ms.date="03/16/2016"
    ms.author="sameerch"/>
 
 # Erste Schritte mit dem SharePoint-Connector und das Hinzufügen zur Logik-App
->[AZURE.NOTE] Diese Version des Artikels gilt für die Logik-Apps-Schemaversion 2014-12-01-preview.
+>[AZURE.NOTE] Diese Version des Artikels gilt für die Schemavorschauversion (Stand: 01.12.2014) für Logik-Apps. Um die Schemaversion 2015-08-01-preview für die SharePoint Online-API aufzurufen, klicken Sie auf [SharePoint-API](../connectors/connectors-create-api-sharepointonline.md).
 
 Stellen Sie eine Verbindung mit dem SharePoint-Server oder mit SharePoint Online her, um Dokumente und Listenelemente zu verwalten. Sie können verschiedene Aktionen ausführen, beispielsweise das Erstellen, Aktualisieren, Abrufen und Löschen für Dokumente und Listenelemente. Bei Verwendung eines lokalen SharePoint-Servers geben Sie Service Bus-Verbindungszeichenfolgen als Teil der Connectorkonfiguration ein installieren den lokalen Listener-Agent für die Verbindung mit dem Server.
 
@@ -467,7 +467,7 @@ Informationen finden Sie unter [Hybrid Connection Manager konfigurieren](app-ser
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE] Wenn Sie sich zunächst mit Azure-Logik-Apps vertraut machen möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie [Logik-Apps testen](https://tryappservice.azure.com/?appservice=logic). Sie können sofort eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure-Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Logik-App testen](https://tryappservice.azure.com/?appservice=logic). Sie können sofort eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -483,4 +483,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [6]: ./media/app-service-logic-connector-sharepoint/image_5.png
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

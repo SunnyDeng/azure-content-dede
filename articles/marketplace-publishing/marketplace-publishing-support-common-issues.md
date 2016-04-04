@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="12/06/2015"
+      ms.date="03/21/2015"
       ms.author="v-jeana; hascipio; v-dabosl"/>
 
 # Beheben von häufig auftretenden Problemen mit dem Azure Marketplace für Herausgeber
@@ -25,7 +25,7 @@ In einigen Fällen müssen Sie eine Gutschrift oder eine Erstattung im Auftrag e
 
 Im Folgenden erfahren Sie, wie Sie eine Gutschrift oder Rückerstattung im Auftrag eines Kunden anfordern.
 
-> [AZURE.NOTE]Wenn Microsoft von einem Kunden oder einem Azure-Reseller um eine Rückerstattung oder eine Gutschrift gebeten wird, wenden wir dieselben Richtlinien an wie bei der Bereitstellung der Azure-Dienste. Für den Fall, dass gemäß unseren Richtlinien eine Erstattung oder Gutschrift zu entrichten ist (und Sie uns in Ihrem Namen autorisieren), diese Erstattung oder Gutschrift an den Kunden oder Azure-Reseller zu leisten, werden wir diesen Vorgang proaktiv abwickeln. Ist gemäß unseren Richtlinien keine Rückerstattung oder Gutschrift zu zahlen, bitten wir den Kunden oder Azure-Reseller unter Umständen, sich direkt mit Ihnen in Verbindung zu setzen.
+> [AZURE.NOTE] Wenn Microsoft von einem Kunden oder einem Azure-Reseller um eine Rückerstattung oder eine Gutschrift gebeten wird, wenden wir dieselben Richtlinien an wie bei der Bereitstellung der Azure-Dienste. Für den Fall, dass gemäß unseren Richtlinien eine Erstattung oder Gutschrift zu entrichten ist (und Sie uns in Ihrem Namen autorisieren), diese Erstattung oder Gutschrift an den Kunden oder Azure-Reseller zu leisten, werden wir diesen Vorgang proaktiv abwickeln. Ist gemäß unseren Richtlinien keine Rückerstattung oder Gutschrift zu zahlen, bitten wir den Kunden oder Azure-Reseller unter Umständen, sich direkt mit Ihnen in Verbindung zu setzen.
 
   ![1\_RequestRefund][1]
 
@@ -46,7 +46,7 @@ Im Folgenden erfahren Sie, wie Sie eine Gutschrift oder Rückerstattung im Auftr
     - Das Datum der Rechnung für diesen Zeitraum
     - Den Grund für die Gutschrift
 
-Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail, dass wir Ihre Informationen erhalten haben. Nachdem eine Entscheidung bezüglich Ihrer Anfrage getroffen wurde, werden Sie über das Ergebnis informiert.
+Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail, dass wir Ihre Informationen erhalten haben. Nachdem eine Entscheidung bezüglich Ihrer Anfrage getroffen wurde, werden Sie über das Ergebnis informiert.
 
 ## Überprüfung des Kundenabonnements
 
@@ -72,13 +72,13 @@ Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Micro
 
 ![inprivate][4]
 
-**2. Melden Sie sich mit dem Geschäftskonto Ihres Unternehmens oder Ihrem Schulkonto an** (z. B. AzureStore@yourcompany.com).
+**2. Melden Sie sich mit dem Geschäftskonto Ihres Unternehmens oder Ihrem Schulkonto an** (z. B. AzureStore@yourcompany.com).
 
 ![signin][5]
 
 **3. Schließen Sie die Überprüfung „Unterstützen Sie uns beim Schutz Ihres Kontos“ ab.**
 
-> [AZURE.NOTE]Sie können für die Überprüfung Ihre Telefonnummer oder Ihre E-Mail-Adresse angeben.
+> [AZURE.NOTE] Sie können für die Überprüfung Ihre Telefonnummer oder Ihre E-Mail-Adresse angeben.
 
 ![protectacct][6]
 
@@ -120,4 +120,4 @@ Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Micro
 [7]: ./media/marketplace-publishing-support-common-issues/acctdetails.png
 [8]: ./media/marketplace-publishing-support-common-issues/manageadmins.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0323_2016-->

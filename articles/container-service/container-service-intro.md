@@ -24,19 +24,19 @@ Azure Container Service (ACS) bietet eine Möglichkeit zur Vereinfachung der Ers
 
 <br /> ![ACS bietet eine Möglichkeit zum Verwalten von in Containern ausgeführten Anwendungen auf mehreren Hosts in Azure.](./media/acs-intro/acs-cluster.png) <br /><br />
 
-ACS nutzt Docker, um sicherzustellen, dass Ihre Anwendungscontainer vollständig portierbar sind. Es unterstützt außerdem Ihre Auswahl von Marathon, Chronos und Apache Mesos oder Docker Swarm, um sicherzustellen, dass diese Anwendungen auf Tausende und sogar Zehntausende von Containern skaliert werden können.
+ACS nutzt das Docker-Containerformat, um sicherzustellen, dass Ihre Anwendungscontainer vollständig portierbar sind. Es unterstützt außerdem Marathon und Apache Mesos oder Docker Swarm, um sicherzustellen, dass diese Anwendungen auf Tausende und sogar Zehntausende von Containern skaliert werden können.
 
 Der Azure Container Service ermöglicht Ihnen die Nutzung der Unternehmensfunktionen von Azure, während gleichzeitig die Anwendungsportierbarkeit erhalten bleibt, auch auf den Orchestrierungsebenen.
 
 Verwenden von Azure Container Service
 -----------------------------
 
-Unser Ziel mit dem Azure Container Service ist es, unter Verwendung von Open Source-Tools und -Technologien, die heutzutage bei unseren Kunden beliebt sind, eine Containerhostingumgebung bereitzustellen. Zu diesem Zweck machen wir die Standard-API-Endpunkte für Docker und den von Ihnen ausgewählten Orchestrator verfügbar. Mithilfe dieser Endpunkte können Sie jede Software nutzen, die mit diesen Endpunkten kommunizieren kann. Beispielsweise können Sie im Fall des Docker Swarm-Endpunkts Docker Compose auswählen, während Sie sich bei Apache Mesos für die Verwendung der DCOS CLI entscheiden können.
+Unser Ziel mit dem Azure Container Service ist es, unter Verwendung von Open Source-Tools und -Technologien, die heutzutage bei unseren Kunden beliebt sind, eine Containerhostingumgebung bereitzustellen. Zu diesem Zweck machen wir die Standard-API-Endpunkte für den von Ihnen ausgewählten Orchestrator verfügbar. Mithilfe dieser Endpunkte können Sie jede Software nutzen, die mit diesen Endpunkten kommunizieren kann. Beispielsweise können Sie im Fall des Docker Swarm-Endpunkts die Docker-Befehlszeilenschnittstelle wählen und sich bei Apache Mesos für die Verwendung der DCOS-Befehlszeilenschnittstelle entscheiden.
 
 Erstellen eines Docker-Clusters mithilfe von Azure Container Service
 -------------------------------------------------------
 
-Um mit der Nutzung des Azure Container Service (ACS) zu beginnen, wird ein ACS-Cluster mithilfe einer Azure-Ressourcen-Manager-Vorlage bereitgestellt. Diese Bereitstellung kann mit verschiedenen Größen und Verfügbarkeitsoptionen konfiguriert werden, wozu Apache Mesos oder Docker Swarm verwendet wird. Azure-Ressourcen-Manager-Vorlagen können über den Azure-Port, die Azure-Befehlszeilenschnittstelle oder PowerShell bereitgestellt werden. Die Vorlagen können auch so geändert werden, dass sie eine zusätzliche oder erweiterte Azure-Konfiguration enthalten. Weitere Informationen zu Bereitstellung und ACS-Clustern finden Sie unter [Bereitstellen eines Azure Container Service-Clusters](./container-service-deployment.md).
+Um mit der Nutzung des Azure Container Service (ACS) zu beginnen, wird ein ACS-Cluster mithilfe einer Azure-Ressourcen-Manager-Vorlage bereitgestellt. Diese Bereitstellung kann mit verschiedenen Größen und Verfügbarkeitsoptionen konfiguriert werden, wozu Apache Mesos oder Docker Swarm verwendet wird. Azure Resource Manager-Vorlagen können über das Azure-Portal, über die Azure-Befehlszeilenschnittstelle oder über PowerShell bereitgestellt werden. Die Vorlagen können auch so geändert werden, dass sie eine zusätzliche oder erweiterte Azure-Konfiguration enthalten. Weitere Informationen zu Bereitstellung und ACS-Clustern finden Sie unter [Bereitstellen eines Azure Container Service-Clusters](./container-service-deployment.md).
 
 Bereitstellen einer Anwendung
 ------------------------
@@ -49,13 +49,13 @@ Apache Mesos ist ein Open Source-Projekt, das bei der Apache Software Foundation
 
 ![Für Swarm konfigurierter ACS mit angezeigten Agents und Mastern.](media/acs-intro/acs-mesos.png)
 
-Mesos weist einen beeindruckenden Funktionsumfang auf.
+Mesos zeichnet sich durch einen beeindruckenden Funktionsumfang aus.
 
 -   Skalierbarkeit auf bis zu 10.000 Knoten
 
 -   Fehlertolerant replizierte Master und Slaves mithilfe von ZooKeeper
 
--   Unterstützung für Docker-Container
+-   Unterstützung von Containern im Docker-Format
 
 -   Systemeigene Isolierung zwischen Aufgaben mit Linux-Containern
 
@@ -69,7 +69,7 @@ Mesos bietet Unterstützung für eine große Anzahl von [Frameworks](http://meso
 
 #### Verwenden von Marathon und Chronos
 
-Marathon ist ein clusterweites Initialisierungs- und Kontrollsystem für Dienste in cgroups oder, im Fall von ACS, in Docker-Containern. Es ist ein idealer Partner für Chronos, einen fehlertoleranten Auftragsplaner für Mesos, der Abhängigkeiten und zeitbasierte Pläne verarbeitet.
+Marathon ist ein clusterweites Initialisierungs- und Steuerungssystem für Dienste in cgroups oder, im Fall von ACS, in Containern im Docker-Format. Es ist ein idealer Partner für Chronos, einen fehlertoleranten Auftragsplaner für Mesos, der Abhängigkeiten und zeitbasierte Pläne verarbeitet.
 
 Marathon und Chronos bieten eine Webbenutzeroberfläche, über die Sie Ihre Anwendung bereitstellen können. Zugriff auf diese erfolgt über eine URL, die etwa wie `http://DNS\_PREFIX.REGION.cloudapp.azure.com` aussieht, wobei sowohl DNS\_PREFIX als auch REGION zur Zeit der Bereitstellung definiert werden. Natürlich können Sie auch Ihren eigenen DNS-Namen angeben. Weitere Informationen zum Ausführen eines Containers auf der Marathon-Webbenutzeroberfläche finden Sie unter [Containerverwaltung über die Webbenutzeroberfläche](./container-service-mesos-marathon-ui.md).
 
@@ -101,4 +101,4 @@ Erste Schritte mit ACS:
 
 > [AZURE.VIDEO connect-2015-getting-started-developing-with-docker-and-azure-container-service]
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

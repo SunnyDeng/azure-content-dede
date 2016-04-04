@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie den Tabellenspeicherdienst aus PHP zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen in der Tabelle verwenden."
 	services="storage"
 	documentationCenter="php"
-	authors="tfitzmac"
-	manager="carmonm"
-	editor="tysonn"/>
+	authors="rmcmurray"
+	manager="wpickett"
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -14,7 +14,7 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="02/17/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 
 # Verwenden des Tabellenspeichers mit PHP
@@ -478,4 +478,4 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 [filters]: http://msdn.microsoft.com/library/azure/dd894031.aspx
 [entity-group-transactions]: http://msdn.microsoft.com/library/azure/dd894038.aspx
 
-<!----HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

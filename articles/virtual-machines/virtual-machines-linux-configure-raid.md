@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Konfigurieren von Software-RAID auf einem virtuellen Computer unter Linux | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mdadm zum Konfigurieren von RAID unter Linux in Azure verwenden." 
-	services="virtual-machines" 
+	services="virtual-machines-linux" 
 	documentationCenter="" 
 	authors="szarkos" 
 	writer="szark" 
@@ -10,7 +10,7 @@
 	tag="azure-service-management,azure-resource-manager" />
 
 <tags 
-	ms.service="virtual-machines" 
+	ms.service="virtual-machines-linux" 
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
@@ -23,13 +23,11 @@
 # Konfigurieren von Software-RAID unter Linux
 Ein häufiges Szenario ist die Verwendung von Software-RAID auf virtuellen Linux-Computern in Azure, um mehrere angefügte Datenträger als einzelnes RAID-Gerät darzustellen. Dies kann normalerweise angewendet werden, um die Leistung zu verbessern und optimierten Durchsatz im Vergleich zur Verwendung eines einzelnen Datenträgers zu ermöglichen.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
- 
 
 ## Anfügen von Datenträgern
-In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren. In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen. Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Microsoft Azure-Artikel [Anfügen eines Datenträgers](storage-windows-attach-disk.md#attachempty).
+In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren. In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen. Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Microsoft Azure-Artikel [Anfügen eines Datenträgers](virtual-machines-windows-classic-attach-disk.md#attachempty).
 
->[AZURE.NOTE]Die Größe "ExtraSmall" für virtuelle Computer unterstützt maximal einen angefügten Datenträger pro virtuellem Computer. Ausführliche Informationen zu den Größen virtueller Computer und zur Anzahl der unterstützten Datenträger finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+>[AZURE.NOTE] Die Größe "ExtraSmall" für virtuelle Computer unterstützt maximal einen angefügten Datenträger pro virtuellem Computer. Ausführliche Informationen zu den Größen virtueller Computer und zur Anzahl der unterstützten Datenträger finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
 
 
 ## Installieren des mdadm-Dienstprogramms
@@ -125,7 +123,7 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 		# sudo -i chkconfig --add boot.md
 		# sudo echo 'DEVICE /dev/sd*[0-9]' >> /etc/mdadm.conf
 
-	>[AZURE.NOTE]Nach den Änderungen an den SUSE-Systemen kann ein Neustart erforderlich sein. Dieser Schritt ist für SLES 12 *nicht* erforderlich.
+	>[AZURE.NOTE] Nach den Änderungen an den SUSE-Systemen kann ein Neustart erforderlich sein. Dieser Schritt ist für SLES 12 *nicht* erforderlich.
 
 
 ## Hinzufügen des neuen Laufwerks zu "/etc/fstab"
@@ -182,4 +180,4 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0323_2016-->

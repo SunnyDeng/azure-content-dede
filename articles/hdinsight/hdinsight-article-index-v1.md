@@ -21,7 +21,7 @@
 Verwenden Sie diese Indexseite, um nach Artikeln über HDInsight im [klassischen Azure-Portal](https://manage.windowsazure.com/) zu suchen. Azure HDInsight ist eine Cloudverteilung von Open Source-Hadoop und der Hortonworks Data Platform (HDP).
 
 
-> [AZURE.IMPORTANT]Dieser Dokumentationsindex ist für Kunden vorgesehen, die bereits Lösungen im aktuellen klassischen Azure-Portal bereitgestellt haben.
+> [AZURE.IMPORTANT]  Dieser Dokumentationsindex ist für Kunden vorgesehen, die bereits Lösungen im aktuellen klassischen Azure-Portal bereitgestellt haben.
 >
 > Microsoft empfiehlt für neue HDInsight-Cluster die Verwendung des **Azure-Portals**:
 >
@@ -58,10 +58,9 @@ Eine vollständige Liste von Artikeln zur Verwendung von Linux und Linux-Cluster
 * [Serialisieren von Daten in Hadoop mit der Microsoft Avro-Bibliothek](hdinsight-dotnet-avro-serialization.md)
 * [Verarbeiten und Analysieren von JSON-Dokumenten mit Hive](hdinsight-using-json-in-hive.md)
 * [Verwenden von Python mit Hive und Pig](hdinsight-python.md)
-* [Optimieren von Hive-Abfragen für Hadoop](hdinsight-hadoop-optimize-hive-query–v1.md)
+* [Optimieren von Hive-Abfragen für Hadoop](hdinsight-hadoop-optimize-hive-query.md)
 * [Ausführen von Pig-Aufträgen mithilfe des .NET SDK für Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk-v1.md)
 * [Verwenden benutzerdefinierter C#-Funktionen mit Hive- und Pig-Streaming](hdinsight-hadoop-hive-pig-udf-dotnet-csharp.md)
-* [Entwickeln von C#-Hadoop-Streamingprogrammen](hdinsight-hadoop-develop-deploy-streaming-jobs.md)
 
 ## HBase: NoSQL-Datenbank
 
@@ -71,11 +70,11 @@ Eine vollständige Liste von Artikeln zur Verwendung von Linux und Linux-Cluster
 
 ## Apache Storm: Streamabfrage
 
-* [Erste Schritte mit den Storm-Starter-Beispielen](hdinsight-apache-storm-tutorial-get-started-v1.md)
+* [Erste Schritte mit den Storm-Starter-Beispielen](hdinsight-apache-storm-tutorial-get-started.md)
 * [Bereitstellen und Verwalten von Apache Storm-Topologien](hdinsight-storm-deploy-monitor-topology.md)
 * [Entwickeln von C#-Topologien für Apache Storm mithilfe von Hadoop-Tools für Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md)
 * [Entwickeln von Java-basierten Topologien für eine einfache Anwendung zum Zählen von Wörtern mit Apache Storm und Maven](hdinsight-storm-develop-java-topology.md)
-* [Verarbeitung von Ereignissen von Azure-Event Hubs mit Storm](hdinsight-storm-develop-csharp-event-hub-topology.md)
+* [Verarbeitung von Ereignissen von Azure-Event Hubs mit Storm](hdinsight-storm-develop-csharp-event-hub-topology.md)
 * [Verwenden von Power BI zur Visualisierung von Daten aus einer Apache Storm-Topologie ](hdinsight-storm-power-bi-topology.md)
 * [Verarbeiten von Fahrzeugsensordaten von Azure Event Hubs mit Apache Storm](hdinsight-storm-iot-eventhub-documentdb.md)
 
@@ -100,9 +99,8 @@ Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Portal f
 ## Machine Learning in HDInsight
 
 * [Erstellen von Filmempfehlungen mithilfe von Apache Mahout mit Hadoop](hdinsight-mahout.md)
-* [Lernpfad: Erstellen von erweiterten Analyselösungen](machine-learning-data-science-how-to-create-machine-learning-service.md)
-* [Lernpfad: Erweiterte Datenverarbeitung](machine-learning-data-science-advanced-data-processing.md)
-* [Vorhersagen von Taxitrinkgeldern mit HDInsight und Machine Learning](machine-learning-data-science-process-hive-walkthrough.md)
+* [Lernpfad: Erstellen von erweiterten Analyselösungen](../machine-learning/machine-learning-walkthrough-develop-predictive-solution.md)
+* [Vorhersagen von Taxitrinkgeldern mit HDInsight und Machine Learning](../machine-learning/machine-learning-data-science-process-hive-walkthrough.md)
 
 ## Erweiterbarkeit
 
@@ -133,4 +131,4 @@ Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Portal f
 * [Interpretieren von Fehlermeldungen](hdinsight-debug-jobs.md)
 * [Hilfe im Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0323_2016-->

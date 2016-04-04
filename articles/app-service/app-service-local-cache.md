@@ -105,7 +105,7 @@ Lesen Sie den obigen Abschnitt zu den Best Practices bei Verwendung des lokalen 
  
 ### Woher weiß ich, dass meine Site auf die Verwendung des lokalen Caches umgeschaltet hat? 
 
-Wenn Sie das Feature für den lokalen Cache mit Stagingumgebungen verwenden, findet der Wechsel erst dann statt, wenn der lokale Cache aufgewärmt wurde. Um zu prüfen, ob Ihre Site mit dem lokalen Cache ausgeführt wird, können Sie die Workerprozess-Umgebungsvariable `WEBSITE_LOCALCACHE_READY` überprüfen. Verwenden Sie die hier bereitgestellten Anweisungen, um auf mehreren Instanzen auf die Workerprozess-Umgebungsvariable zuzugreifen.
+Wenn Sie das Feature für den lokalen Cache mit Stagingumgebungen verwenden, findet der Wechsel erst dann statt, wenn der lokale Cache aufgewärmt wurde. Um zu prüfen, ob Ihre Website mit dem lokalen Cache ausgeführt wird, können Sie die Workerprozess-Umgebungsvariable WEBSITE\_LOCALCACHE\_READY überprüfen. Verwenden Sie die auf der Seite für die [Workerprozess-Umgebungsvariable](https://github.com/projectkudu/kudu/wiki/Process-Threads-list-and-minidump-gcdump-diagsession#process-environment-variable) bereitgestellten Anweisungen, um auf mehreren Instanzen auf die Workerprozess-Umgebungsvariable zuzugreifen.
  
 ### Ich habe soeben neue Änderungen veröffentlicht, aber meine Webanwendung scheint nicht über diese zu verfügen. Warum? 
 Wenn Ihre Webanwendung den lokalen Cache verwendet, müssen Sie Ihre Site neu starten, um die letzten Änderungen abzurufen. Sie möchten für eine Produktionssite keinen Neustart durchführen? Informationen zu den Slotoptionen finden Sie oben.
@@ -118,4 +118,4 @@ Bei Verwendung des lokalen Caches sehen die Protokoll- und Datenordner etwas and
 
 Der lokale Cache trägt dazu bei, Webanwendungsneustarts in Bezug auf den Speicher zu vermeiden. Ihre Webanwendung kann jedoch aufgrund von geplanten Upgrades der VM-Infrastruktur weiterhin neu gestartet werden. Die App sollte bei aktiviertem lokalen Cache insgesamt weniger oft neu gestartet werden.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

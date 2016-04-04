@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/09/2016"
+	ms.date="03/18/2016"
 	ms.author="markvi"/>
 
 #Azure Active Directory Identity Protection 
@@ -35,7 +35,7 @@ Die Vorschau von Azure Active Directory Identity Protection weist die folgenden 
 
 - Sicherheitsrichtlinien funktionieren nicht für Verbunddomänen.
 
-- Risikoereignisse werden bei Verbunddomänen nicht erkannt.
+- Risikoereignisse werden nur für Apps ermittelt, die in einem Verbund mit Azure Active Directory vorhanden sind.
 
 ##Erste Schritte
 
@@ -97,7 +97,7 @@ Einige dieser Risikoereignisse sind über die Berichte zu anomalen Aktivitäten 
 | Anmeldungen von infizierten Geräten | Anmeldungen von möglicherweise infizierten Geräten |
 | Anmeldungen von anonymen IP-Adressen | Anmeldungen von unbekannten Quellen |
 | Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten |	Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten |
-| Anmeldungen von unbekannten Standorten | - |
+| Anmeldungen von unbekannten Standorten | - | 
 | Sperr-Ereignisse (nicht Teil der öffentlichen Vorschau) | - |
 
 Die folgenden Azure AD-Berichte zu anomalen Aktivitäten sind nicht als Risikoereignisse in Azure AD Identity Protection enthalten und daher auch nicht über Identity Protection verfügbar. Diese Berichte sind im Azure-Verwaltungsportal noch enthalten, aber sie werden nach und nach eingestellt, da sie durch Risikoereignisse in Identity Protection ersetzt werden.
@@ -109,11 +109,11 @@ Die folgenden Azure AD-Berichte zu anomalen Aktivitäten sind nicht als Risikoer
 
 Die Risikostufe für ein Risikoereignis ist ein Hinweis (Hoch, Mittel oder Niedrig) auf den Schweregrad des Risikoereignisses. Die Risikostufe dient Identity Protection-Benutzern als Hilfe beim Priorisieren der Aktionen, die sie durchführen müssen, um das Risiko für ihre Organisation zu mindern. Der Schweregrad des Risikoereignisses steht für die Stärke des Signals, das zum Vorhersagen der Kompromittierung einer Identität dient, kombiniert mit dem damit üblicherweise verbundenen „Rauschen“.
 
-- **Hoch:** Risikoereignis mit hohem Vertraulichkeitsgrad und hohem Schweregrad. Ereignisse dieser Art sind starke Indikatoren dafür, dass die Identität des Benutzers kompromittiert wurde, und für alle betroffenen Benutzerkonten sollten sofort Korrekturmaßnahmen eingeleitet werden.
+- **Hoch**: Risikoereignis mit hohem Vertraulichkeitsgrad und hohem Schweregrad. Ereignisse dieser Art sind starke Indikatoren dafür, dass die Identität des Benutzers kompromittiert wurde, und für alle betroffenen Benutzerkonten sollten sofort Korrekturmaßnahmen eingeleitet werden.
 
-- **Mittel:** Risikoereignis mit hohem Schweregrad, aber niedrigerem Vertraulichkeitsgrad (oder umgekehrt). Diese Ereignisse sind potenziell risikobehaftet, und für alle betroffenen Benutzerkonten sollten Korrekturmaßnahmen eingeleitet werden.
+- **Mittel**: Risikoereignis mit hohem Schweregrad, aber niedrigerem Vertraulichkeitsgrad (oder umgekehrt). Diese Ereignisse sind potenziell risikobehaftet, und für alle betroffenen Benutzerkonten sollten Korrekturmaßnahmen eingeleitet werden.
 
-- **Niedrig:** Risikoereignis mit niedrigem Vertraulichkeits- und Schweregrad. Bei diesem Ereignis ist unter Umständen keine sofortige Aktion erforderlich, aber zusammen mit anderen Risikoereignissen kann auch dies ein starker Hinweis dafür sein, dass die Identität kompromittiert wurde.
+- **Niedrig**: Risikoereignis mit niedrigem Vertraulichkeits- und Schweregrad. Bei diesem Ereignis ist unter Umständen keine sofortige Aktion erforderlich, aber zusammen mit anderen Risikoereignissen kann auch dies ein starker Hinweis dafür sein, dass die Identität kompromittiert wurde.
 
 
 ![Risikostufe](./media/active-directory-identityprotection/01.png "Risikostufe")
@@ -410,4 +410,4 @@ Eine Übersicht über die zugehörige Benutzeroberfläche finden Sie unter:
  - [Azure Active Directory Identity Protection-Playbook](active-directory-identityprotection-playbook.md)
  - [Azure Active Directory Identity Protection – Glossar](active-directory-identityprotection-glossary.md)
 
-<!----HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

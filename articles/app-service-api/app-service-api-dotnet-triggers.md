@@ -13,10 +13,13 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/04/2016" 
+	ms.date="03/16/2016" 
 	ms.author="guayan"/>
 
 # Azure App Service – API-App-Trigger
+
+>[AZURE.NOTE] Diese Version des Artikels gilt für die API-Apps-Schemaversion 2014-12-01-preview.
+
 
 ## Übersicht
 
@@ -339,4 +342,4 @@ Im Folgenden finden Sie ein Beispiel dafür, wie diese Klasse implementiert werd
     }
  
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0323_2016-->

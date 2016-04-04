@@ -120,4 +120,4 @@ Wenn die App den `offline_access`-Bereich nicht anfordert, werden auch keine Akt
 
 Weitere Informationen zum Abrufen und Verwenden von Aktualisierungstoken finden Sie in der [v2.0-Protokollreferenz](active-directory-v2-protocols.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

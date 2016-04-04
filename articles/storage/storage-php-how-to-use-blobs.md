@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie den Azure-Blob-Dienst nutzen können, um Blobs hoch- und herunterzuladen, aufzulisten und zu löschen. Die Codebeispiele sind in PHP geschrieben."
 	documentationCenter="php"
 	services="storage"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -14,7 +14,7 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="02/17/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 # Verwenden des Blob-Speichers mit PHP
 
@@ -306,4 +306,4 @@ Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/ph
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

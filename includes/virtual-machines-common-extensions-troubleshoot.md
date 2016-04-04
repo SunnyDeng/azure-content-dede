@@ -1,11 +1,12 @@
 
 
-## Overview of Azure Resource Manager templates
+## Übersicht über Azure-Ressourcen-Manager-Vorlagen
 
-Azure Resource Manager templates allows you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources.
+Eine Azure Resource Manager-Vorlage ermöglicht es Ihnen, die Azure IaaS-Infrastruktur deklarativ in der Json-Sprache anzugeben, indem Sie die Abhängigkeiten zwischen Ressourcen definieren.
 
 
-See  [Authoring extension templates](virtual-machines-windows-extensions-authoring-templates.md) to learn more about authoring templates for using Extensions.
+Weitere Informationen zum Erstellen von Vorlagen für die Verwendung von Erweiterungen finden Sie unter [Erstellen von Erweiterungsvorlagen](virtual-machines-windows-extensions-authoring-templates.md).
 
-In this article we'll learn about troubleshooting some of the common VM extension failures.
+In diesem Artikel erfahren Sie mehr über die Problembehandlung für einige der allgemeinen VM-Erweiterungsfehler.
 
+<!---HONumber=AcomDC_0323_2016-->

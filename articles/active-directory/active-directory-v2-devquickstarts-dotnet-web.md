@@ -70,7 +70,7 @@ namespace TodoList_WebApp
 	}
 }```
 
--	Open the file `App_Start\Startup.Auth.cs` and implement the `ConfigureAuth(...)` method.  The parameters you provide in `OpenIdConnectAuthenticationOptions` will serve as coordinates for your app to communicate with Azure AD.  You'll also need to set up Cookie Authentication - the OpenID Connect middleware uses cookies underneath the covers.
+-	Öffnen Sie die Datei `App_Start\Startup.Auth.cs`, und implementieren Sie die Methode `ConfigureAuth(...)`. Die Parameter, die Sie in `OpenIdConnectAuthenticationOptions` bereitstellen, dienen als Koordinaten für Ihre Anwendung zur Kommunikation mit Azure AD. Außerdem müssen Sie eine Cookie-Authentifizierung einrichten, da die Middleware OpenID Connect im Hintergrund Cookies verwendet.
 
 ```C#
 public void ConfigureAuth(IAppBuilder app)
@@ -105,9 +105,9 @@ public void ConfigureAuth(IAppBuilder app)
 ```
 
 ## Übermitteln von Authentifizierungsanforderungen
-Ihre Anwendung ist nun ordnungsgemäß für die Kommunikation mit dem v2.0-Endpunkt über das Authentifizierungsprotokoll OpenID Connect konfiguriert.  OWIN kümmert sich um all die mühseligen Details der Erstellung von Authentifizierungsnachrichten, Überprüfung der Azure AD-Tokens und Verwaltung der Benutzersitzungen.  Sie müssen lediglich dafür sorgen, dass sich Ihre Benutzer an- und abmelden können.
+Ihre Anwendung ist nun ordnungsgemäß für die Kommunikation mit dem v2.0-Endpunkt über das Authentifizierungsprotokoll OpenID Connect konfiguriert. OWIN kümmert sich um all die mühseligen Details der Erstellung von Authentifizierungsnachrichten, Überprüfung der Azure AD-Tokens und Verwaltung der Benutzersitzungen. Sie müssen lediglich dafür sorgen, dass sich Ihre Benutzer an- und abmelden können.
 
-- Über Autorisierungstags in Ihren Controllern können Sie die Benutzer vor dem Zugriff auf eine bestimmte Seite zur Anmeldung zwingen.  Öffnen Sie `Controllers\HomeController.cs`, und fügen Sie dem Info-Controller den Tag `[Authorize]` hinzu.
+- Über Autorisierungstags in Ihren Controllern können Sie die Benutzer vor dem Zugriff auf eine bestimmte Seite zur Anmeldung zwingen. Öffnen Sie `Controllers\HomeController.cs`, und fügen Sie dem Info-Controller den Tag `[Authorize]` hinzu.
 
 ```C#
 [Authorize]
@@ -203,6 +203,8 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 [Schützen einer Web-API mit dem v2.0-Endpunkt >>](active-directory-devquickstarts-webapi-dotnet.md)
 
-Weitere Ressourcen: - [v2.0-Entwicklerhandbuch >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-Tag „azure-active-directory“ >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
+Weitere Ressourcen:
+- [Das v2.0-Entwicklerhandbuch >>](active-directory-appmodel-v2-overview.md)
+- [StackOverflow-Tag „azure-active-directory“ >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -1,7 +1,8 @@
-The audit log contains all actions performed on your resources. You can use the audit logs to find an error when troubleshooting or 
-to monitor how a user in your organization modified a resource.
+Ein Überwachungsprotokoll enthält alle Aktionen, die mit Ihren Ressourcen durchgeführt wurden. Sie können bei der Problembehandlung mithilfe der Überwachungsprotokolle einen Fehler ermitteln oder nachverfolgen, welche Änderungen an einer Ressource ein Benutzer in Ihrer Organisation vorgenommen hat.
 
-There are two important limitations to keep in mind when working with audit logs:
+Bei Überwachungsprotokollen müssen zwei wichtige Einschränkungen berücksichtigt werden:
 
-1. Audit logs are only retained for 90 days.
-2. You can only query for a range of 15 days or less.
+1. Überwachungsprotokolle werden nur 90 Tage lang gespeichert.
+2. Eine Abfrage kann nur für maximal 15 Tage ausgeführt werden.
+
+<!---HONumber=AcomDC_0323_2016-->

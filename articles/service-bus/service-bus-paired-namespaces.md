@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Gekoppelte Service Bus-Namespaces | Microsoft Azure"
-   description="Details und Kosten zur Implementierung von gekoppelten Namespaces"
-   services="service-bus"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="tysonn" /> 
+    pageTitle="Gekoppelte Service Bus-Namespaces | Microsoft Azure"
+    description="Details und Kosten zur Implementierung von gekoppelten Namespaces"
+    services="service-bus"
+    documentationCenter="na"
+    authors="sethmanheim"
+    manager="timlt"
+    editor="" /> 
 <tags 
-   ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="12/28/2015"
-   ms.author="sethm" />
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="03/16/2016"
+    ms.author="sethm" />
 
 # Details zur Implementierung von gekoppelten Namespaces und Kostenaspekte
 
@@ -59,7 +59,7 @@ Das [SendAvailabilityPairedNamespaceOptions][]-Objekt, das an die [PairNamespace
 | MaxDeliveryCount | int.MaxValue |
 | DefaultMessageTimeToLive | TimeSpan.MaxValue |
 | AutoDeleteOnIdle | TimeSpan.MaxValue |
-| LockDuration | 1 Minute |
+| LockDuration | 1 Minute |
 | EnableDeadLetteringOnMessageExpiration | true |
 | EnableBatchedOperations | true |
 
@@ -83,15 +83,15 @@ Beim Senden durchlaufen alle Nachrichten ein internes [MessageSender][]-Objekt, 
 
 Der ursprüngliche Zielpfad wird ebenfalls in der Nachricht als Eigenschaft mit dem Namen „x-ms-path“ gespeichert. Bei diesem Aufbau können Nachrichten für viele Entitäten in einer einzigen Backlog-Warteschlange gemeinsam vorhanden sein. Die Eigenschaften werden durch den Siphon zurückübersetzt.
 
-Für das benutzerdefinierte [MessageSender][]-Objekt können Probleme auftreten, wenn Nachrichten in die Nähe das Grenzwerts von 256 KB kommen und das Failover aktiviert wird. Das benutzerdefinierte [MessageSender][]-Objekt speichert Nachrichten für alle Warteschlangen und Themen zusammen in den Backlog-Warteschlangen. Bei diesem Objekt werden Nachrichten von vielen primären Elementen in den Backlog-Warteschlangen gemischt. Zum Behandeln des Lastenausgleichs für viele Clients, die einander nicht kennen, wählt das SDK zufällig eine Backlog-Warteschlange für jedes [QueueClient][]- oder [TopicClient][]-Element, das Sie im Code erstellen.
+Für das benutzerdefinierte [MessageSender][]-Objekt können Probleme auftreten, wenn Nachrichten in die Nähe das Grenzwerts von 256 KB kommen und das Failover aktiviert wird. Das benutzerdefinierte [MessageSender][]-Objekt speichert Nachrichten für alle Warteschlangen und Themen zusammen in den Backlog-Warteschlangen. Bei diesem Objekt werden Nachrichten von vielen primären Elementen in den Backlog-Warteschlangen gemischt. Zum Behandeln des Lastenausgleichs für viele Clients, die einander nicht kennen, wählt das SDK zufällig eine Backlog-Warteschlange für jedes [QueueClient][]- oder [TopicClient][]-Element, das Sie im Code erstellen.
 
 ## Ping-Nachrichten
 
-Eine Ping-Nachricht ist eine leere [BrokeredMessage][], bei der die [ContentType][]-Eigenschaft auf „application/vnd.ms-servicebus-ping“ festgelegt ist und die über einen [TimeToLive][]-Wert von 1 Sekunde verfügt. Diese Ping-Nachricht verfügt in Service Bus über ein besonderes Merkmal: Der Server stellt keine Ping-Nachricht zu, wenn ein Aufrufer eine [BrokeredMessage][] anfordert. Sie müssen also nicht lernen, wie Sie diese Nachrichten empfangen und ignorieren. An jede Entität (eindeutige Warteschlange oder Thema) pro [MessagingFactory][]-Instanz pro Client wird eine Ping-Nachricht gesendet, wenn diese als nicht verfügbar angesehen werden. Dies geschieht standardmäßig einmal pro Minute. Ping-Nachrichten gelten als reguläre Service Bus-Nachrichten und können Kosten für Bandbreite und Nachrichtentransport verursachen. Sobald die Clients erkennen, dass das System verfügbar ist, werden die Nachrichten gestoppt.
+Eine Ping-Nachricht ist eine leere [BrokeredMessage][], bei der die [ContentType][]-Eigenschaft auf „application/vnd.ms-servicebus-ping“ festgelegt ist und die über einen [TimeToLive][]-Wert von 1 Sekunde verfügt. Diese Ping-Nachricht verfügt in Service Bus über ein besonderes Merkmal: Der Server stellt keine Ping-Nachricht zu, wenn ein Aufrufer eine [BrokeredMessage][] anfordert. Sie müssen also nicht lernen, wie Sie diese Nachrichten empfangen und ignorieren. An jede Entität (eindeutige Warteschlange oder Thema) pro [MessagingFactory][]-Instanz pro Client wird eine Ping-Nachricht gesendet, wenn diese als nicht verfügbar angesehen werden. Dies geschieht standardmäßig einmal pro Minute. Ping-Nachrichten gelten als reguläre Service Bus-Nachrichten und können Kosten für Bandbreite und Nachrichtentransport verursachen. Sobald die Clients erkennen, dass das System verfügbar ist, werden die Nachrichten gestoppt.
 
 ## Siphon
 
-Mindestens ein ausführbares Programm in der Anwendung sollte den Siphon aktiv ausführen. Der Siphon führt einen langen Abfrage- und Empfangsvorgang durch, der 15 Minuten dauert. Wenn alle Entitäten verfügbar sind und Sie über zehn Backlog-Warteschlangen verfügen, ruft die Anwendung, die den Siphon hostet, den Empfangsvorgang 40-mal pro Stunde, 960-mal pro Tag und 28.800-mal in 30 Tagen auf. Wenn der Siphon aktiv Nachrichten aus der Backlog-Warteschlange in die primäre Warteschlange verschiebt, fallen für jede Nachricht die folgenden Gebühren an (Standardgebühren für Nachrichtengröße und Bandbreite gelten in allen Phasen):
+Mindestens ein ausführbares Programm in der Anwendung sollte den Siphon aktiv ausführen. Der Siphon führt einen langen Abfrage- und Empfangsvorgang durch, der 15 Minuten dauert. Wenn alle Entitäten verfügbar sind und Sie über zehn Backlog-Warteschlangen verfügen, ruft die Anwendung, die den Siphon hostet, den Empfangsvorgang 40-mal pro Stunde, 960-mal pro Tag und 28.800-mal in 30 Tagen auf. Wenn der Siphon aktiv Nachrichten aus der Backlog-Warteschlange in die primäre Warteschlange verschiebt, fallen für jede Nachricht die folgenden Gebühren an (Standardgebühren für Nachrichtengröße und Bandbreite gelten in allen Phasen):
 
 1.  Senden an die Backlog-Warteschlange
 
@@ -107,7 +107,7 @@ Innerhalb einer Anwendung, die den Siphon hostet, wird in folgenden Fällen der 
 
 ## Nächste Schritte
 
-Ausführliche Informationen zum asynchronen Service Bus-Messaging finden Sie unter [Asynchrone Messagingmuster und hohe Verfügbarkeit].
+Ausführliche Informationen zum asynchronen Service Bus-Messaging finden Sie unter [Asynchrone Messagingmuster und hohe Verfügbarkeit][].
 
   [PairNamespaceAsync]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactory.pairnamespaceasync.aspx
   [SendAvailabilityPairedNamespaceOptions]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.aspx
@@ -129,4 +129,4 @@ Ausführliche Informationen zum asynchronen Service Bus-Messaging finden Sie unt
   [1]: ./media/service-bus-paired-namespaces/IC673406.png
   [2]: ./media/service-bus-paired-namespaces/IC673407.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0323_2016-->

@@ -39,7 +39,7 @@ Neben den stabilen Diensten und Funktionen der öffentlichen Version von Azure b
 
 - **Sicherheit, Datenschutz und Compliance** – Microsoft hat sein Framework aus stabilen Kontrollelementen für Sicherheit, Datenschutz und Compliance sowie zusätzliche stringente Kontrollelemente implementiert, um die höheren Anforderungen zu erfüllen, die in den Auswirkungsstufen von ECSB und in CJIS enthalten sind.
 
-- **Datenspeicherung** – Die Umgebung von Azure Government verwaltet zwei Datencenter, die über 800 Kilometer voneinander entfernt sind. Alle vom Kunden verwalteten Daten werden in den Rechenzentren von Continental United States (CONUS) gespeichert.
+- **Datenspeicherung** – Die Umgebung von Azure Government verwaltet zwei Datencenter, die über 800 Kilometer voneinander entfernt sind. Alle vom Kunden verwalteten Daten werden in den Rechenzentren von Continental United States (CONUS) gespeichert.
 
 - **US-Personal **– Alle Azure Government-Operatoren und -Administratoren sind überprüfte US-Bürger.
 
@@ -113,8 +113,8 @@ Wenn Sie mehr über Azure Government erfahren möchten, nutzen Sie einige der un
 [2]: ./media/azure-government-overview/azure-gov-overview.jpg
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines/virtual-machines-windows-tutorial.md
+[Link 1 to another azure.microsoft.com documentation topic]: virtual-machines/virtual-machines-windows-hero-tutorial.md
 [Link 2 to another azure.microsoft.com documentation topic]: app-service-web/web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0323_2016-->

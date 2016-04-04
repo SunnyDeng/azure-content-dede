@@ -19,12 +19,12 @@
 # Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen Netzwerk mithilfe von PowerShell
 
 > [AZURE.SELECTOR]
-- [PowerShell - Resource Manager](vpn-gateway-howto-point-to-site-rm-ps.md)
-- [Portal - Classic](vpn-gateway-point-to-site-create.md)
+- [PowerShell – Resource Manager](vpn-gateway-howto-point-to-site-rm-ps.md)
+- [Portal – klassisch](vpn-gateway-point-to-site-create.md)
 
-Mit einer Punkt-zu-Standort-Konfiguration können Sie von einem Clientcomputer eine einzelne sichere Verbindung mit Ihrem virtuellen Netzwerk herstellen. Eine VPN-Verbindung wird hergestellt, indem Sie die Verbindung vom Clientcomputer aus starten. Eine Punkt-zu-Standort-Verbindung ist eine hervorragende Lösung, wenn Sie von einem Remotestandort, z. B. von zu Hause oder in einer Konferenz, eine Verbindung mit Ihrem VNet herstellen möchten. Dieses Methode eignet sich auch, wenn Sie nur wenige Clients besitzen, die mit einem virtuellen Netzwerk verbunden werden müssen. Damit Punkt-zu-Standort-Verbindungen funktionieren, ist kein VPN-Gerät und keine öffentliche IP-Adresse erforderlich. Weitere Informationen zu Punkt-zu-Standort-Verbindungen finden Sie unter [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md#point-to-site-connections) und [Informationen zu standortübergreifenden Verbindungen](vpn-gateway-cross-premises-options.md).
+Mit einer Punkt-zu-Standort-Konfiguration können Sie von einem Clientcomputer eine einzelne sichere Verbindung mit Ihrem virtuellen Netzwerk herstellen. Eine VPN-Verbindung wird hergestellt, indem Sie die Verbindung vom Clientcomputer aus starten. Eine Punkt-zu-Standort-Verbindung ist eine hervorragende Lösung, wenn Sie von einem Remotestandort, z. B. von zu Hause oder in einer Konferenz, eine Verbindung mit Ihrem VNet herstellen möchten. Dieses Methode eignet sich auch, wenn Sie nur wenige Clients besitzen, die mit einem virtuellen Netzwerk verbunden werden müssen. Damit Punkt-zu-Standort-Verbindungen funktionieren, ist kein VPN-Gerät und keine öffentliche IP-Adresse erforderlich. Weitere Informationen zu Punkt-zu-Standort-Verbindungen finden Sie unter [Häufig gestellte Fragen zum VPN Gateway](vpn-gateway-vpn-faq.md#point-to-site-connections) und [Informationen zu standortübergreifenden Verbindungen](vpn-gateway-cross-premises-options.md).
 
-Dieser Artikel bezieht sich auf VNets und VPN-Gateways, die mithilfe des **Azure-Ressourcen-Manager**-Bereitstellungsmodells erstellt wurden. Wenn Sie eine Punkt-zu-Standort-Verbindung für ein VNet konfigurieren möchten, das über die Dienstverwaltung erstellt wurde (auch als klassisches Bereitstellungsmodell bezeichnet), lesen Sie den Artikel [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem VNet](vpn-gateway-point-to-site-create.md).
+Dieser Artikel bezieht sich auf VNets und VPN-Gateways, die mithilfe des **Azure Resource Manager**-Bereitstellungsmodells erstellt wurden. Wenn Sie eine Punkt-zu-Standort-Verbindung für ein VNet konfigurieren möchten, das über die Dienstverwaltung erstellt wurde (auch als klassisches Bereitstellungsmodell bezeichnet), lesen Sie den Artikel [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem VNet](vpn-gateway-point-to-site-create.md).
 
 [AZURE.INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
@@ -92,7 +92,7 @@ Für diese Konfiguration verwenden wir die folgenden Werte:
 
 		New-AzureRmResourceGroup -Name $RG -Location $Location
 
-6. Erstellen Sie die Subnetzkonfigurationen für das virtuelle Netzwerk, und geben Sie diesen die Namen *FrontEnd*, *BackEnd* und *GatewaySubnet*. Beachten Sie, dass diese Präfixe im oben deklarierten VNet-Adressraum enthalten sein müssen.
+6. Erstellen Sie die Subnetzkonfigurationen für das virtuelle Netzwerk, und benennen Sie sie mit *FrontEnd*, *BackEnd* und *GatewaySubnet*. Beachten Sie, dass diese Präfixe im oben deklarierten VNet-Adressraum enthalten sein müssen.
 
 		$fesub = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName -AddressPrefix $FESubPrefix
 		$besub = New-AzureRmVirtualNetworkSubnetConfig -Name $BESubName -AddressPrefix $BESubPrefix
@@ -227,6 +227,6 @@ Sie können ein Clientzertifikat reaktivieren, indem Sie den Fingerabdruck aus d
 
 ## Nächste Schritte
 
-Sie können Ihrem virtuellen Netzwerk einen virtuellen Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
+Sie können Ihrem virtuellen Netzwerk einen virtuellen Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0323_2016-->

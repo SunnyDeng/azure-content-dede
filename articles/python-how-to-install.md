@@ -35,7 +35,7 @@ Verschiedene Ausführungen von Python-Übersetzern sind verfügbar. Einige Beisp
 * IronPython – Python-Übersetzer, der auf .Net/CLR läuft
 * Jython – Python-Übersetzer, der auf der JVM läuft
 
-Für das Python Azure SDK und die Azure-Dienste, z. B. Websites und Cloud Services, wurde nur **CPython** getestet und wird unterstützt. Wir empfehlen Version 2.7 oder 3.4.
+Für das Python Azure SDK und die Azure-Dienste, z. B. Websites und Cloud Services, wurde nur **CPython** getestet und wird unterstützt. Wir empfehlen Version 2.7 oder 3.4.
 
 ## Wo erhalte ich Python?
 
@@ -49,13 +49,13 @@ Sofern Sie keine spezifischen Anforderungen haben, empfehlen wir Ihnen die erste
 
 ## Installation unter Windows, Linux und MacOS (nur Clientbibliotheken)
 
-Wenn Sie Python bereits installiert haben, können Sie "pip" zum Installieren eines Pakets aller Clientbibliotheken in Ihrer vorhandenen Python 2.7- oder Python 3.3+-Umgebung verwenden. Auf diese Weise werden die Pakete aus dem [Python Package Index][] (PyPI) heruntergeladen.
+Wenn Sie Python bereits installiert haben, können Sie "pip" zum Installieren eines Pakets aller Clientbibliotheken in Ihrer vorhandenen Python 2.7- oder Python 3.3+-Umgebung verwenden. Auf diese Weise werden die Pakete aus dem [Python Package Index][] (PyPI) heruntergeladen.
 
 Beachten Sie, dass Sie unter Linux und MacOS möglicherweise den `sudo`-Befehl verwenden müssen: `sudo pip install azure`
 
 	pip install azure
 
-Ab Version 1.0.0 sind die Bibliotheken in mehrere Pakete unterteilt. Sie können nur die Pakete installieren, die Sie benötigen, oder das gesamte Paket.
+Ab Version 1.0.0 sind die Bibliotheken in mehrere Pakete unterteilt. Sie können nur die Pakete installieren, die Sie benötigen, oder das gesamte Paket.
 
 So installieren Sie die Azure Storage Runtime-Clientbibliotheken:
 
@@ -78,8 +78,8 @@ So installieren Sie die Azure Service Management-Clientbibliotheken (ASM):
 
 Sie können die Installation mit dem Webplattform-Installer optimieren. Dazu gehört CPython auf [www.python.org][].
 
-* [Microsoft Azure SDK für Python 2.7][]
-* [Microsoft Azure SDK für Python 3.4][]
+* [Microsoft Azure SDK für Python 2.7][]
+* [Microsoft Azure SDK für Python 3.4][]
 
 **Hinweis:** Unter Windows Server müssen Sie möglicherweise die Einstellungen für die verstärkte Sicherheitskonfiguration für IE konfigurieren, um den WebPI Installer herunterzuladen (Start/Verwaltung/Server-Manager/Lokaler Server: Klicken Sie dann auf die Option **Verstärkte Sicherheitskonfiguration für IE konfigurieren**, die auf "Aus" gesetzt ist).
 
@@ -137,7 +137,7 @@ Die Verwendung von PTVS ist optional aber empfehlenswert, da Sie so bei Python- 
 
 PTVS erleichtert auch die Bereitstellung unter Microsoft Azure, mit Unterstützung für die Bereitstellung in [Cloud Services][] und auf [Websites][].
 
-PTVS funktioniert mit Ihren vorhandenen Installationen von Visual Studio 2013 oder 2015. Dokumentation, Downloads und Diskussionen finden Sie unter [Python-Tools für Visual Studio].
+PTVS funktioniert mit Ihren vorhandenen Installationen von Visual Studio 2013 oder 2015. Dokumentation, Downloads und Diskussionen finden Sie unter [Python-Tools für Visual Studio].
 
 ## Python Azure-Szenarien für Linux und MacOS
 
@@ -153,7 +153,7 @@ Bei dem ersten Szenario können Sie vielseitige Web-Apps erstellen, die von den 
 
 Bei dem VM-Szenario starten Sie einen virtuellen Linux-Computer Ihrer Wahl (Ubuntu, CentOS, Suse) und führen eine beliebige Anwendung aus bzw. verwalten diese. Beispielsweise können Sie [IPython][]-REPL/Notebook auf Ihrem Windows/Mac/Linux-Computer ausführen und Ihren Browser auf einen virtuellen Linux- oder Windows-Computer mit Multi-Proc verweisen, der die IPython-Engine auf Azure ausführt. Weitere Informationen finden Sie im Tutorial [IPython-Notizbuch in Azure][].
 
-Informationen zur Einrichtung eines virtuellen Linux-Computers finden Sie im Tutorial [Erstellen eines virtuellen Linux-Computers][].
+Informationen zur Einrichtung eines virtuellen Linux-Computers finden Sie im Lernprogramm [Erstellen eines virtuellen Linux-Computers][].
 
 Mit Git-Bereitstellung können Sie eine Python-Webanwendung entwickeln und sie auf einer Azure-Website von jedem beliebigen Betriebssystem aus veröffentlichen. Wenn Sie das Repository in Azure übertragen, erstellt es automatisch eine virtuelle Umgebung und installiert mit pip die erforderlichen Pakete.
 
@@ -185,19 +185,19 @@ Weitere Informationen zum Entwickeln und Veröffentlichen von Azure-Websites fin
 [Django-Projekt – ein ausgereiftes Web-Framework/CMS]: http://www.djangoproject.com
 [IPython – ein erweitertes REPL/Notebook für Python]: http://ipython.org
 [IPython]: http://ipython.org
-[IPython Notebook in Azure]: virtual-machines-python-ipython-notebook.md
-[IPython-Notizbuch in Azure]: virtual-machines-python-ipython-notebook.md
+[IPython Notebook in Azure]: virtual-machines-linux-jupyter-notebook.md
+[IPython-Notizbuch in Azure]: virtual-machines-linux-jupyter-notebook.md
 [Cloud Services]: cloud-services-python-ptvs.md
 [Websites]: web-sites-python-ptvs-django-mysql.md
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
 [Python-Tools für Visual Studio auf GitHub]: https://github.com/microsoft/ptvs
 [Python Package Index]: http://pypi.python.org/pypi
-[Microsoft Azure SDK für Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281
-[Microsoft Azure SDK für Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990
+[Microsoft Azure SDK für Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281
+[Microsoft Azure SDK für Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990
 [Setting up a Linux VM via the Azure portal]: create-and-configure-opensuse-vm-in-portal.md
 [How to use the Azure Command-Line Interface]: crossplat-cmd-tools.md
-[Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
+[Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-cli-create.md
 [Erstellen von Websites mit Django]: web-sites-python-create-deploy-django-app.md
 [Erstellen von Websites mit Bottle]: web-sites-python-create-deploy-bottle-app.md
 [Erstellen von Websites mit Flask]: web-sites-python-create-deploy-flask-app.md
@@ -206,4 +206,4 @@ Weitere Informationen zum Entwickeln und Veröffentlichen von Azure-Websites fin
 [Warteschlangenspeicher]: storage-python-how-to-use-queue-storage.md
 [Blob-Speicher]: storage-python-how-to-use-blob-storage.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0323_2016-->

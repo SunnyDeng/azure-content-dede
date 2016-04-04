@@ -130,7 +130,7 @@ Weitere Informationen zu Grenzwerten für Speicherkonten finden Sie unter [Skali
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-Weitere Informationen finden Sie unter [Größen virtueller Computer](../articles/virtual-machines/virtual-machines-size-specs.md).
+Weitere Informationen finden Sie unter [Größen virtueller Computer](../articles/virtual-machines/virtual-machines-linux-sizes.md).
 
 **Standardspeicherkonten**
 
@@ -280,8 +280,8 @@ Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkung
 
 [Grundlegendes zu Azure-Einschränkungen und -Steigerungen](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 
-[Größen virtueller Computer und Clouddienste für Azure](virtual-machines/virtual-machines-size-specs.md)
+[Größen virtueller Computer und Clouddienste für Azure](virtual-machines/virtual-machines-linux-sizes.md)
 
 [Größen für Cloud Services](cloud-services/cloud-services-sizes-specs.md)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

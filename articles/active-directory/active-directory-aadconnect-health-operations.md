@@ -3,7 +3,7 @@
 	description="In diesem Artikel werden zusätzliche Vorgänge beschrieben, die nach der Bereitstellung von Azure AD Connect Health ausgeführt werden können."
 	services="active-directory"
 	documentationCenter=""
-	authors="billmath"
+	authors="karavar"
 	manager="stevenpo"
 	editor="curtand"/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/17/2016"
-	ms.author="billmath"/>
+	ms.date="02/21/2016"
+	ms.author="vakarand"/>
 
 # Azure AD Connect Health-Vorgänge
 
@@ -22,6 +22,9 @@ Das folgende Thema beschreibt die verschiedenen Vorgänge, die mithilfe von Azur
 
 ## Aktivieren von E-Mail-Benachrichtigungen
 Sie können Azure AD Connect Health zum Senden von E-Mail-Benachrichtigungen konfigurieren, die beim Generieren von Warnungen gesendet werden und angeben, dass die Identitätsinfrastruktur nicht fehlerfrei ist. Benachrichtigungen werden gesendet, wenn eine Warnung generiert und wenn sie als gelöst markiert wird. Folgen Sie den unten stehenden Anweisungen, um E-Mail-Benachrichtigungen zu konfigurieren.
+
+![Ermitteln von Azure AD Connect Health-E-Mail-Benachrichtigungen](./media/active-directory-aadconnect-health/email_noti_discover.png)
+
 >[AZURE.NOTE] E-Mail-Benachrichtigungen sind standardmäßig deaktiviert.
 
 
@@ -120,12 +123,14 @@ Um einem Benutzer Zugriff auf der Ebene *Alle Dienstinstanzen* innerhalb von Azu
 
 Diese Schritte ermöglichen den aufgeführten Benutzern und der Gruppe Zugriff basierend auf den zugewiesenen Rollen.
 >[AZURE.NOTE]
-- Globale Administratoren haben immer Vollzugriff auf alle Vorgänge, globale Administratorkonten sind jedoch nicht in der obigen Liste aufgeführt. - Das Feature "Benutzer einladen" wird in Azure AD Connect Health NICHT unterstützt.
+- Globale Administratoren haben immer Vollzugriff auf alle Vorgänge, globale Administratorkonten sind jedoch nicht in der obigen Liste aufgeführt.
+- Das Feature „Benutzer einladen“ wird in Azure AD Connect Health NICHT unterstützt.
 
 #### Schritt 3: Freigeben des Blattspeicherorts für Benutzer oder Gruppen
 1. Nach dem Zuweisen von Berechtigungen kann ein Benutzer auf Azure AD Connect Health zugreifen, indem er [http://aka.ms/aadconnecthealth](http://aka.ms/aadconnecthealth) aufruft.
 2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf „An Dashboard anheften“ klickt<br> 
 ![Azure AD Connect Health – RBAC Blatt anhaften](./media/active-directory-aadconnect-health/RBAC_pin_blade.png)
+
 
 >[AZURE.NOTE] Ein Benutzer mit der Rolle "Leser" kann den Vorgang "Erstellen" nicht ausführen, um die Azure AD Connect Health-Erweiterung aus dem Azure Marketplace abzurufen. Dieser Benutzer kann weiterhin über den oben aufgeführten Link auf das Blatt zugreifen. Für nachfolgende Verwendungen kann der Benutzer das Blatt an das Dashboard anheften.
 
@@ -144,4 +149,4 @@ Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung h
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 * [Azure AD Connect Health: Versionsverlauf](active-directory-aadconnect-health-version-history.md)
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0323_2016-->

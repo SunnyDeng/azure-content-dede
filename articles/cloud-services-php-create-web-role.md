@@ -3,9 +3,9 @@
 	description="Ein Leitfaden zum Erstellen von PHP-Web- und -Workerrollen in einem Azure-Clouddienst und zum Konfigurieren der PHP-Laufzeit."
 	services=""
 	documentationCenter="php"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="cloud-services"
@@ -14,7 +14,7 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="01/08/2016"
-	ms.author="tomfitz"/>
+	ms.author="robmcm"/>
 
 #Erstellen von PHP-Web- und Workerrollen
 
@@ -52,7 +52,7 @@ Für eine Workerrolle verwenden Sie diesen Befehl:
 
 	PS C:\myProject> Add-AzurePHPWorkerRole roleName
 
-> [AZURE.NOTE]Der Parameter `roleName` ist optional. Wenn er nicht angegeben wird, wird automatisch ein Name generiert. Die erste erstellte Webrolle heißt `WebRole1`, die zweite `WebRole2` usw. Die erste erstellte Workerrolle heißt `WorkerRole1`, die zweite `WorkerRole2` usw.
+> [AZURE.NOTE] Der Parameter `roleName` ist optional. Wenn er nicht angegeben wird, wird automatisch ein Name generiert. Die erste erstellte Webrolle heißt `WebRole1`, die zweite `WebRole2` usw. Die erste erstellte Workerrolle heißt `WorkerRole1`, die zweite `WorkerRole2` usw.
 
 ## Angeben der integrierten PHP-Version
 
@@ -60,7 +60,7 @@ Wenn Sie eine PHP-Web- oder Workerrolle zu einem Projekt hinzugefügt haben, än
 
 	PS C:\myProject> Get-AzureServiceProjectRoleRuntime
 
-Die Ausgabe dieses Befehls wird ähnlich wie die unten angezeigte Ausgabe aussehen. In diesem Beispiel ist das Kennzeichen `IsDefault` für PHP 5.3.17 auf `true` festgelegt, das heißt, dass dies die installierte PHP-Standardversion ist.
+Die Ausgabe dieses Befehls wird ähnlich wie die unten angezeigte Ausgabe aussehen. In diesem Beispiel ist das Kennzeichen `IsDefault` für PHP 5.3.17 auf `true` festgelegt, das heißt, dass dies die installierte PHP-Standardversion ist.
 
 	Runtime Version		PackageUri						IsDefault
 	------- ------- 	----------  					---------
@@ -76,7 +76,7 @@ Sie können die PHP-Laufzeitversion auf alle der abgehörten PHP-Versionen festl
 
 	PS C:\myProject> Set-AzureServiceProjectRole roleName php 5.4.0
 
-> [AZURE.NOTE]Die verfügbaren PHP-Versionen können sich in Zukunft ändern.
+> [AZURE.NOTE] Die verfügbaren PHP-Versionen können sich in Zukunft ändern.
 
 ## Anpassen der integrierten PHP-Laufzeit
 
@@ -85,13 +85,13 @@ Sie haben vollständige Kontrolle über die Konfiguration der PHP-Laufzeit, die 
 Führen Sie folgende Schritte aus, um die integrierte PHP-Laufzeit anzupassen:
 
 1. Fügen Sie dem Verzeichnis `bin` einen neuen Ordner namens `php` der Webrolle hinzu. Für eine Workerrolle fügen Sie diesen zum Stammverzeichnis der Rolle hinzu.
-2. Erstellen Sie im Ordner `php` einen weiteren Ordner namens `ext`. Legen Sie alle `.dll`-Erweiterungsdateien (z. B. `php_mongo.dll`), die Sie aktivieren möchten, in diesem Ordner ab.
+2. Erstellen Sie im Ordner `php` einen weiteren Ordner namens `ext`. Legen Sie alle `.dll`-Erweiterungsdateien (z. B. `php_mongo.dll`), die Sie aktivieren möchten, in diesem Ordner ab.
 3. Fügen Sie dem Ordner `php` die Datei `php.ini` hinzu. Aktivieren Sie alle benutzerdefinierten Erweiterungen, und legen Sie alle PHP-Direktiven in dieser Datei fest. Wenn Sie zum Beispiel `display_errors` und die Erweiterung `php_mongo.dll` aktivieren möchten, sieht der Inhalt der Datei `php.ini` folgendermaßen aus:
 
 		display_errors=On
 		extension=php_mongo.dll
 
-> [AZURE.NOTE]Alle Einstellungen, die Sie nicht explizit in der bereitgestellten Datei `php.ini` festlegen, werden automatisch auf die Standardwerte festgelegt. Sie können jedoch auch eine komplette `php.ini`-Datei hinzufügen.
+> [AZURE.NOTE] Alle Einstellungen, die Sie nicht explizit in der bereitgestellten Datei `php.ini` festlegen, werden automatisch auf die Standardwerte festgelegt. Sie können jedoch auch eine komplette `php.ini`-Datei hinzufügen.
 
 ## Verwenden Ihrer eigenen PHP-Laufzeit
 In einigen Fällen möchten Sie evtl. eine eigene PHP-Laufzeit angeben, anstatt eine integrierte PHP-Laufzeit auszuwählen und diese wie oben beschrieben zu konfigurieren. Sie können beispielsweise dieselbe PHP-Laufzeit in einer Web- oder Workerrolle verwenden, die Sie auch in Ihrer Entwicklungsumgebung verwenden. So lässt sich leichter sicherstellen, dass die Anwendung ihr Verhalten in der Produktionsumgebung nicht ändert.
@@ -128,7 +128,7 @@ Führen Sie die folgenden Schritte aus, um eine Webrolle für die Verwendung ein
 
 6. Veröffentlichen Sie die Anwendung entsprechend der Beschreibung im Abschnitt [Veröffentlichen der Anwendung](#how-to-publish-your-application) weiter unten.
 
-> [AZURE.NOTE]Das Skript `download.ps1` (im Ordner `bin` des Stammverzeichnisses der Webrolle) kann gelöscht werden, nachdem Sie die oben beschriebenen Schritte für die Verwendung Ihrer eigenen PHP-Laufzeit ausgeführt haben.
+> [AZURE.NOTE] Das Skript `download.ps1` (im Ordner `bin` des Stammverzeichnisses der Webrolle) kann gelöscht werden, nachdem Sie die oben beschriebenen Schritte für die Verwendung Ihrer eigenen PHP-Laufzeit ausgeführt haben.
 
 ### Konfigurieren einer Workerrolle für die Verwendung Ihrer eigenen PHP-Laufzeit
 
@@ -211,4 +211,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [sqlsrv drivers]: http://php.net/sqlsrv
 [sqlncli.msi x64-Installer]: http://go.microsoft.com/fwlink/?LinkID=239648
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0323_2016-->

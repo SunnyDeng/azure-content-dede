@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Schützen von vertraulichen Daten in SQL-Datenbank mithilfe der Datenbankverschlüsselung | Microsoft Azure"
+	pageTitle="Always Encrypted – Schützen von vertraulichen Daten in Azure SQL-Datenbank mithilfe der Datenbankverschlüsselung"
 	description="Schützen Sie vertrauliche Daten in der SQL-Datenbank in wenigen Minuten."
 	keywords="Verschlüsseln von Daten, SQL-Verschlüsselung, Datenbankverschlüsselung, vertrauliche Daten, Always Encrypted"	
 	services="sql-database"
@@ -18,7 +18,7 @@
 	ms.date="03/02/2016"
 	ms.author="sstein"/>
 
-# Schützen von vertraulichen Daten in SQL-Datenbank mithilfe der Datenbankverschlüsselung und Speichern der Verschlüsselungsschlüssel im Windows-Zertifikatspeicher
+# Always Encrypted – Schützen von vertraulichen Daten in SQL-Datenbank mithilfe der Datenbankverschlüsselung und Speichern der Verschlüsselungsschlüssel im Windows-Zertifikatspeicher
 
 > [AZURE.SELECTOR]
 - [Azure-Schlüsseltresor](sql-database-always-encrypted-azure-key-vault.md)
@@ -550,4 +550,4 @@ Nach dem Erstellen einer Datenbank, für die Always Encrypted verwendet wird, is
 - [Always Encrypted Wizard](https://msdn.microsoft.com/library/mt459280.aspx)
 - [Always Encrypted Blog](http://blogs.msdn.com/b/sqlsecurity/archive/tags/always-encrypted/)
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

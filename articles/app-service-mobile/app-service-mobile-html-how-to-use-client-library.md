@@ -32,10 +32,10 @@ Die Installation des JavaScript SDKs für Azure Mobile Apps kann durch den Befeh
 npm install azure-mobile-apps-client --save
 ```
 
-Wenn die Installation abgeschlossen ist, befindet sich die Bibliothek in `node_modules/azure-mobile-apps-client/dist/MobileServices.Web.js`. Kopieren Sie diese Datei in Ihren Web-Bereich.
+Wenn die Installation abgeschlossen ist, befindet sich die Bibliothek in `node_modules/azure-mobile-apps-client/dist/MobileServices.Web.min.js`. Kopieren Sie diese Datei in Ihren Web-Bereich.
 
 ```
-<script src="path/to/MobileServices.Web.js"></script>
+<script src="path/to/MobileServices.Web.min.js"></script>
 ```
 
 Die Bibliothek kann auch als ES2015-Modul in CommonJS-Umgebungen verwendet werden, wie z. B. Browserify und Webpack sowie als eine AMD-Bibliothek. Beispiel:
@@ -113,4 +113,4 @@ Verwenden Sie das Notification Hubs SDK zum Senden von Pushbenachrichtigungen vo
 [cordova-plugin-inappbrowser]: https://www.npmjs.com/package/cordova-plugin-inappbrowser
 [Dokumentation „Query-Objekt“]: https://msdn.microsoft.com/de-DE/library/azure/jj613353.aspx
 
-<!----HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->

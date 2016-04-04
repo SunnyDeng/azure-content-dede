@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Anweisungen in Application Analytics" 
-	description="Abfragen, Ausdrücke und let-Anweisungen in Application Analytics, das leistungsfähige Suchtool für Application Insights." 
+	pageTitle="Anweisungen in Analytics Application Insights" 
+	description="Abfragen, Ausdrücke und let-Anweisungen in Analytics, dem leistungsfähigen Suchtool von Application Insights." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -12,21 +12,20 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/01/2016" 
+	ms.date="03/21/2016" 
 	ms.author="awills"/>
 
 
  
-# Anweisungen in Application Analytics
+# Analytics-Anweisungen in Application Insights
 
-[Application Analytics](app-analytics.md) ist ein leistungsfähiges Suchmodul für Ihre [Application Insights](app-insights-overview.md)-Telemetrie. Auf diesen Seiten wird die Abfragesprache CSL von Application Analytics beschrieben.
-
+[Analytics](app-analytics.md) ist die leistungsfähige Suchfunktion von [Application Insights](app-insights-overview.md). Auf diesen Seiten wird die Analytics-Abfragesprache beschrieben.
 
 [AZURE.INCLUDE [app-analytics-top-index](../../includes/app-analytics-top-index.md)]
 
 ## Datenmodell
 
-In CSL:
+In AIQL:
 
 * Eine *Datenbank* enthält keine oder mehrere benannte *Tabellen.*
 * Eine *Tabelle* enthält:
@@ -67,7 +66,7 @@ Es gibt vier Arten von Anweisungen in CSL:
 
 ### Datenabfragen
   
-Schreibgeschützte Abfragen der Daten, die in Application Analytics gespeichert sind. Beispiel:
+Schreibgeschützte Abfragen der in Analytics gespeicherten Daten. Beispiel:
 
 * `event` - Alle Datensätze in der Tabelle „event“ zurückgeben
 * `event | count` - Die Anzahl der Datensätze in „event“ zurückgeben
@@ -270,4 +269,4 @@ Parameter für benannte Funktionen müssen Skalare sein.
 
 [AZURE.INCLUDE [app-analytics-footer](../../includes/app-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0323_2016-->
