@@ -69,7 +69,8 @@ Als eine hybride Sicherungslösung besteht Azure Backup aus mehreren Komponenten
 | Microsoft SQL Server | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
 | Microsoft SharePoint | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
 | Microsoft Exchange | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
-| Azure IaaS-VMs (Windows) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) | | Azure IaaS-VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+| Azure IaaS-VMs (Windows) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+| Azure IaaS-VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
 
 ## ARM- und Linux-Unterstützung
 

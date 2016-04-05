@@ -219,7 +219,10 @@ Zum Schluss erstellen Sie `TaskWebApp` und `TaskService` und führen sie aus. Re
 
 ## Bearbeiten der Richtlinien
 
-Nachdem Sie eine API mit Azure AD B2C gesichert haben, können Sie mit den Richtlinien Ihrer App experimentieren und die Auswirkungen (sofern vorhanden) auf die API beobachten. Sie können <!--add **identity providers** to the policies, allowing you users to sign into the Task Client using social accounts.  You can also -->die Anwendungsansprüche in den Richtlinien bearbeiten und die Benutzerinformationen ändern, die in der Web-API verfügbar sind. Ansprüche, die Sie hinzufügen, stehen Ihrer .NET MVC-Web-API im `ClaimsPrincipal`-Objekt zur Verfügung, wie oben in diesem Artikel beschrieben.
+Nachdem Sie eine API mit Azure AD B2C gesichert haben, können Sie mit den Richtlinien Ihrer App experimentieren und die Auswirkungen (sofern vorhanden) auf die API beobachten. Sie können 
+<!--add **identity providers** 
+to the policies, allowing you users to sign into the Task Client using social accounts.  You can also 
+-->die Anwendungsansprüche in den Richtlinien bearbeiten und die Benutzerinformationen ändern, die in der Web-API verfügbar sind. Ansprüche, die Sie hinzufügen, stehen Ihrer .NET MVC-Web-API im `ClaimsPrincipal`-Objekt zur Verfügung, wie oben in diesem Artikel beschrieben.
 
 <!--
 

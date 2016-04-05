@@ -24,7 +24,7 @@ Wie andere virtuelle Computer verfügt eine VM in Azure über ein Betriebssystem
 
 Virtuelle Computer verwenden virtuelle Festplatten (VHDs), um ihr Betriebssystem (OS) und die Daten zu speichern. VHDs werden auch für die Images verwendet, die Sie auswählen können, um ein Betriebssystem zu installieren. Die folgende Abbildung stellt dies dar sowie zwei Tools zum Erstellen und Verwalten Ihrer VMs.
 
-<a name="fig_createvms"></a> ![vm\_diagram](./media/virtual-machines-choose-me-content/diagram.png)
+<a name="fig_createvms"></a> ![vm_diagram](./media/virtual-machines-choose-me-content/diagram.png)
 
 **Abbildung: Azure Virtual Machines bietet IaaS (Infrastructure as a Service).**
 
