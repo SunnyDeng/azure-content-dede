@@ -3,7 +3,7 @@
    description="Erste Schritte zum Herstellen von Verbindungen mit SQL Data Warehouse für das Ausführen von Abfragen."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="twounder"
+   authors="sonyama"
    manager="barbkess"
    editor=""/>
 
@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/28/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 # Verbinden und Abfragen mit SQLCMD
@@ -47,15 +47,15 @@ Um eine Verbindung mit Ihrer Datenbank herzustellen, benötigen Sie den vollstä
 
 Für die Verbindung mit einer bestimmten Instanz von SQL Data Warehouse müssen Sie bei Verwendung von SQLCMD die Eingabeaufforderung öffnen und **sqlcmd** gefolgt von der Verbindungszeichenfolge für die SQL Data Warehouse-Datenbank eingeben. Die Verbindungszeichenfolge muss die folgenden Parameter enthalten:
 
-+ **Benutzer (-U):** Serverbenutzer im Format `<`Benutzer`>`
-+ **Kennwort (-P)**: Das Kennwort des Benutzers.
 + **Server (-S)**: Server in Form von `<`Servername`>`.database.windows.net
 + **Datenbank (-D)**: Datenbankname.
++ **Benutzer (-U):** Serverbenutzer im Format `<`Benutzer`>`
++ **Kennwort (-P)**: Das Kennwort des Benutzers.
 + **Bezeichner in Anführungszeichen aktivieren (-I)**: Bezeichner müssen in Anführungszeichen eingeschlossen sein, um die Verbindung mit einer SQL Data Warehouse-Instanz herzustellen.
 
 Zur Verbindung mit einer SQL Data Warehouse-Instanz geben Sie daher Folgendes ein:
 
-```
+```sql
 C:\>sqlcmd -S <Server Name>.database.windows.net -d <Database> -U <User> -P <Password> -I
 ```
 
@@ -63,9 +63,9 @@ C:\>sqlcmd -S <Server Name>.database.windows.net -d <Database> -U <User> -P <Pas
 
 Nach dem Herstellen der Verbindung können Sie alle unterstützten Transact-SQL-Anweisungen für die Instanz ausgeben.
 
-```
+```sql
 C:\>sqlcmd -S <Server Name>.database.windows.net -d <Database> -U <User> -P <Password> -I
-1> SELECT COUNT(*) FROM dbo.FactInternetSales;
+1> SELECT name FROM sys.tables;
 2> GO
 3> QUIT
 ```
@@ -83,4 +83,4 @@ Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versu
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-get-started-connect/get-server-name.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

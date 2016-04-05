@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="03/18/2016"
+	ms.date="03/28/2016"
 	ms.author="jimpark; trinadhk"/>
 
 # Was ist Azure Backup?
@@ -32,7 +32,7 @@ Herkömmliche Sicherungslösungen haben sich dahingehend entwickelt, dass die Cl
 | Mehrere Speicheroptionen | Wählen Sie Sicherungsspeicher je nach Bedarf: <li>Ein lokal redundanter Speicherblockblob ist ideal für preisbewusste Kunden und bietet Schutz der Daten vor lokalen Hardwareausfällen. <li>Ein Speicherblockblob mit Georeplikation bietet drei weitere Kopien in einem gekoppelten Rechenzentrum. Mit diesen zusätzlichen Kopien wird sichergestellt, dass Ihre Sicherungsdaten auch bei einem Ausfall eines Azure-Rechenzentrums hoch verfügbar sind. |
 | Unbegrenzte Dateiübertragungen | Es werden keine Kosten für die Übertragung ausgehender Daten während eines Wiederherstellungsvorgangs mithilfe des Azure Backup-Tresors berechnet. In Azure eingehende Datenübertragungen sind ebenfalls kostenlos. Funktioniert in Verbindung mit dem Importdienst, falls verfügbar. |
 | Datenverschlüsselung | Die Datenverschlüsselung ermöglicht eine sichere Übertragung und Speicherung von Kundendaten in der öffentlichen Cloud. Die Passphrase für die Verschlüsselung wird in der Quelle gespeichert und niemals in Azure übertragen oder gespeichert. Der Verschlüsselungsschlüssel ist zum Wiederherstellen der Daten erforderlich, und nur der Kunde hat vollen Zugriff auf die Daten im Dienst. |  
-| Anwendungskonsistente Sicherungen | Mit anwendungskonsistenten Sicherungen unter Windows wird sichergestellt, dass zum Zeitpunkt der Wiederherstellung keine Fixes erforderlich sind. Dadurch wird die angestrebte Wiederherstellungszeit verkürzt, und es wird Kunden ermöglicht, schneller zu einem Ausführungsstatus zurückzukehren. |
+| Anwendungskonsistente Sicherungen | Mit anwendungskonsistenten Sicherungen unter Windows kann sichergestellt werden, dass zum Zeitpunkt der Wiederherstellung keine Korrekturen erforderlich sind. Dadurch wird die angestrebte Wiederherstellungszeit verkürzt. Dadurch können Kunden schneller den Betrieb wieder aufnehmen. |
 | Langfristige Aufbewahrung | Anstatt für standortexterne Bandsicherungslösungen zu zahlen, können Kunden Daten in Azure sichern. Dies ist eine attraktive Lösung, die mit der Bandsicherung vergleichbar und kostengünstig ist. |
 
 ## Azure Backup-Komponenten
@@ -54,8 +54,8 @@ Als eine hybride Sicherungslösung besteht Azure Backup aus mehreren Komponenten
 | Component | Vorteile | Einschränkungen | Granularität der Wiederherstellung |
 | --- | --- | --- | --- |
 | Azure Backup-Agent (MARS) | <li>Ermöglicht die Sicherung von Dateien und Ordnern auf einem Computer mit Windows-Betriebssystem – physisch oder virtuell (VMs können sich an einem beliebigen Ort lokal oder unter Azure befinden)<li>Kein separater Sicherungsserver erforderlich<li>Verwendung des Azure-Sicherungstresors | <li>Dreimal pro Tag Sicherung bzw. Wiederherstellung auf Dateiebene<li>Nur Wiederherstellung auf Datei-/Ordner-/Volumeebene, nicht anwendungsorientiert<li>Keine Unterstützung von Linux | Dateien/Ordner/Volumes |
-| System Center Data Protection Manager | <li>App-fähige Momentaufnahmen (VSS)<li>Vollständige Flexibilität in Bezug auf Sicherungszeitpunkt<li>Wiederherstellungsgranularität (alle)<li>Verwendung des Azure-Sicherungstresors möglich<li>Linux-Unterstützung (bei Hosting unter Hyper-V) | <li>Fehlende heterogene Unterstützung (VMware-VM-Sicherung, Oracle-Workloadsicherung). | Dateien/Ordner/Volumes<br>/VMs/Anwendungen |
-| Microsoft Azure Backup Server | <li>App-fähige Momentaufnahmen (VSS)<li>Vollständige Flexibilität in Bezug auf Sicherungszeitpunkt<li>Wiederherstellungsgranularität (alle)<li>Verwendung des Azure-Sicherungstresors möglich<li>Linux-Unterstützung (bei Hosting unter Hyper-V)<li>Keine System Center-Lizenz erforderlich | <li>Fehlende heterogene Unterstützung (VMware-VM-Sicherung, Oracle-Workloadsicherung).<li>Aktives Azure-Abonnement immer erforderlich<li>Keine Unterstützung der Bandsicherung | Dateien/Ordner/Volumes<br>/VMs/Anwendungen |
+| System Center Data Protection Manager | <li>App-fähige Momentaufnahmen (VSS)<li>Vollständige Flexibilität in Bezug auf Sicherungszeitpunkt<li>Wiederherstellungsgranularität (alle)<li>Verwendung des Azure-Sicherungstresors möglich<li>Linux-Unterstützung (bei Hosting unter Hyper-V) | <li>Fehlende heterogene Unterstützung (VMware-VM-Sicherung, Oracle-Workloadsicherung) | Dateien/Ordner/Volumes<br>/VMs/Anwendungen |
+| Microsoft Azure Backup Server | <li>App-fähige Momentaufnahmen (VSS)<li>Vollständige Flexibilität in Bezug auf Sicherungszeitpunkt<li>Wiederherstellungsgranularität (alle)<li>Verwendung des Azure-Sicherungstresors möglich<li>Linux-Unterstützung (bei Hosting unter Hyper-V)<li>Keine System Center-Lizenz erforderlich | <li>Fehlende heterogene Unterstützung (VMware-VM-Sicherung, Oracle-Workloadsicherung)<li>Aktives Azure-Abonnement immer erforderlich<li>Keine Unterstützung der Bandsicherung | Dateien/Ordner/Volumes<br>/VMs/Anwendungen |
 | Azure IaaS-VM-Sicherung | <li>Native Sicherungen für Windows/Linux<li>Keine spezielle Agentinstallation erforderlich<li>Sicherung auf Fabric-Ebene ohne Sicherungsinfrastruktur<li>Verwendung des Azure-Sicherungstresors möglich | <li>Einmal pro Tag Sicherung/Wiederherstellung auf Datenträgerebene<li>Lokale Sicherung nicht möglich | VMs<br>Einzelne Datenträger |
 
 ## Welche Anwendungen und Workloads kann ich sichern?
@@ -69,8 +69,7 @@ Als eine hybride Sicherungslösung besteht Azure Backup aus mehreren Komponenten
 | Microsoft SQL Server | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
 | Microsoft SharePoint | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
 | Microsoft Exchange | Windows Server | <p>[System Center DPM](backup-azure-backup-sql.md) (+ Azure Backup-Agent),</p> <p>[Azure Backup Server](backup-azure-microsoft-azure-backup.md) (enthält Azure Backup-Agent)</p> |
-| Azure IaaS-VMs (Windows) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
-| Azure IaaS-VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
+| Azure IaaS-VMs (Windows) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) | | Azure IaaS-VMs (Linux) | - | [Azure Backup (VM-Erweiterung)](backup-azure-vms-introduction.md) |
 
 ## ARM- und Linux-Unterstützung
 
@@ -84,7 +83,7 @@ Als eine hybride Sicherungslösung besteht Azure Backup aus mehreren Komponenten
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 ## Funktionalität
-In diesen fünf Tabellen wird zusammengefasst, wie Azure Backup-Funktionen in jeder Komponente gehandhabt werden:
+In diesen fünf Tabellen wird zusammengefasst, wie Sicherungsfunktionen in jeder Komponente gehandhabt werden:
 
 ### Speicher
 
@@ -102,7 +101,7 @@ In diesen fünf Tabellen wird zusammengefasst, wie Azure Backup-Funktionen in je
 Der Azure Backup-Tresor ist das bevorzugte Speicherziel aller Komponenten. System Center DPM und Backup Server verfügen auch über die Option für eine lokale Datenträgerkopie. Nur System Center DPM bietet aber die Möglichkeit, Daten auf ein Bandspeichergerät zu schreiben.
 
 #### Inkrementelle Sicherung
-Unabhängig vom Zielspeicher (Datenträger, Band, Sicherungstresor) unterstützen alle Komponenten inkrementelle Sicherungen. Mit der inkrementellen Sicherung wird sichergestellt, dass Sicherungen speicher- und zeiteffizient sind. Hierzu werden nur die Änderungen, die seit der letzten Sicherung vorgenommen wurden, in den Zielspeicher übertragen.
+Unabhängig vom Zielspeicher (Datenträger, Band, Sicherungstresor) unterstützen alle Komponenten inkrementelle Sicherungen. Mit der inkrementellen Sicherung wird sichergestellt, dass Sicherungen speicher- und zeiteffizient sind, da nur die seit der letzten Sicherung vorgenommenen Änderungen übertragen werden.
 
 #### Komprimierung
 Sicherungen werden komprimiert, um den erforderlichen Speicherplatz zu reduzieren. Die einzige Komponente, für die keine Komprimierung verwendet wird, ist die VM-Erweiterung. Bei der VM-Erweiterung werden alle Sicherungsdaten aus dem Speicherkonto des Kunden in den Sicherungstresor in derselben Region kopiert, ohne dass eine Komprimierung erfolgt. Ohne Komprimierung wird zwar die Speicherbelegung etwas erhöht, doch das Speichern der Daten ohne Komprimierung ermöglicht kürzere Wiederherstellungszeiten.
@@ -156,10 +155,10 @@ Für das Sichern von Azure VMs ist das Einrichten der Verschlüsselung *im* virt
 
 Da die VM-Erweiterung die Daten aus dem Azure-Speicherkonto direkt über das Speichernetzwerk liest, ist das Optimieren dieses Datenverkehrs nicht erforderlich. Der Datenverkehr erfolgt über das lokale Speichernetzwerk im Azure-Datencenter, sodass kaum Bedarf an einer Komprimierung aufgrund von Bandbreitenaspekten besteht.
 
-Für Kunden, die die Übertragung ihrer Daten an einen Sicherungsserver (DPM oder Backup Server) schützen, kann der Datenverkehr vom primären Server zum Sicherungsserver komprimiert werden, um die Bandbreitenauslastung zu verringern.
+Wenn Sie Ihre Daten auf einem Sicherungsserver (DPM oder Backup Server) sichern, kann der Datenverkehr vom primären Server zum Sicherungsserver komprimiert werden, um die Bandbreitenauslastung zu verringern.
 
 #### Netzwerkdrosselung
-Der Azure Backup-Agent verfügt über eine Drosselungsfunktion, mit der Sie steuern können, wie die Netzwerkbandbreite während der Datenübertragung verwendet wird. Dies kann hilfreich sein, wenn Sie Daten während der Geschäftszeiten sichern möchten, der Sicherungsprozess aber keine Auswirkung auf den anderen Internetdatenverkehr haben soll. Die Drosselung der Datenübertragung gilt für Sicherungs- und Wiederherstellungsaktivitäten.
+Der Azure Backup-Agent verfügt über eine Drosselungsfunktion, mit der Sie steuern können, wie die Netzwerkbandbreite während der Datenübertragung verwendet wird. Die Drosselung kann hilfreich sein, wenn Sie Daten während der Geschäftszeiten sichern möchten, der Sicherungsprozess aber keine Auswirkung auf den anderen Internetdatenverkehr haben soll. Die Drosselung der Datenübertragung gilt für Sicherungs- und Wiederherstellungsaktivitäten.
 
 ### Sicherung und Aufbewahrung
 
@@ -182,7 +181,7 @@ Die Tresoranmeldeinformationen werden nur während des Registrierungsworkflows v
 ## Wie unterscheidet sich Azure Backup von Azure Site Recovery?
 Viele Kunden verwechseln Sicherungswiederherstellung und Notfallwiederherstellung. Für beide Zwecke werden Daten erfasst und Wiederherstellungsmechanismen bereitgestellt, doch das Hauptanliegen ist in beiden Fällen unterschiedlich.
 
-Azure Backup sichert Daten lokal und in der Cloud. Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server. Beide Dienste sind wichtig, da die Daten im Rahmen Ihrer Notfallwiederherstellungsstrategie sicher und wiederherstellbar gespeichert werden müssen (Backup) *und* Ihre Workloads verfügbar und zugänglich sein müssen (Site Recovery), falls es zu Ausfällen kommen sollte.
+Azure Backup sichert Daten lokal und in der Cloud. Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server. Beide Dienste sind wichtig, da die Daten im Rahmen Ihrer Notfallwiederherstellungsstrategie sicher und wiederherstellbar gespeichert werden müssen (Backup) *und* Ihre Workloads verfügbar sein müssen (Site Recovery), falls es zu Ausfällen kommen sollte.
 
 Die folgenden Konzepte dienen Ihnen als Unterstützung beim Treffen wichtiger Entscheidungen in Bezug auf die Sicherung und Notfallwiederherstellung.
 
@@ -211,4 +210,4 @@ Da diese Tutorials als schnelle Hilfe beim Sichern dienen sollen, wird nur der d
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!----HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

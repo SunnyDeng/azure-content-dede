@@ -42,10 +42,13 @@ Im Beispiel unten ist ein Gatewaysubnetz mit dem Namen GatewaySubnet zu sehen. S
 
 ## <a name="gwtype"></a>Gatewaytypen
 
-Mit dem Gatewaytyp wird angegeben, wie die Verbindung für das Gateway selbst hergestellt wird. Es ist eine erforderliche Konfigurationseinstellung für das Resource Manager-Bereitstellungsmodell. Verwechseln Sie den Gatewaytyp nicht mit dem VPN-Typ, mit dem der Typ der Weiterleitung für Ihr VPN angegeben wird. Die verfügbaren Werte für den Gatewaytyp sind *Vpn* und *ExpressRoute*.
+Mit dem Gatewaytyp wird angegeben, wie die Verbindung für das Gateway selbst hergestellt wird. Es ist eine erforderliche Konfigurationseinstellung für das Resource Manager-Bereitstellungsmodell. Verwechseln Sie den Gatewaytyp nicht mit dem VPN-Typ, mit dem der Typ der Weiterleitung für Ihr VPN angegeben wird. Die verfügbaren Werte für `-GatewayType` sind:
+
+- VPN
+- ExpressRoute
 
 
-Im Beispiel für das Resource Manager-Bereitstellungsmodell wird -GatewayType als *Vpn* angegeben. Beim Erstellen eines Gateways müssen Sie sicherstellen, dass der Gatewaytyp für Ihre Konfiguration korrekt ist.
+Im Beispiel für das Resource Manager-Bereitstellungsmodell wird „-GatewayType“ als *Vpn* angegeben. Beim Erstellen eines Gateways müssen Sie sicherstellen, dass der Gatewaytyp für Ihre Konfiguration korrekt ist.
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
@@ -57,7 +60,7 @@ Beim Erstellen eines VPN Gateways müssen Sie die gewünschte Gateway-SKU angebe
 - Standard
 - HighPerformance
 
-Im Beispiel unten wird GatewaySku als *Standard* angegeben.
+Im Beispiel unten wird `-GatewaySku` als *Standard* angegeben.
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'West US' -IpConfigurations $gwipconfig -GatewaySku Standard -GatewayType Vpn -VpnType RouteBased
 
@@ -78,9 +81,22 @@ Es gibt zwei VPN-Typen:
 
 [AZURE.INCLUDE [vpn-gateway-vpntype](../../includes/vpn-gateway-vpntype-include.md)]
 
-Im Beispiel für das Resource Manager-Bereitstellungsmodell wird -VpnType als *RouteBased* angegeben. Beim Erstellen eines Gateways müssen Sie sicherstellen, dass -VpnType für Ihre Konfiguration korrekt ist.
+Im Beispiel für das Resource Manager-Bereitstellungsmodell wird `-VpnType` als *RouteBased* angegeben. Beim Erstellen eines Gateways müssen Sie sicherstellen, dass -VpnType für Ihre Konfiguration korrekt ist.
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
+
+## <a name="connectiontype"></a>Verbindungstypen
+
+Für jede Konfiguration ist ein bestimmter Verbindungstyp erforderlich. Die verfügbaren Resource Manager-PowerShell-Werte für `-ConnectionType` sind:
+
+- IPsec
+- Vnet2Vnet
+- ExpressRoute
+- VPNClient
+
+Im folgenden Beispiel erstellen wir eine Standort-zu-Standort-Verbindung, für die der Verbindungstyp „IPsec“ festgelegt werden muss.
+
+	New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg -Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 
 
 ## <a name="lng"></a>Gateways des lokalen Netzwerks
@@ -122,4 +138,4 @@ Lesen Sie sich die weiteren Informationen im Artikel [Häufig gestellte Fragen z
 
  
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="01/11/2016"
+   ms.date="03/27/2016"
    ms.author="seanmck"/>
 
 # Erstellen Ihrer ersten Azure Service Fabric-Anwendung in Visual Studio
@@ -58,9 +58,9 @@ Eine Service Fabric-Anwendung kann einen oder mehrere Dienste enthalten, die jew
 
 	- **Skripts**: Umfasst ein PowerShell-Skript für Bereitstellung/Upgrade der Anwendung. Dieses Skript wird von Visual Studio im Hintergrund verwendet und kann direkt an der Befehlszeile aufgerufen werden.
 
-	- **Anwendungsdefinition**: Enthält das Anwendungsmanifest und zugehörige Anwendungsparameterdateien, die die Anwendung definieren und Ihnen ermöglichen, sie speziell für eine bestimmte Umgebung zu konfigurieren.
+	- **Anwendungsdefinition**: Enthält das Anwendungsmanifest unter *ApplicationPackageRoot* und zugehörige Anwendungsparameterdateien unter *ApplicationParameters*, die die Anwendung definieren und Ihnen ermöglichen, sie speziell für eine bestimmte Umgebung zu konfigurieren.
 
-    Einen Überblick über den Inhalt des Dienstprojekts finden Sie unter [Erste Schritte mit Reliable Services](service-fabric-reliable-services-quick-start.md).
+    Eine Übersicht über den Inhalt des Dienstprojekts finden Sie unter [Erste Schritte mit Reliable Services](service-fabric-reliable-services-quick-start.md).
 
 ## Bereitstellen und Debuggen der Anwendung
 
@@ -80,7 +80,7 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 
 	Bei der Vorlage für einen zustandsbehafteten Dienst zeigen die Meldungen einfach den Zählerwert an, der in der `RunAsync`-Methode von „MyStatefulService.cs“ erhöht wird.
 
-3. Erweitern Sie eines der Ereignisse, um weitere Details anzuzeigen, einschließlich des Knotens, in dem der Code ausgeführt wird. In diesem Fall ist es Knoten 2, Das kann jedoch auf Ihrem Computer abweichen.
+3. Erweitern Sie eines der Ereignisse, um weitere Details anzuzeigen, einschließlich des Knotens, in dem der Code ausgeführt wird. In diesem Fall ist es „\_Node\_2“, das kann jedoch auf Ihrem Computer abweichen.
 
 	![Detail der Diagnoseereignisanzeige][6]
 
@@ -88,7 +88,7 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 
     >[AZURE.NOTE] Von der Projektvorlage ausgegebene Anwendungsdiagnoseereignisse verwenden die `ServiceEventSource`-Klasse. Weitere Informationen finden Sie unter [Lokales Überwachen und Diagnostizieren von Diensten](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 
-4. Suchen Sie in Ihrem Dienstprojekt die Klasse, die von „StatefulService“ abgeleitet ist (z. B. „MyStatefulService“), und legen Sie in der ersten Zeile der `RunAsync`-Methode einen Haltepunkt fest.
+4. Suchen Sie in Ihrem Dienstprojekt die Klasse, die von StatefulService abgeleitet ist (z.B. MyStatefulService), und legen Sie in der ersten Zeile der `RunAsync`-Methode einen Haltepunkt fest.
 
 	![Haltepunkt in der RunAsync-Methode des zustandsbehafteten Diensts][7]
 
@@ -100,7 +100,7 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 
 6. Erweitern Sie im linken Bereich **Cluster > Knoten**, und suchen Sie den Knoten, auf dem der Code ausgeführt wird.
 
-7. Klicken Sie auf **Aktionen > Deaktivieren (Neustarten)**, um einen Neustart des Computers zu simulieren.
+7. Klicken Sie auf **Aktionen > Deaktivieren (Neustarten)**, um einen Neustart des Computers zu simulieren. (Hinweis: Dieser Schritt kann auch im Kontextmenü in der Knotenlistenansicht im linken Bereich ausgeführt werden. Klicken Sie dazu auf die drei Punkte.)
 
 	![Beenden eines Knotens im Service Fabric-Explorer][sfx-stop-node]
 
@@ -114,11 +114,14 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 
   Bevor Sie Ihre Arbeit abschließen, sollten Sie bedenken, dass der lokale Cluster sehr real ist. Auch nach dem Beenden des Debuggers und dem Schließen von Visual Studio werden Ihre Anwendungen weiterhin im Hintergrund ausgeführt. Je nach Art Ihrer Apps kann diese Hintergrundaktivität erhebliche Ressourcen auf dem Computer beanspruchen. Sie haben mehrere Möglichkeiten, hier steuernd einzugreifen:
 
-  1. Zum Entfernen einer einzelnen Anwendung und all ihrer Daten verwenden Sie in Service Fabric Explorer die Aktion **Anwendung entfernen**.
+  1. Zum Entfernen einer einzelnen Anwendung und all ihrer Daten verwenden Sie im Service Fabric-Explorer die Aktion **Anwendung löschen**. Rufen Sie dazu in der Anwendungslistenansicht im linken Bereich entweder das Menü **AKTIONEN** oder das Kontextmenü auf.
+  
+    ![Löschen einer Anwendung in Service Fabric-Explorer][sfe-delete-application]
+    
+  2. Nachdem Sie die Anwendung aus dem Cluster gelöscht haben, können Sie für die Anwendung die **Bereitstellung des Typs aufheben**. Dabei wird das Paket der Anwendung, einschließlich Code und Konfiguration,aus dem Imagespeicher des Clusters entfernt.
+  3. Zum Beenden des Clusters bei Beibehaltung der Anwendungsdaten und Ablaufverfolgungen klicken Sie in der Infobereichs-App auf **Lokalen Cluster beenden**.
 
-  2. Zum Beenden des Clusters bei Beibehaltung der Anwendungsdaten und Ablaufverfolgungen klicken Sie in der Infobereichs-App auf **Cluster beenden**.
-
-  3. Zum vollständigen Entfernen des Clusters klicken Sie in der Infobereichs-App auf **Cluster entfernen**. Beachten Sie, dass diese Option zu einer weiteren langsamen Bereitstellung führt, wenn Sie das nächste Mal in Visual Studio F5 drücken. Verwenden Sie diese nur, wenn Sie nicht beabsichtigen, den lokalen Cluster einige Zeit zu verwende,n oder wenn Sie Ressourcen freigeben müssen.
+  4. Zum vollständigen Entfernen des Clusters klicken Sie in der Infobereichs-App auf **Lokalen Cluster entfernen**. Beachten Sie, dass diese Option zu einer weiteren langsamen Bereitstellung führt, wenn Sie das nächste Mal in Visual Studio F5 drücken. Verwenden Sie diese nur, wenn Sie nicht beabsichtigen, den lokalen Cluster einige Zeit zu verwende,n oder wenn Sie Ressourcen freigeben müssen.
 
 
 
@@ -141,5 +144,6 @@ Jetzt ist eine Anwendung vorhanden, die Sie ausführen können.
 [sfx-stop-node]: ./media/service-fabric-create-your-first-application-in-visual-studio/sfe-deactivate-node.png
 [systray-launch-sfx]: ./media/service-fabric-create-your-first-application-in-visual-studio/launch-sfx.png
 [diagnostic-events-viewer-detail-post-failover]: ./media/service-fabric-create-your-first-application-in-visual-studio/diagnostic-events-viewer-detail-post-failover.png
+[sfe-delete-application]: ./media/service-fabric-create-your-first-application-in-visual-studio/sfe-delete-application.png
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0330_2016-->

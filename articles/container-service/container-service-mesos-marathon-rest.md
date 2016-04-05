@@ -32,10 +32,10 @@ Sobald eine Verbindung mit dem ACS-Cluster hergestellt wurde, kann über http://
 
 ## Erfassen von Informationen von Mesos und Marathon
 
-Erfassen Sie vor dem Bereitstellen von Containern im Mesos-Cluster einige Informationen zum Mesos-Cluster, z. B. die Namen und den aktuellen Status der Mesos-Agents. Fragen Sie dazu den `master/slaves`-Endpunkt auf einem Mesos-Master ab. Wenn alles gut geht, wird eine Liste der Mesos-Agents mit jeweils einigen Eigenschaften angezeigt.
+Erfassen Sie vor dem Bereitstellen von Containern im Mesos-Cluster einige Informationen zum Mesos-Cluster, z. B. die Namen und den aktuellen Status der Mesos-Agents. Fragen Sie dazu den `master/slaves`-Endpunkt der Mesos-REST-API ab. Wenn alles gut geht, wird eine Liste der Mesos-Agents mit jeweils einigen Eigenschaften angezeigt.
 
 ```bash
-curl http://localhost/master/slaves
+curl http://localhost/mesos/master/slaves
 ```
 
 Verwenden Sie nun den Marathon-`/apps`-Endpunkt, um aktuelle Anwendungsbereitstellungen im Mesos-Cluster zu überprüfen. Wenn es sich um einen neuen Cluster handelt, wird ein leeres Array für Apps angezeigt.
@@ -160,4 +160,4 @@ Führen Sie den folgenden Befehl aus, um die Anwendung zu horizontal hochzuskali
 Invoke-WebRequest -Method Put -Uri http://localhost/marathon/v2/apps/nginx -ContentType application/json -InFile 'c:\scale.json'
 ```
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

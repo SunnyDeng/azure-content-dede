@@ -34,8 +34,8 @@ In der folgenden Tabelle wird gezeigt, welchen IoT-Features die Lösungen zugeor
 
 | Lösung | Datenerfassung | Geräteidentität | Befehl und Steuerung | Regeln und Aktionen | Predictive Analytics |
 |------------------------|-----|-----|-----|-----|-----|
-| [Remoteüberwachung][lnk-remote-monitoring] | Ja | Ja | Ja | Ja | – |
-| [Vorbeugende Wartung][lnk-predictive-maintenance] | Ja | Ja | Ja | Ja | Ja |
+| [Remoteüberwachung][lnk-remote-monitoring] | Ja | Ja | Ja | Ja | – | | [Vorbeugende Wartung][lnk-predictive-maintenance] | Ja | Ja | Ja | Ja | Ja |
+
 - *Datenerfassung:* Skalierbarer Dateneingang in der Cloud
 - *Geräteidentität:* Verwaltung eindeutiger Identitäten von jedem verbundenen Gerät
 - *Befehl und Steuerung:* Senden von Nachrichten aus der Cloud an ein Gerät, um zu veranlassen, dass das Gerät bestimmte Aktionen ausführt
@@ -114,6 +114,8 @@ Bei dieser vorkonfigurierten Lösung bildet das Lösungsportal einen Teil des **
 
 ## Nächste Schritte
 
+Weitere Informationen zu den IoT-Lösungsarchitekturen finden Sie unter [Microsoft Azure IoT services: Reference Architecture][lnk-refarch] (Microsoft Azure IoT-Dienste: Referenzarchitektur).
+
 Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigurierten IoT-Lösungen:
 
 - [Erste Schritte mit den vorkonfigurierten IoT-Lösungen][lnk-preconf-get-started]
@@ -132,5 +134,6 @@ Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigur
 [lnk-preconf-get-started]: iot-suite-getstarted-preconfigured-solutions.md
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 [lnk-azureiotsuite]: https://www.azureiotsuite.com/
+[lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

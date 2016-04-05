@@ -18,7 +18,7 @@
 
 # Erste Schritte mit Azure Data Catalog
 
-Dieser Artikel enthält ein umfassendes Tutorial zu den Szenarien und Funktionen der öffentlichen Preview-Version von **Azure Data Catalog**. Nachdem Sie sich für die Preview-Version registriert haben, können Sie anhand dieser Schritte ein Data Catalog-Element erstellen und Datenquellen registrieren, mit Anmerkungen versehen und ermitteln.
+Dieser Artikel enthält eine umfassende Übersicht über die Szenarien und Funktionen von **Azure Data Catalog**. Nachdem Sie sich für den Dienst registriert haben, können Sie anhand dieser Schritte ein Data Catalog-Element erstellen und Datenquellen registrieren, mit Anmerkungen versehen und ermitteln.
 
 ## Voraussetzungen für das Lernprogramm
 
@@ -148,7 +148,7 @@ In diesem Beispiel verwenden Sie eine Schlüsselwortsuche. Die **Azure Data Cata
 
 **Abfragetechniken**
 
-|Technik|Verwenden|Beispiel
+|Technik|Verwenden Sie|Beispiel
 |---|---|---
 |Eigenschaftsbasierte Suche|Es werden nur Datenquellen zurückgegeben, bei denen sich für den Suchbegriff in der angegebenen Eigenschaft eine Übereinstimmung ergibt.|name:product
 |Logische Operatoren|Eine Suche kann mit booleschen Operatoren erweitert oder eingegrenzt werden, wie im Abschnitt „Boolesche Operatoren“ auf dieser Seite beschrieben.|Finanzen NOT Unternehmen
@@ -256,6 +256,6 @@ In dieser Übung haben Sie die Verwaltungsfunktionen von **Azure Data Catalog** 
 
 ## Zusammenfassung
 
-In diesem Tutorial haben Sie wichtige Funktionen der Preview-Version von **Azure Data Catalog** kennengelernt, z. B. das Registrieren, Ermitteln und Verwalten von Datenquellen sowie das Versehen mit Anmerkungen. Nachdem Sie das Lernprogramm abgeschlossen haben, ist es an der Zeit, mit der Verwendung zu beginnen. Sie können noch heute starten, indem Sie die Datenquellen registrieren, die Sie und Ihr Team verwenden, und indem Sie Kollegen zur Nutzung des Katalogs einladen.
+In diesem Tutorial haben Sie wichtige Funktionen von **Azure Data Catalog** kennengelernt, z.B. das Registrieren, Ermitteln und Verwalten von Unternehmensdatenquellen sowie das Versehen mit Anmerkungen. Nachdem Sie das Lernprogramm abgeschlossen haben, ist es an der Zeit, mit der Verwendung zu beginnen. Sie können noch heute starten, indem Sie die Datenquellen registrieren, die Sie und Ihr Team verwenden, und indem Sie Kollegen zur Nutzung des Katalogs einladen.
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

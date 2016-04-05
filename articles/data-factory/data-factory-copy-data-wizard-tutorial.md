@@ -63,6 +63,8 @@ In diesem Schritt erstellen Sie im Azure-Portal eine Azure Data Factory namens *
 ## Erstellen der Pipeline
 
 1. Klicken Sie auf der Data Factory-Startseite auf die Kachel **Daten kopieren**, um den **Kopier-Assistenten** zu starten. 
+
+	> [AZURE.NOTE] Wenn Sie feststellen, dass der Webbrowser bei der Autorisierung hängen bleibt, deaktivieren Sie die Einstellung **Cookies und Websitedaten von Drittanbietern blockieren**, oder lassen Sie die Einstellung aktiviert, und erstellen Sie eine Ausnahme für **login.microsoftonline.com**. Versuchen Sie anschließend erneut, den Assistenten zu starten.
 2. Auf der Seite **Eigenschaften**:
 	1. Geben Sie unter **Aufgabenname** den Namen **CopyFromBlobToAzureSql** ein.
 	2. Geben Sie eine **Beschreibung** ein (optional).
@@ -108,4 +110,4 @@ In diesem Schritt erstellen Sie im Azure-Portal eine Azure Data Factory namens *
 	![Überwachungs-App](./media/data-factory-copy-data-wizard-tutorial/monitoring-app.png)
   
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/21/2016"
+	ms.date="03/25/2016"
 	ms.author="sstein" />
 
 # Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage
@@ -42,9 +42,11 @@ Bei der Arbeit mit SQL-Datenbank sollten Sie die aktuelle Version von SSMS verwe
 
 	![SQL Server Management Studio: Verbinden mit einem SQL-Datenbankserver](./media/sql-database-connect-query-ssms/1-connect.png)
 
+5. Wenn Sie nicht bereits eine Verbindung mit Azure hergestellt haben, werden Sie von SSMS zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert.
+
 ### Bei Verbindungsfehlern
 
-Die häufigste Ursache für Verbindungsfehler sind Unregelmäßigkeiten beim Servernamen (Erinnerung: *&lt;;servername>* ist der Name des logischen Servers, nicht der Datenbank), Benutzernamen oder Kennwort sowie das Verbieten der Verbindung durch den Server aus Sicherheitsgründen. Wenn Sie die Verbindung zum ersten Mal herstellen oder die Verbindung aufgrund einer geänderten IP-Konfiguration fehlschlägt, werden Sie von der [aktuellen SSMS-Version](https://msdn.microsoft.com/library/mt238290.aspx) nach Ihren Azure-Anmeldedaten gefragt. Anschließend wird die Firewallregel für Sie in Azure erstellt. Wenn Sie eine frühere Version verwenden, wird Ihnen die IP-Adresse in einer Fehlermeldung mitgeteilt, und Sie müssen diese IP-Adresse der Firewallregel des Servers in Azure hinzufügen. Stellen Sie sicher, dass die Firewalleinstellungen des Servers Verbindungen von der IP-Adresse Ihres lokalen Computers und der vom SSMS-Client verwendeten IP-Adresse zulassen. Diese unterscheiden sich bisweilen. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
+Die häufigste Ursache für Verbindungsfehler sind Unregelmäßigkeiten beim Servernamen (Erinnerung: <*servername*> ist der Name des logischen Servers, nicht der Datenbank), Benutzernamen oder Kennwort sowie das Verbieten der Verbindung durch den Server aus Sicherheitsgründen. Wenn Sie die Verbindung zum ersten Mal herstellen oder die Verbindung aufgrund einer geänderten IP-Konfiguration fehlschlägt, werden Sie von der [aktuellen SSMS-Version](https://msdn.microsoft.com/library/mt238290.aspx) nach Ihren Azure-Anmeldedaten gefragt. Anschließend wird die Firewallregel für Sie in Azure erstellt. Wenn Sie eine frühere Version verwenden, wird Ihnen die IP-Adresse in einer Fehlermeldung mitgeteilt, und Sie müssen diese IP-Adresse der Firewallregel des Servers in Azure hinzufügen. Stellen Sie sicher, dass die Firewalleinstellungen des Servers Verbindungen von der IP-Adresse Ihres lokalen Computers und der vom SSMS-Client verwendeten IP-Adresse zulassen. Diese unterscheiden sich bisweilen. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
 
 ## Durchführen von Beispielabfragen
 
@@ -75,4 +77,4 @@ Mit T-SQL-Anweisungen können Sie Datenbanken in Azure auf gleiche Weise wie mit
 
 Wenn Sie mit T-SQL nicht vertraut sind, siehe [Tutorial: Schreiben von Transact-SQL-Anweisungen](https://msdn.microsoft.com/library/ms365303.aspx) und [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx).
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0330_2016-->

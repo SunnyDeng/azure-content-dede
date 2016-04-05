@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Über virtuelle Azure-Computer | Microsoft Azure"
-	description="Machen Sie sich mit den Grundlagen von virtuellen Azure-Computern mithilfe von beiden Bereitstellungsmodellen vertraut."
+	pageTitle="Informationen zu virtuellen Windows-Computern | Microsoft Azure"
+	description="Machen Sie sich mithilfe von beiden Bereitstellungsmodellen mit den Grundlagen von virtuellen Windows-Computern vertraut."
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,14 +17,14 @@
 	ms.date="03/10/2016"
 	ms.author="cynthn"/>
 
-#Über virtuelle Azure-Computer 
+#Informationen zu virtuellen Windows-Computern in Azure
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 Virtuelle Azure-Computer sind eine von mehreren bedarfsgesteuerten, skalierbaren Computerressourcen, die von Azure angeboten werden. In der Regel wählen Sie eine virtuelle Maschine, wenn Sie mehr Kontrolle über Ihre Computerumgebung benötigen, als die anderen Optionen bieten.
 
-Ein virtueller Azure-Computer bietet Ihnen die Flexibilität der Virtualisierung, ohne Zeit und Geld für den Kauf und das Verwalten der Hardware aufwenden zu müssen, die den virtuellen Computer hostet. Allerdings müssen Sie den virtuellen Computer verwalten – Konfigurieren, Patchen und Verwalten der Software, die auf dem virtuellen Computer ausgeführt wird.
+Ein virtueller Azure-Computer bietet Ihnen die Flexibilität der Virtualisierung, ohne Zeit und Geld für den Kauf und das Verwalten der Hardware aufwenden zu müssen, die den virtuellen Computer hostet. Allerdings müssen Sie den virtuellen Computer verwalten – Konfigurieren, Patchen und Verwalten der Software, die auf dem virtuellen Computer ausgeführt wird. Außerdem erhalten Sie Informationen zu [virtuellen Linux-Computern in Azure](virtual-machines-linux-about.md).
 
 Anhand dieser Tabelle können Sie die von Azure angebotenen Auswahlmöglichkeiten vergleichen.
 
@@ -40,7 +40,7 @@ Da die Tutorials darauf ausgerichtet sind, in wenigen Schritten einen virtuellen
 
 <!--links-->
 [App Service]: app-service-choose-me.md
-[Cloud-Dienste]: cloud-services-choose-me.md
-[Virtuelle Computer]: #tellmevm
+[Virtual Machines]: #tellmevm
+[Cloud Services]: cloud-services-choose-me.md
 
-<!----HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

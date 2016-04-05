@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="02/08/2016"
+   ms.date="03/30/2016"
    ms.author="maroche"/>
 
 
@@ -21,7 +21,7 @@
 
 In diesem Artikel werden häufige Szenarios vorgestellt, bei denen Azure Data Catalog Organisationen dabei unterstützt, mehr Nutzen aus den vorhandenen Datenquellen zu ziehen.
 
-## Szenario 1: Registrierung der zentralen Datenquellen
+## Szenario 1: Registrierung der zentralen Datenquellen
 
 Organisationen verfügen häufig über Datenquellen mit hohem Wert. Diese Datenquellen umfassen OLTP-Branchensysteme, Data Warehouses und Business Intelligence-/Analysedatenbanken. In vielen Fällen nehmen die Anzahl der Systeme und die Überlappung zwischen Systemen im Laufe der Zeit zu, wenn sich die Anforderungen des Unternehmens ändern und sich das Unternehmen selbst aufgrund von Übernahmen und Akquisitionen weiterentwickelt.
 
@@ -36,7 +36,7 @@ In diesen Fällen ist Azure Data Catalog hilfreich. Die zentralen, wertvollen un
 
 Dieses Szenario bietet auch die Möglichkeit, die hochwertigen Datenquellen mit Anmerkungen zu versehen, damit diese einfacher zu verstehen sind und der Zugriff leichter ist. Ein wichtiger Aspekt dieses Aufwand ist es, Informationen darüber aufzunehmen, wie Benutzer Zugriff auf die Datenquelle anfordern können. Azure Data Catalog ermöglicht es Benutzern, die E-Mail-Adresse des Benutzers oder Teams, das für die Steuerung des Datenquellenzugriffs zuständig ist, Links zu vorhandenen Tools oder Dokumentation oder Freitext, der den Zugriffgewährungsprozess beschreibt, zur Verfügung zu stellen. Mit diesen im Katalog enthalten Informationen können Benutzer, die registrierte Daten ermitteln aber noch keine Berechtigungen zum Zugriff auf die Daten haben, problemlos mithilfe der definierten Prozesse und gesteuert von den Quellbesitzern Zugriff anfordern.
 
-## Szenario 2: Self-Service-Business Intelligence
+## Szenario 2: Self-Service-Business Intelligence
 
 Auch wenn herkömmliche Business Intelligence-Lösungen weiterhin wertvoller Bestandteil vieler Datenlandschaften von Unternehmen sind, hat die immer stärkere Beschleunigung der Geschäftstätigkeit dazu geführt, dass Self-Service-Business Intelligence immer wichtiger wird. Mit Self-Service-BI können Information-Worker und Analysten eigene Berichte, Arbeitsmappen und Dashboards erstellen, ohne dafür ein zentrales IT-Team in Anspruch nehmen zu müssen – bzw. durch die Zeitplanung und Verfügbarkeit des IT-Teams ausgebremst zu werden.
 
@@ -50,7 +50,7 @@ Dieses Anwachsen des Kataloginhalts stellt die natürliche Erweiterung nach der 
 
 Beachten Sie, dass auch für umfangreiche BI-Projekte von Unternehmen die gleichen Muster und Anforderungen gelten, obwohl es bei diesem Szenario speziell um Self-Service-BI geht. Alle Vorgänge, die einen manuellen Prozess zur Ermittlung von Datenquellen umfassen, sind Vorgänge, für die mit Azure Data Catalog der Nutzen für die Organisation erhöht werden kann.
 
-## Szenario 3: Erfassen von „Stammeswissen“
+## Szenario 3: Erfassen von „Stammeswissen“
 
 Woher wissen Sie, welche Daten Sie für Ihre Arbeit benötigen und wo Sie diese Daten finden?
 
@@ -66,4 +66,4 @@ Es kommt vor, dass diese Datenexperten ihr Wissen dokumentieren und per E-Mail o
 
 Azure Data Catalog ist ein Speicherort zum Bereitstellen dieses Stammeswissens, an dem es leicht auffindbar ist. Datenexperten können die Datenassets direkt mit Anmerkungen versehen und Links zur vorhandenen Dokumentation einfügen. Hierdurch wird nicht nur das Wissen selbst erfasst, sondern es wird auch in derselben Umgebung angeordnet, die für die Ermittlung von Datenquellen verwendet wird. Wenn der Katalog zum Ermitteln einer Datenquelle verwendet wird, finden Benutzer nicht nur die eigentliche Quelle, sondern auch das Expertenwissen, dass sich vorher nur im Kopf des Experten befunden hat.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0330_2016-->

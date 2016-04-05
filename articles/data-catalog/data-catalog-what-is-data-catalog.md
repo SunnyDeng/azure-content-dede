@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="02/08/2016"
+   ms.date="03/30/2016"
    ms.author="maroche"/>
 
 # Was ist Azure Data Catalog?
@@ -46,9 +46,9 @@ Zusammen stellen diese Probleme eine erhebliche Hürde für Unternehmen dar, die
 
 **Azure Data Catalog** stellt einen cloudbasierten Dienst bereit, unter dem Datenquellen registriert werden können. Die Daten verbleiben an ihrem vorhandenen Speicherort, aber eine Kopie der Metadaten wird **Azure Data Catalog** hinzugefügt – zusammen mit einem Verweis auf den Speicherort der Datenquelle. Diese Metadaten werden außerdem indiziert, damit jede Datenquelle per Suchfunktion leicht ermittelt werden kann und für die Benutzer verständlich ist, die sie ermitteln.
 
-Nachdem eine Datenquelle registriert wurde, können die dazugehörigen Metadaten erweitert werden. Dies kann entweder von dem Benutzer übernommen werden, der die Registrierung durchgeführt hat, oder von anderen Benutzern des Unternehmens. Alle Benutzer können eine Datenquelle mit Anmerkungen versehen, indem Beschreibungen, Tags oder andere Metadaten bereitgestellt werden, z. B. Dokumentation und Prozesse für das Anfordern des Datenquellenzugriffs. Diese beschreibenden Metadaten sind eine Erweiterung der strukturellen Metadaten (z. B. Spaltennamen und Datentypen), die für die Datenquelle registriert wurden, um die Ermittlung und das Verständnis zu erleichtern.
+Nachdem eine Datenquelle registriert wurde, können die dazugehörigen Metadaten erweitert werden. Dies kann entweder von dem Benutzer übernommen werden, der die Registrierung durchgeführt hat, oder von anderen Benutzern des Unternehmens. Alle Benutzer können eine Datenquelle mit Anmerkungen versehen, indem Beschreibungen, Tags oder andere Metadaten bereitgestellt werden, z. B. Dokumentation und Prozesse für das Anfordern des Datenquellenzugriffs. Diese beschreibenden Metadaten sind eine Erweiterung der strukturellen Metadaten (z. B. Spaltennamen und Datentypen), die für die Datenquelle registriert wurden, um die Ermittlung und das Verständnis zu erleichtern.
 
-Das Ermitteln und Verstehen von Datenquellen und ihrer Nutzung sind der Hauptzweck bei der Registrierung von Quellen. Wenn Benutzer in Unternehmen Daten für ihre Arbeit benötigen (z. B. Business Intelligence, Anwendungsentwicklung, Datenwissenschaft oder andere Aufgaben, die spezielle Daten erfordern), können sie die **Azure Data Catalog**-Ermittlungsoberfläche verwenden. Hiermit können sie schnell die passenden Daten für ihre Anforderungen finden, Daten verstehen, um ihre Eignung sicherzustellen, und Daten nutzen, indem sie die Datenquelle im Tool ihrer Wahl öffnen. Zugleich ermöglicht **Azure Data Catalog** Benutzern durch das Markieren, Dokumentieren und Kommentieren bereits registrierter Datenquellen sowie die Registrierung neuer Datenquellen, welche dann wiederum von anderen Nutzern des Katalogs entdeckt, durchdrungen und verarbeitet werden können, am Katalog mitzuarbeiten.
+Das Ermitteln und Verstehen von Datenquellen und ihrer Nutzung sind der Hauptzweck bei der Registrierung von Quellen. Wenn Benutzer in Unternehmen Daten für ihre Arbeit benötigen (z. B. Business Intelligence, Anwendungsentwicklung, Datenwissenschaft oder andere Aufgaben, die spezielle Daten erfordern), können sie die **Azure Data Catalog**-Ermittlungsoberfläche verwenden. Hiermit können sie schnell die passenden Daten für ihre Anforderungen finden, Daten verstehen, um ihre Eignung sicherzustellen, und Daten nutzen, indem sie die Datenquelle im Tool ihrer Wahl öffnen. Zugleich ermöglicht **Azure Data Catalog** Benutzern durch das Markieren, Dokumentieren und Kommentieren bereits registrierter Datenquellen sowie die Registrierung neuer Datenquellen, welche dann wiederum von anderen Nutzern des Katalogs entdeckt, durchdrungen und verarbeitet werden können, am Katalog mitzuarbeiten.
 
 ![Funktionen von Azure Data Catalog](./media/data-catalog-what-is-data-catalog/data-catalog-capabilities.png)
 
@@ -58,13 +58,12 @@ Die Registrierung von Datenquellen erfolgt über das **Azure Data Catalog**-Tool
 
 Der Registrierungsprozess umfasst drei grundlegende Schritte:
 
-1.	Herstellen einer Verbindung mit einer Datenquelle: Der Benutzer gibt den Speicherort der Datenquelle und die Anmeldeinformationen an, um die Verbindung mit der Datenquelle herzustellen, z. B. einer SQL Server-Instanz.
+1.	Herstellen einer Verbindung mit einer Datenquelle: Der Benutzer gibt den Speicherort der Datenquelle und die Anmeldeinformationen an, um die Verbindung mit der Datenquelle herzustellen, z. B. einer SQL Server-Instanz.
 2.	Auswählen zu registrierender Objekte: Der Benutzer wählt die Objekte am angegebenen Speicherort aus, die in **Azure Data Catalog** registriert werden sollen. Dies kann der vollständige Tabellensatz in allen Datenbanken oder eine speziell ausgewählte Teilmenge der Tabellen und Sichten sein.
 3.	Vollständige Registrierung: Der Benutzer schließt den Prozess ab, und das Tool für die Datenquellenregistrierung extrahiert die strukturellen Metadaten aus der Datenquelle und sendet sie an den **Azure Data Catalog**-Clouddienst.
 
-> [AZURE.NOTE] Die Vorschauversion von **Azure Data Catalog** unterstützt derzeit die folgenden Datenquellen und Assettypen: [Von Azure Data Catalog unterstützte Datenquellen](data-catalog-dsr.md)
+> [AZURE.NOTE] Informationen zum Anzeigen einer Liste der von **Azure Data Catalog** unterstützten Datenquellen und Assettypen finden Sie unter [Von Azure Data Catalog unterstützte Datenquellen](data-catalog-dsr.md).
 
-Zusätzliche Datenquellen und Assettypen werden während der **Azure Data Catalog**-Preview-Phase hinzugefügt.
 
 > [AZURE.IMPORTANT]Beim Registrieren einer Datenquelle in **Azure Data Catalog** werden die Daten nicht aus der Datenquelle kopiert, es sei denn, Sie wählen im Tool für die Datenquellenregistrierung die Option „Vorschau einfügen“. Bei der Registrierung werden Datenquellenmetadaten kopiert, keine Daten. Beispiele für Metadaten sind die Namen von Tabellen und anderen Datenquellenobjekten sowie die Namen und Datentypen von Spalten und anderen Datenquellenattributen. Die Metadaten enthalten auch den Speicherort der Datenquelle, damit Benutzer, die die Datenquelle mit **Azure Data Catalog** ermitteln, eine Verbindung damit herstellen können. Wenn Sie die Option „Vorschau einfügen“ wählen, werden mit dem Tool für die Registrierung von Datenquellen auch einige Datensätze nach **Azure Data Catalog** kopiert. Diese Datensätze werden Benutzern angezeigt, die die Datenquelle im **Azure Data Catalog**-Portal ermitteln.
 
@@ -93,7 +92,7 @@ Um ausführlichere Informationen für eine Datenquelle anzuzeigen und zu versteh
 Oben im Eigenschaftenbereich befinden sich weitere Schaltflächen:
 
 1.	Vorschau: Wenn Sie diese Schaltfläche auswählen, wird die statische Gruppe der Vorschaudatensätze aus der Datenquelle angezeigt, wenn während der Registrierung der Datenquelle die Vorschaufunktion ausgewählt wurde.
-2.	Schema: Wenn Sie diese Schaltfläche auswählen, werden das Schema für die Datenquelle, z. B. Spaltennamen und Datentypen, sowie alle Metadaten auf Spaltenebene in **Azure Data Catalog** angezeigt.
+2.	Schema: Wenn Sie diese Schaltfläche auswählen, werden das Schema für die Datenquelle, z. B. Spaltennamen und Datentypen, sowie alle Metadaten auf Spaltenebene in **Azure Data Catalog** angezeigt.
 
 > [AZURE.NOTE] Beachten Sie unbedingt, dass die **Ermittlung** auch ein Einstiegspunkt in die **Erweiterung** darstellen kann, nicht nur in die **Nutzung**. Der Crowdsourcing-Ansatz von **Azure Data Catalog** bedeutet, dass alle Benutzer, die eine registrierte Datenquelle ermitteln, die ermittelten Daten nicht nur nutzen, sondern auch ihre Meinung zu den Daten teilen können.
 
@@ -108,6 +107,6 @@ Nachdem eine Datenquelle registriert wurde, kann es manchmal erforderlich sein, 
 Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten zu finden und im bevorzugten Datentool zu verwenden. Dies ist in der Azure Data Catalog-Umgebung für die Datennutzung auf zwei Arten möglich.
 
 1.	Für Clientanwendungen, die von **Azure Data Catalog** direkt unterstützt werden, können Benutzer im Portal auf der Datenquellenkachel auf das Menü **Öffnen in** klicken. Die Clientanwendung wird mit einer hergestellten Verbindung mit der gewählten Datenquelle gestartet.
-2.	Für alle Clientanwendungen können Benutzer die Verbindungsinformationen verwenden, die im Eigenschaftenbereich für eine ausgewählte Datenquelle angezeigt werden. Diese Informationen enthalten alle Details (z. B. Servername, Datenbankname und Objektname), die zum Herstellen der Verbindung mit den Daten erforderlich sind. Sie können in die Verbindungsumgebung des Clienttools kopiert werden. Wenn Details zur Zugriffsanforderung für eine Datenquelle bereitgestellt wurden, werden diese Information neben den Verbindungsdetails angezeigt.
+2.	Für alle Clientanwendungen können Benutzer die Verbindungsinformationen verwenden, die im Eigenschaftenbereich für eine ausgewählte Datenquelle angezeigt werden. Diese Informationen enthalten alle Details (z. B. Servername, Datenbankname und Objektname), die zum Herstellen der Verbindung mit den Daten erforderlich sind. Sie können in die Verbindungsumgebung des Clienttools kopiert werden. Wenn Details zur Zugriffsanforderung für eine Datenquelle bereitgestellt wurden, werden diese Information neben den Verbindungsdetails angezeigt.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0330_2016-->

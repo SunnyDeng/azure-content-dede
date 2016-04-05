@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/28/2016"
+   ms.date="03/25/2016"
    ms.author="larryfr"/>
 
 #Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X
@@ -116,11 +116,15 @@ Weitere Informationen zur Verwendung dieses Befehls finden Sie unter [Benutzerde
 
 Geben Sie in einer Terminalsitzung den SSH-Befehl ein, um die Verbindung mit dem Hauptknoten des Clusters herzustellen, indem Sie Adresse und den Benutzernamen angeben:
 
-* **SSH-Adresse**: Der Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: **mycluster-ssh.azurehdinsight.net**.
+* **SSH-Adresse** – Für das Herstellen einer Verbindung mit einem Cluster mithilfe von SSH stehen zwei Adressen zur Verfügung:
+
+    * **Verbindung mit dem Hauptknoten herstellen:** Der Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: **mycluster-ssh.azurehdinsight.net**.
+    
+    * **Verbindung mit dem Edgeknoten herstellen:** Wenn Sie einen R Server-Cluster in HDInsight besitzen, enthält der Cluster auch einen Edgeknoten, auf den mithilfe von **RServer.CLUSTERNAME.ssh.azurehdinsight.net** zugegriffen werden kann. Dabei steht __CLUSTERNAME__ für den Namen des Clusters.
 
 * **Benutzername**: Der SSH-Benutzername, den Sie bei der Erstellung des Clusters angegeben haben.
 
-Im folgende Beispiel stellt der Benutzer **me** eine Verbindung mit dem Cluster **mycluster** her:
+Im folgenden Beispiel stellt der Benutzer **me** eine Verbindung mit dem Hauptknoten 0 von **mycluster** her:
 
 	ssh me@mycluster-ssh.azurehdinsight.net
 
@@ -132,7 +136,7 @@ Wenn Sie einen SSH-Schlüssel verwendet haben, der mit einer Passphrase geschüt
 >
 > `ssh -i ~/.ssh/id_rsa me@mycluster-ssh.azurehdinsight.net`
 
-Wenn kein Port angegeben wird, verwendet SSH standardmäßig Port 22. Über diesen Port wird eine Verbindung mit „Hauptknoten 0“ im HDInsight-Cluster hergestellt. Wenn Sie Port 23 verwenden, wird eine Verbindung mit „head node 1“ hergestellt. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
+Wenn Sie mithilfe der Adresse für den Hauptknoten eine Verbindung herstellen und kein Port angegeben wird, verwendet SSH standardmäßig Port 22. Über diesen Port wird eine Verbindung mit dem Hauptknoten 0 im HDInsight-Cluster hergestellt. Wenn Sie Port 23 verwenden, wird eine Verbindung mit „head node 1“ hergestellt. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
 
 ###Herstellen einer Verbindung mit den Workerknoten
 
@@ -239,4 +243,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -1,23 +1,23 @@
-<properties 
-	pageTitle="Ausprobieren von SQL-Datenbank: Erstellen einer SQL-Datenbank mit C# | Microsoft Azure" 
-	description="Probieren Sie SQL-Datenbank für das Entwickeln von SQL- und C#-Apps aus, und erstellen Sie eine Azure SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET." 
+<properties
+	pageTitle="Ausprobieren von SQL-Datenbank: Erstellen einer SQL-Datenbank mit C# | Microsoft Azure"
+	description="Probieren Sie SQL-Datenbank für das Entwickeln von SQL- und C#-Apps aus, und erstellen Sie eine Azure SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET."
 	keywords="Ausprobieren von SQL, SQL C#"   
-	services="sql-database" 
-	documentationCenter="" 
-	authors="stevestein" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="stevestein"
+	manager="jeffreyg"
 	editor="cgronlun"/>
 
 <tags
    ms.service="sql-database"
    ms.devlang="NA"
    ms.topic="hero-article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="data-management" 
-   ms.date="01/22/2016"
+   ms.tgt_pltfrm="csharp"
+   ms.workload="data-management"
+   ms.date="03/24/2016"
    ms.author="sstein"/>
 
-# Ausprobieren von SQL-Datenbank: Verwenden von C# zum Erstellen einer SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET 
+# Ausprobieren von SQL-Datenbank: Verwenden von C# zum Erstellen einer SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET
 
 **Einzeldatenbank**
 
@@ -26,13 +26,7 @@
 - [C#](sql-database-get-started-csharp.md)
 - [PowerShell](sql-database-get-started-powershell.md)
 
-
-
-Erfahren Sie, wie Sie C#-Befehle zum Erstellen einer Azure SQL-Datenbank mithilfe der [Azure SQL-Datenbankbibliothek für .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql) erstellen.
-
-Sie können SQL-Datenbank ausprobieren, indem Sie mit SQL und C# eine Einzeldatenbank erstellen. Informationen zum Erstellen elastischer Datenbanken finden Sie unter [Erstellen eines Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md).
-
-Aus Gründen der Übersichtlichkeit beschränken sich die Beispiele auf einzelne Codeausschnitte. In dem Abschnitt am Ende dieses Artikels sind alle Befehle in einer Beispielkonsolenanwendung zusammengeführt.
+Erfahren Sie, wie Sie C#-Befehle zum Erstellen einer Azure SQL-Datenbank mithilfe der [Azure SQL-Datenbankbibliothek für .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql) erstellen. Sie können SQL-Datenbank ausprobieren, indem Sie mit SQL und C# eine Einzeldatenbank erstellen. Informationen zum Erstellen von Pools für elastische Datenbanken finden Sie unter [Erstellen eines Pools für elastische Datenbanken](sql-database-elastic-pool-create-portal.md). Aus Gründen der Übersichtlichkeit beschränken sich die Beispiele auf einzelne Codeausschnitte. In dem Abschnitt am Ende dieses Artikels sind alle Befehle in einer Beispielkonsolenanwendung zusammengeführt.
 
 Die Azure SQL-Datenbankbibliothek für .NET bietet eine [Azure-Ressourcen-Manager](../resource-group-overview.md)-basierte API, die die [Ressourcen-Manager-basierte REST-API für die SQL-Datenbank](https://msdn.microsoft.com/library/azure/mt163571.aspx) umfasst. Diese Clientbibliothek folgt dem allgemeinen Muster für Ressourcen-Manager-basierte Clientbibliotheken. Der Ressourcen-Manager erfordert Ressourcengruppen und die Authentifizierung mit [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (AAD).
 
@@ -45,7 +39,7 @@ Die Azure SQL-Datenbankbibliothek für .NET bietet eine [Azure-Ressourcen-Manage
 Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benötigen Sie Folgendes:
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
-- Visual Studio. Eine kostenlose Version von Visual Studio finden Sie auf der Seite für [Visual Studio-Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs).
+- Visual Studio. Eine kostenlose Version von Visual Studio finden Sie auf der Seite [Visual Studio-Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs).
 
 
 ## Installieren der erforderlichen Bibliotheken
@@ -120,7 +114,7 @@ Der Domänenname ist für den Code erforderlich. Es folgt eine einfache Möglich
 Weitere Informationen zur Verwendung von Azure Active Directory zur Authentifizierung finden Sie in [diesem nützlichen Blogbeitrag](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability/).
 
 
-### Abrufen des Zugriffstokens für den aktuellen Benutzer 
+### Abrufen des Zugriffstokens für den aktuellen Benutzer
 
 Die Clientanwendung muss das Zugriffstoken der Anwendung für den aktuellen Benutzer abrufen. Wenn der Code zum ersten Mal von einem Benutzer ausgeführt wird, wird er aufgefordert, seine Benutzeranmeldeinformationen einzugeben, und das resultierende Token wird lokal im Cache gespeichert. Bei nachfolgenden Ausführungen wird das Token aus dem Cache abgerufen, und der Benutzer wird nur zur Anmeldung aufgefordert, wenn das Token abgelaufen ist.
 
@@ -154,7 +148,7 @@ Beim Ressourcen-Manager müssen alle Ressourcen in einer Ressourcengruppe erstel
         {
             creds = new Microsoft.Rest.TokenCredentials(token.AccessToken);
 
-            // Create a resource management client 
+            // Create a resource management client
             ResourceManagementClient resourceClient = new ResourceManagementClient(creds);
 
             // Resource group parameters
@@ -169,7 +163,7 @@ Beim Ressourcen-Manager müssen alle Ressourcen in einer Ressourcengruppe erstel
         }
 
 
-## Erstellen eines Servers 
+## Erstellen eines Servers
 
 SQL-Datenbanken befinden sich auf Servern. Der Servername muss global für alle Azure SQL-Server eindeutig sein. Wenn der Servername bereits vergeben ist, wird ein Fehler ausgeben. Sie sollten auch berücksichtigen, dass dieser Befehl mehrere Minuten in Anspruch nehmen kann.
 
@@ -223,7 +217,7 @@ Im folgenden Beispiel wird eine Regel erstellt, die den Zugriff auf den Server v
 
         static void CreateFirewallRule()
         {
-            // Create a firewall rule on the server 
+            // Create a firewall rule on the server
             FirewallRuleCreateOrUpdateParameters firewallParameters = new FirewallRuleCreateOrUpdateParameters()
             {
                 Properties = new FirewallRuleCreateOrUpdateProperties()
@@ -284,7 +278,7 @@ Im folgenden Beispiel werden diese Komponenten erstellt: Ressourcengruppe, Serve
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    
+
     namespace SqlDbConsoleApp
     {
     class Program
@@ -295,13 +289,13 @@ Im folgenden Beispiel werden diese Komponenten erstellt: Ressourcengruppe, Serve
         static string redirectUri = "<Azure App redirectURI>";
         static string domainName = "<domain>";
 
-        // You create these values 
+        // You create these values
         static string resourceGroupName = "<your resource group name>";
         static string location = "<Azure data center location>";
 
         static string serverName = "<your server name>";
         static string administratorLogin = "<your server admin>";
-        
+
         // store your password securely!
         static string administratorPassword = "<your server admin password>";
         static string serverVersion = "12.0";
@@ -340,7 +334,7 @@ Im folgenden Beispiel werden diese Komponenten erstellt: Ressourcengruppe, Serve
             Console.WriteLine("Creating database...");
 
             DatabaseCreateOrUpdateResponse dbResponse = CreateDatabase();
-            Console.WriteLine("Status: " + dbResponse.Status.ToString() 
+            Console.WriteLine("Status: " + dbResponse.Status.ToString()
                 + " Code: " + dbResponse.StatusCode.ToString());
 
             Console.WriteLine("Press enter to exit...");
@@ -351,7 +345,7 @@ Im folgenden Beispiel werden diese Komponenten erstellt: Ressourcengruppe, Serve
         {
             creds = new Microsoft.Rest.TokenCredentials(token.AccessToken);
 
-            // Create a resource management client 
+            // Create a resource management client
             ResourceManagementClient resourceClient = new ResourceManagementClient(creds);
 
             // Resource group parameters
@@ -386,7 +380,7 @@ Im folgenden Beispiel werden diese Komponenten erstellt: Ressourcengruppe, Serve
 
         static void CreateFirewallRule()
         {
-            // Create a firewall rule on the server 
+            // Create a firewall rule on the server
             FirewallRuleCreateOrUpdateParameters firewallParameters = new FirewallRuleCreateOrUpdateParameters()
             {
                 Properties = new FirewallRuleCreateOrUpdateProperties()
@@ -463,4 +457,4 @@ Nachdem Sie SQL-Datenbank ausprobiert und mit C# eine Datenbank erstellt haben, 
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0330_2016-->
