@@ -26,7 +26,7 @@ Dieser Artikel bietet eine grobe Übersicht über die wichtigsten Features der M
 
 - **Separates SaaS-Portal** Bietet einfachen Zugang zum Marketingteam ohne Umweg über das Azure-Verwaltungsportal.
 
-- **Verfügbarkeit von offenen REST-APIs** Zur Integration in und Automatisierung mit CMS/CRM/IT-Systemen, die Open-Platform-APIs verwenden, bieten wir offene REST-APIs und .NET SDKs, die diese APIs verwenden, mit denen eine mühelose Integration in und Automatisierung mit Mobile Engagement möglich ist. [Hier] finden Sie weitere Details (mobile-engagement-api-authentication.md).
+- **Verfügbarkeit von offenen REST-APIs** Zur Integration in und Automatisierung mit CMS/CRM/IT-Systemen, die Open-Platform-APIs verwenden, bieten wir offene REST-APIs und .NET SDKs, die diese APIs verwenden, mit denen eine mühelose Integration in und Automatisierung mit Mobile Engagement möglich ist. [Hier](mobile-engagement-api-authentication.md) finden Sie weitere Details.
 
 - **Power BI-Connector verfügbar** Sie können auch die wichtigsten Analysediagramme in einem Power BI-Dashboard anzeigen. Beachten Sie diesen [Leitfaden](https://powerbi.microsoft.com/de-DE/documentation/powerbi-content-pack-azure-mobile/).
 
