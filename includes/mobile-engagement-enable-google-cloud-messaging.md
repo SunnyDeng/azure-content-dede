@@ -1,4 +1,7 @@
->[AZURE.NOTE]Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Besuchen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>, um ein neues Google-Konto zu erstellen.
+
+###Erstellen eines Google Cloud Messaging-Projekts mit API-Schlüssel
+
+>[AZURE.NOTE] Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Besuchen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>, um ein neues Google-Konto zu erstellen.
 
 1. Navigieren Sie zur Website [Google Cloud Console](https://console.developers.google.com/project), melden Sie sich mit den Anmeldeinformationen für Ihr Google-Konto an, und klicken Sie dann auf **Create Project**.
 
@@ -31,4 +34,4 @@
 
 7. Notieren Sie sich den **API KEY**-Wert. Sie verwenden diesen API-Schlüsselwert später für die Konfiguration im Abschnitt „Systemeigener Push“.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0330_2016-->

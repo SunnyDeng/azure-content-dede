@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="03/17/2016"
+	ms.date="03/28/2016"
 	ms.author="deonhe"/>
 
 # Liste der verwalteten APIs
@@ -52,7 +52,7 @@ Es gibt zwei Arten von Triggern:
 APIs können innerhalb Ihrer Apps auch als Aktionen verwendet werden. Aktionen sind hilfreich für die Suche nach Daten, die dann bei der Ausführung der App verwendet werden können. Beispielsweise kann es sein, dass Sie bei der Verarbeitung einer Bestellung Daten in einer SQL-Datenbank suchen müssen. Oder Sie müssen möglicherweise Daten in eine Zieltabelle schreiben oder in dieser aktualisieren oder löschen. Dazu können Sie die Aktionen verwenden, die von den APIs bereitgestellt werden. Aktionen sind den in den Swagger-Metadaten definierten Vorgängen zugeordnet.
 
 
-[Neuerungen](../app-service-logic/app-service-logic-schema-2015-08-01.md) [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md) [Erste Schritte mit PowerApps](../power-apps/powerapps-get-started-azure-portal.md)
+[Neuigkeiten](../app-service-logic/app-service-logic-schema-2015-08-01.md) [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md) [Erste Schritte mit PowerApps](../power-apps/powerapps-get-started-azure-portal.md) [Migrate existing Logic apps to the latest schema version](connectors-schema-migration.md) (Migrieren vorhandener Logik-Apps zur neuesten Schemaversion)
 
 <!--API Documentation-->
 [azureblobdoc]: ./connectors-create-api-azureblobstorage.md "Verbindung mit Azure-Blob zum Verwalten der Dateien in Ihrem Blobcontainer."
@@ -105,4 +105,4 @@ APIs können innerhalb Ihrer Apps auch als Aktionen verwendet werden. Aktionen s
 [twittericon]: ./media/apis-list/twittericon.png
 [yammericon]: ./media/apis-list/yammericon.png
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/27/2016"
+   ms.date="03/29/2016"
    ms.author="cgronlun"/>
 
 
@@ -81,11 +81,15 @@ Die folgenden Beispielskripts werden vom HDInsight-Team bereitgestellt:
 
 Informationen zum Entwickeln eigener Skriptaktionen finden Sie unter [Entwickeln von Skriptaktionen mit HDInsight](hdinsight-hadoop-script-actions-linux.md).
 
+## HDInsight Standard und HDInsight Premium
+
+HDInsight bietet Cloudlösungen für Big Data in zwei Kategorien an: Standard und Premium. HDInsight Standard stellt einen Unternehmenscluster bereit, in dem Organisationen ihre Big Data-Workloads ausführen können. HDInsight Premium baut darauf auf und bietet erweiterte Analyse- und Sicherheitsfunktionen für einen HDInsight-Cluster. Weitere Informationen finden Sie unter [Azure HDInsight Premium](hdinsight-component-versioning.md#hdinsight-standard-and-hdinsight-premium).
+
 ## Aus welchen Komponenten und Dienstprogrammen besteht Hadoop?
 
 Die folgenden Komponenten und Dienstprogramme sind in HDInsight-Clustern enthalten.
 
-* **[Ambari](#ambari)**: Bereitstellung, Verwaltung und Überwachung von Clustern sowie Hilfsprogramme für Cluster.
+* **[Ambari:](#ambari)** Bereitstellung, Verwaltung und Überwachung von Clustern sowie Hilfsprogramme für Cluster
 
 * **[Avro](#avro)** (Microsoft .NET Library für Avro): Datenserialisierung für die Microsoft .NET-Umgebung.
 
@@ -93,7 +97,7 @@ Die folgenden Komponenten und Dienstprogramme sind in HDInsight-Clustern enthalt
 
 * **[Mahout](#mahout)**: Maschinelles Lernen.
 
-* **[MapReduce](#mapreduce)**: Legacy-Framework für verteilte Verarbeitung und Ressourcenverwaltung für Hadoop. Informationen finden Sie unter [YARN](#yarn), dem Ressourcenframework der nächsten Generation.
+* **[MapReduce:](#mapreduce)** Legacy-Framework für verteilte Verarbeitung und Ressourcenverwaltung für Hadoop. Informationen finden Sie unter [YARN](#yarn), dem Ressourcenframework der nächsten Generation.
 
 * **[Oozie](#oozie)**: Workflowverwaltung.
 
@@ -105,7 +109,7 @@ Die folgenden Komponenten und Dienstprogramme sind in HDInsight-Clustern enthalt
 
 * **[Tez](#tez)**: Effiziente Ausführung datenintensiver Prozesse.
 
-* **[YARN](#yarn)**: Teil der Hadoop-Kernbibliothek und nächste Generation des MapReduce-Softwareframeworks.
+* **[YARN:](#yarn)** Teil der Hadoop-Kernbibliothek und nächste Generation des MapReduce-Softwareframeworks
 
 * **[ZooKeeper](#zookeeper)**: Koordination von Prozessen in verteilten Systemen.
 
@@ -139,7 +143,7 @@ Hadoop Distributed File System (HDFS) ist ein verteiltes Dateisystem, das zusamm
 ### <a name="mapreduce"></a>MapReduce
 MapReduce ist das Legacy-Softwareframework für Hadoop zum Schreiben von Anwendungen für die parallele Stapelverarbeitung großer Datasets. Ein MapReduce-Auftrag unterteilt große Datasets und verwaltet die Daten in Schlüssel-Wert-Paaren für die Verarbeitung.
 
-[YARN](#yarn) ist das Hadoop-Ressourcen-Manager- und Anwendungsframework der nächsten Generation und wird als MapReduce 2.0 bezeichnet. MapReduce-Aufträge können mit YARN ausgeführt werden.
+[YARN](#yarn) ist das Ressourcen-Manager- und Anwendungsframework der nächsten Generation für Hadoop und wird als MapReduce 2.0 bezeichnet. MapReduce-Aufträge können mit YARN ausgeführt werden.
 
 Weitere Informationen zu MapReduce finden Sie unter <a target="_blank" href="http://wiki.apache.org/hadoop/MapReduce">MapReduce</a> im Hadoop-Wiki.
 
@@ -211,11 +215,19 @@ Hadoop in HDInsight ist Teil des Azure Cloud-Ökosystems und bietet eine Vielzah
 
 * Modernste Hadoop-Komponenten. Weitere Informationen finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Hadoop-Clusterversionen][component-versioning].
 
-* Hohe Verfügbarkeit und Zuverlässigkeit von Clustern. Weitere Details finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
+* Hohe Verfügbarkeit und Zuverlässigkeit von Clustern. Den von HDInsight bereitgestellten Hadoop-Clustern wurde ein zweiter Hauptknoten hinzugefügt, um die Verfügbarkeit des Diensts zu erhöhen. Standardimplementierungen von Hadoop-Clustern verfügen in der Regel nur über einen Hauptknoten. Durch Hinzufügen eines zweiten Hauptknotens wird in HDInsight diese einzelne Fehlerquelle beseitigt. Der Wechsel zur neuen Clusterkonfiguration mit hoher Verfügbarkeit ändert nichts am Preis des Clusters, es sei denn, Kunden erstellen Cluster mit besonders großem Hauptknoten anstelle des großen Knotens in Standardgröße.
+
+	Weitere Details finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
 
 * Effiziente und wirtschaftliche Datenspeicherung im Azure-Blobspeicher, eine Hadoop-kompatible Option. Siehe [Verwenden des Azure-Blobspeichers mit Hadoop in HDInsight](hdinsight-hadoop-use-blob-storage.md).
 
 * Integration mit anderen Azure-Diensten wie [Web-Apps](../documentation/services/app-service/web/) und [SQL Database](../documentation/services/sql-database/).
+
+* Zusätzliche Größen virtueller Computer. HDInsight-Cluster sind auf verschiedenen Typen und Größen virtueller Computer verfügbar. HDInsight-Cluster können jetzt die für allgemeine Zwecke konzipierten Größen A2 bis A7, Knoten der D-Serie mit Solid-State-Laufwerken (SSDs) und mit um 60 % schnelleren Prozessoren sowie die Größen A8 und A9 mit InfiniBand-Unterstützung für schnelle Netzwerkverbindungen verwenden. Kunden von Apache HBase in Azure HDInsight können von den größeren Speicherkonfigurationen der D-Serie profitieren, um Ihre Leistung zu steigern. Kunden von Apache Storm in Azure HDInsight profitieren auch vom zusätzlichen Arbeitsspeicher zum Laden größerer Referenzdatasets sowie von schnelleren CPUs für einen größeren Durchsatz.
+
+* Clusterskalierung. Mithilfe der Clusterskalierung können Sie die Anzahl der Knoten eines ausgeführten HDInsight-Clusters ändern, ohne ihn löschen oder neu erstellen zu müssen.
+
+* Unterstützung für virtuelle Netzwerke. HDInsight-Cluster können mit virtuellen Azure-Netzwerken verwendet werden, um Cloud-Ressourcen zu isolieren oder um Hybrid-Lösungen zu unterstützen, die Cloud-Ressourcen mit Ressourcen in Ihrem Rechenzentrum verbinden.
 
 * Niedrige Einstiegskosten. Probieren Sie die [kostenlose Testversion](/pricing/free-trial/) aus oder entdecken Sie die [HDInsight-Preisdetails](/pricing/details/hdinsight/).
 
@@ -256,7 +268,7 @@ Lesen Sie im Anschluss an diese Einführung in Hadoop in der Cloud und die Big D
 
 * [Azure SQL-Datenbank:](/documentation/services/sql-database/) Dokumentation, Tutorials und Videos für SQL-Datenbank.
 
-* [SQL-Datenbank auf dem Azure-Portal:](sql-database-manage-portal.md) ein ressourcenschonendes, einfach zu nutzendes Datenbankverwaltungstool für SQL-Datenbank in der Cloud.
+* [SQL-Datenbank auf dem Azure-Portal:](../sql-database/sql-database-manage-portal.md) ein ressourcenschonendes, einfach zu nutzendes Datenbankverwaltungstool für SQL-Datenbank in der Cloud.
 
 * [Adventure Works für SQL-Datenbank](http://msftdbprodsamples.codeplex.com/releases/view/37304): Downloadseite für eine SQL-Beispieldatenbank.
 
@@ -292,4 +304,4 @@ Wenden Sie Big Data-Analysen auf Daten Ihres Unternehmens an, um sich Einblicke 
 [component-versioning]: hdinsight-component-versioning.md
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0330_2016-->

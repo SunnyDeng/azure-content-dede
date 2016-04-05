@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="02/22/2016" 
+	ms.date="03/30/2016" 
 	ms.author="mimig"/>
 
 # So erstellen Sie eine DocumentDB-Sammlung über das Azure-Portal
@@ -40,33 +40,38 @@ Sie wissen nicht, was eine Sammlung ist? Dann lesen Sie den Abschnitt [Was ist e
 
 	![Screenshot mit Schaltfläche „Sammlung hinzufügen“ auf dem Blatt „Datenbank“, mit den Einstellungen im Blatt „Sammlung hinzufügen“ und Schaltfläche „OK“ – Azure-Portal für DocumentDB – Cloudbasierte Datenbankerstellung für NoSQL-JSON-Datenbanken](./media/documentdb-create-collection/docdb-collection-creation-5-8.png)
 
-6. Wählen Sie einen Tarif für die neue Sammlung aus. Bei jeder erstellten Sammlung handelt es sich um eine fakturierbare Entität. Weitere Informationen zu den verfügbaren Leistungsebenen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
+6. Wenn Sie eine Sammlung mit einer Partition erstellen möchten, klicken Sie auf den Pfeil, um einen Tarif auszuwählen. Anschließend klicken Sie auf „Alle anzeigen“ und wählen eine Leistungsstufe für die Sammlung aus. Weitere Informationen zu den verfügbaren Leistungsebenen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md). Bei jeder erstellten Sammlung handelt es sich um eine fakturierbare Entität.
 
-7. Wählen Sie eine der folgenden **Indizierungsrichtlinien** aus:
+	Wenn Sie eine partitionierte Sammlung erstellen möchten, fahren Sie mit Schritt 7 fort, da Sie keinen Tarif auswählen müssen.
 
-	- **Standard** Bei dieser Richtlinie wird eine Hashindizierung für Zeichenfolgen und eine Bereichsindizierung für Zahlen verwendet. Sie eignet sich am besten für Gleichheitsabfragen an Zeichenfolgen, für ORDER BY und für Bereichs- und Gleichheitsabfragen an Zahlen. Bei dieser Richtlinie ist der Indexspeicheraufwand relativ gering, und sie schließt eine Geoindizierung ein.
-	- **Hash**. Wählen Sie diese Richtlinie, wenn Sie ORDER BY-, Bereichs- und Gleichheitsabfragen für Zahlen und Zeichenfolgen durchführen. Bei dieser Richtlinie ist der Indexspeicheraufwand höher als bei der Richtlinie **Standard**, und sie schließt eine Geoindizierung ein.
+7. Wählen Sie einen **Partitionierungsmodus** für die Sammlung aus, entweder **Einzelne Partition** oder **Partitioniert**. Eine einzelne Partition verfügt über eine reservierte Speicherkapazität von 10 GB und kann Durchsatzebenen von 400 bis 10.000 Anforderungseinheiten pro Sekunde aufweisen. Eine partitionierte Auflistung kann skaliert werden, um 250 GB an Speicher über mehrere Partitionen verteilt zu verarbeiten, und kann Durchsatzebenen von 10.100 bis 250.000 Anforderungseinheiten pro Sekunde aufweisen.
 
-	Weitere Informationen zu den Indizierungsrichtlinien finden Sie unter [Indizierungsrichtlinien für DocumentDB](documentdb-indexing-policies.md).
+8. Wählen Sie den **Durchsatz** für die partitionierte Sammlung. Eine Anforderungseinheit (Request Unit, RU) entspricht dem Durchsatz des Lesevorgangs eines Dokuments mit 1 KB. Weitere Informationen zu Anforderungseinheiten finden Sie unter [Anforderungseinheiten](documentdb-request-units.md).
 
-8. Klicken Sie am unteren Bildschirmrand auf **OK**, um die neue Sammlung zu erstellen.
+9. Wenn Sie eine partitionierte Sammlung erstellen, wählen Sie den **Partitionsschlüssel** für die Sammlung. Die Auswahl des richtigen Partitionsschlüssels ist wichtig für die Erstellung einer leistungsfähigen-Auflistung. Weitere Informationen zum Auswählen eines Partitionsschlüssels finden Sie unter [Partitionieren von Daten in DocumentDB](documentdb-partition-data.md).
 
+10. Klicken Sie am unteren Bildschirmrand auf **OK**, um die neue Sammlung zu erstellen.
 
-9. Die neue Sammlung wird jetzt im Fokus **Auflistungen** auf dem Blatt **Datenbank** angezeigt.
+11. Die neue Sammlung wird jetzt im Fokus **Auflistungen** auf dem Blatt **Datenbank** angezeigt.
  
 	![Screenshot mit der neuen Sammlung in Blatt „Datenbank“ – Azure-Portal für DocumentDB – Cloudbasierte Datenbankerstellung für NoSQL-JSON-Datenbanken](./media/documentdb-create-collection/docdb-collection-creation-9.png)
 
 ## Was ist eine DocumentDB-Sammlung? 
 
-Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Eine Sammlung ist eine fakturierbare Entität, bei der die [Kosten](documentdb-performance-levels.md) durch die Leistungsebene bestimmt werden, die mit der Sammlung verknüpft ist.
+Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Eine Sammlung ist eine fakturierbare Entität, bei der die [Kosten](documentdb-performance-levels.md) durch den bereitgestellten Durchsatz der Sammlung bestimmt werden. Sammlungen können eine/n oder mehrere Partitionen oder Server umfassen und können skaliert werden, um praktisch unbegrenzte Mengen an Speicher oder Durchsatz zu verarbeiten.
 
-Sammlungen stellen die Transaktionsgrenze für gespeicherte Prozeduren und Trigger dar, und sie bilden den Einstiegspunkt für Abfragen und CRUD-Vorgänge. Jede Sammlung hat eine reservierte Durchsatzmenge, die für diese Sammlung spezifisch ist und die nicht mit anderen Sammlungen im gleichen Konto gemeinsam genutzt wird. Aus diesem Grund können Sie Ihre Anwendung im Hinblick auf Speicher und Durchsatz horizontal hochskalieren, indem Sie weitere Sammlungen hinzufügen und dann Ihre Dokumente auf diese verteilen.
+Sammlungen werden von DocumentDB automatisch in einen oder mehrere physische Server partitioniert. Wenn Sie eine Sammlung erstellen, können Sie den bereitgestellten Durchsatz in Form von Anforderungseinheiten pro Sekunde und einer Partitionsschlüsseleigenschaft angeben. Der Wert dieser Eigenschaft wird von DocumentDB zum Verteilen von Dokumenten zwischen Partitionen und zum Weiterleiten von Anforderungen wie Abfragen verwendet. Der Partitionsschlüssel fungiert außerdem als die Transaktionsgrenze für gespeicherte Prozeduren und Trigger. Jede Sammlung hat eine reservierte Durchsatzmenge, die für diese Sammlung spezifisch ist und die nicht mit anderen Sammlungen im gleichen Konto gemeinsam genutzt wird. Daher können Sie Ihre Anwendung sowohl im Hinblick auf Speicher als auch Durchsatz horizontal hochskalieren.
 
 Sammlungen sind nicht identisch mit Tabellen in relationalen Datenbanken. Sammlungen erzwingen kein Schema. Als Datenbank erzwingt DocumentDB grundsätzlich keine Schemas, es handelt sich um eine schemafreie Datenbank. Daher können Sie unterschiedliche Arten von Dokumenten mit unterschiedlichen Schemas in derselben Sammlung speichern. Falls gewünscht, können Sie Sammlungen auch verwenden, um wie bei Tabellen Objekte eines einzelnen Typs zu speichern. Das geeignetste Modell ist nur davon abhängig, wie die Daten zusammen in Abfragen und Transaktionen angezeigt werden.
 
 ## Weitere Methoden zum Erstellen einer DocumentDB-Sammlung
 
-Sammlungen müssen nicht über das Portal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](documentdb-sdk-dotnet.md) erstellen. C#-Codebeispiele, die die Verwendung von Sammlungen mithilfe des DocumentDB .NET SDK veranschaulichen, finden Sie unter [C#-Sammlungsbeispiele](documentdb-dotnet-samples.md#collection-examples). Node.js-Codebeispiele, die die Verwendung von Sammlungen mithilfe des DocumentDB Node.js SDK veranschaulichen, finden Sie unter [Node.js-Sammlungsbeispiele](documentdb-nodejs-samples.md#collection-examples).
+Sammlungen müssen nicht über das Portal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](documentdb-sdk-dotnet.md) und der REST-API erstellen.
+
+- Ein C#-Codebeispiel finden Sie unter [C#-Sammlungsbeispiele](documentdb-dotnet-samples.md#collection-examples). 
+- Ein Node.js-Codebeispiel finden Sie unter [Node.js-Sammlungsbeispiele](documentdb-nodejs-samples.md#collection-examples).
+- Ein Python-Codebeispiel finden Sie unter [Python-Sammlungsbeispiele](documentdb-python-samples.md#collection-examples).
+- Ein REST-API-Beispiel finden Sie unter [Erstellen einer Sammlung](https://msdn.microsoft.com/library/azure/mt489078.aspx).
 
 ## Problembehandlung
 
@@ -82,4 +87,4 @@ Nachdem Sie nun über eine Sammlung verfügen, besteht der nächste Schritt dari
 
 Wenn eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Portal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](documentdb-sdk-dotnet.md) verwenden.
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -104,7 +104,7 @@ Die Datei **package.json** ist eine der im Stammverzeichnis des Projekts erstell
 
 ## <a name="_Toc395783180"></a>Schritt 4: Verwenden des DocumentDB-Diensts in einer Knotenanwendung
 
-Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt wollen wir zur eigentlichen Aufgabe übergehen, d. h. Code mithilfe von Azure DocumentDB erstellen.
+Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt wollen wir zur eigentlichen Aufgabe übergehen, d. h. Code mithilfe von Azure DocumentDB erstellen.
 
 ### Erstellen des Modells
 
@@ -118,7 +118,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		var DocDBUtils = {
 		    getOrCreateDatabase: function (client, databaseId, callback) {
 		        var querySpec = {
-		            query: 'SELECT * FROM root r WHERE r.id=@id',
+		            query: 'SELECT * FROM root r WHERE r.id= @id',
 		            parameters: [{
 		                name: '@id',
 		                value: databaseId
@@ -214,7 +214,6 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		        docdbUtils.getOrCreateDatabase(self.client, self.databaseId, function (err, db) {
 		            if (err) {
 		                callback(err);
-
 		            } else {
 		                self.database = db;
 		                docdbUtils.getOrCreateCollection(self.client, self.database._self, self.collectionId, function (err, coll) {
@@ -284,7 +283,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		        var self = this;
 		
 		        var querySpec = {
-		            query: 'SELECT * FROM root r WHERE r.id=@id',
+		            query: 'SELECT * FROM root r WHERE r.id = @id',
 		            parameters: [{
 		                name: '@id',
 		                value: itemId
@@ -461,7 +460,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 
 	Dadurch wird dem **Jade**-Modul mitgeteilt, dass für unsere Anwendung einige HTML-Elemente dargestellt werden müssen. Das Modul erstellt dann einen **Block** mit der Bezeichnung **content**, in dem wir das Layout für unsere Inhaltsseiten bereitstellen können. Speichern und schließen Sie die Datei **layout.jade**.
 
-4. Öffnen Sie nun die Datei **index.jade**, d. h. die Ansicht, die von der Anwendung verwendet wird, und ersetzen Sie den Inhalt der Datei durch Folgendes:
+4. Öffnen Sie nun die Datei **index.jade**, d. h. die Ansicht, die von der Anwendung verwendet wird, und ersetzen Sie den Inhalt der Datei durch Folgendes:
 
 		extends layout
 		
@@ -546,7 +545,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 
 ## <a name="_Toc395783182"></a>Schritt 7: Bereitstellen Ihres Anwendungsentwicklungsprojekts auf Azure Websites
 
-1. Falls noch nicht geschehen, aktivieren Sie ein Git-Repository für Ihre Azure-Website. Anweisungen dazu finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](../app-service-web/web-sites-publish-source-control.md).
+1. Falls noch nicht geschehen, aktivieren Sie ein Git-Repository für Ihre Azure-Website. Anweisungen dazu finden Sie im Thema [Kontinuierliche Bereitstellung mit GIT in Azure App Service](../app-service-web/web-sites-publish-source-control.md).
 
 2. Fügen Sie Ihre Azure-Website als "Git Remote" hinzu.
 
@@ -571,4 +570,4 @@ Weitere Informationen finden Sie im [Node.js Developer Center](https://azure.mic
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=AcomDC_0211_2016-->
+<!---HONumber=AcomDC_0330_2016-->
