@@ -195,7 +195,7 @@ Hier finden Sie die gesamte Dokumentation, die Sie zum Erstellen und Verwalten W
 
 [Troubleshooting Azure VM Extension failures](virtual-machines-windows-extensions-troubleshoot.md) (Problembehandlung für Fehler bei der Azure-VM-Erweiterung)
 
-[Troubleshoot resource group deployments](resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen)
+[Troubleshoot resource group deployments (Problembehandlung beim Bereitstellen von Ressourcengruppen)](../resource-manager-troubleshoot-deployments-portal.md)
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-windows-troubleshoot-app-connection.md)
 
@@ -375,4 +375,4 @@ Hier finden Sie die gesamte Dokumentation, die Sie zum Erstellen und Verwalten W
 
 [Problembehandlung für Zuordnungsfehler beim Erstellen, Neustarten oder Ändern der Größen von virtuellen Computern in Azure](virtual-machines-windows-allocation-failure.md)
 
-<!----HONumber=AcomDC_0323_2016--->
+<!---HONumber=AcomDC_0330_2016-->

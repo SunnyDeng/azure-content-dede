@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/23/2016"
    ms.author="sahajs;barbkess;sonyama"/>
 
 # Analysieren von Daten mit Azure Machine Learning
@@ -39,25 +39,25 @@ Wir lesen die Daten aus der Ansicht „dbo.vTargetMail“ in der AdventureWorksD
 5. Geben Sie im Eigenschaftenbereich ausführliche Informationen zu Ihrer SQL Data Warehouse-Datenbank ein.
 6. Geben Sie die **Datenbankabfrage** zum Lesen der für Sie interessanten Daten an.
 
-   ```
-   SELECT [CustomerKey]
-      ,[GeographyKey]
-      ,[CustomerAlternateKey]
-      ,[MaritalStatus]
-      ,[Gender]
-      ,cast ([YearlyIncome] as int) as SalaryYear
-      ,[TotalChildren]
-      ,[NumberChildrenAtHome]
-      ,[EnglishEducation]
-      ,[EnglishOccupation]
-      ,[HouseOwnerFlag]
-      ,[NumberCarsOwned]
-      ,[CommuteDistance]
-      ,[Region]
-      ,[Age]
-      ,[BikeBuyer]
-  FROM [dbo].[vTargetMail]
-   ```
+```sql
+SELECT [CustomerKey]
+  ,[GeographyKey]
+  ,[CustomerAlternateKey]
+  ,[MaritalStatus]
+  ,[Gender]
+  ,cast ([YearlyIncome] as int) as SalaryYear
+  ,[TotalChildren]
+  ,[NumberChildrenAtHome]
+  ,[EnglishEducation]
+  ,[EnglishOccupation]
+  ,[HouseOwnerFlag]
+  ,[NumberCarsOwned]
+  ,[CommuteDistance]
+  ,[Region]
+  ,[Age]
+  ,[BikeBuyer]
+FROM [dbo].[vTargetMail]
+```
 
 Führen Sie das Experiment aus, indem Sie unterhalb des Experimentbereichs auf **Ausführen** klicken. ![Ausführen des Experiments][1]
 
@@ -115,6 +115,8 @@ Ihrem Testdatensatz werden zwei weitere Spalten hinzugefügt.
 
 Durch einen Vergleich der Spalte „BikeBuyer“ (tatsächliche Werte) mit „Bewertete Beschriftungen“ (Vorhersage) können Sie die Leistung des Modells ermitteln. Als Nächstes können Sie mit diesem Modell Vorhersagen für neue Kunden treffen und das Modell als Webdienst veröffentlichen oder Ergebnisse zurück in SQL Data Warehouse schreiben.
 
+## Nächste Schritte
+
 Weitere Informationen zum Erstellen von vorhersehbaren Machine Learning-Vorhersagemodellen finden Sie unter [Einführung in das maschinelle Lernen in Microsoft Azure][].
 
 
@@ -140,4 +142,4 @@ Weitere Informationen zum Erstellen von vorhersehbaren Machine Learning-Vorhersa
 [Beispieldaten manuell laden]: sql-data-warehouse-get-started-manually-load-samples.md
 [Erstellen eines SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

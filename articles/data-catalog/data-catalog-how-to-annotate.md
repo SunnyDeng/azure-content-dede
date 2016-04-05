@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="03/03/2016"
+   ms.date="03/30/2016"
    ms.author="maroche"/>
 
 
@@ -34,7 +34,7 @@ Jeder hat eine Meinung. Und das ist auch gut so. **Azure Data Catalog** berücks
 Da jede dieser Perspektiven wertvoll ist, verwendet **Azure Data Catalog** einen Crowdsourcing-Ansatz für Metadaten. Auf diese Weise kann jede Perspektive berücksichtigt und ein lückenloses Bild der registrierten Datenquellen bereitgestellt werden. Mithilfe des **Azure Data Catalog**-Portals kann jeder Benutzer eigene Anmerkungen hinzufügen und bearbeiten und gleichzeitig die Anmerkungen anderer Benutzer anzeigen.
 
 ## Anmerkungstypen
-In der Vorschauversion von **Azure Data Catalog** werden die folgenden Anmerkungstypen unterstützt:
+**Azure Data Catalog** unterstützt die folgenden Anmerkungstypen:
 
 | Anmerkung | Hinweise |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -61,4 +61,4 @@ Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden struk
 ## Weitere Informationen
 - Eine schrittweise Anleitung zum Hinzufügen von Anmerkungen zu Datenquellen finden Sie im Tutorial [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md).
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0330_2016-->

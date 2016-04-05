@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="03/10/2016"
+	ms.date="03/21/2016"
 	ms.author="nitinme"/>
 
 
@@ -92,7 +92,7 @@ In diesem Artikel verwenden Sie den PySpark-Kernel. Im Artikel [In Jupyter-Noteb
 
 ### Erstellen von Jupyter Notebook mit PySpark-Kernel 
 
-1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
 
 2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Jupyter Notebook**. Geben Sie die Administratoranmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
 
@@ -138,7 +138,7 @@ In diesem Artikel verwenden Sie den PySpark-Kernel. Im Artikel [In Jupyter-Noteb
 5. Da Sie einen PySpark-Kernel verwenden, können Sie jetzt direkt eine SQL-Abfrage für die temporäre Tabelle **hvac**, die Sie gerade mit der `%%sql`-Magic erstellt haben, ausführen. Weitere Informationen zur `%%sql`-Magic sowie anderen Magics in Verbindung mit dem PySpark-Kernel finden Sie unter [Verfügbare Kernels für Jupyter Notebooks mit Spark-Clustern unter HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md#why-should-i-use-the-new-kernels).
 		
 		%%sql
-		SELECT buildingID, (targettemp - actualtemp) AS temp_diff, date FROM hvac WHERE date = "6/1/13")
+		SELECT buildingID, (targettemp - actualtemp) AS temp_diff, date FROM hvac WHERE date = "6/1/13"
 
 5. Nachdem der Auftrag erfolgreich abgeschlossen wurde, wird die folgende tabellarische Ausgabe standardmäßig angezeigt.
 
@@ -206,4 +206,4 @@ In diesem Artikel verwenden Sie den PySpark-Kernel. Im Artikel [In Jupyter-Noteb
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: storage-create-storage-account.md
 
-<!---HONumber=AcomDC_0316_2016-->
+<!---HONumber=AcomDC_0330_2016-->

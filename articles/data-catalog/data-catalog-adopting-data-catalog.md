@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="01/28/2016"
+   ms.date="03/28/2016"
    ms.author="derrickv"/>
 
 # Azure Data Catalog-Einführung
@@ -172,4 +172,4 @@ In diesem Artikel ging es um die ersten Schritte bei der Nutzung von **Azure Dat
 -	[Hinzufügen von Anmerkungen zu Datenquellen](data-catalog-get-started.md#exercise-4-annotating-registered-data-sources)
 - [Crowdsourcing für Metadaten](data-catalog-get-started.md#exercise-5-crowdsourcing-metadata)
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -4,16 +4,16 @@
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
 	ms.service="mobile-engagement"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.workload="mobile" 
-	ms.date="12/11/2015"
+	ms.date="03/28/2016"
 	ms.author="wesmc"/>
 
 # Azure Mobile Engagement – Leitfaden mit ersten Schritten und Best Practices
@@ -167,7 +167,7 @@ Benutzer schätzen relevante Nachrichten, die auf ihre Interessen abzielen. Eine
 
 Beispielsweise kann der Benutzer einer E-Commerce-App regelmäßig eine bestimmte Kaffeemarke kaufen, was Sie mit einem KPI erfasst haben. Die folgende Information kann die Einbindung dieses Benutzers in die App verbessern.
  
-*"Hallo Wes, für eine Ihrer bevorzugten Kaffeemarken gibt es in der ersten Woche im September 2015 ein Angebot mit einer Preissenkung um 25 %. Wir schätzen Sie als Kunden und möchten sicherstellen, dass Sie das Angebot kennen."*
+*"Hallo Wes, für eine Ihrer bevorzugten Kaffeemarken gibt es in der ersten Woche im September 2015 ein Angebot mit einer Preissenkung um 25 %. Wir schätzen Sie als Kunden und möchten sicherstellen, dass Sie das Angebot kennen."*
 
 ###### Pushsequenz zur Nutzungsdauer
 
@@ -225,10 +225,10 @@ Verschiedene Typen und Formate von Pushbenachrichtigungen:
 1. **Ankündigungen**: Sie können in verschiedenen Situationen Werbebotschaften an Benutzer senden (außerhalb der App, in der App oder jederzeit).
 2. **Umfragen**: Sie können Informationen zu Endbenutzern erfassen, indem Sie ihnen Fragen stellen. Diese Antworten sind dann beim Erstellen von Kriterien verfügbar, um Endbenutzer zu erreichen.
 3. **Datenpushes**: Sie können eine Binär- oder Base64-Datendatei zum Aktualisieren der App senden. Die Informationen in einem Datenpush werden an Ihre Anwendung gesendet, um die Benutzerumgebung in Ihrer App zu personalisieren. Die Anwendung muss so konzipiert sein, dass sie Daten in einem Datenpush unterstützt.
-4. **Kacheln (nur Windows Phone)**: Sie können den Microsoft-Pushbenachrichtigungsdienst (MPNS) verwenden, um systemeigene Pushbenachrichtigungen mit XML-Daten zu senden. (Wird seit SDK-Version 0.9.0 unterstützt. Die endgültige Nutzlast für Kacheln darf 32 KB nicht überschreiten.) Die Nachricht wird direkt auf der entsprechenden Kachel angezeigt.
+4. **Kacheln (nur Windows Phone)**: Sie können den Microsoft-Pushbenachrichtigungsdienst (MPNS) verwenden, um systemeigene Pushbenachrichtigungen mit XML-Daten zu senden. (Wird seit SDK-Version 0.9.0 unterstützt. Die endgültige Nutzlast für Kacheln darf 32 KB nicht überschreiten.) Die Nachricht wird direkt auf der entsprechenden Kachel angezeigt.
 5. **Webansicht**: Eine Webansicht ist ein Popup mit Webinhalt. Dieses Popupfenster wird angezeigt, nachdem der Benutzer auf die Pushbenachrichtigung geklickt hat. Eine Webansicht ermöglicht es Ihnen, dem Benutzer weitere Interaktionen zu ermöglichen.
  
->[AZURE.NOTE]Stellen Sie sicher, dass der Inhalt, den Sie als Pushbenachrichtigungen senden, den Richtlinien der jeweiligen Plattform (iOS, Android, Windows) für das Entwickeln von Apps und das Senden von Pushbenachrichtigungen entspricht.
+>[AZURE.NOTE] Stellen Sie sicher, dass der Inhalt, den Sie als Pushbenachrichtigungen senden, den Richtlinien der jeweiligen Plattform (iOS, Android, Windows) für das Entwickeln von Apps und das Senden von Pushbenachrichtigungen entspricht.
 
  
 
@@ -356,7 +356,7 @@ Testen Sie alle Typen von Benachrichtigungsverhalten gründlich, die Sie in Ihre
 
 #### Einrichtung
 
-Das Einrichten von Azure Mobile Engagement ist sehr einfach. Die gesamte Dokumentation im Zusammenhang mit der Benutzeroberfläche steht auf der Azure Mobile Engagement-Website unter [Durch die Benutzeroberfläche navigieren](mobile-engagement-user-interface-navigation.md) zur Verfügung.
+Das Einrichten von Azure Mobile Engagement ist sehr einfach. Die gesamte Dokumentation im Zusammenhang mit der Benutzeroberfläche steht auf der Azure Mobile Engagement-Website unter [Durch die Benutzeroberfläche navigieren](mobile-engagement-user-interface.md) zur Verfügung.
 
 Es wird empfohlen, dass Sie zunächst die richtigen Rollen und Rollenmitgliedschaften für die Benutzer des Projekts einrichten. Dadurch können Sie den entsprechenden Zugriff auf die Plattform für alle Benutzer verwalten. Mögliche Rollen:
 
@@ -364,7 +364,10 @@ Es wird empfohlen, dass Sie zunächst die richtigen Rollen und Rollenmitgliedsch
 - Entwickler
 - Besucher 
 
-Danach: – Registrieren Sie Ihre Geräte-ID, um Ihr eigenes Gerät zu testen. – Wechseln Sie zu den Einstellungen Ihres Kontos, und richten Sie die Zeitzone ein, damit Diagramme und die Zustellzeit von Benachrichtigungen auf Ihre Zeitzone festgelegt sind. – Wechseln Sie zu den Einstellungen der Anwendung, und registrieren Sie die "App-Info", die Sie für die Endbenutzer benötigen, unter "Reach".
+Danach:
+- Registrieren Sie Ihre Geräte-ID, um Ihr eigenes Gerät zu testen.
+- Wechseln Sie zu den Einstellungen Ihres Kontos, und richten Sie die Zeitzone ein, damit Diagramme und die Zustellzeit von Benachrichtigungen auf Ihre Zeitzone festgelegt sind.
+- Wechseln Sie zu den Einstellungen der Anwendung, und registrieren Sie unter „Reichweite“ die „App-Info“, die Sie für die Endbenutzer benötigen.
 
 Weitere Informationen zum Ausführen der ersten Kampagne mit Pushbenachrichtigungen finden Sie unter [Erste Schritte bei der Verwendung und Verwaltung von Push-Vorgängen, um Ihre Endbenutzern zu erreichen](mobile-engagement-how-tos.md).
 
@@ -385,13 +388,13 @@ Nachdem Sie einige Erfahrungen gesammelt haben, könnten Sie Ihren Einbindungspr
 
 - Geolocation: Dies ist eine große Chance für Marken. Dank dieser Funktion können Sie Benutzer am richtigen Ort und zum richtigen Zeitpunkt erreichen. Sie sollten überprüfen, ob Sie genügend Endbenutzerdaten zum Verhalten gesammelt haben, bevor Sie beginnen, Geolocation zu verwenden.
 
-- Datenpush: Ein Datenpush ist ein unsichtbarer Push. Ein Datenpush ermöglicht das Anpassen Ihrer Anwendung basierend auf dem Endbenutzerverhalten. Wenn sich ein Benutzersegment z. B. häufig über Hightechprodukte informiert, kann der Besitzer der App einen Datenpush senden, um die entsprechende Startseite mit Hightechinhalt zu personalisieren.
+- Datenpush: Ein Datenpush ist ein unsichtbarer Push. Ein Datenpush ermöglicht das Anpassen Ihrer Anwendung basierend auf dem Endbenutzerverhalten. Wenn sich ein Benutzersegment z. B. häufig über Hightechprodukte informiert, kann der Besitzer der App einen Datenpush senden, um die entsprechende Startseite mit Hightechinhalt zu personalisieren.
 
 
 
 ## Nächste Schritte
 
-- [Erstellen Sie ein Azure Mobile Engagement-Konto](mobile-engagement-create-account.md).
+- [Erstellen Sie ein Azure Mobile Engagement-Konto](mobile-engagement-create.md).
 - Besuchen Sie [Definieren der Mobile Engagement-Strategie](mobile-engagement-define-your-mobile-engagement-strategy.md), um weitere Informationen zum Definieren der Mobile Engagement-Strategie zu erhalten.
 
 
@@ -404,4 +407,4 @@ Nachdem Sie einige Erfahrungen gesammelt haben, könnten Sie Ihren Einbindungspr
 <!--Link references-->
 [Media Playbook link]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0330_2016-->

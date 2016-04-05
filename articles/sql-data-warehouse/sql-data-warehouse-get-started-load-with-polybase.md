@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/23/2016"
    ms.author="sahajs;barbkess;jrj;sonyama"/>
 
 
@@ -53,20 +53,20 @@ So bereiten Sie eine Beispieltextdatei vor
 
 1. Öffnen Sie Editor, und kopieren Sie die folgenden Datenzeilen in eine neue Datei. Speichern Sie diese im lokalen temporären Verzeichnis als „%temp%\\DimDate2.txt“.
 
-    ```
-    20150301,1,3
-    20150501,2,4
-    20151001,4,2
-    20150201,1,3
-    20151201,4,2
-    20150801,3,1
-    20150601,2,4
-    20151101,4,2
-    20150401,2,4
-    20150701,3,1
-    20150901,3,1
-    20150101,1,3
-    ```
+```
+20150301,1,3
+20150501,2,4
+20151001,4,2
+20150201,1,3
+20151201,4,2
+20150801,3,1
+20150601,2,4
+20151101,4,2
+20150401,2,4
+20150701,3,1
+20150901,3,1
+20150101,1,3
+```
 
 ### B. Suchen des Endpunkts Ihres Blobdiensts
 
@@ -141,7 +141,7 @@ Für das Beispiel in diesem Schritt werden die folgenden Transact-SQL-Anweisunge
 Führen Sie diese Abfrage für die SQL Data Warehouse-Datenbank aus. Sie erstellt eine externe Tabelle mit dem Namen „DimDate2External“ im dbo-Schema, die auf die Beispieldaten „DimDate2.txt“ im Azure-Blobspeicher verweist.
 
 
-```
+```sql
 -- A: Create a master key.
 -- Only necessary if one does not already exist.
 -- Required to encrypt the credential secret in the next step.
@@ -208,14 +208,19 @@ SELECT count(*) FROM dbo.DimDate2External;
 
 ```
 
-## Schritt 4: Laden von Daten in SQL Data Warehouse
+
+Im SQL Server-Objekt-Explorer in Visual Studio sehen Sie das externe Dateiformat, die externe Datenquelle und die Tabelle „DimDate2External“.
+
+![Externe Tabelle anzeigen](./media/sql-data-warehouse-get-started-load-with-polybase/external-table.png)
+
+## Schritt 3: Laden von Daten in SQL Data Warehouse
 
 Sobald die externe Tabelle erstellt wurde, können Sie die Daten in eine neue Tabelle laden oder in eine vorhandene Tabelle einfügen.
 
 - Führen Sie die Anweisung [CREATE TABLE AS SELECT (Transact-SQL)][] aus, um die Daten in eine neue Tabelle zu laden. Die neue Tabelle enthält die in der Abfrage benannten Spalten. Die Datentypen der Spalten entsprechen den Datentypen in der Definition der externen Tabelle.
 - Verwenden Sie die Anweisung [INSERT...SELECT (Transact-SQL)][], um die Daten in eine vorhandene Tabelle zu laden.
 
-```
+```sql
 -- Load the data from Azure blob storage to SQL Data Warehouse
 
 CREATE TABLE dbo.DimDate2
@@ -228,21 +233,16 @@ AS
 SELECT * FROM [dbo].[DimDate2External];
 ```
 
-
-Im SQL Server-Objekt-Explorer in Visual Studio sehen Sie das externe Dateiformat, die externe Datenquelle und die Tabelle „DimDate2External“.
-
-![Externe Tabelle anzeigen](./media/sql-data-warehouse-get-started-load-with-polybase/external-table.png)
-
-## Schritt 5: Erstellen von Statistiken für die neu geladenen Daten
+## Schritt 4: Erstellen von Statistiken für die neu geladenen Daten
 
 SQL Data Warehouse ermöglicht keine automatische Erstellung oder automatische Aktualisierung von Statistiken. Um eine hohe Abfrageleistung zu erzielen, ist es daher wichtig, nach dem ersten Laden Statistiken für jede Spalte der einzelnen Tabelle zu erstellen. Es ist auch wichtig, Statistiken nach wesentlichen Änderungen an den Daten zu aktualisieren.
 
-Dieses Beispiel erstellt Statistiken für einzelne Spalten der neuen Tabelle „DimDate2External“.
+Dieses Beispiel erstellt Statistiken für einzelne Spalten der neuen Tabelle „DimDate2“.
 
-```
+```sql
 CREATE STATISTICS [DateId] on [DimDate2] ([DateId]);
 CREATE STATISTICS [CalendarQuarter] on [DimDate2] ([CalendarQuarter]);
-create statistics [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
+CREATE STATISTICS [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 ```
 
 Weitere Informationen finden Sie unter [Statistiken][].
@@ -286,4 +286,4 @@ Im [PolyBase-Handbuch][] finden Sie weitere Informationen, die Sie beim Entwicke
 [Create Database Scoped Credential (Transact-SQL)]: https://msdn.microsoft.com/library/mt270260.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189450.aspx
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

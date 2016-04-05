@@ -13,12 +13,12 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="03/14/2016"
+   ms.date="03/29/2016"
    ms.author="navale;tomfitz"/>
    
 # Resource Manager-Vorlage – Exemplarische Vorgehensweise
 
-In diesem Thema werden Sie durch die Schritte zum Erstellen einer Resource Manager-Vorlage geführt. Es wird davon ausgegangen, dass Sie mit den Azure-Diensten vertraut sind, die Sie bereitstellen möchten, aber dass Sie noch nicht wissen, wie Sie diese Infrastruktur in einer Vorlage darstellen sollen. Sie erstellen eine Vorlage, die auf der [Vorlage für zwei VMs mit Load Balancer und Lastenausgleichsregel](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules) in der [Quickstart Gallery](https://github.com/Azure/azure-quickstart-templates) (Schnellstartkatalog) basiert. Die Verfahren können aber auf alle Vorlagen angewendet werden, die Sie erstellen müssen.
+In diesem Thema werden Sie durch die Schritte zum Erstellen einer Resource Manager-Vorlage geführt. Sie erstellen eine Vorlage, die auf der Vorlage [2 VMs with load balancer and load balancer rules](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules) (Vorlage für zwei VMs mit Load Balancer und Lastenausgleichsregeln) in [Quickstart Gallery](https://github.com/Azure/azure-quickstart-templates) (Schnellstartkatalog) basiert. Die Verfahren können aber auf alle Vorlagen angewendet werden, die Sie erstellen müssen.
 
 Wir sehen uns nun eine häufig verwendete Architektur an:
 
@@ -310,7 +310,7 @@ Sie erstellen zwei Netzwerkschnittstellen, und zwar eine für jeden virtuellen C
 ## Virtual Machine
 Sie erstellen zwei virtuelle Computer, indem Sie die copyIndex()-Funktion verwenden, wie dies bei der Erstellung der [Netzwerkschnittstellen](#network-interface) der Fall war. Die VM-Erstellung hängt vom Speicherkonto, der Netzwerkschnittstelle und der Verfügbarkeitsgruppe ab. Diese VM wird aus einem Marketplace-Image erstellt, wie dies in der `storageProfile`-Eigenschaft definiert ist. `imageReference` wird verwendet, um für das Image Herausgeber, Angebot, SKU und Version zu definieren. Zuletzt wird ein Diagnoseprofil konfiguriert, um die Diagnose für die VM zu ermöglichen.
 
-Befolgen Sie die Anleitung im Artikel [VM-Suche](./virtual-machines/resource-groups-vm-searching.md), um nach den relevanten Eigenschaften für ein Marketplace-Image zu suchen. Für Images, die von Drittanbietern veröffentlicht werden, müssen Sie eine andere Eigenschaft mit dem Namen `plan` angeben. Ein Beispiel hierfür finden Sie in [dieser Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/checkpoint-single-nic) im Schnellstartkatalog.
+Befolgen Sie die Anweisungen im Artikel [Select Linux virtual machine images](./virtual-machines/virtual-machines-linux-cli-ps-findimage.md) (Auswählen virtueller Linux-Computer) oder [select Windows virtual machine images](./virtual-machines/virtual-machines-windows-cli-ps-findimage.md) (Auswählen virtueller Windows-Computer), um nach den relevanten Eigenschaften für ein Marketplace-Image zu suchen. Für Images, die von Drittanbietern veröffentlicht werden, müssen Sie eine andere Eigenschaft mit dem Namen `plan` angeben. Ein Beispiel hierfür finden Sie in [dieser Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/checkpoint-single-nic) im Schnellstartkatalog.
 
 
 ```json
@@ -503,4 +503,4 @@ Sie haben die Erstellung Ihrer Vorlage abgeschlossen, und sie ist fertig für di
 - Weitere Informationen zur Struktur einer Vorlage finden Sie unter [Erstellen von Azure Resource Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zur Bereitstellung einer Vorlage finden Sie unter [Bereitstellen einer Ressourcengruppe mit einer Azure Resource Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

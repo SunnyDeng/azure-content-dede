@@ -20,7 +20,7 @@
 # Erstellen eines Pools für elastische Datenbanken mit PowerShell zum horizontalen Hochskalieren von Ressourcen für mehrere SQL-Datenbanken 
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-elastic-pool-portal.md)
+- [Azure-Portal](sql-database-elastic-pool-create-portal.md)
 - [C#](sql-database-elastic-pool-csharp.md)
 - [PowerShell](sql-database-elastic-pool-powershell.md)
 
@@ -69,7 +69,7 @@ Wenn Sie bereits über eine Ressourcengruppe verfügen, können Sie mit dem näc
 
 ### Erstellen eines Servers 
 
-Pools für elastische Datenbanken werden innerhalb von Azure SQL-Datenbankservern erstellt. Wenn Sie bereits über einen Server verfügen, können Sie mit dem nächsten Schritt fortfahren. Andernfalls können Sie das Cmdlet [New-AzureRmSqlServer](https://msdn.microsoft.com/library/azure/mt603715.aspx) ausführen, um einen neuen V12-Server zu erstellen. Ersetzen Sie "ServerName" durch den Namen des Servers. Der muss für Azure SQL-Server eindeutig sein. Wenn der Servername bereits vergeben ist, wird ein Fehler ausgeben. Sie sollten auch berücksichtigen, dass dieser Befehl mehrere Minuten in Anspruch nehmen kann. Die Serverdetails und PowerShell-Eingabeaufforderung werden angezeigt, nachdem der Server erfolgreich erstellt wurde. Sie können den Befehl für einen beliebigen gültigen Speicherort anpassen.
+Pools für elastische Datenbanken werden innerhalb von Azure SQL-Datenbankservern erstellt. Wenn Sie bereits über einen Server verfügen, können Sie mit dem nächsten Schritt fortfahren. Andernfalls können Sie das Cmdlet [New-AzureRmSqlServer](https://msdn.microsoft.com/library/azure/mt603715.aspx) ausführen, um einen neuen V12-Server zu erstellen. Ersetzen Sie "ServerName" durch den Namen des Servers. Der muss für Azure SQL-Server eindeutig sein. Wenn der Servername bereits vergeben ist, wird ein Fehler ausgeben. Sie sollten auch berücksichtigen, dass dieser Befehl mehrere Minuten in Anspruch nehmen kann. Die Serverdetails und PowerShell-Eingabeaufforderung werden angezeigt, nachdem der Server erfolgreich erstellt wurde. Sie können den Befehl für einen beliebigen gültigen Speicherort anpassen.
 
 	New-AzureRmSqlServer -ResourceGroupName "resourcegroup1" -ServerName "server1" -Location "West US" -ServerVersion "12.0"
 
@@ -89,7 +89,7 @@ Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](h
 
 ## Erstellen eines Pools für elastische Datenbanken und elastischer Datenbanken
 
-Sie haben jetzt eine Ressourcengruppe, einen Server und eine Firewallregel konfiguriert, sodass Sie auf den Server zugreifen können. Das Cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378.aspx) erstellt den Pool für elastische Datenbanken. Dieser Befehl erstellt einen Pool mit insgesamt 400 eDTUs. Jede Datenbank im Pool bietet garantiert immer 10 verfügbare eDTUs ("DatabaseDtuMin"). Einzeldatenbanken im Pool können maximal 100 eDTUs ("DatabaseDtuMax") nutzen. Ausführliche Erläuterungen der Parameter finden Sie unter [Elastische Azure SQL-Datenbankpools](sql-database-elastic-pool.md).
+Sie haben jetzt eine Ressourcengruppe, einen Server und eine Firewallregel konfiguriert, sodass Sie auf den Server zugreifen können. Das Cmdlet [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/library/azure/mt619378.aspx) erstellt den Pool für elastische Datenbanken. Dieser Befehl erstellt einen Pool mit insgesamt 400 eDTUs. Jede Datenbank im Pool bietet garantiert immer 10 verfügbare eDTUs ("DatabaseDtuMin"). Einzeldatenbanken im Pool können maximal 100 eDTUs ("DatabaseDtuMax") nutzen. Ausführliche Erläuterungen der Parameter finden Sie unter [Elastische Azure SQL-Datenbankpools](sql-database-elastic-pool.md).
 
 
 	New-AzureRmSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
@@ -161,10 +161,10 @@ Metriken, die als Prozentsatz des Ressourcenpool-Grenzwerts abgerufen werden kö
 Granularität/Beibehaltungsdauern für die Metriken:
 
 * Daten werden mit 5-Minuten-Granularität zurückgegeben.  
-* Die Datenaufbewahrung beträgt 14 Tage.  
+* Die Datenaufbewahrung beträgt 14 Tage.  
 
 
-Dieses Cmdlet und die API beschränken die Anzahl der Zeilen, die in einem Aufruf abgerufen werden können, auf 1000 Zeilen (ca. drei Tage Daten bei 5-Minuten-Granularität). Dieser Befehl kann jedoch mehrmals mit verschiedenen Anfangs- und Endzeitintervallen aufgerufen werden, um mehr Daten abzurufen.
+Dieses Cmdlet und die API beschränken die Anzahl der Zeilen, die in einem Aufruf abgerufen werden können, auf 1000 Zeilen (ca. drei Tage Daten bei 5-Minuten-Granularität). Dieser Befehl kann jedoch mehrmals mit verschiedenen Anfangs- und Endzeitintervallen aufgerufen werden, um mehr Daten abzurufen.
 
 
 Abrufen der Metriken:
@@ -187,7 +187,7 @@ Exportieren in eine CSV-Datei:
 
 Diese APIs sind identisch mit den aktuellen APIs (V12), die für die Überwachung der Ressourcenverwendung einer eigenständigen Datenbank verwendet werden, mit Ausnahme der folgenden semantischen Unterschiede:
 
-* Die für diese API abgerufenen Metriken werden als Prozentsatz des "databaseDtuMax"-Werts (oder der entsprechenden Obergrenze für die zugrunde liegende Metrik wie CPU, E/A usw.) ausgedrückt, der für diesen Pool für elastische Datenbanken festgelegt wurde. Beispielsweise zeigen 50 % Auslastung bei einer dieser Metriken an, dass der spezifische Ressourcenverbrauch der Obergrenze pro Datenbank für diese Ressource im übergeordneten Pool für elastische Datenbanken bei 50 % liegt. 
+* Die für diese API abgerufenen Metriken werden als Prozentsatz des "databaseDtuMax"-Werts (oder der entsprechenden Obergrenze für die zugrunde liegende Metrik wie CPU, E/A usw.) ausgedrückt, der für diesen Pool für elastische Datenbanken festgelegt wurde. Beispielsweise zeigen 50 % Auslastung bei einer dieser Metriken an, dass der spezifische Ressourcenverbrauch der Obergrenze pro Datenbank für diese Ressource im übergeordneten Pool für elastische Datenbanken bei 50 % liegt. 
 
 Abrufen der Metriken:
 
@@ -237,4 +237,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie elastisch
 
 Weitere Informationen über elastische Datenbanken und elastische Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbankpools](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=AcomDC_0224_2016-->
+<!---HONumber=AcomDC_0330_2016-->

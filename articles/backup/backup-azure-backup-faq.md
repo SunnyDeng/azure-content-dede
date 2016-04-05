@@ -14,7 +14,7 @@
 	 ms.tgt_pltfrm="na"
 	 ms.devlang="na"
 	 ms.topic="get-started-article"
-	 ms.date="03/23/2016"
+	 ms.date="03/24/2016"
 	 ms.author="trinadhk; giridham; arunak; markgal; jimpark;"/>
 
 # Azure Backup-Dienst – FAQ
@@ -54,7 +54,7 @@ Dieser Artikel enthält eine Liste mit häufig gestellten Fragen (und den dazuge
 
 **F9. Wie registriere ich meinen Server bei einem anderen Datencenter?**<br/> A9. Die Sicherungsdaten werden an das Rechenzentrum des Backup-Diensts gesendet, bei dem dieser registriert ist. Die einfachste Methode zum Ändern des Datencenters besteht darin, den Agent zu deinstallieren, neu zu installieren und bei einem neuen Datencenter zu registrieren.
 
-**F10. Was geschieht, wenn ich einen Windows-Server umbenenne, der Daten in Azure sichert?** A10. Wenn Sie einen Server umbenennen, werden alle derzeit konfigurierten Sicherungen angehalten. Sie müssen den neuen Namen des Servers beim Backup-Tresor registrieren. Da es sich um eine neue Registrierung handelt, ist der erste Sicherungsvorgang eine vollständige Sicherung und keine inkrementelle Sicherung. Falls Sie Daten wiederherstellen müssen, die bisher unter dem alten Servernamen im Tresor gesichert waren, können Sie hierfür die Option [**Anderer Server**](backup-azure-restore-windows-server.md#recover-to-an-alternate-machine) im Assistenten **Daten wiederherstellen** nutzen.
+**F10. Was geschieht, wenn ich einen Windows-Server umbenenne, der Daten in Azure sichert?** A10. Wenn Sie einen Server umbenennen, werden alle derzeit konfigurierten Sicherungen angehalten. Sie müssen den neuen Namen des Servers beim Backup-Tresor registrieren. Wenn Sie eine neue Registrierung erstellen, ist der erste Sicherungsvorgang eine vollständige Sicherung und keine inkrementelle Sicherung. Falls Sie Daten wiederherstellen müssen, die bisher unter dem alten Servernamen im Tresor gesichert waren, können Sie hierfür die Option [**Anderer Server**](backup-azure-restore-windows-server.md#recover-to-an-alternate-machine) im Assistenten **Daten wiederherstellen** nutzen.
 
 
 **F11. Von welchen Laufwerkstypen kann ich Dateien und Ordner sichern?** <br/> A11. Die folgenden Laufwerke/Volumes können nicht als Backup dienen:
@@ -91,7 +91,7 @@ Dieser Artikel enthält eine Liste mit häufig gestellten Fragen (und den dazuge
 
 **F18. Werden die übertragenen Sicherungsdaten gelöscht, wenn ich einen Sicherungsauftrag nach dem Starten abbreche?** <br/> A18: Nein. Der Sicherungstresor speichert die übertragenen Sicherungsdaten, die bis zum Zeitpunkt des Abbruchs übertragen wurden. Azure Backup nutzt einen Prüfpunktmechanismus, um den Sicherungsdaten während des Sicherungsvorgangs von Zeit zu Zeit Prüfpunkte hinzuzufügen. Da in den Sicherungsdaten Prüfpunkte vorhanden sind, kann der nächste Sicherungsprozess die Integrität der Dateien überprüfen. Die nächste ausgelöste Sicherung ist eine inkrementelle Sicherung, die auf dem vorherigen Sicherungsvorgang aufbaut. Eine inkrementelle Sicherung sorgt für eine bessere Nutzung der Bandbreite, da nicht mehrfach die gleichen Daten übertragen werden müssen.
 
-**F19. Warum wird eine Warnung mit dem Hinweis angezeigt, dass für diesen Server keine Azure-Sicherungen konfiguriert wurden, obwohl ich zuvor regelmäßige Sicherungen geplant habe?** <br/> A19: Diese Warnung kann auftreten, wenn die auf dem lokalen Server gespeicherten Sicherungszeitplaneinstellungen nicht den Einstellungen im Sicherungstresor entsprechen. Wenn für den Server oder die Einstellungen ein als funktionierend bekannter Zustand wiederhergestellt wurde, ist unter Umständen die Synchronisierung der Sicherungszeitpläne verloren gegangen. Wenn Sie diese Warnung erhalten, sollten Sie die [Sicherungsrichtlinie neu konfigurieren](backup-azure-backup-windows-server.md) und dann **Sicherung jetzt ausführen** verwenden, um den lokalen Server wieder mit Azure zu synchronisieren.
+**F19. Warum wird eine Warnung mit dem Hinweis angezeigt, dass für diesen Server keine Azure-Sicherungen konfiguriert wurden, obwohl ich zuvor regelmäßige Sicherungen geplant habe?** <br/> A19: Diese Warnung tritt auf, wenn die auf dem lokalen Server gespeicherten Sicherungszeitplaneinstellungen nicht den Einstellungen im Sicherungstresor entsprechen. Wenn für den Server oder die Einstellungen ein als funktionierend bekannter Zustand wiederhergestellt wurde, ist unter Umständen die Synchronisierung der Sicherungszeitpläne verloren gegangen. Wenn Sie diese Warnung erhalten, sollten Sie die [Sicherungsrichtlinie neu konfigurieren](backup-azure-backup-windows-server.md) und dann **Sicherung jetzt ausführen** verwenden, um den lokalen Server wieder mit Azure zu synchronisieren.
 
 **F20. Welche Firewallregeln sollten für Azure Backup konfiguriert werden?** <br/> A20. Zur Erzielung eines nahtlosen Schutzes der Daten vom Typ „lokal zu Azure“ und „Workload zu Azure“ wird empfohlen, für die Firewall die Kommunikation mit den folgenden URLs zuzulassen:
 
@@ -105,7 +105,7 @@ Dieser Artikel enthält eine Liste mit häufig gestellten Fragen (und den dazuge
 
 **F22. Kann ich den Azure Backup-Agent auf einer Azure-VM installieren, um Dateien und Ordner in temporärem Speicher zu schützen, der von der Azure-VM bereitgestellt wird?** <br/> A22. Sie können den Azure Backup-Agent auf dem Windows-Gastbetriebssystem installieren und Dateien und Ordner im temporären Speicher sichern. Beachten Sie aber, dass die Sicherungen nicht erfolgreich durchgeführt werden, nachdem die temporären Speicherdaten entfernt wurden. Wenn die temporären Speicherdaten gelöscht wurden, ist außerdem nur die Wiederherstellung in einem nicht volatilen Speicher möglich.
 
-**F23. Wie lang darf der Dateipfad sein, der im Rahmen der Azure Backup-Richtlinie mit dem Azure Backup-Agent angegeben werden kann?** <br/> A23. Der Azure Backup-Agent basiert auf NTFS. Die [Angabe der Dateipfadlänge ist durch die Windows-API beschränkt](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths). Wenn die Dateipfade von gesicherten Dateien länger als die Vorgabe der Windows-API sind, können Kunden auch den übergeordneten Ordner oder den Datenträger mit den Sicherungsdateien für die Sicherung angeben.
+**F23. Wie lang darf der Dateipfad sein, der im Rahmen der Azure Backup-Richtlinie mit dem Azure Backup-Agent angegeben werden kann?** <br/> A23. Der Azure Backup-Agent basiert auf NTFS. Die [Angabe der Dateipfadlänge ist durch die Windows-API beschränkt](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths). Wenn der Dateipfad die von der Windows-API zugelassene Länge überschreitet, können Sie den übergeordneten Ordner oder das Laufwerk mit den gewünschten Dateien sichern.
 
 **F24. Welche Zeichen sind im Dateipfad der Azure Backup-Richtlinie mit dem Azure Backup-Agent zulässig?** <br/> A24. Der Azure Backup-Agent basiert auf NTFS. Für die Angabe der Datei können [von NTFS unterstützte Zeichen](https://msdn.microsoft.com/library/aa365247.aspx#naming_conventions) verwendet werden.
 
@@ -145,9 +145,9 @@ In der folgenden Tabelle wird beschrieben, wie die einzelnen Datenquellengröße
 
 **F7. Wird für die geplanten Aufbewahrungsrichtlinien eine inkrementelle Kopie übertragen?** <br/> A7. Nein, die inkrementelle Kopie wird dem Zeitpunkt entsprechend gesendet, der auf der Seite für den Sicherungszeitplan angegeben ist. Die Punkte, die aufbewahrt werden können, werden gemäß der Aufbewahrungsrichtlinie ermittelt.
 
-**F8. Wenn die Sicherung für längere Zeit aufbewahrt wird, dauert die Datenwiederherstellung dann deutlich länger (z. B. des ältesten Punkts)?** <br/> A8. Nein – die Zeitdauer für die Wiederherstellung des ältesten oder des neuesten Punkts ist ein und dieselbe. Jeder Wiederherstellungspunkt verhält sich wie ein vollständiger Punkt.
+**F8. Dauert die Wiederherstellung eines älteren Datenpunkts länger, wenn eine Sicherung lange Zeit aufbewahrt wird?** <br/> A8. Nein. Die Dauer zum Wiederherstellen des ältesten oder neuesten Punkts ist gleich. Jeder Wiederherstellungspunkt verhält sich wie ein vollständiger Punkt.
 
-**F9. Wenn jeder Wiederherstellungspunkt sich wie ein vollständiger Punkt verhält, wie wirkt sich dies auf den abrechenbaren Gesamtspeicher für die Sicherung aus?**<br/> A9. Bei typischen Produkten für die langfristige Aufbewahrung werden Sicherungsdaten als vollständige Punkte gespeichert. Die vollständigen Punkte sind im Hinblick auf den Speicher *ineffizient*, aber einfacher und schneller wiederherzustellen. Inkrementelle Kopien sind speicher*effizient*. Allerdings müssen Sie eine Datenkette wiederherstellen, was sich auf die Wiederherstellungszeit auswirkt. Die besondere Speicherarchitektur von Azure Backup bietet Ihnen die Vorteile beider Ansätze, indem die Daten optimal zur schnellen Wiederherstellung und zu geringen Speicherkosten gespeichert werden. Mit diesem Ansatz der Datenspeicherung wird sichergestellt, dass die Eingangs- und Ausgangsbandbreite effizient genutzt wird. So werden sowohl der Umfang der Datenspeicherung als auch die benötigte Zeit für die Wiederherstellung der Daten möglichst gering gehalten.
+**F9. Wenn jeder Wiederherstellungspunkt sich wie ein vollständiger Punkt verhält, wie wirkt sich dies auf den abrechenbaren Gesamtspeicher für die Sicherung aus?**<br/> A9. Bei typischen Produkten für die langfristige Aufbewahrung werden Sicherungsdaten als vollständige Punkte gespeichert. Die vollständigen Punkte sind im Hinblick auf den Speicher *ineffizient*, aber einfacher und schneller wiederherzustellen. Inkrementelle Kopien sind speicher*effizient*. Allerdings müssen Sie eine Datenkette wiederherstellen, was sich auf die Wiederherstellungszeit auswirkt. Die Speicherarchitektur von Azure Backup bietet Ihnen die Vorteile beider Ansätze, indem die Daten optimal zur schnellen Wiederherstellung und zu geringen Speicherkosten gespeichert werden. Mit diesem Ansatz der Datenspeicherung wird sichergestellt, dass die Eingangs- und Ausgangsbandbreite effizient genutzt wird. So werden sowohl der Umfang der Datenspeicherung als auch die benötigte Zeit für die Wiederherstellung der Daten möglichst gering gehalten.
 
 **F10. Gibt es eine Beschränkung für die Anzahl der Wiederherstellungspunkte, die erstellt werden können?**<br/> A10. Nein. Wir haben eine Beschränkung für Wiederherstellungspunkte ausgeschlossen. Sie können so viele Wiederherstellungspunkte wie gewünscht erstellen.
 
@@ -172,25 +172,24 @@ In der folgenden Tabelle wird beschrieben, wie die einzelnen Datenquellengröße
 
 ## Backup-Cache
 
-**F1. Wie ändere ich den Cachespeicherort für den Azure Backup-Agent?**<br/>
-
-1. Beenden Sie das Backup-Modul, indem Sie den folgenden Befehl an einer Eingabeaufforderung mit erhöhten Rechten ausführen:
+**F1. Wie ändere ich den Cachespeicherort für den Azure Backup-Agent?**<br/> A1. Gehen Sie nacheinander die folgende Aufzählung durch, um den Cachespeicherort zu ändern.
+- Beenden Sie das Backup-Modul, indem Sie den folgenden Befehl an einer Eingabeaufforderung mit erhöhten Rechten ausführen:
 
   ```PS C:\> Net stop obengine```
 
-2. Kopieren Sie den Cacheordner auf ein anderes Laufwerk mit ausreichendem Speicherplatz. Es ist ratsam, die Dateien aus dem Cacheordner zu kopieren, anstatt sie zu verschieben. Der ursprüngliche Cachespeicher kann entfernt werden, nachdem bestätigt wurde, dass die Sicherungen mit dem neuen Cachespeicher funktionieren.
+- Verschieben Sie die Dateien nicht. Kopieren Sie den Cacheordner stattdessen auf ein anderes Laufwerk mit ausreichend Speicherplatz. Der ursprüngliche Cachespeicher kann entfernt werden, nachdem bestätigt wurde, dass die Sicherungen mit dem neuen Cachespeicher funktionieren.
 
-3. Aktualisieren Sie die folgenden Registrierungseinträge mit dem Pfad zum neuen Cacheordner.<br/>
+- Aktualisieren Sie die folgenden Registrierungseinträge mit dem Pfad zum neuen Cacheordner.<br/>
 
 |Registrierungspfad | Registrierungsschlüssel | Wert |
 | ------ | ------- | ------|
 | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` | ScratchLocation | *Neuer Speicherort des Cacheordners* |
 | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` | ScratchLocation | *Neuer Speicherort des Cacheordners* |
 
-4. Starten Sie das Backup-Modul neu, indem Sie den folgenden Befehl an einer Eingabeaufforderung mit erhöhten Rechten ausführen:
+- Starten Sie das Backup-Modul neu, indem Sie den folgenden Befehl an einer Eingabeaufforderung mit erhöhten Rechten ausführen:
 
   ```PS C:\> Net start obengine```
 
   Nachdem die Erstellung der Sicherung am neuen Cachespeicherort erfolgreich abgeschlossen wurde, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

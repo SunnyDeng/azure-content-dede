@@ -13,18 +13,12 @@
 	ms.tgt_pltfrm="mobile-windows-phone"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="02/29/2016"
+	ms.date="03/25/2016"
 	ms.author="piyushjo" />
 
 # Erste Schritte mit Azure Mobile Engagement für Windows Phone Silverlight-Apps
 
-> [AZURE.SELECTOR]
-- [Windows Universal](mobile-engagement-windows-store-dotnet-get-started.md)
-- [Windows Phone Silverlight](mobile-engagement-windows-phone-get-started.md)
-- [iOS | Obj C](mobile-engagement-ios-get-started.md)
-- [iOS | Swift](mobile-engagement-ios-swift-get-started.md)
-- [Android](mobile-engagement-android-get-started.md)
-- [Cordova](mobile-engagement-cordova-get-started.md)
+[AZURE.INCLUDE [Umschalter für das Hero-Tutorial](../../includes/mobile-engagement-hero-tutorial-switcher.md)]
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Engagement Ihre App-Nutzung nachvollziehen und Pushbenachrichtigungen an nach Segmenten eingeteilte Benutzer einer Windows Phone Silverlight-Anwendung senden können. In diesem Lernprogramm wird ein einfaches Übertragungsszenario mit Mobile Engagement dargestellt. Sie erstellen eine leere Windows Phone Silverlight-App, die grundlegende Daten erfasst und Pushbenachrichtigungen über den Microsoft-Pushbenachrichtigungsdienst (MPNS) empfängt.
 
@@ -35,7 +29,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Visual Studio 2013
 + NuGet-Paket [MicrosoftAzure.MobileEngagement]
 
-> [AZURE.IMPORTANT] Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für Windows Phone Silverlight-Apps. Hierzu benötigen Sie ein aktives Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
+> [AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-engagement-windows-phone-get-started).
 
 ##<a id="setup-azme"></a>Einrichten von Mobile Engagement für Ihre Windows Phone-App
 
@@ -172,4 +166,4 @@ Jetzt sollte auf Ihrem Gerät eine Benachrichtigung als In-App-Benachrichtigung 
 [5]: ./media/mobile-engagement-windows-phone-get-started/reach-capabilities.png
 [6]: ./media/mobile-engagement-windows-phone-get-started/push-screenshot.png
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -4,7 +4,7 @@
 	services="mobile-engagement"
 	documentationCenter="mobile"
 	authors="piyushjo"
-	manager="dwrede"
+	manager="erikre"
 	editor="" />
 
 <tags
@@ -12,7 +12,7 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="hero-article" 
 	ms.date="01/04/2016"
 	ms.author="piyushjo;matt-gibbs" />
 
@@ -45,7 +45,7 @@ Microsoft bekennt sich seit langer Zeit zum Datenschutz, einem wichtigen Teil un
 
 ###Nächste Schritte:
 
-[Erstellen einer Azure Mobile Engagement-Anwendung](mobile-engagement-create-account.md)
+[Erstellen einer Azure Mobile Engagement-Anwendung](mobile-engagement-create.md)
 
 [Bewährte Methoden und Prozess zur Erstellung Ihres Mobile Engagement](mobile-engagement-getting-started-best-practices.md)
 
@@ -53,4 +53,4 @@ Microsoft bekennt sich seit langer Zeit zum Datenschutz, einem wichtigen Teil un
 
 [Erste Schritte (Entwickler)](/documentation/services/mobile-engagement/)
 
-<!---HONumber=AcomDC_0128_2016-->
+<!---HONumber=AcomDC_0330_2016-->

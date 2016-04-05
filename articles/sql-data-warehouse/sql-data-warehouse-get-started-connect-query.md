@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/23/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 # Verbinden und Abfragen mit Visual Studio
@@ -69,13 +69,13 @@ Da wir jetzt unseren Server registriert haben, fahren wir mit dem Schreiben eine
 
 3. Geben Sie den folgenden Code in das Abfragefenster ein.
 
-	```
-	SELECT COUNT(*) FROM dbo.FactInternetSales;
-	```
+    ```sql
+    SELECT COUNT(*) FROM dbo.FactInternetSales;
+    ```
 
 4. Führen Sie die Abfrage aus.
 
-	Zum Ausführen der Abfrage klicken Sie auf den grünen Pfeil oder verwenden die folgende Tastenkombination: `CTRL`+`SHIFT`+`E`.
+   Zum Ausführen der Abfrage klicken Sie auf den grünen Pfeil oder verwenden die folgende Tastenkombination: `CTRL`+`SHIFT`+`E`.
 
 ## Nächste Schritte
 
@@ -91,4 +91,4 @@ Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versu
 [3]: ./media/sql-data-warehouse-get-started-connect-query/connection-dialog.png
 [4]: ./media/sql-data-warehouse-get-started-connect-query/new-query.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

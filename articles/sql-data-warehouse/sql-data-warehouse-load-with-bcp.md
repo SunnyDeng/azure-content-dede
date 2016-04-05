@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/23/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 
@@ -59,12 +59,12 @@ In diesem Lernprogramm erstellen Sie eine Tabelle in Azure SQL Data Warehouse un
 
 Verbinden Sie über eine Eingabeaufforderung die Instanz mit dem folgenden Befehl (ersetzen Sie die Werte nach Bedarf):
 
-```
+```sql
 sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I
 ```
 Nachdem die Verbindung hergestellt wurde, kopieren Sie das folgende Tabellenskript in die sqlcmd-Eingabeaufforderung, und drücken Sie dann die EINGABETASTE:
 
-```
+```sql
 CREATE TABLE DimDate2
 (
     DateId INT NOT NULL,
@@ -106,13 +106,13 @@ Speichern Sie diese im lokalen temporären Verzeichnis unter "C:\\Temp\\DimDate2
 ### Schritt 3: Herstellen einer Verbindung und Importieren von Daten
 Sie können mit bcp eine Verbindung herstellen und die Daten mit dem folgenden Befehl importieren (ersetzen Sie die Werte nach Bedarf):
 
-```
+```sql
 bcp DimDate2 in C:\Temp\DimDate2.txt -S <Server Name> -d <Database Name> -U <Username> -P <password> -q -c -t  ','
 ```
 
 Sie können überprüfen, ob die Daten geladen wurden, indem Sie wie zuvor eine Verbindung mit sqlcmd herstellen und den folgenden TSQL-Befehl ausführen:
 
-```
+```sql
 SELECT * FROM DimDate2 ORDER BY 1;
 GO
 ```
@@ -140,7 +140,7 @@ Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische 
 
 Führen Sie die folgenden CREATE STATISTICS-Anweisungen über eine sqlcmd-Eingabeaufforderung aus:
 
-```
+```sql
 create statistics [DateId] on [DimDate2] ([DateId]);
 create statistics [CalendarQuarter] on [DimDate2] ([CalendarQuarter]);
 create statistics [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
@@ -154,7 +154,7 @@ In diesem Lernprogramm erstellen Sie eine Datendatei aus einer Tabelle in SQL Da
 
 Sie können mit dem Dienstprogramm bcp eine Verbindung herstellen und die Daten mit dem folgenden Befehl exportieren (ersetzen Sie die Werte nach Bedarf):
 
-```
+```sql
 bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name> -U <Username> -P <password> -q -c -t ','
 ```
 Sie können überprüfen, ob die Daten ordnungsgemäß exportiert wurden, indem Sie die neue Datei öffnen. Die Daten in der Datei sollten mit folgendem Text übereinstimmen:
@@ -196,4 +196,4 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 <!--Other Web references-->
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

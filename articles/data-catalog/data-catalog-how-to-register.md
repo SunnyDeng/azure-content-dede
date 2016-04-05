@@ -1,6 +1,6 @@
 <properties
    pageTitle="Registrieren von Datenquellen"
-   description="Anleitungsartikel mit Informationen zum Registrieren von Datenquellen bei Azure Data Catalog, einschließlich der extrahierten Metadatenfelder und von der Vorschauversion unterstützten Datenquellen."
+   description="Anleitungsartikel mit Informationen zum Registrieren von Datenquellen bei Azure Data Catalog, einschließlich der während der Registrierung extrahierten Metadatenfelder."
    services="data-catalog"
    documentationCenter=""
    authors="steelanddata"
@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="03/03/2016"
+   ms.date="03/30/2016"
    ms.author="maroche"/>
 
 
@@ -79,4 +79,4 @@ Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden struk
 ## Weitere Informationen
 - Eine schrittweise Anleitung zum Registrieren von Datenquellen finden Sie im Tutorial [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md).
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

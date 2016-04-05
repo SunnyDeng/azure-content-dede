@@ -70,7 +70,7 @@ Mit dem Befehl wurden die folgenden Schritte ausgeführt (die Sie stattdessen au
 
 Wenn Sie sich anfänglich nicht bei Azure anmelden, wird das SDK installiert, ohne dass es eine Verbindung mit einer Ressource herstellt. Sie können während des Debuggens die Application Insights-Telemetriedaten im Suchfenster von Visual Studio anzeigen und durchsuchen. Die anderen Schritte können Sie später abschließen.
 
-## <a name="run"></a> Ausführen des Projekts
+## <a name="run"></a> Debuggen des Projekts
 
 Starten Sie Ihre Anwendung mit F5, und probieren Sie es aus: Öffnen Sie verschiedene Seiten, um einige Telemetriedaten zu generieren.
 
@@ -81,6 +81,16 @@ In Visual Studio sehen Sie eine Anzahl der protokollierten Ereignisse.
 Klicken Sie auf diese Schaltfläche, um die Diagnosesuche zu öffnen.
 
 
+
+## Debuggen von Telemetriedaten
+
+### Diagnosehub
+
+Der Diagnosehub zeigt (ab Visual Studio 2015) die von Application Insights generierten Servertelemetriedaten. Dies funktioniert auch, wenn Sie sich entschieden haben, nur das SDK zu installieren, ohne es mit einer Ressource im Azure-Portal zu verbinden.
+
+![Öffnen Sie das Fenster „Diagnosetools“, und überprüfen Sie die Application Insights-Ereignisse.](./media/app-insights-asp-net/31.png)
+
+
 ### Diagnosesuche
 
 Im Suchfenster werden die protokollierten Ereignisse angezeigt. (Wenn Sie sich bei der Einrichtung von Application Insights bei Azure angemeldet haben, können Sie die gleichen Ereignisse im Portal durchsuchen.)
@@ -89,8 +99,12 @@ Im Suchfenster werden die protokollierten Ereignisse angezeigt. (Wenn Sie sich b
 
 Die Freitextsuche funktioniert in allen Feldern in den Ereignissen. Suchen Sie z. B. einen Teil der URL einer Seite, den Wert einer Eigenschaft, z. B. Ort des Kunden, oder bestimmte Wörter in einem Ablaufverfolgungsprotokoll.
 
+Sie können zum Diagnostizieren von fehlerhaften Anforderungen oder von Ausnahmen auch die Registerkarte „Verwandte Elemente“ öffnen.
 
-[Weitere Informationen zur Suche](app-insights-diagnostic-search.md)
+
+![](./media/app-insights-asp-net/41.png)
+
+
 
 ### Ausnahmen
 
@@ -100,7 +114,28 @@ Klicken Sie auf eine Ausnahme, um eine Stapelüberwachung zu erhalten. Wenn der 
 
 
 
-## <a name="monitor"></a> Öffnen von Application Insights
+
+### Lokale Überwachung
+
+
+
+(In Visual Studio 2015 Update 2) Falls Sie das SDK nicht zum Senden von Telemetriedaten an das Application Insights-Portal konfiguriert haben (sodass kein Instrumentationsschlüssel in „ApplicationInsights.config“ enthalten ist), werden im Diagnosefenster Telemetriedaten aus der letzten Debugsitzung angezeigt.
+
+Dies ist wünschenswert, wenn Sie bereits eine frühere Version der Anwendung veröffentlicht haben. Die Telemetriedaten aus den Debugsitzungen und die Telemetriedaten der veröffentlichten App im Application Insights-Portal müssen getrennt behandelt werden.
+
+Dies ist ebenfalls hilfreich, wenn Sie über [benutzerdefinierte Telemetriedaten](app-insights-api-custom-events-metrics.md) verfügen, die Sie vor dem Senden an das Portal debuggen möchten.
+
+
+* *Zunächst habe ich Application Insights vollständig für das Senden von Telemetriedaten an das Portal konfiguriert. Aber nun möchte ich die Telemetriedaten nur in Visual Studio anzeigen.*
+
+ * In den Einstellungen des Suchfensters steht eine Option zum Durchsuchen der lokalen Diagnosen zur Verfügung, auch wenn Ihre App Telemetriedaten an das Portal sendet.
+ * Damit keine Telemetriedaten mehr an das Portal gesendet werden, kommentieren Sie die Zeile `<instrumentationkey>...` in „ApplicationInsights.config“ aus. Wenn Sie bereit sind, Telemetriedaten erneut an das Portal zu senden, heben Sie die Auskommentierung auf.
+
+
+
+## <a name="monitor"></a> Anzeigen von Telemetriedaten im Application Insights-Portal
+
+Im Application Insights-Portal werden Telemetriedaten angezeigt, sobald Ihre Anwendung veröffentlicht wurde. Während des Debuggens soll sichergestellt werden, dass Telemetriedaten ordnungsgemäß gesendet werden.
 
 Öffnen Sie die Application Insights-Ressource im [Azure-Portal][portal].
 
@@ -153,21 +188,6 @@ Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-i
 > [AZURE.NOTE] Wenn die Anwendung viele Telemetriedaten generiert (und Sie Version 2.0.0-beta3 oder höher des ASP.NET-SDK verwenden), reduziert das adaptive Stichprobenmodul automatisch die an das Portal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die mit derselben Anforderung im Zusammenhang stehen, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
 
-## Debuggen von Telemetriedaten
-
-### Diagnosehub
-
-Der Diagnosehub zeigt (ab Visual Studio 2015) die von Application Insights generierten Servertelemetriedaten. Dies funktioniert auch, wenn Sie sich entschieden haben, nur das SDK zu installieren, ohne es mit einer Ressource im Azure-Portal zu verbinden.
-
-![Öffnen Sie das Fenster „Diagnosetools“, und überprüfen Sie die Application Insights-Ereignisse.](./media/app-insights-asp-net/31.png)
-
-Dies ist besonders hilfreich, wenn Sie über [benutzerdefinierte Telemetriedaten](app-insights-api-custom-events-metrics.md) verfügen, die Sie vor dem Senden an das Portal debuggen möchten.
-
-* *Zunächst habe ich Application Insights vollständig für das Senden von Telemetriedaten an das Portal konfiguriert. Aber nun möchte ich die Telemetriedaten nur in Visual Studio anzeigen.*
-
-    Kommentieren Sie die Zeile `<instrumentationkey>...` aus „ApplicationInsights.config“ aus. Wenn Sie bereit sind, Telemetriedaten erneut an das Portal zu senden, heben Sie die Auskommentierung auf.
-
-
 
 ## Nächste Schritte
 
@@ -214,4 +234,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->
