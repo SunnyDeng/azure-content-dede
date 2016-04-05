@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/26/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # Erstellen von SQL Data Warehouse mithilfe von Powershell
@@ -25,21 +25,21 @@
 
 ## Abrufen und Ausführen der Azure PowerShell-Cmdlets
 
-> [AZURE.NOTE]  Zum Verwenden von Microsoft Azure PowerShell mit SQL Data Warehouse sollten Sie die aktuelle Version von Azure PowerShell mit ARM-Cmdlets herunterladen und installieren. Sie können Ihre Version überprüfen, indem Sie `Get-Module -ListAvailable -Name Azure` ausführen. Dieser Artikel basiert auf Microsoft Azure PowerShell Version 1.0.3.
+> [AZURE.NOTE]  Zum Verwenden von Microsoft Azure PowerShell mit SQL Data Warehouse sollten Sie die aktuelle Version von Azure PowerShell mit ARM-Cmdlets herunterladen und installieren. Sie können Ihre Version überprüfen, indem Sie `Get-Module -ListAvailable -Name Azure` ausführen. Dieser Artikel basiert auf Microsoft Azure PowerShell Version 1.0.3 oder höher.
 
 Wenn Sie PowerShell noch nicht eingerichtet haben, müssen Sie PowerShell herunterladen und konfigurieren.
 
-1. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) aus.
+1. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://aka.ms/webpi-azps) aus. Weitere Informationen zu diesem Installationsprogramm finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
 2. Geben Sie zum Ausführen des Moduls auf der Startseite **Windows PowerShell** ein.
-3. Führen Sie dieses Cmdlet aus, um sich am Azure-Ressourcen-Manager anzumelden. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
+3. Führen Sie dieses Cmdlet aus, um sich am Azure-Ressourcen-Manager anzumelden.
 
-	```
+	```Powershell
 	Login-AzureRmAccount
 	```
 
 4. Wählen Sie das Abonnement aus, das Sie für Ihre aktuelle Sitzung verwenden möchten.
 
-	```
+	```Powershell
 	Get-AzureRmSubscription	-SubscriptionName "MySubscription" | Select-AzureRmSubscription
 	```
 
@@ -55,13 +55,13 @@ Verwenden Sie das New-AzureRmSQLDatabase-Cmdlet, um eine SQL Data Warehouse-Einh
 
 Mit diesem Befehl wird eine neue Datenbank in SQL Data Warehouse bereitgestellt.
 
-```
+```Powershell
 New-AzureRmSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -DatabaseName "<Data Warehouse Name>" -ServerName "<Server Name>" -ResourceGroupName "<ResourceGroupName>" -Edition "DataWarehouse"
 ```
 
 In diesem Beispiel wird eine neue Datenbank mit dem Namen „mynewsqldw1“ mit der Dienstzielebene „DW400“ auf dem Server „sqldwserver1“ bereitgestellt, der sich in der Ressourcengruppe „mywesteuroperesgp1“ befindet.
 
-```
+```Powershell
 New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "mynewsqldw1" -ServerName "sqldwserver1" -ResourceGroupName "mywesteuroperesgp1" -Edition "DataWarehouse"
 ```
 
@@ -71,7 +71,7 @@ Die erforderlichen Parameter für dieses Cmdlet lauten wie folgt:
  + **DatabaseName**: der Name des SQL Data Warehouse, das Sie erstellen.
  + **ServerName**: der Name des Servers, den Sie für die Erstellung verwenden (muss V12 sein).
  + **ResourceGroupName**: die Ressourcengruppe, die Sie verwenden. Verwenden Sie zum Abrufen der in Ihrem Abonnement verfügbaren Ressourcengruppen das Cmdlet "Get-AzureResourceGroup":
- + **Edition**: Sie müssen die Edition auf "Data Warehouse" festlegen, um ein SQL Data Warehouse zu erstellen. 
+ + **Edition**: Sie müssen die Edition auf "Data Warehouse" festlegen, um ein SQL Data Warehouse zu erstellen.
 
 Die Befehlsreferenz finden Sie unter [New-AzureRmSqlDatabase](https://msdn.microsoft.com/library/mt619339.aspx).
 
@@ -96,4 +96,4 @@ Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse 
 [firewall rules]: ../sql-database/sql-database-configure-firewall-settings.md
 [Installieren und Konfigurieren von Azure PowerShell]: ./powershell-install-configure.md
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

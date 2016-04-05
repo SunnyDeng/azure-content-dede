@@ -37,8 +37,7 @@ Sie können Ihre Anwendung für den Azure Active Directory B2C-Dienst programmie
 Sie sollten diese Seite häufiger aufrufen, da Informationen über zukünftige Änderungen an der Azure Active Directory B2C-Vorschau hier aufgeführt werden. Außerdem veröffentlichen wir Tweets zu Updates unter @AzureAD.
 
 - Informieren Sie sich über das [erweiterbare Richtlinienframework](active-directory-b2c-reference-policies.md) und die Typen von Richtlinien, die Sie in Ihren Anwendungen erstellen und verwenden können.
-- Legen Sie sich ein Lesezeichen für unsere [Seite zur Dienstintegrität](active-directory-b2c-service-health.md) an, damit Sie keine Benachrichtigungen zu kleineren Dienstproblemen, zum Status oder zu Lösungen verpassen. Nutzen Sie auch weiterhin die Überwachung per [Azure-Statusdashboard](https://azure.microsoft.com/status/).
-- Informieren Sie sich über aktuelle [Einschränkungen der Vorschau](active-directory-b2c-limitations.md).
+- Aktuelle [Einschränkungen der Vorschau](active-directory-b2c-limitations.md)
 
 ## Anleitungen
 
@@ -56,7 +55,7 @@ Informieren Sie sich über die Verwendung bestimmter Features der Azure Active D
 Unter den folgenden Links finden Sie ausführliche Informationen zum Dienst:
 
 - Hier finden Sie [Active Directory B2C-Preisinformationen](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
-- Nehmen Sie Hilfe zu Stack Overflow mit [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory)- oder [adal](http://stackoverflow.com/questions/tagged/adal)-Tags in Anspruch.
+- Hilfe zu Stack Overflow mit [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory)- oder [adal](http://stackoverflow.com/questions/tagged/adal)-Tags
 - Teilen Sie uns Ihre Meinung zur Vorschauversion über [User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/) mit. Verwenden Sie den Ausdruck "AzureADB2C:" im Titel Ihres Beitrags, damit wir ihn einfacher finden können.
 - Azure Active Directory B2C unterstützt Protokolle gemäß den Branchenstandards OpenID Connect und OAuth 2.0 über ein Anwendungsregistrierungsmodell, das als „App-Modell v2.0“ bezeichnet wird.
   - [App-Modell, Version 2.0 –Protokollreferenz](active-directory-b2c-reference-protocols.md)
@@ -64,4 +63,4 @@ Unter den folgenden Links finden Sie ausführliche Informationen zum Dienst:
 - Lesen Sie die [häufig gestellten Fragen zu Azure Active Directory B2C](active-directory-b2c-faqs.md).
 - [Senden von Supportanfragen für Azure Active Directory B2C](active-directory-b2c-support.md)
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->

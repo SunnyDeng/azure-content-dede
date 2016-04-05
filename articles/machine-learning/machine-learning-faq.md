@@ -117,6 +117,10 @@ Ja, Sie können Ihren vorhandenen R-Code in ML Studio importieren, zusammen im g
 
 Nein, dies wird nicht unterstützt. Benutzerdefinierter R- und Python-Code kann jedoch zum Definieren eines Moduls verwendet werden.
 
+**Wie viele Module kann ich parallel in meinem Experiment ausführen?**
+
+Sie können parallel bis zu vier Module in einem Experiment ausführen.
+
 
 ### Datenverarbeitung
 
@@ -164,7 +168,7 @@ Derzeit können neue benutzerdefinierte Module nur in R erstellt werden.
 
 **Welche R-Pakete sind in Machine Learning Studio verfügbar?**
 
-Machine Learning Studio unterstützt bereits über 400 CRAN R-Pakete, und diese Liste wird ständig erweitert. Anweisungen zum Abrufen einer Liste der unterstützten R-Pakete finden Sie unter [Erweitern des Experiments mit R](machine-learning-extend-your-experiment-with-r.md). Falls das gewünschte Paket nicht in der Liste enthalten ist, können Sie den Namen des Pakets im [Forum für Benutzer-Feedback](http://go.microsoft.com/fwlink/?LinkId=404231) hinterlassen.
+Machine Learning Studio unterstützt bereits über 400 CRAN R-Pakete, und [hier](http://az754797.vo.msecnd.net/docs/RPackages.xlsx) finden Sie die aktuelle Liste aller enthaltenen Pakete. Lesen Sie auch die Anweisungen zum Abrufen dieser Liste unter [Erweitern des Experiments mit R](machine-learning-extend-your-experiment-with-r.md). Falls das gewünschte Paket nicht in der Liste enthalten ist, können Sie den Namen des Pakets im [Forum für Benutzer-Feedback](http://go.microsoft.com/fwlink/?LinkId=404231) hinterlassen.
 
 **Ist es möglich, benutzerdefinierte R-Module zu erstellen?**
 
@@ -314,4 +318,4 @@ Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in d
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

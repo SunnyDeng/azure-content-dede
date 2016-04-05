@@ -14,55 +14,78 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="02/10/2016"
+	ms.date="03/18/2016"
 	ms.author="curtand"/>
 
 
-#Verwalten von Sicherheitsgruppen in Azure Active Directory
+# Verwalten von Gruppen in Azure Active Directory
 
-Eines der wichtigsten Features in Azure Active Directory (Azure AD) ist die Möglichkeit, den Zugriff auf Ressourcen zu verwalten. Diese Ressourcen können Teil des Verzeichnisses sein, wie im Fall von Berechtigungen zum Verwalten von Objekten mithilfe von Rollen im Verzeichnis, oder externe Ressourcen, z. B. SaaS-Anwendungen, Azure-Dienste und SharePoint-Websites oder lokale Ressourcen. Eine Gruppe kann einer Ressource durch den Besitzer der Ressource zugewiesen werden, wodurch den Mitgliedern dieser Gruppe Zugriff auf die Ressource gewährt wird. Die Mitgliedschaft der Gruppe kann dann vom Besitzer der Gruppe verwaltet werden. Der Besitzer der Ressource delegiert die Berechtigung, dieser Ressource Benutzer zuzuweisen, an den Besitzer der Gruppe.
+Eines der wichtigsten Features von Azure Active Directory (Azure AD) ist die Möglichkeit, den Zugriff auf Ressourcen zu verwalten. Bei diesen Ressourcen kann es sich um Objekte im Verzeichnis oder um Ressourcen handeln, die außerhalb des Verzeichnisses vorliegen, z.B. SaaS-Anwendungen, Azure-Dienste, SharePoint-Websites oder lokale Ressourcen. Darüber hinaus kann ein Ressourcenbesitzer für eine Azure AD-Gruppe den Zugriff auf eine Ressource zuweisen. Den Mitgliedern dieser Gruppe wird so Zugriff auf die Ressource gewährt. Der Besitzer der Gruppe verwaltet dann die Mitgliedschaft in der Gruppe. Der Besitzer der Ressource delegiert quasi die Berechtigung zum Zuweisen von Benutzern zu dieser Gruppe an den Besitzer der Gruppe.
 
+## Wie erstelle ich eine Sicherheitsgruppe?
 
-##Erstellen und Verwalten einer Sicherheitsgruppe
+**So erstellen Sie eine Gruppe**
 
-**Erstellen einer Gruppe im Azure-Portal**
+Diese Aufgabe kann unter Verwendung des Office 365-Kontoportals, des Windows Intune-Kontoportals oder des Azure-Portals ausgeführt werden – je nach den Diensten, die Ihre Organisation abonniert hat. Weitere Informationen zur Verwendung von Portalen zum Verwalten von Azure Active Directory finden Sie unter [Verwalten Ihres Azure AD-Verzeichnisses](active-directory-administer.md).
 
-1. Klicken Sie im Azure-Portal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation.
-2. Klicken Sie auf die Registerkarte **Gruppen**.
-3. Klicken Sie auf der Seite „Gruppen“ auf **Gruppe hinzufügen**.
+1. Wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) die Option **Active Directory**, und wählen Sie dann den Namen des Verzeichnisses Ihrer Organisation.
+
+2. Wählen Sie die Registerkarte **Gruppen**.
+
+3. Wählen Sie **Gruppe hinzufügen**.
+
 4. Geben Sie im Fenster **Gruppe hinzufügen** den Namen und die Beschreibung einer Gruppe ein.
-5. Diese Aufgabe kann unter Verwendung des Office 365-Kontoportals, des Windows Intune-Kontoportals oder des Azure-Verwaltungsportals ausgeführt werden – je nachdem, welche Dienste Ihre Organisation abonniert hat. Weitere Informationen zur Verwendung von Portalen zum Verwalten von Azure Active Directory finden Sie unter [Verwalten Ihres Azure AD-Verzeichnisses](active-directory-administer).
-
-## Zuweisen von Benutzern zu einer Sicherheitsgruppe oder Entfernen von Benutzern aus einer Sicherheitsgruppe
-
-**Hinzufügen von Mitgliedern zu einer Gruppe im Azure-Portal**
-
-1. Klicken Sie im Azure-Portal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation.
-2. Klicken Sie auf die Registerkarte **Gruppen**.
-3. Klicken Sie auf der Seite **Gruppen** auf den Namen der Gruppe, der Sie Mitglieder hinzufügen möchten. Standardmäßig wird hier die Registerkarte **Mitglieder** der ausgewählten Gruppe angezeigt.
-4. Klicken Sie auf der Seite dieser Gruppe auf **Mitglieder hinzufügen**.
-5. Klicken Sie auf der Seite **Mitglieder hinzufügen** auf den Namen des Benutzers oder einer Gruppe, den bzw. die Sie als Mitglied dieser Gruppe hinzufügen möchten, und stellen Sie sicher, dass dieser Name dem Bereich „Ausgewählt“ hinzugefügt wird.
 
 
-**Entfernen von Mitgliedern aus einer Gruppe im Azure-Portal**
+## Wie kann ich einzelne Benutzer einer Sicherheitsgruppe hinzufügen oder diese daraus entfernen?
 
-1. Klicken Sie im Azure-Portal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation.
-2. Klicken Sie auf die Registerkarte **Gruppen**.
-3. Klicken Sie auf der Seite "Gruppen" auf den Namen der Gruppe, aus der Sie Mitglieder entfernen möchten.
-4. Klicken Sie auf der Seite dieser Gruppe auf die Registerkarte **Mitglieder**.
-5. Klicken Sie auf der Seite dieser Gruppe auf den Namen des Mitglieds, das Sie aus dieser Gruppe entfernen möchten, und klicken Sie dann auf **Entfernen**.
-6. Überprüfen Sie, ob Sie dieses Mitglied aus der Gruppe entfernen möchten, indem Sie bei der Bestätigungsfrage für die Aktion auf **Ja** klicken.
+**So fügen Sie einer Gruppe einen einzelnen Benutzer hinzu**
+
+1. Wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) die Option **Active Directory**, und wählen Sie dann den Namen des Verzeichnisses Ihrer Organisation.
+
+2. Wählen Sie die Registerkarte **Gruppen**.
+
+3. Öffnen Sie die Gruppe, der Sie Mitglieder hinzufügen möchten. Standardmäßig wird hier die Registerkarte **Mitglieder** der ausgewählten Gruppe angezeigt.
+
+4. Wählen Sie **Mitglieder hinzufügen**.
+
+5. Wählen Sie auf der Seite **Mitglieder hinzufügen** den Namen des Benutzers oder einer Gruppe, den bzw. die Sie als Mitglied dieser Gruppe hinzufügen möchten, und stellen Sie sicher, dass dieser Name dem Bereich **Ausgewählt** hinzugefügt wird.
 
 
-## Verwenden einer Regel zur dynamischen Verwaltung der Mitglieder einer Sicherheitsgruppe
+**So entfernen Sie einen einzelnen Benutzer aus einer Gruppe**
 
-**Zur Aktivierung der dynamischen Mitgliedschaft für eine bestimmte Gruppe führen Sie die folgenden Schritte aus:**
+1. Wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) die Option **Active Directory**, und wählen Sie dann den Namen des Verzeichnisses Ihrer Organisation.
 
-1. Wählen Sie im Azure-Portal auf der Registerkarte **Gruppen** die Gruppe aus, die Sie bearbeiten möchten, und legen Sie dann auf der Registerkarte **Konfigurieren** für diese Gruppe die Option **Dynamische Mitgliedschaften aktivieren** auf **Ja** fest.
-2. Jetzt können Sie eine einfache Regel für die Gruppe einrichten, um die Funktionsweise dynamischer Mitgliedschaften für diese Gruppe zu steuern. Stellen Sie sicher, dass das Optionsfeld **Benutzer hinzufügen, wobei** aktiviert ist, und wählen Sie dann aus dem Pulldownmenü eine Benutzereigenschaft (z. B. Abteilung, Position usw.) aus.
-3. Anschließend wählen Sie eine Bedingung (Not Equals, Equals, Not Starts With, Starts With, Not Contains, Contains, Not Match, Match) und geben zum Schluss den Wert für die ausgewählte Benutzereigenschaft an.
+2. Wählen Sie die Registerkarte **Gruppen**.
 
-Beispiel: Wenn eine Gruppe einer SaaS-Anwendung zugewiesen ist (weitere Informationen hierzu finden Sie unter "Zuweisen des Zugriffs auf eine SaaS-Anwendung für eine Gruppe in Azure AD") und Sie die dynamische Mitgliedschaft für diese Gruppe aktivieren, indem Sie eine Regel einrichten, in der"Benutzer hinzufügen, wobei" auf die Position festgelegt ist, für die "Equals(-eq)Sales Rep" gilt, erhalten alle Benutzer in Ihrem Azure AD-Verzeichnis Zugriff auf diese SaaS-Anwendung, deren jobTitle-Eigenschaft auf "Sales Rep" festgelegt ist.
+3. Öffnen Sie die Gruppe, aus der Sie Mitglieder entfernen möchten.
+
+4. Wählen Sie die Registerkarte **Mitglieder**, klicken Sie auf der Seite dieser Gruppe auf den Namen des Mitglieds, das Sie aus dieser Gruppe entfernen möchten, und klicken Sie dann auf **Entfernen**.
+
+6. Bestätigen Sie in der Aufforderung, dass Sie dieses Mitglied aus der Gruppe entfernen möchten.
+
+
+## Wie kann ich die Mitgliedschaft einer Gruppe dynamisch verwalten?
+
+In Azure AD können Sie leicht eine einfache Regel einrichten (bei der nur ein einzelner Vergleich durchgeführt wird), um zu ermitteln, welche Benutzer Mitglieder der Gruppe sein sollen. Wenn eine Gruppe beispielsweise einer SaaS-Anwendung zugewiesen wird und Sie eine Regel einrichten, mit der Benutzer mit der Position „Vertriebsmitarbeiter“ hinzugefügt werden, haben alle Benutzer im Azure AD-Verzeichnis, die über diese Position verfügen, Zugriff auf die SaaS-Anwendung.
+
+> [AZURE.NOTE] Sie können eine Regel für die dynamische Mitgliedschaft für Sicherheits- oder Office 365-Gruppen einrichten. Geschachtelte Gruppenmitgliedschaften werden für die gruppenbasierte Zuordnung zu Anwendungen derzeit nicht unterstützt. Für dynamische Gruppenmitgliedschaften ist es erforderlich, dass eine Azure AD Premium-Lizenz wie folgt zugewiesen ist:
+>- Dem Administrator, der die Regel für eine Gruppe verwaltet
+>- Allen Benutzern, die mit der Regel als Mitglied der Gruppe ausgewählt werden
+
+**So aktivieren Sie die dynamische Mitgliedschaft für eine Gruppe**
+
+1. Wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) die Option **Active Directory**, und wählen Sie dann den Namen des Verzeichnisses Ihrer Organisation.
+
+2. Wählen Sie die Registerkarte **Gruppen**, und öffnen Sie die Gruppe, die Sie bearbeiten möchten.
+
+3. Wählen Sie die Registerkarte **Konfigurieren**, und legen Sie dann **Dynamische Mitgliedschaften aktivieren** auf **Ja** fest.
+
+4. Richten Sie eine einfache Regel für die Gruppe ein, um die Funktionsweise dynamischer Mitgliedschaften für diese Gruppe zu steuern. Stellen Sie sicher, dass die Option **Benutzer hinzufügen, wobei** ausgewählt ist, und wählen Sie dann aus der Liste eine Benutzereigenschaft (z. B. Abteilung, Position usw.) aus.
+
+5. Anschließend wählen Sie eine Bedingung (Not Equals, Equals, Not Starts With, Starts With, Not Contains, Contains, Not Match, Match) und geben zum Schluss den Wert für die ausgewählte Benutzereigenschaft an.
+
+Weitere Informationen zur Erstellung *erweiterter* Regeln (mit mehreren Vergleichen) für dynamische Gruppenmitgliedschaften finden Sie unter [Verwenden von Attributen zum Erstellen erweiterter Regeln](active-directory-accessmanagement-groups-with-advanced-rules.md).
 
 ## Zusätzliche Informationen
 
@@ -76,4 +99,4 @@ Diese Artikel enthalten zusätzliche Informationen zu Azure Active Directory.
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0330_2016-->

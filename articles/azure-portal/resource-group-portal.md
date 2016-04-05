@@ -1,10 +1,10 @@
 <properties 
 	pageTitle="Verwenden des Azure-Portals zum Verwalten von Azure-Ressourcen | Microsoft Azure" 
-	description="Gruppieren Sie mehrere Ressourcen als logische Gruppe, die zur Lebenszyklusbegrenzung für enthaltene Ressourcen wird." 
+	description="Verwenden Sie das Azure-Portal und Azure Resource Manager zum Bereitstellen und Verwalten Ihrer Ressourcen. Es wird gezeigt, wie Sie Ressourcen markieren und Überwachungsprotokolle anzeigen." 
 	services="azure-resource-manager,azure-portal" 
 	documentationCenter="" 
 	authors="tfitzmac" 
-	manager="wpickett" 
+	manager="timlt" 
 	editor=""/>
 
 <tags 
@@ -13,24 +13,23 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="02/11/2016" 
+	ms.date="03/29/2016" 
 	ms.author="tomfitz"/>
 
 
-# Using the Azure Portal to manage your Azure resources (Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)
+# Verwenden des Azure-Portals zum Bereitstellen und Verwalten Ihrer Azure-Ressourcen
 
 ## Einführung
 
-Azure-Ressourcen-Manager ermöglicht Ihnen die Bereitstellung und Verwaltung Ihrer Lösungen über Ressourcengruppen. Dieses Thema enthält eine Übersicht über die Nutzung von Ressourcengruppen im Azure-Portal. Normalerweise enthält eine Ressourcengruppe Ressourcen, die sich auf eine bestimmte Anwendung beziehen. Eine Gruppe kann z. B. eine Web-App enthalten, die Ihre öffentliche Website hostet, eine SQL-Datenbank, in der von der Website verwendete relationale Daten gespeichert sind, und ein Speicherkonto, in dem nicht-relationale Ressourcen gespeichert sind. Jede Ressource in einer Ressourcengruppe sollte den gleichen Lebenszyklus aufweisen. Weitere Informationen zum Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
+In diesem Thema wird veranschaulicht, wie Sie das [Azure-Portal](https://portal.azure.com) mit [Azure Resource Manager](../resource-group-overview.md) verwenden, um Ihre Azure-Ressourcen bereitzustellen und zu verwalten.
 
 Das Portal und der Ressourcen-Manager werden derzeit nicht von allen Diensten unterstützt. Verwenden Sie für diese Dienste das [klassische Portal](https://manage.windowsazure.com). Den Status der einzelnen Dienste finden Sie im [Verfügbarkeitsdiagramm für das Azure-Portal](https://azure.microsoft.com/features/azure-portal/availability/).
 
-Sie können Ressourcen auch über Azure PowerShell und die Azure-Befehlszeilenschnittstelle verwalten. Weitere Informationen zur Verwendung dieser Schnittstellen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md) und [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md).
+Sie können Ressourcen auch über Azure PowerShell und die Azure-Befehlszeilenschnittstelle verwalten. Weitere Informationen zur Verwendung dieser Schnittstellen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md) und [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md). Weitere Informationen zum Bereitstellen von Lösungen mit Visual Studio finden Sie unter [Erstellen und Bereitstellen von Azure-Ressourcengruppen über Visual Studio](../vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
 
+## Erstellen und Verwalten von Ressourcengruppen
 
-## Erstellen von Ressourcengruppen und Ressourcen
-
-Wenn Sie eine leere Ressourcengruppe erstellen müssen, können Sie **Neu**, **Verwaltung** und dann **Ressourcengruppe** wählen.
+Wählen Sie zum Erstellen einer leeren Ressourcengruppe **Neu**, **Verwaltung** und **Ressourcengruppe**.
 
 ![Leere Ressourcengruppe erstellen](./media/resource-group-portal/create-empty-group.png)
 
@@ -38,7 +37,15 @@ Sie vergeben einen Namen und Speicherort und wählen, falls erforderlich, ein Ab
 
 ![Gruppenwerte festlegen](./media/resource-group-portal/set-group-properties.png)
 
-Sie können Ihre Ressourcen in der von Ihnen erstellten Ressourcengruppe bereitstellen. Die folgende Abbildung zeigt, wie eine neue Web-App in einer vorhandenen Ressourcengruppe erstellt wird.
+Nachdem die Ressourcengruppe erstellt wurde, können Sie darin Ressourcen bereitstellen. Wählen Sie zum Starten der Bereitstellung einfach **Neu**, und geben Sie den Typ von Ressource an, den Sie bereitstellen möchten.
+
+![Ressource bereitstellen](./media/resource-group-portal/deploy-resource.png)
+
+Falls der gewünschte Ressourcentyp für die Bereitstellung nicht angezeigt wird, können Sie auf dem Marketplace danach suchen.
+
+![Marketplace durchsuchen](./media/resource-group-portal/search-resource.png)
+
+Je nach ausgewähltem Ressourcentyp müssen Sie einige relevante Eigenschaften festlegen, bevor die Bereitstellung beginnen kann. Diese Optionen werden hier nicht angezeigt, da sie je nach Ressourcentyp variieren. Für alle Typen müssen Sie eine Zielressourcengruppe auswählen. Die folgende Abbildung zeigt, wie Sie eine neue Web-App erstellen und in der gerade erstellten Ressourcengruppe bereitstellen.
 
 ![Ressourcengruppe erstellen](./media/resource-group-portal/select-existing-group.png)
 
@@ -46,7 +53,19 @@ Sie können aber auch beim Bereitstellen Ihrer Ressourcen eine neue Ressourcengr
 
 ![neue Ressourcengruppe erstellen](./media/resource-group-portal/select-new-group.png)
 
-## Durchsuchen von Ressourcengruppen
+Die Bereitstellung wird gestartet. Dies kann einige Minuten in Anspruch nehmen. Nachdem die Bereitstellung abgeschlossen ist, wird eine Benachrichtigung angezeigt.
+
+![Benachrichtigung anzeigen](./media/resource-group-portal/view-notification.png)
+
+### Hinzufügen von Ressourcen zu einer vorhandenen Ressourcengruppe
+
+Mit dem Befehl **Hinzufügen** auf dem Blatt "Ressourcengruppen" können Sie einer Ressourcengruppe Ressourcen hinzufügen.
+
+![Ressource hinzufügen](./media/resource-group-portal/add-resource.png)
+
+Sie können die gewünschte Ressource aus der verfügbaren Liste auswählen.
+
+### Durchsuchen von Ressourcengruppen
 
 Sie können alle Ressourcengruppen durchsuchen, indem Sie auf **Ressourcengruppen** klicken.
 
@@ -56,41 +75,44 @@ Wenn Sie eine bestimmte Ressourcengruppe auswählen, wird ein Ressourcengruppen-
 
 ![Zusammenfassung der Ressourcengruppe](./media/resource-group-portal/group-summary.png)
 
-Das Ressourcengruppen-Blatt bietet auch eine zusammenfassende Ansicht Ihrer Abrechnungs- und Überwachungsinformationen für alle Ressourcen in der Ressourcengruppe.
+Sie können dem Blatt mit der Ressourcengruppe weitere Graphen und Tabellen hinzufügen, indem Sie unterhalb der Zusammenfassung die Option **Abschnitt hinzufügen** wählen.
 
-![Überwachung und Abrechnung](./media/resource-group-portal/monitoring-billing.png)
+![Abschnitt hinzufügen](./media/resource-group-portal/add-section.png)
 
-## Anzeigen Ihres Abonnements und der Kosten
+In einem Kachelkatalog können Sie die Informationen auswählen, die in das Blatt eingebunden werden sollen. Die Typen der angezeigten Kacheln werden je nach Ressourcentyp gefiltert. Wenn Sie eine andere Ressource auswählen, ändern sich die verfügbaren Kacheln.
 
-Sie können Informationen zu Ihrem Abonnement und die zusammengefassten Kosten für alle Ihre Ressourcen anzeigen. Wählen Sie **Abonnements** und das Abonnement, das Sie anzeigen möchten. Möglicherweise steht nur ein Abonnement zur Auswahl.
+![Abschnitt hinzufügen](./media/resource-group-portal/tile-gallery.png)
 
-![Abonnement](./media/resource-group-portal/select-subscription.png)
+Ziehen Sie die gewünschte Kachel jeweils an eine der verfügbaren Positionen.
 
-Im Blatt „Abonnement“ wird eine Verbrauchsrate angezeigt.
+![Kachel ziehen](./media/resource-group-portal/drag-tile.png)
 
-![Verbrauchsrate](./media/resource-group-portal/burn-rate.png)
+Nachdem Sie oben im Portal **Fertig** gewählt haben, ist die neue Sicht Teil des Blatts.
 
-Eine Aufschlüsselung der Kosten nach Ressourcentyp wird ebenfalls angezeigt.
+![Kachel anzeigen](./media/resource-group-portal/show-lens.png)
 
-![Ressourcenkosten](./media/resource-group-portal/cost-by-resource.png)
-
-## Anpassen der Benutzeroberfläche
-
-Um schnell auf die Zusammenfassung der Ressourcengruppe zugreifen zu können, können Sie das Blatt an Ihr Startmenü anheften.
+Um den schnellen Zugriff auf eine Ressourcengruppe zu ermöglichen, können Sie das Blatt in Ihrem Dashboard anheften.
 
 ![Ressourcengruppe anheften](./media/resource-group-portal/pin-group.png)
 
-Sie können auch einen Abschnitt des Blatts an das Startmenü anheften, indem Sie auf die Auslassungspunkte (...) oberhalb des Abschnitts klicken. Außerdem können Sie die Größe des Abschnitts im Blatt anpassen oder ihn vollständig entfernen. Die folgende Abbildung veranschaulicht, wie Sie den Abschnitt „Ereignisse“ anheften, anpassen oder entfernen.
+Sie können auch einen Abschnitt des Blatts an das Dashboard anheften, indem Sie auf die Auslassungspunkte (...) oberhalb des Abschnitts klicken. Außerdem können Sie die Größe des Abschnitts im Blatt anpassen oder ihn vollständig entfernen. Die folgende Abbildung veranschaulicht, wie Sie den Abschnitt „CPU und Arbeitsspeicher“ anheften, anpassen oder entfernen.
 
-![Abschnitt anheften](./media/resource-group-portal/pin-section.png)
+![Abschnitt anheften](./media/resource-group-portal/pin-cpu-section.png)
 
-Nachdem Sie den Abschnitt „Ereignisse“ an das Startmenü angeheftet haben, wird im Startmenü eine Zusammenfassung der Ereignisse angezeigt.
+Nach dem Anheften des Abschnitts im Dashboard wird die Zusammenfassung im Dashboard angezeigt.
 
-![Startmenü „Ereignisse“](./media/resource-group-portal/events-startboard.png)
+![Dashboard anzeigen](./media/resource-group-portal/view-startboard.png)
 
-Wenn Sie diese auswählen, werden sofort weitere Details zu den Ereignissen eingeblendet.
+Wenn Sie diese auswählen, werden sofort weitere Details zu den Daten eingeblendet.
 
-## Anzeigen von erfolgten Bereitstellungen
+### Ressourcengruppe löschen
+
+Da Sie mit Ressourcengruppen den Lebenszyklus aller darin enthaltenen Ressourcen verwalten können, werden beim Löschen einer Ressourcengruppe alle darin enthaltenen Ressourcen gelöscht. Sie können auch einzelne Ressourcen in einer Ressourcengruppe löschen. Seien Sie vorsichtig beim Löschen einer Ressourcengruppe, da mit dieser eventuell andere Ressourcen verknüpft sind. In der Ressourcenzuordnung können Sie die verknüpften Ressourcen sehen und die notwendigen Schritte ergreifen, um nicht beabsichtigte Folgen zu vermeiden, wenn Sie Ressourcengruppen löschen. Die verknüpften Ressourcen werden nicht gelöscht, aber sie funktionieren unter Umständen nicht wie erwartet.
+
+![Gruppe löschen](./media/resource-group-portal/delete-group.png)
+
+
+## Anzeigen vorheriger Bereitstellungen
 
 Im Ressourcengruppen-Blatt können Sie das Datum und den Status der letzten Bereitstellung für diese Ressourcengruppe sehen. Wenn Sie den Link auswählen, wird ein Verlauf der Bereitstellungen für die Gruppe angezeigt.
 
@@ -104,9 +126,17 @@ Sie sehen die einzelnen Vorgänge, die im Verlauf der Bereitstellung ausgeführt
 
 ![Vorgangsdetails](./media/resource-group-portal/operation-details.png)
 
-Wenn Sie einen Vorgang auswählen, werden mehr Details zum Vorgang angezeigt. Dies kann besonders hilfreich sein, wenn ein Vorgang fehlgeschlagen ist, wie unten dargestellt. Dies dient als Hilfe bei der Ermittlung des Grunds, warum eine Bereitstellung nicht erfolgreich war. In der folgenden Abbildung sehen Sie, dass die Website nicht bereitgestellt wurde, weil der Name nicht eindeutig war.
+Weitere Informationen zur Problembehandlung für eine Bereitstellung finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen mit dem Azure-Portal](../resource-manager-troubleshoot-deployments-portal.md).
 
-![Vorgangsmeldung](./media/resource-group-portal/operation-message.png)
+Sie können die Vorlage abrufen, die für die Bereitstellung verwendet wurde, indem Sie die Option **Vorlage exportieren** wählen.
+
+![Vorlage exportieren](./media/resource-group-portal/export-template.png)
+
+Es wird genau die Vorlage angezeigt, die für die Bereitstellung verwendet wurde.
+
+![Vorlage anzeigen](./media/resource-group-portal/show-template.png)
+
+Es ist keine vollständige Darstellung der Ressourcengruppe. Wenn Sie Ressourcen außerhalb dieser Bereitstellung hinzugefügt oder gelöscht haben, werden diese Aktionen nicht in der Vorlage widergespiegelt. Das Blatt enthält die Vorlage , eine Parameterdatei für die Verwendung mit der Vorlage und ein PowerShell-Skript zum Bereitstellen der Vorlage. Sie können diese drei Dateien herunterladen, indem Sie die Option **In Datei speichern** wählen.
 
 ## Anzeigen von Überwachungsprotokollen
 
@@ -118,31 +148,11 @@ Im Abschnitt „Vorgänge“ werden die einzelnen Vorgänge angezeigt, die für 
 
 ![Überwachungsprotokoll anzeigen](./media/resource-group-portal/view-audit-log.png)
 
-Wenn Sie einen Vorgang auswählen, werden mehr Details angezeigt, z. B. welcher Benutzer den Vorgang ausgeführt hat.
+Wenn Sie einen Vorgang auswählen, werden mehr Details angezeigt, z. B. welcher Benutzer den Vorgang ausgeführt hat.
 
-Sie können filtern, was im Überwachungsprotokoll angezeigt wird, indem Sie die Option **Filter** wählen.
+Weitere Informationen zum Anzeigen der Überwachungsprotokolle finden Sie unter [Überwachen von Vorgängen mit dem Ressourcen-Manager](../resource-group-audit.md).
 
-![Protokoll filtern](./media/resource-group-portal/filter-logs.png)
-
-Sie können auswählen, welche Art von Vorgängen angezeigt werden soll, z. B. Vorgänge einer Ressourcengruppe oder Ressource, innerhalb eines bestimmten Zeitraums, von einem bestimmten Aufrufer oder die Vorgangsebenen.
-
-![Filteroptionen](./media/resource-group-portal/filter-options.png)
-
-## Hinzufügen von Ressourcen zu Ressourcengruppen
-
-Mit dem Befehl **Hinzufügen** auf dem Blatt "Ressourcengruppen" können Sie einer Ressourcengruppe Ressourcen hinzufügen.
-
-![Ressource hinzufügen](./media/resource-group-portal/add-resource.png)
-
-Sie können die gewünschte Ressource aus der verfügbaren Liste auswählen.
-
-## Löschen von Ressourcengruppen
-
-Da Sie mit Ressourcengruppen den Lebenszyklus aller darin enthaltenen Ressourcen verwalten können, werden beim Löschen einer Ressourcengruppe alle darin enthaltenen Ressourcen gelöscht. Sie können auch einzelne Ressourcen in einer Ressourcengruppe löschen. Seien Sie vorsichtig beim Löschen einer Ressourcengruppe, da mit dieser eventuell andere Ressourcen verknüpft sind. In der Ressourcenzuordnung können Sie die verknüpften Ressourcen sehen und die notwendigen Schritte ergreifen, um nicht beabsichtigte Folgen zu vermeiden, wenn Sie Ressourcengruppen löschen. Die verknüpften Ressourcen werden nicht gelöscht, aber sie funktionieren unter Umständen nicht wie erwartet.
-
-![Gruppe löschen](./media/resource-group-portal/delete-group.png)
-
-## Kennzeichnen von Ressourcen
+## Markieren von Ressourcen
 
 Sie können Ressourcengruppen und Ressourcen Tags zuordnen, um sie logisch zu organisieren. Informationen zur Verwendung von Tags über das Portal finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](../resource-group-using-tags.md).
 
@@ -154,7 +164,7 @@ Wählen Sie zum Bereitstellen einer benutzerdefinierten Vorlage über das Portal
 
 ![Vorlagenbereitstellung suchen](./media/resource-group-portal/search-template.png)
 
-Wählen Sie **Bereitstellungen von Vorlagen** aus den verfügbaren Ressourcen aus.
+Wählen Sie **Vorlagenbereitstellung** aus den verfügbaren Ressourcen aus.
 
 ![Vorlagenbereitstellung auswählen](./media/resource-group-portal/select-template.png)
 
@@ -162,11 +172,32 @@ Nach dem Starten der Vorlagenbereitstellung können Sie die benutzerdefinierte V
 
 ![Vorlage erstellen](./media/resource-group-portal/show-custom-template.png)
 
+## Anzeigen Ihres Abonnements und der Kosten
+
+Sie können Informationen zu Ihrem Abonnement und die zusammengefassten Kosten für alle Ihre Ressourcen anzeigen. Wählen Sie **Abonnements** und das Abonnement aus, das Sie anzeigen möchten. Möglicherweise steht nur ein Abonnement zur Auswahl.
+
+![Abonnement](./media/resource-group-portal/select-subscription.png)
+
+Im Blatt „Abonnement“ wird eine Verbrauchsrate angezeigt.
+
+![Verbrauchsrate](./media/resource-group-portal/burn-rate.png)
+
+Eine Aufschlüsselung der Kosten nach Ressourcentyp wird ebenfalls angezeigt.
+
+![Ressourcenkosten](./media/resource-group-portal/cost-by-resource.png)
+
+## Zugriffskontrolle für Azure-Dashboards
+
+Der Zugriff auf die Informationen, die von den meisten Kacheln im Portal angezeigt werden, wird in Azure über die [rollenbasierte Zugriffssteuerung](../active-directory/role-based-access-control-configure.md) geregelt. Um Dashboards nahtlos in das Ökosystem zu integrieren, werden alle veröffentlichten Dashboards als Azure-Ressourcen implementiert. Aus Sicht der Zugriffssteuerung unterscheiden sich Dashboards nicht von einem virtuellen Computer oder Speicherkonto.
+
+Beispiel: Angenommen, Sie verfügen über ein Azure-Abonnement, und verschiedenen Mitgliedern Ihres Teams wurden die Rollen **Besitzer**, **Mitwirkender** oder**Leser** für das Abonnement zugewiesen. Benutzer, die Besitzer oder Mitwirkende sind, können Dashboards im Abonnement auflisten, anzeigen, erstellen, ändern oder löschen. Benutzer, die als Leser festgelegt wurden, können Dashboards auflisten und anzeigen, aber sie können diese nicht ändern oder löschen. Benutzer mit Leserzugriff können lokale Änderungen an einem veröffentlichten Dashboard vornehmen (z.B. beim Behandeln eines Problems), aber sie haben nicht die Möglichkeit, diese Änderungen zurück auf den Server zu veröffentlichen. Diese Benutzer können eine private Kopie des Dashboards zur eigenen Nutzung erstellen.
+
+Beachten Sie, dass die einzelnen Kacheln im Dashboard jeweils eigene Anforderungen an die Zugriffssteuerung durchsetzen. Diese basieren auf den Ressourcen, für die Daten angezeigt werden. Dies bedeutet, dass Sie ein Dashboard entwerfen können, das umfassender genutzt werden kann, während die Daten auf den einzelnen Kacheln trotzdem geschützt sind.
+
 ## Nächste Schritte
-Erste Schritte
 
 - Eine Einführung in die Konzepte des Ressourcen-Managers finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 - Eine Einführung zur Verwendung von Azure PowerShell für das Bereitstellen von Ressourcen finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 - Eine Einführung zur Verwendung der Azure-Befehlszeilenschnittstelle für das Bereitstellen von Ressourcen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager.md).
 
-<!---HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0330_2016-->

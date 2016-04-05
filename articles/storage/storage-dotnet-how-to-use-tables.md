@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Table Storage mit .NET | Microsoft Azure"
-	description="Speichern Sie unstrukturierte Daten mit Azure Table Storage – dem NoSQL-Datenspeicher von Microsoft – in der Cloud. Beginnen Sie mit einfachen Table Storage-Vorgängen, z. B. Erstellen und Löschen von Tabellen und Einfügen, Aktualisieren, Löschen und Abfragen von Daten."
+	description="Speichern Sie strukturierte Daten mit Azure Table Storage, dem NoSQL-Datenspeicher von Microsoft, in der Cloud. Beginnen Sie mit einfachen Table Storage-Vorgängen, z. B. Erstellen und Löschen von Tabellen und Einfügen, Aktualisieren, Löschen und Abfragen von Daten."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="02/14/2016"
+	ms.date="03/27/2016"
 	ms.author="tamram"/>
 
 
@@ -23,11 +23,11 @@
 
 ## Übersicht
 
-Azure Table Storage ist ein Dienst, bei dem unstrukturierte NoSQL-Daten in der Cloud gespeichert werden. Bei Table Storage handelt es sich um einen Schlüssel-/Attributspeicher mit einem schemalosen Design. Aufgrund der Schemalosigkeit von Table Storage ist es einfach, Ihre Daten an die Entwicklung Ihrer Anwendungen anzupassen. Der Datenzugriff ist für alle Arten von Anwendungen schnell und kostengünstig. Der Tabellenspeicher ist deutlich kostengünstiger als herkömmliches SQL für ähnliche Datenmengen.
+Azure Table Storage ist ein Dienst, bei dem strukturierte NoSQL-Daten in der Cloud gespeichert werden. Bei Table Storage handelt es sich um einen Schlüssel-/Attributspeicher mit einem schemalosen Design. Aufgrund der Schemalosigkeit von Table Storage ist es einfach, Ihre Daten an die Entwicklung Ihrer Anwendungen anzupassen. Der Datenzugriff ist für alle Arten von Anwendungen schnell und kostengünstig. Der Tabellenspeicher ist deutlich kostengünstiger als herkömmliches SQL für ähnliche Datenmengen.
 
 Sie können den Tabellenspeicher zur Speicherung von flexiblen Datensätzen wie Benutzerdaten für Webanwendungen, Adressbüchern, Geräteinformationen und jeder Art von Metadaten verwenden, die Ihr Dienst erfordert. Sie können eine beliebige Anzahl von Entitäten in einer Tabelle speichern, und ein Speicherkonto kann eine beliebige Anzahl von Tabellen enthalten, bis zur Speicherkapazitätsgrenze eines Speicherkontos.
 
-In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufige Szenarien mit Verwendung von Azure Table Storage schreiben, z. B. das Erstellen und Löschen einer Tabelle und das Einfügen, Aktualisieren, Löschen und Abfragen von Tabellendaten.
+In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufige Szenarien mit Verwendung von Azure Table Storage schreiben, z. B. das Erstellen und Löschen einer Tabelle und das Einfügen, Aktualisieren, Löschen und Abfragen von Tabellendaten.
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -114,7 +114,7 @@ Tabellenvorgänge, die Entitäten umfassen, werden über das **CloudTable**-Obje
 Sie können einen Entitätsbatch in einem Schreibvorgang in eine Tabelle einfügen. Beachten Sie im Zusammenhang mit Batchvorgängen Folgendes:
 
 -  Sie können Aktualisierungs-, Lösch- und Einfügevorgänge in einem einzigen Batchvorgang ausführen.
--  Ein einzelner Batchvorgang kann bis zu 100 Entitäten umfassen.
+-  Ein einzelner Batchvorgang kann bis zu 100 Entitäten umfassen.
 -  Alle Entitäten in einem Batchvorgang müssen über denselben Partitionsschlüssel verfügen.
 -  Eine Abfrage kann als Batchvorgang durchgeführt werden, dabei muss es sich jedoch um den einzigen Vorgang im Batch handeln.
 
@@ -257,7 +257,7 @@ Um eine Entität zu aktualisieren, rufen Sie sie aus dem Tabellendienst ab, änd
 	   // Change the phone number.
 	   updateEntity.PhoneNumber = "425-555-0105";
 
-	   // Create the InsertOrReplace TableOperation.
+	   // Create the Replace TableOperation.
 	   TableOperation updateOperation = TableOperation.Replace(updateEntity);
 
 	   // Execute the operation.
@@ -444,4 +444,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [How to: Programmatically access Table storage]: #tablestorage
 
-<!----HONumber=AcomDC_0218_2016-->
+<!---HONumber=AcomDC_0330_2016-->

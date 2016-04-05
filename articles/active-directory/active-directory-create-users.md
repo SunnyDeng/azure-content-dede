@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen oder Bearbeiten von Benutzern in Azure Active Directory | Microsoft Azure"
-	description="In diesem Thema wird beschrieben, wie Sie Benutzerkonten unter Azure Active Directory erstellen oder bearbeiten."
+	pageTitle="Hinzufügen von Benutzern oder Ändern von Benutzerinformationen in Azure Active Directory | Microsoft Azure"
+	description="Es wird beschrieben, wie Sie in Azure Active Directory Benutzer hinzufügen oder Benutzerinformationen ändern, z.B. externe Benutzer und Gastbenutzer."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -13,57 +13,58 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="03/03/2016"
+	ms.date="03/24/2016"
 	ms.author="curtand;viviali"/>
 
-# Erstellen oder Bearbeiten von Benutzern in Azure AD
+# Hinzufügen oder Ändern von Benutzern in Azure Active Directory
 
-Sie müssen für jeden Benutzer, der auf einen Microsoft-Clouddienst zugreifen soll, Ihrem Mandantenverzeichnis ein Konto hinzufügen. Sie können Benutzerkonten auch ändern oder löschen, wenn sie nicht mehr benötigt werden. Benutzer haben standardmäßig keine Administratorberechtigung, Sie können ihnen diese jedoch erteilen.
+Sie müssen für jeden Benutzer, der auf einen Microsoft-Clouddienst zugreifen soll, dem Verzeichnis Ihres Mandanten ein Konto hinzufügen. Hinzugefügte Benutzer verfügen nicht standardmäßig über Administratorberechtigungen, aber Sie können ihnen jederzeit Rollen zuweisen.
 
-## Erstellen eines Benutzers
+## Hinzufügen eines Benutzers
 
-1. Klicken Sie auf **Active Directory**, und wählen Sie dann den Namen des Verzeichnisses Ihrer Organisation.
-2. Klicken Sie auf der Seite **Benutzer** auf **Benutzer hinzufügen**.
-3. Wählen Sie auf der Seite **Informationen über diesen Benutzer** unter **Art des Benutzers** eine der folgenden Optionen:
+1. Melden Sie sich am [klassischen Azure-Portal](https://manage.windowsazure.com) mit einem Konto an, bei dem es sich um einen globalen Administrator für das Verzeichnis handelt.
+2. Wählen Sie **Active Directory** und dann den Namen des Verzeichnisses Ihrer Organisation.
+3. Wählen Sie die Registerkarte **Benutzer** und dann im Befehlsbereich die Option **Benutzer hinzufügen**.
+4. Wählen Sie auf der Seite **Informationen über diesen Benutzer** unter **Art des Benutzers** eine der folgenden Optionen:
 
-	- **Neuer Benutzer in Ihrem Unternehmen:** Dient zum Erstellen eines neuen Benutzerkontos in Ihrem Verzeichnis.
-	- **Benutzer mit einem vorhandenen Microsoft-Konto:** Dient zum Hinzufügen eines vorhandenen Microsoft-Kundenkontos (z. B. eines Outlook-Kontos) zu Ihrem Verzeichnis.
+	- **Neuer Benutzer in Ihrem Unternehmen:** Dient zum Hinzufügen eines neuen Benutzerkontos in Ihrem Verzeichnis.
+	- **Benutzer mit einem vorhandenen Microsoft-Konto:** Dient zum Hinzufügen eines vorhandenen Microsoft-Kundenkontos (z.B. eines Outlook-Kontos) zu Ihrem Verzeichnis.
 	- **Benutzer in einem anderen Microsoft Azure AD-Verzeichnis:** Dient zum Hinzufügen eines Benutzerkontos zu Ihrem Verzeichnis, das aus einem anderen Azure AD-Verzeichnis erstellt wurde. (Hinweis: Sie müssen Mitglied des anderen Verzeichnisses sein, um darin einen Benutzer auswählen zu können.)
-	- **Benutzer in Partnerunternehmen:** dient zum Einladen und Autorisieren eines Partnerunternehmens für Ihr Verzeichnis (siehe [Azure Active Directory B2B-Zusammenarbeit](active-directory-b2b-what-is-azure-ad-b2b.md)).
+	- **Benutzer in Partnerunternehmen:** Dient zum Einladen und Autorisieren eines Partnerunternehmens für Ihr Verzeichnis (siehe [Azure Active Directory B2B-Zusammenarbeit](active-directory-b2b-what-is-azure-ad-b2b.md)).
 
 
-4. Geben Sie je nach ausgewählter Option einen Benutzernamen oder eine E-Mail-Adresse ein, oder laden Sie eine CSV-Datei mit den E-Mail-Adressen der Benutzer, die sich anmelden können, hoch.
-5. Geben Sie auf der Seite **Profil** des Benutzers den Vornamen und Nachnamen des Benutzers, einen benutzerfreundlichen Namen und über das Dropdownmenü „Rollen“ eine Benutzerrolle an. Weitere Informationen zu Benutzer- und Administratorrollen finden Sie unter [Zuweisen von Administratorrollen in Azure AD](active-directory-assign-admin-roles.md). Geben Sie an, ob **Mehrstufige Authentifizierung aktivieren** verwendet werden soll.
-6. Klicken Sie auf der Seite **Temporäres Kennwort abrufen** auf **Erstellen**.
+5. Geben Sie je nach ausgewähltem Benutzertyp einen Benutzernamen oder eine E-Mail-Adresse ein, oder laden Sie eine CSV-Datei mit den E-Mail-Adressen der Benutzer hoch, die sich anmelden können.
+6. Geben Sie auf der Seite **Profil** des Benutzers den Vornamen und Nachnamen des Benutzers, einen benutzerfreundlichen Namen und über die Liste **Rollen** eine Benutzerrolle an. Weitere Informationen zu Benutzer- und Administratorrollen finden Sie unter [Zuweisen von Administratorrollen in Azure AD](active-directory-assign-admin-roles.md). Geben Sie an, ob **Mehrstufige Authentifizierung aktivieren** verwendet werden soll.
+7. Wählen Sie auf der Seite **Temporäres Kennwort abrufen** die Option **Erstellen**.
 
-Achten Sie auf die folgenden Probleme, die beim Erstellen eines Benutzerkontos auftreten können, wenn Ihre Organisation mehr als eine Domäne verwendet:
+> [AZURE.IMPORTANT] Achten Sie auf die folgenden Probleme, die beim Hinzufügen eines Benutzerkontos auftreten können, wenn Ihre Organisation mehr als eine Domäne verwendet:
+>
+> - Sie können Benutzerkonten mit dem gleichen Benutzerprinzipalnamen (User Principal Name, UPN) auch domänenübergreifend hinzufügen, wenn Sie beispielsweise zuerst geoffgrisso@contoso.onmicrosoft.com und dann geoffgrisso@contoso.com hinzufügen.
+> - Sie dürfen geoffgrisso@contoso.com nicht hinzufügen, bevor Sie geoffgrisso@contoso.onmicrosoft.com hinzugefügt haben. Diese Reihenfolge ist äußerst wichtig, und es kann umständlich sein, diesen Vorgang rückgängig zu machen.
 
-- Sie können Benutzerkonten mit dem gleichen Benutzerprinzipalnamen (User Principal Name, UPN) auch domänenübergreifend erstellen, wenn Sie beispielsweise zuerst geoffgrisso@contoso.onmicrosoft.com und dann geoffgrisso@contoso.com erstellen.
-- Das Erstellen von geoffgrisso@contoso.com gefolgt von geoffgrisso@contoso.onmicrosoft.com ist nicht möglich.
+## Ändern von Benutzerinformationen
 
-## Bearbeiten eines Benutzers
+Sie können alle Benutzerattribute ändern, mit Ausnahme der Objekt-ID des Benutzers.
 
-So bearbeiten Sie einen Benutzer im klassischen Azure-Portal:
-
-1. Klicken Sie auf **Active Directory** und dann auf den Namen des Verzeichnisses Ihrer Organisation.
-2. Auf der Seite **Benutzer** klicken Sie auf den Anzeigenamen des Benutzers, den Sie bearbeiten möchten.
+1. Öffnen Sie das Verzeichnis Ihrer Organisation.
+2. Wählen Sie die Registerkarte **Benutzer**, und wählen Sie dann den Anzeigenamen des Benutzers aus, den Sie ändern möchten.
 3. Geben Sie die Änderungen ein, und klicken Sie auf **Speichern**.
 
-Wenn der Benutzer, den Sie bearbeiten möchten, mit Ihrem lokalen Active Directory-Dienst synchronisiert wird, wird eine Fehlermeldung angezeigt. Sie können den Benutzer mit diesem Verfahren dann nicht bearbeiten. Verwenden Sie zum Bearbeiten des Benutzers Ihre lokalen Active Directory-Verwaltungstools.
+Wenn der Benutzer, den Sie ändern möchten, mit Ihrem lokalen Active Directory-Dienst synchronisiert wird, wird eine Fehlermeldung angezeigt. Sie können die Benutzerinformationen dann nicht mit diesem Verfahren ändern. Verwenden Sie zum Ändern des Benutzers Ihre lokalen Active Directory-Verwaltungstools.
 
-## Zurücksetzen des Kennworts für einen Benutzer
+## Zurücksetzen des Benutzerkennworts
 
-1. Klicken Sie auf **Active Directory** und dann auf den Namen des Verzeichnisses Ihrer Organisation.
-2. Auf der Seite **Benutzer** klicken Sie auf den Anzeigenamen des Benutzers, den Sie bearbeiten möchten.
-3. Klicken Sie unten im Portal auf **Kennwort zurücksetzen**.
+1. Öffnen Sie das Verzeichnis Ihrer Organisation.
+2. Wählen Sie die Registerkarte **Benutzer**, und wählen Sie dann den Anzeigenamen des Benutzers aus, den Sie ändern möchten.
+3. Wählen Sie im Befehlsbereich die Option **Kennwort zurücksetzen**.
 4. Klicken Sie im Dialogfeld zum Zurücksetzen des Kennworts auf **Zurücksetzen**.
-5. Klicken Sie auf das Häkchen, um zu bestätigen, dass das Kennwort zurückgesetzt wurde.
+5. Aktivieren Sie das Kontrollkästchen, um das Zurücksetzen des Kennworts abzuschließen.
 
-## Erstellen von externen Benutzern
+## Hinzufügen von externen Benutzern
 
-In Azure AD können Sie auch einem Azure AD-Verzeichnis mit einem Microsoft-Konto Benutzer aus einem anderen Azure AD-Verzeichnis hinzufügen, dessen Mitglied Sie sind, oder Benutzer von Partnerunternehmen, indem Sie eine CSV-Datei hochladen. Beim Erstellen eines externen Benutzers fügen Sie diesen im Portal hinzu und wählen unter **Art des Benutzers** eine der Optionen **Benutzer in einem anderen Microsoft Azure AD-Verzeichnis** oder **Benutzer in Partnerunternehmen** aus.
+In Azure AD können Sie auch einem Azure AD-Verzeichnis mit einem Microsoft-Konto Benutzer aus einem anderen Azure AD-Verzeichnis hinzufügen, dessen Mitglied Sie sind, oder Benutzer von Partnerunternehmen, indem Sie eine CSV-Datei hochladen. Zum Hinzufügen eines externen Benutzers fügen Sie diesen im Portal hinzu und wählen unter **Art des Benutzers** eine der Optionen **Benutzer in einem anderen Microsoft Azure AD-Verzeichnis** oder **Benutzer in Partnerunternehmen** aus.
 
-Benutzer dieser Typen stammen aus einem anderen Verzeichnis und werden als **externe Benutzer** erstellt. Externe Benutzer können mit Benutzern zusammenarbeiten, die in einem Verzeichnis bereits vorhanden sind, indem sie ihr zentrales Konto verwenden. Es müssen also keine neuen Konten und Anmeldeinformationen erstellt werden. Externe Benutzer werden über ihr Basisverzeichnis authentifiziert, wenn sie sich anmelden. Diese Authentifizierung funktioniert auch für alle anderen Verzeichnisse, denen sie hinzugefügt wurden.
+Benutzer dieser Typen stammen aus einem anderen Verzeichnis und werden als **externe Benutzer** hinzugefügt. Externe Benutzer können mit Benutzern zusammenarbeiten, die in einem Verzeichnis bereits vorhanden sind, indem sie ihr zentrales Konto verwenden. Es müssen also keine neuen Konten und Anmeldeinformationen hinzugefügt werden. Externe Benutzer werden über ihr Basisverzeichnis authentifiziert, wenn sie sich anmelden. Diese Authentifizierung funktioniert auch für alle anderen Verzeichnisse, denen sie hinzugefügt wurden.
 
 ## Verwaltung externer Benutzer und Einschränkungen
 
@@ -78,9 +79,9 @@ Wenn ein Benutzer in seinem Basisverzeichnis gelöscht wird oder sein Microsoft-
 
 Hier sind die Dienste aufgeführt, die den Zugriff durch externe Azure AD-Benutzer derzeit unterstützen:
 
-- **Klassisches Azure-Portal:** ermöglicht einem externen Benutzer, der Administrator mehrerer Verzeichnisse ist, das Verwalten dieser Verzeichnisse.
-- **SharePoint Online:** ermöglicht einem externen Benutzer den Zugriff auf autorisierte Ressourcen von SharePoint Online, wenn die externe Freigabe aktiviert ist.
-- **Dynamics CRM:** ermöglicht einem externen Benutzer den Zugriff auf autorisierte Ressourcen in Dynamics CRM, wenn der Benutzer per PowerShell lizenziert ist.
+- **Klassisches Azure-Portal:** Ermöglicht einem externen Benutzer, der Administrator mehrerer Verzeichnisse ist, das Verwalten dieser Verzeichnisse.
+- **SharePoint Online:** Ermöglicht einem externen Benutzer den Zugriff auf autorisierte Ressourcen von SharePoint Online, wenn die externe Freigabe aktiviert ist.
+- **Dynamics CRM:** Ermöglicht einem externen Benutzer den Zugriff auf autorisierte Ressourcen in Dynamics CRM, wenn der Benutzer per PowerShell lizenziert ist.
 
 Die bekannten Einschränkungen für externe Azure AD-Benutzer lauten:
 
@@ -94,20 +95,22 @@ Die bekannten Einschränkungen für externe Azure AD-Benutzer lauten:
 
 ## Verwaltung von Gastbenutzern und Einschränkungen
 
-Ein **Gast** ist ein Benutzerkonto in Ihrem Verzeichnis, für den das UserType-Attribut auf „Guest“ (Gast) festgelegt ist. Für normale Benutzer ist das UserType-Attribut auf „Member“ (Mitglied) festgelegt, das angibt, dass sie Mitglied Ihres Verzeichnisses sind. Gäste sind Benutzer aus anderen Verzeichnissen, die in Ihr Verzeichnis eingeladen wurden und auf eine bestimmte Ressource zugreifen können, z. B. ein SharePoint Online-Dokument, eine Anwendung oder eine Azure-Ressource.
+Gastkonten sind Benutzer aus anderen Verzeichnissen, die in Ihr Verzeichnis eingeladen wurden und auf eine bestimmte Ressource zugreifen können, z.B. ein SharePoint Online-Dokument, eine Anwendung oder eine Azure-Ressource. Für ein Gastkonto in Ihrem Verzeichnis ist das zugrunde liegende UserType-Attribut auf „Gast“ festgelegt. Reguläre Benutzer (also Mitglieder Ihres Verzeichnisses) verfügen über das UserType-Attribut „Member“.
 
 Gäste verfügen im Verzeichnis über eingeschränkte Berechtigungen. Diese Berechtigungen bewirken, dass Gäste nicht auf alle Informationen zu anderen Benutzern im Verzeichnis zugreifen können. Sie können mit den Benutzern und Gruppen, die den bearbeiteten Ressourcen zugeordnet sind, aber trotzdem interagieren. Gastbenutzer haben folgende Möglichkeiten:
 
-- Anzeigen anderer Benutzer und Gruppen eines Azure-Abonnements, dem sie zugeordnet sind
+- Anzeigen anderer Benutzer und Gruppen eines Azure-Abonnements, dem sie zugewiesen sind
 - Anzeigen der Mitglieder von Gruppen, denen sie angehören
 - Suchen nach anderen Benutzern im Verzeichnis, sofern die vollständige E-Mail-Adresse des Benutzers bekannt ist
 - Anzeigen einer begrenzten Gruppe von Attributen der gesuchten Benutzer (Anzeigename, E-Mail-Adresse, Benutzerprinzipalname (UPN) und Miniaturbild)
-- Abrufen einer Liste der überprüften Domänen des Mandanten
+- Abrufen einer Liste mit den überprüften Domänen im Mandantenverzeichnis
 - Erteilen der Zustimmung für Anwendungen und Gewähren des gleichen Zugriffs, der für Mitglieder in Ihrem Verzeichnis gilt
 
-## Konfigurieren von Richtlinien für den Benutzerzugriff
+## Festlegen von Richtlinien für den Benutzerzugriff
 
-Die Registerkarte **Konfigurieren** eines Verzeichnisses enthält Optionen zur Zugriffssteuerung für externe Benutzer. Diese Optionen können nur über die Benutzeroberfläche (es gibt keine Windows PowerShell- oder API-Methode) im klassischen Azure-Portal von einem globalen Verzeichnisadministrator geändert werden. Klicken Sie zum Öffnen im klassischen Azure-Portal auf die Registerkarte **Konfigurieren** und dann auf **Active Directory** und den Namen des Verzeichnisses.
+Die Registerkarte **Konfigurieren** eines Verzeichnisses enthält Optionen zur Zugriffssteuerung für externe Benutzer. Diese Optionen können nur im klassischen Azure-Portal von einem globalen Verzeichnisadministrator geändert werden (es gibt keine Windows PowerShell- oder API-Methode).
+
+Wählen Sie zum Öffnen im klassischen Azure-Portal die Registerkarte **Konfigurieren** und dann **Active Directory** und den Namen des Verzeichnisses.
 
 ![Registerkarte „Konfigurieren“ in Azure Active Directory][1]
 
@@ -126,4 +129,4 @@ Anschließend können Sie die Optionen zur Zugriffssteuerung für externe Benutz
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="03/03/2016"
+   ms.date="03/26/2016"
    ms.author="mausher;barbkess;sonyama"/>
 
 # Herstellen einer Verbindung mit SQL Data Warehouse über Visual Studio
@@ -42,8 +42,9 @@ So ermitteln Sie den vollqualifizierten Servernamen:
     ![Vollständiger Servername][1]
 
 ## Schritt 2: Herstellen einer Verbindung mit der SQL-Datenbank
+Verwenden Sie für optimale Ergebnisse Visual Studio 2015 mit dem [aktuellen SQL Server Data Tools (SSDT)-Update](https://msdn.microsoft.com/library/mt204009.aspx).
 
-1. Öffnen Sie Visual Studio.
+1. Öffnen Sie Visual Studio 2013 oder 2015.
 2. Öffnen Sie den SQL Server-Objekt-Explorer. Wählen Sie zu diesem Zweck **Ansicht** > **SQL Server-Objekt-Explorer** aus.
 
     ![SQL Server-Objekt-Explorer][2]
@@ -59,6 +60,7 @@ So ermitteln Sie den vollqualifizierten Servernamen:
     - **Servername**. Geben Sie den zuvor ermittelten *Servernamen* ein.
     - **Authentifizierung**. Wählen Sie SQL Server-Authentifizierung.
     - **Benutzername** und **Kennwort**. Geben Sie den Benutzernamen und das Kennwort für den Azure SQL-Server ein.
+    - **Datenbankname**. Geben Sie den Datenbanknamen für die SQL DW-Datenbank ein.
     - Klicken Sie auf **Verbinden**.
 
 1. Erweitern Sie den Azure SQL-Server. Sie können die dem Server zugeordneten Datenbanken anzeigen. Erweitern Sie „AdventureWorksDW“, um die Tabellen in Ihrer Beispieldatenbank anzuzeigen.
@@ -78,9 +80,9 @@ Nachdem jetzt eine Verbindung mit dem Server hergestellt wurde, fahren wir mit d
 
 3. Kopieren Sie die folgende TSQL-Abfrage in das Abfragefenster:
 
-	```
-	SELECT COUNT(*) FROM dbo.FactInternetSales;
-	```
+    ```sql
+    SELECT COUNT(*) FROM dbo.FactInternetSales;
+    ```
 
 4. Führen Sie die Abfrage aus. Zu diesem Zweck klicken Sie auf den grünen Pfeil oder verwenden die folgende Tastenkombination: `CTRL`+`SHIFT`+`E`.
 
@@ -108,4 +110,4 @@ Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versu
 [7]: ./media/sql-data-warehouse-get-started-connect/run-query.png
 [8]: ./media/sql-data-warehouse-get-started-connect/query-results.png
 
-<!---HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0330_2016-->

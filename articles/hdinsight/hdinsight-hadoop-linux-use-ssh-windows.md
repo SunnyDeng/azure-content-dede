@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/22/2016"
+   ms.date="03/25/2016"
    ms.author="larryfr"/>
 
 #Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows
@@ -121,7 +121,11 @@ Weitere Informationen zur Verwendung dieses Befehls finden Sie unter [Benutzerde
 
 	![PuTTY-Oberfläche, privaten Schlüssel auswählen](./media/hdinsight-hadoop-linux-use-ssh-windows/puttykey.png)
 
-3. Wählen Sie in **Category** die Option **Session** aus. Geben Sie auf dem Bildschirm **Basic options for your PuTTY session** die SSH-Adresse Ihres HDInsight-Servers in das Feld **Host name (or IP address)** ein. Die SSH-Adresse ist Ihr Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: **mycluster-ssh.azurehdinsight.net**.
+3. Wählen Sie in **Category** die Option **Session** aus. Geben Sie auf dem Bildschirm **Basic options for your PuTTY session** die SSH-Adresse Ihres HDInsight-Servers in das Feld **Host name (or IP address)** ein. Es gibt zwei mögliche SSH-Adressen, die Sie beim Herstellen einer Verbindung mit einem Cluster verwenden können:
+
+    * __Hauptknotenadresse:__ Wenn Sie eine Verbindung mit dem Hauptknoten des Clusters herstellen möchten, verwenden Sie den Clusternamen und **-ssh.azurehdinsight.net**. Beispiel: **mycluster-ssh.azurehdinsight.net**.
+    
+    * __Edgeknotenadresse:__ Wenn Sie eine Verbindung mit einer R Server-Instanz in einem HDInsight-Cluster herstellen möchten, können Sie mithilfe der Adresse __RServer.CLUSTERNAME.ssh.azurehdinsight.net__ eine Verbindung mit dem R Server-Edgeknoten herstellen. Dabei steht CLUSTERNAME für den Namen Ihres Clusters. Beispiel: __RServer.mycluster.ssh.azurehdinsight.net__
 
 	![PuTTY-Oberfläche mit eingegebener SSH-Adresse](./media/hdinsight-hadoop-linux-use-ssh-windows/puttyaddress.png)
 
@@ -229,4 +233,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_0302_2016-->
+<!---HONumber=AcomDC_0330_2016-->

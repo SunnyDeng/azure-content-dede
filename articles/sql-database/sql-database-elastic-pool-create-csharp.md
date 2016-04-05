@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Erstellen eines Pools für elastische Datenbanken (C#) | Microsoft Azure"
-    description="Verwenden Sie C#-Datenbankentwicklungstechniken, um einen Pool für elastische Datenbanken in Azure SQL-Datenbank zu erstellen, damit Sie Ressourcen für zahlreiche Datenbanken freigeben können."
+    pageTitle="Erstellen eines Pools für elastische Datenbanken mit C# | Microsoft Azure"
+    description="Verwenden Sie C#-Datenbankentwicklungstechniken, um einen skalierbaren Pool für elastische Datenbanken in Azure SQL-Datenbank zu erstellen, damit Sie Ressourcen für zahlreiche Datenbanken freigeben können."
     services="sql-database"
     documentationCenter=""
     authors="stevestein"
@@ -13,10 +13,10 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="csharp"
     ms.workload="data-management"
-    ms.date="03/22/2016"
+    ms.date="03/24/2016"
     ms.author="sstein"/>
 
-# Erstellen eines Pools für elastische Datenbanken (C&#x23;)
+# Erstellen eines Pools für elastische Datenbanken mit C&#x23;
 
 > [AZURE.SELECTOR]
 - [Azure-Portal](sql-database-elastic-pool-create-portal.md)
@@ -37,7 +37,7 @@ In den Beispielen wird die [SQL-Datenbankbibliothek für .NET](https://msdn.micr
 
 
 
-## Erstellen eines elastischen Datenbankpools
+## Erstellen eines Pools
 
 
     // Create elastic pool: configure create or update parameters and properties explicitly
@@ -56,7 +56,7 @@ In den Beispielen wird die [SQL-Datenbankbibliothek für .NET](https://msdn.micr
     // Create the pool
     var newPoolResponse = sqlClient.ElasticPools.CreateOrUpdate("resourcegroup-name", "server-name", "ElasticPool1", newPoolParameters);
 
-## Verschieben einer vorhandenen Datenbank in einen Pool für elastische Datenbanken
+## Verschieben einer vorhandenen Datenbank in einen Pool
 
 
     // Retrieve current database properties
@@ -82,7 +82,7 @@ In den Beispielen wird die [SQL-Datenbankbibliothek für .NET](https://msdn.micr
 
 
 
-## Erstellen einer neuen Datenbank in einem elastischen Datenbankpool
+## Erstellen einer neuen Datenbank in einem Pool
 
 
     // Create a database: configure create or update parameters and properties explicitly
@@ -105,7 +105,7 @@ In den Beispielen wird die [SQL-Datenbankbibliothek für .NET](https://msdn.micr
 
 
 
-## Beispiel für das Erstellen eines Pools für elastische Datenbanken C&#x23;
+## Erstellen eines Poolbeispiels mit C&#x23;
 
 
 Die folgenden Bibliotheken sind erforderlich, um dieses Beispiel auszuführen. Verwenden Sie den folgenden Befehl zur Installation über die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) in Visual Studio (**Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
@@ -145,7 +145,7 @@ Erstellen Sie eine Konsolenanwendung, und ersetzen Sie den Inhalt von Program.cs
         static string adminPassword = "<server password (store it securely!)>";
         static string serverVersion = "12.0";
 
-        // elastic database pool variables
+        // pool variables
         static string elasticPoolName = "<pool name>";
         static string poolEdition = "Standard";
         static int poolDtus = 400;
@@ -168,7 +168,7 @@ Erstellen Sie eine Konsolenanwendung, und ersetzen Sie den Inhalt von Program.cs
             ServerGetResponse srvr = CreateServer();
             Console.WriteLine("Creation of server " + srvr.Server.Name + ": " + srvr.StatusCode.ToString());
 
-            // Create an elastic database pool
+            // Create a pool
             Console.WriteLine("Creating elastic database pool... ");
             ElasticPoolCreateOrUpdateResponse epool = CreateElasticDatabasePool();
             Console.WriteLine("Creation of pool " + epool.ElasticPool.Name + ": " + epool.Status.ToString());
@@ -270,7 +270,7 @@ Erstellen Sie eine Konsolenanwendung, und ersetzen Sie den Inhalt von Program.cs
 ## Nächste Schritte
 
 - [Verwalten Ihres Pools](sql-database-elastic-pool-manage-csharp.md)
-- [Erstellen elastischer Aufträge](sql-database-elastic-jobs-overview.md) Elastische Aufträge erleichtern die Ausführung von T-SQL-Skripts für eine beliebige Anzahl von Datenbanken im Pool.
+- [Erstellen elastischer Aufträge:](sql-database-elastic-jobs-overview.md) Elastische Aufträge ermöglichen die Ausführung von T-SQL-Skripts für eine beliebige Anzahl von Datenbanken im Pool.
 
 
 ## Zusätzliche Ressourcen
@@ -280,4 +280,4 @@ Erstellen Sie eine Konsolenanwendung, und ersetzen Sie den Inhalt von Program.cs
 - [APIs für Azure-Ressourcenverwaltung](https://msdn.microsoft.com/library/azure/dn948464.aspx)
 - [Referenz für Pools für elastische Datenbanken](sql-database-elastic-pool-reference.md)
 
-<!---HONumber=AcomDC_0323_2016-->
+<!---HONumber=AcomDC_0330_2016-->
