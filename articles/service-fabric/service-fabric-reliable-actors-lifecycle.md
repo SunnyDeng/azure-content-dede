@@ -3,7 +3,7 @@
    description="Erläutert Lebenszyklus und Garbage Collection für Service Fabric Reliable Actors"
    services="service-fabric"
    documentationCenter=".net"
-   authors="myamanbh"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 

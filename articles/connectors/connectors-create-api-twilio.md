@@ -78,8 +78,7 @@ Gibt eine Liste von Nachrichten zurück, die Ihrem Konto zugeordnet sind. ```GET
 
 | Name| Datentyp|Erforderlich|Enthalten in|Standardwert|Beschreibung|
 | ---|---|---|---|---|---|
-|To  
-|string|no|query|(Keine)|Angerufene Telefonnummer|
+|To|string|no|query|(Keine)|Angerufene Telefonnummer|
 |Aus|string|no|query|(Keine)|Anrufertelefonnummer|
 |DateSent|string|no|query|(Keine)|Nur an diesem Datum (GMT) gesendete Nachrichten anzeigen, Datum im Format JJJJ-MM-TT. Beispiel: DateSent=2009-07-06. Sie können auch Ungleichheit angeben, d. h. DateSent<=JJJJ-MM-TT für Nachrichten, die an oder vor Mitternacht an einem bestimmten Datum gesendet wurden, sowie DateSent>=JJJJ-MM-TT für Nachrichten, die an oder nach Mitternacht an einem bestimmten Datum gesendet wurden.|
 |PageSize|integer|no|query|50|Die Anzahl der Ressourcen, die auf jeder Listenseite zurückgegeben werden. Standard ist 50.|
@@ -248,4 +247,4 @@ Sendet eine neue Nachricht an eine Mobiltelefonnummer. ```POST: /Messages.json``
 ## Nächste Schritte
 [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->
