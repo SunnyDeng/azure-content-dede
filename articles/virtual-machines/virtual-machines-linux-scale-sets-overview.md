@@ -27,4 +27,4 @@ VM-Skalierungsgruppen sind eine Azure-Computeressource, mit der Sie eine Gruppe 
 
 [AZURE.INCLUDE [virtual-machines-vmss-preview](../../includes/virtual-machines-vmss-preview-ps-include.md)]
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->

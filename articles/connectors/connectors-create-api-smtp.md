@@ -69,8 +69,7 @@ Sendet eine E-Mail an einen oder mehrere Empfänger. ```POST: /SendEmail```
 
 | Name | Datentyp | Erforderlich|
 |---|---|---|
-|To  
-|string|no|
+|To|string|no|
 |CC|string|no|
 |Betreff|string|no|
 |Body|string|no|
@@ -95,4 +94,4 @@ Sendet eine E-Mail an einen oder mehrere Empfänger. ```POST: /SendEmail```
 ## Nächste Schritte
 [Erstellen einer Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->
