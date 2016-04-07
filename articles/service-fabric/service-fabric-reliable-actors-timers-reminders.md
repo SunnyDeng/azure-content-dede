@@ -3,7 +3,7 @@
 	description="Einführung in Timer und Erinnerungen für Service Fabric Reliable Actors."
 	services="service-fabric"
 	documentationCenter=".net"
-	authors="myamanbh"
+	authors="vturecek"
 	manager="timlt"
 	editor=""/>
 
