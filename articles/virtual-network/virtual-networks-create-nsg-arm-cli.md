@@ -105,7 +105,7 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-FrontEnd* basierend auf d
 	- **-n (oder --name)**. Name der neuen Regel. In diesem Szenario *rdp-rule*.
 	- **-c (oder --access)**. Zugriffsebene für die Regel (Deny oder Allow).
 	- **-p (oder --protocol)**. Protokoll (Tcp, Udp oder *) für die Regel.
-- **-r (oder --direction)**. Richtung der Verbindung (Inbound oder Outbound).
+	- **-r (oder --direction)**. Richtung der Verbindung (Inbound oder Outbound).
 	- **-y (oder --priority)**. Priorität für die Regel.
 	- **-f (oder --source-address-prefix)**. Quelladresspräfix in CIDR oder Verwendung von Standardtags.
 	- **-o (oder --source-port-range)**. Quellport oder Portbereich.
@@ -269,4 +269,4 @@ Führen Sie zum Erstellen einer NSG mit dem Namen *NSG-BackEnd* basierend auf de
 		data:    
 		info:    network vnet subnet set command OK
 
-<!---HONumber=AcomDC_0323_2016-->
+<!----HONumber=AcomDC_0323_2016-->
