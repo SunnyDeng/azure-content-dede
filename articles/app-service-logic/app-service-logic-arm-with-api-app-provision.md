@@ -18,7 +18,7 @@
 
 # Erstellen einer Logik-App und einer API-App mithilfe einer Vorlage
 
-In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, um eine Logik-App mit einer App Service-API-App zu erstellen. Sie können die Logik-App verwenden, um Workflows zu entwerfen, in denen ein beabsichtigter Ablauf mithilfe eines Triggers und einer Reihe von Schritten ausgedrückt wird. Bei jedem Schritt wird eine API-App aufgerufen, und zugleich wird für eine sichere Authentifizierung und beständige Ausführung gesorgt.
+tttttttttttttttttttttttttttttIn diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, um eine Logik-App mit einer App Service-API-App zu erstellen. Sie können die Logik-App verwenden, um Workflows zu entwerfen, in denen ein beabsichtigter Ablauf mithilfe eines Triggers und einer Reihe von Schritten ausgedrückt wird. Bei jedem Schritt wird eine API-App aufgerufen, und zugleich wird für eine sichere Authentifizierung und beständige Ausführung gesorgt.
 
 Sie erfahren, wie Sie definieren, welche Ressourcen bereitgestellt werden, und wie Sie Parameter definieren, die beim Ausführen der Bereitstellung angegeben werden. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder an Ihre Anforderungen anpassen.
 
