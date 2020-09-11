@@ -1,4 +1,4 @@
-# Leitfaden für Mitwirkende bei der technischen Dokumentation zu Azure
+# CHERRY-PICK   Leitfaden für Mitwirkende bei der technischen Dokumentation zu Azure
 
 Sie haben das GitHub Repository gefunden, das die Quelle für die technische Dokumentation zu Microsoft Azure beherbergt, wie sie im Azure-Dokumentationscenter unter [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation) veröffentlicht wird.
 
